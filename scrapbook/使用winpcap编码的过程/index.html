@@ -1,0 +1,1608 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>Introduction to the WinPcap Networking Libraries - CodeProject</title> 
+	
+
+	
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="Description" content="An introduction to the WinPcap networking libraries.; Author: cristitomi; Section: Internet / Network; Chapter: General Programming">
+<meta name="Keywords" content="VC8.0, Win2K, WinXP, Dev, Beginner,Internet / Network,General Programming,Free source code, tutorials">
+<meta name="Author" content="cristitomi">
+<meta name="Rating" content="General">
+<meta name="Robots" content="index, follow">
+<meta name="Revisit-After" content="1 days">
+<meta name="application-name" content="The Code Project">
+<meta name="google-site-verification" content="RP2bNCUeOmNkkJesEnU8X3UyTbqIcCKP0CmdwU8in5k">
+<meta name="msapplication-navbutton-color" content="#FF9900">
+<meta name="msapplication-tooltip" content="Your Development Resource.">
+<meta name="msapplication-starturl" content="http://www.codeproject.com/?pinned=true">
+<meta name="msapplication-task" content="name=Homepage;action-uri=http://www.codeproject.com/;icon-uri=http://www.codeproject.com/favico.ico">
+<meta name="msapplication-task" content="name=Latest Articles;action-uri=http://www.codeproject.com/script/articles/Latest.aspx;icon-uri=http://www.codeproject.com/favico.ico">
+<meta name="msapplication-task" content="name=Questions and Answers;action-uri=http://www.codeproject.com/script/Answers/;icon-uri=http://www.codeproject.com/favico.ico">
+<meta name="msapplication-task" content="name=The Lounge;action-uri=http://www.codeproject.com/Lounge.aspx;icon-uri=http://www.codeproject.com/favico.ico">
+<link rel="dns-prefetch" href="http://ajax.googleapis.com/"> 
+
+<link rel="canonical" href="http://www.codeproject.com/KB/IP/winpcap_basic.aspx">
+
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - All Topics" href="http://www.codeproject.com/webservices/articlerss.aspx?cat=1">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - MFC/C++" href="http://www.codeproject.com/webservices/articlerss.aspx?cat=2">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - C#" href="http://www.codeproject.com/webservices/articlerss.aspx?cat=3">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - VB.NET" href="http://www.codeproject.com/webservices/articlerss.aspx?cat=6">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - Mobile" href="http://www.codeproject.com/webservices/articlerss.aspx?cat=18">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - ASP.NET" href="http://www.codeproject.com/webservices/articlerss.aspx?cat=4">
+
+<link rel="alternate" type="application/rss+xml" title="CodeProject Lounge Postings" href="http://www.codeproject.com/webservices/LoungeRSS.aspx">
+<link rel="search" type="application/opensearchdescription+xml" title="CodeProject" href="http://www.codeproject.com/info/OpenSearch.xml">
+
+	<base target="_top">
+	<link rel="icon" href="favicon.ico" type="image/ico">
+<link rel="shortcut icon" href="favicon.ico" type="image/ico">
+<link rel="apple-touch-icon" href="http://www.codeproject.com/images/FavIcon-Apple.png" type="image/png">
+
+
+
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body class="firefox firefox6">
+
+
+
+
+<a href="#Main"><img alt="Click here to Skip to main content" class="access-link" src="t.gif"></a>
+
+
+<div class="page-background">
+	<div id="A" class="container-content">
+
+		
+		<div id="ctl00_Suggest" class="suggestions">
+		
+<div class="alert-bar " style="">
+	<a href="#" class="close-notify">×</a>
+	<div><b>Not quite what you are looking for? You may want to try:</b><ul class="see-also"><li><a href="http://www.codeproject.com/KB/IP/sharppcap.aspx?q=winpcap+header+file">SharpPcap - A Packet Capture Framework for .NET</a></li><li><a href="http://www.codeproject.com/KB/dotnet/Sznyfer.aspx?q=winpcap+header+file">Simple Packet Sniffer in VC++ .NET</a></li></ul><div id="removeHilite" class="alert-bar-command">
+<a href="#" onclick="unmarkText('contentdiv','removeHilite')">highlights off</a>
+</div>
+</div>
+</div>
+		</div>
+
+		
+
+		
+		
+
+<div class="container nav-memberbar clearfix">
+<div class="member-stats float-left">8,149,961 members and growing! (34,684 online)</div>
+<div class="float-left"></div>
+<div class="float-right">
+
+
+
+
+	
+
+	<a name="SignUp"></a>
+	<form name="subForm" id="subForm" action="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fKB%2fIP%2fwinpcap_basic.aspx" method="post" class="tight">
+
+	
+	<input id="FormName" name="FormName" value="MenuBarForm" type="hidden">
+
+	Email <input value="" class="small-text" name="Email" id="Email" style="width: 150px;" type="text">
+	Password <input class="small-text" name="Password" id="Password" style="width: 60px;" type="password">
+	<input value="Sign in" class="button" onclick="return doSubmit(false);" type="submit">
+	
+	<input src="secure.png" class="align-bottom" title="Sign on securely" onclick="return doSubmit(true);" type="image">
+	<input class="button" onclick="return Join();" value="Join" <input="" name="fld_quicksign" type="button">
+	<span class="nowrap">
+		<input checked="checked" name="RememberMeCheck" id="RememberMeCheck" value="1" type="checkbox">
+		<label for="RememberMeCheck">Remember&nbsp;me?</label>
+	</span>&nbsp;
+	<a id="ctl00_MemberMenu_SendPassword" href="http://www.codeproject.com/script/Membership/SendPassword.aspx?rp=%2fKB%2fIP%2fwinpcap_basic.aspx">Lost password?</a>
+	</form>
+
+</div>
+
+</div>
+		
+
+		
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tbody><tr>
+			<td class="header"><a href="http://www.codeproject.com/"><img id="ctl00_Logo" title="The Code Project" src="logo225x90.gif" alt="Home" style="border-width: 0px;"></a></td>
+			<td class="header" align="right">
+				<div class="lqm_ad" lqm_publisher="lqm.codeproject.site" lqm_zone="77" lqm_format="728x90" lqm_tags="VC8.0,Win2K,WinXP,Dev,Beginner"><iframe src="index_1.html" id="lqmad1" marginwidth="0" marginheight="0" frameborder="0" height="90" scrolling="no" width="728"></iframe></div>
+			</td>
+		</tr></tbody></table>
+
+		<table class="contrast1-background extended" cellpadding="0" cellspacing="0"><tbody><tr><td nowrap="nowrap">
+			
+
+<div class="navbar clearfix">
+<ul id="nav">
+
+<li><a id="ctl00_TopNavBar_Home" class="down" href="http://www.codeproject.com/">Home</a>
+
+
+</li><li><a id="ctl00_TopNavBar_Art" class="down selected" href="http://www.codeproject.com/script/Articles/Latest.aspx">Articles</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_ArtTopicList" class="fly last" href="http://www.codeproject.com/script/Content/SiteMap.aspx">Chapters and Sections</a><ul id="ctl00_TopNavBar_MapFlyout"><li>
+				<div id="siteMap" class="tooltip-flyout">
+					<img src="animated.gif" style="margin: 150px; width: 100px; height: 100px;">
+				</div>
+			</li></ul>
+		</li>
+		<li><a id="ctl00_TopNavBar_ArtSearch" class="fly break" href="http://www.codeproject.com/search.aspx">Search</a></li>
+		<li><a id="ctl00_TopNavBar_ArtLatestArts" class="fly" href="http://www.codeproject.com/script/Articles/Latest.aspx?at=1,3,7">Latest Articles</a></li>
+		<li><a id="ctl00_TopNavBar_ArtLatestTips" class="fly" href="http://www.codeproject.com/script/Articles/Latest.aspx?at=6,8">Latest Tips/Tricks</a></li>
+		<li><a id="ctl00_TopNavBar_ArtTop" class="fly" href="http://www.codeproject.com/script/Articles/TopArticles.aspx?ta_so=4">Top Articles</a></li>
+		<li><a id="ctl00_TopNavBar_ArtBeginner" class="fly" href="http://www.codeproject.com/search.aspx?aidlst=152&amp;sa_us=True">Beginner Articles</a></li>
+		<li id="ctl00_TopNavBar_VideosLink">
+			<a id="ctl00_TopNavBar_ArtVideoArticles" class="fly" href="http://www.codeproject.com/script/Articles/VideoArticleList.aspx">Video Articles</a>
+		</li>
+		<li><a id="ctl00_TopNavBar_ArtBlogArticles" class="fly break" href="http://www.codeproject.com/script/Articles/BlogArticleList.aspx">Technical Blogs</a></li>
+		<li><a id="ctl00_TopNavBar_ArtPostArticle" class="fly" href="http://www.codeproject.com/script/Articles/Submit.aspx">Post an Article</a></li>
+		<li><a id="ctl00_TopNavBar_ArtPostTipTrick" class="fly" href="http://www.codeproject.com/Tips/post.aspx">Post Tip &amp; Trick</a></li>
+		<li><a id="ctl00_TopNavBar_ArtPostBlog" class="fly break" href="http://www.codeproject.com/script/Articles/BlogFeed.aspx">Post your Blog</a></li>
+		<li><a id="ctl00_TopNavBar_ArtGuide" class="fly" href="http://www.codeproject.com/info/Submit.aspx">Posting/Update Guidelines</a></li>
+		<li><a id="ctl00_TopNavBar_ArtCompetition" class="fly last" href="http://www.codeproject.com/script/Awards/CurrentCompetitions.aspx?cmpTpId=1">Article Competition</a></li>
+	</ul>
+
+</li>
+
+
+
+<li><a id="ctl00_TopNavBar_Answers" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active">Quick Answers</a>
+	<ul>
+		<li id="ctl00_TopNavBar_AQL"><a id="ctl00_TopNavBar_ArticleQuestion" class="fly highlight" href="#_comments">Ask a Question about this article</a></li>
+
+		<li><a id="ctl00_TopNavBar_QAAsk" class="fly" href="http://www.codeproject.com/Questions/ask.aspx">Ask a Question</a></li>
+
+		
+		<li><a id="ctl00_TopNavBar_QAUnanswered" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=unanswered">View Unanswered Questions</a></li>
+		<li><a id="ctl00_TopNavBar_QALatest" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active">View All Questions...</a></li>
+		
+				<li><a id="ctl00_TopNavBar_QATR_ctl00_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=81" style="padding-left: 30px;">C# questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl01_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=85" style="padding-left: 30px;">ASP.NET questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl02_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=842" style="padding-left: 30px;">VB.NET questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl03_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=78" style="padding-left: 30px;">C++ questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl04_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=308" style="padding-left: 30px;">C#4.0 questions</a></li>
+			
+	</ul>
+
+</li>
+
+
+
+<li><a id="ctl00_TopNavBar_Forums" href="http://www.codeproject.com/script/Forums/List.aspx">Discussions</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_MessageBoardsAll" class="fly" href="http://www.codeproject.com/script/Forums/List.aspx">All Message Boards...</a></li>
+		<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1580997/Application-Lifecycle.aspx">Application Lifecycle<span class="fly-menu">&gt;</span></a>
+<ul><li><a class="fly" href="http://www.codeproject.com/Forums/369270/Design-and-Architecture.aspx">Design and Architecture</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1533717/Running-a-Business.aspx">Running a Business</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1533716/Sales-Marketing.aspx">Sales / Marketing</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1651/Collaboration-Beta-Testing.aspx">Collaboration / Beta Testing</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/3304/Work-Training-Issues.aspx">Work &amp; Training Issues</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1627782/Free-Tools.aspx">Free Tools</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1647/C-Cplusplus-MFC.aspx">C / C++ / MFC<span class="fly-menu">&gt;</span></a>
+<ul><li><a class="fly" href="http://www.codeproject.com/Forums/4486/ATL-WTL-STL.aspx">ATL /  WTL / STL</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/3785/Managed-Cplusplus-CLI.aspx">Managed C++/CLI</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1649/Csharp.aspx">C#</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1725/Database.aspx">Database</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/186301/Hardware-Devices.aspx">Hardware &amp; Devices<span class="fly-menu">&gt;</span></a>
+<ul><li><a class="fly" href="http://www.codeproject.com/Forums/1644/System-Admin.aspx">System Admin</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1606152/Hosting-and-Servers.aspx">Hosting and Servers</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1643/Java.aspx">Java</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1653293/NET-4-5-and-Visual-Studio-11.aspx">.NET 4.5 and Visual Studio 11</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1650/NET-Framework.aspx">.NET Framework</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/13695/Mobile.aspx">Mobile</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1540733/Sharepoint.aspx">Sharepoint</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1004257/Silverlight-WPF.aspx">Silverlight / WPF</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1646/Visual-Basic.aspx">Visual Basic</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1640/Web-Development.aspx">Web Development<span class="fly-menu">&gt;</span></a>
+<ul><li><a class="fly" href="http://www.codeproject.com/Forums/12076/ASP-NET.aspx">ASP.NET</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1580227/CSS.aspx">CSS</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1580226/JavaScript.aspx">JavaScript</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1213656/PHP.aspx">PHP</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1645/Site-Bugs-Suggestions.aspx">Site Bugs / Suggestions</a>
+</li>
+
+
+		<li class="heading">Other Languages<span class="fly-menu">&gt;</span>
+		<ul>
+		<li><a class="fly" href="http://www.codeproject.com/Forums/1580229/Hindi.aspx">General Indian Topics</a></li>
+		<li><a class="fly" href="http://www.codeproject.com/Forums/1580230/Chinese.aspx">General Chinese Topics</a></li>
+		</ul>
+		</li>
+	</ul>
+
+</li>
+
+<li><a id="ctl00_TopNavBar_Zones" href="http://www.codeproject.com/Zones/index.aspx">Learning Zones</a>
+
+	<ul>
+		<!--<li class="heading">Zones</li>-->
+		<li><a href="http://www.codeproject.com/Zones/Commerce/" class="fly">The Commerce Zone</a></li><li><a href="http://www.codeproject.com/Zones/Mobile/" class="fly">The Mobile Zone</a></li><li><a href="http://www.codeproject.com/Zones/Cloud/" class="fly">The Cloud Zone</a></li><li><a href="http://www.codeproject.com/Zones/Hardware/" class="fly">The Hardware Zone</a></li><li><a href="http://www.codeproject.com/Zones/Parallelism/" class="fly">The Parallelism Zone</a></li><li><a href="http://www.codeproject.com/Zones/WPF-Silverlight/" class="fly">The WPF / Silverlight Zone</a></li><li><a href="http://www.codeproject.com/Zones/Flex-Flash/" class="fly">The Flex / Flash Zone</a></li><li><a href="http://www.codeproject.com/Zones/HTML-CSS/" class="fly">The HTML5 / CSS3 Zone</a></li><li><a href="http://www.codeproject.com/Zones/SqlServer/" class="fly">The SQL Zone</a></li><li><a href="http://www.codeproject.com/Zones/WhitePapers/" class="fly break">WhitePapers / Webcasts</a></li>
+		<li><a id="ctl00_TopNavBar_Solutions" class="fly last" href="http://www.codeproject.com/kb/Solution-Center/">Solutions Center</a></li>
+	</ul>
+
+</li>
+
+
+
+
+
+
+
+
+
+
+<li><a id="ctl00_TopNavBar_Features" href="http://www.codeproject.com/Feature/">Features</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_WhosWho" class="fly" href="http://www.codeproject.com/script/Membership/Profiles.aspx">Who's Who</a></li>
+		<li><a id="ctl00_TopNavBar_MVPs" class="fly" href="http://www.codeproject.com/script/Awards/MVPWinners.aspx">Most Valuable Professionals</a></li>
+		<li><a id="ctl00_TopNavBar_Companies" class="fly break" href="http://www.codeproject.com/script/Membership/Profiles.aspx?mgtid=1&amp;mgm=True">Company Listings</a></li>
+		<li><a id="ctl00_TopNavBar_Catalog" class="fly" href="http://www.codeproject.com/script/Catalog/List.aspx">Component &amp; Service Catalog</a></li>
+		<li><a id="ctl00_TopNavBar_Comps" class="fly" href="http://www.codeproject.com/script/Awards/CurrentCompetitions.aspx?cmpTpId=1&amp;awsac=true">Competitions</a></li>
+		<li><a id="ctl00_TopNavBar_News" class="fly" href="http://www.codeproject.com/script/News/List.aspx">News</a></li>
+		<li><a id="ctl00_TopNavBar_TechSummit" class="fly" href="http://www.codeproject.com/TechSummit/">Tech Summits</a></li>
+		<li><a id="ctl00_TopNavBar_Insider" class="fly" href="http://www.codeproject.com/Feature/Insider/">Daily Insider</a></li>
+		<li><a id="ctl00_TopNavBar_Newsletters" class="fly" href="http://www.codeproject.com/script/Mailouts/Archive.aspx?mtpid=1">Newsletter archive</a></li>
+		<li><a id="ctl00_TopNavBar_PressRelease" class="fly" href="http://www.codeproject.com/script/PressReleases/Preview.aspx">Press Releases</a></li>
+		<li><a id="ctl00_TopNavBar_Surveys" class="fly" href="http://www.codeproject.com/script/Surveys/List.aspx">Surveys</a></li>
+		<li><a id="ctl00_TopNavBar_Stuff" class="fly" href="http://www.codeproject.com/Info/Stuff.aspx">CodeProject Stuff</a></li>
+		<li><a id="ctl00_TopNavBar_AddIn" class="fly last" href="http://www.codeproject.com/Services/Addins/">The Code Project VS 2008 add-in</a></li>
+	</ul>
+
+</li>
+
+
+<li><a id="ctl00_TopNavBar_Help" href="http://www.codeproject.com/KB/FAQs/">Help!</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_HelpWhatIs" class="fly" href="http://www.codeproject.com/info/guide.aspx">What is 'The Code Project'?</a></li>
+		<li><a id="ctl00_TopNavBar_HelpGeneral" class="fly" href="http://www.codeproject.com/KB/FAQs/">General FAQ</a></li>
+		<li><a id="ctl00_TopNavBar_HelpPostQuestion" class="fly" href="http://www.codeproject.com/Questions/ask.aspx">Post a Question</a></li>
+		<li><a id="ctl00_TopNavBar_HelpBugs" class="fly" href="http://www.codeproject.com/Forums/1645/Site-Bugs-Suggestions.aspx">Bugs and Suggestions</a></li>
+		<li><a id="ctl00_TopNavBar_HelpSiteMap" class="fly" href="http://www.codeproject.com/script/Content/SiteMap.aspx">Site Directory</a></li>
+		<li><a id="ctl00_TopNavBar_HelpAdvertise" class="fly" href="http://lakequincy.com/">Advertise with us</a></li>
+		<li><a id="ctl00_TopNavBar_HelpAboutUs" class="fly last" href="http://www.codeproject.com/info/about.aspx">About Us</a></li>
+	</ul>
+
+</li>
+
+
+<li style="margin-left: 10px;">
+<a id="ctl00_TopNavBar_Lounge" class="simple" href="http://www.codeproject.com/Lounge.aspx">The Lounge</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_LoungeLnk" class="fly" href="http://www.codeproject.com/Lounge.aspx">The Lounge &nbsp;</a></li>
+		<li><a id="ctl00_TopNavBar_CleverLnk" class="fly" href="http://www.codeproject.com/feature/CleverCode.aspx">Clever Code</a></li>
+		<li><a id="ctl00_TopNavBar_ShameLnk" class="fly" href="http://www.codeproject.com/feature/HallOfSHame.aspx">Hall of Shame</a></li>
+		<li><a id="ctl00_TopNavBar_SoapBoxLnk" class="fly" href="http://www.codeproject.com/Forums/1536756/The-Soapbox-2-0.aspx">The Soapbox</a></li>
+	</ul>
+
+</li>
+
+</ul>
+
+</div>
+
+
+		</td><td align="right">
+			
+
+<div class="search-bar">
+
+<form method="get" action="http://www.codeproject.com/search.aspx" name="Search" class="tight">
+
+
+<table class="search" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><input tabindex="2" class="search highlight" id="sb_tb" value="winpcap header file" name="q"></td><td><input src="search.gif" type="image"></td></tr></tbody></table>
+
+<div class="hover-container">
+	<div style="display: none;" id="SearchFilter" class="search-advanced small-text align-left">
+	<b>Search within:<br></b>
+		
+		<input id="sb_kw" name="sbo" value="kw" checked="checked" type="radio"><label for="sb_kw">Articles</label><br>
+<input id="sb_qa" name="sbo" value="qa" type="radio"><label for="sb_qa">Quick Answers</label><br>
+<input id="sb_fm" name="sbo" value="fm" type="radio"><label for="sb_fm">Messages</label><br>
+<input id="sb_ctlk" name="sbo" value="ctlk" type="radio"><label for="sb_ctlk">Product Catalog</label><br>
+
+
+		
+		
+	</div>
+</div>
+</form>
+
+</div>
+		</td></tr></tbody></table>
+		
+
+		
+		<div class="container-article hreview-aggregate">
+		
+			
+			<div class="container-header">
+				<div id="ctl00_Header" class="header">
+
+					<a name="Main"></a>
+
+					
+					<a name="_articleTop" id="_articleTop"></a>
+					
+
+<div class="clearfix hover-container">
+
+	<div class="container">
+		
+		<div class="breadcrumb float-left"><a href="http://www.codeproject.com/script/Content/SiteMap.aspx"><span class="sitemap-anchor"><img src="sitemap16.png" alt="Site map" style="vertical-align: middle;" border="0" height="16px" width="16px"><div id="map" class="tooltip-flyout"><img src="animated.gif" style="margin: 150px; width: 100px; height: 100px; border: 0pt none;"></div></span></a> » <a href="http://www.codeproject.com/Chapters/6/General-Programming.aspx">General Programming</a> » <a href="http://www.codeproject.com/KB/IP/">Internet / Network</a> » <a href="http://www.codeproject.com/KB/IP/#Beginners">Beginners</a></div>
+	</div>
+
+	
+	<div id="ctl00_TitleArea_InfoArea" class="float-right">
+		
+
+<div class="infobox">
+	<table class="tight small-text" cellpadding="0" cellspacing="1">
+	<tbody><tr><td>Licence&nbsp;</td><td><a href="http://www.codeproject.com/info/cpol10.aspx" title="The Code Project Open License (CPOL)">CPOL</a></td></tr>
+	
+	<tr><td>First Posted&nbsp;</td><td nowrap="nowrap"><b>18 Oct 2008</b></td></tr>
+	<tr><td>Views&nbsp;</td><td><b>32,347</b></td></tr>
+		
+	
+	<tr><td>Bookmarked&nbsp;</td><td><b>51 times</b></td></tr>
+	
+
+	
+	
+	</tbody></table>
+</div>	
+	</div>
+
+	
+	<div class="item">
+	<h1 id="ctl00_TitleArea_ArticleTitle" class="fn">Introduction to the WinPcap Networking Libraries</h1>
+	</div>
+
+	
+	<div class="author">
+		By <b><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=1288560">cristitomi</a></b> | 
+		18 Oct 2008 
+		
+
+		
+		
+	</div>
+	
+	<div class="tags">
+	<span id="ctl00_TitleArea_TagsList_TagWrp" class="tags">
+	
+	
+	
+	<span id="ctl00_TitleArea_TagsList_VisibleTags"><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=9">VC8.0</a></span><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=23">Win2K</a></span><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=24">WinXP</a></span><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=118">Dev</a></span><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=152">Beginner</a></span></span> 
+
+	
+	
+</span>
+
+	</div>
+
+	
+	<div class="abstract summary"><span id="ctl00_TitleArea_ArticleDescr">An introduction to the WinPcap networking libraries.</span></div>
+</div>
+
+
+
+					
+
+				</div>
+
+				<div id="ctl00_HeadSide" class="header-sidebar">
+					<div class="align-left" style="height: 24px;">
+						
+
+
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+					</div>
+
+					
+
+<div class="bold pad-top">See Also</div>
+<ul class="outdent small-text" style="margin-left: 5px;">
+	<li><a id="ctl00_SeeAlso_LikeThis" href="http://www.codeproject.com/search.aspx?q=Introduction+++WinPcap+Networking+Libraries">More like this</a></li>
+	<li><a id="ctl00_SeeAlso_ByAuthor" href="http://www.codeproject.com/script/Articles/MemberArticles.aspx?amid=1288560">More by this author</a></li>
+</ul>
+
+				</div>
+
+			</div>
+			
+
+			
+			<div id="ctl00_Nav" class="container-nav">
+				<div id="ctl00_TabContainer" class="tabs-container clearfix">
+
+					
+					<div class="float-right action-links"> 
+						<a id="ctl00_ActionLinks_PrintLnk" class="tooltip" href="http://www.codeproject.com/KB/IP/winpcap_basic.aspx?display=Print">
+	<img src="print.gif" style="vertical-align: middle; border: 0pt none;" height="24px" width="24px">
+	<div class="speech-bubble-container-up">
+		<div class="speech-bubble-up">Print Article</div>
+		<div class="speech-bubble-pointer-up">
+			<div class="speech-bubble-pointer-up-inner"></div>
+		</div>
+	</div>
+</a>
+
+<span id="SBI"><img src="share_drop24.png" id="ctl00_ActionLinks_AddTo_Img" alt="add" style="vertical-align: middle;" height="24" width="37">
+</span>
+<div style="left: 675px; top: 194.833px;" id="ATD" class="list-socialbookmark"><div><a class="AddTo" title="Add this page to Twitter" onclick="return socialLinks.addto(0);" href="#"><img src="addto_twitter.gif" align="absmiddle" border="0" height="16px" width="16px"> Twitter</a> </div><div><a class="AddTo" title="Add this page to Digg" onclick="return socialLinks.addto(1);" href="#"><img src="addto_digg.png" align="absmiddle" border="0" height="16px" width="16px"> Digg</a> </div><div><a class="AddTo" title="Add this page to Facebook" onclick="return socialLinks.addto(2);" href="#"><img src="addto_facebook.png" align="absmiddle" border="0" height="16px" width="16px"> Facebook</a> </div><div><a class="AddTo" title="Add this page to Del.icio.us" onclick="return socialLinks.addto(3);" href="#"><img src="addto_delicious.png" align="absmiddle" border="0" height="16px" width="16px"> Del.icio.us</a> </div><div><a class="AddTo" title="Add this page to Reddit" onclick="return socialLinks.addto(4);" href="#"><img src="addto_reddit.png" align="absmiddle" border="0" height="16px" width="16px"> Reddit</a> </div><div><a class="AddTo" title="Add this page to Stumbleupon" onclick="return socialLinks.addto(5);" href="#"><img src="addto_stumbleupon.png" align="absmiddle" border="0" height="16px" width="16px"> Stumbleupon</a> </div><div><a class="AddTo" title="Add this page to Newsvine" onclick="return socialLinks.addto(6);" href="#"><img src="addto_newsvine.png" align="absmiddle" border="0" height="16px" width="16px"> Newsvine</a> </div><div><a class="AddTo" title="Add this page to Technorati" onclick="return socialLinks.addto(7);" href="#"><img src="addto_technorati.png" align="absmiddle" border="0" height="16px" width="16px"> Technorati</a> </div><div><a class="AddTo" title="Add this page to Mr. Wong" onclick="return socialLinks.addto(8);" href="#"><img src="addto_mrwong.png" align="absmiddle" border="0" height="16px" width="16px"> Mr. Wong</a> </div><div><a class="AddTo" title="Add this page to Yahoo!" onclick="return socialLinks.addto(9);" href="#"><img src="addto_yahoo.png" align="absmiddle" border="0" height="16px" width="16px"> Yahoo!</a> </div><div><a class="AddTo" title="Add this page to Google" onclick="return socialLinks.addto(10);" href="#"><img src="addto_google.png" align="absmiddle" border="0" height="16px" width="16px"> Google</a> </div><div><a class="AddTo" title="Add this page to Windows Live" onclick="return socialLinks.addto(11);" href="#"><img src="addto_live.png" align="absmiddle" border="0" height="16px" width="16px"> Windows Live</a> </div><div><a class="AddTo" title="Send as Email" onclick="return socialLinks.addto(12);" href="#"><img src="envelope.gif" align="absmiddle" border="0" height="16px" width="16px"> Send as Email</a> </div></div> 
+ 
+
+<span class="tooltip">
+	 
+	<div class="speech-bubble-container-up">
+		<div class="speech-bubble-up">Add to your CodeProject bookmarks</div>
+		<div class="speech-bubble-pointer-up">
+			<div class="speech-bubble-pointer-up-inner"></div>
+		</div>
+	</div>
+</span>
+
+<a id="discussAnch" href="#_comments" class="tooltip anchorLink">
+	
+	<img src="discuss.gif" alt="Discuss" style="vertical-align: middle; border: 0pt none;" height="24px" width="24px">
+	<div class="speech-bubble-container-up">
+		<div class="speech-bubble-up">Discuss this article</div>
+		<div class="speech-bubble-pointer-up">
+			<div class="speech-bubble-pointer-up-inner"></div>
+		</div>
+	</div>
+</a>
+<span id="ctl00_ActionLinks_cmtcnt" class="subdue small-text align-middle" style="margin-left: -4px;">10</span>
+
+
+
+
+
+					</div>
+
+					<div class="float-left">
+						
+						
+
+<div class="tabs float-left"><table cellpadding="0" cellspacing="0"><tbody><tr>
+	<td class="tab-selected">Article</td><td class="tab-unselected"><a href="http://www.codeproject.com/script/Articles/ViewDownloads.aspx?aid=30234">Browse Code</a></td><td class="tab-unselected"><a href="http://www.codeproject.com/script/Articles/Statistics.aspx?aid=30234">Stats</a></td><td class="tab-unselected"><a href="http://www.codeproject.com/script/Articles/ListVersions.aspx?aid=30234">Revisions (2)</a></td>
+</tr></tbody></table></div>	
+
+
+						
+						<div class="float-left" style="margin-left: 15px;">
+							<div id="ctl00_CurRat" class="tooltip" name="CurRat_30234">
+								
+
+<table class="small-text" cellpadding="0" cellspacing="0">
+<tbody><tr>
+	
+	<td class="nowrap">
+
+		<span id="ctl00_ArticleRating_VI">
+		<div class="nowrap rating-stars" style="height: 24px; width: 120px; position: relative;">
+	<div class="clipped align-left float-left" style="height: 24px; width: 114px;">
+		<img src="stars-fill.png" style="border-width: 0px;">
+	</div><div class="clipped" style="height: 24px; width: 6px; position: relative;">
+		<img src="stars-empty.png" style="border-width: 0px; position: absolute; top: 0pt; right: 0pt;">
+	</div>
+</div>
+		</span>
+
+		
+	</td>
+	
+	<td id="ctl00_ArticleRating_VR" class="nowrap">
+		&nbsp;<span id="ctl00_ArticleRating_VotesR">&nbsp;<span class="rating">4.76</span> (<span class="count">16 votes</span>)</span>
+		
+	</td>
+
+</tr>
+
+</tbody></table>
+
+								<div id="ctl00_RB" class="speech-bubble-container-up">
+									<div class="speech-bubble-up" style="width: 150px ! important;">
+										            
+<div>
+<table class="feature" title="Voting Distribution. Recent data only" cellpadding="0" cellspacing="0" height="50px" width="100%"><tbody><tr><td class="chart-column rating-ignore-vote" title="Outside deviation limits - not included in score."><img src="t_001.gif" alt="" title="" border="0px" height="1px" width="20pxpx"><br><span title="0 votes">1</span></td>
+<td class="chart-column rating-ignore-vote" title="Outside deviation limits - not included in score."><img src="t_001.gif" alt="" title="" border="0px" height="1px" width="20pxpx"><br><span title="0 votes">2</span></td>
+<td class="chart-column rating-ignore-vote" title="Outside deviation limits - not included in score."><img src="pollcol.gif" alt="1 vote, 6.3%" title="1 vote, 6.3%" border="0px" height="4px" width="20pxpx"><br><span title="1 vote">3</span></td>
+<td class="chart-column"><img src="pollcol.gif" alt="3 votes, 18.8%" title="3 votes, 18.8%" border="0px" height="12px" width="20pxpx"><br><span title="3 votes">4</span></td>
+<td class="chart-column"><img src="pollcol.gif" alt="12 votes, 75.0%" title="12 votes, 75.0%" border="0px" height="50px" width="20pxpx"><br><span title="12 votes">5</span></td>
+</tr></tbody></table><div class="small-text align-center">4.76/5 - 16 votes</div><div class="small-text align-center subdue">1 removed</div><div class="small-text align-center subdue">μ 4.20, σ<sub>a</sub> 1.05 [<a href="http://www.codeproject.com/KB/FAQs/RatingReputationFAQ.aspx#noisefilter">?</a>]</div>
+</div>
+									</div>
+									<div class="speech-bubble-pointer-up">
+										<div class="speech-bubble-pointer-up-inner"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div id="ctl00_HeadSideFoot" class="tabs-sidebar">
+					<div>Sponsored Links</div>
+				</div>
+			</div>
+			
+
+			
+			<div class="container-text">
+
+				<div id="AT" class="text">
+					
+					
+					
+					
+
+					   
+
+						
+							
+			
+					<form name="aspnetForm" method="post" action="http://www.codeproject.com/KB/IP/winpcap_basic.aspx" id="aspnetForm" style="margin: 0pt; padding: 0pt;"><div>
+<input name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMjExOTQzNjk4Mw9kFgJmD2QWAgIGD2QWCgIBDxYCHgdWaXNpYmxlZ2QCEQ9kFgICAQ9kFgZmDw8WAh4LTmF2aWdhdGVVcmwFMi9zY3JpcHQvQXJ0aWNsZXMvQWRtaW4vRWRpdG9yQ2hvaWNlLmFzcHg/YWlkPTMwMjM0ZGQCAg8PFgIfAQU4L3NjcmlwdC9Bd2FyZHMvQWRtaW4vQXdhcmRPYmplY3QuYXNweD9vYmlkPTMwMjM0Jm9idGlkPTJkZAIKDw8WAh8BBS8vc2NyaXB0L0FydGljbGVzL0FkbWluL1F1ZXVlRWRpdC5hc3B4P2FpZD0zMDIzNGRkAhMPZBYCAgEPZBYCAgEPZBYGZg8PFgIfAQUnL0tCL0lQL3dpbnBjYXBfYmFzaWMuYXNweD9kaXNwbGF5PVByaW50ZGQCBA8WAh4JaW5uZXJodG1sBQIxMGQCBQ8PFgIfAQUmL3NjcmlwdC9BcnRpY2xlcy9SZXBvcnQuYXNweD9haWQ9MzAyMzRkZAIVD2QWAgIND2QWBgICDxYCHgZhY3Rpb24FGS9LQi9JUC93aW5wY2FwX2Jhc2ljLmFzcHgWCAIBD2QWAgIBDxYCHwBoZAIDD2QWAgICD2QWAgIBDxBkZBYAZAILDxYCHgtfIUl0ZW1Db3VudAIBZAIND2QWAgIBDxYCHgRUZXh0BUA8YSAgaHJlZj0iL0tCL0lQL3dpbnBjYXBfYmFzaWMuYXNweCNfYXJ0aWNsZVRvcCI+QXJ0aWNsZSBUb3A8L2E+ZAIJDw8WBB8FBQlQZXJtYWxpbmsfAQUZL0tCL0lQL3dpbnBjYXBfYmFzaWMuYXNweGRkAhcPFgIfBQUcQ29weXJpZ2h0IDIwMDggYnkgY3Jpc3RpdG9taWQCFw9kFgICBQ8PFgIfAGhkZGRh5UcYdn8YWQFELXIGYGJq4AVOnA==" type="hidden">
+</div>
+
+<div>
+
+	<input name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWCAL0quLFDgLAlMXDBwLBlMXDBwLClMXDBwLDlMXDBwLElMXDBwLP+++tCwK5upDkC7G34VbnZH6Jj7tSK07Wg+UW6po8" type="hidden">
+</div>
+
+						<!-- Article Text Start -->
+						<div id="contentdiv">
+						
+
+
+
+<!-- Article Starts -->
+
+
+<h2>Motivation</h2>
+
+<p>The first question you should ask yourself before starting to write an article is why do you need to write it. In my case, I have decided to write this introductory article because I saw that many people are interested in networking and they want to use the <span class="search-highlight">WinPcap</span> library for programming.</p>
+
+<p><span class="search-highlight">WinPcap</span> is a powerful set of libraries which can be used for various tasks, very important in network programming: obtain all available network adapters, obtain information about an adapter, like the name and the description of the adapter, capture network packets using one of the network interface cards of the computer, send network packets across the network, or filter the captured packets, to obtain only the desired ones.</p>
+
+<h2>Introduction</h2>
+
+<p>The most important thing to do before using this library is to install it correctly. That’s why I have decided to give a helping hand to all people who want to install and use the <span class="search-highlight">WinPcap</span> library. Remember this is not a <span class="search-highlight">WinPcap</span> tutorial. This presents the quickest way to install and start using <span class="search-highlight">WinPcap</span>. Thus, let’s start by learning how to install <span class="search-highlight">WinPcap</span>.</p>
+
+<h2>Installing and configuring <span class="search-highlight">WinPcap</span></h2>
+
+<p>First of all, we must install the <span class="search-highlight">WinPcap</span> driver and the DLL components. The latest version is 4.0.2. You can get it from the following location: <a href="http://www.winpcap.org/install/default.htm">http://www.<span class="search-highlight">winpcap</span>.org/install/default.htm</a>.</p>
+
+<p><img alt="Sample Image" src="winpcap_basic1_small.gif" height="439" width="600"></p>
+
+<p>After downloading and running the executable <span class="search-highlight">file</span>, following the instructions given by the wizard, the <span class="search-highlight">WinPcap</span> components are installed on your computer.</p>
+
+<p><img alt="Sample Image" src="winpcap_basic2.gif" height="393" width="501"></p>
+
+<p>The next step is to download the <span class="search-highlight">WinPcap</span> developer’s pack. This can be obtained from the following location: <a href="http://www.winpcap.org/devel.htm">http://www.<span class="search-highlight">winpcap</span>.org/devel.htm</a>.</p>
+
+<p><img alt="Sample Image" src="winpcap_basic3_small.gif" height="438" width="600"></p>
+
+<p>This is a Zip <span class="search-highlight">file</span> that contains the resources needed to create <span class="search-highlight">WinPcap</span> networking applications: libraries, include <span class="search-highlight">file</span>s, documentation, and example applications. You must download the Zip <span class="search-highlight">file</span> and uncompress it to the desired folder. For example, I have placed the developer’s pack in “<em>C:\WpdPack_4_0_2\WpdPack</em>”.</p>
+
+<p><img alt="Sample Image" src="winpcap_basic4_small.gif" height="141" width="582"></p>
+
+<p>Now, we are finally ready to start using <span class="search-highlight">WinPcap</span>’s power to develop strong, networking applications. For the sake of the example, I will use Visual Studio 2005 in the following examples.</p>
+
+<p>Let’s see how to link a C++ program with the <span class="search-highlight">WinPcap</span> libraries. First, we create a simple C++ console application project, named <span class="search-highlight">winpcap</span>Test. Then, go to Project -&gt; <span class="search-highlight">winpcap</span>Test Properties… and do the following:</p>
+
+<p>Under the “Configuration Properties -&gt; C/C++ -&gt; General” tab, add the <span class="search-highlight">WinPcap</span> include path (“<em>C:\WpdPack_4_0_2\WpdPack\Include</em>”) to Additional Include Directories:</p>
+
+<p><img alt="Sample Image" src="winpcap_basic5_small.gif" height="418" width="600"></p>
+
+<p>Under the “Configuration Properties -&gt; Linker -&gt; General” tab, add the <span class="search-highlight">WinPcap</span> library path (“<em>C:\WpdPack_4_0_2\WpdPack\Lib</em>”) to Additional Library Directories:</p>
+
+<p><img alt="Sample Image" src="winpcap_basic6_small.gif" height="418" width="600"></p>
+
+<p>Under the “Configuration Properties -&gt; Linker -&gt; Input” tab, add the two main <span class="search-highlight">WinPcap</span> libraries (<em>wpcap.lib</em> and <em>Packet.lib</em>) to Additional Dependencies:</p>
+
+<p><img alt="Sample Image" src="winpcap_basic7_small.gif" height="417" width="600"></p>
+
+<p>That’s all there is to it. Now, we are ready to test the <span class="search-highlight">WinPcap</span> networking library.</p>
+
+<p>In what follows, we will present some simple examples of applications that use the <span class="search-highlight">WinPcap</span> libraries. For more detailed tutorials, see the <span class="search-highlight">WinPcap</span> documentation materials.</p>
+
+<h2>Using <span class="search-highlight">WinPcap</span></h2>
+
+<p>To use the libraries, we must simply include the <span class="search-highlight">WinPcap</span> <span class="search-highlight">header</span> (<code>#include &lt;pcap.h&gt;</code>) at the beginning of every source <span class="search-highlight">file</span> that uses the libraries. Also, usually we intend to use <span class="search-highlight">WinPcap</span> remote capabilities. In this case, we must add <code>HAVE_REMOTE</code> to the preprocessor definitions. To do this, under the “Project -&gt; <span class="search-highlight">winpcap</span>Test Properties… -&gt; Configuration Properties -&gt; C/C++ -&gt; Preprocessor” tab, add the <code>HAVE_REMOTE</code> definition to Preprocessor Definitions:</p>
+
+<p><img alt="Sample Image" src="winpcap_basic8_small.gif" height="418" width="600"></p>
+
+<h3>Obtaining the adapter list</h3>
+
+<p>Typically, the first thing we do when we use a <span class="search-highlight">WinPcap</span> based application is to obtain the list of attached network adapters. We do this with the <code>pcap_findalldevs_ex()</code> function, which returns a linked list of <code>pcap_if</code> structures. Every <code>pcap_if</code> structure contains detailed information about a network adapter. In particular, <code>name</code> and <code>description</code> contain the name and a detailed description of the corresponding device.</p>
+
+<p>In the following code, we obtain the network adapters and we print it on the screen. If no adapters are found, we print an error.</p>
+
+<div style="display: block;" width="100%" id="premain0" class="pre-action-link"><img preid="0" style="cursor: pointer;" src="minus.gif" id="preimg0" height="9" width="9"><span preid="0" style="cursor: pointer; margin-bottom: 0pt;" id="precollapse0"> Collapse</span><span> | </span><a preid="0" href="#">Copy Code</a></div><pre style="margin-top: 0pt;" id="pre0" lang="C++"><span class="code-preprocessor">#include</span><span class="code-preprocessor"> <span class="code-keyword">&lt;</span><span class="code-leadattribute">pcap.h</span><span class="code-keyword">&gt;</span>
+</span>
+
+<span class="code-keyword">int</span> _tmain(<span class="code-keyword">int</span> argc, _TCHAR* argv[])
+{
+    pcap_if_t * allAdapters;
+    pcap_if_t * adapter;
+    <span class="code-keyword">char</span> errorBuffer[ PCAP_ERRBUF_SIZE ];
+
+    <span class="code-comment">//</span><span class="code-comment"> retrieve the adapters from the computer
+</span>    <span class="code-keyword">if</span>( pcap_findalldevs_ex( PCAP_SRC_IF_STRING, NULL, 
+                &amp;allAdapters, errorBuffer ) == -<span class="code-digit">1</span> )
+    {
+        fprintf( stderr, <span class="code-string">"</span><span class="code-string">Error in pcap_findalldevs_ex function: %s\n"</span>, 
+                 errorBuffer );
+        <span class="code-keyword">return</span> -<span class="code-digit">1</span>;
+    }
+
+    <span class="code-comment">//</span><span class="code-comment"> if there are no adapters, print an error
+</span>    <span class="code-keyword">if</span>( allAdapters == NULL )
+    {
+        printf( <span class="code-string">"</span><span class="code-string">\nNo adapters found! Make sure <span class="search-highlight">WinPcap</span> is installed.\n"</span> );
+        <span class="code-keyword">return</span> <span class="code-digit">0</span>;
+    }
+
+    <span class="code-comment">//</span><span class="code-comment"> print the list of adapters along with basic information about an adapter
+</span>    <span class="code-keyword">int</span> crtAdapter = <span class="code-digit">0</span>;
+    <span class="code-keyword">for</span>( adapter = allAdapters; adapter != NULL; adapter = adapter-<span class="code-keyword">&gt;</span>next)
+    {
+        printf( <span class="code-string">"</span><span class="code-string">\n%d.%s "</span>, ++crtAdapter, adapter-<span class="code-keyword">&gt;</span>name );
+        printf( <span class="code-string">"</span><span class="code-string">-- %s\n"</span>, adapter-<span class="code-keyword">&gt;</span>description );
+    }
+
+    printf( <span class="code-string">"</span><span class="code-string">\n"</span> );
+
+    <span class="code-comment">//</span><span class="code-comment"> free the adapter list
+</span>    pcap_freealldevs( allAdapters );
+
+    system( <span class="code-string">"</span><span class="code-string">PAUSE"</span> );
+    <span class="code-keyword">return</span> <span class="code-digit">0</span>;
+}</pre>
+
+<p>In the code above, we see that the <code>pcap_findalldevs_ex()</code> function has an <code>errorBuffer</code> parameter. If an error is encountered, the description of the error will be stored in this parameter. At the end, to avoid memory leaks, we must free the adapter list, since we don’t need it anymore.</p>
+
+<p>If we compile the above program on an XP machine, we get the following adapters:</p>
+
+<ol>
+<li>rpcap://\Device\NPF_GenericDialupAdapter -- Network adapter 'Adapter for generic dialup and VPN capture' on local host</li>
+
+<li>rpcap://\Device\NPF_{E5C91E92-0E7F-4286-BDC3-4A6547E099C1} -- Network adapter 'VIA Rhine II Fast Ethernet Adapter (Microsoft's Packet Scheduler)' on local host</li>
+</ol>
+
+<h3>Opening an adapter and capturing the packets</h3>
+
+<p>Once we have learned how to obtain the list of attached adapters, it is time to see how to open a specified adapter and capture some packets. We use the function <code>pcap_open()</code> to open an adapter. Three of the parameters passed to <code>pcap_open()</code> are named <code>snaplen</code>, <code>flags</code>, and <code>to_ms</code>.</p>
+
+<ul>
+<li><code>snaplen</code> specifies the length of the packet to capture. For instance, on a Windows OS, the adapter can be configured to capture only a specified part of every network packet. To enable the application to always receive the entire contents of a packet, we give this parameter a value 65536.</li>
+
+<li><code>flags</code> specifies all flags passed to the adapter. The most important flag is the one that specifies if the adapter will be in promiscuous mode. If not in promiscuous mode, the adapter captures only the packets destined to it. The other packets are ignored. In promiscuous mode, the adapter captures all network packets (destined to it or not).</li>
+
+<li><code>to_ms</code> specifies the read timeout, in milliseconds. This means that, after <code>to_ms</code> milliseconds, the capture session will exit on the adapter. Setting this value to 0 means that we do not want a timeout.</li>
+</ul>
+
+<p>The following program opens a capture session on an adapter and prints some information about each captured network packet:</p>
+
+<div style="display: block;" width="100%" id="premain1" class="pre-action-link"><img preid="1" style="cursor: pointer;" src="minus.gif" id="preimg1" height="9" width="9"><span preid="1" style="cursor: pointer; margin-bottom: 0pt;" id="precollapse1"> Collapse</span><span> | </span><a preid="1" href="#">Copy Code</a></div><pre style="margin-top: 0pt;" id="pre1" lang="C++"><span class="code-preprocessor">#include</span><span class="code-preprocessor"> <span class="code-keyword">&lt;</span><span class="code-leadattribute">pcap.h</span><span class="code-keyword">&gt;</span>
+</span>
+
+<span class="code-keyword">int</span> _tmain(<span class="code-keyword">int</span> argc, _TCHAR* argv[])
+{
+    pcap_if_t           * allAdapters;
+    pcap_if_t           * adapter;
+    pcap_t           * adapterHandle;
+    <span class="code-keyword">struct</span> pcap_pkthdr * packet<span class="search-highlight">Header</span>;
+    <span class="code-keyword">const</span> u_char       * packetData;
+    <span class="code-keyword">char</span>                 errorBuffer[ PCAP_ERRBUF_SIZE ];
+
+    <span class="code-comment">//</span><span class="code-comment"> retrieve the adapters from the computer
+</span>    <span class="code-keyword">if</span>( pcap_findalldevs_ex( PCAP_SRC_IF_STRING, NULL, 
+            &amp;allAdapters, errorBuffer ) == -<span class="code-digit">1</span> )
+    {
+        fprintf( stderr, <span class="code-string">"</span><span class="code-string">Error in pcap_findalldevs_ex function: %s\n"</span>, errorBuffer );
+        <span class="code-keyword">return</span> -<span class="code-digit">1</span>;
+    }
+
+    <span class="code-comment">//</span><span class="code-comment"> if there are no adapters, print an error
+</span>    <span class="code-keyword">if</span>( allAdapters == NULL )
+    {
+    printf( <span class="code-string">"</span><span class="code-string">\nNo adapters found! Make sure <span class="search-highlight">WinPcap</span> is installed.\n"</span> );
+        <span class="code-keyword">return</span> <span class="code-digit">0</span>;
+    }
+
+    <span class="code-comment">//</span><span class="code-comment"> print the list of adapters along with basic information about an adapter
+</span>    <span class="code-keyword">int</span> crtAdapter = <span class="code-digit">0</span>;
+    <span class="code-keyword">for</span>( adapter = allAdapters; adapter != NULL; adapter = adapter-<span class="code-keyword">&gt;</span>next)
+    {
+    printf( <span class="code-string">"</span><span class="code-string">\n%d.%s "</span>, ++crtAdapter, adapter-<span class="code-keyword">&gt;</span>name );
+    printf( <span class="code-string">"</span><span class="code-string">-- %s\n"</span>, adapter-<span class="code-keyword">&gt;</span>description );
+    }
+
+    printf( <span class="code-string">"</span><span class="code-string">\n"</span> );
+
+    <span class="code-keyword">int</span> adapterNumber;
+
+    printf( <span class="code-string">"</span><span class="code-string">Enter the adapter number between 1 and %d:"</span>, crtAdapter );
+    scanf_s( <span class="code-string">"</span><span class="code-string">%d"</span>, &amp;adapterNumber );
+    
+    <span class="code-keyword">if</span>( adapterNumber <span class="code-keyword">&lt;</span> <span class="code-digit">1</span> || adapterNumber <span class="code-keyword">&gt;</span> crtAdapter )
+    {
+        printf( <span class="code-string">"</span><span class="code-string">\nAdapter number out of range.\n"</span> );
+
+        <span class="code-comment">//</span><span class="code-comment"> Free the adapter list
+</span>        pcap_freealldevs( allAdapters );
+
+        <span class="code-keyword">return</span> -<span class="code-digit">1</span>;
+    }
+    
+    <span class="code-comment">//</span><span class="code-comment"> parse the list until we reach the desired adapter
+</span>    adapter = allAdapters;
+    <span class="code-keyword">for</span>( crtAdapter = <span class="code-digit">0</span>; crtAdapter <span class="code-keyword">&lt;</span> adapterNumber - <span class="code-digit">1</span>; crtAdapter++ )
+    adapter = adapter-<span class="code-keyword">&gt;</span>next;
+
+    <span class="code-comment">//</span><span class="code-comment"> open the adapter
+</span>    adapterHandle = pcap_open( adapter-<span class="code-keyword">&gt;</span>name, <span class="code-comment">//</span><span class="code-comment"> name of the adapter
+</span>                               <span class="code-digit">65536</span>,         <span class="code-comment">//</span><span class="code-comment"> portion of the packet to capture
+</span>                                              <span class="code-comment">//</span><span class="code-comment"> 65536 guarantees that the whole 
+</span>                                              <span class="code-comment">//</span><span class="code-comment"> packet will be captured
+</span>                               PCAP_OPENFLAG_PROMISCUOUS, <span class="code-comment">//</span><span class="code-comment"> promiscuous mode
+</span>                               <span class="code-digit">1000</span>,             <span class="code-comment">//</span><span class="code-comment"> read timeout - 1 millisecond
+</span>                               NULL,          <span class="code-comment">//</span><span class="code-comment"> authentication on the remote machine
+</span>                               errorBuffer    <span class="code-comment">//</span><span class="code-comment"> error buffer
+</span>                              );
+
+    <span class="code-keyword">if</span>( adapterHandle == NULL )
+    {
+        fprintf( stderr, <span class="code-string">"</span><span class="code-string">\nUnable to open the adapter\n"</span>, adapter-<span class="code-keyword">&gt;</span>name );
+
+        <span class="code-comment">//</span><span class="code-comment"> Free the adapter list
+</span>        pcap_freealldevs( allAdapters );
+
+        <span class="code-keyword">return</span> -<span class="code-digit">1</span>;
+    }
+    
+    printf( <span class="code-string">"</span><span class="code-string">\nCapture session started on  adapter %s...\n"</span>, adapter-<span class="code-keyword">&gt;</span>name );
+
+    <span class="code-comment">//</span><span class="code-comment"> free the adapter list
+</span>    pcap_freealldevs( allAdapters );
+
+
+    <span class="code-comment">//</span><span class="code-comment"> this is the most important part of the application
+</span>    <span class="code-comment">//</span><span class="code-comment"> here we start receiving packet traffic
+</span>    <span class="code-keyword">int</span> retValue;
+    <span class="code-keyword">while</span>( ( retValue = pcap_next_ex( adapterHandle, 
+                      &amp;packet<span class="search-highlight">Header</span>, 
+                      &amp;packetData ) ) <span class="code-keyword">&gt;</span>= <span class="code-digit">0</span> )
+    {
+    <span class="code-comment">//</span><span class="code-comment"> timeout elapsed if we reach this point
+</span>    <span class="code-keyword">if</span>( retValue == <span class="code-digit">0</span> )
+            <span class="code-keyword">continue</span>;
+        
+    <span class="code-comment">//</span><span class="code-comment"> we print some information about the captured packet
+</span>    <span class="code-comment">//</span><span class="code-comment"> we print only the length of the packet here
+</span>    printf( <span class="code-string">"</span><span class="code-string">length of packet: %d\n"</span>, packet<span class="search-highlight">Header</span>-<span class="code-keyword">&gt;</span>len );
+    }
+    
+    <span class="code-comment">//</span><span class="code-comment"> if we get here, there was an error reading the packets
+</span>    <span class="code-keyword">if</span>( retValue == -<span class="code-digit">1</span> )
+    {
+        printf( <span class="code-string">"</span><span class="code-string">Error reading the packets: %s\n"</span>, pcap_geterr( adapterHandle ) );
+        <span class="code-keyword">return</span> -<span class="code-digit">1</span>;
+    }
+
+    system( <span class="code-string">"</span><span class="code-string">PAUSE"</span> );
+    <span class="code-keyword">return</span> <span class="code-digit">0</span>;
+}</pre>
+
+<p>Some explanations are in order about the above program.</p>
+
+<p>First of all, we see that the <code>pcap_open()</code> function, after opening the adapter, returns a handle to an adapter handle (a <code>pcap_t</code> structure), which we will use intensively in the capture session.</p>
+
+<p>For capturing a packet, we use the <code>pcap_next_ex()</code> function. This function receives as parameters the adapter handle created with the call to the <code>pcap_open()</code> function, a pointer to a <code>pcap_pkthdr</code> structure, which holds some information about the packet <span class="search-highlight">header</span>, and a pointer to a buffer in which we will store the whole packet data (including the packet <span class="search-highlight">header</span>).</p>
+
+<h3>Sending packets over the network</h3>
+
+<p>Another useful feature of the <span class="search-highlight">WinPcap</span> libraries is the ability to send packets over the network.</p>
+
+<p>To send a packet, we use the <code>pcap_sendpacket()</code> function. This function receives as parameters a buffer containing the data to send, the length of the buffer, and the adapter handle. An important thing to notice here is that, in order to send meaningful packets on the network, we must correctly create the packet data (with respect to the internet protocol <span class="search-highlight">header</span>s).</p>
+
+<p>In what follows, we create a simple program that sends a packet over the network:</p>
+
+<div style="display: block;" width="100%" id="premain2" class="pre-action-link"><img preid="2" style="cursor: pointer;" src="minus.gif" id="preimg2" height="9" width="9"><span preid="2" style="cursor: pointer; margin-bottom: 0pt;" id="precollapse2"> Collapse</span><span> | </span><a preid="2" href="#">Copy Code</a></div><pre style="margin-top: 0pt;" id="pre2" lang="C++"><span class="code-preprocessor">#include</span><span class="code-preprocessor"> <span class="code-keyword">&lt;</span><span class="code-leadattribute">pcap.h</span><span class="code-keyword">&gt;</span>
+</span>
+
+<span class="code-keyword">int</span> _tmain(<span class="code-keyword">int</span> argc, _TCHAR* argv[])
+{
+    pcap_if_t      * allAdapters;
+    pcap_if_t       * adapter;
+    pcap_t       * adapterHandle;
+    u_char         packet[ <span class="code-digit">20</span> ];
+    <span class="code-keyword">char</span>             errorBuffer[ PCAP_ERRBUF_SIZE ];
+
+    <span class="code-comment">//</span><span class="code-comment"> retrieve the adapters from the computer
+</span>    <span class="code-keyword">if</span>( pcap_findalldevs_ex( PCAP_SRC_IF_STRING, NULL, 
+                &amp;allAdapters, errorBuffer ) == -<span class="code-digit">1</span> )
+    {
+        fprintf( stderr, <span class="code-string">"</span><span class="code-string">Error in pcap_findalldevs_ex function: %s\n"</span>, 
+                 errorBuffer );
+        <span class="code-keyword">return</span> -<span class="code-digit">1</span>;
+    }
+
+    <span class="code-comment">//</span><span class="code-comment"> if there are no adapters, print an error
+</span>    <span class="code-keyword">if</span>( allAdapters == NULL )
+    {
+    printf( <span class="code-string">"</span><span class="code-string">\nNo adapters found! Make sure <span class="search-highlight">WinPcap</span> is installed.\n"</span> );
+        <span class="code-keyword">return</span> <span class="code-digit">0</span>;
+    }
+
+    <span class="code-comment">//</span><span class="code-comment"> print the list of adapters along with basic information about an adapter
+</span>    <span class="code-keyword">int</span> crtAdapter = <span class="code-digit">0</span>;
+    <span class="code-keyword">for</span>( adapter = allAdapters; adapter != NULL; adapter = adapter-<span class="code-keyword">&gt;</span>next)
+    {
+    printf( <span class="code-string">"</span><span class="code-string">\n%d.%s "</span>, ++crtAdapter, adapter-<span class="code-keyword">&gt;</span>name );
+    printf( <span class="code-string">"</span><span class="code-string">-- %s\n"</span>, adapter-<span class="code-keyword">&gt;</span>description );
+    }
+
+    printf( <span class="code-string">"</span><span class="code-string">\n"</span> );
+
+    <span class="code-keyword">int</span> adapterNumber;
+
+    printf( <span class="code-string">"</span><span class="code-string">Enter the adapter number between 1 and %d:"</span>, crtAdapter );
+    scanf_s( <span class="code-string">"</span><span class="code-string">%d"</span>, &amp;adapterNumber );
+    
+    <span class="code-keyword">if</span>( adapterNumber <span class="code-keyword">&lt;</span> <span class="code-digit">1</span> || adapterNumber <span class="code-keyword">&gt;</span> crtAdapter )
+    {
+        printf( <span class="code-string">"</span><span class="code-string">\nAdapter number out of range.\n"</span> );
+
+        <span class="code-comment">//</span><span class="code-comment"> Free the adapter list
+</span>        pcap_freealldevs( allAdapters );
+
+        <span class="code-keyword">return</span> -<span class="code-digit">1</span>;
+    }
+    
+    <span class="code-comment">//</span><span class="code-comment"> parse the list until we reach the desired adapter
+</span>    adapter = allAdapters;
+    <span class="code-keyword">for</span>( crtAdapter = <span class="code-digit">0</span>; crtAdapter <span class="code-keyword">&lt;</span> adapterNumber - <span class="code-digit">1</span>; crtAdapter++ )
+        adapter = adapter-<span class="code-keyword">&gt;</span>next;
+
+    <span class="code-comment">//</span><span class="code-comment"> open the adapter
+</span>    adapterHandle = pcap_open( adapter-<span class="code-keyword">&gt;</span>name, <span class="code-comment">//</span><span class="code-comment"> name of the adapter
+</span>                               <span class="code-digit">65536</span>,         <span class="code-comment">//</span><span class="code-comment"> portion of the packet to capture
+</span>                                              <span class="code-comment">//</span><span class="code-comment"> 65536 guarantees that the whole 
+</span>                                              <span class="code-comment">//</span><span class="code-comment"> packet will be captured
+</span>                               PCAP_OPENFLAG_PROMISCUOUS, <span class="code-comment">//</span><span class="code-comment"> promiscuous mode
+</span>                               <span class="code-digit">1000</span>,             <span class="code-comment">//</span><span class="code-comment"> read timeout - 1 millisecond
+</span>                               NULL,          <span class="code-comment">//</span><span class="code-comment"> authentication on the remote machine
+</span>                               errorBuffer    <span class="code-comment">//</span><span class="code-comment"> error buffer
+</span>                              );
+
+    <span class="code-keyword">if</span>( adapterHandle == NULL )
+    {
+        fprintf( stderr, <span class="code-string">"</span><span class="code-string">\nUnable to open the adapter\n"</span>, adapter-<span class="code-keyword">&gt;</span>name );
+
+        <span class="code-comment">//</span><span class="code-comment"> Free the adapter list
+</span>        pcap_freealldevs( allAdapters );
+
+        <span class="code-keyword">return</span> -<span class="code-digit">1</span>;
+    }
+    
+    <span class="code-comment">//</span><span class="code-comment"> free the adapter list
+</span>    pcap_freealldevs( allAdapters );
+
+
+    <span class="code-comment">//</span><span class="code-comment"> this is the most important part of the application
+</span>    <span class="code-comment">//</span><span class="code-comment"> here we send the packet
+</span>
+    <span class="code-comment">//</span><span class="code-comment"> first we create the packet
+</span>
+    <span class="code-comment">//</span><span class="code-comment"> set mac destination address to 01 : 01 : 01 : 01 : 01 : 01
+</span>    packet[<span class="code-digit">0</span>] = 0x01;
+    packet[<span class="code-digit">1</span>] = 0x01;
+    packet[<span class="code-digit">2</span>] = 0x01;
+    packet[<span class="code-digit">3</span>] = 0x01;
+    packet[<span class="code-digit">4</span>] = 0x01;
+    packet[<span class="code-digit">5</span>] = 0x01;
+    
+    <span class="code-comment">//</span><span class="code-comment"> set mac source address to 02 : 02 : 02 : 02 : 02 : 02
+</span>    packet[<span class="code-digit">6</span>]  = 0x02;
+    packet[<span class="code-digit">7</span>]  = 0x02;
+    packet[<span class="code-digit">8</span>]  = 0x02;
+    packet[<span class="code-digit">9</span>]  = 0x02;
+    packet[<span class="code-digit">10</span>] = 0x02;
+    packet[<span class="code-digit">11</span>] = 0x02;
+    
+    <span class="code-comment">//</span><span class="code-comment"> set the rest of the packet
+</span>    <span class="code-keyword">for</span>( <span class="code-keyword">int</span> index = <span class="code-digit">12</span>; index <span class="code-keyword">&lt;</span> <span class="code-digit">20</span>; index++ )
+    {
+        packet[index] = 0xC4;
+    }
+
+    <span class="code-comment">//</span><span class="code-comment"> send the packet
+</span>    <span class="code-keyword">if</span>( pcap_sendpacket( adapterHandle, <span class="code-comment">//</span><span class="code-comment"> the adapter handle
+</span>             packet, <span class="code-comment">//</span><span class="code-comment"> the packet
+</span>             <span class="code-digit">20</span> <span class="code-comment">//</span><span class="code-comment"> the length of the packet
+</span>               ) != <span class="code-digit">0</span> )
+    {
+        fprintf( stderr,<span class="code-string">"</span><span class="code-string">\nError sending the packet: \n"</span>, pcap_geterr( adapterHandle ) );
+        <span class="code-keyword">return</span> -<span class="code-digit">1</span>;
+    }
+
+    system( <span class="code-string">"</span><span class="code-string">PAUSE"</span> );
+    <span class="code-keyword">return</span> <span class="code-digit">0</span>;
+}</pre>
+
+<h2>Conclusion</h2>
+
+<p>In this article, we saw what <span class="search-highlight">WinPcap</span> libraries are, how they can be installed, and most importantly, some basic applications that use them. Check the documentation tutorials to explore the real power of <span class="search-highlight">WinPcap</span>.</p>
+
+<h2>History</h2>
+
+<ul>
+<li>18<sup>th</sup> October, 2008: Initial post.</li>
+</ul>
+
+
+
+
+
+
+						</div>
+						<!-- Article Text End -->
+
+						
+						
+						<h2>License</h2>
+						<div id="LicenseTerms"><p>This article, along with any associated source code and <span class="search-highlight">file</span>s, is licensed under <a href="http://www.codeproject.com/info/cpol10.aspx" rel="license">The Code Project Open License (CPOL)</a></p></div>
+						
+
+						
+
+						
+						<h2 id="ctl00_AboutHeading">About the Author</h2>
+
+						<div class="float-right">
+						<div class="lqm_ad" lqm_publisher="lqm.codeproject.site" lqm_zone="77" lqm_format="300x250" lqm_tags="VC8.0,Win2K,WinXP,Dev,Beginner"><iframe src="index_2.html" id="lqmad2" marginwidth="0" marginheight="0" frameborder="0" height="250" scrolling="no" width="300"></iframe></div>
+						</div>
+
+						
+						
+   
+<table border="0" cellpadding="0" cellspacing="5">
+<tbody><tr valign="top">
+<td id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberPhotoTable" style="width: 155px;" valign="top">
+	<b><a id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberProfileLink" href="http://www.codeproject.com/Members/cristitomi">cristitomi</a></b><br><br>
+	<center></center>
+
+	<div class="small-text">
+		<span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberJobTitle">Software Developer (Senior)</span><br>
+		<span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberCompany"></span><br>
+		<span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberLocation"><img src="ro.gif" alt="Romania" height="11px" width="16px"> Romania</span><br>
+		<br>
+		<span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberType">Member</span><br>
+		
+
+		
+	</div>
+</td>
+
+<td>
+	<br>	
+</td>
+</tr>
+</tbody></table><br>
+						
+						
+
+						<div class="clearfix"></div>
+
+						
+						<div id="ctl00_RateArticleRow" class="clearfix voting-bar">
+						<div class="float-left" style="padding-top: 8px;"><a href="http://www.codeproject.com/KB/IP/winpcap_basic.aspx#_articleTop">Article Top</a></div>
+						<div class="float-right align-right">
+							<div id="ctl00_RateArticle_RateItemWrapper" class="small-text" name="RateItem_30234">
+
+	<table class="small-text" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td id="ctl00_RateArticle_VoteResultDiv" align="right" nowrap="nowrap">
+			<span class="voteRes"></span>
+			<img class="loaderImg" alt="loading..." src="ajax-loader.gif" style="display: none;" height="16px" width="16px"> 
+		</td>
+
+	
+		<td class="voteTbl" style="white-space: nowrap;" align="right">
+			<table class="small-text">
+			<tbody><tr>
+				<td id="ctl00_RateArticle_SignIn" nowrap="nowrap">
+					<a href="#SignUp">Sign Up</a> to vote
+				</td>
+
+				
+				<td id="ctl00_RateArticle_StartForm" align="right" nowrap="nowrap">
+					<i>&nbsp;&nbsp;Poor</i>
+				</td>
+
+				<td id="ctl00_RateArticle_VoteFormDiv" class="nowrap">
+					
+
+					<span id="ctl00_RateArticle_RB" class="tooltip ajaxHist radio voting">
+						<span id="ctl00_RateArticle_VoteRBL"><input id="ctl00_RateArticle_VoteRBL_0" name="ctl00$RateArticle$VoteRBL" value="1" onclick="ChkRtctl00_RateArticle(1, 30234);
+$('#ctl00_RateArticle_RCD').show();
+;" type="radio"><input id="ctl00_RateArticle_VoteRBL_1" name="ctl00$RateArticle$VoteRBL" value="2" onclick="ChkRtctl00_RateArticle(2, 30234);
+$('#ctl00_RateArticle_RCD').show();
+;" type="radio"><input id="ctl00_RateArticle_VoteRBL_2" name="ctl00$RateArticle$VoteRBL" value="3" onclick="ChkRtctl00_RateArticle(3, 30234);
+$('#ctl00_RateArticle_RCD').show();
+;" type="radio"><input id="ctl00_RateArticle_VoteRBL_3" name="ctl00$RateArticle$VoteRBL" value="4" onclick="ChkRtctl00_RateArticle(4, 30234);
+$('#ctl00_RateArticle_RCD').show();
+;" type="radio"><input id="ctl00_RateArticle_VoteRBL_4" name="ctl00$RateArticle$VoteRBL" value="5" onclick="ChkRtctl00_RateArticle(5, 30234);
+$('#ctl00_RateArticle_RCD').show();
+;" type="radio"></span> 
+
+						
+					</span>
+
+				</td>
+
+				<td id="ctl00_RateArticle_EndForm" align="left">
+					<i>Excellent</i>
+				</td>
+
+				<td>	
+					<input name="ctl00$RateArticle$SubmitRateBtn" value="Vote" onclick="return PostBack_ctl00_RateArticle_RateItemWrapper();" id="ctl00_RateArticle_SubmitRateBtn" class="button" type="submit">
+				</td>
+			</tr>
+			</tbody></table>
+			<span id="ctl00_RateArticle_ErrorMessage" class="error"></span>
+		</td>
+	</tr>
+	</tbody></table>
+	<div class="hover-container">
+		<div id="ctl00_RateArticle_RCD" class="rating-comment align-left float-right">
+			Add a reason or comment to your vote: <a href="#" id="clear-rate_ctl00_RateArticle_RCD" title="close">x</a><br>
+			<textarea class="RateComment" rows="5" cols="60" style="width: 98%;"></textarea>
+			<span id="ctl00_RateArticle_CommentReq" class="subdue">Votes of 3 or less require a comment</span>
+		</div>
+	</div>
+</div>
+
+						</div>
+						</div>
+						
+
+					</form>
+
+					
+					<div style="margin: auto; padding: 0px 10px; white-space: nowrap; overflow: hidden; width: 468px; height: 60px;">		  
+						<div class="lqm_ad" lqm_publisher="lqm.codeproject.site" lqm_zone="77" lqm_format="468x60" lqm_tags="VC8.0,Win2K,WinXP,Dev,Beginner"><iframe src="index_3.html" id="lqmad3" marginwidth="0" marginheight="0" frameborder="0" height="60" scrolling="no" width="468"></iframe></div>
+						
+					</div>
+					
+
+					
+					
+					<h2>Comments and Discussions</h2>
+					<a name="_comments" id="_comments">&nbsp;</a><div id="_MessageBoard" onclick="return SwitchMessage(event, null)">
+<table id="ForumTable" class="box forum" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="forum-header1 highlight"><b>You must <a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fKB%2fIP%2fwinpcap_basic.aspx%3ffid%3d1528941%26df%3d90%26mpp%3d10%26noise%3d3%26prof%3dTrue%26sort%3dPosition%26view%3dQuick">Sign In</a> to use this message board.</b> (<a href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fKB%2fIP%2fwinpcap_basic.aspx%3ffid%3d1528941%26df%3d90%26mpp%3d10%26noise%3d3%26prof%3dTrue%26sort%3dPosition%26view%3dQuick">secure sign-in</a>)</td>
+</tr><tr>
+<td><table border="0" cellpadding="3px" cellspacing="0" width="100%">
+<tbody><tr class="forum-header1">
+<td style="white-space: nowrap;"><img src="info-16.gif" alt="FAQ" style="border-width: 0pt; width: 16px; height: 16px; vertical-align: middle;">&nbsp;<a href="http://www.codeproject.com/KB/FAQs/MessageBoardsFAQ.aspx"><b>FAQ</b></a>&nbsp;</td><td colspan="2" style="white-space: nowrap; text-align: right;"><form action="http://www.codeproject.com/Search.aspx?fid=0" method="get" style="margin: 0pt; padding: 0pt;">
+<input name="fid" value="1528941" type="hidden"><input value="" class="Frm_Input" name="qf" type="text">&nbsp;<input value="Search" class="button" type="submit">
+</form></td>
+</tr><tr class="forum-header2">
+<td colspan="3" style="width: 100%;"><div style="text-align: right;">
+<form action="http://www.codeproject.com/script/Forums/SetOptions.aspx?floc=%2fKB%2fIP%2fwinpcap_basic.aspx&amp;fid=1528941&amp;df=90&amp;mpp=10&amp;noise=3&amp;prof=True&amp;sort=Position&amp;view=Quick" method="get" style="margin: 0pt; padding: 0pt;">
+<input name="fid" value="1528941" type="hidden"><input name="currentQS" value="?floc=%2fKB%2fIP%2fwinpcap_basic.aspx&amp;fid=1528941&amp;df=90&amp;mpp=10&amp;noise=3&amp;prof=True&amp;sort=Position&amp;view=Quick" type="hidden"><input name="floc" value="/KB/IP/winpcap_basic.aspx" type="hidden"><input checked="checked" name="prof" id="prof" style="vertical-align: middle;" type="checkbox"><label for="prof">Profile popups</label>&nbsp;&nbsp;&nbsp;&nbsp;Noise level<select size="1" class="Frm_DropDown" name="noise">
+<option value="1">Very High</option><option value="2">High</option><option selected="selected" value="3">Medium</option><option value="4">Low</option><option value="5">Very Low</option>
+</select>&nbsp;&nbsp;Layout<select size="1" class="Frm_DropDown" name="view">
+<option selected="selected" value="Quick">Normal</option><option value="Topic">Expand Posts only</option><option value="Expanded">Expand Posts &amp; Replies</option><option value="Thread">Thread View</option><option value="Normal">No Javascript</option><option value="Preview">No JS + Preview</option>
+</select>&nbsp;&nbsp;Per page<select size="1" class="Frm_DropDown" name="mpp">
+<option selected="selected" value="10">10</option><option value="25">25</option><option value="50">50</option>
+</select>&nbsp;&nbsp;&nbsp;<input value="Update" name="SetOpt" class="button" type="submit">
+</form>
+</div></td>
+</tr>
+</tbody></table></td>
+</tr><tr>
+<td><a name="xx0xx"></a><table border="0" cellpadding="2px" cellspacing="0" width="100%">
+<tbody><tr class="forum-navbar">
+<td>&nbsp;</td><td> <a href="http://www.codeproject.com/KB/IP/winpcap_basic.aspx?fid=1528941&amp;df=90&amp;mpp=10&amp;noise=3&amp;prof=True&amp;sort=Position&amp;view=Quick">Refresh</a></td><td style="text-align: right; white-space: nowrap;"><span class="subdue">First</span> <span class="subdue">Prev</span> <span class="subdue">Next</span></td>
+</tr>
+</tbody></table></td>
+</tr><tr>
+<td><table class="fixed-layout blank-background" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td><img src="t_002.gif" alt="" border="0" height="5px" width="1px"></td>
+</tr><tr class="MsgHd Rt HdUnSel " id="F3960398_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="16px"><a name="xx3960398xx"></a><img src="msg_question.gif" alt="Question" align="top" height="16px" width="16px"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" rel="nofollow" name="3960398" parent="0" thread="3960398" href="http://www.codeproject.com/Messages/3960398/I-need-your-help-Mr-cristitomi.aspx">I need your help Mr.cristitomi</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="pin.gif" alt="Pin" align="top" border="0" height="12px" width="13px"></a></td><td class="Frm_MsgIcon"><img src="member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=8037010">thamir1988</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">23:10 15 Jul '11 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3960398_h1" style="display: none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 16px;"><img src="t_002.gif" alt="" height="1px" width="16px"></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">I followed every step of your topic but I can't compile any program above , there are so many errors especially in included file , I hope you help me to fix <br>
+note:I work under win7 os and use microsoft visual C++ 2008 express edition.<br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fKB%2fIP%2fwinpcap_basic.aspx">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/KB/IP/winpcap_basic.aspx?fid=1528941&amp;df=90&amp;mpp=10&amp;sort=Position&amp;tid=3960398" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3960398/I-need-your-help-Mr-cristitomi.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF3960398" style="white-space: nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="t_002.gif" alt="" border="0" height="1px" width="1px"></td>
+</tr><tr class="MsgHd LoVote Rt HdUnSel " id="F3858638_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="16px"><a name="xx3858638xx"></a><img src="msg_general.gif" alt="General" align="top" height="16px" width="16px"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" rel="nofollow" name="3858638" parent="0" thread="3858638" href="http://www.codeproject.com/Messages/3858638/WinPcap-Networking-Libraries.aspx">WinPcap Networking Libraries</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="pin.gif" alt="Pin" align="top" border="0" height="12px" width="13px"></a></td><td class="Frm_MsgIcon"><img src="member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=7766180">Member 7766180</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">11:39 15 Apr '11 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3858638_h1" style="display: none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 16px;"><img src="t_002.gif" alt="" height="1px" width="16px"></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Helo,<br>
+A very basic question here. I followed your exmples on setting up WinPcap, but I was wondering when you created the new console app what directory did you store the project in? I'm new to this so I do appreciate any help that you offer.<br>
+DS<br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fKB%2fIP%2fwinpcap_basic.aspx">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/KB/IP/winpcap_basic.aspx?fid=1528941&amp;df=90&amp;mpp=10&amp;sort=Position&amp;tid=3858638" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3858638/WinPcap-Networking-Libraries.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF3858638" style="white-space: nowrap;">1.00/5 (1 vote) </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="msg-divide"><img src="t_002.gif" alt="" border="0" height="1px" width="1px"></td>
+</tr><tr class="MsgHd HdUnSel " id="F3858654_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="34px"><a name="xx3858654xx"></a><img src="msg_general.gif" alt="General" align="top" height="16px" width="16px"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" rel="nofollow" name="3858654" parent="3858638" thread="3858638" href="http://www.codeproject.com/Messages/3858654/Re-WinPcap-Networking-Libraries.aspx">Re: WinPcap Networking Libraries</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="pin.gif" alt="Pin" align="top" border="0" height="12px" width="13px"></a></td><td class="Frm_MsgIcon"><img src="member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=7766180">Member 7766180</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">11:50 15 Apr '11 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3858654_h1" style="display: none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 34px;"><img src="t_002.gif" alt="" height="1px" width="34px"></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">I'm using Windows 7, and Visual Studio 2010 Ultimate<br>
+These are the errors I'm getting.<br>
+&nbsp;<br>
+	1	IntelliSense: identifier "pcap_findalldevs_ex" is undefined	c:\wpdpack\wintest\wintest\wintest.cpp	15	9	WinTest<br>
+	2	IntelliSense: identifier "PCAP_SRC_IF_STRING" is undefined	c:\wpdpack\wintest\wintest\wintest.cpp	15	30	WinTest<br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fKB%2fIP%2fwinpcap_basic.aspx">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/KB/IP/winpcap_basic.aspx?fid=1528941&amp;df=90&amp;mpp=10&amp;sort=Position&amp;tid=3858638" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3858654/Re-WinPcap-Networking-Libraries.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF3858654" style="white-space: nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="t_002.gif" alt="" border="0" height="1px" width="1px"></td>
+</tr><tr class="MsgHd Rt HdUnSel " id="F3401208_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="16px"><a name="xx3401208xx"></a><img src="msg_general.gif" alt="General" align="top" height="16px" width="16px"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" rel="nofollow" name="3401208" parent="0" thread="3401208" href="http://www.codeproject.com/Messages/3401208/I-hope-to-read-this-message-early.aspx">I hope to read this message early !</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="pin.gif" alt="Pin" align="top" border="0" height="12px" width="13px"></a></td><td class="Frm_MsgIcon"><img src="member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=4864493">mesajflaviu</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">9:51 12 Mar '10 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3401208_h1" style="display: none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 16px;"><img src="t_002.gif" alt="" height="1px" width="16px"></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Hy . I am interesed for <a href="http://beta.codeproject.com/KB/combobox/CListCtrlEx.aspx?msg=3401203#xx3401203xx" target="_top">this</a> project , and I understand that you have it .. could you give me ? Thank you !<br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fKB%2fIP%2fwinpcap_basic.aspx">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/KB/IP/winpcap_basic.aspx?fid=1528941&amp;df=90&amp;mpp=10&amp;sort=Position&amp;tid=3401208" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3401208/I-hope-to-read-this-message-early.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF3401208" style="white-space: nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="t_002.gif" alt="" border="0" height="1px" width="1px"></td>
+</tr><tr class="MsgHd Rt HdUnSel " id="F3247459_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="16px"><a name="xx3247459xx"></a><img src="msg_question.gif" alt="Question" align="top" height="16px" width="16px"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" rel="nofollow" name="3247459" parent="0" thread="3247459" href="http://www.codeproject.com/Messages/3247459/I-have-some-questions-about-the-examples.aspx">I have some questions about the examples.</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="pin.gif" alt="Pin" align="top" border="0" height="12px" width="13px"></a></td><td class="Frm_MsgIcon"><img src="member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=5432373">dong364</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">18:38 24 Oct '09 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3247459_h1" style="display: none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 16px;"><img src="t_002.gif" alt="" height="1px" width="16px"></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">At the second example, <br>
+	while( ( retValue = pcap_next_ex( adapterHandle, <br>
+		&amp;packetHeader, <br>
+		&amp;packetData ) ) &gt;= 0 )<br>
+here who allocated the memory that packetHeader and packetData pointed to, is system? Don't we need to release the memory  that packetHeader and packetData pointed to?<br>
+&nbsp;<br>
+At the last example, I don't know why we don't need to set des and src IP address when we create a packet?<br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fKB%2fIP%2fwinpcap_basic.aspx">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/KB/IP/winpcap_basic.aspx?fid=1528941&amp;df=90&amp;mpp=10&amp;sort=Position&amp;tid=3247459" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3247459/I-have-some-questions-about-the-examples.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF3247459" style="white-space: nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="msg-divide"><img src="t_002.gif" alt="" border="0" height="1px" width="1px"></td>
+</tr><tr class="MsgHd HdUnSel " id="F3335008_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="34px"><a name="xx3335008xx"></a><img src="msg_answer.gif" alt="Answer" align="top" height="16px" width="16px"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" rel="nofollow" name="3335008" parent="3247459" thread="3247459" href="http://www.codeproject.com/Messages/3335008/Re-I-have-some-questions-about-the-examples.aspx">Re: I have some questions about the examples.</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="pin.gif" alt="Pin" align="top" border="0" height="12px" width="13px"></a></td><td class="Frm_MsgIcon"><img src="member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=5699354">catalink21</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">13:32 17 Jan '10 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3335008_h1" style="display: none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 34px;"><img src="t_002.gif" alt="" height="1px" width="34px"></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">It is possible to create a c++ code for sniffing without installing winpcap. You can only add library to project?<br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fKB%2fIP%2fwinpcap_basic.aspx">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/KB/IP/winpcap_basic.aspx?fid=1528941&amp;df=90&amp;mpp=10&amp;sort=Position&amp;tid=3247459" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3335008/Re-I-have-some-questions-about-the-examples.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF3335008" style="white-space: nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="t_002.gif" alt="" border="0" height="1px" width="1px"></td>
+</tr><tr class="MsgHd Rt HdUnSel " id="F3136085_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="16px"><a name="xx3136085xx"></a><img src="msg_general.gif" alt="General" align="top" height="16px" width="16px"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" rel="nofollow" name="3136085" parent="0" thread="3136085" href="http://www.codeproject.com/Messages/3136085/Great.aspx">Great</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="pin.gif" alt="Pin" align="top" border="0" height="12px" width="13px"></a></td><td class="Frm_MsgIcon"><img src="member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=1655435">foreverfalco</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">5:44 27 Jul '09 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3136085_h1" style="display: none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 16px;"><img src="t_002.gif" alt="" height="1px" width="16px"></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Thanks for this great article<br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fKB%2fIP%2fwinpcap_basic.aspx">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/KB/IP/winpcap_basic.aspx?fid=1528941&amp;df=90&amp;mpp=10&amp;sort=Position&amp;tid=3136085" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3136085/Great.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF3136085" style="white-space: nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="msg-divide"><img src="t_002.gif" alt="" border="0" height="1px" width="1px"></td>
+</tr><tr class="MsgHd HdUnSel " id="F3137163_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="34px"><a name="xx3137163xx"></a><img src="msg_general.gif" alt="General" align="top" height="16px" width="16px"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" rel="nofollow" name="3137163" parent="3136085" thread="3136085" href="http://www.codeproject.com/Messages/3137163/Re-Great.aspx">Re: Great</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="pin.gif" alt="Pin" align="top" border="0" height="12px" width="13px"></a></td><td class="Frm_MsgIcon"><img src="member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=1288560">cristitomi</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">0:50 28 Jul '09 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3137163_h1" style="display: none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 34px;"><img src="t_002.gif" alt="" height="1px" width="34px"></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Glad I could help. <img src="smiley_smile.gif" alt="Smile | :)" align="top">  <br>
+&nbsp;<br>
+<div class="ForumSig">I am in love with VC++</div><br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fKB%2fIP%2fwinpcap_basic.aspx">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/KB/IP/winpcap_basic.aspx?fid=1528941&amp;df=90&amp;mpp=10&amp;sort=Position&amp;tid=3136085" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3137163/Re-Great.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF3137163" style="white-space: nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="t_002.gif" alt="" border="0" height="1px" width="1px"></td>
+</tr><tr class="MsgHd Rt HdUnSel " id="F2771094_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="16px"><a name="xx2771094xx"></a><img src="msg_general.gif" alt="General" align="top" height="16px" width="16px"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" rel="nofollow" name="2771094" parent="0" thread="2771094" href="http://www.codeproject.com/Messages/2771094/Source-code.aspx">Source code</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="pin.gif" alt="Pin" align="top" border="0" height="12px" width="13px"></a></td><td class="Frm_MsgIcon"><img src="member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=1288560">cristitomi</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">21:00 18 Oct '08 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F2771094_h1" style="display: none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 16px;"><img src="t_002.gif" alt="" height="1px" width="16px"></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">I will add the source code very soon. <br>
+&nbsp;<br>
+<div class="ForumSig">I am in love with VC++</div><br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fKB%2fIP%2fwinpcap_basic.aspx">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/KB/IP/winpcap_basic.aspx?fid=1528941&amp;df=90&amp;mpp=10&amp;sort=Position&amp;tid=2771094" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/2771094/Source-code.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF2771094" style="white-space: nowrap;">3.20/5 (5 votes) </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="msg-divide"><img src="t_002.gif" alt="" border="0" height="1px" width="1px"></td>
+</tr><tr class="MsgHd LoVote HdUnSel " id="F3435075_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="34px"><a name="xx3435075xx"></a><img src="msg_general.gif" alt="General" align="top" height="16px" width="16px"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" rel="nofollow" name="3435075" parent="2771094" thread="2771094" href="http://www.codeproject.com/Messages/3435075/Re-Source-code.aspx">Re: Source code</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="pin.gif" alt="Pin" align="top" border="0" height="12px" width="13px"></a></td><td class="Frm_MsgIcon"><img src="member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=6192449">liuning0820</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">17:59 11 Apr '10 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3435075_h1" style="display: none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 34px;"><img src="t_002.gif" alt="" height="1px" width="34px"></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">This article is so clear. thank u<br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fKB%2fIP%2fwinpcap_basic.aspx">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/KB/IP/winpcap_basic.aspx?fid=1528941&amp;df=90&amp;mpp=10&amp;sort=Position&amp;tid=2771094" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3435075/Re-Source-code.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF3435075" style="white-space: nowrap;">2.00/5 (1 vote) </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr>
+<td><img src="t_002.gif" alt="" border="0" height="5px" width="1px"></td>
+</tr>
+</tbody></table></td>
+</tr><tr>
+<td><table cellpadding="2px" cellspacing="0" width="100%">
+<tbody><tr class="forum-footer">
+<td>Last Visit: 19:00 31 Dec '99  &nbsp; &nbsp; Last Update: 16:25 8 Oct '11 </td><td style="text-align: right; white-space: nowrap;"><input id="_mbnUrl" value="/KB/IP/winpcap_basic.aspx?fid=1528941&amp;df=90&amp;mpp=10&amp;noise=3&amp;prof=True&amp;sort=Position&amp;view=Quick&amp;fr=11" type="hidden"><b>1</b></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table>
+</div><p class="small-text"><img src="msg_general.gif" alt="General" align="top" height="16px" width="16px"> General &nbsp;&nbsp; <img src="msg_news.gif" alt="News" align="top" height="16px" width="16px"> News &nbsp;&nbsp; <img src="msg_idea.gif" alt="Suggestion" align="top" height="16px" width="16px"> Suggestion &nbsp;&nbsp; <img src="msg_question.gif" alt="Question" align="top" height="16px" width="16px"> Question &nbsp;&nbsp; <img src="msg_bug.gif" alt="Bug" align="top" height="16px" width="16px"> Bug &nbsp;&nbsp; <img src="msg_answer.gif" alt="Answer" align="top" height="16px" width="16px"> Answer &nbsp;&nbsp; <img src="msg_joke.gif" alt="Joke" align="top" height="16px" width="16px"> Joke &nbsp;&nbsp; <img src="msg_rant.gif" alt="Rant" align="top" height="16px" width="16px"> Rant &nbsp;&nbsp; <img src="msg_admin.gif" alt="Admin" align="top" height="16px" width="16px"> Admin &nbsp;&nbsp; </p><p class="small-text">Use Ctrl+Left/Right to switch messages, Ctrl+Up/Down to switch threads, Ctrl+Shift+Left/Right to switch pages.</p>
+
+					
+					<div class="theme1-background" style="height: 2px;"></div>
+
+					<div class="extended tiny-text">
+						<div class="row">
+							<div class="float-left">
+								<a id="ctl00_PermaLink" href="http://www.codeproject.com/KB/IP/winpcap_basic.aspx">Permalink</a> | 
+								<a id="ctl00_AdvertiseLink" href="http://lakequincy.com/">Advertise </a> |
+								<a id="ctl00_PrivacyLink" href="http://www.codeproject.com/info/privacy.aspx">Privacy</a> |
+								<a id="ctl00_Mobile" rel="nofollow" href="http://www.codeproject.com/KB/IP/winpcap_basic.aspx?display=Mobile">Mobile</a>
+								<br>
+								
+								 |
+								Web23 |
+								2.5.111004.1
+								
+							</div>
+							<div class="float-right align-right">
+								Article Copyright 2008 by cristitomi<br>Everything else
+								Copyright © <a href="mailto:webmaster@codeproject.com">CodeProject</a>, 1999-2011 <br>
+								<a id="ctl00_TermsOfUseLink" href="http://www.codeproject.com/info/TermsOfUse.aspx">Terms of Use</a>
+							</div>
+
+							
+
+
+<div class="page-width">
+Layout: <a id="ctl00_PageWidth_FixedT" title="Fixed width layout" rel="nofollow" href="http://www.codeproject.com/KB/IP/winpcap_basic.aspx?PageFlow=FixedWidth">fixed</a>
+|
+<a id="ctl00_PageWidth_FluidT" title="Fluid layout" rel="nofollow" href="http://www.codeproject.com/KB/IP/winpcap_basic.aspx?PageFlow=Fluid">fluid</a>
+</div>
+
+
+
+						</div>
+					</div>
+					
+
+				<br clear="all">
+		
+				
+				</div>
+
+				<div id="ctl00_ContentSide" class="text-sidebar">
+					
+
+<div class="results">
+
+	<div class="container-adwords">
+		<a id="ctl00_RelatedAds_RelatedResults_ctl01_Link" href="http://www.codeproject.com/script/Catalog/Redir.aspx?ctid=3172&amp;cttype=2" target="_top"><span id="ctl00_RelatedAds_RelatedResults_ctl01_Title" class="title">PInvoker Addin</span><br>
+			<span id="ctl00_RelatedAds_RelatedResults_ctl01_Teaser" class="desc">PInvoker Visual Studio Addin for VS2005/VS2008/VS2010 imports dll files...</span><br>
+			<span id="ctl00_RelatedAds_RelatedResults_ctl01_Url" class="link">www.pinvoker.com</span></a>
+	</div>
+
+	<div class="container-adwords">
+		<a id="ctl00_RelatedAds_RelatedResults_ctl02_Link" href="http://www.codeproject.com/script/Catalog/Redir.aspx?ctid=3310&amp;cttype=2" target="_top"><span id="ctl00_RelatedAds_RelatedResults_ctl02_Title" class="title">CloudBerry Explorer for Amazon S3</span><br>
+			<span id="ctl00_RelatedAds_RelatedResults_ctl02_Teaser" class="desc">CloudBerry Explorer makes managing files in Amazon S3 storage EASY. By...</span><br>
+			<span id="ctl00_RelatedAds_RelatedResults_ctl02_Url" class="link">www.cloudberrylab.com</span></a>
+	</div>
+
+</div>
+
+
+					
+
+					
+
+					<div style="width: 160px; margin: 10px 0pt;">
+						<div class="lqm_ad" lqm_publisher="lqm.codeproject.site" lqm_zone="77" lqm_format="160x600" lqm_tags="VC8.0,Win2K,WinXP,Dev,Beginner"><iframe src="index_4.html" id="lqmad4" marginwidth="0" marginheight="0" frameborder="0" height="600" scrolling="no" width="160"></iframe></div>
+					</div>
+
+					
+	<div class="announce">
+	<div id="ctl00_RelatedArticles_RelatedResults_ctl00_header" class="announce-header">See Also...</div>
+	<div class="announce-content">	
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl02_Link" class="title" href="http://www.codeproject.com/KB/IP/sharppcap.aspx">SharpPcap - A Packet Capture Framework for .NET</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl03_Link" class="title" href="http://www.codeproject.com/KB/dotnet/Sznyfer.aspx">Simple Packet Sniffer in VC++ .NET</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl04_Link" class="title" href="http://www.codeproject.com/KB/IP/UDPandWPCAP.aspx">How to craft UDP packets and send them with WinPCap</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl05_Link" class="title" href="http://www.codeproject.com/KB/IP/rawsocket.aspx">Raw Sockets Using Winsock</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl06_Link" class="title" href="http://www.codeproject.com/KB/IP/WinSniff.aspx">WinSniff :The packet capturing application for Windows</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl07_Link" class="title" href="http://www.codeproject.com/KB/recipes/checksum32.aspx">32-bit UDP Checksum</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl08_Link" class="title" href="http://www.codeproject.com/KB/IP/URLLogger.aspx">URL/Web Addresses Logger</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl09_Link" class="title" href="http://www.codeproject.com/KB/IP/NagTPortScanner.aspx">PortScanner : Efficient TCP port scanner based on popular TCP Half Open scanning method</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl10_Link" class="title" href="http://www.codeproject.com/KB/IP/RawUDP.aspx">RawUDP - A Class to Craft Custom UDP Packets</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl11_Link" class="title" href="http://www.codeproject.com/KB/IP/sniffer.aspx">Sniffing using Winsock</a>
+		
+	</div>
+	
+	</div>
+	</div>
+	
+
+
+					
+
+					
+<div class="announce">
+<div class="announce-header">The Daily Insider</div>
+<div class="announce-content">
+
+<div><a id="ctl00_News_News_ctl01_Link" href="http://citizen428.net/archives/434">30 free programming books</a></div>
+
+Daily News: <a id="ctl00_News_News_ctl02_Subscribe" href="http://www.codeproject.com/Feature/Insider/">Signup now</a>.
+</div>
+</div>
+		
+
+				</div>
+
+			</div>
+			
+
+		</div>
+		
+
+	</div>
+</div>
+
+
+<div style="display: none;" id="lqm_AdTable">
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<canvas id="cv1" width="1" height="1" style="position: absolute; left: 0pt; top: 0pt; pointer-events: none;"></canvas><canvas id="cv2" width="1" height="1" style="position: absolute; left: 0pt; top: 0pt; pointer-events: none;"></canvas><div style="display: none; position: absolute;" id="MemberProfilePopupDiv" class="raised box"></div><div style="display: none; position: absolute;" id="MemberProfilePopupDiv" class="raised box"></div><div style="display: none; position: absolute;" id="MemberProfilePopupDiv" class="raised box"></div></body>
+</html>

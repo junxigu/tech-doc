@@ -1,0 +1,87 @@
+/* ::::: http://hi.bdimg.com/static/common/css/global.css ::::: */
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin: 0pt; padding: 0pt; }
+html { color: rgb(0, 0, 0); background: none repeat scroll 0% 0% rgb(255, 255, 255); }
+body, button, input, select, textarea { font-size: 12px; font-family: tahoma,arial,宋体,sans-serif; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+ul, ol { list-style: none outside none; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+fieldset, img { border: 0pt none; }
+button, input, select, textarea { font-size: 100%; }
+table { border-collapse: collapse; border-spacing: 0pt; }
+img {  }
+textarea { resize: vertical; }
+:focus { outline: 0pt none; }
+a:link { color: rgb(95, 162, 7); }
+a:visited { color: rgb(146, 153, 118); }
+a:hover, a:active { color: rgb(77, 128, 6); }
+.left { float: left; }
+.right { float: right; }
+.error { color: rgb(255, 0, 0); font-size: 12px; }
+.grid-1, .grid-2, .grid-3, .grid-4, .grid-50, .grid-60, .grid-70, .grid-80, .grid-90, .grid-10, .grid-11, .grid-12, .grid-13, .grid-14, .grid-15, .grid-16, .grid-17, .grid-18, .grid-19, .grid-20, .grid-21, .grid-22, .grid-23, .grid-24, .grid-25, .grid-26, .grid-27, .grid-28, .grid-29, .grid-30, .grid-31, .grid-32, .grid-33, .grid-34, .grid-35, .grid-36, .grid-37, .grid-38, .grid-39, .grid-40, .grid-41, .grid-42, .grid-43, .grid-44, .grid-45, .grid-46, .grid-47, .grid-48, .grid-49, .grid-50, .grid-51, .grid-52, .grid-53, .grid-54, .grid-55, .grid-56, .grid-57, .grid-58, .grid-59, .grid-60, .grid-61, .grid-62, .grid-63, .grid-64, .grid-65, .grid-66, .grid-67, .grid-68, .grid-69, .grid-70, .grid-71, .grid-72, .grid-73, .grid-74, .grid-75, .grid-76, .grid-77, .grid-78, .grid-79, .grid-80, .grid-81, .grid-82, .grid-83, .grid-84, .grid-85, .grid-86, .grid-87, .grid-88, .grid-89, .grid-90, .grid-91, .grid-92, .grid-93, .grid-94, .grid-95, .grid-96, .grid-97, .grid-98, .grid-99 { overflow: hidden; margin: 0pt auto; padding: 0pt; }
+.grid-23 { width: 230px; }
+.grid-75 { width: 750px; }
+.grid-99 { width: 990px; }
+/* ::::: http://hi.baidu.com/ui/css/simBlog.css ::::: */
+
+.mod-nav .nav-title { margin-top: 10px; background: url('rf_bg.png') repeat-x scroll 0% 0% transparent; height: 76px; border-width: 1px 1px medium; border-style: solid solid none; border-color: rgb(221, 221, 221) rgb(221, 221, 221) -moz-use-text-color; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-image: none; }
+.mod-nav .u-info { line-height: 25px; margin-left: 20px; margin-top: 20px; }
+.mod-nav .nav-title .u-name { font-size: 14px; font-weight: bolder; color: rgb(20, 99, 196); }
+.mod-nav .nav-title .u-desc { margin-left: 20px; color: rgb(102, 102, 102); }
+.mod-nav .nav-menu { background: url('rf_menu.png') repeat-x scroll 0% 0% transparent; height: 31px; color: rgb(255, 255, 255); }
+.mod-nav .nav-menu li { display: inline-block; float: left; line-height: 31px; padding: 0pt 10px; text-align: center; cursor: pointer; }
+.mod-nav .nav-menu .act { background-color: rgb(61, 142, 228); line-height: 21px; margin-top: 5px; }
+.mod-nav .nav-menu a { color: rgb(255, 255, 255); text-decoration: none; }
+.mod-article, .mod-frdcomment, .mod-repcomment, .mod-rel-article { border: 1px solid rgb(189, 218, 242); margin-top: 10px; }
+.mod-article .t-warp, .mod-article .t-warp, .mod-frdcomment .t-warp, .mod-repcomment .t-warp, .mod-rel-article .t-warp { padding: 1px; }
+.mod-article .title, .mod-article .foot, .mod-frdcomment .title, .mod-repcomment .title, .mod-rel-article .title { height: 31px; line-height: 31px; background-color: rgb(219, 234, 248); padding-left: 10px; color: rgb(102, 102, 102); }
+.mod-article .relative-docs { margin: 15px 0px; }
+#inDocNav { text-align: center; }
+#inDocNav a { color: rgb(20, 99, 196); }
+.page-warp { line-height: 30px; text-align: center; }
+.btn-nav { display: inline-block; background-color: rgb(229, 240, 250); border: 1px solid rgb(189, 218, 242); border-radius: 3px 3px 3px 3px; height: 18px; line-height: 18px; padding: 0pt 5px; text-decoration: none; color: rgb(102, 102, 102); font-size: 12px; }
+.mod-article .foot { padding-left: 10px; }
+.mod-article .foot a { display: inline-block; line-height: 31px; color: rgb(20, 99, 196); }
+#in_comment a { color: rgb(20, 99, 196); }
+.mod-frdcomment, .mod-repcomment { margin-top: 10px; }
+.mod-frdcomment .frdcom-detail { margin-top: 5px; color: rgb(102, 102, 102); margin-bottom: 5px; }
+.mod-frdcomment .frdcom-detail .time { color: rgb(153, 153, 153); }
+.mod-frdcomment .frdcom-detail li { line-height: 30px; border-bottom: 1px dotted rgb(223, 223, 223); margin: 0px 20px; }
+.mod-frdcomment .frdcom-detail .num { display: inline-block; width: 25px; text-align: left; }
+.mod-frdcomment .frdcom-detail .u-name { color: rgb(20, 99, 196); font-weight: bolder; margin-right: 10px; }
+.mod-rel-article .rel-art { margin: 15px 0px 15px 10px; }
+.mod-rel-article li { line-height: 25px; background: url('rf_li.png') no-repeat scroll 0px 7px transparent; padding-left: 15px; }
+.mod-rel-article a { color: rgb(20, 99, 196); }
+.modbox { background-color: rgb(255, 255, 255); padding: 10px 10px 0pt; }
+#m_blog div.tit { font-size: 14px; font-weight: bold; }
+#m_blog div.date { color: rgb(153, 153, 153); margin: 5px 0pt 8px; }
+#m_blog div.cnt { color: rgb(51, 51, 51); font-size: 14px; line-height: 1.5; }
+#m_blog div.cnt div { font-size: 14px; }
+.mod-repcomment .cmt-name, .mod-repcomment .cmt-ctt { font-size: 14px; width: 100px; text-align: center; display: block; margin-top: 5px; }
+.mod-repcomment td { line-height: 25px; }
+.mod-repcomment { margin-bottom: 50px; }
+.container { clear: both; }
+.mgr5 { margin-right: 5px; }
+.fwb { font-weight: bold; }
+.fixed { position: fixed; width: 228px; }
+/* ::::: http://hi.baidu.com/ui/css/ucard/ucard.css?v=020507100.css ::::: */
+
+.userbar { height: 30px; background: url('nav_bg.gif') repeat-x scroll 0% 0% transparent; }
+.userbar * { margin: 0pt; padding: 0pt; list-style: none outside none; }
+#nav { height: 30px; line-height: 30px; padding-left: 20px; width: 970px; margin: 0pt auto; }
+#nav .logo { float: left; margin-top: 4px; }
+#nav .manage { float: right; color: rgb(102, 102, 102); line-height: 30px; }
+#nav .manage a, #nav .manage a:link, #nav .manage a:visited { text-decoration: underline; color: rgb(51, 51, 51) ! important; padding: 0pt 10px; font-size: 12px ! important; }
+#nav .manage form { display: inline; }
+#nav .manage form * { font-family: 宋体 ! important; }
+#nav .manage input { width: 90px; height: 22px; line-height: 22px; border: 1px solid rgb(201, 201, 201); vertical-align: middle; padding: 1px 0pt; }
+#nav .manage .loginlink, #nav .manage .loginlink:link, #nav .manage .loginlink:visited { width: 49px; height: 22px; line-height: 22px; background: url('login_btn.gif') no-repeat scroll 0% 0% transparent; display: inline-block; padding: 0pt; text-align: center; text-decoration: none; }
+#nav .manage .loginlink:hover { background-position: -51px 0pt; padding: 0pt; text-decoration: none; }
+#nav .manage .reglink { color: rgb(255, 0, 0) ! important; }
+/* ::::: http://hi.bdimg.com/static/base/css/base.css?v=20111108141407 ::::: */
+
+/* ::::: http://hi.baidu.com/ui/css/userset.css ::::: */
+
+/* ::::: http://hi.baidu.com/ui/css/beautify/widget.css ::::: */
+

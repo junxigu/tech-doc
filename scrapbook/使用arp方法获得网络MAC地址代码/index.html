@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body><div id="bd_snap">
+    <div id="bd_snap_head">
+        <a href="http://www.baidu.com/" id="bd_snap_logo" title="到百度首页"></a>
+        <div id="bd_snap_search">
+        <form action="http://www.baidu.com/s"><input name="cl" value="3" type="hidden"><input value="" name="wd" id="bd_snap_kw" maxlength="100"><span id="bd_snap_btn_wr"><input id="bd_snap_su" value="百度一下" class="bd_snap_btn" onmousedown="this.className='bd_snap_btn bd_snap_btn_h'" type="submit"></span></form>
+    	</div>
+    </div>
+    <div id="bd_snap_txt">您查询的关键词是：<span><a style="color: black; background-color: rgb(255, 255, 102); padding: 0pt 3px; font-weight: bold;" href="http://cache.baidu.com/c?m=9d78d513d9861af34fece43c5c459571182497134cc0a41668a5995fe0674c403739b0ea30236013a3c26b110bb83f58fd80336670437eb8c18ece08cabae13532db6576310b863648880eafbc16769a76d74de9d848bae5ed73c9fd9284c202048c005e249df08859011fc164f5&amp;p=81769a4199d004ff57ed9f0c7f08&amp;user=baidu&amp;fm=sc&amp;query=winpcap%BB%F1%C8%A1mac%B5%D8%D6%B7&amp;qid=a23561a401334920&amp;p1=4#baidusnap0">win</a><a style="color: black; background-color: rgb(153, 255, 153); padding: 0pt 3px; font-weight: bold;" href="http://cache.baidu.com/c?m=9d78d513d9861af34fece43c5c459571182497134cc0a41668a5995fe0674c403739b0ea30236013a3c26b110bb83f58fd80336670437eb8c18ece08cabae13532db6576310b863648880eafbc16769a76d74de9d848bae5ed73c9fd9284c202048c005e249df08859011fc164f5&amp;p=81769a4199d004ff57ed9f0c7f08&amp;user=baidu&amp;fm=sc&amp;query=winpcap%BB%F1%C8%A1mac%B5%D8%D6%B7&amp;qid=a23561a401334920&amp;p1=4#baidusnap2">获取</a><a style="color: black; background-color: rgb(255, 153, 153); padding: 0pt 3px; font-weight: bold;" href="http://cache.baidu.com/c?m=9d78d513d9861af34fece43c5c459571182497134cc0a41668a5995fe0674c403739b0ea30236013a3c26b110bb83f58fd80336670437eb8c18ece08cabae13532db6576310b863648880eafbc16769a76d74de9d848bae5ed73c9fd9284c202048c005e249df08859011fc164f5&amp;p=81769a4199d004ff57ed9f0c7f08&amp;user=baidu&amp;fm=sc&amp;query=winpcap%BB%F1%C8%A1mac%B5%D8%D6%B7&amp;qid=a23561a401334920&amp;p1=4#baidusnap3">mac地址</a></span> 。如果打开速度慢，可以尝试<a href="http://cache.baidu.com/c?m=9d78d513d9861af34fece43c5c459571182497134cc0a41668a5995fe0674c403739b0ea30236013a3c26b110bb83f58fd80336670437eb8c18ece08cabae13532db6576310b863648880eafbc16769a76d74de9d848bae5ed73c9fd9284c202048c005e249df08859011fc164f5&amp;p=81769a4199d004ff57ed9f0c7f08&amp;user=baidu&amp;fm=sc&amp;query=winpcap%BB%F1%C8%A1mac%B5%D8%D6%B7&amp;qid=a23561a401334920&amp;p1=4&amp;fast=y">快速版</a>；如果想保存快照，可以<a onclick="window.open('http://cang.baidu.com/do/add?it='+encodeURIComponent(document.title)+'&amp;iu='+encodeURIComponent(location.href)+'&amp;fr=ps#nw=1','_s','scrollbars=no,width=600,height=450,right=75,top=20,status=no,resizable=yes'); return false;" href="http://cang.baidu.com/do/add" target="_top">添加到搜藏</a>；如果想更新或删除快照，可以<a href="http://tousu.baidu.com/webmaster/add" target="">投诉快照</a>。</div>
+    <div id="bd_snap_note">(百度和网页<a href="http://apps.hi.baidu.com/share/detail/21139997">http://apps.hi.baidu.com/share/detail/21139997</a>的作者无关，不对其内容负责。百度快照谨为网络故障时之索引，不代表被搜索网站的即时页面。)</div>
+</div>
+<div id="bd_snap_ln"></div>
+<div style="position: relative;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<title>
+转贴：windows下使用winpcap开发包使用arp方法获得网络MAC地址代码 百度空间_应用平台
+      </title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="doc">	
+	
+<div class="userbar">
+ <div id="nav" class="clearfix">
+	<a class="logo" href="http://hi.baidu.com/index.htm"><img src="logo.gif" alt="logo" border="0"></a>
+	<ul class="topmenu">
+		<li><a href="http://apps.hi.baidu.com/" class="on">应用</a></li>
+	</ul>
+	<div class="manage" style="width: 380px;">
+		<a href="http://hi.baidu.com/reg/new" class="reglink" style="float: right;" onclick="tabDialog();setActiveTab(1);return false;">注册</a>
+		<form action="https://passport.baidu.com/?login" method="post">
+			用户名:<input value="" name="username" type="text">&nbsp;&nbsp; 
+			密码:<input name="password" type="password"> 
+			<input value="on" name="mem_pass" type="hidden">
+			<input class="loginlink" value="登录" type="submit">  
+		</form> 
+		
+	</div>
+</div>
+</div>
+	<div id="mainbody" class="cf mainbody">
+		
+<div class="leftmenu">
+	<div class="lefttop"> </div>
+	<div class="leftcontent">
+				
+		<div class="appmenu">
+						<div class="applist sysapp">
+				<ul>
+										<li class="appicon5006"><a href="http://apps.hi.baidu.com/hoho" id="appid-5006"><span>HOHO</span></a></li>
+					<li class="appicon5007" id="appDashanItem"><a href="http://apps.hi.baidu.com/dashan/show" id="appid-5007"><span>搭讪</span></a></li>
+					<li class="appicon5010"><a href="http://apps.hi.baidu.com/duiwei" id="appid-5010"><span>对味</span></a>
+					</li><li class="appicon5008"><a href="http://apps.hi.baidu.com/photopk" id="appid-5008"><span>照片PK</span></a></li>
+					<li class="appicon5004"><a href="http://apps.hi.baidu.com/share" id="appid-5004"><span>转贴</span></a></li>
+					<li class="appicon5003"><a href="http://apps.hi.baidu.com/vote" id="appid-5003"><span>投票</span></a></li>
+					<li class="appicon5002"><a href="http://apps.hi.baidu.com/test" id="appid-5002"><span>测试</span></a></li>
+					<li class="appicon5000"><a href="http://apps.hi.baidu.com/gift" id="appid-5000"><span>礼物</span></a></li>
+									</ul>
+			</div>
+			<div class="line"> </div>
+			<ul class="applist thirdapp" id="defaultAppList"></ul>
+			<ul class="applist thirdapp" id="installAppList"></ul>
+			<div class="line"> </div>
+						<ul class="applist thirdapp" id="webgame">
+			<li><a href="http://youxi.baidu.com/prom.xhtml?code=G-%D7%8E%81%B2%29%FF%8AR%BC%8B%EE%85%1C%E5" target="_top"><span style="background: url('icon_game.gif') no-repeat scroll 16px center transparent; padding-left: 50px;">网页游戏</span></a></li>
+			</ul>
+		</div>
+			</div>
+	<div class="leftbottom"> 
+	</div>
+</div>
+		<div class="rightbody">
+		<div class="righttop"> </div>
+		<div class="rightcontent cf">
+			<div id="maincontent" class="">
+				<div id="appShare" class="app-share">
+				
+    
+
+    		<div class="cf">	<div id="appShareIcon">转贴</div>	<div id="appShareInputContainer">    <form action="http://cache.baidu.com/c?m=9d78d513d9861af34fece43c5c459571182497134cc0a41668a5995fe0674c403739b0ea30236013a3c26b110bb83f58fd80336670437eb8c18ece08cabae13532db6576310b863648880eafbc16769a76d74de9d848bae5ed73c9fd9284c202048c005e249df08859011fc164f5&amp;p=81769a4199d004ff57ed9f0c7f08&amp;user=baidu&amp;fm=sc&amp;query=winpcap%BB%F1%C8%A1mac%B5%D8%D6%B7&amp;qid=a23561a401334920&amp;p1=4" onsubmit="return share.create.inputByForm();">        <input id="appShareInput" value="" type="text"><input id="appShareSubmit" value="" type="submit">    </form></div></div>
+    				<div id="appShareNav" class="cf">        <ul class="clearfix app-share-tab">                <li><a href="http://apps.hi.baidu.com/share/">热门转贴</a></li>        <li><a href="http://apps.hi.baidu.com/share/latest/?type=video">最新转贴</a></li>                            <li><a href="http://apps.hi.baidu.com/share/friend/">好友的转贴</a></li>                    <li><a href="http://apps.hi.baidu.com/share/mine/">我的转贴</a></li>                    </ul>    	<div style="float: right; margin-top: -30px;">			<a href="#" onclick="share.create.tip(); return false;" style="margin-right: 10px;">如何转贴?</a>			<a target="_top" href="http://hi.baidu.com/%D7%AA%CC%F9%BF%AA%B7%A2%D5%DF/">问题反馈</a>	</div></div>
+    <div id="appShareDetail" class="clearfix">
+        
+        <a name="content"></a>
+        <div id="appShareAuthorInfo" class="clearfix">
+            <p>				<a href="http://hi.baidu.com/sys/checkuser/supeter2010/3" target="_top"><img src="f8887375706574657232303130a40a.jpg" style="border: 1px solid rgb(159, 159, 159);" height="30" width="30"></a></p>
+			<p>&nbsp;&nbsp;				<a href="http://apps.hi.baidu.com/share/user/f8887375706574657232303130a40a" target="_top">supeter2010的转贴</a></p>
+			<p class="share-top-txt">转贴</p>
+            <p style="float: right; margin-top: 5px;"><a class="share-prev-item" href="http://apps.hi.baidu.com/share/detail/22777855#content"></a>&nbsp;&nbsp;<a class="share-next-item" href="http://apps.hi.baidu.com/share/detail/20312748#content"></a> </p>
+
+        </div>
+
+        <div id="appShareInfo">
+            <div id="appShareInfoBasic">
+                <dl>
+                    <dt>来自:</dt>
+                    <dd>
+                                                				<table class="avatar-cnt" cellspacing="0">    <tbody><tr>        <td><a href="http://hi.baidu.com/sys/checkuser/tkblue/3" target="_top"><img src="05f4746b626c7565f101.jpg"></a></td>    </tr></tbody></table>                        <a href="http://hi.baidu.com/sys/checkuser/tkblue/3" target="_top" style="font-weight: normal;">tkblue</a>                                            </dd>
+                </dl>
+				<dl>
+                    <dt>第一转贴:</dt>
+                    <dd>
+                    				<table class="avatar-cnt" cellspacing="0">    <tbody><tr>        <td><a href="http://hi.baidu.com/sys/checkuser/supeter2010/3" target="_top"><img src="f8887375706574657232303130a40a.jpg"></a></td>    </tr></tbody></table>                    <a href="http://hi.baidu.com/sys/checkuser/supeter2010/3" target="_top" style="font-weight: normal;">supeter2010</a>                    </dd>
+                </dl>
+                <div class="hr"></div>
+                <dl>
+                    <dt>时间:</dt>
+                    <dd>2010-11-09 00:09</dd>
+                </dl>
+                <dl>
+                    <dt>评论:</dt>
+                    <dd>1条</dd>
+                </dl>
+                <dl>
+                    <dt>投票:</dt>
+                    <dd>0次</dd>
+                </dl>
+                <dl>
+                    <dt>本贴转贴:</dt>
+                    <dd>0</dd>
+                </dl>
+				<dl>
+                    <dt>累计转贴:</dt>
+                    <dd>1</dd>
+                </dl>
+                            </div><!-- /appShareInfoBasic -->
+            
+                        <div id="appShareInfoRelate" class="clearfix">
+                <p>supeter2010的                                        相关转贴:                    
+                </p>
+                <ul>
+                                                                        <li>
+                                <p><a href="http://apps.hi.baidu.com/share/detail/22779365" target="_top" title="ARM 启动及工作模式切换">ARM 启动及工作模式切换</a></p>
+                            </li>
+                                                                                                <li>
+                                <p><a href="http://apps.hi.baidu.com/share/detail/22779221" target="_top" title="C/C++语言void及void指针深层探索">C/C++语言void及void指针深层探索</a></p>
+                            </li>
+                                                                                                <li>
+                                <p><a href="http://apps.hi.baidu.com/share/detail/22779175" target="_top" title="C/C++数组名与指针区别深层探索">C/C++数组名与指针区别深层探索</a></p>
+                            </li>
+                                                                                                <li>
+                                <p><a href="http://apps.hi.baidu.com/share/detail/22778919" target="_top" title="想成为嵌入式程序员应知道的0x10个基本问题">想成为嵌入式程序员应知道的0x10个基本问题</a></p>
+                            </li>
+                                                            </ul>
+            </div><!-- /appShareInfoRelate -->
+                        <div class="hotapplist cf" id="hotAppListBox" style="margin-top: 20px;"><div class="title">他们也在玩的应用</div><div class="list" id="hotAppList"></div><!-- End .list --><!-- <div class="bottom"></div>--></div><!-- End .hotapplist --><div class="clear"></div> 
+
+        </div>
+
+        <div id="appShareContent">
+            <div id="appShareTitle">
+                                    
+                    <div id="appShareShareIcon" class="share-btn-img" onclick="share.share('21139997','','21139997')"></div>
+                                                                windows下使用winpcap开发包使用arp方法获得网络<a name="baidusnap3"></a><b style="color: black; background-color: rgb(255, 153, 153);">MAC地址</b>代码
+            </div>
+			<div id="app-share-container">
+			<div id="appShareOpt">
+                
+                            </div>
+            <div id="app-share-content">
+
+	                    <span style="color: rgb(255, 69, 0);">一、     概要说明</span><br>
+1.1    目的要求<br>
+掌握ARP协议原理，熟悉Winpcap使用方法；使用Winpcap，手动封装ARP数据包，并实现ARP响应数据包的接收和解析，实现基于ARP协议<a name="baidusnap2"></a><b style="color: black; background-color: rgb(153, 255, 153);">获取</b>本局域网内全部活动主机<b style="color: black; background-color: rgb(255, 153, 153);">MAC地址</b>与IP地址对应关系列表。<br>
+1.2    开发平台<br>
+1.2.1操作系统：Windows XP (sp2)<br>
+1.2.2开发语言：C语言<br>
+1.2.3开发工具：VC 6.0 和 Winpcap<br>
+<span style="color: rgb(255, 0, 0);">二、     相关知识介绍</span><br>
+2.1 winpcap驱动简介<br>
+   winpcap(windows packet capture)是windows平台下一个免费，公共的网络访问系统。开发winpcap这个项目的目的在于为<a name="baidusnap0"></a><b style="color: black; background-color: rgb(255, 255, 102);">win</b>32应用程序提供访问网络底层的能力。它提供了以下的各项功能：<br>
+1&gt;    捕获原始数据报，包括在共享网络上各主机发送/接收的以及相互之间交换的数据报；<br>
+2&gt;      在数据报发往应用程序之前，按照自定义的规则将某些特殊的数据报过滤掉；<br>
+3&gt;      在网络上发送原始的数据报；<br>
+4&gt;      收集网络通信过程中的统计信息。<br>
+winpcap的主要功能在于独立于主机协议（如TCP-IP)而发送和接收原始数据报。也就是说，winpcap不能阻塞，过滤或控制其他应用程序数据报的发收，它仅仅只是监听共享网络上传送的数据报。因此，它不能用于QoS调度程序或个人防火墙。<br>
+2.2 Packet32.h修改<br>
+     老师提供的Packet32.h文件确实如下结构体：<br>
+struct sockaddr_storage {<br>
+   u_char sa_len;<br>
+   u_char sa_family;<br>
+   u_char padding[128];<br>
+};<br>
+在写程序过程中自行将此程序加入。<br>
+<span style="color: rgb(220, 20, 60);">三、     程序设计思路</span><br>
+3.1 总体思路<br>
+   程序设计的总体思路是：首先获得本地主机网络适配器信息；若有多个网络适配器时，打开指定的网络适配器，获得该网络适配器的相关信息，如本地主机IP等；再创建线程接收所有流过的数据报；创建线程向本局域网内所有主机发送arp数据报。<br>
+3.2 打开网络适配器，接收所有流过的数据报<br>
+   首先打开指定的网络适配器，获得本地主机网络适配器信息后，创建线程，将网络适配器设置为混杂模式，接收所有流过的数据报。接受数据报成功时候调用dealData函数处理解析数据报。<br>
+3.3 发送ARP请求数据报，获得指定IP的<b style="color: black; background-color: rgb(255, 153, 153);">MAC地址</b><br>
+   首先初始化ethernet_head、arp_head结构，然后将本地主机IP与子网掩码进行“与”运算，得到网关地址，然后依次对本局域网内所有IP发送ARP数据报。发送不成功时提示错误返回。<br>
+<br>
+下面是代码:<br>
+<div class="code"><br>
+/******************************************<br>
+*文件名称：arpHomeWork.c<br>
+*作    者：武执正<br>
+*摘    要：使用Winpcap，手动封装ARP数据包，<br>
+*          实现ARP响应数据报的接收和解析，<br>
+*          <b style="color: black; background-color: rgb(153, 255, 153);">获取</b>本局域网内全部活动主机<b style="color: black; background-color: rgb(255, 153, 153);">MAC地址</b><br>
+*          与IP地址对应列表<br>
+*完成时间：2006-10-25<br>
+*/<br>
+<br>
+#include &lt;packet32.h&gt;<br>
+#include &lt;ntddndis.h&gt;<br>
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+<br>
+#pragma comment(lib,"ws2_32")<br>
+#pragma comment(lib,"packet")<br>
+<br>
+#define ETH_IP       0x0800<br>
+#define ETH_ARP      0x0806<br>
+#define ARP_REQUEST  0x0001<br>
+#define ARP_REPLY    0x0002<br>
+#define ARP_HARDWARE 0x0001<br>
+#define MAX_NUM_ADAPTER  10<br>
+<br>
+#pragma pack(push,1)<br>
+<br>
+//最终发送的数据报结构<br>
+typedef struct    ethernet_head<br>
+{<br>
+   unsigned char    dest_mac[6];      //目标主机mac  <br>
+   unsigned char    source_mac[6];      //本地主机mac<br>
+   unsigned short    eh_type;          //类型<br>
+}ethernet_head, *pEthernetHead;<br>
+<br>
+//ARP数据报头结构<br>
+typedef struct    arpHead<br>
+{<br>
+   unsigned short  hardware_type;        //硬件类型<br>
+   unsigned short  protocol_type;        //协议类型<br>
+   unsigned char   add_len;            //硬件地址长度<br>
+   unsigned char   pro_len;            //协议地址长度<br>
+   unsigned short  option;                //操作号<br>
+   unsigned char   sour_addr[6];        //发送者硬件地址<br>
+   unsigned long   sour_ip;            //发送者协议地址<br>
+   unsigned char   dest_addr[6];        //目的站硬件地址<br>
+   unsigned long   dest_ip;            //目的站协议地址<br>
+   unsigned char    padding[18];<br>
+}arpHead, *pArpHead;<br>
+<br>
+//IP数据报头结构<br>
+typedef struct ipHead<br>
+{<br>
+   unsigned char    h_lenver;<br>
+   unsigned char    tos;<br>
+   unsigned short    total_len;<br>
+   unsigned short    ident;<br>
+   unsigned short    frag_and_flags;<br>
+   unsigned char    ttl;<br>
+   unsigned char    proto;<br>
+   unsigned short    checksum;            //校验和<br>
+   unsigned int    sourceip;            //本地主机IP<br>
+   unsigned int    destip;                //目标主机IP<br>
+}ipHead, *PipHead;<br>
+<br>
+#pragma pack(push)<br>
+<br>
+LPADAPTER    lpadapter = 0;<br>
+LPPACKET    lppacketr, lppackets;<br>
+unsigned long    myip;        //本地主机IP<br>
+unsigned char    myMac[6] = {0};            //本地主机mac初始化<br>
+char    adapterlist[MAX_NUM_ADAPTER][1024];        //本地主机网络适配器列表数组<br>
+int        num = 0;            //用于发送ARP包时候递增<br>
+<br>
+/******************<br>
+*处理接收到的数据报<br>
+*******************/<br>
+void dealData(LPPACKET lp) <br>
+{<br>
+   unsigned long    ulbytesreceived, off;<br>
+   unsigned long    k;<br>
+   char    *buf, *pChar, *base;<br>
+   PipHead    ip;<br>
+   struct bpf_hdr    *hdr;<br>
+   struct sockaddr_in    sin;<br>
+   ethernet_head    *eth;<br>
+   arpHead    *arp;<br>
+<br>
+   ulbytesreceived = lp-&gt;ulBytesReceived;<br>
+   buf = (char *)lp-&gt;Buffer;<br>
+<br>
+   off = 0;<br>
+<br>
+   //解析数据报<br>
+   while (off &lt; ulbytesreceived)<br>
+   {<br>
+       hdr = (struct bpf_hdr *)(buf+off);<br>
+       off += hdr-&gt;bh_hdrlen;            //修改off<br>
+<br>
+       pChar = (char *)(buf+off);<br>
+       base = pChar;<br>
+       off = Packet_WORDALIGN(off + hdr-&gt;bh_caplen);<br>
+<br>
+       eth = (pEthernetHead)pChar;                <br>
+       arp = (pArpHead)(pChar + sizeof(ethernet_head)); <br>
+<br>
+       if (eth-&gt;eh_type == htons(ETH_IP)) <br>
+       {<br>
+           ip = (PipHead)(pChar+sizeof(ethernet_head));<br>
+       }//if<br>
+       else if((eth-&gt;eh_type==htons(ETH_ARP)) &amp;&amp; (arp-&gt;option==htons(ARP_REPLY)))  <br>
+       {<br>
+           sin.sin_addr.s_addr = arp-&gt;sour_ip;<br>
+<br>
+           if (sin.sin_addr.s_addr == htonl(myip)) <br>
+           {<br>
+               memcpy(myMac, eth-&gt;source_mac, 6);<br>
+           }//if<br>
+<br>
+           //输出ip地址<br>
+           printf("  %.16s &lt;-&gt; ", inet_ntoa(sin.sin_addr));<br>
+<br>
+           //输出<b style="color: black; background-color: rgb(255, 153, 153);">mac地址</b><br>
+           for(k=0;k&lt;5;k++)<br>
+           {<br>
+               printf("%.2x-",eth-&gt;source_mac[k]);<br>
+           }//if<br>
+           printf("%.2x",eth-&gt;source_mac[5]);<br>
+       }//else<br>
+   }//while<br>
+   return ;<br>
+}<br>
+<br>
+/************************************************<br>
+*将网络适配器设置为混杂模式，接收所有流过的数据报，<br>
+*然后解析该数据报<br>
+************************************************/<br>
+DWORD WINAPI sniff()<br>
+{<br>
+<br>
+   char    recvbuf[1024*250];<br>
+<br>
+   //将网络适配器设置为混杂模式失败<br>
+   if (!PacketSetHwFilter(lpadapter, NDIS_PACKET_TYPE_PROMISCUOUS))<br>
+   {<br>
+       printf("Warning:不能设置网络适配器为混杂模式 ");<br>
+   }//if<br>
+<br>
+   //自定义网络适配器的内核缓冲的大小为 500*1024失败<br>
+   if (!PacketSetBuff(lpadapter, 500*1024))<br>
+   {<br>
+       printf("PacketSetBuff Error! ");<br>
+       return    -1;<br>
+   }//if<br>
+<br>
+   //设置接收一个数据报后等待的时间为1毫秒失败<br>
+   if (!PacketSetReadTimeout(lpadapter, 1))<br>
+   {<br>
+       printf("Warning: 不能设置超时时间 ");<br>
+   }//if<br>
+<br>
+   if (!(lppacketr=PacketAllocatePacket()))<br>
+   {<br>
+       printf("PacketAllocatePacket receive Error! ");<br>
+       return    -1;<br>
+   }//if<br>
+<br>
+   //初始化一个packet结构<br>
+   PacketInitPacket(lppacketr, (char *)recvbuf, sizeof(recvbuf));<br>
+<br>
+   //没有按键按下时候<br>
+   while (!kbhit())<br>
+   {<br>
+       //接收数据报，不成功时退出；成功时解析数据报<br>
+       if (!PacketReceivePacket(lpadapter, lppacketr, TRUE))<br>
+       {<br>
+           printf("PacketReceivePacket Error!");<br>
+           return    -1;<br>
+       }//if<br>
+<br>
+       dealData(lppacketr);<br>
+   }//while<br>
+<br>
+   return 0;<br>
+}<br>
+<br>
+/**********************************************<br>
+*发送ARP Request数据报，请求获得指定ip的<b style="color: black; background-color: rgb(255, 153, 153);">mac地址</b><br>
+***********************************************/<br>
+DWORD WINAPI sendArp()<br>
+{<br>
+   int        k;<br>
+   char    sendbuf[1024];<br>
+   ethernet_head    eth;<br>
+   arpHead    arp;<br>
+<br>
+   //初始化目的主机mac和IP<br>
+   for (k=0; k&lt;6; k++)<br>
+   {<br>
+       eth.dest_mac[k] = 0xff;<br>
+       arp.dest_addr[k] = 0x00;<br>
+   }//for<br>
+<br>
+   memcpy(eth.source_mac,myMac,6);<br>
+   eth.eh_type = htons(ETH_ARP);<br>
+<br>
+   arp.hardware_type = htons(ARP_HARDWARE);<br>
+   arp.protocol_type = htons(ETH_IP);<br>
+   arp.add_len = 6;<br>
+   arp.pro_len = 4;<br>
+   arp.option = htons(ARP_REQUEST);<br>
+   arp.sour_ip = htonl(myip);<br>
+   memcpy(arp.sour_addr, myMac,6);<br>
+<br>
+   //本地主机IP与子网掩码“与”运算得到网关IP<br>
+   arp.dest_ip = htonl((myip&amp;0xffffff00)+1+(num++));      <br>
+<br>
+   memset(sendbuf, 0, sizeof(sendbuf));          //初始化发送缓存<br>
+   memcpy(sendbuf, &amp;eth, sizeof(eth));            //把eth放入发送缓存<br>
+   memcpy(sendbuf+sizeof(eth), &amp;arp, sizeof(arp));    //把arp放入发送缓存<br>
+<br>
+   //初始化一个_PACKET结构<br>
+   PacketInitPacket(lppackets, sendbuf, sizeof(eth)+sizeof(arp));<br>
+   //发送数据报，不成功时退出<br>
+   if (!PacketSendPacket(lpadapter, lppackets, TRUE))<br>
+   {<br>
+       printf("PacketSendPacket in sendArp Error! ");<br>
+<br>
+       return    -1;<br>
+   }//if<br>
+<br>
+   return    0;<br>
+}<br>
+<br>
+/****************************************<br>
+*主函数：首先获得本地主机网络适配器数量，<br>
+*再打开特定的网络适配器，然后调用函数发送<br>
+*解析ARP数据报<br>
+*****************************************/<br>
+int main(int argc,char *argv[])<br>
+{<br>
+   HANDLE   sthread,rthread;<br>
+   unsigned char    adaptername[8192];<br>
+   unsigned char    *temp1, *temp2;<br>
+   unsigned long    adapterlength;<br>
+   unsigned long    threadsid, threadrid;        //线程ID<br>
+   struct  bpf_stat     stat;<br>
+   struct  sockaddr_in  sin;<br>
+   struct  npf_if_addr  ipbuff;<br>
+   int        adapternum = 0;            //网络适配器数量，初始化为0<br>
+   int        open;                    //标识打开第几个网络适配器<br>
+   int        i;<br>
+   long    npflen;<br>
+<br>
+   adapterlength = sizeof(adaptername);<br>
+<br>
+   //不能得到网络适配器信息时退出<br>
+   if (!PacketGetAdapterNames((char *)adaptername, &amp;adapterlength))<br>
+   {<br>
+       printf("PacketGetAdapterNames Error! ");<br>
+       return -1;<br>
+   }//if<br>
+   temp1 = adaptername;<br>
+   temp2 = adaptername;<br>
+   i = 0;<br>
+   <br>
+   //分离出网络适配器信息，并计算网络适配器个数<br>
+   // while ((*temp1!= '<br>
+   //////////////////////////////////////////////////////////////剩下的代码不全</div>
+<br>
+            			</div>
+
+
+
+            <div id="appShareUrl" style="clear: both;">
+                                <div id="appShareSafeLinkTip" style="display: none;"><div class="appShareErrorIcon"></div>为了您的安全，请只打开来源可靠的网址<p><a href="http://hi.baidu.com/tkblue/blog/item/636b8dc346a40451b319a893.html" target="_top">打开网站</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="share.safelink.close();return false;">取消</a></p></div>
+                来自: <a href="http://hi.baidu.com/tkblue/blog/item/636b8dc346a40451b319a893.html" target="_top">http://hi.baidu.com/tkblue/blog/item/636b8dc346a40451b319a893.html</a>
+                            </div>
+            <p style="text-align: right; margin-top: 10px;">
+                <a class="share-prev-item" href="http://apps.hi.baidu.com/share/detail/22777855#content"></a>&nbsp;&nbsp;<a class="share-next-item" href="http://apps.hi.baidu.com/share/detail/20312748#content"></a> &nbsp;
+									<a style="margin-top: 0pt; display: inline-block;" class="share-btn-img" onclick="share.share('21139997','','21139997')"></a>
+				            </p>
+            <div id="appShareVote">
+            </div>
+            
+
+            <div id="appShareComment">
+                <h3 class="share-comment-num">评论(<span id="appShareCommentNum">1</span>) &nbsp;&nbsp;您需要登录后才能进行评论，<a href="#" onclick="tabDialog();return false;">点此登录</a></h3>
+                <div id="appShareCreateComment">
+                    <form action="http://cache.baidu.com/c?m=9d78d513d9861af34fece43c5c459571182497134cc0a41668a5995fe0674c403739b0ea30236013a3c26b110bb83f58fd80336670437eb8c18ece08cabae13532db6576310b863648880eafbc16769a76d74de9d848bae5ed73c9fd9284c202048c005e249df08859011fc164f5&amp;p=81769a4199d004ff57ed9f0c7f08&amp;user=baidu&amp;fm=sc&amp;query=winpcap%BB%F1%C8%A1mac%B5%D8%D6%B7&amp;qid=a23561a401334920&amp;p1=4" onsubmit="tabDialog();return false;" autocomplete="off">
+                    <dl>
+                        <dd class="cf">
+							                            <textarea onkeyup="share.listenerSelection(event,this)" onmouseup="share.listenerSelection(event,this)" onfocus="share.listenerSelection(event,this)" style="float: left; width: 473px;" disabled="true" name="share_comment_content" id="share_comment_content"></textarea>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>&nbsp;</dt>
+                        <dd>
+                        <div id="appShareCommentCreateError" class="error"></div>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dd style="text-align: right;">
+							                             <input value="" class="share-comment-btn" style="cursor: pointer;" type="submit">
+                            <input value="21139997" id="link_shid" type="hidden">
+                        </dd>
+                    </dl>
+                    </form>
+                </div>
+            </div>
+			</div>
+
+        </div>
+		<div id="appShareCommentList"></div>
+		<div id="appShareCommentListPager"></div>
+				
+		    </div>
+				</div>
+			</div>	        
+		</div>                
+		<div class="rightbottom"> </div>
+		</div>
+	<div class="clear"></div>
+	
+	
+	</div>
+	
+    <div id="footer">
+        <div class="link">
+            <a href="http://help.baidu.com/question?prod_en=space" target="_top">帮助中心</a>
+            <span>|</span>
+            <a href="http://tieba.baidu.com/f?kw=%B0%D9%B6%C8%BF%D5%BC%E4&amp;fr=wwwt" target="_top">空间客服</a>
+            <span>|</span>
+            <a href="http://tousu.baidu.com/hi/" target="_top">投诉中心</a>
+            <span>|</span>
+            <a href="http://www.baidu.com/search/hi_contract.html" target="_top">空间协议</a>
+            <span>|</span>
+            <a href="http://apps.hi.baidu.com/static/html/contact.html" target="_top">联系我们</a>
+        </div>
+    <div class="copyright">2006-2010&nbsp;©&nbsp;Baidu&nbsp;&nbsp;</div>
+</div><!-- End #footer --></div>
+<input value="" name="bdstoken" id="bdstoken" type="hidden">
+
+
+
+
+</div>
+
+
+
+</body>
+</html>

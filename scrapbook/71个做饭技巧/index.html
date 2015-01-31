@@ -1,0 +1,914 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+<meta name="Description" content="人人网 校内是一个真实的社交网络，联络你和你周围的朋友。 加入人人网校内你可以:联络朋友，了解他们的最新动态；和朋友分享相片、音乐和电影；找到老同学，结识新朋友；用照片和日志记录生活,展示自我。">
+<meta name="Keywords" content="Xiaonei,Renren,校内,大学,同学,同事,白领,个人主页,博客,相册,群组,社区,交友,聊天,音乐,视频,校园,人人,人人网">
+<meta name="msapplication-task" content="name=新鲜事;action-uri=http://www.renren.com/home;icon-uri=http://a.xnimg.cn/n/res/icons/newsfeed.ico">
+<meta name="msapplication-task" content="name=日志;action-uri=http://blog.renren.com;icon-uri=http://a.xnimg.cn/n/res/icons/blog.ico">
+<meta name="msapplication-task" content="name=相册;action-uri=http://photo.renren.com;icon-uri=http://a.xnimg.cn/n/res/icons/photo.ico">
+<meta name="msapplication-task" content="name=音乐;action-uri=http://music.renren.com;icon-uri=http://a.xnimg.cn/n/res/icons/music.ico">
+<meta name="msapplication-task" content="name=分享;action-uri=http://share.renren.com;icon-uri=http://a.xnimg.cn/n/res/icons/share.ico">
+<!--[if lte IE 7]><script type="text/javascript" src="http://s.xnimg.cn/a17120/n/core/expressions.js"></script><![endif]-->
+<link href="favicon-rr.ico" rel="shortcut icon" type="image/x-icon">
+<link href="http://xnimg.cn/wap/apple_icon_.png" rel="apple-touch-icon">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<title>人人网- 日志分享
+</title>
+
+
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body id="pageShare"><iframe src="index_1.html" style="display: none;"></iframe><iframe src="index_2.html" style="display: none;"></iframe><iframe src="index_3.html" style="display: none;"></iframe><iframe src="index_4.html" style="display: none;"></iframe>	
+<input id="userGuideType" value="true" type="hidden">
+<div id="showNewNav" style="display: none;"></div>
+
+<div id="dropmenuHolder" class="dropmenu-holder dropmenu-holder-new rr">
+
+
+
+<div id="optiondropdownMenu" class="menu-dropdown optionmenu" style="display: none;">
+<div class="menu-dropdown-border">
+<div class="optionmenu">
+<ul>
+<li><a class="optionprofile" href="http://www.renren.com/profile.do?id=352566313&amp;v=info&amp;act=edit">资料编辑</a></li>
+<li><a class="optionaccount" href="http://www.renren.com/privacyhome.do">隐私设置</a></li>
+<li><a class="optionapplication" href="http://app.renren.com/apps/editapps.do?origin=118">应用设置</a></li>
+<li><a class="optionprivacy" href="http://safe.renren.com/">帐户设置</a></li>
+<li><a class="optionmail" href="http://mail.renren.com/subscribe">邮件订阅</a></li></ul>
+</div>
+</div>
+</div>			
+<div id="appsMenuPro" class="menu-dropdown" style="position: absolute; display: block; z-index: 10001; left: -9999px; top: -9999px;">
+</div><div id="profileMenu" class="menu-dropdown" style="display: block; position: absolute; z-index: 10001; left: -9999px; top: -9999px;">
+<div class="menu-dropdown-border">
+<div class="optionmenu">
+<ul>
+<li><a href="http://i.renren.com/store/view/home?wc=10000" class="optionprofileskin">装扮主页</a></li>
+<li><a class="optionprofile" href="http://www.renren.com/profile.do?id=352566313&amp;v=info&amp;act=edit">修改资料</a></li>
+<li><a class="optionlover" href="http://lover.renren.com/home">情侣空间</a></li>
+</ul>
+</div>
+</div>
+<div></div></div><div id="friendMenu" class="menu-dropdown" style="display: block; position: absolute; z-index: 10001; left: -9999px; top: -9999px;">
+<div class="menu-dropdown-border">
+<div class="optionmenu">
+<ul>
+<li><a href="http://friend.renren.com/myfriendlistx.do#item_0" class="optionallfriend">全部好友</a></li>
+<li><a href="http://friend.renren.com/myfriendlistx.do#item_1" class="optionfindfriend">寻找好友</a></li>
+<li><a href="http://friend.renren.com/myfriendlistx.do#item_5" class="optiontongxunlu">通讯录</a></li>
+<li><a class="optioninvite" href="http://invite.renren.com/Invite.do">邀请朋友</a></li>
+</ul>
+</div>
+</div>
+<div></div></div><div id="accountDropDownMenu" class="menu-dropdown" style="display: block; position: absolute; z-index: 10001; left: -9999px; top: -9999px;">
+<div class="menu-dropdown-border">
+<div class="account-menu">
+<div class="accounts" id="otherAccount" style="display: none;"></div>
+<div class="optionmenu options">
+<ul>
+<li><a class="optionprivacy" href="http://safe.renren.com/">帐户设置</a></li>
+<li><a href="http://i.renren.com/" class="optionvip">VIP中心</a></li>
+<li><a href="http://pay.renren.com/" class="optionpay">充值中心</a></li>
+<li><a class="optionmail" href="http://mail.renren.com/subscribe">邮件订阅</a></li></ul>
+</div>
+<a accesskey="0" href="http://www.renren.com/Logout.do?requesttoken=1507137107" class="logout">退出</a>
+</div>
+</div>
+<div></div></div><div style="display: block; position: absolute; z-index: 10001; left: -9999px; top: -9999px; width: 159px;" class=""><span class="x1"><span class="x1a"></span></span><span class="x2"><span class="x2a"></span></span><div class="m-autosug-minwidth"><div class="m-autosug-content"><ul class="search-Result"></ul></div></div><div></div></div><div style="position: absolute; z-index: 10001; left: -9999px; top: -9999px; display: block; width: 338px;"><div class=" m-editor"></div></div></div><div id="navBar" class="menu-bar rr"><div class="navigation-wrapper">
+<div class="navigation navigation-new clearfix"><div id="logo2"><h1><a href="http://www.renren.com/" title="人人网 renren.com - 人人网校内是一个真实的社交网络，联系朋友，一起玩游戏"><img alt="人人网 renren.com - 人人网校内是一个真实的社交网络，联系朋友，一起玩游戏" title="人人网 renren.com - 人人网校内是一个真实的社交网络，联系朋友，一起玩游戏" src="logo-rr-159.png" height="35" width="159"></a></h1></div>										
+<div class="nav-body clearfix">
+<div class="nav-main">
+<div class="menu"><div class="menu-title"><a accesskey="1" stats="Hd_home" href="http://www.renren.com/home?id=352566313">首页<span class="drop-menu-btn"></span></a></div>
+</div>
+<div class="menu">
+<div id="profileMenuActive" class="menu-title with-drop-menu"><a accesskey="2" id="showProfileMenu" stats="Hd_Profile" href="http://www.renren.com/profile.do?id=352566313">个人主页<span class="drop-menu-btn" id="profileDropMenu"></span></a></div>
+</div>
+<div class="menu"><div class="menu-title with-drop-menu" id="friendMenuActive"><a accesskey="3" id="showFriendMenu" stats="Hd_frd" href="http://friend.renren.com/myfriendlistx.do">好友<span class="drop-menu-btn" id="friendDropMenu"></span></a></div>
+</div>							<div class="menu"><div class="menu-title with-drop-menu">
+<a href="http://app.renren.com/?origin=119" accesskey="4" id="showAppMenu">应用<span class="drop-menu-btn" id="appDropMenu"></span></a>
+</div>								
+</div>
+<div class="menu">
+<div class="menu-title"><a stats="Hd_game" accesskey="5" href="http://game.renren.com/">游戏<span class="drop-menu-btn"></span></a></div>
+</div></div><div class="nav-other">
+<div class="menu">
+<div class="menu-title">
+<a accesskey="6" id="global_inbox_link" stats="Hd_msg" href="http://msg.renren.com/"><span>站内信</span>
+</a>
+</div>
+</div><div class="menu">
+<div class="menu-title" id="searchMenuAction"><a accesskey="7" href="http://browse.renren.com/search.do?_sgrf=navi" stats="Hd_sMenu">搜索</a></div>
+</div><div id="navSearch">
+<form method="post" id="globalSearchForm" action="http://browse.renren.com/searchEx.do?from=opensearch">
+<div id="search-input">
+<input autocomplete="off" style="color: rgb(136, 136, 136);" accesskey="/" stats="Hd_sInput" size="25" maxlength="100" id="navSearchInput" name="q" class="input-text" value="找人、公共主页、游戏" tabindex="1" type="text">
+</div>
+<div id="search-submit">
+<a stats="Hd_sBtn" id="navSearchSubmit" class="submit" href="http://browse.renren.com/search.do?_sgrf=navi">搜索</a>
+</div>
+<input value="1507137107" name="requestToken" type="hidden"><input value="259614ad" name="_rtk" type="hidden"></form>
+</div>
+<div class="menu account-action" id="accountMenu">
+<div class="menu-title"><a href="#" onclick="return false;">帐号</a></div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="full-page-holder">
+<div class="full-page clearfix"><div class="pagemain">
+<div class="page-titletabs clearfix">
+<div class="title-name title-share">分享</div>
+<ul class="nav-tabs Third">
+<li>
+<a href="http://www.renren.com/profile.do?id=224008965">
+<span>张慧</span>
+</a>
+</li>
+<li class="angleright"></li>
+<li>
+<a href="http://share.renren.com/share/224008965"><span>张慧的分享</span></a>
+</li>
+<li class="angleright"></li>
+<li>当前分享</li>
+</ul>
+<a href="http://share.renren.com/" title="返回分享首页" class="return-index">返回分享首页»</a></div>
+<div class="share-home terminal">
+<div class="share-newacts">
+<a class="share_new" data-share="{stype:'create_share_sysn',id:9107679976,owner:224008965,host:224008965,top:30}" href="#nogo">分享</a>
+</div><h3 class="title-article">
+<strong rip-style-borderwidth-backup="" rip-style-borderstyle-backup="" style="" rip-style-bordercolor-backup="">年轻人一定要知道的71个做饭技巧``````</strong>
+<span class="blog-legend">来源：</span>
+<span class="blog-detail">
+<span class="name">                                      
+<a href="http://blog.renren.com/GetEntry.do?id=368470330&amp;owner=251155343" target="_top">张倩的日志</a>                                                                            
+</span>
+</span>                 
+</h3>
+<div class="text-article">
+<div class="content-body" id="shareBody">
+
+<p>    <span style="font-size: medium; color: rgb(0, 94, 172);"><span style="font-size: small;">1、煮水饺时，在水里放一颗大葱或在水开后加点盐，再放饺子，饺子味道鲜美不粘连；在和面时，每500克面粉加拌一个鸡蛋，饺子皮挺刮不粘连 <br>2、 炖肉时，在锅里加上几块桔皮，可除异味和油腻并增加汤的鲜味 <br>3、煮骨头汤时加一小匙醋，可使骨头中的磷、钙溶解于汤中。 <br>4、炖鸡：洗净切块，倒入热油锅内翻炒，待水分炒干时，倒入适量香醋，再迅速翻炒，至鸡块发出劈劈啪啪的爆响声时，立即加热水(没过鸡块)，再用旺火烧十分钟，即可放入调料，移小火上再炖20分钟，淋上香油即可出锅；应在汤炖好后，温度降至80～90摄氏度时或食用前加盐。因为鸡肉中含水分较高，炖鸡先加盐，鸡肉在盐水中浸泡，组织细胞内水分向外渗透，蛋白质产生凝固作用，使鸡肉明显收缩变紧，影响营养向汤内溶解，且煮熟后的鸡肉趋向硬、老，口感粗糙。&nbsp;<br> 　 <br>6、烧豆腐时，加少许豆腐乳或汁，味道芳香 <br>7、将绿豆在铁锅中炒10分钟再煮能很快煮烂，但注意不要炒焦 <br>8、煮蛋时水里加点醋可防蛋壳裂开，事先加点盐也可 　 <br>9、煮海带时加几滴醋易烂；放几棵波菜也行 　 <br>10、煮火腿之前，将火腿皮上涂些白糖，容易煮烂，味道更鲜美 <br>11、羊肉去膻味：将萝卜块和羊肉一起下锅，半小时后取出萝卜块；放几块桔子皮更佳；每公斤羊肉放绿豆5克，煮沸10分钟后，将水和绿豆一起倒出；放半包山楂片；将带壳的核桃两三个洗净打孔放入；１公斤羊肉加咖喱粉10克；１公斤羊肉加剖开的甘蔗200克；１公斤水烧开，加羊肉１公斤、醋50克，煮沸后捞出，再重新加水加调料。 <br>12、煮水饺时，在锅中加少许食盐，锅开时水也不外溢 　 <br>13、面条时加一小汤匙食油，面条不会沾连，并可防止面汤起泡沫、溢出锅外 <br>14、煮面条时，在锅中加少许食盐，煮出的面条不易烂糊 　 <br>15、熬粥或煮豆时不要放碱，否则会破坏米、豆中的营养物质 　　 <br>16、用开水煮新笋容易熟，且松脆可口；要使笋煮后不缩小，可加几片薄荷叶或盐 <br>17、猪肚煮熟后，切成长块，放在碗内加一些鲜汤再蒸一会儿，猪肚便会加厚一倍 <br>18、煮猪肚时，千万不能先放盐，等煮熟后吃时再放盐，否则猪肚会缩得象牛筋一样硬 <br>19、煮牛肉：为了使牛肉炖得快，炖得烂，加一小撮茶叶(约为泡一壶茶的量，用纱布包好)同煮，肉很快就烂且味道鲜美。　　 <br>20、煮牛肉和其他韧、硬肉类以及野味禽类时，加点醋可使其软化。 <br>21、炖老鸡：在锅内加二三十颗黄豆同炖，熟得快且味道鲜；或在杀老鸡之前，先灌给鸡一汤匙食醋，然后再杀，用文火煮炖，就会煮得烂熟；或放３～４枚山楂，鸡肉易烂 <br>22、老鸡鸭用猛火煮，肉硬不好吃；如果先用凉水和少许食醋泡上２小时，再用微火炖，肉就会变得香嫩可口 　　 <br>23、炖老鸭：在锅里放几个田螺容易烂熟 　　 <br>24、烧鸭子时，把鸭子尾端两侧的臊豆去掉，味道更美 　 <br>25、煮咸肉：用十几个钻有许多小孔的核桃同煮，可消除臭味 <br>26、红烧牛肉时，加少许雪里红，肉味鲜美 　 <br>27、做红烧肉前，先用少许硼砂把肉腌一下，烧出来的肉肥而不腻，甘香可口 　 <br>28、油炸食物时，锅里放少许食盐，油不会外溅 　 <br>29、在春卷的拌馅中适量加些面粉，能避免炸制过程中馅内菜汁流出糊锅底的现象 <br>30、炸土豆之前，先把切好的土豆片放在水里煮一会儿，使土豆皮的表面形成一层薄薄的胶质层，然后再用油炸 　　 <br>31、炸猪排时，在有筋的地方割２～３个切口，炸出来的猪排就不会收缩 　 <br>32、将鸡肉先腌一会儿，封上护膜放入冰箱，待炸时再取出，炸出的鸡肉酥脆可口 <br>33、煎荷包蛋时，在蛋黄即将凝固之际浇一点冷开水，会使蛋又黄又嫩 <br>34、煎鸡蛋时，在平底锅放足油，油微热时蛋下锅，鸡蛋慢慢变熟，外观美，不粘锅 <br>35、煎鸡蛋时，在热油中撒点面粉，蛋会煎得黄亮好看，油也不易溅出锅外 <br>36、用羊油炒鸡蛋，味香无异味 　　 <br>37、炒鸡蛋时加入少量的砂糖，会使蛋白质变性的凝固温度上升，从而延缓了加热时间，加上砂糖具有保水性，因而可使蛋制品变得膨松柔软 　 <br>38、炒鸡蛋时加入几滴醋，炒出的蛋松软味香 　 <br>39、炒茄子时，在锅里放点醋，炒出的茄子颜色不会变黑 　 <br>40、炒土豆时加醋，可避免烧焦，又可分解土豆中的毒素，并使色、味相宜 <br>41、炒豆芽时，先加点黄油，然后再放盐，能去掉豆腥味 　 <br>42、炒波菜时不宜加盖 　 <br>43、炒肉片：肉切成薄片加酱油、黄油、淀粉，打入一个鸡蛋，拌匀，炒散；等肉片变色后，再加佐料稍炒几下，肉片味美、鲜嫩 <br>44、炒牛肉丝：切好，用盐、糖、酒、生粉(或鸡蛋)拌一下，加上生油泡腌，30分钟后再炒，鲜嫩可口 　 <br>45、炒肉菜时放盐过早熟得慢，宜在将熟时加盐，在出锅前再加上几滴醋，鲜嫩可口 <br>46、肉丝切好后放在小苏打溶液里浸一下再炒，特别疏松可口不论做什么糖醋菜肴，只要按２份糖１份醋的比例调配，便可做到甜酸适度 　 <br>47、炒糖醋鱼、糖醋菜帮等，应先放糖，后放盐，否则食盐的“脱水”作用会促进菜肴中蛋白质凝固而“吃”不进糖分，造成外甜里淡 　 <br>48、做肉饼和肉丸子时，一公斤肉馅放2小匙盐 　 <br>49、做丸子按50克肉10克淀粉的比例调制，成菜软嫩 　 <br>50、做滑炒肉片或辣子肉丁，按50克肉５克淀粉的比例上浆，成菜鲜嫩味美 <br>51、做馒头时，如果在发面里揉进一小块猪油，蒸出来的馒头不仅洁白、松软，而且味香 <br>52、蒸馒头时掺入少许桔皮丝，可使馒头增加清香 　 <br>53、蒸馒头碱放多了起黄，如在原蒸锅水里加醋２～３汤匙，再蒸10～15分钟可变白 <br>54、将少量明矾和食盐放入清水中，把切开的生红薯浸入十几分钟，洗净后蒸煮，可防止或减轻腹胀 <br>55、牛奶煮糊了，放点盐，冷却后味道更好 <br>56、放有辣椒的菜太辣时或炒辣椒时加点醋，辣味大减 <br>57、烹调时，放酱油若错倒了食醋，可撒放少许小苏打，醋味即可消除 <br>58、菜太酸，将一只松花蛋捣烂放入 <br>59、菜太辣，放一只鸡蛋同炒 <br>60、菜太辣，放些醋可减低辣味 <br>61、菜太苦，滴入少许白醋 <br>62、汤太咸又不宜兑水时，可放几块豆腐或土豆或几片蕃茄到汤中；也可将一把米或面粉用布包起来放入汤中 <br>63、汤太腻，将少量紫菜在火上烤一下，然后撒入汤中 <br>64、花生米用油炸熟，盛入盘中，趁热撒上少许白酒，稍凉后再撒上少许食盐，放置几天几夜都稣脆如初 <br>65、菜籽油有一股异味，可把油烧热后投入适量生姜、蒜、葱、丁香、陈皮同炸片刻，油即可变香 <br>66、用菜油炸一次花生米就没有怪味了，炒出的菜肴香味可口，并可做凉拌菜 <br>67、炸完食物后的油留下一些残渣并变得混浊，可将白萝卜切成厚圆片，用筷子把萝卜戳几个洞，放入剩油中炸，残渣会附着在萝卜片上，取出清除残渣，再反复放入锅中炸，混浊的油可变清澈 <br>68、炒菜时应先把锅烧热，再倒入食油，然后再放菜 <br>69、当锅内温度达到最高时加入料酒，易使酒蒸发而去除食物中的腥味 <br>70、熬猪油：在电饭褒内放一点水或植物油，然后放入猪板油或肥肉，接通电源后，能自动将油炼好，不溅油，不糊油渣，油质清纯 <br>71、泡菜坛中放十几粒花椒或少许麦芽糖，可防止产生白花。</span></span></p>                                     
+</div>
+</div>
+<p class="stat-area">
+<span class="a-nav clearfix"><span>源地址：<a href="http://blog.renren.com/GetEntry.do?id=368470330&amp;owner=251155343" target="_top">http://blog.renren.com/GetEntry.do?id=368470330&amp;owner=251155343</a></span>
+</span>   
+</p><div class="share-operations">                                                                                                                                    
+<div class="new-share-info">                                                                                                                            
+<span class="">来源：<a href="http://blog.renren.com/GetEntry.do?id=368470330&amp;owner=251155343" target="_top">张倩的日志</a></span>                                                                                                    
+<span class="pipe">|</span>                                                                                                                           
+<span>分享 <strong>148984</strong></span>                                                                                                            
+<span class="pipe">|</span>                                                                                                                           
+<span>浏览 <strong>251666</strong></span>  						                                                                                                      
+</div>                                                                                                                                                  
+<a class="comment-act" href="#mycomment" onclick="window.location.href='#mycomment';$('miniEditorTextarea').focus();return false;"><span>评论</span></a>
+<span class="pipe">|</span>
+<a class="share_new" data-share="{stype:'create_share_sysn',id:9107679976,owner:224008965,host:224008965}" href="#nogo">分享</a>
+<span class="pipe">|</span>           
+<a href="#nogo" onclick="ILike.toggleUserLike()" id="ILike_UserLike_Handle">喜欢</a>  
+<span class="pipe">|</span> 
+<a href="http://admin.renren.com/admin/newreportshare.do?contentId=9107679976&amp;userId=224008965&amp;origURL=http://blog.renren.com/share/224008965/9107679976" target="_top">举报</a>                                               
+</div>   <p></p>                   
+<div class="combox_share">
+<ul class="filter clearfix">
+<li>
+<a class=" select" id="friendCmts" href="javascript:;">
+<span> TA的分享评论 
+</span>
+</a>
+</li>
+<li>
+<a id="allCmts" href="javascript:;"><span>全站评论</span></a>
+</li>
+</ul>
+<div id="cmtsListCon">
+<div class="replies" id="friendCmtsList" style=""><div class="replies" id="ilike">
+<dl class="replies  with-arrow" id="ILike_Box"><dt class="digged" style="display: none;"><span id="ILike_Text_9107679976"></span></dt><dd id="ILike_Detail_9107679976" class="diggers" style="display: none;"></dd></dl><dl class="replies" style="display: none;"></dl>
+</div><div id="friendCmts_commContainer_9107679976"><dl class="replies" id="friendCmts_comment_list">
+<dd id="friendCmts_comment_1415416956">   
+<span class="float-right"><a target="_top" href="http://admin.renren.com/admin/newuserreport.do?type=30&amp;owner=224008965&amp;contentId=1415416956&amp;userId=277171445&amp;pid=9107679976&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> <a href="http://www.renren.com/profile.do?id=277171445" title="丁克强" class="avatar">
+<img class="avatar" alt="丁克强" src="h_tiny_z3qf_2ea70001c9d32f74.jpg" height="50" width="50">
+</a>    
+<div class="info"><a href="http://www.renren.com/profile.do?id=277171445" title="连续登录7天, 即可获得橙名特权" class="lively-user">丁克强</a> <span class="time">
+2011-10-09 11:08
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>非常的好，太全了，呵呵</span>
+</p>
+<a href="javascript:void(0);" cmd="{t:'reply',sid:9107679976,oid:277171445,oname:'丁克强'}">回复</a></div>
+</dd>	
+</dl>
+</div>
+</div>
+<div class="replies" id="allCmtsList" style="display: none;"><div id="allCmts_commContainer_9107679976">
+<dl class="replies">
+<dt class="show-all" id="allCmts_showMore_9107679976">
+<a onclick="XN.app.share.CommentManger.getMoreCmt(9107679976,224008965);return false;" id="allCmts_showMoreComments" href="#nologo">显示较早之前的评论</a><span id="allCmts_tempLoading_9107679976" style="visibility: hidden;">加载中&nbsp;<img src="indicator_blue_small.gif"></span>
+</dt></dl>
+<dl class="replies" id="allCmts_comment_list">
+<dd id="allCmts_comment_1415674006"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1415674006&userId=326678549&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=326678549" title="史渤铖" class="avatar">
+<img class="avatar" alt="史渤铖" src="h_tiny_nyfq_20a1000245d32f75.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=326678549" title="连续登录7天, 即可获得橙名特权" class="lively-user">史渤铖</a> <span class="time">
+2011-10-09 13:17
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>回复林广彬:呵呵   
+</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1415678720"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1415678720&userId=279630397&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=279630397" title="李淳超" class="avatar">
+<img class="avatar" alt="李淳超" src="tiny_wddq_309506i019118.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=279630397" title="连续登录7天, 即可获得橙名特权" class="lively-user">李淳超</a> <span class="time">
+2011-10-09 13:20
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>回复卢舒曼： 您这只是得巩固很久了吧</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1415685876"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1415685876&userId=281374027&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=281374027" title="卢舒曼" class="avatar">
+<img class="avatar" alt="卢舒曼" src="tiny_onjs_256068a019117.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=281374027" title="连续登录7天, 即可获得橙名特权" class="lively-user">卢舒曼</a> <span class="time">
+2011-10-09 13:23
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>回复李淳超:恩~~我这是要理论联系实际嘛~用心去体会~永远不嫌长~~<img src="15.gif" alt="开心"></span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1415715774"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1415715774&userId=231951400&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=231951400" title="李泽文" class="avatar">
+<img class="avatar" alt="李泽文" src="tiny_vf48_3212j019118.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=231951400" title="连续登录7天, 即可获得橙名特权" class="lively-user">李泽文</a> <span class="time">
+2011-10-09 13:39
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>还有呐,炒鸡肉的时候把鸡皮上油腻的一块全部切下来,放锅里炸,压一压,然后整锅菜都不用放油啦~</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1415733811"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1415733811&userId=48171213&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=48171213" title="晓兰" class="avatar">
+<img class="avatar" alt="晓兰" src="tiny_fwh6_2622n019118.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=48171213" title="晓兰">晓兰</a> <span class="time">
+2011-10-09 13:49
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>好用不好用，有机会试试看！</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1415738826"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1415738826&userId=335490855&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=335490855" title="董珈成" class="avatar">
+<img class="avatar" alt="董珈成" src="tiny_wcw7_99794n019117.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=335490855" title="连续登录7天, 即可获得橙名特权" class="lively-user">董珈成</a> <span class="time">
+2011-10-09 13:52
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>又开始 分享做饭</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1415872903"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1415872903&userId=222054177&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=222054177" title="王甜" class="avatar">
+<img class="avatar" alt="王甜" src="tiny_yjto_136174f019117.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=222054177" title="王甜">王甜</a> <span class="time">
+2011-10-09 15:12
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>会做饭的人啊<img src="2.gif" alt="谄笑"></span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1415898467"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1415898467&userId=263900923&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=263900923" title="谢雨佳ღ" class="avatar">
+<img class="avatar" alt="谢雨佳ღ" src="tiny_4mcz_92261k019117.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=263900923" title="连续登录7天, 即可获得橙名特权" class="lively-user">谢雨佳ღ</a> <span class="time">
+2011-10-09 15:28
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>回复李洋ღ:干吗！</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1416127157"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1416127157&userId=349759280&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=349759280" title="老树" class="avatar">
+<img class="avatar" alt="老树" src="h_tiny_ll5y_6956000352b52f75.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=349759280" title="老树">老树</a> <span class="time">
+2011-10-09 17:30
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>收藏之！</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1416132642"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1416132642&userId=229639018&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=229639018" title="王琳毓" class="avatar">
+<img class="avatar" alt="王琳毓" src="tiny_hy1p_70548d019118.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=229639018" title="王琳毓">王琳毓</a> <span class="time">
+2011-10-09 17:33
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>要做饭啦！给各位老公看～</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1416277985"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1416277985&userId=245614037&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=245614037" title="张金柱" class="avatar">
+<img class="avatar" alt="张金柱" src="h_tiny_hok4_62d0000236482f74.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=245614037" title="连续登录7天, 即可获得橙名特权" class="lively-user">张金柱</a> <span class="time">
+2011-10-09 18:45
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>好！</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1416282438"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1416282438&userId=277171445&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=277171445" title="丁克强" class="avatar">
+<img class="avatar" alt="丁克强" src="h_tiny_z3qf_2ea70001c9d32f74.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=277171445" title="连续登录7天, 即可获得橙名特权" class="lively-user">丁克强</a> <span class="time">
+2011-10-09 18:47
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>回复王甜： 呵呵，喜欢做饭，是因为贪吃啊，我是很喜欢做的，尤其没有什么事的时候</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1416292168"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1416292168&userId=282201709&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=282201709" title="李洋ღ" class="avatar">
+<img class="avatar" alt="李洋ღ" src="tiny_9sqj_99641k019117.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=282201709" title="连续登录7天, 即可获得橙名特权" class="lively-user">李洋ღ</a> <span class="time">
+2011-10-09 18:51
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>回复谢雨佳ღ:为不愿意学做饭的小白同学表示悲哀~</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1416313719"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1416313719&userId=230520594&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=230520594" title="朱峰" class="avatar">
+<img class="avatar" alt="朱峰" src="tiny_zlfp_271021e019116.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=230520594" title="连续登录7天, 即可获得橙名特权" class="lively-user">朱峰</a> <span class="time">
+2011-10-09 19:01
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>好东西……</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1416394211"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1416394211&userId=222054177&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=222054177" title="王甜" class="avatar">
+<img class="avatar" alt="王甜" src="tiny_yjto_136174f019117.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=222054177" title="王甜">王甜</a> <span class="time">
+2011-10-09 19:35
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>回复丁克强:呵呵 你是北方人么</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1416402399"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1416402399&userId=277171445&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=277171445" title="丁克强" class="avatar">
+<img class="avatar" alt="丁克强" src="h_tiny_z3qf_2ea70001c9d32f74.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=277171445" title="连续登录7天, 即可获得橙名特权" class="lively-user">丁克强</a> <span class="time">
+2011-10-09 19:38
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>是啊，看我胖嘟嘟的就像啊，南方很少有这么胖的啊</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1416402808"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1416402808&userId=229479696&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=229479696" title="林玥含" class="avatar">
+<img class="avatar" alt="林玥含" src="tiny_f0gs_27060k019117.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=229479696" title="连续登录7天, 即可获得橙名特权" class="lively-user">林玥含</a> <span class="time">
+2011-10-09 19:39
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>回复王琳毓： 。。。。。。</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1416413875"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1416413875&userId=227509349&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=227509349" title="劳万新" class="avatar">
+<img class="avatar" alt="劳万新" src="tiny_kytn_9922j019117.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=227509349" title="连续登录7天, 即可获得橙名特权" class="lively-user">劳万新</a> <span class="time">
+2011-10-09 19:43
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>学习</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1416507498"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1416507498&userId=227544315&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=227544315" title="周波" class="avatar">
+<img class="avatar" alt="周波" src="tiny_ahmi_45864k019118.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=227544315" title="连续登录7天, 即可获得橙名特权" class="lively-user">周波</a> <span class="time">
+2011-10-09 20:18
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>回复劳万新： <img src="5.gif" alt="尴尬"></span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1416593550"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1416593550&userId=228930342&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=228930342" title="曹美玲" class="avatar">
+<img class="avatar" alt="曹美玲" src="h_tiny_saxm_306100036a392f75.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=228930342" title="连续登录7天, 即可获得橙名特权" class="lively-user">曹美玲</a> <span class="time">
+2011-10-09 20:48
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>分享了，回家学做饭去！</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1416697010"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1416697010&userId=263900923&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=263900923" title="谢雨佳ღ" class="avatar">
+<img class="avatar" alt="谢雨佳ღ" src="tiny_4mcz_92261k019117.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=263900923" title="连续登录7天, 即可获得橙名特权" class="lively-user">谢雨佳ღ</a> <span class="time">
+2011-10-09 21:20
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>回复李洋ღ: 切~</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1416990237"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1416990237&userId=200252256&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=200252256" title="刘永新" class="avatar">
+<img class="avatar" alt="刘永新" src="tiny_yc8k_16600d019116.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=200252256" title="刘永新">刘永新</a> <span class="time">
+2011-10-09 22:37
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>我要学！</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1417061720"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1417061720&userId=227509349&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=227509349" title="劳万新" class="avatar">
+<img class="avatar" alt="劳万新" src="tiny_kytn_9922j019117.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=227509349" title="连续登录7天, 即可获得橙名特权" class="lively-user">劳万新</a> <span class="time">
+2011-10-09 22:55
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>其实我的梦想是当个厨子</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1417178273"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1417178273&userId=345979902&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=345979902" title="李涛" class="avatar">
+<img class="avatar" alt="李涛" src="h_tiny_bnkv_4a8300020b532f74.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=345979902" title="李涛">李涛</a> <span class="time">
+2011-10-09 23:30
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>回复乔雪♬Joyce：<img src="21.gif" alt="晕">额</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1417461318"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1417461318&userId=252186850&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=252186850" title="王晓坤" class="avatar">
+<img class="avatar" alt="王晓坤" src="tiny_ubim_188310n019117.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=252186850" title="王晓坤">王晓坤</a> <span class="time">
+2011-10-10 08:22
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>旅游，读书，必须做一样，灵魂和身体必须有一个在路上…</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1417464421"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1417464421&userId=237658326&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=237658326" title="韩世峰" class="avatar">
+<img class="avatar" alt="韩世峰" src="tiny_7ubp_81264i019118.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=237658326" title="韩世峰">韩世峰</a> <span class="time">
+2011-10-10 08:25
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>居家必备</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1417538031"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1417538031&userId=279314828&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=279314828" title="宋文超" class="avatar">
+<img class="avatar" alt="宋文超" src="tiny_kame_113767g204235.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=279314828" title="连续登录7天, 即可获得橙名特权" class="lively-user">宋文超</a> <span class="time">
+2011-10-10 09:22
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>学习下下</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1417832595"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1417832595&userId=227509349&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=227509349" title="劳万新" class="avatar">
+<img class="avatar" alt="劳万新" src="tiny_kytn_9922j019117.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=227509349" title="连续登录7天, 即可获得橙名特权" class="lively-user">劳万新</a> <span class="time">
+2011-10-10 12:17
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>回复郑玉杰： 恩，谢谢。哈哈，我先攒肚子了</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1418651895"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1418651895&userId=53947705&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=53947705" title="郑玉杰" class="avatar">
+<img class="avatar" alt="郑玉杰" src="tiny_mqgk_49686o019116.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=53947705" title="连续登录7天, 即可获得橙名特权" class="lively-user">郑玉杰</a> <span class="time">
+2011-10-10 19:22
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>回复劳万新: 没问题哈哈！</span>
+</p></div>
+</dd>
+<dd id="allCmts_comment_1418658833"><!--   
+<span class="float-right"><a target="_blank" href="http://admin.renren.com/admin/newuserreport.do?type=30&owner=224008965&contentId=1418658833&userId=234130651&pid=9107679976&origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D9107679976%26owner%3D224008965" class="reply-report">举报</a></span> -->
+<a href="http://www.renren.com/profile.do?id=234130651" title="韩少寰" class="avatar">
+<img class="avatar" alt="韩少寰" src="tiny_vslo_54285m019118.jpg" height="50" width="50">
+</a> 
+<div class="info"><!--  --><a href="http://www.renren.com/profile.do?id=234130651" title="连续登录7天, 即可获得橙名特权" class="lively-user">韩少寰</a> <span class="time">
+2011-10-10 19:25
+</span>
+</div>
+<div class="reply">
+<p class="content">
+<span>好用不</span>
+</p></div>
+</dd>	
+</dl>
+</div>
+</div>
+</div>
+<input value="顾俊喜" id="guestName" type="hidden">
+<div class="boxcont">
+<div id="ajax_msgerror" class="errors_div ajax_msgerror" style="display: none;"></div>
+
+<form action="http://blog.renren.com/share/224008965/9107679976" id="comment_form_9107679976" onsubmit="return false;" onkeydown="if(event.keyCode == 13 &amp;&amp; event.ctrlKey){XN.app.share.CommentManger.save(9107679976);}">
+<div class="commentinshare clearfix">
+<div class="user-avatar">
+<img alt="顾俊喜" src="tiny_djpc_75429e019117.jpg" class="avatar">
+</div>
+<div class="m-editor" id="miniEditor">
+<div class="m-editor-textarea">
+<textarea eicons_obj_id="4" id="miniEditorTextarea" name="comment"></textarea>
+</div>
+<div id="miniEditorAction" class="m-editor-action clearfix">
+<a id="atBtn" class="m-editor-at" href="#nogo">点名</a>
+<a href="javascript:;" id="emoBtn" class="m-editor-emo">表情</a>
+</div>
+<div id="shareVerify_9107679976" style="display: none;">
+<label for="schoolInfoCode">
+<em>*</em>验证码:
+</label>
+<input value="" tabindex="21" maxlength="5" size="5" id="shareInfoCode9107679976" name="shareInfoCode9107679976" class="inputtext validate-code" type="text"></div>
+<div class="m-editor-submit">
+<input id="submit_comment" name="submit_comment" onclick="XN.app.share.CommentManger.save(9107679976);" value="&nbsp;发表评论&nbsp;" class="input-button" type="submit">
+<label style="color: rgb(136, 136, 136); margin-left: 5px;"><input id="sysnblog" value="1" checked="checked" type="checkbox">同时评论到原日志</label>
+</div>
+<input id="repetNo" name="repetNo" value="0" type="hidden">
+<input id="shareId" name="shareId" value="9107679976" type="hidden">
+<input id="shareOwner" name="shareOwner" value="224008965" type="hidden">
+</div>
+</div>
+<input value="1507137107" name="requestToken" type="hidden"><input value="259614ad" name="_rtk" type="hidden"></form>
+
+</div>                                                 
+</div>
+</div>
+<div class="share-sidebar terminal-side">
+<div class="Widget_flash">
+<div id="ad100000000069"><div class="wide-sponsors">
+
+					<div class="side-item-body clearfix">
+
+				        <div class="side-item-body clearfix">
+<div id="ad1000039720001100001_1318260810405_adbox100000000069small-flash" style="">
+<a id="ad1000039720001100001_1318260810405_adbox100000000069sflashlink" href="http://ebp.renren.com/ebpn/click.html?aid=1000039720001100001&amp;mc=0%5EC70%5EC1000039720001100001%5EC0%5EC100%5EC1%5EC100%5EC1318260807%5EC1000000_352566313%7C1%7C1986-01-01%7C25%7C2%7C0086110000000000%7C400000001005_0086110000000000%7C45%7C0%7C0%7C0086110000000000%5EC100000000069%5EC0%5EC%5EC%5ECrr_REMAIN_2_70%5EC100001&amp;refresh_source=0&amp;refresh_idx=0&amp;engine_type=1&amp;ref=http%3A%2F%2Fblog.renren.com%2Fshare%2F224008965%2F9107679976&amp;url=http%3A%2F%2Fwww.qianpin.com%2F%23wm_renren" target="_top"><img id="ad1000039720001100001_1318260810405_adbox100000000069sflashobj" src="1267a1dd-928b-4472-be7d-9ed74e981fe4.jpg" height="50" width="240"></a>
+</div>
+
+<div style="display: none;" id="ad1000039720001100001_1318260810405_adbox100000000069big-flash">
+<a id="ad1000039720001100001_1318260810405_adbox100000000069bflashlink" href="http://ebp.renren.com/ebpn/click.html?aid=1000039720001100001&amp;mc=0%5EC70%5EC1000039720001100001%5EC0%5EC100%5EC1%5EC100%5EC1318260807%5EC1000000_352566313%7C1%7C1986-01-01%7C25%7C2%7C0086110000000000%7C400000001005_0086110000000000%7C45%7C0%7C0%7C0086110000000000%5EC100000000069%5EC0%5EC%5EC%5ECrr_REMAIN_2_70%5EC100001&amp;refresh_source=0&amp;refresh_idx=0&amp;engine_type=1&amp;ref=http%3A%2F%2Fblog.renren.com%2Fshare%2F224008965%2F9107679976&amp;url=http%3A%2F%2Fwww.qianpin.com%2F%23wm_renren" target="_top"><img id="ad1000039720001100001_1318260810405_adbox100000000069bflashobj" src="2a94991a-deef-4748-bfff-de73e9e802f9.jpg" height="240" width="240"></a>
+</div>
+</div>
+	
+
+				    </div>
+
+                </div></div>
+</div>
+<div class="more-shares">
+<div class="nav-tabs">
+<ul class="tabs">
+<li class=" selected" id="othershareTab">
+<a href="#nogo" onfocus="this.blur()">
+TA的其它分享</a>
+</li>
+<li id="hotshareTab">
+<a href="#nogo" onfocus="this.blur()">热门分享</a>
+</li>
+</ul>
+</div>
+<div id="othersharelist" class="hot-blog-sidebar shares-list">
+<ul class="blog-list clearfix">
+<li>
+<a title="安卓(Android)系统的50个秘密·你都知道了吗？【留着..." href="http://blog.renren.com/GetEntry.do?id=711689045&amp;owner=247675371&amp;shareID=9138867212&amp;shareOwner=224008965&amp;from=otherblog" target="_top">安卓(Android)系统的50个秘密·你都知道了吗？【留着...</a>
+<p class="blog-brief">
+身边现在越来越多人使用上了安卓系统的手机，但是有É... </p>
+</li>
+<li>
+<a title="面试一年前的自己" href="http://blog.renren.com/GetEntry.do?id=766665592&amp;owner=231506766&amp;shareID=9133171959&amp;shareOwner=224008965&amp;from=otherblog" target="_top">面试一年前的自己</a>
+<p class="blog-brief"></p>
+</li>
+<li>
+<a title="北邮古时候~~" href="http://blog.renren.com/GetEntry.do?id=757717330&amp;owner=333353872&amp;shareID=9035084927&amp;shareOwner=224008965&amp;from=otherblog" target="_top">北邮古时候~~</a>
+<p class="blog-brief"></p>
+</li>				
+</ul>
+<div class="show-more">
+<a href="http://share.renren.com/share/224008965">显示更多 »</a>
+</div></div> 		   
+<div style="display: none;" id="hotsharelist" class="hot-blog-sidebar shares-list">			
+<ul class="blog-list clearfix">
+<li>
+<a title="请假理由及技巧大全" href="http://blog.renren.com/GetEntry.do?id=763725008&amp;owner=261004974&amp;shareID=8880244384&amp;shareOwner=243930400&amp;from=endhotblog" target="_top">请假理由及技巧大全</a>
+<p class="blog-brief">
+首先，这篇文章适用于逢年过节想提前回家或者想睡懒觉不想上课的... </p>
+</li>
+<li>
+<a title="下辈子我要做一个帅哥！" href="http://blog.renren.com/GetEntry.do?id=765302189&amp;owner=344356012&amp;shareID=8980743230&amp;shareOwner=266603200&amp;from=endhotblog" target="_top">下辈子我要做一个帅哥！</a>
+<p class="blog-brief"></p>
+</li>
+<li>
+<a title="第一次带爷爷去吃麦当劳！一张图，感动了所有人！！都看看吧" href="http://blog.renren.com/GetEntry.do?id=755765532&amp;owner=377851175&amp;shareID=8858839053&amp;shareOwner=170150635&amp;from=endhotblog" target="_top">第一次带爷爷去吃麦当劳！一张图，感动了所有人！！都看看吧</a>
+<p class="blog-brief"></p>
+</li>				
+</ul>
+<div class="show-more">
+<a href="http://share.renren.com/share/hot">显示更多 »</a>
+</div>
+</div>
+</div>    
+<div id="relative-content-con"><div class="relative-content"><h4>相关日志</h4><div class="hot-blog-sidebar"><ul class="blog-list clearfix"><li>
+     <a title="[转]一中各班风云人物花名单，嘿嘿，说不定有你哦" href="http://blog.renren.com/share/378270900/7527222550/?sg_ref=blog_rltContent_Tml_title_BLOGACTION" target="_top">[转]一中各班风云人物花名单，嘿嘿，说不定有你哦</a>
+       <p class="blog-brief"> 主人设置了权限，需分享后才能观看. </p>
+</li>
+</ul></div></div></div> <div class="Widget">
+<div id="ad100000000070"><div class="selfHelp"><div style="border-top: 1px solid rgb(206, 225, 238);" class="under" id="ad1000036427000100001_1318260810408_adbox100000000070under1">
+
+                    <div class="inner-under" id="ad1000036427000100001_1318260810408_adbox100000000070div_1" style="position: relative; display: block;">
+
+                           <h4><a href="http://ebp.renren.com/ebpn/click.html?aid=1000036427000100001&amp;mc=0%5EC95%5EC1000036427000100001%5EC0%5EC100%5EC1%5EC100%5EC1318260807%5EC1000000_352566313%7C1%7C1986-01-01%7C25%7C2%7C0086110000000000%7C400000001005_0086110000000000%7C45%7C0%7C0%7C0086110000000000%5EC100000000070%5EC0%5EC%5EC%5ECrr_REMAIN_1_95%5EC0&amp;refresh_source=0&amp;refresh_idx=0&amp;engine_type=1&amp;ref=http%3A%2F%2Fblog.renren.com%2Fshare%2F224008965%2F9107679976&amp;url=http%3A%2F%2Fwww.chinafutureleader.org%2Fnew%2Fpage04.html" id="ad1000036427000100001_1318260810408_adbox100000000070title" target="_top">iPhone5先睹为快!</a></h4>
+
+                           <a class="img" href="http://ebp.renren.com/ebpn/click.html?aid=1000036427000100001&amp;mc=0%5EC95%5EC1000036427000100001%5EC0%5EC100%5EC1%5EC100%5EC1318260807%5EC1000000_352566313%7C1%7C1986-01-01%7C25%7C2%7C0086110000000000%7C400000001005_0086110000000000%7C45%7C0%7C0%7C0086110000000000%5EC100000000070%5EC0%5EC%5EC%5ECrr_REMAIN_1_95%5EC0&amp;refresh_source=0&amp;refresh_idx=0&amp;engine_type=1&amp;ref=http%3A%2F%2Fblog.renren.com%2Fshare%2F224008965%2F9107679976&amp;url=http%3A%2F%2Fwww.chinafutureleader.org%2Fnew%2Fpage04.html" id="ad1000036427000100001_1318260810408_adbox100000000070imgClickUrl" target="_top"><img id="ad1000036427000100001_1318260810408_adbox100000000070img" src="cd566722-4801-4acb-baa4-33210ffa8059.jpg" alt=""></a><p class="rr"><a href="http://ebp.renren.com/ebpn/click.html?aid=1000036427000100001&amp;mc=0%5EC95%5EC1000036427000100001%5EC0%5EC100%5EC1%5EC100%5EC1318260807%5EC1000000_352566313%7C1%7C1986-01-01%7C25%7C2%7C0086110000000000%7C400000001005_0086110000000000%7C45%7C0%7C0%7C0086110000000000%5EC100000000070%5EC0%5EC%5EC%5ECrr_REMAIN_1_95%5EC0&amp;refresh_source=0&amp;refresh_idx=0&amp;engine_type=1&amp;ref=http%3A%2F%2Fblog.renren.com%2Fshare%2F224008965%2F9107679976&amp;url=http%3A%2F%2Fwww.chinafutureleader.org%2Fnew%2Fpage04.html" id="ad1000036427000100001_1318260810408_adbox100000000070content" target="_top">著名口碑CFL哈佛国际交流项目,Apple访问,美国使馆推荐,8000奖学金,招募中限名额!(新)</a></p>
+
+                           <a style="display: none;" href="#" class="closebtn" id="ad1000036427000100001_1318260810408_adbox100000000070closeBtn" title="你要关闭这条广告吗?"><span></span></a>
+
+                    </div>
+
+                </div><div class="under" id="ad1000039077000100001_1318260810411_adbox100000000070under1">
+
+                    <div class="inner-under" id="ad1000039077000100001_1318260810411_adbox100000000070div_1" style="position: relative; display: block;">
+
+                           <h4><a href="http://ebp.renren.com/ebpn/click.html?aid=1000039077000100001&amp;mc=0%5EC95%5EC1000039077000100001%5EC0%5EC122%5EC2%5EC123%5EC1318260807%5EC1000000_352566313%7C1%7C1986-01-01%7C25%7C2%7C0086110000000000%7C400000001005_0086110000000000%7C45%7C0%7C0%7C0086110000000000%5EC100000000070%5EC0%5EC%5EC%5ECrr_REMAIN_1_95%5EC0&amp;refresh_source=0&amp;refresh_idx=0&amp;engine_type=1&amp;ref=http%3A%2F%2Fblog.renren.com%2Fshare%2F224008965%2F9107679976&amp;url=http%3A%2F%2Fmall.591wed.com%2Fbeijing%2F58%2F0915" id="ad1000039077000100001_1318260810411_adbox100000000070title" target="_top">结婚展免费索票！</a></h4>
+
+                           <a class="img" href="http://ebp.renren.com/ebpn/click.html?aid=1000039077000100001&amp;mc=0%5EC95%5EC1000039077000100001%5EC0%5EC122%5EC2%5EC123%5EC1318260807%5EC1000000_352566313%7C1%7C1986-01-01%7C25%7C2%7C0086110000000000%7C400000001005_0086110000000000%7C45%7C0%7C0%7C0086110000000000%5EC100000000070%5EC0%5EC%5EC%5ECrr_REMAIN_1_95%5EC0&amp;refresh_source=0&amp;refresh_idx=0&amp;engine_type=1&amp;ref=http%3A%2F%2Fblog.renren.com%2Fshare%2F224008965%2F9107679976&amp;url=http%3A%2F%2Fmall.591wed.com%2Fbeijing%2F58%2F0915" id="ad1000039077000100001_1318260810411_adbox100000000070imgClickUrl" target="_top"><img id="ad1000039077000100001_1318260810411_adbox100000000070img" src="b4b22633-e521-4fe8-b041-e5bf29a4a923.jpg" alt=""></a><p class="rr"><a href="http://ebp.renren.com/ebpn/click.html?aid=1000039077000100001&amp;mc=0%5EC95%5EC1000039077000100001%5EC0%5EC122%5EC2%5EC123%5EC1318260807%5EC1000000_352566313%7C1%7C1986-01-01%7C25%7C2%7C0086110000000000%7C400000001005_0086110000000000%7C45%7C0%7C0%7C0086110000000000%5EC100000000070%5EC0%5EC%5EC%5ECrr_REMAIN_1_95%5EC0&amp;refresh_source=0&amp;refresh_idx=0&amp;engine_type=1&amp;ref=http%3A%2F%2Fblog.renren.com%2Fshare%2F224008965%2F9107679976&amp;url=http%3A%2F%2Fmall.591wed.com%2Fbeijing%2F58%2F0915" id="ad1000039077000100001_1318260810411_adbox100000000070content" target="_top">10月29-30日北京品牌婚博会免费抢门票啦！现场签到既有精美礼品等您拿！</a></p>
+
+                           <a style="display: none;" href="#" class="closebtn" id="ad1000039077000100001_1318260810411_adbox100000000070closeBtn" title="你要关闭这条广告吗?"><span></span></a>
+
+                    </div>
+
+                </div><div class="self-text nobtborder" id="ad1000039074000300001_1318260810415_adbox100000000070under1">
+
+                    <div class="inner-under" id="ad1000039074000300001_1318260810415_adbox100000000070div_1" style="position: relative; display: block;">
+
+                           <h4><a href="http://ebp.renren.com/ebpn/click.html?aid=1000039074000300001&amp;mc=0%5EC95%5EC1000039074000300001%5EC0%5EC149%5EC3%5EC150%5EC1318260807%5EC1000000_352566313%7C1%7C1986-01-01%7C25%7C2%7C0086110000000000%7C400000001005_0086110000000000%7C45%7C0%7C0%7C0086110000000000%5EC100000000070%5EC0%5EC%5EC%5ECrr_REMAIN_1_95%5EC0&amp;refresh_source=0&amp;refresh_idx=0&amp;engine_type=1&amp;ref=http%3A%2F%2Fblog.renren.com%2Fshare%2F224008965%2F9107679976&amp;url=http%3A%2F%2Fp.yiqifa.com%2Fc%3Fs%3D12d43b7d%26w%3D98201%26c%3D4102%26i%3D3542%26l%3D0%26e%3Dmeishiqingdou%26t%3Dhttp%3A%2F%2Fwomai.com%2FProduct-0-63842.htm%3Futm_source%3Drenren%26utm_medium%3Djingzhun%26utm_campaign%3Dyima" id="ad1000039074000300001_1318260810415_adbox100000000070title" target="_top">蒜香青豆</a></h4>
+
+                           <a class="img" href="http://ebp.renren.com/ebpn/click.html?aid=1000039074000300001&amp;mc=0%5EC95%5EC1000039074000300001%5EC0%5EC149%5EC3%5EC150%5EC1318260807%5EC1000000_352566313%7C1%7C1986-01-01%7C25%7C2%7C0086110000000000%7C400000001005_0086110000000000%7C45%7C0%7C0%7C0086110000000000%5EC100000000070%5EC0%5EC%5EC%5ECrr_REMAIN_1_95%5EC0&amp;refresh_source=0&amp;refresh_idx=0&amp;engine_type=1&amp;ref=http%3A%2F%2Fblog.renren.com%2Fshare%2F224008965%2F9107679976&amp;url=http%3A%2F%2Fp.yiqifa.com%2Fc%3Fs%3D12d43b7d%26w%3D98201%26c%3D4102%26i%3D3542%26l%3D0%26e%3Dmeishiqingdou%26t%3Dhttp%3A%2F%2Fwomai.com%2FProduct-0-63842.htm%3Futm_source%3Drenren%26utm_medium%3Djingzhun%26utm_campaign%3Dyima" id="ad1000039074000300001_1318260810415_adbox100000000070imgClickUrl" target="_top"><img id="ad1000039074000300001_1318260810415_adbox100000000070img" src="06315879-64c7-437f-88f6-1931fc850666.jpg" alt=""></a><p class="rr"><a href="http://ebp.renren.com/ebpn/click.html?aid=1000039074000300001&amp;mc=0%5EC95%5EC1000039074000300001%5EC0%5EC149%5EC3%5EC150%5EC1318260807%5EC1000000_352566313%7C1%7C1986-01-01%7C25%7C2%7C0086110000000000%7C400000001005_0086110000000000%7C45%7C0%7C0%7C0086110000000000%5EC100000000070%5EC0%5EC%5EC%5ECrr_REMAIN_1_95%5EC0&amp;refresh_source=0&amp;refresh_idx=0&amp;engine_type=1&amp;ref=http%3A%2F%2Fblog.renren.com%2Fshare%2F224008965%2F9107679976&amp;url=http%3A%2F%2Fp.yiqifa.com%2Fc%3Fs%3D12d43b7d%26w%3D98201%26c%3D4102%26i%3D3542%26l%3D0%26e%3Dmeishiqingdou%26t%3Dhttp%3A%2F%2Fwomai.com%2FProduct-0-63842.htm%3Futm_source%3Drenren%26utm_medium%3Djingzhun%26utm_campaign%3Dyima" id="ad1000039074000300001_1318260810415_adbox100000000070content" target="_top">蒜香青豆，办公室必备品，富含多种维生素及微量元素。好吃又健康！</a></p>
+
+                           <a style="display: none;" href="#" class="closebtn" id="ad1000039074000300001_1318260810415_adbox100000000070closeBtn" title="你要关闭这条广告吗?"><span></span></a>
+
+                    </div>
+
+                </div><div class="will"><a target="_top" href="http://bolt.jebe.renren.com/introduce.htm">我也要出现在这里</a></div></div></div>
+<div id="ad100000000071"><div style="border-top: 1px solid rgb(206, 225, 238);" class="side-item wide-sponsors">
+
+					 <div class="side-item-header clearfix">
+    <h4>
+        <a id="ad1000036215000200003_1318260810418_adbox100000000071title" href="http://ebp.renren.com/ebpn/click.html?aid=1000036215000200003&amp;mc=0%5EC0%5EC1000036215000200003%5EC0%5EC0%5EC1%5EC100%5EC1318260807%5EC1000000_352566313%7C1%7C1986-01-01%7C25%7C2%7C0086110000000000%7C400000001005_0086110000000000%7C45%7C0%7C0%7C0086110000000000%5EC100000000071%5EC0%5EC%5EC%5EC-&amp;refresh_source=0&amp;refresh_idx=0&amp;engine_type=&amp;ref=http%3A%2F%2Fblog.renren.com%2Fshare%2F224008965%2F9107679976&amp;url=http%3A%2F%2Fpage.renren.com%2Fapi%2Frd%3Fpid%3D600002965%26url%3Dhttp%253A%252F%252Ftrack.yx.renren.com%252Fstatmop%252Fdfa1%253Fdfaid%253D11370%2526token%253D1507137107%26abflag%3Dtitle%26statID%3Dad_100000000071_1000036215000200003_0%26level%3D0" target="_top">三叶草的女性时尚斗秀场</a>
+	</h4>
+	<div class="option"> 
+		<a id="ad1000036215000200003_1318260810418_adbox100000000071more" class="link" href="http://blog.renren.com/share/224008965/9107679976#nogo" target="_top" style="display: none;">更多</a> 
+	</div>
+</div>
+
+
+					<div class="side-item-body clearfix">
+
+                        <div class="figure" id="ad1000036215000200003_1318260810418_adbox100000000071adPicFigure"> 
+    <a id="ad1000036215000200003_1318260810418_adbox100000000071picClickUrl" class="link" href="http://ebp.renren.com/ebpn/click.html?aid=1000036215000200003&amp;mc=0%5EC0%5EC1000036215000200003%5EC0%5EC0%5EC1%5EC100%5EC1318260807%5EC1000000_352566313%7C1%7C1986-01-01%7C25%7C2%7C0086110000000000%7C400000001005_0086110000000000%7C45%7C0%7C0%7C0086110000000000%5EC100000000071%5EC0%5EC%5EC%5EC-&amp;refresh_source=0&amp;refresh_idx=0&amp;engine_type=&amp;ref=http%3A%2F%2Fblog.renren.com%2Fshare%2F224008965%2F9107679976&amp;url=http%3A%2F%2Fpage.renren.com%2Fapi%2Frd%3Fpid%3D600002965%26url%3Dhttp%253A%252F%252Ftrack.yx.renren.com%252Fstatmop%252Fdfa1%253Fdfaid%253D11370%2526token%253D1507137107%26abflag%3Dpic%26statID%3Dad_100000000071_1000036215000200003_0%26level%3D0" target="_top"><img src="f1a52a17-8ba5-4a12-b5e9-b3a0fca4aad7.jpg" id="ad1000036215000200003_1318260810418_adbox100000000071pic" scr="http://about:blank" height="240" width="240"></a> 
+</div>
+
+
+						<div class="praiseInfo"><span id="ad1000036215000200003_1318260810418_adbox100000000071zanInfo"></span></div>
+
+
+                        <div id="ad1000036215000200003_1318260810418_adbox100000000071info" class="fans" style="">317,922人已经成为&nbsp;<a target="_top" href="http://ebp.renren.com/ebpn/click.html?aid=1000036215000200003&amp;mc=0%5EC0%5EC1000036215000200003%5EC0%5EC0%5EC1%5EC100%5EC1318260807%5EC1000000_352566313%7C1%7C1986-01-01%7C25%7C2%7C0086110000000000%7C400000001005_0086110000000000%7C45%7C0%7C0%7C0086110000000000%5EC100000000071%5EC0%5EC%5EC%5EC-&amp;refresh_source=0&amp;refresh_idx=0&amp;engine_type=&amp;ref=http%3A%2F%2Fblog.renren.com%2Fshare%2F224008965%2F9107679976&amp;url=http%3A%2F%2Fpage.renren.com%2Fpa%2Fbf%3Fpid%3D600002965%26psid%3D678%26pstype%3D1%26ref%3Dslink%26abflag%3Dbutton%26abflag%3DsocialName%26statID%3Dad_100000000071_1000036215000200003_0%26level%3D0">阿迪达斯三叶草</a>&nbsp;的粉丝!</div>
+<input id="ad1000036215000200003_1318260810418_adbox100000000071response" type="hidden">
+<input id="ad1000036215000200003_1318260810418_adbox100000000071hasFriends" type="hidden">
+
+
+                        <div class="footer">
+
+                        <a style="display: none;" id="ad1000036215000200003_1318260810418_adbox100000000071aAttend" class="link" href="http://blog.renren.com/share/224008965/9107679976#nogo" target="_top"><img class="sw_button_img" src="i-want-join-button.png"></a>
+
+
+                        <a style="display: none;" id="ad1000036215000200003_1318260810418_adbox100000000071aDownload" class="link" href="http://blog.renren.com/share/224008965/9107679976#nogo" target="_top"><img class="sw_button_img" src="a_main_hath_ac_073157.png"></a>
+
+
+                        <a style="display: none;" id="ad1000036215000200003_1318260810418_adbox100000000071aBuy" class="link" href="http://blog.renren.com/share/224008965/9107679976#nogo" target="_top"><img class="sw_button_img" src="a_main_l3go_57_040250.png"></a>
+
+
+                         <a class="link" href="http://ebp.renren.com/ebpn/click.html?aid=1000036215000200003&amp;mc=0%5EC0%5EC1000036215000200003%5EC0%5EC0%5EC1%5EC100%5EC1318260807%5EC1000000_352566313%7C1%7C1986-01-01%7C25%7C2%7C0086110000000000%7C400000001005_0086110000000000%7C45%7C0%7C0%7C0086110000000000%5EC100000000071%5EC0%5EC%5EC%5EC-&amp;refresh_source=0&amp;refresh_idx=0&amp;engine_type=&amp;ref=http%3A%2F%2Fblog.renren.com%2Fshare%2F224008965%2F9107679976&amp;url=http%3A%2F%2Fpage.renren.com%2Fapi%2Frd%3Fpid%3D600002965%26url%3Dhttp%253A%252F%252Fpage.renren.com%252Fpa%252Fbf%253Fpid%253D600002965%2526psid%253D678%2526pstype%253D1%2526ref%253Dslink%2526abflag%253Dbutton%2526token%253D1507137107%26abflag%3Dbutton%26statID%3Dad_100000000071_1000036215000200003_0%26level%3D0" name="ad1000036215000200003_1318260810418_adbox100000000071jebe_button" id="ad1000036215000200003_1318260810418_adbox100000000071socialAction" style="" target="_top"><img class="sw_button_img" src="follow-button1.gif"><br></a>
+
+
+                        <a id="ad1000036215000200003_1318260810418_adbox100000000071aShare" class="link" href="http://blog.renren.com/share/224008965/9107679976#nogo"><img class="sw_button_img" src="sw_share_button.png"></a>
+
+
+                        </div>
+
+					</div>
+
+					</div></div>
+</div>
+<p class="share-corporation-side share-corporation-new">
+<a href="http://share.renren.com/share/help/corporation" target="_top">如何给网站添加快捷分享</a>
+</p>
+</div></div>
+</div>
+</div>
+
+<div id="footer"><div class="copyright">
+<div class="main">
+<span class="float-right">
+<a href="http://www.renren.com/siteinfo/about">关于</a>
+<span class="pipe">|</span><a href="http://dev.renren.com/">开放平台</a>
+<span class="pipe">|</span><a href="http://page.renren.com/register/regGuide/">公共主页</a>
+<span class="pipe">|</span><a href="http://mobile.renren.com/mobilelink.do?psf=40002">手机人人</a>
+<span class="pipe">|</span><a href="http://www.nuomi.com/">糯米网团购</a>
+<span class="pipe">|</span><a href="http://ads.renren.com/">广告</a>
+<span class="pipe">|</span><a href="http://job.renren-inc.com/">招聘</a>
+<span class="pipe">|</span><a href="http://support.renren.com/helpcenter">客服帮助</a>
+<span class="pipe">|</span><a href="http://www.renren.com/siteinfo/privacy">隐私</a>
+<span class="pipe">|</span><a href="http://www.renren.com/info/Link.do">友情链接</a>
+</span>
+<p class="float-left" style="line-height: 1.5em;">
+<span>人人网<span title="revision61157; SJSWT46-162.opi.com">©</span>2011</span></p>
+</div>
+<div class="haoes">
+北京千橡网景科技发展有限公司：文网文[2009]169号<span class="dot">·</span><a href="http://www.miibeian.gov.cn/" target="_top">京ICP证090254号</a><span class="dot">·</span><span>京公网安备110000000009号</span><span class="dot">·</span><span>甲测资字11002066</span><span class="dot">·</span>文化部监督电子邮箱：wlwh@vip.sina.com
+</div>
+</div>
+</div>
+<div class="hidden-area"></div>
+<div id="console_log" style="position: absolute; top: 0pt; left: 0pt;"></div>
+<!--[if gt IE 7]><!--><!--<![endif]-->
+<!--[if IE 6]><link type="text/css" rel="stylesheet" href="http://s.xnimg.cn/a22527/n/core/webpager-ie6-min.css" /><style id="CSSID_9f2766a4"></style><![endif]-->
+<!--[if IE 7]><link type="text/css" rel="stylesheet" href="http://s.xnimg.cn/a22527/n/core/webpager-ie7-min.css" /><![endif]--><!--[if gt IE 6]><script>if(window.ActiveXObject&&!window.XMLHttpRequest)XN.disableWebpager=true;</script><![endif]--><iframe id="imengine" name="imengine" src="index_5.html" style="position: absolute; left: -1000pt; top: 20pt; width: 200pt; height: 100pt;" frameborder="0"></iframe>
+<div id="system-notification-box" style="display: none;">
+<article id="system-notification" class="system-notification">
+<section>
+<article class="system-notification-item">
+<header>
+<img class="icon" src="icon.gif" alt="状态" height="16" width="16">
+<a class="x-to-hide" href="#"></a>
+</header>
+<section>
+</section>
+</article>
+</section>
+</article>
+</div>
+<div id="bottombar"><div id="webpager" class="webpager" style="height: 24px;"><div id="wpi_left_bundle" class="panelbarpanels" style="float: left; display: block;"><div class="panel" id="apps-panel"><div class="popupwindow"><div class="panelbarbutton"><img src="app_menu_logo.png" class="icon" height="16" width="16"> <strong id="wpi_togMenuPanel" class="title">我的应用</strong></div><article class="window"><header><h4>我的应用</h4><menu><li class="minimize" label="最小化" title="最小化"></li></menu></header><section><article id="wpi_menuPanel" class="app-list"><section style="overflow: hidden;"><dl class="apps"><dt>最近使用</dt></dl><dl class="apps" id="wpi_hitoryPanel"></dl><dl class="apps"><dt style="border-bottom: medium none;" id="wpi_collectionTitle">我的收藏<a class="edit" href="http://app.renren.com/apps/editapps.do?origin=90">编辑</a></dt></dl><dl class="apps" style="position: relative;" id="wpi_collectionApps"><dt style="display: none;"></dt></dl></section><footer><strong>拖动进行排序</strong> <a class="more" href="http://app.renren.com/app/apps/list?origin=90">浏览更多应用</a></footer></article></section></article></div></div><div class="panel"><div class="button-widget"><ul id="wpi_shortCutsPanel" class="icon"></ul></div></div><div class="panel" id="wpi_addCollection"></div><div class="panel" id="wpi_extendGroup" style="border-left: 1px solid rgb(181, 181, 181);"><div class="popupwindow"><div class="panelbarbutton"> <strong id="wpi_togMenuPanel" class="title"><a target="_top" href="http://music.renren.com/fm?wp=1" style="text-decoration: none;"><img src="renrenfm-icon.png" class="icon" height="16" width="16"> 人人电台</a></strong><img src="new-bullet.gif" class="icon" style="position: absolute; left: 54px; bottom: 17px;" height="17" width="29"></div><article class="window"><header><h4>我的应用</h4><menu><li class="minimize" label="最小化" title="最小化"></li></menu></header><section></section></article></div></div></div><div class="panelbarpanels" style="float: right; height: 24px; border-left: 1px solid rgb(181, 181, 181);"><div id="webpager-ad-panel" class="ad-panel panel"><div><div class="ad-button"><a id="wp_ad" target="_top" style="background-image: url('webpager-button-rrdesk-new.png'); text-indent: 7px; color: rgb(51, 51, 51); height: 21px; line-height: 21px; overflow: hidden;" href="http://im.renren.com/desktop/rrsetup-11.exe?wp05">悄悄登录,隐身在线-人人桌面</a></div></div></div><div id="tasks-panel" class="panel" style="min-width: 0pt;"><div id="webpager_slider_left" style="display: none;" class="more"><button class="previous">1</button></div><div style="width: 0px;" id="tasks-panel-inner" class="windows"></div><div id="webpager_slider_right" style="display: none;" class="more"><button class="next">2</button></div><div id="chatroom-panel"></div><div id="conv-panel"></div></div><div id="friends-panel" class="panel"><div class="popupwindow friends-panel"><div class="panelbarbutton"><img class="icon" alt="聊天" src="onlinegroup_mini.gif" height="16" width="16"> 在线好友(<span id="webpager_online_friend_count">11</span>)</div><article class="window"><header><h4>在线好友</h4><menu><li class="minimize" label="最小化" title="最小化"></li></menu></header><section><article class="online-users"><header><div class="searchbar box"><form class="searchbar" action="http://blog.renren.com/share/224008965/9107679976#" method="post"><input value="搜索好友" style="color: rgb(136, 136, 136);" id="webpager_friend_search" onsubmit="return false;" autocomplete="off" type="text"><span style="display: none;" id="webpager_friend_search_reset" class="clear"><a href="#"><img src="clear.png" alt="清除"></a></span></form></div></header><section><ul class="user"></ul></section></article></section></article></div></div><div id="notification-panel" class="panel"><div class="popupwindow notify-panel"><div class="panelbarbutton"><img class="icon" title="提醒" alt="提醒" src="notifications.gif" height="16" width="16"><div id="wpi_toread_tip" tooltip"="" class="buttontooltip" style="display: none;"><strong id="wpi_toread_num">3</strong></div></div><article class="window"><header><h4>提醒</h4><menu><li class="minimize" label="最小化" title="最小化"></li></menu></header><section><p style="padding: 5px;">没有提醒</p></section></article></div></div><div id="setting-panel" class="panel"><div class="popupwindow settings-panel"><div class="panelbarbutton"><img id="wpi_online_img" title="设置" class="icon" alt="在线" src="im_online.gif" height="16" width="16"></div><article class="window"><header><h4>聊天和提醒设置</h4><menu><li class="minimize" label="最小化" title="最小化"></li></menu></header><section><div class="webpager-setting box"><article class="webpager-setting"><section><p><label><input name="music" id="wpi_music" checked="checked" type="checkbox"> 收到新消息播放提示音</label></p></section><footer><p><img id="wpi_login_img" class="icon" src="im_online_001.gif"> <span id="wpi_login_tip">已启用聊天和提醒功能</span> <a id="wpi_login_btn" href="#">关闭</a></p></footer></article></div></section></article></div></div></div><div style="position: absolute; bottom: 35px; right: 0px; display: none;"><div style="padding: 5px; border: 1px solid rgb(215, 176, 19); background: none repeat scroll 0% 0% rgb(255, 249, 215);"><img src="back_to_top.gif">点击此按钮返回页面顶部<div id="wpi_back_to_top_arrow" style="background: url('tip-arrow-down.png') no-repeat scroll 0% 0% transparent; height: 6px; width: 11px; position: absolute; bottom: -5px; right: 25px; overflow: hidden;"></div></div></div></div></div>
+
+<div id="toolBackTo" class="back-to" style="display: none;">
+<a class="back-top" href="#top" onclick="window.scrollTo(0,0);return false;" title="返回顶部">返回顶部</a><a title="返回首页" class="back-home" href="http://www.renren.com/home">返回首页</a></div>
+
+
+
+
+
+
+
+
+<div id="widget"></div><div id="jebe_ad_prepare" style="height: 0px; overflow: hidden;"></div></body>
+</html>

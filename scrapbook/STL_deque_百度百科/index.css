@@ -1,0 +1,217 @@
+/* ::::: http://baike.bdimg.com/static/common/css/common/bk.dialog.css?t=20120419 ::::: */
+
+/* ::::: http://baike.bdimg.com/static/common/css/view.css?@=1g6byog&t=20120315125647 ::::: */
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin: 0pt; padding: 0pt; }
+body, button, input, select, textarea { font: 12px/1.5 arial,宋体,sans-serif; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+ul, ol { list-style: none outside none; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+fieldset, img { border: 0pt none; }
+button, input, select, textarea { font-size: 100%; }
+img {  }
+#page, #header, #content, #footer { margin-left: auto; margin-right: auto; }
+.w1000 { width: 1000px; }
+.col-main { float: left; width: 100%; min-height: 1px; }
+.col-sub, .col-extra { float: left; }
+.layout:after, .main-wrap:after, .col-sub:after, .col-extra:after { content: " "; display: block; height: 0pt; clear: both; }
+.layout, .main-wrap, .col-sub, .col-extra {  }
+.grid-m0s245 .main-wrap { margin-right: 255px; }
+.grid-m0s245 .col-sub { width: 245px; margin-left: -245px; }
+.w1000 { width: 1000px; }
+.clearfix:after { content: " "; display: block; height: 0pt; clear: both; }
+.clearfix {  }
+.clear { clear: both; font-size: 0pt; line-height: 0; height: 0pt; visibility: visible; }
+ul, li { padding: 0pt; margin: 0pt; list-style-type: none; }
+#userbar { position: absolute; right: 10px; top: 3px; z-index: 10; text-align: right; font: 12px/18px Arial; color: rgb(0, 0, 0); }
+#userbar a { color: rgb(0, 0, 204); margin-left: 6px; text-decoration: underline; }
+#userbar ul { list-style-type: none; }
+#userbar li { float: left; }
+#userbar .line { display: inline; width: 1px; height: 12px; overflow: hidden; background: none repeat scroll 0% 0% rgb(153, 153, 153); margin: 3px 0pt 0pt 6px; color: rgb(153, 153, 153); }
+a { color: rgb(19, 110, 194); text-decoration: underline; }
+a:hover { text-decoration: underline; }
+a:visited { color: rgb(19, 110, 194); }
+.clearfix:after { content: " "; display: block; height: 0pt; clear: both; visibility: hidden; }
+.clearfix {  }
+#header { margin-top: 26px; }
+#search { position: relative; z-index: 2; width: 900px; margin-bottom: 16px; }
+#search a { color: rgb(0, 0, 204); text-decoration: underline; }
+#logo { width: 146px; margin-top: 3px; position: relative; }
+#logo img { display: block; }
+#logo, #search-content, #help { float: left; }
+#word { width: 358px; padding: 3px 1px; font: 16px arial; margin: 0pt 7px 0pt 0pt; }
+.nv { margin: 0pt 0pt 1px; }
+.nv a { font-size: 14px; margin-right: 13px; font-family: arial; }
+.nv strong { font-size: 14px; margin-right: 10px; font-family: arial; }
+#help { margin: 30px 0pt 0pt; color: rgb(153, 153, 153); font-size: 12px; }
+#help a { margin: 0pt 7px; }
+#search form { margin: 0pt; clear: both; position: relative; z-index: 0; }
+#search .s_ipt_wr { width: 408px; height: 30px; display: inline-block; margin-right: 5px; background: url('bg_search.png') no-repeat scroll -304px 0pt transparent; border-width: 1px; border-style: solid; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-image: none; border-color: rgb(123, 123, 123) rgb(182, 182, 182) rgb(182, 182, 182) rgb(123, 123, 123); vertical-align: top; }
+#search .s_ipt { padding: 0pt; border: 0pt none; width: 398px; height: 22px; font: 16px/22px arial; margin: 5px 0pt 0pt 7px; outline: medium none; background: none repeat scroll 0% 0% rgb(255, 255, 255); }
+#search .s_btn { padding: 0pt; border: 0pt none; width: 95px; height: 32px; font-size: 14px; background: url('bg_search.png') repeat scroll 0% 0% rgb(221, 221, 221); cursor: pointer; }
+#search .s_btn_wr { width: 97px; height: 34px; display: inline-block; background: url('bg_search.png') no-repeat scroll -202px 0pt transparent; z-index: 0; vertical-align: top; }
+.clear { clear: both; }
+#header { margin-top: 26px; }
+#footer, #footer a:link, #footer a:visited { clear: both; margin-top: 10px; text-align: center; color: rgb(119, 119, 204); font: 12px/1 Arial; white-space: nowrap; margin-bottom: 15px; }
+/* ::::: http://baike.bdimg.com/static/lemma/css/view.css?@=ob80ir ::::: */
+
+body {  }
+.fix {  }
+.fix:after { content: "clear"; clear: both; height: 0pt; overflow: hidden; display: block; }
+#view #wrap { width: 1000px; margin: 0pt auto; }
+#view #page { background: url('nav-bg.gif') repeat-x scroll 0pt -34px rgb(250, 250, 250); }
+#view #content { margin-top: 14px; }
+#view #side { margin-top: 34px; background-color: rgb(250, 250, 250); }
+.col-sub a { text-decoration: none; }
+a:focus { outline: 0pt none; }
+#path { width: 100%; background: url('nav-bg.gif') repeat-x scroll 0% 0% transparent; white-space: nowrap; }
+#path ul { margin: 0pt; padding: 0pt; list-style: none outside none; }
+#path ul li { float: left; padding: 0pt 18px 0pt 12px; font-weight: bold; font-size: 14px; line-height: 34px; height: 34px; }
+#path ul li a { color: rgb(255, 255, 255); text-decoration: none; white-space: nowrap; }
+#path ul li a:hover { text-decoration: underline; }
+#content .main-shadow { background: url('c-bg.png') repeat scroll 0% 0% transparent; padding-bottom: 3px; }
+#content .content-hd { height: 9px; background: url('hd-bg.gif') no-repeat scroll right top rgb(255, 255, 255); border-left: 1px solid rgb(221, 221, 221); }
+#content .content-hd-wrap { border-top: 1px solid rgb(221, 221, 221); margin-right: 6px; }
+#content .content-bd, #content .content-ft { background: none repeat scroll 0% 0% rgb(255, 255, 255); margin: 4px 3px 0pt 0pt; padding: 16px 30px 10px 20px; border: 1px solid rgb(221, 221, 221); clear: both; }
+#content .main-body { border-top: 0pt none; margin-top: 0pt; }
+#content .content-ft { font-size: 12px; }
+#view #footer { margin: 0pt; background: none repeat scroll 0% 0% rgb(250, 250, 250); padding: 10px 0pt 20px; }
+.bk-feedback { background: url('bk-split-icons.png') no-repeat scroll 10px -141px transparent; border: 1px dashed rgb(221, 221, 221); height: 30px; line-height: 30px; padding-left: 40px; margin-bottom: 10px; color: rgb(51, 51, 51); }
+.bk-feedback a { text-decoration: none; }
+.article { font-size: 14px; word-wrap: break-word; }
+h1.title { font-family: "微软雅黑","黑体","Verdana"; font-size: 30px; line-height: 40px; margin-bottom: 25px; margin-top: 0pt; font-weight: 500; overflow: hidden; }
+.editable-lemma { display: inline-block; background: url('edit_btn.png') no-repeat scroll 0% 0% transparent; width: 107px; height: 34px; cursor: pointer; vertical-align: middle; }
+.bk-editable-lemma-btns { height: 34px; line-height: 34px; float: right; }
+.dividable-lemma { vertical-align: middle; background: url('sprite.gif') no-repeat scroll -78px -202px transparent; font-weight: bold; padding-left: 25px; text-decoration: none; width: 74px; color: rgb(1, 99, 175); }
+#sidecatalog { position: absolute; }
+.lemma-main-content { letter-spacing: 0.5px; width: 690px; overflow: hidden; float: left; }
+.lemma-main-content .headline-2 { font-size: 16px; font-family: Arial; line-height: 22px; margin: 15px 0pt 5px; clear: both; }
+.reinforce { font-size: 12px; }
+.lemma-ext-bottom a, .reinforce a { text-decoration: underline; }
+.lemma-ext-bottom a:hover, .reinforce a:hover { text-decoration: underline; }
+#more-coeditor { text-decoration: none; }
+.reinforce dl { margin-bottom: 30px; }
+.lemma-ext-bottom dt, .reinforce dt { border-bottom: 1px dashed rgb(204, 204, 204); font-weight: bold; line-height: 1; padding: 2px 0pt 5px; margin-bottom: 10px; font-size: 14px; }
+.lemma-ext-bottom dt { border: 0pt none; }
+.reinforce dd { color: rgb(51, 51, 51); word-wrap: break-word; }
+.ref_more { line-height: 16px; padding: 3px 10px 0pt 0pt; margin: 0pt; text-decoration: none; background: url('arr.gif') no-repeat scroll 28px -17px transparent; float: right; white-space: nowrap; }
+.box2 { margin-bottom: 15px; margin-right: 10px; }
+.box2 h2, .box2 h5 { font-size: 14px; line-height: 25px; border-bottom: 1px solid rgb(221, 221, 221); margin-bottom: 10px; }
+#mabox .box2-inner { padding: 6px 6px 12px 12px; border: 1px solid rgb(204, 224, 238); background: none repeat scroll 0% 0% rgb(255, 255, 255); }
+.f12, .f12 td, .f12 th, .f12 div { font-size: 12px; }
+.share { border: 1px solid rgb(221, 221, 221); height: 42px; line-height: 42px; font-size: 12px; color: rgb(153, 153, 153); background: none repeat scroll 0% 0% rgb(250, 250, 250); margin-bottom: 30px; }
+.share-item-title { border-right: 1px solid rgb(221, 221, 221); float: left; height: 38px; margin: 2px 0pt; text-align: center; width: 120px; }
+.share-tip { float: left; }
+.share-item { margin-left: 10px; float: left; }
+span.bds_more, .bds_tools a { margin: 8px 5px; }
+.bds_more { line-height: 16px; }
+.cang { background: url('bgs3.png') no-repeat scroll 0pt 0pt transparent; padding-left: 16px; display: block; height: 16px; line-height: 16px; margin: 12px 0pt 0pt 20px; text-align: left; text-decoration: none; }
+.try { color: rgb(51, 51, 51); padding: 0pt 0pt 5px; margin-bottom: 10px; clear: both; }
+.text { line-height: 24px; }
+.text_vote1, .text_vote2 { width: 146px; height: 46px; padding-top: 7px; font-size: 12px; color: rgb(153, 153, 153); text-align: center; background: url('vote.png') no-repeat scroll 0% 0% transparent; cursor: pointer; }
+.text_vote1 b, .text_vote2 b { display: block; height: 20px; color: rgb(68, 167, 1); font-size: 14px; font-family: "Tahoma"; text-align: left; padding: 2px 0pt 0pt 65px; }
+.spctrl { height: 14px; line-height: 14px; font-size: 12px; overflow: hidden; }
+.bpctrl { height: 30px; line-height: 30px; overflow: hidden; }
+.end { position: relative; z-index: 0; margin: 10px 0pt 30px; clear: both; }
+.declare { font-size: 12px; color: rgb(51, 51, 51); float: right; width: 518px; margin: 5px 0pt; line-height: 1.6em; }
+#relatedLemmaDown .relative { z-index: 1; }
+#co-editors { color: rgb(0, 0, 0); }
+div.onelineonly { height: 20px; overflow: hidden; float: left; width: 600px; position: relative; }
+div.onelineonly a { white-space: nowrap; font-size: 14px; }
+.info { line-height: 22px; color: rgb(102, 102, 102); }
+.task { color: rgb(51, 51, 51); margin-bottom: 15px; }
+.task dd { padding: 10px 0pt; }
+.task dd img { border: 1px solid rgb(204, 204, 204); }
+.notice { color: rgb(51, 51, 51); }
+.notice dd { font-size: 12px; background: url('bgs3.png') no-repeat scroll 2px -99px transparent; padding-left: 12px; line-height: 22px; }
+.relative { position: relative; }
+.myedit { margin: 0pt; padding-left: 15px; background: url('bgs3.png') no-repeat scroll 0pt -80px transparent; }
+#userInfoDiv { display: none; }
+.userinfo-side { position: relative; margin: -11px 0pt 10px -13px; line-height: 22px; color: rgb(51, 51, 51); background-color: rgb(233, 243, 246); }
+#sidecatalog { height: 120px; z-index: 1; }
+#sidecatalog a.gotop { width: 28px; height: 22px; display: block; background: url('sidebar2.png') no-repeat scroll 1px -104px transparent; }
+#sidecatalog .sidebar { height: 104px; width: 28px; background: url('sidebar3.png') no-repeat scroll 1px 0pt transparent; cursor: pointer; }
+#side-catalog-content { width: 250px; border: 1px solid rgb(163, 208, 228); background: none repeat scroll 0% 0% rgb(255, 255, 255); }
+a.try-edit { background: url('bk-split-icons.png') no-repeat scroll 0pt -109px transparent; font-weight: bold; margin-left: 8px; padding-left: 16px; }
+.tpldivide-lemma { vertical-align: middle; background: url('tpldvd.png') no-repeat scroll 0pt center transparent; font-weight: bold; padding-left: 17px; text-decoration: none; width: 74px; color: rgb(1, 99, 175); }
+#side { right: -278px; }
+@media only screen and (orientation: portrait) {
+}
+@media only screen and (orientation: landscape) {
+}
+/* ::::: http://baike.bdimg.com/static/usercenter/css/liteoutput/bk.uc_lemma.css?@=axxr4x ::::: */
+
+.throwbtl-link-view { padding-left: 10px; background: url('bk-split-icons.png') no-repeat scroll left -48px transparent; margin-left: 5px; float: right; font-weight: normal; font-size: 12px; }
+.lemma-top-link { float: none; vertical-align: middle; font-weight: normal; font-size: 12px; height: 16px; line-height: 11px; width: auto; margin-top: 11px; margin-right: 8px; text-decoration: underline; }
+.dividable-lemma { padding-left: 17px; background: url('dividable-lemma.png') no-repeat scroll 0% 0% transparent; }
+.throwbtl-link-head { padding-left: 10px; background: url('btl-info-icon.png') no-repeat scroll left -20px transparent; margin-right: 18px; }
+.lemma-top-link-divider { float: none; width: 0pt; border-left: 1px dotted gray; overflow: hidden; height: 13px; display: none; }
+/* ::::: http://baike.baidu.com/guanxi/static/css/lemma_insert.css ::::: */
+
+.tangram-tree dl, dt, dd { margin: 0pt; padding: 0pt; }
+#userbar { z-index: 100 ! important; }
+/* ::::: http://baike.bdimg.com/static/usercenter/css/release/bk.usercard.css?t=20120315125647 ::::: */
+
+.pillar { display: inline-block; width: 0pt; height: 100%; vertical-align: middle; }
+.fix {  }
+.fix:after { content: "clear"; clear: both; height: 0pt; overflow: hidden; display: block; }
+.user-card { font: 12px/1.5 arial,宋体,sans-serif; }
+.user-card a, .user-card a:hover { text-decoration: none; color: rgb(17, 110, 194); }
+.user-card { width: 350px; border: 1px solid rgb(179, 218, 255); background: url('usercard-bg.png') no-repeat scroll 5px 7px rgb(247, 252, 255); }
+.user-card .top-bg { height: 2px; margin-top: 1px; background-color: rgb(230, 248, 255); overflow: hidden; }
+.user-card .uc-l { float: left; width: 100px; padding: 8px 3px; text-align: center; line-height: 30px; color: rgb(17, 110, 194); }
+.user-card .uc-r { float: left; width: 244px; height: 148px; overflow: hidden; font-family: 宋体; }
+.uc-l .uc-id { font-weight: bold; }
+.uc-l .uc-name { width: 100%; white-space: nowrap; }
+.uc-l .uc-pic { width: 84px; height: 84px; margin: 0pt auto; border: 1px solid rgb(221, 221, 221); box-shadow: 1px 1px 3px rgb(222, 238, 255); }
+.uc-r .uc-items { display: inline-block; vertical-align: middle; width: 238px; }
+.uc-items div { font-size: 12px; }
+.uc-badge { margin-top: 4px; }
+.uc-default { margin-bottom: 4px; }
+#usercard-wrap { width: 352px; height: 153px; position: absolute; z-index: 99999; top: -500px; left: -500px; background: url('loading.gif') no-repeat scroll 50% 50% rgb(255, 255, 255); box-shadow: 0pt 1px 6px rgb(187, 187, 187); border-radius: 2px 2px 2px 2px; }
+/* ::::: http://baike.baidu.com/cms/s/6years/egg.css?t0.6441610976550146 ::::: */
+
+/* ::::: http://bdimg.share.baidu.com/static/css/bdsstyle.css?cdnversion=20120509 ::::: */
+
+#bdshare ul, #bdshare_s ul, #bdshare ul li, #bdshare_s ul li, #bdshare_l_c ul li, #bdshare_m_c ul li, #bdshare_pop ul, #bdshare_pop ul li { list-style: none outside none; margin: 0pt; padding: 0pt; }
+#bdshare { z-index: 999999; padding-bottom: 2px; font-size: 12px; float: left; text-align: left ! important; }
+#bdshare a, #bdshare_s a, #bdshare_pop a { text-decoration: none; cursor: pointer; }
+#bdshare a:hover, #bdshare_s a:hover, #bdshare_pop a:hover { color: rgb(51, 51, 51); opacity: 0.8; }
+#bdshare h6, #bdshare_s h6 { width: 100%; font: 700 14px/22px '瀹嬩綋'; text-indent: 0.5em; border-top: 1px solid rgb(251, 251, 251); border-bottom: 1px solid rgb(242, 241, 241); background-color: rgb(246, 246, 246); float: left; padding: 5px 0pt; margin: 0pt; }
+#bdshare ul, #bdshare_s ul { width: 98%; float: left; padding: 8px 0pt; margin-left: 2px; overflow: hidden; }
+#bdshare ul li, #bdshare_s ul li { width: 47%; float: left; margin: 4px 2px; }
+#bdshare ul li a, #bdshare_s ul li a { color: rgb(86, 86, 86); font: 12px '瀹嬩綋'; display: block; width: 98%; padding: 6px 0pt; text-indent: 2.4em; border: 1px solid rgb(255, 255, 255); }
+#bdshare ul li a:hover, #bdshare_s ul li a:hover { background-color: rgb(243, 243, 243); border: 1px solid rgb(238, 238, 238); border-radius: 3px 3px 3px 3px; }
+#bdshare p, #bdshare_s p { width: 100%; height: 21px; font: 12px '瀹嬩綋'; border-top: 1px solid rgb(242, 241, 241); background-color: rgb(248, 248, 248); float: left; padding: 0pt; margin: 0pt; }
+#bdshare p a, #bdshare_s p a { width: auto; text-align: right; float: right; padding: 5px; }
+#bdshare_l { width: 212px; position: absolute; top: 0pt; background: none repeat scroll 0% 0% rgb(255, 255, 255); text-align: left; }
+#bdshare_l_c { width: 210px; float: left; border: 1px solid rgb(233, 233, 233); text-align: left; }
+#bdshare_l_c ul li { width: 47%; height: 26px; float: left; margin: 2px; }
+#bdshare_l_c ul li a { background: url('is.png') no-repeat scroll 0% 0% transparent; height: auto ! important; }
+#bdshare_l, #bdshare_m { box-shadow: 0pt 0pt 7px rgb(238, 238, 238); z-index: 99999; }
+#bdshare_l_c p a.goWebsite, #bdshare_m_c p a.goWebsite, #bdshare_pop p a.goWebsite { text-align: right; background: url('pi.gif') no-repeat scroll 0pt 5px transparent; line-height: 12px; padding-left: 12px; color: rgb(140, 140, 140); }
+#bdshare_l_c p a.goWebsite:hover, #bdshare_m_c p a.goWebsite:hover, #bdshare_pop p a.goWebsite:hover { color: rgb(0, 169, 224); }
+span.bds_more { background: url('is.png') no-repeat scroll 0pt 5px transparent ! important; }
+span.bds_more, .bds_tools a { display: block; font-family: '瀹嬩綋',Arial; height: 16px; float: left; cursor: pointer; padding-top: 6px; padding-bottom: 3px; padding-left: 22px; }
+.bds_tools a { background: url('is.png') no-repeat scroll 0% 0% transparent; }
+.bds_more { background-image: url('is.png') ! important; background-position: 0pt 4px ! important; }
+.bds_qzone { background-position: 0pt -75px ! important; }
+.bds_tsina { background-position: 0pt -115px ! important; }
+.bds_baidu { background-position: 0pt -155px ! important; }
+.bds_renren { background-position: 0pt -195px ! important; }
+.bds_tqq { background-position: 0pt -235px ! important; }
+.bds_kaixin001 { background-position: 0pt -275px ! important; }
+.bds_tqf { background-position: 0pt -315px ! important; }
+.bds_hi { background-position: 0pt -355px ! important; }
+.bds_douban { background-position: 0pt -395px ! important; }
+.bds_tsohu { background-position: 0pt -435px ! important; }
+.bds_msn { background-position: 0pt -475px ! important; }
+.bds_qq { background-position: 0pt -515px ! important; }
+.bds_taobao { background-position: 0pt -555px ! important; }
+.bds_tieba { background-position: 0pt -595px ! important; }
+.bds_sohu { background-position: 0pt -675px ! important; }
+.bds_t163 { background-position: 0pt -715px ! important; }
+#path ul.nav li, ul.nav li { position: relative; }
+.nav { overflow: visible; position: relative; }
+#path .nav li { padding-right: 12px ! important; }

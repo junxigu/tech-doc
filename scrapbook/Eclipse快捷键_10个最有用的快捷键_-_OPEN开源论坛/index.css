@@ -1,0 +1,128 @@
+body { position: relative; }
+body, form { margin: 0pt ! important; padding: 0pt ! important; }
+#bd_snap { font: 14px arial; color: rgb(0, 0, 0); background: none repeat scroll 0% 0% rgb(255, 255, 255); text-align: left; padding: 7px 0pt 0pt 20px; }
+#bd_snap_txt { clear: both; padding: 10px 0pt; }
+#bd_snap_note { font-size: 12px; color: rgb(102, 102, 102); padding-bottom: 10px; }
+#bd_snap a { font: 14px arial; color: rgb(0, 0, 204); text-decoration: underline; }
+#bd_snap_head { width: 860px; height: 44px; }
+#bd_snap_logo { width: 162px; height: 38px; display: block; background: url('logo-snap.gif') no-repeat scroll 0% 0% transparent; margin-right: 15px; float: left; }
+#bd_snap_search { width: 680px; position: absolute; left: 197px; top: 17px; }
+#bd_snap_kw { width: 519px; height: 22px; padding: 4px 7px; margin-right: 5px; font: 16px arial; background: url('i-1.0.0.png') no-repeat scroll -304px 0pt transparent; border-width: 1px; border-style: solid; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-image: none; border-color: rgb(154, 154, 154) rgb(205, 205, 205) rgb(205, 205, 205) rgb(154, 154, 154); vertical-align: top; }
+#bd_snap_su { width: 95px; height: 32px; font-size: 14px; color: rgb(0, 0, 0); padding: 0pt; border: 0pt none; }
+input.bd_snap_btn { background: url('i-1.0.0.png') repeat scroll 0% 0% rgb(221, 221, 221); cursor: pointer; }
+#bd_snap_btn_wr { width: 97px; height: 34px; display: inline-block; background: url('i-1.0.0.png') no-repeat scroll -202px 0pt transparent; }
+#bd_snap_ln { height: 1px; border-top: 1px solid rgb(172, 168, 153); background: none repeat scroll 0% 0% rgb(236, 233, 216); overflow: hidden; }
+#bd_snap_txt span a { text-decoration: none; }
+/* ::::: http://www.open-open.com/bbs/css/style.css ::::: */
+
+/* ::::: http://www.open-open.com/bbs/css/jquery.autocomplete.css ::::: */
+
+body { background: none repeat scroll 0pt 0pt rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: Arial,宋体; font-size: 12px; line-height: 150%; margin: 0pt; padding: 0pt; }
+#topnav { padding: 0px 2px; border-bottom: 1px solid rgb(223, 223, 223); }
+#topmenu { margin: 0pt; padding: 0pt; height: 22px; overflow: hidden; position: relative; }
+#topmenu ul { list-style-type: none; margin: 0pt; padding: 0pt; }
+#topmenu ul li { list-style-type: none; margin: 0pt; padding-bottom: 2px; vertical-align: middle; float: left; line-height: 22px; padding-left: 12px; }
+#topmenu ul li.selected span { color: rgb(0, 0, 0); font-weight: bold; }
+#topmenu ul li a:link { text-decoration: none; color: rgb(42, 74, 185); }
+#topmenu ul li a:visited { text-decoration: none; color: rgb(42, 74, 185); }
+#topmenu ul li a:hover { text-decoration: none; color: rgb(108, 108, 108); }
+#topmenu ul li a:active { text-decoration: none; }
+#Personal { position: relative; margin: 3px; padding-right: 5px; float: right; }
+#Personal a { text-decoration: none; }
+div { margin: 0pt auto; padding: 0pt; }
+h1, h2, h3, form, img, p { border: medium none; margin: 0pt; padding: 0pt; }
+label { vertical-align: middle; }
+hr { border-color: rgb(204, 204, 206) -moz-use-text-color -moz-use-text-color; border-style: dashed none none; border-width: 1px medium medium; }
+input, select { font-family: Arial,宋体; vertical-align: middle; }
+p { font-size: 13px; line-height: 140%; margin-bottom: 13px; }
+a { color: rgb(48, 96, 168); text-decoration: none; }
+.clear { clear: both; width: 0px; height: 0px; }
+a:hover { text-decoration: underline; }
+.spacer3 { clear: both; height: 30px; line-height: 30px; visibility: hidden; }
+h2 { font-size: 140%; padding: 3px 0pt; line-height: 110%; }
+h3 { font-size: 120%; padding: 3px 0pt; line-height: 110%; }
+ul { list-style: disc outside none; margin-bottom: 1em; margin-left: 0px; }
+#wrapper, #announcement { margin: auto; padding: 0pt; width: 990px; background-color: rgb(255, 255, 255); }
+#roof { width: 100%; }
+#roof2 { width: 990px; }
+#room { background-color: rgb(255, 255, 255); border-bottom: 1px solid rgb(119, 119, 119); padding: 10px 0pt; }
+#CALeft { float: left; position: relative; width: 740px; }
+#CARight { float: right; width: 240px; }
+#ground { background: none repeat scroll 0pt 0pt rgb(189, 204, 237); border-top: 1px solid rgb(0, 0, 0); padding-bottom: 0pt; padding-top: 6px; text-align: center; width: 990px; }
+#top { float: right; padding: 3px; text-align: right; width: 500px; }
+#logo { float: left; padding: 0px 0pt 0pt; }
+#nav { float: right; margin: 25px 0px 0px; width: 750px; }
+#nav a { background-color: rgb(229, 235, 248); border-color: rgb(136, 136, 136) rgb(136, 136, 136) -moz-use-text-color; border-style: solid solid none; border-width: 1px 1px medium; color: rgb(51, 51, 51); display: block; float: left; font-size: 14px; font-weight: 400; height: 25px; line-height: 30px; margin-left: 10px; padding: 0pt 12px 3px; text-decoration: none; }
+#nav a:hover { text-decoration: underline; }
+#nav a#nav_ask { float: right; color: rgb(176, 43, 44); font-size: 14px; font-weight: bold; text-decoration: none; }
+#nav a#nav_ask:hover { text-decoration: underline; }
+#searchBar { text-align: center; background-color: rgb(182, 196, 226); border-color: rgb(238, 238, 236) rgb(169, 172, 165) rgb(186, 189, 182) rgb(238, 238, 236); border-style: solid; border-width: 1px; padding: 4px 0pt 0pt; width: 988px; }
+#searchBar .searchInput { border: 0px none; padding: 3px; font-size: 13px; height: 18px; width: 400px; }
+#searchBar .searchBtn { font-size: 14px; height: 26px; width: 80px; }
+#searchBar .options { color: rgb(51, 51, 51); font-size: 120%; padding: 3px 0pt; }
+#question-table { margin-bottom: 10px; }
+.boxC { background: none repeat scroll 0pt 0pt rgb(229, 235, 248); border-color: rgb(238, 238, 236) rgb(169, 172, 165) rgb(186, 189, 182) rgb(238, 238, 236); border-style: solid; border-width: 1px; margin-bottom: 8px; padding: 10px; }
+.boxC p { margin-bottom: 6px; }
+.boxC ul { margin: 0pt 0pt 1.5em; padding: 0pt; font-size: 13px; }
+.boxC ul li { margin: 0pt 0pt 0.25em 20px; padding: 0pt; }
+.paginator { font: 12px sans-serif; padding: 5px 0pt 10px; }
+.paginator .page, .paginator .page a:visited, .paginator .curr { background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); color: rgb(119, 119, 119); margin: 0pt 0.25em; padding: 0.25em; }
+.paginator .curr { background-color: rgb(119, 119, 119); border: 1px solid rgb(119, 119, 119); color: rgb(255, 255, 255); font-weight: bold; }
+.paginator .page:hover, .paginator .prev a:hover, .paginator .next a:hover { background-color: rgb(119, 119, 119); border: 1px solid rgb(119, 119, 119); color: rgb(255, 255, 255); text-decoration: none; }
+.paginator-container-left { padding: 5px 0pt 10px; }
+.tags { display: block; font-family: Arial,宋体; line-height: 200%; margin-top: 5px; }
+.tags a, span.tag { background-color: rgb(238, 238, 238); border-bottom: 1px solid rgb(204, 204, 204); border-right: 1px solid rgb(204, 204, 204); color: rgb(119, 119, 119); font-size: 12px; font-weight: normal; padding: 1px 8px; text-decoration: none; white-space: nowrap; }
+.tags a:hover { background-color: rgb(53, 111, 203); color: rgb(255, 255, 255); }
+.tag-number { font-family: Arial,宋体; font-weight: 700; }
+.tabBar { background-color: rgb(255, 255, 255); border-bottom: 1px solid white; clear: both; height: 30px; margin-bottom: 3px; width: 100%; }
+.tabsA { background-color: rgb(255, 255, 255); display: block; float: right; font-weight: bold; height: 20px; position: relative; }
+.tabsA a, .sticky-sort-tabs { background: none repeat scroll 0pt 0pt rgb(238, 238, 238); border-bottom: 1px solid rgb(204, 204, 204); border-right: 1px solid rgb(204, 204, 204); color: rgb(136, 138, 133); display: block; float: left; height: 20px; line-height: 22px; margin: 5px 4px 0pt 0pt; text-decoration: none; }
+.tabsA a { padding: 0pt 11px; }
+.tabsA a.on, .tabsA a:hover { background: none repeat scroll 0pt 0pt rgb(255, 255, 255); color: rgb(164, 0, 0); }
+.tabsA a:hover { background: none repeat scroll 0pt 0pt rgb(53, 111, 203); color: rgb(255, 255, 255); }
+.headQuestions { background: url('dot-list.gif') no-repeat scroll left center transparent; border-bottom: 0pt solid rgb(119, 119, 119); float: left; font-size: 15px; font-weight: 700; height: 23px; line-height: 23px; margin: 5px 0pt 0pt 5px; padding: 0pt 6px 0pt 15px; }
+.headNormal { border-bottom: 1px solid rgb(119, 119, 119); font-size: 15px; font-weight: bold; margin-bottom: 12px; padding: 3px; text-align: left; }
+.question-body { font-size: 13px; line-height: 20px; }
+.question-body img { max-width: 640px; }
+.vote-buttons { float: left; text-align: center; }
+.answer { border-bottom: 1px solid rgb(204, 204, 206); padding-top: 10px; width: 100%; }
+.answer-body { font-size: 13px; line-height: 20px; min-height: 80px; margin: 0pt 0pt 20px; }
+div.question-body p, div.answer-body p { max-width: 700px; }
+#editor { font-size: 100%; line-height: 18px; min-height: 200px; width: 100%; }
+.bronze, .badge3 { color: rgb(204, 153, 51); }
+.score, .accept_rate { color: rgb(51, 51, 51); font-size: 110%; font-weight: bold; margin-left: 3px; }
+.footerLinks { color: rgb(48, 96, 168); font-size: 13px; }
+.footerLinks a { color: rgb(48, 96, 168); font-size: 13px; }
+.post-controls, .tags-container { font-size: 12px; line-height: 12px; margin-bottom: 5px; min-width: 200px; }
+.tags-container { margin: 0pt 0pt 16px; }
+#question-tags { margin-top: 15px; }
+.post-controls { float: left; }
+.post-update-info { display: inline-block; float: right; margin-bottom: 5px; width: 190px; }
+.post-update-info p { font-size: 12px; line-height: 15px; margin: 0pt 0pt 4px; padding: 0pt; }
+.post-update-info img { float: left; margin: 4px 8px 0pt 0pt; width: 32px; }
+a.post-vote, .favorite-mark, a.accept-answer { display: block; height: 24px; position: relative; width: 24px; }
+a.post-vote.up { background: url('vote-arrow-up.png') no-repeat scroll center center transparent; }
+a.post-vote.up.on, a.post-vote.up:hover { background: url('vote-arrow-up-on.png') no-repeat scroll center center transparent; }
+a.post-vote.down { background: url('vote-arrow-down.png') no-repeat scroll center center transparent; }
+a.post-vote.down.on, a.post-vote.down:hover { background: url('vote-arrow-down-on.png') no-repeat scroll center center transparent; }
+.post-score, .comments-char-left-count { color: rgb(119, 119, 119); font-family: Arial,宋体; font-size: 165%; font-weight: bold; padding: 0pt 0pt 3px; }
+.favorite-mark { background: url('vote-favorite-off.png') no-repeat scroll center center transparent; }
+.favorite-mark.on, a.favorite-mark:hover { background: url('vote-favorite-on.png') no-repeat scroll center center transparent; }
+.favorite-count { color: rgb(119, 119, 119); font-family: Arial,宋体; font-size: 100%; font-weight: bold; padding: 0pt; }
+.comments-container { clear: both; }
+.comments-container { padding: 0pt; }
+div.comment-tools { border-top: 1px dotted rgb(204, 204, 206); padding-top: 12px; text-align: right; }
+.gravatar { padding: 3px; border: 1px solid rgb(231, 232, 230); border-radius: 4px 4px 4px 4px; }
+.filetype { background: url('icons.gif') no-repeat scroll 0% 0% transparent; padding: 3px 8px; cursor: default; }
+.doc { background-position: -72px 1px; }
+.pdf { background-position: 0pt 1px; }
+/* ::::: http://www.open-open.com/bbs/css/cstyle.css ::::: */
+
+div.question-body p, div.answer-body p { max-width: 700px; }
+/* ::::: http://www.open-open.com/bbs/css/jquery-ui.css ::::: */
+
+button.ui-button::-moz-focus-inner { border: 0pt none; padding: 0pt; }
+/* ::::: http://www.open-open.com/bbs/syntaxhighlighter_2.1.382/styles/shCore.css ::::: */
+
+/* ::::: http://www.open-open.com/bbs/syntaxhighlighter_2.1.382/styles/shThemeDefault.css ::::: */
+

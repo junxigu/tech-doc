@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta content="IE=7" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
+<link href="http://img.baidu.com/img/baike/wap/iphone4_logo.png" rel="apple-touch-icon">
+<meta content="6cxg7fjbSrYQta0LB_ceiPVV7KOb9Sis_o0e4QGYDec" name="google-site-verification"><title>STL vector_百度百科</title>
+
+
+
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+
+<link rel="stylesheet" id="scrapbook-sticky-css" type="text/css" href="chrome://scrapbook/skin/annotation.css" media="all">
+</head>
+<body id="view"><iframe src="index_1.html" style="display: none;" frameborder="0"></iframe><div id="bdshare_s"><iframe src="index_2.html" id="bdsIfr" style="position: absolute; display: none; z-index: 9999;" frameborder="0"></iframe><div style="display: none;" id="bdshare_l"><div id="bdshare_l_c"><h6>分享到</h6><ul><li><a href="#" class="bds_qzone qqkj">QQ空间</a></li><li><a href="#" class="bds_tsina xlwb">新浪微博</a></li><li><a href="#" class="bds_baidu bdsc">百度搜藏</a></li><li><a href="#" class="bds_renren rrw">人人网</a></li><li><a href="#" class="bds_tqq txwb">腾讯微博</a></li><li><a href="#" class="bds_kaixin001 kxw">开心网</a></li><li><a href="#" class="bds_tqf txpy">腾讯朋友</a></li><li><a href="#" class="bds_hi bdkj">百度空间</a></li><li><a href="#" class="bds_douban db">豆瓣网</a></li><li><a href="#" class="bds_tsohu shwb">搜狐微博</a></li><li><a href="#" class="bds_msn msn">MSN</a></li><li><a href="#" class="bds_qq qqsc">QQ收藏</a></li><li><a href="#" class="bds_taobao tjh">淘宝</a></li><li><a href="#" class="bds_tieba bdtb">百度贴吧</a></li><li><a href="#" class="bds_sohu shbsh">搜狐白社会</a></li><li><a href="#" class="bds_more">更多...</a></li></ul><p><a href="#" class="goWebsite">百度分享</a></p></div></div></div>
+<div id="userbar"><ul><li></li><li class="line">|</li></ul></div>
+<div id="wrap">
+
+<div id="page">
+<div class="layout grid-m0s245 w1000" id="content-wrap">
+<div class="col-main article" id="content">
+<div class="main-wrap main-shadow" id="main-wrap">
+<div class="content-hd">
+<div class="content-hd-wrap"></div>
+</div>
+<div class="content-bd main-body">
+<div class="text" id="sec-content0">
+<div class="bk-editable-lemma-btns">
+<a class="tpldivide-lemma lemma-top-link" hidefocus="true" href="http://baike.baidu.com/tpldivideload?lemmaId=4255402" id="tmpdivide" style="display: none; margin-right: 14px;" target="_top"></a>
+<a class="dividable-lemma lemma-top-link" data-edit-id="4255402" hidefocus="true" href="http://baike.baidu.com/divideload?lemmaid=4255402" id="polyin" style="display: none;">拆分词条</a>
+
+<span style="height: 100%;"></span>
+</div>
+<h1 class="title" id="lemmaTitle-4255402">STL vector</h1><div class="lemma-main-content" id="lemmaContent-0"><h3 class="headline-2 bk-sidecatalog-title"><a name=""></a><span class="headline-content">说明</span></h3>　　vector是一种<a target="_top" href="http://baike.baidu.com/view/675652.htm">动态数组</a>，是基本<a target="_top" href="http://baike.baidu.com/view/209670.htm">数组</a>的类模板。其内部定义了很多基本操作。
+<div class="spctrl"></div>　　＃include &lt;vector&gt; <b><i>注意：头文件没有“.h”</i></b><h3 class="headline-2 bk-sidecatalog-title"><a name=""></a><span class="headline-content">构造：</span></h3>　　<b>这个构造函数还有一个可选的参数，这是一个类型为T的实例，描述了各个向量种各成员的初始值</b>；
+<div class="spctrl"></div>　　如：vector&lt;int&gt; v2(init_size,0); 如果预先定义了：int init_size;他的成员值都被初始化为0；
+<div class="spctrl"></div>　　· <b><a target="_top" href="http://baike.baidu.com/view/2329038.htm">复制构造函数</a>，构造一个新的向量，作为已存在的向量的完全复制;</b>
+<div class="spctrl"></div>　　如：vector&lt;int&gt; v3(v2);
+<div class="spctrl"></div>　　· <b>带两个常量参数的构造函数，产生初始值为一个区间的向量</b>。<i>区间由一个半开区间[first,last](MS word的显示可能会有问题，first前是一个左方括号，last后面是一个右圆括号)</i>来指定。
+<div class="spctrl"></div>　　如：vector&lt;int&gt; v4（first,last） vector&lt;int&gt; v1; 
+<div class="spctrl"></div>　　vector&lt;int&gt; v2(init_size,0);
+<div class="spctrl"></div>　　vector&lt;int&gt; v3(v2);<h3 class="headline-2 bk-sidecatalog-title"><a name=""></a><span class="headline-content">方法：</span></h3>　　<span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">c.assign(beg,end) c.assign(n,elem)　将(beg; end)区间中的数据赋值给c。将n个elem的拷贝赋值给c。 
+</span><div class="spctrl"></div>　　c. at(idx)　传回索引idx所指的数据，如果idx越界，抛出out_of_range。 
+<div class="spctrl"></div>　　<span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">c.back()　传回最后一个数据，不检查这个数据是否存在。 
+</span><div class="spctrl"></div>　　<span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">c.begin()　<span style="background-color: #FFFF99; color: #000000; border: thin dashed #FFCC00;" class="linemarker-marked-line">传回迭代器</span>中的第一个数据地址。</span> 
+<div class="spctrl"></div>　　c.capacity()　返回容器中数据个数。 
+<div class="spctrl"></div>　　<span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">c.clear()　移除容器中所有数据。</span> 
+<div class="spctrl"></div>　　<span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">c.empty()　判断容器是否为空。 
+</span><div class="spctrl"></div>　　<span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">c.end() // <span style="background-color: rgb(255, 255, 153); color: rgb(0, 0, 0); border: thin dashed rgb(255, 204, 0);" class="linemarker-marked-line">指向迭代器</span>中末端元素的<span style="background-color: #FFFF99; color: #000000; border: thin dashed #FFCC00;" class="linemarker-marked-line">下一个</span>，指向一个不存在元素。</span> 
+<div class="spctrl"></div>　　<span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">c.erase(pos) // 删除pos位置的数据，传回下一个数据的位置。</span> 
+<div class="spctrl"></div>　　<span style="border-bottom: medium solid #33FF33;" class="linemarker-marked-line">c.erase(beg,end)　删除<span style="background-color: #FFFF99; color: #000000; border: thin dashed #FFCC00;" class="linemarker-marked-line">[beg,end)</span>区间的数据，传回下一个数据的位置</span>。 
+<div class="spctrl"></div>　　<span style="border-bottom: medium solid #33FF33;" class="linemarker-marked-line">c.front()　传回第一个数据。</span> 
+<div class="spctrl"></div>　　get_allocator　使用构造函数返回一个拷贝。 
+<div class="spctrl"></div>　　<span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">c.insert(pos,elem) // 在pos位置插入一个elem拷贝，传回新数据位置</span>　
+<div class="spctrl"></div>　　<span style="border-bottom: medium solid #33FF33;" class="linemarker-marked-line">c.insert(pos,n,elem) // 在pos位置插入n个elem数据,无返回值　
+</span><div class="spctrl"></div>　　<span style="border-bottom: medium solid #33FF33;" class="linemarker-marked-line">c.insert(pos,beg,end) // 在pos位置插入在<span style="background-color: #FFFF99; color: #000000; border: thin dashed #FFCC00;" class="linemarker-marked-line">[beg,end)</span>区间的数据。无返回值</span>　
+<div class="spctrl"></div>　　c.max_size()　返回容器中最大数据的数量。　
+<div class="spctrl"></div>　　<span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">c.pop_back()　删除最后一个数据。</span>　
+<div class="spctrl"></div>　　<span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">c.push_back(elem)　在尾部加入一个数据</span>。　
+<div class="spctrl"></div>　　c.rbegin()　传回一个逆向队列的第一个数据。　
+<div class="spctrl"></div>　　c.rend()　传回一个逆向队列的最后一个数据的下一个位置。　
+<div class="spctrl"></div>　　c.resize(num)　重新指定队列的长度。　
+<div class="spctrl"></div>　　c.reserve()　保留适当的容量。　
+<div class="spctrl"></div>　　<span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">c.size()　返回容器中实际数据的个数</span>。　
+<div class="spctrl"></div>　　<span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">c1.swap(c2) // 将c1和c2元素互换</span><h3 class="headline-2 bk-sidecatalog-title"><a name=""></a><span class="headline-content">例子：</span></h3> 
+<div class="spctrl"></div>　　//stl_cpp_8.cpp
+<div class="spctrl"></div>　　#include &lt;iostream&gt;
+<div class="spctrl"></div>　　#include &lt;vector&gt;
+<div class="spctrl"></div>　　using namespace std;
+<div class="spctrl"></div>　　typedef vector&lt;int&gt; INTVECTOR;<div class="spctrl"></div>　　void main(void)
+<div class="spctrl"></div>　　{
+<div class="spctrl"></div>　　INTVECTOR vec1;<div class="spctrl"></div>　　INTVECTOR vec2(10,6); 
+<div class="spctrl"></div>　　INTVECTOR vec3(vec2.begin(),vec2.begin()+3); 
+<div class="spctrl"></div>　　INTVECTOR::iterator i;
+<div class="spctrl"></div>　　cout&lt;&lt;"vec1.begin()--vec1.end():"&lt;&lt;endl;
+<div class="spctrl"></div>　　for (i =vec1.begin(); i !=vec1.end(); ++i)
+<div class="spctrl"></div>　　cout &lt;&lt; *i &lt;&lt; " ";
+<div class="spctrl"></div>　　cout &lt;&lt; endl;
+<div class="spctrl"></div>　　cout&lt;&lt;"vec2.begin()--vec2.end():"&lt;&lt;endl;
+<div class="spctrl"></div>　　for (i =vec2.begin(); i !=vec2.end(); ++i)
+<div class="spctrl"></div>　　cout &lt;&lt; *i &lt;&lt; " ";
+<div class="spctrl"></div>　　cout &lt;&lt; endl;
+<div class="spctrl"></div>　　cout&lt;&lt;"vec3.begin()--vec3.end():"&lt;&lt;endl;
+<div class="spctrl"></div>　　for (i =vec3.begin(); i !=vec3.end(); ++i)
+<div class="spctrl"></div>　　cout &lt;&lt; *i &lt;&lt; " ";
+<div class="spctrl"></div>　　cout &lt;&lt; endl;
+<div class="spctrl"></div>　　vec1.push_back(2);<div class="spctrl"></div>　　vec1.push_back(4);
+<div class="spctrl"></div>　　vec1.insert(vec1.begin()+1,5);<div class="spctrl"></div>　　vec1.insert(vec1.begin()+1,vec3.begin(),vec3.end());
+<div class="spctrl"></div>　　cout&lt;&lt;"after push() and insert() now the vec1 is:" &lt;&lt;endl;
+<div class="spctrl"></div>　　for (i =vec1.begin(); i !=vec1.end(); ++i)
+<div class="spctrl"></div>　　cout &lt;&lt; *i &lt;&lt; " ";
+<div class="spctrl"></div>　　cout &lt;&lt; endl;
+<div class="spctrl"></div>　　vec2.assign(8,1); <div class="spctrl"></div>　　cout&lt;&lt;"vec2.assign(8,1):" &lt;&lt;endl;
+<div class="spctrl"></div>　　for (i =vec2.begin(); i !=vec2.end(); ++i)
+<div class="spctrl"></div>　　cout &lt;&lt; *i &lt;&lt; " ";
+<div class="spctrl"></div>　　cout &lt;&lt; endl;
+<div class="spctrl"></div>　　cout&lt;&lt;"vec1.front()="&lt;&lt;vec1.front()&lt;&lt;endl;//vec1第零个成员
+<div class="spctrl"></div>　　cout&lt;&lt;"vec1.back()="&lt;&lt;vec1.back()&lt;&lt;endl;//vec1的最后一个成员
+<div class="spctrl"></div>　　cout&lt;&lt;"vec1. at(4)="&lt;&lt;vec1. at(4)&lt;&lt;endl;//vec1的第五个成员
+<div class="spctrl"></div>　　cout&lt;&lt;"vec1[4]="&lt;&lt;vec1[4]&lt;&lt;endl;
+<div class="spctrl"></div>　　//测试移出和删除
+<div class="spctrl"></div>　　vec1.pop_back();//将最后一个成员移出vec1
+<div class="spctrl"></div>　　vec1.erase(vec1.begin()+1,vec1.end()-2);//删除成员
+<div class="spctrl"></div>　　cout&lt;&lt;"vec1.pop_back() and vec1.erase():" &lt;&lt;endl;
+<div class="spctrl"></div>　　for (i =vec1.begin(); i !=vec1.end(); ++i)
+<div class="spctrl"></div>　　cout &lt;&lt; *i &lt;&lt; " ";
+<div class="spctrl"></div>　　cout &lt;&lt; endl;
+<div class="spctrl"></div>　　//显示序列的状态信息
+<div class="spctrl"></div>　　cout&lt;&lt;"vec1.size(): "&lt;&lt;vec1.size()&lt;&lt;endl;//打印成员个数
+<div class="spctrl"></div>　　cout&lt;&lt;"vec1.empty(): "&lt;&lt;vec1.empty()&lt;&lt;endl;//判断vec1是否为空，空则返回1，不空返回0
+<div class="spctrl"></div>　　}
+</div><div class="reinforce" id="lemmaExtend"><dl class="nslog-area log-set-param" data-nslog-type="19" id="viewExtCati" log-set-param="module_tag"><dd><a href="http://baike.baidu.com/taglist?tag=C%2B%2B&amp;tagfromview" target="_top"></a></dd>
+</dl>
+<div class="clear"></div>
+<div class="clear"></div>
+</div>
+
+</div>
+<div class="clear"></div>
+</div>
+
+</div>
+</div>
+<div class="col-sub" id="side">
+<div class="userinfo-side">
+<div id="userInfoDiv">
+</div>
+</div>
+<div class="box2" id="lemma-overview">
+
+</div>
+
+<div class="box2" id="bkDynamic" style="">
+
+</div>
+<div class="box2" id="mabox" style="display: none;">
+<div class="box2-inner" id="box2-inner">
+
+
+</div>
+</div>
+<div class="clear">
+</div>
+</div>
+</div><img src="c.gif" style="display: none;"><input id="titleVal" value="STL vector" type="hidden">
+</div>
+
+</div>
+<div id="sidecatalog" style="position: fixed; top: 431px; left: 744px;">
+<div style="visibility: hidden;" class="sidebar" id="sidebar"></div>
+<a class="gotop" href="#" id="gotop" title="返回顶部"></a>
+</div>
+<div id="side-catalog-content" style="display: none; position: fixed; overflow: hidden; height: 92px; top: 429px; left: 771px;"></div>
+
+
+
+
+<div id="usercard-wrap"><div style="opacity: 0;" class="user-card fix"><div class="top-bg"></div><div class="card-body fix"><div class="uc-l"><div class="uc-pic"></div><div class="uc-name"><a class="uc-id" href="http://baike.baidu.com/view/4255402.htm"></a></div><div class="uc-level"></div></div><div class="uc-r"><div class="uc-items"><div class="uc-role fix"></div><div class="uc-badge fix"></div><div class="uc-honor"></div><div class="uc-going-task fix"></div><div class="uc-gq"></div><div class="uc-default"></div><div class="uc-edit"></div></div><span class="pillar"></span></div></div></div></div>
+
+
+<div class="scrapbook-sticky" style="left: 773px; top: 23px; position: absolute; width: 256px; height: 131px;"><div class="scrapbook-sticky-header"></div>构造函数：
+vector&lt;int&gt; v;
+vector&lt;int&gt; v(init_size,0);
+vector&lt;int&gt; v(v2)
+vector&lt;int&gt; v（first,last）</div>
+<div class="scrapbook-sticky" style="left: 774px; top: 158px; position: absolute; width: 263px; height: 326px;"><div class="scrapbook-sticky-header"></div>修改函数：
+c.assign(beg,end);
+c.assign(n,elem);
+
+c.erase(pos);
+c.erase(beg,end);
+c.pop_back();
+c.clear()
+
+c.insert(pos,elem);
+c.insert(pos,n,elem);
+c.insert(pos,beg,end);
+c.push_back(elem);
+
+c1.swap(c2);</div>
+<div class="scrapbook-sticky" style="left: 770px; top: 489px; position: absolute; width: 269px; height: 150px;"><div class="scrapbook-sticky-header"></div>容量函数：
+c.empty();
+c.size()
+
+c.capacity();
+c.max_size();
+
+</div>
+<div class="scrapbook-sticky" style="left: 774px; top: 643px; position: absolute; width: 250px; height: 211px;"><div class="scrapbook-sticky-header"></div>引用函数：
+c.front();
+c.back();
+c.at(id);
+c[id];
+
+c.begin();
+c.end();</div>
+</body></html>

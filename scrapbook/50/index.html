@@ -1,0 +1,433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="zh" xml:lang="zh" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    
+    <meta http-equiv="content-style-type" content="text/css">
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta name="version" content="neblog-1.0">
+    
+<title>程序员面试题精选100题(50)-树的子结构[数据结构] - 何海涛的日志 - 网易博客</title>
+<meta name="author" content="zhedahht,何海涛">
+<meta name="keywords" content="程序员面试题精选100题(50)-树的子结构[数据结构],日志,何海涛,微软、Google等面试题,网易博客,网易,blog">
+<meta name="description" content="程序员面试题精选100题(50)-树的子结构[数据结构],何海涛的网易博客,剑指Offer：名企面试官精讲典型编程题,海纳百川,涛声依旧,点石成金,成就未来">
+  
+    
+    
+  <!--[if lte IE 6]>
+  <style type="text/css">
+    html,body,#blog-163-com-ie6body{height:100%;width:100%;overflow:hidden;}
+    #blog-163-com-ie6body{overflow:auto;overflow-y:scroll;}
+    #blog-163-com{background:none;}
+  </style>
+  <![endif]-->
+  
+  
+  
+  
+  
+  
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body id="blog-163-com" class="nb-body nb-inr nb-prv">
+  <!--[if lte IE 6]><div id="blog-163-com-ie6bodywrap" class=""><![endif]-->
+    <!--[if lte IE 6]><div id="blog-163-com-ie6body" class="nb-body"><![endif]-->
+
+<div class="nb-nbar clearfix" id="blog-163-com-topbar">
+  <div class="pl fl clearfix">
+  <div id="" "="" class="nbw-im fl im im0">
+    <a rel="nofollow" class="lbl bd ia noul " href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://www.163.com/" target="_top" hidefocus="true"><span class="tx">网易</span><span class="iblock icn0 icn0-421">&nbsp;</span></a><div class="nbw-tcd box-shadow bd">
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://news.163.com/">
+            新闻
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://t.163.com/">
+            微博
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://email.163.com/">
+            邮箱
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://photo.163.com/">
+            相册
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://yuedu.163.com/">
+            阅读
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://www.youdao.com/">
+            有道
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://photo.163.com/pp/square/">
+            摄影
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://aipai.163.com?from=163blog">
+            爱拍
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://note.youdao.com/?vendor=163blog">
+            云笔记
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://fm.163.com/?fmblogzx0628">
+            闪电邮
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://m.123.163.com/?frombkcp">
+            手机邮
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://yxp.163.com/">
+            印像派
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://dream.163.com/?from=bkcp">
+            梦幻人生
+          </a>
+        <div class="sep bd space">&nbsp;</div>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://sitemap.163.com/">
+            更多
+          </a>
+        
+    </div>
+  </div>
+                               
+    <span style="margin-left: 0pt;" class="fl iblock space icn1 icn1-4">&nbsp;</span>
+    
+  <div id="" "="" class="nbw-im fl im im10">
+    <a class="lbl bd ia noul " href="http://blog.163.com/?frompersonalbloghome" target="_top" hidefocus="true"><span class="tx">博客</span><span class="iblock icn0 icn0-421">&nbsp;</span></a><div class="nbw-tcd box-shadow bd">
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/services/wapblog.html?frompersonalbloghome">
+            手机博客
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/clone/clone.html?frompersonalbloghome">
+            博客搬家
+          </a>
+          <a class="itm noul youcai " target="_top" hidefocus="true" href="http://blog.163.com/vip.do?frompersonalbloghome">
+            博客VIP服务
+          </a>
+        <div class="sep bd space">&nbsp;</div>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/blog_admin/blog/static/721279201082863728829/?frompersonalbloghome">
+            LiveWriter写博
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/blog_admin/blog/static/721279201092713253500/?frompersonalbloghome">
+            word写博
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/services/mailblog.html?frompersonalbloghome">
+            邮件写博
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/services/emsblog.html?frompersonalbloghome">
+            短信写博
+          </a>
+        <div class="sep bd space">&nbsp;</div>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/showMultiUser.do?frompersonalbloghome">
+            群博客
+          </a>
+          <a class="itm noul youcai " target="_top" hidefocus="true" href="http://blog.163.com/BLOG_YOUCAI/">
+            博客油菜地
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/ht/?frompersonalbloghome">
+            博客话题
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/hot/history/?frompersonalbloghome">
+            博客热点
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://q.163.com/#home?frompersonalbloghome">
+            博客圈子
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/findFriend.do?type=5?frompersonalbloghome">
+            找朋友
+          </a>
+        
+    </div>
+  </div>
+
+    
+    <div class="nbw-im fl im1 im explore"><a class="lbl bd ima spy" href="http://blog.163.com/public/explore/?frompersonalbloghome">发现</a></div>
+    <div class="nbw-im fl im1 im bloggroup"><a class="lbl bd ima spy" href="http://blog.163.com/g/?frompersonalbloghome">小组</a></div>
+    <div class="nbw-im fl im1 im customtheme"><a class="lbl bd ima spy" href="http://blog.163.com/public/theme/?frompersonalbloghome">风格</a></div>
+    <div class="nbw-im fl im1 im seebyway"><a rel="nofollow" title="随便看看" class="lbl bd ima spy" href="http://blog.163.com/randomUser.do">&nbsp;</a></div>
+    
+    <span class="fl iblock space icn1 icn1-4">&nbsp;</span>
+    <div id="topbar_randShowArea" class="fl">
+      <div class="nbw-im fl im1 im randtag"><a style="width: 110px;" target="_top" class="lbl bd ima moveblog randshow" href="http://www.lofter.com/" onclick="window.open('http://www.lofter.com/reg?from=blog');return false;">网易轻博客LOFTER</a></div>
+    </div>
+  </div>
+  <div class="fr pr clearfix">
+    <div id="topbar_loginAndReg" class="fr">
+      <a rel="nofollow" style="margin-left: 10px; color: rgb(255, 119, 0);" class="iblock fr ima" href="http://reg.163.com/reg/reg.jsp?product=blog&amp;url=http://blog.163.com/ntesRegBlank.html&amp;loginurl=http://blog.163.com/" target="_top">创建博客</a>
+      <a rel="nofollow" class="iblock fr ima ztag" href="#">登录</a>
+      <span class="fr iblock space icn1 icn1-4 spx">&nbsp;</span>
+      <div id="topbar_followArea" class="nbw-im fr"><span class="lbl bd ima followit fl ztag"><span class="fl addicon">&nbsp;</span><span class="fl">关注</span></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="blogtoptips phide" id="blog-163-com-toptips">
+ <div class="blogtoptipswrap">
+    <div id="newbulletinstip" class="newbulletinstip phide">
+    <a class="lnknews fc03 m2a tiptag phide" href="http://zhedahht.blog.163.com/blog/static/25411174201011445550396/" target="_top"></a><span class="txtnews tiptag phide"></span>&nbsp;&nbsp;&nbsp;<a class="fc03 ul nextorprevnews tiptag phide" href="http://zhedahht.blog.163.com/blog/static/25411174201011445550396/" hidefocus="true">显示下一条</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="fc03 ul close tiptag" href="http://zhedahht.blog.163.com/blog/static/25411174201011445550396/" hidefocus="true">关闭</a>
+  </div>
+ </div>
+    <div id="$_faxiantip" class="faxiantip phide">
+      <div>
+	    <a class="m2a iblock" href="http://blog.163.com/public/explore/?fromblogbanner" target="_top"></a>
+	    <span class="faxiantag m2a"></span>
+      </div>
+    </div>
+    <div id="$_guanggaotip" class="guanggaotip phide">
+      <div>
+	    
+	    <span class="guanggaotag m2a"></span>
+      </div>
+    </div>
+    <div id="$_lofterInviteTip" class="lofterInviteTip phide">
+      <div>
+	    <a class="m2a iblock" href="http://www.lofter.com/invite/163blog/?email=" target="_top"></a>
+	    <span class="lofterInviteTag m2a"></span>
+      </div>
+    </div>
+</div>  <div class="nb-wrap wsy" id="blog-163-com-main"><div class="nb-are nb-top">
+  <div class="wkg h" id="blog-163-com-banner">
+    
+    <div class="t">
+      <h1 class="n c"><span class="ztag pre">微软、Google等面试题</span></h1>
+      <p class="d c"><span class="ztag pre">剑指Offer：名企面试官精讲典型编程题</span></p>
+    </div>
+    <div class="f h ztag">&nbsp;</div>
+    <a class="x" hidefocus="true" target="_top" href="#"><span class="xx ztag"></span></a>
+  </div>
+</div><div class="nb-are nb-nav">
+  <div class="wkg">
+    <div class="c h">
+      <h2>导航</h2>
+      <ul class="noul clearfix">
+                
+	        <li class="w w0">
+	          <a class="i i0 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/">首页</a>
+	        </li>
+	        <li class="w w1 selected">
+	          <a class="i i1 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/blog/">日志</a>
+	        </li>
+	        <li class="w w2">
+	          <a class="i i2 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/album/">相册</a>
+	        </li>
+	        <li class="w w3">
+	          <a class="i i3 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/music/">音乐</a>
+	        </li>
+	        <li class="w w4">
+	          <a class="i i4 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/collection/">收藏</a>
+	        </li>
+	        <li class="w w5">
+	          <a class="i i5 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/friends/">博友</a>
+	        </li>
+	        <li class="w w6">
+	          <a class="i i6 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/profile/">关于我</a>
+	        </li>
+      </ul><!--
+ --></div>
+    <div class="l h">&nbsp;</div>
+    <div class="r h">&nbsp;</div>
+  </div>
+</div>  <div class="nb-are nb-smt"><div class="wkg h space"><div class="l h">&nbsp;</div><div class="r h">&nbsp;</div><div class="c h">&nbsp;</div></div></div>
+  <div class="nb-are nb-cnt">
+    <div class="wkg">
+      <div class="c wc h clearfix " id="blog-163-com-container">
+  <div class="nb-mdl lcr m-3 " id="-3">
+  <div class="nb-mt lcr th fc02">
+    <div class="c tc th lcr"><h2 class="thide nb-jsc mdl_t_t">日志</h2></div>
+    <div class="r tm th nb-jsc"></div>
+    <div class="l tl th">&nbsp;</div>
+    <div class="r tr th">&nbsp;</div>
+  </div>
+    <div class="nb-mc lcr">
+      <div class="c cc lcr nb-jsc">
+<div class="nbw-ryt ztag clearfix js-fix-098">
+  <div class="right bdwl bds0 bdc0"><div class="cnt ztag"></div></div>
+  <div class="left">
+     <div class="lcnt bdwr bds0 bdc0 ">   
+      <div id="$_divTopLink" class="top fc03 bdwb bdc0 bds2 clearfix">
+        <span class="ilft iblock icn0 icn0-620">&nbsp;</span>
+        <div class="pleft thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/254111742010819104710337/">程序员面试题精选100题(49)-复杂链表的复制[算法]</a></div>
+        <span class="irgt iblock icn0 icn0-619">&nbsp;</span>
+        <div class="pright thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/254111742010111112236313/">程序员面试题精选100题(51)-顺时针打印矩阵[算法]</a></div>
+     </div> 
+     <div class="mcnt ztag"> 
+      <div class="nbw-bitm bdwb bds2 bdc0 ">
+        <div class="multicntwrap">
+	      <div class="multicnt">
+	      	<div>
+		      <h3 class="title pre fs1"><span class="tcnt">程序员面试题精选100题(50)-树的子结构[数据结构]</span>&nbsp;&nbsp;<span class="bgc0 fc07 fw0 fs0"></span></h3>
+		      <p class="tdep clearfix nbw-act fc06" style="line-height: 20px;">
+		        <span class="pleft">
+		          
+		          <span class="blogsep">2010-12-04 17:08:39</span><span class="blogsep">|&nbsp;&nbsp;分类：</span>
+		          <a class="fc03 m2a" href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=1&amp;c=fks_081075092084086070092074084070080087080066083082" title="树">树</a>
+		          <span class="blogsep" id="$_blogTagTitle">|&nbsp;&nbsp;标签：</span><span class="fc03" id="$_blogTagInfo"><a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=google" class="fc03 m2a">google</a>&nbsp;&nbsp;<a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E7%BC%96%E7%A8%8B" class="fc03 m2a">编程</a>&nbsp;&nbsp;<a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E5%B0%B1%E4%B8%9A" class="fc03 m2a">就业</a>&nbsp;&nbsp;<a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E9%9D%A2%E8%AF%95%E9%A2%98" class="fc03 m2a">面试题</a>&nbsp;&nbsp;<a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E5%BE%AE%E8%BD%AF" class="fc03 m2a">微软</a>&nbsp;&nbsp;</span>
+		        </span>
+		        <span class="pright fc07 ztag"><span class="blogsep">|</span><span class="zihao fc03" id="$_fontswitch">字号<span class="zihaoshow  phide" id="$_fontsTypes"><span class="zihaoc bdc0"><span class="stag"></span><span class="fc04 stag">大</span><span class="fc04 stag selected js-fcurrent fc05">中</span><span class="fc04 stag">小</span></span></span></span></span><span class="pright pnt fc03" id="$_blog_subscribe"><span class="iblock icn0 icn0-919">&nbsp;</span><a class="m2a">订阅</a></span>
+		      </p>
+		    </div>
+	      </div>
+        </div>
+        
+        <div>
+        
+        </div>
+        
+        <div class="nbw-blog-start"></div>
+        <div class="bct fc05 fc11 nbw-blog ztag js-fs2"><p style="margin: 0in 0in 10pt;"><font size="3"><span style="font-family: 宋体;" lang="ZH-CN">题目：二叉树的结点定义如下：</span></font></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 新宋体; color: blue; font-size: 9pt;">struct</span><span style="font-family: 新宋体; font-size: 9pt;"> TreeNode</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 新宋体; font-size: 9pt;">{</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">int</span> m_nValue;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>TreeNode* m_pLeft;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>TreeNode* m_pRight;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 新宋体; font-size: 9pt;">};</span></p> <p style="margin: 0in 0in 10pt;"><font size="3"><span style="font-family: 宋体;" lang="ZH-CN">输入两棵二叉树</span><font face="Calibri">A</font><span style="font-family: 宋体;" lang="ZH-CN">和</span><font face="Calibri">B</font><span style="font-family: 宋体;" lang="ZH-CN">，判断树</span><font face="Calibri">B</font><span style="font-family: 宋体;" lang="ZH-CN">是不是</span><font face="Calibri">A</font><span style="font-family: 宋体;" lang="ZH-CN">的子结构。</span></font></p> <p style="margin: 0in 0in 10pt;"><font size="3"><span style="font-family: 宋体;" lang="ZH-CN">例如，下图中的两棵树</span><font face="Calibri">A</font><span style="font-family: 宋体;" lang="ZH-CN">和</span><font face="Calibri">B</font><span style="font-family: 宋体;" lang="ZH-CN">，由于</span><font face="Calibri">A</font><span style="font-family: 宋体;" lang="ZH-CN">中有一部分子树的结构和</span><font face="Calibri">B</font><span style="font-family: 宋体;" lang="ZH-CN">是一样的，因此</span><font face="Calibri">B</font><span style="font-family: 宋体;" lang="ZH-CN">就是</span><font face="Calibri">A</font><span style="font-family: 宋体;" lang="ZH-CN">的子结构。</span></font></p> <p style="text-align: center; margin: 0in 0in 10pt;" align="center"><span style=""></span></p> <p style="margin: 0in 0in 10pt;"><font size="3"><span style="font-family: 宋体;" lang="ZH-CN"></span></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp; \<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9&nbsp;&nbsp;&nbsp; 2<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp; \<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9&nbsp;&nbsp;&nbsp; 2<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp; \<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;7</p> <p style="margin: 0in 0in 10pt;"><font size="3"><span style="font-family: 宋体;" lang="ZH-CN">分析：这是</span><font face="Calibri">2010</font><span style="font-family: 宋体;" lang="ZH-CN">年微软校园招聘时的一道题目。二叉树一直是微软面试题中经常出现的数据结构。对微软有兴趣的读者一定要重点关注二叉树。</span></font></p> <p style="margin: 0in 0in 10pt;"><font size="3"><span style=""><font face="Calibri">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span><span style="font-family: 宋体;" lang="ZH-CN">回到这个题目的本身。要查找树</span><font face="Calibri">A</font><span style="font-family: 宋体;" lang="ZH-CN">中是否存在和树</span><font face="Calibri">B</font><span style="font-family: 宋体;" lang="ZH-CN">结构一样的子树，我们可以分为两步：第一步在树</span><font face="Calibri">A</font><span style="font-family: 宋体;" lang="ZH-CN">中找到和</span><font face="Calibri">B</font><span style="font-family: 宋体;" lang="ZH-CN">的根结点的值一样的结点</span><font face="Calibri">N</font><span style="font-family: 宋体;" lang="ZH-CN">，第二步再判断树</span><font face="Calibri">A</font><span style="font-family: 宋体;" lang="ZH-CN">中以</span><font face="Calibri">N</font><span style="font-family: 宋体;" lang="ZH-CN">为根结点的子树是不是包括和树</span><font face="Calibri">B</font><span style="font-family: 宋体;" lang="ZH-CN">一样的结构。</span></font></p> <p style="margin: 0in 0in 10pt;"><font size="3"><span style=""><font face="Calibri">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span><span style="font-family: 宋体;" lang="ZH-CN">第一步在树</span><font face="Calibri">A</font><span style="font-family: 宋体;" lang="ZH-CN">中查找与根结点的值一样的结点。这实际上就是树的遍历。对二叉树这种数据结构熟悉的读者自然知道我们可以用递归的方法去遍历，也可以用循环的方法去遍历。由于递归的代码实现比较简洁，面试时如果没有特别要求，我们通常都会采用递归的方式。下面是参考代码：</span></font></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; color: blue; font-size: 9pt;">bool</span><span style="font-family: 新宋体; font-size: 9pt;"> HasSubtree(TreeNode* pTreeHead1, TreeNode* pTreeHead2)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;">{</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">if</span>((pTreeHead1 == NULL &amp;&amp; pTreeHead2 != NULL) ||</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>(pTreeHead1 != NULL &amp;&amp; pTreeHead2 == NULL))</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">return</span> <span style="color: blue;">false</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;">&nbsp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">if</span>(pTreeHead1 == NULL &amp;&amp; pTreeHead2 == NULL)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">return</span> <span style="color: blue;">true</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;">&nbsp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">return</span> HasSubtreeCore(pTreeHead1, pTreeHead2);</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;">}</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; color: blue; font-size: 9pt;">bool</span><span style="font-family: 新宋体; font-size: 9pt;"> HasSubtreeCore(TreeNode* pTreeHead1, TreeNode* pTreeHead2)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;">{</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">bool</span> result = <span style="color: blue;">false</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">if</span>(pTreeHead1-&gt;m_nValue == pTreeHead2-&gt;m_nValue)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>result = DoesTree1HaveAllNodesOfTree2(pTreeHead1, pTreeHead2);</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;">&nbsp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">if</span>(!result &amp;&amp; pTreeHead1-&gt;m_pLeft != NULL)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>result = HasSubtreeCore(pTreeHead1-&gt;m_pLeft, pTreeHead2);</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;">&nbsp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">if</span>(!result &amp;&amp; pTreeHead1-&gt;m_pRight != NULL)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>result = HasSubtreeCore(pTreeHead1-&gt;m_pRight, pTreeHead2);</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;">&nbsp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">return</span> result;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;">}</span></p> <p style="text-indent: 0.5in; margin: 0in 0in 10pt;"><font size="3"><span style="font-family: 宋体;" lang="ZH-CN">在上述代码中，我们递归调用</span><font face="Calibri">hasSubtreeCore</font><span style="font-family: 宋体;" lang="ZH-CN">遍历二叉树</span><font face="Calibri">A</font><span style="font-family: 宋体;" lang="ZH-CN">。如果发现某一结点的值和树</span><font face="Calibri">B</font><span style="font-family: 宋体;" lang="ZH-CN">的头结点的值相同，则调用</span><font face="Calibri">DoesTree1HaveAllNodeOfTree2</font><span style="font-family: 宋体;" lang="ZH-CN">，做第二步判断。</span></font></p> <p style="text-indent: 0.5in; margin: 0in 0in 10pt;"><font size="3"><span style="font-family: 宋体;" lang="ZH-CN">在面试的时候，我们一定要注意边界条件的检查，即检查空指针。当树</span><font face="Calibri">A</font><span style="font-family: 宋体;" lang="ZH-CN">或树</span><font face="Calibri">B</font><span style="font-family: 宋体;" lang="ZH-CN">为空的时候，定义相应的输出。如果没有检查并做相应的处理，程序非常容易崩溃，这是面试时非常忌讳的事情。由于没有必要在每一次递归中做边界检查（每一次递归都做检查，增加了不必要的时间开销），上述代码只在</span><font face="Calibri">HasSubtree</font><span style="font-family: 宋体;" lang="ZH-CN">中作了边界检查后，在</span><font face="Calibri">HasSubtreeCore</font><span style="font-family: 宋体;" lang="ZH-CN">中作递归遍历。</span></font></p> <p style="text-indent: 0.5in; margin: 0in 0in 10pt;"><font size="3"><span style="font-family: 宋体;" lang="ZH-CN">接下来考虑第二步，判断以树</span><font face="Calibri">A</font><span style="font-family: 宋体;" lang="ZH-CN">中以</span><font face="Calibri">N</font><span style="font-family: 宋体;" lang="ZH-CN">为根结点的子树是不是和树</span><font face="Calibri">B</font><span style="font-family: 宋体;" lang="ZH-CN">具有相同的结构。同样，我们也可以用递归的思路来考虑：如果结点</span><font face="Calibri">N</font><span style="font-family: 宋体;" lang="ZH-CN">的值和树</span><font face="Calibri">B</font><span style="font-family: 宋体;" lang="ZH-CN">的根结点不相同，则以</span><font face="Calibri">N</font><span style="font-family: 宋体;" lang="ZH-CN">为根结点的子树和树</span><font face="Calibri">B</font><span style="font-family: 宋体;" lang="ZH-CN">肯定不具有相同的结点；如果他们的值相同，则递归地判断他们的各自的左右结点的值是不是相同。递归的终止条件是我们到达了树</span><font face="Calibri">A</font><span style="font-family: 宋体;" lang="ZH-CN">或者树</span><font face="Calibri">B</font><span style="font-family: 宋体;" lang="ZH-CN">的叶结点。参考代码如下：</span></font></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; color: blue; font-size: 9pt;">bool</span><span style="font-family: 新宋体; font-size: 9pt;"> DoesTree1HaveAllNodesOfTree2(TreeNode* pTreeHead1, TreeNode* pTreeHead2)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;">{</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">if</span>(pTreeHead2 == NULL)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">return</span> <span style="color: blue;">true</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;">&nbsp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">if</span>(pTreeHead1 == NULL)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">return</span> <span style="color: blue;">false</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;">&nbsp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">if</span>(pTreeHead1-&gt;m_nValue != pTreeHead2-&gt;m_nValue)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">return</span> <span style="color: blue;">false</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;">&nbsp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">return</span> DoesTree1HaveAllNodesOfTree2(pTreeHead1-&gt;m_pLeft, pTreeHead2-&gt;m_pLeft) &amp;&amp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>DoesTree1HaveAllNodesOfTree2(pTreeHead1-&gt;m_pRight, pTreeHead2-&gt;m_pRight);</span></p> <p style="line-height: normal; margin: 0in 0in 0pt 0.5in;"><span style="font-family: 新宋体; font-size: 9pt;">}</span></p> <p style="text-indent: 0.5in; margin: 0in 0in 10pt;"><font face="Calibri" size="3">&nbsp;</font></p><wbr> <p style="margin: 0in 0in 10pt;">&nbsp;<span style="white-space: pre;"> </span><span style="font-family: 宋体;" courier="" new="" lang="ZH-CN">本文已经收录到《</span><span style="" calibrisans-serif="" mso-ascii-theme-fontminor-latinmso-fareast-font-familymso-fareast-theme-font="" minor-fareastmso-hansi-theme-fontminor-latinmso-bidi-font-familycourier="" new=""><a target="_top" href="http://zhedahht.blog.163.com/blog/static/254111742011101624433132/"><span style="font-family: 宋体;" lang="ZH-CN">剑指</span>Offer<span style="font-family: 宋体;" lang="ZH-CN">——名企面试官精讲典型编程题</span></a></span><span style="font-family: 宋体;" courier="" new="" lang="ZH-CN">》一书中，有改动，书中的分析讲解更加详细。欢迎关注。</span></p><p style="margin: 0in 0in 10pt;"><span style="font-family: 宋体;" lang="ZH-CN"><font size="3">&nbsp;&nbsp;&nbsp; 博主何海涛对本博客文章享有版权。网络转载请注明出处</font></span><a href="http://zhedahht.blog.163.com/"><font color="#990000" face="Calibri" size="3">http://zhedahht.blog.163.com/</font></a><span style="font-family: 宋体;" lang="ZH-CN"><font size="3">。整理出版物请和作者联系。</font></span></p><wbr></div>
+        <div class="nbw-blog-end"></div>
+
+        <div>
+		</div>
+		
+        <div>
+		</div>
+		
+		<div>
+      	  <div>
+		  	<div class="wumii-hook"></div>
+		  </div>
+		</div>
+		
+        <div class="ptc phide ztag">
+          <span class="ptcp">
+            <span class="iblock bcmimg">&nbsp;</span>
+            <span class="nbc-0 nbc-0-40 ptcmt ptcmt-2">评论这张</span>
+          </span>
+        </div>
+		<div class="ptc phide ztag">
+          <span class="ptcp">
+            <span class="nbc-0 nbc-0-40 ptcmi">
+              <img src="microblog.png">
+            </span>
+            <span class="nbc-0 nbc-0-40 ptcmt">转发至微博</span>
+          </span>
+        </div>
+        <div style="left: 284px; top: 1942px;" class="ptc ztag phide">
+          <span class="ptcp">
+            <span class="nbc-0 nbc-0-40 ptcmi">
+              <img src="microblog.png">
+            </span>
+            <span class="nbc-0 nbc-0-40 ptcmt">转发至微博</span>
+          </span>
+        </div>
+        
+        
+        <div class="nbw-act tbar fc03 clearfix">
+         <div style="height: 24px; line-height: 24px;">
+          <div class="pleft rdif">
+	          <span class="pnt pleft" id="$_spanRecommend"><img class="pclass" src="tuijian.png"></span>
+	        <span id="$_spanShowRecommend" class="pleft rdct  phide">
+	          <span class="pleft ul fc03"><span id="$_spanRecommendCount">0</span>人</span><span class="pleft iblock icn0 icn0-722 nbw-tgl1 nas-icn0fix">&nbsp;</span><span class="pleft iblock icn0 icn0-621 nbw-tgl0 nas-icn0fix">&nbsp;</span><span class="fc07"></span>|&nbsp;
+	        </span>
+	         <span class="fc07 pleft nas-tofix">分享到：</span><span class="nas-wrap pleft"><span id="$_shareBtn_163weibo" title="分享到网易微博" class="nas-itm nas-itm0">&nbsp;</span><span id="$_shareBtn_sinaweibo" title="分享到新浪微博" class="nas-itm nas-itm6">&nbsp;</span><span id="$_shareBtn_qqweibo" title="分享到腾讯微博" class="nas-itm nas-itm9">&nbsp;</span><span class="nas-itm nas-itm7" title="分享到MSN" id="$_shareBtn_msn">&nbsp;</span><span class="nas-itm nas-itm3" title="分享到QQ空间" id="$_shareBtn_qq">&nbsp;</span><span class="nas-itm nas-itm1" title="分享到人人网" id="$_shareBtn_renren">&nbsp;</span><span class="nas-itm nas-itm2" title="分享到开心网" id="$_shareBtn_kaixin">&nbsp;</span><span class="nas-itm nas-itm4" title="分享到豆瓣" id="$_shareBtn_douban">&nbsp;</span><span class="nas-itm nas-itm8" title="分享到梦幻人生" id="$_shareBtn_dream">&nbsp;</span></span>
+          </div>
+          <div class="pright">
+              <span class="fc07">阅读(<span id="$_spaniReadCount">10067</span>)</span><span class="sep fc07">|</span>
+              <span class="fc07">评论(<span id="$_spaniCommentCount">35</span>)</span><span class="sep fc07">|</span>
+              <span class="m2a" id="$_spanCite">引用</span> <span class="m2a" id="$_spanCiteCount">(3)</span>
+              <span class="sep fc07">|</span><span id="$_spanReport" class="m2a">举报</span>
+          </div>
+         </div>
+        </div>
+      </div>
+      <div class="snl">
+        <div class="phide bdwb bds2 bdc0 rdcnt" id="$_divRecommendContent"></div>
+        <div id="yodaoad" class="bdwb bds2 bdc0" style="display: none;">&nbsp;</div>
+        <div id="$_divTopLink" class="top fc03 clearfix">
+	        <span class="ilft iblock icn0 icn0-620">&nbsp;</span>
+	        <div class="pleft thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/254111742010819104710337/">程序员面试题精选100题(49)-复杂链表的复制[算法]</a></div>
+	        <span class="irgt iblock icn0 icn0-619">&nbsp;</span>
+	        <div class="pright thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/254111742010111112236313/">程序员面试题精选100题(51)-顺时针打印矩阵[算法]</a></div>
+	     </div> 
+	    <div class="relateblog phide">
+          <h4 class="bdwb bds2 bdc0 fc07 fs0">历史上的今天</h4>
+          <div class="cnt ztag clearfix"></div>
+        </div>
+	    <div class="relateblog phide">
+          <h4 class="bdwb bds2 bdc0 fc07 fs0">相关文章</h4>
+          <div class="cnt ztag clearfix"></div>
+        </div>
+	    <div class="author">
+	      <h4 class="bdwb bds2 bdc0 fc07 fs0">最近读者</h4>
+	      <div class="cnt ztag clearfix"><div class="pleft nlogif clearfix"> <div class="pleft nbw-f50 nbw-fce"><img class="cwd pnt" onerror="this.src=location.f60" src="face60.png"></div> <div class="m2a pright fc03"><span class="ul">登录</span>后，您可以在此留下足迹。</div> </div>        <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/yushizhanlove/">            <img alt="yushizhanlove" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/yushizhanlove/">          yushizha        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/ccking69/">            <img alt="ccking69" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_001.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/ccking69/">          ccking69        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/turnerks@126/">            <img alt="turnerks" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_002.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/turnerks@126/">          turnerks        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/scyehan/">            <img alt="scyehan" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_003.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/scyehan/">          scyehan        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/wwbszd/">            <img alt="wwbszd" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_004.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/wwbszd/">          wwbszd        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/yu2945686/">            <img alt="yu2945686" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_005.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/yu2945686/">          yu294568        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/kinglong1203/">            <img alt="kinglong" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_006.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/kinglong1203/">          kinglong        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/diichen/">            <img alt="diichen" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_007.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/diichen/">          diichen        </a>      </div>    </div>        </div>
+	    </div>
+	    <div class="phide" id="yodaoad_1" style=""></div>
+	    <div class="comment">
+	      <h4 class="bdwb bds2 bdc0 fc07 fs0">评论</h4>
+	      <a name="blogComment" id="blogComment"></a>
+	      <div class="ztag"><div>    <div class="publish ztag"><div class="nbw-cdt edt-cmt"><div class="nbw-act tp"> <span class="m2a fc03 ztag">点击登录</span><span class="sep">|</span><span class="fc05">昵称：</span><input value="" maxlength="18" class="znick bdwa bds0 bdc0 ztag" type="text"> </div> <div class="edt ztag"><div class="ui-9826689683"><div class="zcnt ztag zbrd bdc0"><iframe src="index_1.html" frameborder="0"></iframe></div> <div class="zbtn"> <span class="zfce zbgp ztag space">&nbsp;</span> <input class="zbok zhnd ztag nbtn fc09 bdc1 bgc2" value="发表" type="button"> <span class="zbcc zhnd ztag fc04">取消</span> <div class="zvcd ztag" style="display: none;"> <label>验证码：</label><input value="" class="zbrd xtag bdc0" maxlength="4" type="text"><img src="empty.png" class="xtag" title="点击刷新验证码"><span class="xtag fc04">换一张</span> </div> </div> <div class="zmsg fc07" style="display: none;"><span class="zicn zbgp iblock">&nbsp;</span><span class="ztag"></span></div></div></div> <div style="display: none;" class="hnt thide ztag"></div></div></div>
+    <div class="bdwt bds2 bdc0 phide" id="yodaoad_2" style=""></div>
+    <div class="ztag bdwt bds2 bdc0">
+      <div class="case"><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="上海 闵行区" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">02-20 00:12</span><div class="tx atag"><span title="上海 闵行区" class="fc07">我</span></div></div> <div class="cnt pre atag"><p>有一种比较简单的方法</p>  <p>对source tree 和 dest tree 分别作一种遍历(pre/in/post order),得到两个遍历的串SSource, SDest, 判断SDest是否SSource的子串就可以了</p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="北京 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-06-13 19:21</span><div class="tx atag"><span title="北京 " class="fc07">hai</span></div></div> <div class="cnt pre atag">HasSubtree（） 这个函数是多余的，只是把边界判放在递归调用之前了而已，可以在进入递归函数之后再做判断，你这样的实现也是每次在递归调用前进行判断，次数并没有减少</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a href="http://zhedahht.blog.163.com/" target="_top" hidefocus="true"><img src="ava_008.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-06-14 10:21</span><div class="tx atag"><a class="fc03 noul" title="何海涛" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">何海涛</span></a><span class="fc07">&nbsp;回复&nbsp;</span><span class="fc07">hai</span></div></div> <div class="cnt pre atag">有道理</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a target="_blank" hidefocus="true"><img title="浙江 杭州" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-11-12 16:44</span><div class="tx atag"><span title="浙江 杭州" class="fc07">whui</span><span class="fc07">&nbsp;回复&nbsp;</span><a class="fc03 noul" title="何海涛" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">何海涛</span></a></div></div> <div class="cnt pre atag"><p>为什么有道理了？HasSubtree()是又必要的啊，怎么没必要了呢？</p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a href="http://icyxiangzi.blog.163.com/" target="_top" hidefocus="true"><img src="ava_009.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">01-31 10:05</span><div class="tx atag"><a class="fc03 noul" title="icyxiangzi" target="_top" href="http://icyxiangzi.blog.163.com/"><span class="m2a">icyxiangzi</span></a><span class="fc07">&nbsp;回复&nbsp;</span><span title="上海 " class="fc07">whui</span></div></div> <div class="cnt pre atag">同意hai的说法。下面是c＋＋代码实现：<br>bool subtree(Node *pa, Node *pb)<br>{<br>&nbsp;&nbsp;&nbsp; if(pa == NULL &amp;&amp; pb)<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return false;<br><br>&nbsp;&nbsp;&nbsp; if(pa &amp;&amp; !pb)<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return true;<br><br>&nbsp;&nbsp;&nbsp; if(!pa &amp;&amp; !pb)<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return true;<br><br>&nbsp;&nbsp;&nbsp; if(pa-&gt;val == pb-&gt;val)<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return subtree(pa-&gt;left, pb-&gt;left) &amp;&amp; subtree(pa-&gt;right, pb-&gt;right);<br>&nbsp;&nbsp;&nbsp; else<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return subtree(pa-&gt;left, pb) || subtree(pa-&gt;right, pb);<br>}</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">02-01 20:27</span><div class="tx atag"><span class="fc07">艾盟</span><span class="fc07">&nbsp;回复&nbsp;</span><a class="fc03 noul" title="icyxiangzi" target="_top" href="http://icyxiangzi.blog.163.com/"><span class="m2a">icyxiangzi</span></a></div></div> <div class="cnt pre atag">不对吧~<br>what about?<br><br>big:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 25<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \\<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 35<br>small:<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //<br>&nbsp;&nbsp;&nbsp;&nbsp; 35<br><br>你的算法return true吧？个人见解！</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="浙江 杭州" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-10-11 03:16</span><div class="tx atag"><span title="浙江 杭州" class="fc07">zjucs</span></div></div> <div class="cnt pre atag">          <div class="column">    <p></p><p>bool bst_include(bst_tree_t *bstt, bst_tree_t *bst)</p><p>{</p><p>&nbsp; &nbsp; if (bst == NULL) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; return true;</p><p>&nbsp; &nbsp; }</p><p><br></p><p>&nbsp; &nbsp; if (bstt == NULL) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; return false;</p><p>&nbsp; &nbsp; }</p><p><br></p><p>&nbsp; &nbsp; if (bstt-&gt;element == bst-&gt;element &amp;&amp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; bst_include(bstt-&gt;left, bst-&gt;left) &amp;&amp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; bst_include(bstt-&gt;right, bst-&gt;right)) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; return true;</p><p>&nbsp; &nbsp; } else {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; return bst_include(bstt-&gt;left, bst) ||</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; bst_include(bstt-&gt;right, bst);</p><p>&nbsp; &nbsp; }</p><p>}</p><div><br></div>   </div></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a target="_blank" hidefocus="true"><img title="浙江 杭州" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-10-11 16:54</span><div class="tx atag"><span title="浙江 杭州" class="fc07">zjucs</span><span class="fc07">&nbsp;回复&nbsp;</span><span title="浙江 杭州" class="fc07">zjucs</span></div></div> <div class="cnt pre atag">这个不对。一旦从一个节点开始之后，就要一直相等了<br><br></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="上海 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-09-07 16:36</span><div class="tx atag"><span title="上海 " class="fc07">ralf0131</span></div></div> <div class="cnt pre atag">我觉得是不是应该这样做：<div>将树A和数B的分别进行前序和中序遍历，得到结果为PreA,PreB,MiddleA,MiddleB.</div><div>在判断PreA中是否包含PreB并且MiddleA包含MiddleB。如果二者都包含（中间不能断开），则B一定是A的子树。</div><div>证明方法是，如果A和B有公共的前序和中序遍历结果，那么根据前序和中序遍历结果一定能够重建出唯一的二叉树。所以B一定是A的子树。</div></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="上海 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-09-07 16:16</span><div class="tx atag"><span title="上海 " class="fc07">ralf0131</span></div></div> <div class="cnt pre atag">感觉在这个测试用例下会有问题：(原因在于，找到了根节点N之和，以N为根的子树可能和B不同，但N的某个子树可能和B相同)<div>A树：8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;B树：8</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/\ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /\</div><div>&nbsp; &nbsp; &nbsp; &nbsp; 9 &nbsp;5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;9 &nbsp;2</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;8</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/\</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 9 2</div></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://ddup2.blog.163.com/" target="_top" hidefocus="true"><img src="ava_010.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-07-06 11:05</span><div class="tx atag"><a title="ddup2" class="fc03 noul" target="_top" href="http://ddup2.blog.163.com/"><span class="m2a">ddup2</span></a></div></div> <div class="cnt pre atag">似乎不需要这么麻烦。<div><div>bool subtree(btree* a, btree* b)</div><div>{</div><div><span class="Apple-tab-span" style=""> </span>if ( a == NULL &amp;&amp; b != NULL) return false; //the 1st case</div><div><span class="Apple-tab-span" style="">  </span>else return true; //the 2nd and 3rd cases</div><div><span class="Apple-tab-span" style=""> </span>if (a-&gt;key == b-&gt;key){ // the 4th case: a != NULL &amp;&amp; b != NULL</div><div><span class="Apple-tab-span" style="">  </span>return subtree(a-&gt;left, b-&gt;left) &amp;&amp; subtree(a-&gt;right, b-&gt;right);</div><div><span class="Apple-tab-span" style=""> </span>}else{</div><div><span class="Apple-tab-span" style="">  </span>return subtree(a-&gt;left, b) || subtree(a-&gt;right, b);</div><div><span class="Apple-tab-span" style=""> </span>}</div><div>}</div></div></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a target="_blank" hidefocus="true"><img title="江苏 南京" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-08-04 13:28</span><div class="tx atag"><span title="江苏 南京" class="fc07">hanxx3380@163.com</span><span class="fc07">&nbsp;回复&nbsp;</span><a class="fc03 noul" title="ddup2" target="_top" href="http://ddup2.blog.163.com/"><span class="m2a">ddup2</span></a></div></div> <div class="cnt pre atag">  <div>  <div>稍微更改了下</div>  <div>bool subtree(btree* a, btree* b)</div>  <div>{</div>  <div><span class="Apple-tab-span"></span>if ( a == NULL &amp;&amp; b != NULL) return false; //the 1st case</div>  <div>if(b==NULL) return true; //the 2nd and 3rd cases</div>  <div><span class="Apple-tab-span"></span>if (a-&gt;key == b-&gt;key){ // the 4th case: a != NULL &amp;&amp; b != NULL</div>  <div><span class="Apple-tab-span"></span>return subtree(a-&gt;left, b-&gt;left) &amp;&amp; subtree(a-&gt;right, b-&gt;right);</div>  <div><span class="Apple-tab-span"></span>}else{</div>  <div><span class="Apple-tab-span"></span>return subtree(a-&gt;left, b) || subtree(a-&gt;right, b);</div>  <div><span class="Apple-tab-span"></span>}</div>  <div>}</div></div></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a href="http://blog.163.com/huang_zhong_yuan/" target="_top" hidefocus="true"><img src="ava_011.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-08-19 12:48</span><div class="tx atag"><a class="fc03 noul" title="悟" target="_top" href="http://blog.163.com/huang_zhong_yuan/"><span class="m2a">悟</span></a><span class="fc07">&nbsp;回复&nbsp;</span><span title="上海 " class="fc07">hanxx3380@163.com</span></div></div> <div class="cnt pre atag"><p>ms这样做有个问题，就是</p>  <div><span class="Apple-tab-span"></span>if (a-&gt;key == b-&gt;key){ // the 4th case: a != NULL &amp;&amp; b != NULL</div>  <div><span class="Apple-tab-span"></span>return subtree(a-&gt;left, b-&gt;left) &amp;&amp; subtree(a-&gt;right, b-&gt;right); </div>  <div><span class="Apple-tab-span"></span>}</div>  <div>这一步。因为当a的key和b的key相等的时候接着要判断的是a-&gt;left和b-&gt;left以及a-&gt;right和b-&gt;right严格相等，而不是包含关系。</div></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://tohokullf.blog.163.com/" target="_top" hidefocus="true"><img src="ava_012.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-08-02 21:24</span><div class="tx atag"><a title="lilongfei1000" class="fc03 noul" target="_top" href="http://tohokullf.blog.163.com/"><span class="m2a">lilongfei1000</span></a></div></div> <div class="cnt pre atag">在这里mark下。感谢楼主</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="江苏 南京" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-07-31 15:14</span><div class="tx atag"><span title="江苏 南京" class="fc07">兔子</span></div></div> <div class="cnt pre atag">需要慢慢理解递归啊<br><br></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-03-26 11:15</span><div class="tx atag"><span class="fc07">JohnsonMS</span></div></div> <div class="cnt pre atag">bool SubTree(PTree tree1, PTree tree2)<br>{<br>&nbsp;if(tree2 == NULL) return true;<br>&nbsp;if(tree1 != NULL)<br>&nbsp;{<br>&nbsp;&nbsp;return (tree1-&gt;data == tree2-&gt;data) &amp;&amp; SubTree(tree1-&gt;left, tree2-&gt;left) &amp;&amp; SubTree(tree1-&gt;right, tree2-&gt;right);<br>&nbsp;}<br>&nbsp;return false;<br>}<br>bool HasSubTree(PTree tree1, PTree tree2)<br>{<br>&nbsp;if(tree2 == NULL ) return true;<br>&nbsp;if(tree1 != NULL)<br>&nbsp;{<br>&nbsp;&nbsp;if(tree1-&gt;data == tree2-&gt;data &amp;&amp; SubTree(tree1, tree2))<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;return true;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;bool bFound = HasSubTree(tree1-&gt;left, tree2);<br>&nbsp;&nbsp;if(!bFound)<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;bFound = HasSubTree(tree1-&gt;right, tree2);<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;return bFound;<br>&nbsp;}<br>&nbsp;return tree1;<br>}</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a target="_blank" hidefocus="true"><img title="北京 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-05-22 23:09</span><div class="tx atag"><span title="北京 " class="fc07">fa</span><span class="fc07">&nbsp;回复&nbsp;</span><span title="北京 " class="fc07">JohnsonMS</span></div></div> <div class="cnt pre atag">代码有问题<br><br></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="浙江 杭州" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-05-08 10:20</span><div class="tx atag"><span title="浙江 杭州" class="fc07">hillwater</span></div></div> <div class="cnt pre atag">现在深感递归真的很强大</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-05-08 07:26</span><div class="tx atag"><span class="fc07">emuer</span></div></div> <div class="cnt pre atag"><span class="Apple-style-span" style="">是否能够对两棵树都遍历一次，然后记录下每个node的value，以及其parent的value。然后TreeB的每个node对比一下，看其每个node的parent的value是否都和TreeB中值相同的node的parent相同，是的话就应该是sub tree了。这样的话，要用O(m+n)时间，然后O(m+n)空间。但貌似只能对付node的value都unique的情况。不然同一value出现多次的话，匹配到了叶不知道是否正确。</span></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="北京 朝阳区" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-02-26 00:28</span><div class="tx atag"><span title="北京 朝阳区" class="fc07">x</span></div></div> <div class="cnt pre atag"><p>&nbsp;分别获取两树的 中序、前序遍历结果</p>  <p>&nbsp;如果A树都对应包含B数，切位置对应，则B为A的子树</p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a target="_blank" hidefocus="true"><img title="浙江 宁波" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-03-14 16:40</span><div class="tx atag"><span title="浙江 宁波" class="fc07">DLevin</span><span class="fc07">&nbsp;回复&nbsp;</span><span title="浙江 宁波" class="fc07">x</span></div></div> <div class="cnt pre atag">我也是这么想的，不过不知道怎么证明，另外，这种方法是否需要每个节点的值不同的假设呢？我感觉上是要的，不过也不知道怎么证明，呵呵。<br><br></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a target="_blank" hidefocus="true"><img title="浙江 杭州" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-04-30 08:38</span><div class="tx atag"><span title="浙江 杭州" class="fc07">lrp1223</span><span class="fc07">&nbsp;回复&nbsp;</span><span title="浙江 杭州" class="fc07">DLevin</span></div></div> <div class="cnt pre atag">不行的吧，你看看本题目中A树和B树这两个例子中，两个树的中序遍历，就知道了呢！</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://zlhsmfj.blog.163.com/" target="_top" hidefocus="true"><img src="ava_013.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-03-25 22:03</span><div class="tx atag"><a title="zlhsmfj" class="fc03 noul" target="_top" href="http://zlhsmfj.blog.163.com/"><span class="m2a">zlhsmfj</span></a></div></div> <div class="cnt pre atag">一棵二叉树的结构由前序和中序就能确定了（ms是这样……）。所以可不可以先求出2棵树的前序和中序，然后再加以判断呢？细节没去想，感觉这样可以呢</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-02-25 16:15</span><div class="tx atag"><span class="fc07">microbot@163.com</span></div></div> <div class="cnt pre atag">讲得很好，清晰易懂<br><br></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="北京 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-12-05 10:25</span><div class="tx atag"><span title="北京 " class="fc07">zhiqiang.org</span></div></div> <div class="cnt pre atag"><div>文章里的解法过于平庸，属于编码而不是算法的范畴。</div><div><br></div>这个题有希望通过将二叉树用某种方式表达，然后直接对比表达方法求解问题吗？<br><br></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a href="http://zhedahht.blog.163.com/" target="_top" hidefocus="true"><img src="ava_008.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-12-05 12:42</span><div class="tx atag"><a class="fc03 noul" title="何海涛" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">何海涛</span></a><span class="fc07">&nbsp;回复&nbsp;</span><span title="上海 " class="fc07">zhiqiang.org</span></div></div> <div class="cnt pre atag">点评很犀利<img src="face0.gif">我试图把二叉树转换成字符串，然后用KMP算法匹配子字符串。但没有成功。如果有大牛知道怎么实现这个想法，欢迎回复，或者来信zhedahht@hotmail.com，给与指导。谢谢先。</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a target="_blank" hidefocus="true"><img title="上海 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-01-13 12:38</span><div class="tx atag"><span title="上海 " class="fc07">flexy</span><span class="fc07">&nbsp;回复&nbsp;</span><a class="fc03 noul" title="何海涛" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">何海涛</span></a></div></div> <div class="cnt pre atag">这个方法对么？如果例子中的左边的9还有子孙的话，892在序列中不连续，就不能用kmp了</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a href="http://zhedahht.blog.163.com/" target="_top" hidefocus="true"><img src="ava_008.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-01-13 13:05</span><div class="tx atag"><a class="fc03 noul" title="何海涛" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">何海涛</span></a><span class="fc07">&nbsp;回复&nbsp;</span><span class="fc07">flexy</span></div></div> <div class="cnt pre atag">是呀，所以到目前为止，我还没有想出好的办法</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://blog.163.com/soni_songfan/" target="_top" hidefocus="true"><img src="ava_014.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-12-10 16:04</span><div class="tx atag"><a title="soni_songfan" class="fc03 noul" target="_top" href="http://blog.163.com/soni_songfan/"><span class="m2a">soni_songfan</span></a></div></div> <div class="cnt pre atag">判断两个节点相同不应该只判断它的value吧</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a href="http://zhedahht.blog.163.com/" target="_top" hidefocus="true"><img src="ava_008.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-12-10 17:41</span><div class="tx atag"><a class="fc03 noul" title="何海涛" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">何海涛</span></a><span class="fc07">&nbsp;回复&nbsp;</span><a class="fc03 noul" title="soni_songfan" target="_top" href="http://blog.163.com/soni_songfan/"><span class="m2a">soni_songfan</span></a></div></div> <div class="cnt pre atag">这道题，由于输入的是两棵不同的数，因此两棵树里的结点的指向其左右子结点的指针肯定是不具有可比性的。所以，在这个题目里面，只要比较value就可以了。</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="香港 香港" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-12-05 06:16</span><div class="tx atag"><span title="香港 香港" class="fc07">网友</span></div></div> <div class="cnt pre atag">又更新了，不错不错</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="北京 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-12-04 20:40</span><div class="tx atag"><span title="北京 " class="fc07">水母网友</span></div></div> <div class="cnt pre atag">前排就坐，08年开始就关注这个博客了。。。</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a href="http://zhedahht.blog.163.com/" target="_top" hidefocus="true"><img src="ava_008.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-12-04 22:17</span><div class="tx atag"><a class="fc03 noul" title="何海涛" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">何海涛</span></a><span class="fc07">&nbsp;回复&nbsp;</span><span title="上海 " class="fc07">水母网友</span></div></div> <div class="cnt pre atag">原来是资深读者了，哈哈，谢谢捧场~~<img src="face0.gif"></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="上海 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-12-04 18:58</span><div class="tx atag"><span title="上海 " class="fc07">儒雅</span></div></div> <div class="cnt pre atag"><p>沙发，嘿嘿~~~，一直在关注哦~</p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a href="http://zhedahht.blog.163.com/" target="_top" hidefocus="true"><img src="ava_008.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-12-04 20:09</span><div class="tx atag"><a class="fc03 noul" title="何海涛" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">何海涛</span></a><span class="fc07">&nbsp;回复&nbsp;</span><span title="上海 " class="fc07">儒雅</span></div></div> <div class="cnt pre atag">谢谢您的关注，博客在不断的更新，期待您下次的光临~~呵呵~~</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div></div>
+      <div style="" class="clearfix"><div style="display: none;" class="ui-5435456964 noselect js-zfrg-6540"><span class="pgi pgb iblock fc03 bgc9 bdc0 js-znpg-097">上一页</span> <span class="pgi zpg1 iblock fc03 bgc9 bdc0 js-zslt-987 fc05">1</span> <span class="frg fgp fc06">...</span> <span style="display: none;" class="pgi zpg2 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg3 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg4 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg5 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg6 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg7 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg8 iblock fc03 bgc9 bdc0">-1</span> <span class="frg fgn fc06">...</span> <span style="display: none;" class="pgi zpg9 iblock fc03 bgc9 bdc0">-1</span> <span class="pgi pgb iblock fc03 bgc9 bdc0 js-znpg-097">下一页</span></div></div>
+    </div>
+  </div></div>
+	    </div>
+	    <div class="phide" id="yodaoad_3" style=""></div>
+      </div>
+      <div class="cite ztag fc03 phide"></div>
+    </div>
+   </div>
+  </div>
+</div>
+
+
+
+</div>
+      <div class="l cl h100">&nbsp;</div>
+      <div class="r cr h100">&nbsp;</div>
+    </div>
+    <div class="nb-mb lcr bh space">
+      <div class="l bl bh">&nbsp;</div>
+      <div class="r br bh">&nbsp;</div>
+      <div class="c bc bh lcr">&nbsp;</div>
+    </div>
+  </div>
+
+</div>
+      <div class="l wl g lg h100">&nbsp;</div>
+      <div class="l wl t lt">&nbsp;</div>
+      <div class="l wl b lb">&nbsp;</div>
+      <div class="r wr g rg h100">&nbsp;</div>
+      <div class="r wr t rt">&nbsp;</div>
+      <div class="r wr b rb">&nbsp;</div>
+    </div>
+  </div>
+  <div class="nb-are nb-smb"><div class="wkg h space"><div class="l h">&nbsp;</div><div class="r h">&nbsp;</div><div class="c h">&nbsp;</div></div></div>
+<div class="nb-are nb-fot">
+  <div class="wkg h">
+    <h2>页脚</h2>
+    <div class="k">      <a rel="nofollow" class="m2a fc08" target="_top" href="http://corp.163.com/index_gb.html">公司简介</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://gb.corp.163.com/gb/contactus.html">联系方法</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://corp.163.com/gb/job/job.html">招聘信息</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://help.163.com/?b13abk1">客户服务</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://corp.163.com/gb/legal/legal.html">隐私政策</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://blog.163.com/public/theme/">博客风格</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://blog.163.com/services/wapblog.html">手机博客</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://blog.163.com/vip.do">VIP博客</a>
+      
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="http://zhedahht.blog.163.com/rss/">
+      <span class="p fc10">-</span><span class="fc08" id="$_foot_subscribe"><span class="iblock m2a icn0 icn0-919">&nbsp;</span><a class="m2a fc08">订阅此博客</a></span>
+    </div>
+    <p class="fc08">网易公司版权所有&nbsp;©1997-2012</p>
+  </div>
+</div></div>
+    <!--[if lte IE 6]></div><![endif]-->
+  <!--[if lte IE 6]></div><![endif]-->
+  <div class="nb-layer" id="blog-163-com-layer"></div>
+  
+
+     <div style="position: absolute; top: 0pt; right: 0pt; z-index: 999; width: 1px; height: 1px; overflow: hidden;"> <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="ntsstorage" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" height="1" width="1"> <param name="movie" value="/common/storage.swf?t=1333178323280"> <param name="AllowScriptAccess" value="sameDomain"> <embed src="storage.swf" name="ntsstorage" allowscriptaccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" height="1" width="1">  </object> </div><iframe src="index_2.html" id="api.blog.163.com" name="api.blog.163.com" style="display: none;" height="0" width="0"></iframe><iframe src="index_3.html" id="photo.163.com" name="photo.163.com" style="display: none;" height="0" width="0"></iframe><iframe src="index_4.html" id="ud.blog.163.com" name="ud.blog.163.com" style="display: none;" height="0" width="0"></iframe>
+    
+  
+  
+
+
+    
+
+
+</body>
+</html>

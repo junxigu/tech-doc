@@ -1,0 +1,466 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="zh" xml:lang="zh" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    
+    <meta http-equiv="content-style-type" content="text/css">
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta name="version" content="neblog-1.0">
+    
+<title>程序员面试题精选100题(02)－设计包含min函数的栈[数据结构] - 何海涛的日志 - 网易博客</title>
+<meta name="author" content="zhedahht,何海涛">
+<meta name="keywords" content="程序员面试题精选100题(02)－设计包含min函数的栈[数据结构],日志,何海涛,微软、Google等面试题,网易博客,网易,blog">
+<meta name="description" content="程序员面试题精选100题(02)－设计包含min函数的栈[数据结构],何海涛的网易博客,剑指Offer：名企面试官精讲典型编程题,海纳百川,涛声依旧,点石成金,成就未来">
+  
+    
+    
+  <!--[if lte IE 6]>
+  <style type="text/css">
+    html,body,#blog-163-com-ie6body{height:100%;width:100%;overflow:hidden;}
+    #blog-163-com-ie6body{overflow:auto;overflow-y:scroll;}
+    #blog-163-com{background:none;}
+  </style>
+  <![endif]-->
+  
+  
+  
+  
+  
+  
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body id="blog-163-com" class="nb-body nb-inr nb-prv">
+  <!--[if lte IE 6]><div id="blog-163-com-ie6bodywrap" class=""><![endif]-->
+    <!--[if lte IE 6]><div id="blog-163-com-ie6body" class="nb-body"><![endif]-->
+
+<div class="nb-nbar clearfix" id="blog-163-com-topbar">
+  <div class="pl fl clearfix">
+  <div id="" "="" class="nbw-im fl im im0">
+    <a rel="nofollow" class="lbl bd ia noul " href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://www.163.com/" target="_top" hidefocus="true"><span class="tx">网易</span><span class="iblock icn0 icn0-421">&nbsp;</span></a><div class="nbw-tcd box-shadow bd">
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://news.163.com/">
+            新闻
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://t.163.com/">
+            微博
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://email.163.com/">
+            邮箱
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://photo.163.com/">
+            相册
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://yuedu.163.com/">
+            阅读
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://www.youdao.com/">
+            有道
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://photo.163.com/pp/square/">
+            摄影
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://aipai.163.com?from=163blog">
+            爱拍
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://note.youdao.com/?vendor=163blog">
+            云笔记
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://fm.163.com/?fmblogzx0628">
+            闪电邮
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://m.123.163.com/?frombkcp">
+            手机邮
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://yxp.163.com/">
+            印像派
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://dream.163.com/?from=bkcp">
+            梦幻人生
+          </a>
+        <div class="sep bd space">&nbsp;</div>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://sitemap.163.com/">
+            更多
+          </a>
+        
+    </div>
+  </div>
+                               
+    <span style="margin-left: 0pt;" class="fl iblock space icn1 icn1-4">&nbsp;</span>
+    
+  <div id="" "="" class="nbw-im fl im im10">
+    <a class="lbl bd ia noul " href="http://blog.163.com/?frompersonalbloghome" target="_top" hidefocus="true"><span class="tx">博客</span><span class="iblock icn0 icn0-421">&nbsp;</span></a><div class="nbw-tcd box-shadow bd">
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/services/wapblog.html?frompersonalbloghome">
+            手机博客
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/clone/clone.html?frompersonalbloghome">
+            博客搬家
+          </a>
+          <a class="itm noul youcai " target="_top" hidefocus="true" href="http://blog.163.com/vip.do?frompersonalbloghome">
+            博客VIP服务
+          </a>
+        <div class="sep bd space">&nbsp;</div>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/blog_admin/blog/static/721279201082863728829/?frompersonalbloghome">
+            LiveWriter写博
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/blog_admin/blog/static/721279201092713253500/?frompersonalbloghome">
+            word写博
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/services/mailblog.html?frompersonalbloghome">
+            邮件写博
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/services/emsblog.html?frompersonalbloghome">
+            短信写博
+          </a>
+        <div class="sep bd space">&nbsp;</div>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/showMultiUser.do?frompersonalbloghome">
+            群博客
+          </a>
+          <a class="itm noul youcai " target="_top" hidefocus="true" href="http://blog.163.com/BLOG_YOUCAI/">
+            博客油菜地
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/ht/?frompersonalbloghome">
+            博客话题
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/hot/history/?frompersonalbloghome">
+            博客热点
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://q.163.com/#home?frompersonalbloghome">
+            博客圈子
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/findFriend.do?type=5?frompersonalbloghome">
+            找朋友
+          </a>
+        
+    </div>
+  </div>
+
+    
+    <div class="nbw-im fl im1 im explore"><a class="lbl bd ima spy" href="http://blog.163.com/public/explore/?frompersonalbloghome">发现</a></div>
+    <div class="nbw-im fl im1 im bloggroup"><a class="lbl bd ima spy" href="http://blog.163.com/g/?frompersonalbloghome">小组</a></div>
+    <div class="nbw-im fl im1 im customtheme"><a class="lbl bd ima spy" href="http://blog.163.com/public/theme/?frompersonalbloghome">风格</a></div>
+    <div class="nbw-im fl im1 im seebyway"><a rel="nofollow" title="随便看看" class="lbl bd ima spy" href="http://blog.163.com/randomUser.do">&nbsp;</a></div>
+    
+    <span class="fl iblock space icn1 icn1-4">&nbsp;</span>
+    <div id="topbar_randShowArea" class="fl">
+      <div class="nbw-im fl im1 im randtag"><a style="width: 110px;" target="_top" class="lbl bd ima moveblog randshow" href="http://www.lofter.com/" onclick="window.open('http://www.lofter.com/reg?from=blog');return false;">网易轻博客LOFTER</a></div>
+    </div>
+  </div>
+  <div class="fr pr clearfix">
+    <div id="topbar_loginAndReg" class="fr">
+      <a rel="nofollow" style="margin-left: 10px; color: rgb(255, 119, 0);" class="iblock fr ima" href="http://reg.163.com/reg/reg.jsp?product=blog&amp;url=http://blog.163.com/ntesRegBlank.html&amp;loginurl=http://blog.163.com/" target="_top">创建博客</a>
+      <a rel="nofollow" class="iblock fr ima ztag" href="#">登录</a>
+      <span class="fr iblock space icn1 icn1-4 spx">&nbsp;</span>
+      <div id="topbar_followArea" class="nbw-im fr"><span class="lbl bd ima followit fl ztag"><span class="fl addicon">&nbsp;</span><span class="fl">关注</span></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="blogtoptips phide" id="blog-163-com-toptips">
+ <div class="blogtoptipswrap">
+    <div id="newbulletinstip" class="newbulletinstip phide">
+    <a class="lnknews fc03 m2a tiptag phide" href="http://zhedahht.blog.163.com/blog/static/25411174200712895228171/" target="_top"></a><span class="txtnews tiptag phide"></span>&nbsp;&nbsp;&nbsp;<a class="fc03 ul nextorprevnews tiptag phide" href="http://zhedahht.blog.163.com/blog/static/25411174200712895228171/" hidefocus="true">显示下一条</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="fc03 ul close tiptag" href="http://zhedahht.blog.163.com/blog/static/25411174200712895228171/" hidefocus="true">关闭</a>
+  </div>
+ </div>
+    <div id="$_faxiantip" class="faxiantip phide">
+      <div>
+	    <a class="m2a iblock" href="http://blog.163.com/public/explore/?fromblogbanner" target="_top"></a>
+	    <span class="faxiantag m2a"></span>
+      </div>
+    </div>
+    <div id="$_guanggaotip" class="guanggaotip phide">
+      <div>
+	    
+	    <span class="guanggaotag m2a"></span>
+      </div>
+    </div>
+    <div id="$_lofterInviteTip" class="lofterInviteTip phide">
+      <div>
+	    <a class="m2a iblock" href="http://www.lofter.com/invite/163blog/?email=" target="_top"></a>
+	    <span class="lofterInviteTag m2a"></span>
+      </div>
+    </div>
+</div>  <div class="nb-wrap wsy" id="blog-163-com-main"><div class="nb-are nb-top">
+  <div class="wkg h" id="blog-163-com-banner">
+    
+    <div class="t">
+      <h1 class="n c"><span class="ztag pre">微软、Google等面试题</span></h1>
+      <p class="d c"><span class="ztag pre">剑指Offer：名企面试官精讲典型编程题</span></p>
+    </div>
+    <div class="f h ztag">&nbsp;</div>
+    <a class="x" hidefocus="true" target="_top" href="#"><span class="xx ztag"></span></a>
+  </div>
+</div><div class="nb-are nb-nav">
+  <div class="wkg">
+    <div class="c h">
+      <h2>导航</h2>
+      <ul class="noul clearfix">
+                
+	        <li class="w w0">
+	          <a class="i i0 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/">首页</a>
+	        </li>
+	        <li class="w w1 selected">
+	          <a class="i i1 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/blog/">日志</a>
+	        </li>
+	        <li class="w w2">
+	          <a class="i i2 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/album/">相册</a>
+	        </li>
+	        <li class="w w3">
+	          <a class="i i3 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/music/">音乐</a>
+	        </li>
+	        <li class="w w4">
+	          <a class="i i4 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/collection/">收藏</a>
+	        </li>
+	        <li class="w w5">
+	          <a class="i i5 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/friends/">博友</a>
+	        </li>
+	        <li class="w w6">
+	          <a class="i i6 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/profile/">关于我</a>
+	        </li>
+      </ul><!--
+ --></div>
+    <div class="l h">&nbsp;</div>
+    <div class="r h">&nbsp;</div>
+  </div>
+</div>  <div class="nb-are nb-smt"><div class="wkg h space"><div class="l h">&nbsp;</div><div class="r h">&nbsp;</div><div class="c h">&nbsp;</div></div></div>
+  <div class="nb-are nb-cnt">
+    <div class="wkg">
+      <div class="c wc h clearfix " id="blog-163-com-container">
+  <div class="nb-mdl lcr m-3 " id="-3">
+  <div class="nb-mt lcr th fc02">
+    <div class="c tc th lcr"><h2 class="thide nb-jsc mdl_t_t">日志</h2></div>
+    <div class="r tm th nb-jsc"></div>
+    <div class="l tl th">&nbsp;</div>
+    <div class="r tr th">&nbsp;</div>
+  </div>
+    <div class="nb-mc lcr">
+      <div class="c cc lcr nb-jsc">
+<div class="nbw-ryt ztag clearfix js-fix-098">
+  <div class="right bdwl bds0 bdc0"><div class="cnt ztag"></div></div>
+  <div class="left">
+     <div class="lcnt bdwr bds0 bdc0 ">   
+      <div id="$_divTopLink" class="top fc03 bdwb bdc0 bds2 clearfix">
+        <span class="ilft iblock icn0 icn0-620">&nbsp;</span>
+        <div class="pleft thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/254111742007127104759245/">程序员面试题精选100题(01)－把二元查找树转变成排序的双向链表[数据结构]</a></div>
+        <span class="irgt iblock icn0 icn0-619">&nbsp;</span>
+        <div class="pright thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/254111742007219147591/">程序员面试题精选100题(03)－子数组的最大和[算法]</a></div>
+     </div> 
+     <div class="mcnt ztag"> 
+      <div class="nbw-bitm bdwb bds2 bdc0 ">
+        <div class="multicntwrap">
+	      <div class="multicnt">
+	      	<div>
+		      <h3 class="title pre fs1"><span class="tcnt">程序员面试题精选100题(02)－设计包含min函数的栈[数据结构]</span>&nbsp;&nbsp;<span class="bgc0 fc07 fw0 fs0"></span></h3>
+		      <p class="tdep clearfix nbw-act fc06" style="line-height: 20px;">
+		        <span class="pleft">
+		          
+		          <span class="blogsep">2007-02-28 21:52:28</span><span class="blogsep">|&nbsp;&nbsp;分类：</span>
+		          <a class="fc03 m2a" href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=1&amp;c=fks_081075092084086069084074084070080087080066083082" title="栈">栈</a>
+		          <span class="blogsep" id="$_blogTagTitle">|&nbsp;&nbsp;标签：</span><span class="fc03" id="$_blogTagInfo"><a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E7%BC%96%E7%A8%8B" class="fc03 m2a">编程</a>&nbsp;&nbsp;<a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E5%B0%B1%E4%B8%9A" class="fc03 m2a">就业</a>&nbsp;&nbsp;<a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E6%89%BE%E5%B7%A5%E4%BD%9C" class="fc03 m2a">找工作</a>&nbsp;&nbsp;</span>
+		        </span>
+		        <span class="pright fc07 ztag"><span class="blogsep">|</span><span class="zihao fc03" id="$_fontswitch">字号<span class="zihaoshow  phide" id="$_fontsTypes"><span class="zihaoc bdc0"><span class="stag"></span><span class="fc04 stag">大</span><span class="fc04 stag selected js-fcurrent fc05">中</span><span class="fc04 stag">小</span></span></span></span></span><span class="pright pnt fc03" id="$_blog_subscribe"><span class="iblock icn0 icn0-919">&nbsp;</span><a class="m2a">订阅</a></span>
+		      </p>
+		    </div>
+	      </div>
+        </div>
+        
+        <div>
+        
+        </div>
+        
+        <div class="nbw-blog-start"></div>
+        <div class="bct fc05 fc11 nbw-blog ztag js-fs2"><span style="font-family: SimSun;">题目：定义栈的数据结构，要求添加一个</span>min<span style="font-family: SimSun;">函数，能够得到栈的最小元素。要求函数</span>min<span style="font-family: SimSun;">、</span>push<span style="font-family: SimSun;">以及</span>pop<span style="font-family: SimSun;">的时间复杂度都是</span>O(1)<span style="font-family: SimSun;">。</span>   <p style="text-indent: 2em;"><span style="font-family: SimSun;">分析：这是去年</span>google<span style="font-family: SimSun;">的一道面试题。</span></p>  <p style="text-indent: 2em;"><span style="font-family: SimSun;">我看到这道题目时，第一反应就是每次</span>push<span style="font-family: SimSun;">一个新元素时，将栈里所有逆序元素排序。这样栈顶元素将是最小元素。但由于不能保证最后</span>push<span style="font-family: SimSun;">进栈的元素最先出栈，这种思路设计的数据结构已经不是一个栈了。</span></p>  <p style="text-indent: 2em;"><span style="font-family: SimSun;">在栈里添加一个成员变量存放最小元素（或最小元素的位置）。每次</span>push<span style="font-family: SimSun;">一个新元素进栈的时候，如果该元素比当前的最小元素还要小，则更新最小元素。</span></p>  <p style="text-indent: 2em;"><span style="font-family: SimSun;">乍一看这样思路挺好的。但仔细一想，该思路存在一个重要的问题：如果当前最小元素被</span>pop<span style="font-family: SimSun;">出去，如何才能得到下一个最小元素？</span></p>  <p style="text-indent: 2em;"><span style="font-family: SimSun;">因此仅仅只添加一个成员变量存放最小元素（或最小元素的位置）是不够的。我们需要一个辅助栈。每次</span>push<span style="font-family: SimSun;">一个新元素的时候，同时将最小元素（或最小元素的位置。考虑到栈元素的类型可能是复杂的数据结构，用最小元素的位置将能减少空间消耗）</span>push<span style="font-family: SimSun;">到辅助栈中；每次</span>pop<span style="font-family: SimSun;">一个元素出栈的时候，同时</span>pop<span style="font-family: SimSun;">辅助栈。</span></p>  <p style="text-indent: 2em;"><span style="font-family: SimSun;">参考代码：</span></p>  <p style="text-indent: 2em;"><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">#include</span><span style="font-family: 'Courier New'; font-size: 10pt;"> <span style="color: maroon;">&lt;deque&gt;<br></span></span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">#include</span><span style="font-family: 'Courier New'; font-size: 10pt;"> <span style="color: maroon;">&lt;assert.h&gt;<br></span></span><span style="font-family: 'Courier New'; color: maroon; font-size: 10pt;"><br></span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">template</span><span style="font-family: 'Courier New'; font-size: 10pt;"> &lt;<span style="color: blue;">typename</span> T&gt; <span style="color: blue;">class</span> CStackWithMin<br></span><span style="font-family: 'Courier New'; font-size: 10pt;">{<br></span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">public</span><span style="font-family: 'Courier New'; font-size: 10pt;">:<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>CStackWithMin(<span style="color: blue;">void</span>) {}<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">virtual</span> ~CStackWithMin(<span style="color: blue;">void</span>) {}<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>T&amp; top(<span style="color: blue;">void</span>);<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">const</span> T&amp; top(<span style="color: blue;">void</span>) <span style="color: blue;">const</span>;<br><br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">void</span> push(<span style="color: blue;">const</span> T&amp; value);<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">void</span> pop(<span style="color: blue;">void</span>);<br><br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">const</span> T&amp; min(<span style="color: blue;">void</span>) <span style="color: blue;">const</span>;<br><br></span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">private</span><span style="font-family: 'Courier New'; font-size: 10pt;">:<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T&gt; m_data;<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: green;">// the elements of stack<br></span></span></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size_t&gt; m_minIndex;<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: green;">// the indices of minimum elements<br></span></span></span><span style="font-family: 'Courier New'; font-size: 10pt;">};<br><br></span><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">// get the last element of mutable stack<br></span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">template</span><span style="font-family: 'Courier New'; font-size: 10pt;"> &lt;<span style="color: blue;">typename</span> T&gt; T&amp; CStackWithMin&lt;T&gt;::top()<br></span><span style="font-family: 'Courier New'; font-size: 10pt;">{<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">return</span> m_data.back();<br></span><span style="font-family: 'Courier New'; font-size: 10pt;">}<br><br></span><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">// get the last element of non-mutable stack<br></span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">template</span><span style="font-family: 'Courier New'; font-size: 10pt;"> &lt;<span style="color: blue;">typename</span> T&gt; <span style="color: blue;">const</span> T&amp; CStackWithMin&lt;T&gt;::top() <span style="color: blue;">const<br></span></span><span style="font-family: 'Courier New'; font-size: 10pt;">{<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">return</span> m_data.back();<br></span><span style="font-family: 'Courier New'; font-size: 10pt;">}<br><br></span><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">// insert an elment at the end of stack<br></span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">template</span><span style="font-family: 'Courier New'; font-size: 10pt;"> &lt;<span style="color: blue;">typename</span> T&gt; <span style="color: blue;">void</span> CStackWithMin&lt;T&gt;::push(<span style="color: blue;">const</span> T&amp; value)<br></span><span style="font-family: 'Courier New'; font-size: 10pt;">{<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: green;">// append the data into the end of m_data<br></span></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>m_data.push_back(value);<br><br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: green;">// set the index of minimum elment in m_data at the end of m_minIndex<br></span></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">if</span>(m_minIndex.size() == 0)<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>m_minIndex.push_back(0);<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">else<br></span></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">if</span>(value &lt; m_data[m_minIndex.back()])<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>m_minIndex.push_back(m_data.size() - 1);<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">else<br></span></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>m_minIndex.push_back(m_minIndex.back());<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<br></span><span style="font-family: 'Courier New'; font-size: 10pt;">}<br><br></span><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">// erease the element at the end of stack<br></span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">template</span><span style="font-family: 'Courier New'; font-size: 10pt;"> &lt;<span style="color: blue;">typename</span> T&gt; <span style="color: blue;">void</span> CStackWithMin&lt;T&gt;::pop()<br></span><span style="font-family: 'Courier New'; font-size: 10pt;">{<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: green;">// pop m_data<br></span></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>m_data.pop_back();<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: green;">// pop m_minIndex<br></span></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>m_minIndex.pop_back();<br></span><span style="font-family: 'Courier New'; font-size: 10pt;">}<br><br></span><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">// get the minimum element of stack<br></span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">template</span><span style="font-family: 'Courier New'; font-size: 10pt;"> &lt;<span style="color: blue;">typename</span> T&gt; <span style="color: blue;">const</span> T&amp; CStackWithMin&lt;T&gt;::min() <span style="color: blue;">const<br></span></span><span style="font-family: 'Courier New'; font-size: 10pt;">{<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>assert(m_data.size() &gt; 0);<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>assert(m_minIndex.size() &gt; 0);<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">return</span> m_data[m_minIndex.back()];<br></span><span style="font-family: 'Courier New'; font-size: 10pt;">}</span></p>  <p style="text-indent: 2em;">举个例子演示上述代码的运行过程：</p>  <p style="text-indent: 2em;">&nbsp; 步骤&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 数据栈&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 辅助栈&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 最小值<br><font face="Courier">1.push 3&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3<br>2.push 4&nbsp;&nbsp;&nbsp; 3,4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0,0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3<br>3.push 2&nbsp;&nbsp;&nbsp; 3,4,2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0,0,2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2<br>4.push 1&nbsp;&nbsp;&nbsp; 3,4,2,1&nbsp;&nbsp;&nbsp; 0,0,2,3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1<br>5.pop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3,4,2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0,0,2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2<br>6.pop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3,4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0,0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3<br>7.push 0&nbsp;&nbsp;&nbsp; 3,4,0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0,0,2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0</font></p>  <p style="text-indent: 2em;"><span style="font-family: SimSun;">讨论：如果思路正确，编写上述代码不是一件很难的事情。但如果能注意一些细节无疑能在面试中加分。比如我在上面的代码中做了如下的工作：</span></p>  <p style="text-indent: 2em;"><span style="font-family: Symbol;"><span style="">·<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: SimSun;">用模板类实现。如果别人的元素类型只是</span>int<span style="font-family: SimSun;">类型，模板将能给面试官带来好印象；</span></p>  <p style="text-indent: 2em;"><span style="font-family: Symbol;"><span style="">·<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: SimSun;">两个版本的</span>top<span style="font-family: SimSun;">函数。在很多类中，都需要提供</span>const<span style="font-family: SimSun;">和非</span>const<span style="font-family: SimSun;">版本的成员访问函数；</span></p>  <p style="text-indent: 2em;"><span style="font-family: Symbol;"><span style="">·<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span>min<span style="font-family: SimSun;">函数中</span>assert<span style="font-family: SimSun;">。把代码写的尽量安全是每个软件公司对程序员的要求；</span></p>  <p style="text-indent: 2em;"><span style="font-family: Symbol;"><span style="">·<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: SimSun;">添加一些注释。注释既能提高代码的可读性，又能增加代码量，何乐而不为？</span></p>  <p style="text-indent: 2em;"><span style="font-family: SimSun;">总之，在面试时如果时间允许，尽量把代码写的漂亮一些。说不定代码中的几个小亮点就能让自己轻松拿到心仪的</span>Offer。</p>  <p align="left"><br></p>  <p style="text-indent: 0.5in; margin: 0in 0in 10pt;"><font size="3"><span style="font-family: 宋体;" lang="ZH-CN">本文已经收录到《</span><span style="font-family: 'Calibri','sans-serif';"><a target="_top" href="http://zhedahht.blog.163.com/blog/static/254111742011101624433132/"><font color="#0000ff"><span style="font-family: 宋体;" lang="ZH-CN">剑指</span>Offer</font><span style="font-family: 宋体;" lang="ZH-CN"><font color="#0000ff">——名企面试官精讲典型编程题</font></span></a></span><span style="font-family: 宋体;" lang="ZH-CN">》一书中，有改动，书中的分析讲解更加详细。欢迎关注。</span></font>我在英文博客上提供了一种不需要辅助栈的算法。感兴趣的读者请参考<a target="_top" rel="nofollow" href="http://codercareer.blogspot.com/2011/09/no-02-stack-with-function-min.html">http://codercareer.blogspot.com/2011/09/no-02-stack-with-function-min.html</a>。<br></p>  <p style="text-indent: 0.5in; margin: 0in 0in 10pt;"><span style="font-family: 宋体;" lang="ZH-CN"><font size="3">博主何海涛对本博客文章享有版权。网络转载请注明出处</font></span><a href="http://zhedahht.blog.163.com/"><font color="#990000" face="Calibri" size="3">http://zhedahht.blog.163.com/</font></a><span style="font-family: 宋体;" lang="ZH-CN"><font size="3">。整理出版物请和作者联系。</font></span><font size="3"><span style="font-family: 宋体; color: black;" lang="ZH-CN">对解题思路有任何建议，欢迎在评论中告知，或者加我微博</span><span style="color: black;"><a rel="nofollow" href="http://t.sina.com.cn/zhedahht"><span style="">http://weibo.com/zhedahht</span></a></span><span style="font-family: 宋体; color: black;" lang="ZH-CN">或者</span><span style="color: black;"><a href="http://t.163.com/zhedahht"><span style=""><font color="#0000ff" face="Calibri">http://t.163.com/zhedahht</font></span></a></span><span style="font-family: 宋体; color: black;" lang="ZH-CN">与我讨论。谢谢。</span></font></p>  <div style="z-index: 9999; position: absolute; display: none;" id="livemargins_control"><img style="position: absolute; top: -5px; left: -77px;" alt="程序员面试题精选100题(02)－设计包含min函数的栈 - 何海涛 - 微软、Google等面试题" src="chrome://livemargins/skin/monitor-background-horizontal.png" height="5" width="77"> <img style="position: absolute; top: -5px; left: 0px;" alt="程序员面试题精选100题(02)－设计包含min函数的栈 - 何海涛 - 微软、Google等面试题" src="chrome://livemargins/skin/monitor-background-vertical.png"> <img style="position: absolute; cursor: pointer; top: 0px; left: 1px; opacity: 0.5;" id="monitor-play-button" alt="程序员面试题精选100题(02)－设计包含min函数的栈 - 何海涛 - 微软、Google等面试题" src="chrome://livemargins/skin/monitor-play-button.png"></div></div>
+        <div class="nbw-blog-end"></div>
+
+        <div>
+		</div>
+		
+        <div>
+		</div>
+		
+		<div>
+      	  <div>
+		  	<div class="wumii-hook"></div>
+		  </div>
+		</div>
+		
+        <div class="ptc phide ztag">
+          <span class="ptcp">
+            <span class="iblock bcmimg">&nbsp;</span>
+            <span class="nbc-0 nbc-0-40 ptcmt ptcmt-2">评论这张</span>
+          </span>
+        </div>
+		<div class="ptc phide ztag">
+          <span class="ptcp">
+            <span class="nbc-0 nbc-0-40 ptcmi">
+              <img src="microblog.png">
+            </span>
+            <span class="nbc-0 nbc-0-40 ptcmt">转发至微博</span>
+          </span>
+        </div>
+        <div class="ptc phide ztag">
+          <span class="ptcp">
+            <span class="nbc-0 nbc-0-40 ptcmi">
+              <img src="microblog.png">
+            </span>
+            <span class="nbc-0 nbc-0-40 ptcmt">转发至微博</span>
+          </span>
+        </div>
+        
+        
+        <div class="nbw-act tbar fc03 clearfix">
+         <div style="height: 24px; line-height: 24px;">
+          <div class="pleft rdif">
+	          <span class="pnt pleft" id="$_spanRecommend"><img class="pclass" src="tuijian.png"></span>
+	        <span id="$_spanShowRecommend" class="pleft rdct ">
+	          <span class="pleft ul fc03"><span id="$_spanRecommendCount">1</span>人</span><span class="pleft iblock icn0 icn0-722 nbw-tgl1 nas-icn0fix">&nbsp;</span><span class="pleft iblock icn0 icn0-621 nbw-tgl0 nas-icn0fix">&nbsp;</span><span class="fc07"></span>|&nbsp;
+	        </span>
+	         <span class="fc07 pleft nas-tofix">分享到：</span><span class="nas-wrap pleft"><span id="$_shareBtn_163weibo" title="分享到网易微博" class="nas-itm nas-itm0">&nbsp;</span><span id="$_shareBtn_sinaweibo" title="分享到新浪微博" class="nas-itm nas-itm6">&nbsp;</span><span id="$_shareBtn_qqweibo" title="分享到腾讯微博" class="nas-itm nas-itm9">&nbsp;</span><span class="nas-itm nas-itm7" title="分享到MSN" id="$_shareBtn_msn">&nbsp;</span><span class="nas-itm nas-itm3" title="分享到QQ空间" id="$_shareBtn_qq">&nbsp;</span><span class="nas-itm nas-itm1" title="分享到人人网" id="$_shareBtn_renren">&nbsp;</span><span class="nas-itm nas-itm2" title="分享到开心网" id="$_shareBtn_kaixin">&nbsp;</span><span class="nas-itm nas-itm4" title="分享到豆瓣" id="$_shareBtn_douban">&nbsp;</span><span class="nas-itm nas-itm8" title="分享到梦幻人生" id="$_shareBtn_dream">&nbsp;</span></span>
+          </div>
+          <div class="pright">
+              <span class="fc07">阅读(<span id="$_spaniReadCount">15233</span>)</span><span class="sep fc07">|</span>
+              <span class="fc07">评论(<span id="$_spaniCommentCount">34</span>)</span><span class="sep fc07">|</span>
+              <span class="m2a" id="$_spanCite">引用</span> <span class="m2a" id="$_spanCiteCount">(3)</span>
+              <span class="sep fc07">|</span><span id="$_spanReport" class="m2a">举报</span>
+          </div>
+         </div>
+        </div>
+      </div>
+      <div class="snl">
+        <div class="phide bdwb bds2 bdc0 rdcnt" id="$_divRecommendContent"></div>
+        <div id="yodaoad" class="bdwb bds2 bdc0" style="display: none;">&nbsp;</div>
+        <div id="$_divTopLink" class="top fc03 clearfix">
+	        <span class="ilft iblock icn0 icn0-620">&nbsp;</span>
+	        <div class="pleft thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/254111742007127104759245/">程序员面试题精选100题(01)－把二元查找树转变成排序的双向链表[数据结构]</a></div>
+	        <span class="irgt iblock icn0 icn0-619">&nbsp;</span>
+	        <div class="pright thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/254111742007219147591/">程序员面试题精选100题(03)－子数组的最大和[算法]</a></div>
+	     </div> 
+	    <div class="relateblog phide">
+          <h4 class="bdwb bds2 bdc0 fc07 fs0">历史上的今天</h4>
+          <div class="cnt ztag clearfix"></div>
+        </div>
+	    <div class="relateblog phide">
+          <h4 class="bdwb bds2 bdc0 fc07 fs0">相关文章</h4>
+          <div class="cnt ztag clearfix"></div>
+        </div>
+	    <div class="author">
+	      <h4 class="bdwb bds2 bdc0 fc07 fs0">最近读者</h4>
+	      <div class="cnt ztag clearfix"><div class="pleft nlogif clearfix"> <div class="pleft nbw-f50 nbw-fce"><img class="cwd pnt" onerror="this.src=location.f60" src="face60.png"></div> <div class="m2a pright fc03"><span class="ul">登录</span>后，您可以在此留下足迹。</div> </div>        <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/yu2945686/">            <img alt="yu2945686" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/yu2945686/">          yu294568        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/wwbszd/">            <img alt="wwbszd" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_001.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/wwbszd/">          wwbszd        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/xingyunbaijunwei/">            <img alt="白杨" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_002.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/xingyunbaijunwei/">          白杨        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/goddess111@126/">            <img alt="goddess111@126" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_003.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/goddess111@126/">          goddess1        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/zhezhi236/">            <img alt="zhezhi236" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="face140.png">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/zhezhi236/">          zhezhi23        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/ccking69/">            <img alt="ccking69" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_004.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/ccking69/">          ccking69        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/boypiglun/">            <img alt="boypiglun" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_005.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/boypiglun/">          boypiglu        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/ycwycf/">            <img alt="ycwycf" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="face140.png">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/ycwycf/">          ycwycf        </a>      </div>    </div>        </div>
+	    </div>
+	    <div class="phide" id="yodaoad_1" style=""></div>
+	    <div class="comment">
+	      <h4 class="bdwb bds2 bdc0 fc07 fs0">评论</h4>
+	      <a name="blogComment" id="blogComment"></a>
+	      <div class="ztag"><div>    <div class="publish ztag"><div class="nbw-cdt edt-cmt"><div class="nbw-act tp"> <span class="m2a fc03 ztag">点击登录</span><span class="sep">|</span><span class="fc05">昵称：</span><input value="" maxlength="18" class="znick bdwa bds0 bdc0 ztag" type="text"> </div> <div class="edt ztag"><div class="ui-9954784711"><div class="zcnt ztag zbrd bdc0"><iframe src="index_1.html" frameborder="0"></iframe></div> <div class="zbtn"> <span class="zfce zbgp ztag space">&nbsp;</span> <input class="zbok zhnd ztag nbtn fc09 bdc1 bgc2" value="发表" type="button"> <span class="zbcc zhnd ztag fc04">取消</span> <div class="zvcd ztag" style="display: none;"> <label>验证码：</label><input value="" class="zbrd xtag bdc0" maxlength="4" type="text"><img src="empty.png" class="xtag" title="点击刷新验证码"><span class="xtag fc04">换一张</span> </div> </div> <div class="zmsg fc07" style="display: none;"><span class="zicn zbgp iblock">&nbsp;</span><span class="ztag"></span></div></div></div> <div style="display: none;" class="hnt thide ztag"></div></div></div>
+    <div class="bdwt bds2 bdc0 phide" id="yodaoad_2" style=""></div>
+    <div class="ztag bdwt bds2 bdc0">
+      <div class="case"><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://xiaonanln.blog.163.com/" target="_top" hidefocus="true"><img src="ava_006.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">03-08 13:14</span><div class="tx atag"><a title="小南" class="fc03 noul" target="_top" href="http://xiaonanln.blog.163.com/"><span class="m2a">小南</span></a></div></div> <div class="cnt pre atag">另外维护一个最小元素的stack就OK了吧<br><br></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://zhangzhibiao02005.blog.163.com/" target="_top" hidefocus="true"><img src="ava_007.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-05-04 16:44</span><div class="tx atag"><a title="zhangzhibiao02005" class="fc03 noul" target="_top" href="http://zhangzhibiao02005.blog.163.com/"><span class="m2a">zhangzhibiao02005</span></a></div></div> <div class="cnt pre atag">push时候 如果 v_push &gt;= min, v_push&nbsp;直接入栈， 如果 v_push&nbsp;&lt; min, 那么入栈的是 2 *  v_push&nbsp;- min, 然后 min = v_push. 出栈时， 如果栈顶的top &gt;= min 直接出，如果&nbsp;top&nbsp;&lt;  min 则出现异常，将min作为pop的返回值，另外需要还原前一个最小值，方法是 min = 2 * min - top</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a href="http://zhangzhibiao02005.blog.163.com/" target="_top" hidefocus="true"><img src="ava_007.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-05-04 16:44</span><div class="tx atag"><a class="fc03 noul" title="zhangzhibiao02005" target="_top" href="http://zhangzhibiao02005.blog.163.com/"><span class="m2a">zhangzhibiao02005</span></a><span class="fc07">&nbsp;回复&nbsp;</span><a class="fc03 noul" title="zhangzhibiao02005" target="_top" href="http://zhangzhibiao02005.blog.163.com/"><span class="m2a">zhangzhibiao02005</span></a></div></div> <div class="cnt pre atag">http://blog.csdn.net/anchor89/archive/2010/12/04/6055412.aspx&nbsp; 原文链接~&nbsp; 很巧妙</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a target="_blank" hidefocus="true"><img title="北京 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-06-07 22:25</span><div class="tx atag"><span title="北京 " class="fc07">cc</span><span class="fc07">&nbsp;回复&nbsp;</span><a class="fc03 noul" title="zhangzhibiao02005" target="_top" href="http://zhangzhibiao02005.blog.163.com/"><span class="m2a">zhangzhibiao02005</span></a></div></div> <div class="cnt pre atag">这样是很巧妙，但是在一些边界情况比如32位int存入2^31-1这种数据会越界出错，写作v_push&nbsp;- min + v_push这样似乎稳妥点</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">03-08 09:25</span><div class="tx atag"><span class="fc07">努力工作的洪</span><span class="fc07">&nbsp;回复&nbsp;</span><span class="fc07">cc</span></div></div> <div class="cnt pre atag"><p>就算这样v_push - min + v_push还是会越界。</p>  <p>&nbsp;</p>  <p>如果v_push为IntMin，而min为IntMin+1</p>  <p>v_push - min + v_push就是</p>  <p>IntMin - (IntMin+1)+IntMin=-1+IntMin，还是越了。<br></p>  <p>其实問題在於算法企图用2个word（Min和棧里的数)去存2个word加1 bit(当前是否曾为Min)，当然不能。</p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-03-02 23:12</span><div class="tx atag"><span class="fc07">网易博友54</span></div></div> <div class="cnt pre atag">else<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_minIndex.push_back(m_minIndex.back());<br>这里似乎应该进行修改<br>else<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_minIndex.push_back(m_minIndex.back());<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//添加新的元素到准确的位置，&nbsp;保证后期的pop后的index可以维持正常的顺序<br>}</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a target="_blank" hidefocus="true"><img title="江苏 苏州" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-05-20 20:06</span><div class="tx atag"><span title="江苏 苏州" class="fc07">lizhongwei1985</span><span class="fc07">&nbsp;回复&nbsp;</span><span title="江苏 苏州" class="fc07">网易博友54</span></div></div> <div class="cnt pre atag">应该没有问题吧<br><br></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="辽宁 大连" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-01-11 16:20</span><div class="tx atag"><span title="辽宁 大连" class="fc07">cantyx</span></div></div> <div class="cnt pre atag">在设计栈时，栈内元素 添加一个最小成员的指针，这样，只需要在压栈时 更新入栈元素的 最小成员指针 即可。不用再维护一个辅助栈，这样不是更好？
+</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a target="_blank" hidefocus="true"><img title="北京 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-03-18 00:54</span><div class="tx atag"><span title="北京 " class="fc07">liha</span><span class="fc07">&nbsp;回复&nbsp;</span><span title="北京 " class="fc07">cantyx</span></div></div> <div class="cnt pre atag">楼主已经说过了：<div><span class="Apple-style-span" style=""><span style="">“乍一看这样思路挺好的。但仔细一想，该思路存在一个重要的问题：如果当前最小元素被</span>pop<span style="">出去，如何才能得到下一个最小元素？”</span></span></div></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a href="http://youtang822.blog.163.com/" target="_top" hidefocus="true"><img src="ava_008.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-05-04 16:26</span><div class="tx atag"><a class="fc03 noul" title="youtang822" target="_top" href="http://youtang822.blog.163.com/"><span class="m2a">youtang822</span></a><span class="fc07">&nbsp;回复&nbsp;</span><span title="湖北 武汉" class="fc07">liha</span></div></div> <div class="cnt pre atag">你这不还是找不到下一个最小元素如3 4 2 1 5 4当1出栈后，怎么找到下一个最小值</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://fengguoyuhou.blog.163.com/" target="_top" hidefocus="true"><img src="ava_009.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-04-05 09:41</span><div class="tx atag"><a title="fengguoyuhou" class="fc03 noul" target="_top" href="http://fengguoyuhou.blog.163.com/"><span class="m2a">fengguoyuhou</span></a></div></div> <div class="cnt pre atag">要找工作了，最近一直在看lz的博客，学到了很多，太感谢了<img src="face0.gif"><br><br></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="江苏 南京" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-12-04 22:40</span><div class="tx atag"><span title="江苏 南京" class="fc07">Anchor89</span></div></div> <div class="cnt pre atag">想了一个O(1)空间复杂度的方法,交流交流http://blog.csdn.net/anchor89/archive/2010/12/04/6055412.aspx</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a href="http://zhedahht.blog.163.com/" target="_top" hidefocus="true"><img src="ava_010.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-12-05 12:38</span><div class="tx atag"><a class="fc03 noul" title="何海涛" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">何海涛</span></a><span class="fc07">&nbsp;回复&nbsp;</span><span title="上海 " class="fc07">Anchor89</span></div></div> <div class="cnt pre atag"><p>很有意思的思路。我有时间仔细拜读一下。谢谢^_^</p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a target="_blank" hidefocus="true"><img title="北京 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-03-18 01:05</span><div class="tx atag"><span title="北京 " class="fc07">liha</span><span class="fc07">&nbsp;回复&nbsp;</span><span title="北京 " class="fc07">Anchor89</span></div></div> <div class="cnt pre atag">强大</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="北京 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-03-18 00:52</span><div class="tx atag"><span title="北京 " class="fc07">liha</span></div></div> <div class="cnt pre atag">哇塞，好强！</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://blog.163.com/163_zhujingwei/" target="_top" hidefocus="true"><img src="ava_011.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-12-17 15:48</span><div class="tx atag"><a title="Berry" class="fc03 noul" target="_top" href="http://blog.163.com/163_zhujingwei/"><span class="m2a">Berry</span></a></div></div> <div class="cnt pre atag">犀利<br>辅助栈的思路很多地方都有用到，推而广之，这应该是一个在给定的顺序结构的数据集合中，如何求出任意范围内的最小值。</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://hj490134273.blog.163.com/" target="_top" hidefocus="true"><img src="ava_012.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-08-31 16:05</span><div class="tx atag"><a title="PigFly" class="fc03 noul" target="_top" href="http://hj490134273.blog.163.com/"><span class="m2a">PigFly</span></a></div></div> <div class="cnt pre atag">顿悟！</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://hj490134273.blog.163.com/" target="_top" hidefocus="true"><img src="ava_012.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-08-31 16:04</span><div class="tx atag"><a title="PigFly" class="fc03 noul" target="_top" href="http://hj490134273.blog.163.com/"><span class="m2a">PigFly</span></a></div></div> <div class="cnt pre atag"><p>deque&lt;size_t&gt;&nbsp;m_minIndex;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;the&nbsp;indices&nbsp;of&nbsp;minimum&nbsp;elements </p>
+<p>原来是这样！</p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://hj490134273.blog.163.com/" target="_top" hidefocus="true"><img src="ava_012.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-08-31 16:03</span><div class="tx atag"><a title="PigFly" class="fc03 noul" target="_top" href="http://hj490134273.blog.163.com/"><span class="m2a">PigFly</span></a></div></div> <div class="cnt pre atag"><p><span style=""><span style="">if</span>(value &lt; m_data[m_minIndex.back()])<br></span><span style=""><span style="">&nbsp;&nbsp;&nbsp;</span>m_minIndex.push_back(m_data.size() - 1);<br></span><span style=""><span style="">else<br></span></span><span style=""><span style="">&nbsp;&nbsp;&nbsp;</span>m_minIndex.push_back(m_minIndex.back());</span></p>
+<p><span style="">LZ这块儿有点问题，前面你压入的是坐标，后面你压入的是数据本身（m_minIndex.back()返回的是引用），不知道LZ发现没有！<img src="face0.gif"></span></p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="北京 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-05-18 18:55</span><div class="tx atag"><span title="北京 " class="fc07">网易博友78</span></div></div> <div class="cnt pre atag">哦，知道了，应该是
+<br>deque&lt;T&gt;&nbsp;m_data;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;the&nbsp;elements&nbsp;of&nbsp;stack
+<br>deque&lt;size_t&gt;&nbsp;m_minIndex;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;the&nbsp;indices&nbsp;of&nbsp;minimum&nbsp;elements
+<br>
+<br>大牛也有犯错误的时候啊～</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="北京 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-05-18 18:34</span><div class="tx atag"><span title="北京 " class="fc07">网易博友78</span></div></div> <div class="cnt pre atag">template&nbsp;&lt;typename&nbsp;T&gt;&nbsp;class&nbsp;CStackWithMin
+<br>{
+<br>public:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CStackWithMin(void)&nbsp;{}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;virtual&nbsp;~CStackWithMin(void)&nbsp;{}
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T&amp;&nbsp;top(void);
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;T&amp;&nbsp;top(void)&nbsp;const;
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void&nbsp;push(const&nbsp;T&amp;&nbsp;value);
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void&nbsp;pop(void);
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;T&amp;&nbsp;min(void)&nbsp;const;
+<br>
+<br>private:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T&gt;&nbsp;m_data;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;the&nbsp;elements&nbsp;of&nbsp;stack
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size_t&gt;&nbsp;m_minIndex;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;the&nbsp;indices&nbsp;of&nbsp;minimum&nbsp;elements
+<br>};
+<br>
+<br>最后两个属性是什么类型</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-04-20 13:57</span><div class="tx atag"><span class="fc07">网易博友22</span></div></div> <div class="cnt pre atag">pop()没有返回值</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://zhedahht.blog.163.com/" target="_top" hidefocus="true"><img src="ava_013.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-04-13 08:32</span><div class="tx atag"><a title="涛声依旧" class="fc03 noul" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">涛声依旧</span></a></div></div> <div class="cnt pre atag"><p>To 博友72:请自己模拟一下push的顺序是3，5，4的过程，我在贴子里已经有一个例子了。</p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-04-11 20:27</span><div class="tx atag"><span class="fc07">网易博友72</span></div></div> <div class="cnt pre atag">如果push的顺序是3，5，4，还对么</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://zhedahht.blog.163.com/" target="_top" hidefocus="true"><img src="ava_013.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-04-10 19:59</span><div class="tx atag"><a title="涛声依旧" class="fc03 noul" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">涛声依旧</span></a></div></div> <div class="cnt pre atag">To <span>网易博友21：嗯，只有现在当前被push的数字比以前的最小值还要小的时候，才需要同时也push到辅助栈中去（等于的时候push与否都没有问题）。这样的思路应该是对的。代码我大致看了一下，也没有发现问题。谢谢提供一种更加节省空间的方法<img src="face1.gif"></span></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-04-09 10:14</span><div class="tx atag"><span class="fc07">网易博友21</span></div></div> <div class="cnt pre atag">template&nbsp;&lt;typename&nbsp;T&gt;<br>void&nbsp;mystack&lt;T&gt;::push(const&nbsp;T&nbsp;&amp;val)<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;data_stack.push_back(val);<br>&nbsp;&nbsp;&nbsp;&nbsp;if(!minIndex_stack.empty())<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(val&lt;=data_stack[minIndex_stack.back()])&nbsp;&nbsp;&nbsp;&nbsp;//这里&lt;需要重载<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minIndex_stack.push_back(data_stack.size()-1);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minIndex_stack.push_back(0);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br><br>template&nbsp;&lt;typename&nbsp;T&gt;<br>void&nbsp;mystack&lt;T&gt;::pop()<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;T&amp;&nbsp;val&nbsp;=&nbsp;data_stack.back();<br>&nbsp;&nbsp;&nbsp;&nbsp;assert(!minIndex_stack.empty());<br>&nbsp;&nbsp;&nbsp;&nbsp;if(val==data_stack[minIndex_stack.back()])<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minIndex_stack.pop_back();<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;data_stack.pop_back();<br>}<br><br>template&nbsp;&lt;typename&nbsp;T&gt;<br>const&nbsp;T&amp;&nbsp;mystack&lt;T&gt;::min()<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;data_stack[minIndex_stack.back()];<br>}</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-04-09 10:14</span><div class="tx atag"><span class="fc07">网易博友21</span></div></div> <div class="cnt pre atag">看懂了，这样确实可以，我把程序又按自己想法修改了一下，只是对于最小值或者与最小值相等的值的时候，入辅助栈；而其他不入栈；不知道是不是考虑全面了，请帖主有空帮着看看，谢了。<br>不过如果是在面试的时候，我大概做不出来&nbsp;：）<br><br>#include&nbsp;&lt;deque&gt;<br>#include&nbsp;&lt;iostream&gt;<br>using&nbsp;namespace&nbsp;std;<br><br>#include&nbsp;&lt;assert.h&gt;<br><br>template&nbsp;&lt;typename&nbsp;T&gt;<br>class&nbsp;mystack<br>{<br>public:<br>&nbsp;&nbsp;&nbsp;&nbsp;mystack()&nbsp;{}<br>&nbsp;&nbsp;&nbsp;&nbsp;virtual&nbsp;~mystack()&nbsp;{}<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;void&nbsp;push(const&nbsp;T&amp;);<br>&nbsp;&nbsp;&nbsp;&nbsp;void&nbsp;pop();<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;T&amp;&nbsp;top();<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;T&amp;&nbsp;min();<br>private:<br>&nbsp;&nbsp;&nbsp;&nbsp;deque&lt;T&gt;&nbsp;data_stack;<br>&nbsp;&nbsp;&nbsp;&nbsp;deque&lt;size_t&gt;&nbsp;minIndex_stack;<br>};<br><br>//实现见下一回复，居然有1000字的限制<br><br>本来是想用stack的，结果stack有些操作没有，只有又用deque了。</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-04-09 09:18</span><div class="tx atag"><span class="fc07">网易博友21</span></div></div> <div class="cnt pre atag">粗粗看了一下，还没有细看解答。<br>主要想法肯定是对的，需要push的时候，与当前的最小值进行比较，同时将比较后，不是最小的值（或者与最小值相等的值）放入一个辅助的数据结构中，但是该数据结构是否是dequeue，值得商榷。个人认为是否堆或者AVL较好呢？对于O(1)，也就是说必须是常数级，与push，pop的n个数无关，我提出的这个数据结构似乎还是不能解决O(1)，重建堆的话，肯定是与堆中元素的个数相关；而AVL树，也一样是这个问题。</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://robin928.blog.163.com/" target="_top" hidefocus="true"><img src="ava_014.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-03-08 15:04</span><div class="tx atag"><a title="zhujian" class="fc03 noul" target="_top" href="http://robin928.blog.163.com/"><span class="m2a">zhujian</span></a></div></div> <div class="cnt pre atag">可以将栈元素地数据结构设计为多包含一个指针pnext，用来指向下一个最小元素，另外栈本身多保留一个指针pmin用来指向最小元素。<br>当push一个元素m时先判断下该元素的键值是否比最小的要小，如果是，则m-&gt;pnext ＝ pmin; pmin ＝ &amp;m; 否则，无视其他（连m-&gt;pnext = NULL;都可以不用去做）。<br>pop栈顶元素时，先判断if(&amp;top == pmin)是否成立，如果成立，则pmin = pmin-&gt;pnext;否则无视其他。<br><br>
+</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="上海市" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-03-08 08:38</span><div class="tx atag"><span title="上海市" class="fc07">网易博友59</span></div></div> <div class="cnt pre atag">典型的空间换时间</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-03-07 13:37</span><div class="tx atag"><span class="fc07">网易博友60</span></div></div> <div class="cnt pre atag">push新元素的时候<br>如果它比辅助栈顶部的元素要小，那么就将它push进辅助栈<br>如果比顶部的元素大，那么你就可以无视它了<br><br>辅助栈里的数要保证是递减,下标递增的就可以了！<br></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://zhedahht.blog.163.com/" target="_top" hidefocus="true"><img src="ava_013.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-03-04 11:26</span><div class="tx atag"><a title="涛声依旧" class="fc03 noul" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">涛声依旧</span></a></div></div> <div class="cnt pre atag"><p>首先我们分析一下函数push中的m_data[m_minIndex.back()]。m_minIndex.back()得到的是push之前最小值的索引，因此m_data[m_minIndex.back()]得到的是push之前数据栈的最小值。</p>
+<p>每当push一个元素的时候，如果该元素比之前的数据栈中的最小值还要小，则当前元素就是最小元素，辅助栈中push进去的就是数据栈的栈顶位置。如果比之前的最小值要大，这辅助栈中push的值仍然是之前的辅助栈的栈顶。</p>
+<p>由于栈内部是由deque实现的，在deque里根据索引值查找元素只需要O(1)的时间。pop不需要查找辅助栈吧？因此时间复杂度还是O(1)。</p>
+<p>如有疑问请再分析一下上面的例子。欢迎继续讨论^_^</p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-03-03 09:57</span><div class="tx atag"><span class="fc07">网易博友201</span></div></div> <div class="cnt pre atag">push和pop都有问题的啊
+<br>push的问题前面所示
+<br>pop的时候，m_data是pop了最上面的data，但m_minIndex&nbsp;pop的data并不是m_data&nbsp;pop出来的那个数，这样m_data和m_minIndex就不一致了，导致
+<br>min得到的并不是m_data中的最小的值</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-03-02 23:03</span><div class="tx atag"><span class="fc07">网易博友54</span></div></div> <div class="cnt pre atag">请问这样的话，如何保证pop的复杂度是O(1)呢？&nbsp;因为pop出某一个元素的时候，辅助栈必须查找出对应的元素，这样就不是O(1)了啊！~</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div></div>
+      <div style="" class="clearfix"><div style="display: none;" class="ui-1128413017 noselect js-zfrg-6540"><span class="pgi pgb iblock fc03 bgc9 bdc0 js-znpg-097">上一页</span> <span class="pgi zpg1 iblock fc03 bgc9 bdc0 js-zslt-987 fc05">1</span> <span class="frg fgp fc06">...</span> <span style="display: none;" class="pgi zpg2 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg3 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg4 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg5 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg6 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg7 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg8 iblock fc03 bgc9 bdc0">-1</span> <span class="frg fgn fc06">...</span> <span style="display: none;" class="pgi zpg9 iblock fc03 bgc9 bdc0">-1</span> <span class="pgi pgb iblock fc03 bgc9 bdc0 js-znpg-097">下一页</span></div></div>
+    </div>
+  </div></div>
+	    </div>
+	    <div class="phide" id="yodaoad_3" style=""></div>
+      </div>
+      <div class="cite ztag fc03 phide"></div>
+    </div>
+   </div>
+  </div>
+</div>
+
+
+
+</div>
+      <div class="l cl h100">&nbsp;</div>
+      <div class="r cr h100">&nbsp;</div>
+    </div>
+    <div class="nb-mb lcr bh space">
+      <div class="l bl bh">&nbsp;</div>
+      <div class="r br bh">&nbsp;</div>
+      <div class="c bc bh lcr">&nbsp;</div>
+    </div>
+  </div>
+
+</div>
+      <div class="l wl g lg h100">&nbsp;</div>
+      <div class="l wl t lt">&nbsp;</div>
+      <div class="l wl b lb">&nbsp;</div>
+      <div class="r wr g rg h100">&nbsp;</div>
+      <div class="r wr t rt">&nbsp;</div>
+      <div class="r wr b rb">&nbsp;</div>
+    </div>
+  </div>
+  <div class="nb-are nb-smb"><div class="wkg h space"><div class="l h">&nbsp;</div><div class="r h">&nbsp;</div><div class="c h">&nbsp;</div></div></div>
+<div class="nb-are nb-fot">
+  <div class="wkg h">
+    <h2>页脚</h2>
+    <div class="k">      <a rel="nofollow" class="m2a fc08" target="_top" href="http://corp.163.com/index_gb.html">公司简介</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://gb.corp.163.com/gb/contactus.html">联系方法</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://corp.163.com/gb/job/job.html">招聘信息</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://help.163.com/?b13abk1">客户服务</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://corp.163.com/gb/legal/legal.html">隐私政策</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://blog.163.com/public/theme/">博客风格</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://blog.163.com/services/wapblog.html">手机博客</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://blog.163.com/vip.do">VIP博客</a>
+      
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="http://zhedahht.blog.163.com/rss/">
+      <span class="p fc10">-</span><span class="fc08" id="$_foot_subscribe"><span class="iblock m2a icn0 icn0-919">&nbsp;</span><a class="m2a fc08">订阅此博客</a></span>
+    </div>
+    <p class="fc08">网易公司版权所有&nbsp;©1997-2012</p>
+  </div>
+</div></div>
+    <!--[if lte IE 6]></div><![endif]-->
+  <!--[if lte IE 6]></div><![endif]-->
+  <div class="nb-layer" id="blog-163-com-layer"></div>
+  
+
+     <div style="position: absolute; top: 0pt; right: 0pt; z-index: 999; width: 1px; height: 1px; overflow: hidden;"> <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="ntsstorage" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" height="1" width="1"> <param name="movie" value="/common/storage.swf?t=1332927070849"> <param name="AllowScriptAccess" value="sameDomain"> <embed src="storage.swf" name="ntsstorage" allowscriptaccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" height="1" width="1">  </object> </div><iframe src="index_2.html" id="api.blog.163.com" name="api.blog.163.com" style="display: none;" height="0" width="0"></iframe><iframe src="index_3.html" id="photo.163.com" name="photo.163.com" style="display: none;" height="0" width="0"></iframe><iframe src="index_4.html" id="ud.blog.163.com" name="ud.blog.163.com" style="display: none;" height="0" width="0"></iframe>
+    
+  
+  
+
+
+    
+
+
+</body>
+</html>

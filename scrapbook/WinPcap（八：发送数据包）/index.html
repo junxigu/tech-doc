@@ -1,0 +1,670 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>WinPcap基础知识（第八课：发送数据包） - qsycn的专栏 - 博客频道 - CSDN.NET</title>
+
+<meta name="description" content="尽管WinPcap这个名字已经很清晰的表明这个库是用来捕获数据包的，但是另外一个非常有用的功能是提供了原始网络操作。这里，用户可以找到一系列函数来发送数据包，这节课我们就会向大家一一展示。注意到原始的libcap库不提供任何方法来发送数据库：这里讲的所有的函数是WinPcap扩展，它们不能在Unix系统下面工作。 用pcap_sendpacket()发送单个数据包函数原型： int pcap_sendpacket ( pcap_t * p, u_char * buf, int size ) 说明">
+
+
+
+
+<link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://blog.csdn.net/qsycn/rss/list">
+<link rel="shortcut icon" href="favicon.ico">
+
+
+
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body>
+
+<div class="nav_top_2011">
+<p><span style="color: red;">您还未登录！</span>|<a href="http://passport.csdn.net/UserLogin.aspx">登录</a>|<a href="http://passport.csdn.net/CSDNUserRegister.aspx">注册</a>|<a href="http://passport.csdn.net/help/faq">帮助</a></p><ul>
+<li><a href="http://www.csdn.net/" target="_top">CSDN首页</a></li>
+<li><a href="http://news.csdn.net/" target="_top">资讯</a></li>
+<li><a href="http://bbs.csdn.net/" target="_top">论坛</a></li>
+<li><a href="http://blog.csdn.net/" target="_top">博客</a></li>
+<li><a href="http://download.csdn.net/" target="_top">下载</a></li>
+<li><a href="http://so.csdn.net/" target="_top">搜索</a></li>
+<li class="more"><h2 id="topnav_btnmore"><a href="javascript:void(0);">更多</a></h2>
+<ul style="display: none;" id="topnav_hidlist">
+<li><a href="http://cto.csdn.net/" target="_top">CTO俱乐部</a></li>
+<li><a href="http://student.csdn.net/" target="_top">学生大本营</a></li>
+<li><a href="http://edu.csdn.net/" target="_top">培训充电</a></li>
+<li><a href="http://mobile.csdn.net/" target="_top">移动开发</a></li>
+<li><a href="http://sd.csdn.net/" target="_top">软件研发</a></li>
+<li><a href="http://cloud.csdn.net/" target="_top">云计算</a></li>
+<li><a href="http://www.programmer.com.cn/" target="_top">程序员</a></li>
+<li><a href="http://tup.csdn.net/" target="_top">TUP</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+<div id="container">
+<div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h1>
+                <a href="http://blog.csdn.net/qsycn">qsycn的专栏</a></h1>
+            <h2></h2>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>
+            <!--<li id="btnHome"><a href="/qsycn"><span><img src="http://static.blog.csdn.net/images/ico_home.gif">我的首页</span></a></li>-->
+            <li id="btnContents"><a href="http://blog.csdn.net/qsycn?viewmode=contents"><span><img src="ico_list.gif">目录视图</span></a></li>
+            <li id="btnView"><a href="http://blog.csdn.net/qsycn?viewmode=list"><span><img src="ico_summary.gif">摘要视图</span></a></li>
+            <li id="btnRss"><a href="http://blog.csdn.net/qsycn/rss/list"><span><img src="ico_rss.gif">订阅</span></a></li>
+</ul>
+    </div>
+</div>
+
+        
+<div id="body">
+<div id="main">
+<div class="main">
+<div class="notice"><font size="2">
+
+&nbsp;<a href="http://download.csdn.net/detail/csdn/3641062" target="_top"><font color="red">安装Chrome浏览器下载资源送30个下载分！</font></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://blog.csdn.net/csdnproduct/article/details/6830315" target="_top"><font color="red">CSDN博客“持之以恒”勋章上线了</font></a><br>
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/6799983" target="_top"><font color="blue">2012年1月MVP申请倒计时——13日截止</font></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.cisco.com/web/CN/learnings/yc3/index.html?pnBAC=&amp;POSITION=Homepage&amp;COUNTRY_SITE=CN&amp;CAMPAIGN=FY12Q1Youth+&amp;CREATIVE=Banner2+FY12Q1Youth+&amp;REFERRING_SITE=CSDN&amp;SurveyCode=&amp;KeyCode=500007_6" target="_top"><font color="red">“IT适合你吗？”智力挑战</font></a>
+</font></div>
+
+<div id="article_details" class="details">
+    <div class="article_title">
+    <span class="ico ico_type_Repost"></span>
+    <h3>
+        <span class="link_title"><a href="http://blog.csdn.net/qsycn/article/details/4459058" title="WinPcap基础知识（第八课：发送数据包）">WinPcap基础知识（第八课：发送数据包）</a></span>
+        
+    </h3>
+</div>
+
+        
+    <div class="article_manage">
+        <span class="link_categories">
+        分类：
+            <a href="http://blog.csdn.net/qsycn/article/category/555674">网络编程</a> 
+        </span>
+    <span class="link_postdate">2009-08-18 14:55</span>
+    <span class="link_view" title="阅读次数">1076人阅读</span>
+    <span class="link_comments" title="评论次数"><a href="#comments">评论</a>(3)</span>
+    <span class="link_collect"><a href="javascript:void(0);" onclick="javascript:collectArticle('WinPcap基础知识（第八课：发送数据包）','4459058');return false;" title="收藏">收藏</a></span>
+    <span class="link_report"><a href="#report" onclick="javascript:report(4459058,2);return false;" title="举报">举报</a></span>
+    
+</div>
+
+    
+<div class="article_content">
+    <p>尽管WinPcap这个名字已经很清晰的表明这个库是用来捕获数据包的，但是另外一个非常有用的功能是提供了原始网络操作。这里，用户可以找到一系列函数来发送数据包，这节课我们就会向大家一一展示。注意到原始的libcap库不提供任何方法来发送数据库：这里讲的所有的函数是WinPcap扩展，它们不能在Unix系统下面工作。 用pcap_sendpacket()发送单个数据包函数原型： int pcap_sendpacket ( pcap_t * p, u_char * buf, int size ) 说明：该函数可以发送一个原始数据包到网络上。Buf包含要发送到网络上的数据包的数据（包括协议头）。注意，MAC CRC不用包含，因为它是网卡驱动计算然后添加的。返回值为0说明数据包已经成功的发送了，否则返回-1。 </p>
+<p>&nbsp;</p>
+<p><span style="color: rgb(255, 0, 0);">用</span><a class="el" title="Send a raw packet." href="http://blog.csdn.net/qsycn/article/details/group__wpcapfunc.html#g51dbda0f1ab9da2cfe49d657486d50b2"><strong>pcap_sendpacket()</strong></a><span style="color: rgb(255, 0, 0);">发送单个包</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: small;">最简单发送一个数据包的方法如下面代码所示。打开一个适配器后，调用pcap_sendpacket()来发送一个手工数据包。Pcap_sendpacket()的参数如下：一个包含将要发送的数据缓冲区；缓冲区的长度；将要在它上面发送数据的适配器。注意到缓冲区的数据是不经过处理就被发送到网络上的，这就意味着应用程序必须要创建正确的协议头以保证发送一些有用的信息。</span> </p>
+<p>&nbsp;</p>
+<p><div class="dp-highlighter bg_c-sharp"><div class="bar"><div class="tools"><a href="#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" class="About" title="?" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span class="preprocessor">#include&nbsp;&lt;stdlib.h&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="preprocessor">#include&nbsp;&lt;stdio.h&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="preprocessor"></span>&nbsp;</span></li><li class=""><span><span class="preprocessor">#define&nbsp;HAVE_REMOTE</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="preprocessor">#include&nbsp;&lt;pcap.h&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="preprocessor"></span>&nbsp;</span></li><li class="alt"><span><span class="preprocessor">#pragma&nbsp;comment(lib,"wpcap")</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="keyword">void</span><span>&nbsp;main(</span><span class="keyword">int</span><span>&nbsp;argc,&nbsp;</span><span class="keyword">char</span><span>&nbsp;**argv)&nbsp;&nbsp;</span></span></li><li class="alt"><span>{&nbsp;&nbsp;</span></li><li class=""><span>pcap_t&nbsp;*fp;&nbsp;&nbsp;</span></li><li class="alt"><span><span class="keyword">char</span><span>&nbsp;errbuf[PCAP_ERRBUF_SIZE];&nbsp;&nbsp;</span></span></li><li class=""><span>u_char&nbsp;packet[100];&nbsp;&nbsp;</span></li><li class="alt"><span><span class="keyword">int</span><span>&nbsp;i;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;Check&nbsp;the&nbsp;validity&nbsp;of&nbsp;the&nbsp;command&nbsp;line&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(argc&nbsp;!=&nbsp;2)&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"usage:&nbsp;%s&nbsp;interface&nbsp;(e.g.&nbsp;'rpcap://eth0')"</span><span>,&nbsp;argv[0]);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;Open&nbsp;the&nbsp;output&nbsp;device&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(&nbsp;(fp=&nbsp;pcap_open(argv[1],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">//&nbsp;name&nbsp;of&nbsp;the&nbsp;device</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;portion&nbsp;of&nbsp;the&nbsp;packet&nbsp;to&nbsp;capture&nbsp;(only&nbsp;the&nbsp;first&nbsp;100&nbsp;bytes)</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PCAP_OPENFLAG_PROMISCUOUS,&nbsp;&nbsp;<span class="comment">//&nbsp;promiscuous&nbsp;mode</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1000,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;read&nbsp;timeout</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NULL,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;authentication&nbsp;on&nbsp;the&nbsp;remote&nbsp;machine</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errbuf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;error&nbsp;buffer</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;)&nbsp;==&nbsp;NULL)&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fprintf(stderr,<span class="string">"/nUnable&nbsp;to&nbsp;open&nbsp;the&nbsp;adapter.&nbsp;%s&nbsp;is&nbsp;not&nbsp;supported&nbsp;by&nbsp;WinPcap/n"</span><span>,&nbsp;argv[1]);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;Supposing&nbsp;to&nbsp;be&nbsp;on&nbsp;ethernet,&nbsp;set&nbsp;mac&nbsp;destination&nbsp;to&nbsp;1:1:1:1:1:1&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;packet[0]=1;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;packet[1]=1;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;packet[2]=1;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;packet[3]=1;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;packet[4]=1;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;packet[5]=1;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;set&nbsp;mac&nbsp;source&nbsp;to&nbsp;2:2:2:2:2:2&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;packet[6]=2;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;packet[7]=2;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;packet[8]=2;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;packet[9]=2;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;packet[10]=2;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;packet[11]=2;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;Fill&nbsp;the&nbsp;rest&nbsp;of&nbsp;the&nbsp;packet&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span><span>(i=12;i&lt;100;i++)&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;packet[i]=(u_char)i;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;Send&nbsp;down&nbsp;the&nbsp;packet&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(pcap_sendpacket(fp,&nbsp;packet,&nbsp;100&nbsp;</span><span class="comment">/*&nbsp;size&nbsp;*/</span><span>)&nbsp;!=&nbsp;0)&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fprintf(stderr,<span class="string">"/nError&nbsp;sending&nbsp;the&nbsp;packet:&nbsp;%s/n"</span><span>,&nbsp;pcap_geterr(fp));&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><textarea style="display: none;" cols="50" rows="15" name="code" class="c-sharp">#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+
+#define HAVE_REMOTE
+#include &lt;pcap.h&gt;
+
+#pragma comment(lib,"wpcap")
+
+
+void main(int argc, char **argv)
+{
+pcap_t *fp;
+char errbuf[PCAP_ERRBUF_SIZE];
+u_char packet[100];
+int i;
+
+    /* Check the validity of the command line */
+    if (argc != 2)
+    {
+        printf("usage: %s interface (e.g. 'rpcap://eth0')", argv[0]);
+        return;
+    }
+    
+    /* Open the output device */
+    if ( (fp= pcap_open(argv[1],            // name of the device
+                        100,                // portion of the packet to capture (only the first 100 bytes)
+                        PCAP_OPENFLAG_PROMISCUOUS,  // promiscuous mode
+                        1000,               // read timeout
+                        NULL,               // authentication on the remote machine
+                        errbuf              // error buffer
+                        ) ) == NULL)
+    {
+        fprintf(stderr,"/nUnable to open the adapter. %s is not supported by WinPcap/n", argv[1]);
+        return;
+    }
+
+    /* Supposing to be on ethernet, set mac destination to 1:1:1:1:1:1 */
+    packet[0]=1;
+    packet[1]=1;
+    packet[2]=1;
+    packet[3]=1;
+    packet[4]=1;
+    packet[5]=1;
+    
+    /* set mac source to 2:2:2:2:2:2 */
+    packet[6]=2;
+    packet[7]=2;
+    packet[8]=2;
+    packet[9]=2;
+    packet[10]=2;
+    packet[11]=2;
+    
+    /* Fill the rest of the packet */
+    for(i=12;i&lt;100;i++)
+    {
+        packet[i]=(u_char)i;
+    }
+
+    /* Send down the packet */
+    if (pcap_sendpacket(fp, packet, 100 /* size */) != 0)
+    {
+        fprintf(stderr,"/nError sending the packet: %s/n", pcap_geterr(fp));
+        return;
+    }
+
+    return;
+}</textarea> </p>
+<p>&nbsp;</p>
+<p><span style="color: rgb(255, 0, 0);">发送队列</span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;"><span lang="EN-US"><span style="font-family: Times New Roman;">Pcap_sendpacket()</span></span><span style="font-family: 宋体;">提供了一个简单而又直接的方法来发送一个数据包，发送队列提供了一个高级的有效的最优化机制来发送一组数据包。一个发送队列是一个用来存放即将要发送到网络上的多个数据包的容器。它有大小，大小表明了它能够存放的数据包的最大数量。发送队列是通过调用</span><span lang="EN-US"><span style="font-family: Times New Roman;">pcap_sendqueue_alloc()</span></span><span style="font-family: 宋体;">函数来创建的，创建时要指定所需创建的队列的大小。一旦队列创建完毕，就可以使用</span><span lang="EN-US"><span style="font-family: Times New Roman;">pcap_sendqueue_queue()</span></span><span style="font-family: 宋体;">来存放一个数据包在队列里面。此函数获得一个带有时间戳，长度，数据包缓冲区的</span><span lang="EN-US"><span style="font-family: Times New Roman;">pcap_pkthdr</span></span><span style="font-family: 宋体;">。这些参数同样被</span><span lang="EN-US"><span style="font-family: Times New Roman;">pcap_next_ex()</span></span><span style="font-family: 宋体;">和函数</span><span lang="EN-US"><span style="font-family: Times New Roman;">pcap_handler()</span></span><span style="font-family: 宋体;">接收。因此，把一个刚捕获的或者从文件中读取出来的数据包放到队列中去就是把数据包作为参数传递给</span><span lang="EN-US"><span style="font-family: Times New Roman;">pcap_sendqueue_queue()</span></span><span style="font-family: 宋体;">。</span></span></span></span></p>
+<p><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;">&nbsp;</span></span></span><span style="font-size: small;">&nbsp;</span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: small;"><span style="font-family: 宋体;"><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;">看看几个函数</span></span></span></span></span></p>
+<p><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;">&nbsp;</span></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span lang="EN-US"><span style="font-size: small;"><span style="font-family: Times New Roman;"><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;">int pcap_sendqueue_queue<span style="">&nbsp; </span>(<span style="">&nbsp; </span>pcap_send_queue *<span style="">&nbsp; </span>queue,<span style="">&nbsp; </span></span></span></span></span></span></span></p>
+<p><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;">&nbsp;</span></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span lang="EN-US"><span style="font-size: small;"><span style="font-family: Times New Roman;"><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;"><span style="">&nbsp; </span>const struct pcap_pkthdr *<span style="">&nbsp; </span>pkt_header,<span style="">&nbsp; </span></span></span></span></span></span></span></p>
+<p><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;">&nbsp;</span></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span lang="EN-US"><span style="font-size: small;"><span style="font-family: Times New Roman;"><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;"><span style="">&nbsp; </span>const u_char *<span style="">&nbsp; </span>pkt_data <span style="">&nbsp;</span>)<span style="">&nbsp; </span></span></span></span></span></span></span></p>
+<p><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;">&nbsp;</span></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;"><span style="font-family: 宋体;">功</span><span style="font-family: Times New Roman;"> </span><span style="font-family: 宋体;">能：向发送队列中添加一个数据包。</span><span lang="EN-US"><span style="font-family: Times New Roman;">Pcap_sendqueue_queue()</span></span><span style="font-family: 宋体;">方法向队列得末尾添加一个数据包。</span><span lang="EN-US"><span style="font-family: Times New Roman;">Pkt_header</span></span><span style="font-family: 宋体;">参数指向一个</span><span lang="EN-US"><span style="font-family: Times New Roman;">pcap_pkthdr</span></span><span style="font-family: 宋体;">结构体（结构体含有数据包得时间戳，长度，以及一个</span><span lang="EN-US"><span style="font-family: Times New Roman;">pkt_data</span></span><span style="font-family: 宋体;">指针，它指向包数据的指针）。</span><span lang="EN-US"><span style="font-family: Times New Roman;">Pcap_ptkhdr</span></span><span style="font-family: 宋体;">结构在</span><span lang="EN-US"><span style="font-family: Times New Roman;">Winpcap</span></span><span style="font-family: 宋体;">和</span><span lang="EN-US"><span style="font-family: Times New Roman;">libcap</span></span><span style="font-family: 宋体;">里面都是用来存放包，因此发送一个捕获文件时直接发送的。“原始包”意味着发送应用程序将必须包含协议头。</span></span></span></span></p>
+<p><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;">&nbsp;</span></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;"><span lang="EN-US"><span style="font-family: Times New Roman;">CRC</span></span><span style="font-family: 宋体;">头就不用了，那是网卡驱动程序进行计算然后加上的。</span></span></span></span></p>
+<p><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;">&nbsp;</span></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span lang="EN-US"><span style="font-size: small;"><span style="font-family: Times New Roman;"><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;">u_int pcap_sendqueue_transmit<span style="">&nbsp; </span>(<span style="">&nbsp; </span>pcap_t *<span style="">&nbsp; </span>p,<span style="">&nbsp;&nbsp;</span></span></span></span></span></span></span><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;">&nbsp;</span></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span lang="EN-US"><span style="font-size: small;"><span style="font-family: Times New Roman;"><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;"><span style="">&nbsp; </span>pcap_send_queue *<span style="">&nbsp; </span>queue,<span style="">&nbsp; </span></span></span></span></span></span></span></p>
+<p>&nbsp;</p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span lang="EN-US"><span style="font-size: small;"><span style="font-family: Times New Roman;"><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;"><span style="">&nbsp; </span>int<span style="">&nbsp; </span>sync<span style="">&nbsp; </span>)<span style="">&nbsp;&nbsp; </span></span></span></span></span></span></span></p>
+<p><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;">&nbsp;</span></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;"><span style="font-family: 宋体;">功能：把一个装有原始包的队列发送到网络上。注意一下参数</span><span lang="EN-US"><span style="font-family: Times New Roman;">sync</span></span><span style="font-family: 宋体;">，它决定发送操作是否必须同步。如果是非</span><span lang="EN-US"><span style="font-family: Times New Roman;">0</span></span><span style="font-family: 宋体;">，数据包发送要注意时间戳（</span><span lang="EN-US"><span style="font-family: Times New Roman;">the packets are sent respecting the timestamps</span></span><span style="font-family: 宋体;">）；否则，数据包尽可能快的发送出去。</span><span style="font-family: Times New Roman;"> </span></span></span></span></p>
+<p><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;">&nbsp;</span></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;"><span style="font-family: 宋体;">为了发送一个队列，</span><span lang="EN-US"><span style="font-family: Times New Roman;">WinPcap</span></span><span style="font-family: 宋体;">提供了</span><span lang="EN-US"><span style="font-family: Times New Roman;">pcap_sendqueue_transmit()</span></span><span style="font-family: 宋体;">函数。注意一下第三个参数：如果是非空，发送就是同步的。例如：数据包的相关的时间戳也会被重视。这就需要占用大量</span><span lang="EN-US"><span style="font-family: Times New Roman;">cpu</span></span><span style="font-family: 宋体;">资源，因为同步方式代替在内核。。。。。（翻译不出来）</span></span></span></span></p>
+<p><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;">&nbsp;</span></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: small;"><span style="color: rgb(51, 51, 51);">&nbsp;</span><span style="color: rgb(51, 51, 51);"><span style="font-family: 宋体;">注意到用</span><span lang="EN-US"><span style="font-family: Times New Roman;">pcap_sendqueue_transmit()</span></span><span style="font-family: 宋体;">来发送一个队列比执行一序列的</span><span lang="EN-US"><span style="font-family: Times New Roman;">pcap_sendpacket()</span></span><span style="font-family: 宋体;">每次发送一个数据包来说效率高的多。因为一个发送队列是一个缓冲区，在内核级大量减少了上下文切换的次数。</span></span></span></p>
+<p><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;">&nbsp;</span></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;"><span style="font-family: 宋体;">当不再需要一个队列，就可以用</span><span lang="EN-US"><span style="font-family: Times New Roman;">pcap_sendqueue_destroy()</span></span><span style="font-family: 宋体;">函数来释放，它会释放与之关联的所有的缓冲区。</span></span></span></span></p>
+<p><span style="font-size: small;">&nbsp;</span><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;">&nbsp;</span></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: small;"><span style="color: rgb(51, 51, 51);"><span style="font-family: 宋体;">下面的代码显示了怎么样使用发送队列。首先它用</span><span lang="EN-US"><span style="font-family: Times New Roman;">pcap_open_offline()</span></span><span style="font-family: 宋体;">函数打开一个捕获文件，然后把数据包从文件中拷贝到合适分配的队列里面。这时，开始传送队列。</span><span style="font-family: Times New Roman;">&nbsp;</span></span><span style="color: rgb(51, 51, 51);">&nbsp;</span></span></p>
+<p><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;">&nbsp;</span></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span style="font-size: small;"><span style="font-family: 宋体;">注意到</span><span lang="EN-US"><span style="font-family: Times New Roman;">dump</span></span><span style="font-family: 宋体;">文件的链路层是与使用</span><span lang="EN-US"><span style="font-family: Times New Roman;">pcap_datalink()</span></span><span style="font-family: 宋体;">方法来发送数据包所在的其中一个接口一致的。如果他们不同的话就会打印出一个警告：</span><span lang="EN-US"><span style="font-family: Times New Roman;">sending on a link-layer the packets captured from a different one is quite pointless.</span></span></span></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;">&nbsp;</p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: x-small;"><span style="color: rgb(51, 51, 51);"><span lang="EN-US"><span style="font-family: Times New Roman;"><div class="dp-highlighter nogutter bg_cpp:nogutter"><div class="bar"><div class="tools"><a href="#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" class="About" title="?" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-cpp" start="1"><li class="alt"><span><span class="comment">/*</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;*&nbsp;Copyright&nbsp;(c)&nbsp;1999&nbsp;-&nbsp;2005&nbsp;NetGroup,&nbsp;Politecnico&nbsp;di&nbsp;Torino&nbsp;(Italy)</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;*&nbsp;Copyright&nbsp;(c)&nbsp;2005&nbsp;-&nbsp;2006&nbsp;CACE&nbsp;Technologies,&nbsp;Davis&nbsp;(California)</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;*&nbsp;All&nbsp;rights&nbsp;reserved.</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;*</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;*&nbsp;Redistribution&nbsp;and&nbsp;use&nbsp;in&nbsp;source&nbsp;and&nbsp;binary&nbsp;forms,&nbsp;with&nbsp;or&nbsp;without</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;*&nbsp;modification,&nbsp;are&nbsp;permitted&nbsp;provided&nbsp;that&nbsp;the&nbsp;following&nbsp;conditions</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;*&nbsp;are&nbsp;met:</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;*</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;*&nbsp;1.&nbsp;Redistributions&nbsp;of&nbsp;source&nbsp;code&nbsp;must&nbsp;retain&nbsp;the&nbsp;above&nbsp;copyright</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;*&nbsp;notice,&nbsp;this&nbsp;list&nbsp;of&nbsp;conditions&nbsp;and&nbsp;the&nbsp;following&nbsp;disclaimer.</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;*&nbsp;2.&nbsp;Redistributions&nbsp;in&nbsp;binary&nbsp;form&nbsp;must&nbsp;reproduce&nbsp;the&nbsp;above&nbsp;copyright</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;*&nbsp;notice,&nbsp;this&nbsp;list&nbsp;of&nbsp;conditions&nbsp;and&nbsp;the&nbsp;following&nbsp;disclaimer&nbsp;in&nbsp;the</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;*&nbsp;documentation&nbsp;and/or&nbsp;other&nbsp;materials&nbsp;provided&nbsp;with&nbsp;the&nbsp;distribution.</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;*&nbsp;3.&nbsp;Neither&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;Politecnico&nbsp;di&nbsp;Torino,&nbsp;CACE&nbsp;Technologies&nbsp;</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;*&nbsp;nor&nbsp;the&nbsp;names&nbsp;of&nbsp;its&nbsp;contributors&nbsp;may&nbsp;be&nbsp;used&nbsp;to&nbsp;endorse&nbsp;or&nbsp;promote&nbsp;</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;*&nbsp;products&nbsp;derived&nbsp;from&nbsp;this&nbsp;software&nbsp;without&nbsp;specific&nbsp;prior&nbsp;written&nbsp;</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;*&nbsp;permission.</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;*</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;*&nbsp;THIS&nbsp;SOFTWARE&nbsp;IS&nbsp;PROVIDED&nbsp;BY&nbsp;THE&nbsp;COPYRIGHT&nbsp;HOLDERS&nbsp;AND&nbsp;CONTRIBUTORS</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;*&nbsp;"AS&nbsp;IS"&nbsp;AND&nbsp;ANY&nbsp;EXPRESS&nbsp;OR&nbsp;IMPLIED&nbsp;WARRANTIES,&nbsp;INCLUDING,&nbsp;BUT&nbsp;NOT</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;*&nbsp;LIMITED&nbsp;TO,&nbsp;THE&nbsp;IMPLIED&nbsp;WARRANTIES&nbsp;OF&nbsp;MERCHANTABILITY&nbsp;AND&nbsp;FITNESS&nbsp;FOR</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;*&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE&nbsp;ARE&nbsp;DISCLAIMED.&nbsp;IN&nbsp;NO&nbsp;EVENT&nbsp;SHALL&nbsp;THE&nbsp;COPYRIGHT</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;*&nbsp;OWNER&nbsp;OR&nbsp;CONTRIBUTORS&nbsp;BE&nbsp;LIABLE&nbsp;FOR&nbsp;ANY&nbsp;DIRECT,&nbsp;INDIRECT,&nbsp;INCIDENTAL,</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;*&nbsp;SPECIAL,&nbsp;EXEMPLARY,&nbsp;OR&nbsp;CONSEQUENTIAL&nbsp;DAMAGES&nbsp;(INCLUDING,&nbsp;BUT&nbsp;NOT</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;*&nbsp;LIMITED&nbsp;TO,&nbsp;PROCUREMENT&nbsp;OF&nbsp;SUBSTITUTE&nbsp;GOODS&nbsp;OR&nbsp;SERVICES;&nbsp;LOSS&nbsp;OF&nbsp;USE,</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;*&nbsp;DATA,&nbsp;OR&nbsp;PROFITS;&nbsp;OR&nbsp;BUSINESS&nbsp;INTERRUPTION)&nbsp;HOWEVER&nbsp;CAUSED&nbsp;AND&nbsp;ON&nbsp;ANY</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;*&nbsp;THEORY&nbsp;OF&nbsp;LIABILITY,&nbsp;WHETHER&nbsp;IN&nbsp;CONTRACT,&nbsp;STRICT&nbsp;LIABILITY,&nbsp;OR&nbsp;TORT</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;*&nbsp;(INCLUDING&nbsp;NEGLIGENCE&nbsp;OR&nbsp;OTHERWISE)&nbsp;ARISING&nbsp;IN&nbsp;ANY&nbsp;WAY&nbsp;OUT&nbsp;OF&nbsp;THE&nbsp;USE</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;*&nbsp;OF&nbsp;THIS&nbsp;SOFTWARE,&nbsp;EVEN&nbsp;IF&nbsp;ADVISED&nbsp;OF&nbsp;THE&nbsp;POSSIBILITY&nbsp;OF&nbsp;SUCH&nbsp;DAMAGE.</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;*</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="preprocessor">#include&nbsp;&lt;stdlib.h&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="preprocessor">#include&nbsp;&lt;stdio.h&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="preprocessor">#define&nbsp;WPCAP</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="preprocessor">#define&nbsp;HAVE_REMOTE</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="preprocessor">#include&nbsp;&lt;pcap.h&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="preprocessor">#pragma&nbsp;comment(lib,"wpcap")</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="keyword">void</span><span>&nbsp;usage();&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="keyword">void</span><span>&nbsp;main(</span><span class="datatypes">int</span><span>&nbsp;argc,&nbsp;</span><span class="datatypes">char</span><span>&nbsp;**argv)&nbsp;&nbsp;</span></span></li><li class=""><span>{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;pcap_t&nbsp;*indesc,*outdesc;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">char</span><span>&nbsp;errbuf[PCAP_ERRBUF_SIZE];&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">char</span><span>&nbsp;source[PCAP_BUF_SIZE];&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">FILE</span><span>&nbsp;*capfile;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;caplen,&nbsp;sync;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;u_int&nbsp;res;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;pcap_send_queue&nbsp;*squeue;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">struct</span><span>&nbsp;pcap_pkthdr&nbsp;*pktheader;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;u_char&nbsp;*pktdata;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">float</span><span>&nbsp;cpu_time;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;u_int&nbsp;npacks&nbsp;=&nbsp;0;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;errno_t&nbsp;fopen_error;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;Check&nbsp;the&nbsp;validity&nbsp;of&nbsp;the&nbsp;command&nbsp;line&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(argc&nbsp;&lt;=&nbsp;2&nbsp;||&nbsp;argc&nbsp;&gt;=&nbsp;5)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;usage();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;Retrieve&nbsp;the&nbsp;length&nbsp;of&nbsp;the&nbsp;capture&nbsp;file&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;fopen_error&nbsp;=&nbsp;fopen_s(&amp;capfile,&nbsp;argv[1],<span class="string">"rb"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(fopen_error&nbsp;!=&nbsp;0){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"Error&nbsp;opening&nbsp;the&nbsp;file,&nbsp;errno&nbsp;%d./n"</span><span>,&nbsp;fopen_error);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;fseek(capfile&nbsp;,&nbsp;0,&nbsp;SEEK_END);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;caplen=&nbsp;ftell(capfile)-&nbsp;<span class="keyword">sizeof</span><span>(</span><span class="keyword">struct</span><span>&nbsp;pcap_file_header);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;fclose(capfile);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;Chek&nbsp;if&nbsp;the&nbsp;timestamps&nbsp;must&nbsp;be&nbsp;respected&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(argc&nbsp;==&nbsp;4&nbsp;&amp;&amp;&nbsp;argv[3][0]&nbsp;==&nbsp;</span><span class="string">'s'</span><span>)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sync&nbsp;=&nbsp;TRUE;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sync&nbsp;=&nbsp;FALSE;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;Open&nbsp;the&nbsp;capture&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;Create&nbsp;the&nbsp;source&nbsp;string&nbsp;according&nbsp;to&nbsp;the&nbsp;new&nbsp;WinPcap&nbsp;syntax&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(&nbsp;pcap_createsrcstr(&nbsp;source,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">//&nbsp;variable&nbsp;that&nbsp;will&nbsp;keep&nbsp;the&nbsp;source&nbsp;string</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PCAP_SRC_FILE,&nbsp;&nbsp;<span class="comment">//&nbsp;we&nbsp;want&nbsp;to&nbsp;open&nbsp;a&nbsp;file</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NULL,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;remote&nbsp;host</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NULL,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;port&nbsp;on&nbsp;the&nbsp;remote&nbsp;host</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;argv[1],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;name&nbsp;of&nbsp;the&nbsp;file&nbsp;we&nbsp;want&nbsp;to&nbsp;open</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errbuf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;error&nbsp;buffer</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;!=&nbsp;0)&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fprintf(stderr,<span class="string">"/nError&nbsp;creating&nbsp;a&nbsp;source&nbsp;string/n"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;Open&nbsp;the&nbsp;capture&nbsp;file&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(&nbsp;(indesc=&nbsp;pcap_open(source,&nbsp;65536,&nbsp;PCAP_OPENFLAG_PROMISCUOUS,&nbsp;1000,&nbsp;NULL,&nbsp;errbuf)&nbsp;)&nbsp;==&nbsp;NULL)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fprintf(stderr,<span class="string">"/nUnable&nbsp;to&nbsp;open&nbsp;the&nbsp;file&nbsp;%s./n"</span><span>,&nbsp;source);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;Open&nbsp;the&nbsp;output&nbsp;adapter&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(&nbsp;(outdesc=&nbsp;pcap_open(argv[2],&nbsp;100,&nbsp;PCAP_OPENFLAG_PROMISCUOUS,&nbsp;1000,&nbsp;NULL,&nbsp;errbuf)&nbsp;)&nbsp;==&nbsp;NULL)&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fprintf(stderr,<span class="string">"/nUnable&nbsp;to&nbsp;open&nbsp;adapter&nbsp;%s./n"</span><span>,&nbsp;source);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;Check&nbsp;the&nbsp;MAC&nbsp;type&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(pcap_datalink(indesc)&nbsp;!=&nbsp;pcap_datalink(outdesc))&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"Warning:&nbsp;the&nbsp;datalink&nbsp;of&nbsp;the&nbsp;capture&nbsp;differs&nbsp;from&nbsp;the&nbsp;one&nbsp;of&nbsp;the&nbsp;selected&nbsp;interface./n"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"Press&nbsp;a&nbsp;key&nbsp;to&nbsp;continue,&nbsp;or&nbsp;CTRL+C&nbsp;to&nbsp;stop./n"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getchar();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;Allocate&nbsp;a&nbsp;send&nbsp;queue&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;squeue&nbsp;=&nbsp;pcap_sendqueue_alloc(caplen);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;Fill&nbsp;the&nbsp;queue&nbsp;with&nbsp;the&nbsp;packets&nbsp;from&nbsp;the&nbsp;file&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span><span>&nbsp;((res&nbsp;=&nbsp;pcap_next_ex(&nbsp;indesc,&nbsp;&amp;pktheader,&nbsp;(</span><span class="keyword">const</span><span>&nbsp;unsigned&nbsp;</span><span class="datatypes">char</span><span>&nbsp;**)&amp;pktdata))&nbsp;==&nbsp;1)&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(pcap_sendqueue_queue(squeue,&nbsp;pktheader,&nbsp;pktdata)&nbsp;==&nbsp;-1)&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"Warning:&nbsp;packet&nbsp;buffer&nbsp;too&nbsp;small,&nbsp;not&nbsp;all&nbsp;the&nbsp;packets&nbsp;will&nbsp;be&nbsp;sent./n"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;npacks++;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(res&nbsp;==&nbsp;-1)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"Corrupted&nbsp;input&nbsp;file./n"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pcap_sendqueue_destroy(squeue);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;Transmit&nbsp;the&nbsp;queue&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;cpu_time&nbsp;=&nbsp;(<span class="datatypes">float</span><span>)clock&nbsp;();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;((res&nbsp;=&nbsp;pcap_sendqueue_transmit(outdesc,&nbsp;squeue,&nbsp;sync))&nbsp;&lt;&nbsp;squeue-&gt;len)&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"An&nbsp;error&nbsp;occurred&nbsp;sending&nbsp;the&nbsp;packets:&nbsp;%s.&nbsp;Only&nbsp;%d&nbsp;bytes&nbsp;were&nbsp;sent/n"</span><span>,&nbsp;pcap_geterr(outdesc),&nbsp;res);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;cpu_time&nbsp;=&nbsp;(clock()&nbsp;-&nbsp;cpu_time)/CLK_TCK;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;printf&nbsp;(<span class="string">"/n/nElapsed&nbsp;time:&nbsp;%5.3f/n"</span><span>,&nbsp;cpu_time);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;printf&nbsp;(<span class="string">"/nTotal&nbsp;packets&nbsp;generated&nbsp;=&nbsp;%d"</span><span>,&nbsp;npacks);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;printf&nbsp;(<span class="string">"/nAverage&nbsp;packets&nbsp;per&nbsp;second&nbsp;=&nbsp;%d"</span><span>,&nbsp;(</span><span class="datatypes">int</span><span>)((</span><span class="datatypes">double</span><span>)npacks/cpu_time));&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;printf&nbsp;(<span class="string">"/n"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;free&nbsp;the&nbsp;send&nbsp;queue&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;pcap_sendqueue_destroy(squeue);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;Close&nbsp;the&nbsp;input&nbsp;file&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;pcap_close(indesc);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;lose&nbsp;the&nbsp;output&nbsp;adapter&nbsp;</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;IMPORTANT:&nbsp;remember&nbsp;to&nbsp;close&nbsp;the&nbsp;adapter,&nbsp;otherwise&nbsp;there&nbsp;will&nbsp;be&nbsp;no&nbsp;guarantee&nbsp;that&nbsp;all&nbsp;the&nbsp;</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;packets&nbsp;will&nbsp;be&nbsp;sent!</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;pcap_close(outdesc);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="keyword">void</span><span>&nbsp;usage()&nbsp;&nbsp;</span></span></li><li class="alt"><span>{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"/nSendcap,&nbsp;sends&nbsp;a&nbsp;libpcap/tcpdump&nbsp;capture&nbsp;file&nbsp;to&nbsp;the&nbsp;net.&nbsp;Copyright&nbsp;(C)&nbsp;2002&nbsp;Loris&nbsp;Degioanni./n"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"/nUsage:/n"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"/t&nbsp;sendcap&nbsp;file_name&nbsp;adapter&nbsp;[s]/n"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"/nParameters:/n"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"/nfile_name:&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;dump&nbsp;file&nbsp;that&nbsp;will&nbsp;be&nbsp;sent&nbsp;to&nbsp;the&nbsp;network/n"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"/nadapter:&nbsp;the&nbsp;device&nbsp;to&nbsp;use.&nbsp;Use&nbsp;/"</span><span>WinDump&nbsp;-D/</span><span class="string">"&nbsp;for&nbsp;a&nbsp;list&nbsp;of&nbsp;valid&nbsp;devices/n"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"/ns:&nbsp;if&nbsp;present,&nbsp;forces&nbsp;the&nbsp;packets&nbsp;to&nbsp;be&nbsp;sent&nbsp;synchronously,&nbsp;i.e.&nbsp;respecting&nbsp;the&nbsp;timestamps&nbsp;in&nbsp;the&nbsp;dump&nbsp;file.&nbsp;This&nbsp;option&nbsp;will&nbsp;work&nbsp;only&nbsp;under&nbsp;Windows&nbsp;NTx./n/n"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;exit(0);&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><textarea style="display: none;" cols="50" rows="15" name="code" class="cpp:nogutter">/*
+ * Copyright (c) 1999 - 2005 NetGroup, Politecnico di Torino (Italy)
+ * Copyright (c) 2005 - 2006 CACE Technologies, Davis (California)
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ * notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ * notice, this list of conditions and the following disclaimer in the
+ * documentation and/or other materials provided with the distribution.
+ * 3. Neither the name of the Politecnico di Torino, CACE Technologies 
+ * nor the names of its contributors may be used to endorse or promote 
+ * products derived from this software without specific prior written 
+ * permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
+
+#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+
+#define WPCAP
+#define HAVE_REMOTE
+#include &lt;pcap.h&gt;
+
+#pragma comment(lib,"wpcap")
+
+void usage();
+
+void main(int argc, char **argv)
+{
+    pcap_t *indesc,*outdesc;
+    char errbuf[PCAP_ERRBUF_SIZE];
+    char source[PCAP_BUF_SIZE];
+    FILE *capfile;
+    int caplen, sync;
+    u_int res;
+    pcap_send_queue *squeue;
+    struct pcap_pkthdr *pktheader;
+    u_char *pktdata;
+    float cpu_time;
+    u_int npacks = 0;
+    errno_t fopen_error;
+
+    /* Check the validity of the command line */
+    if (argc &lt;= 2 || argc &gt;= 5)
+    {
+        usage();
+        return;
+    }
+        
+    /* Retrieve the length of the capture file */
+    fopen_error = fopen_s(&amp;capfile, argv[1],"rb");
+    if(fopen_error != 0){
+        printf("Error opening the file, errno %d./n", fopen_error);
+        return;
+    }
+    
+    fseek(capfile , 0, SEEK_END);
+    caplen= ftell(capfile)- sizeof(struct pcap_file_header);
+    fclose(capfile);
+            
+    /* Chek if the timestamps must be respected */
+    if(argc == 4 &amp;&amp; argv[3][0] == 's')
+        sync = TRUE;
+    else
+        sync = FALSE;
+
+    /* Open the capture */
+    /* Create the source string according to the new WinPcap syntax */
+    if ( pcap_createsrcstr( source,         // variable that will keep the source string
+                            PCAP_SRC_FILE,  // we want to open a file
+                            NULL,           // remote host
+                            NULL,           // port on the remote host
+                            argv[1],        // name of the file we want to open
+                            errbuf          // error buffer
+                            ) != 0)
+    {
+        fprintf(stderr,"/nError creating a source string/n");
+        return;
+    }
+    
+    /* Open the capture file */
+    if ( (indesc= pcap_open(source, 65536, PCAP_OPENFLAG_PROMISCUOUS, 1000, NULL, errbuf) ) == NULL)
+    {
+        fprintf(stderr,"/nUnable to open the file %s./n", source);
+        return;
+    }
+
+    /* Open the output adapter */
+    if ( (outdesc= pcap_open(argv[2], 100, PCAP_OPENFLAG_PROMISCUOUS, 1000, NULL, errbuf) ) == NULL)
+    {
+        fprintf(stderr,"/nUnable to open adapter %s./n", source);
+        return;
+    }
+
+    /* Check the MAC type */
+    if (pcap_datalink(indesc) != pcap_datalink(outdesc))
+    {
+        printf("Warning: the datalink of the capture differs from the one of the selected interface./n");
+        printf("Press a key to continue, or CTRL+C to stop./n");
+        getchar();
+    }
+
+    /* Allocate a send queue */
+    squeue = pcap_sendqueue_alloc(caplen);
+
+    /* Fill the queue with the packets from the file */
+    while ((res = pcap_next_ex( indesc, &amp;pktheader, (const unsigned char **)&amp;pktdata)) == 1)
+    {
+        if (pcap_sendqueue_queue(squeue, pktheader, pktdata) == -1)
+        {
+            printf("Warning: packet buffer too small, not all the packets will be sent./n");
+            break;
+        }
+
+        npacks++;
+    }
+
+    if (res == -1)
+    {
+        printf("Corrupted input file./n");
+        pcap_sendqueue_destroy(squeue);
+        return;
+    }
+
+    /* Transmit the queue */
+    
+    cpu_time = (float)clock ();
+
+    if ((res = pcap_sendqueue_transmit(outdesc, squeue, sync)) &lt; squeue-&gt;len)
+    {
+        printf("An error occurred sending the packets: %s. Only %d bytes were sent/n", pcap_geterr(outdesc), res);
+    }
+    
+    cpu_time = (clock() - cpu_time)/CLK_TCK;
+    
+    printf ("/n/nElapsed time: %5.3f/n", cpu_time);
+    printf ("/nTotal packets generated = %d", npacks);
+    printf ("/nAverage packets per second = %d", (int)((double)npacks/cpu_time));
+    printf ("/n");
+
+    /* free the send queue */
+    pcap_sendqueue_destroy(squeue);
+
+    /* Close the input file */
+    pcap_close(indesc);
+
+    /* 
+     * lose the output adapter 
+     * IMPORTANT: remember to close the adapter, otherwise there will be no guarantee that all the 
+     * packets will be sent!
+     */
+    pcap_close(outdesc);
+
+
+    return;
+}
+
+
+void usage()
+{
+    
+    printf("/nSendcap, sends a libpcap/tcpdump capture file to the net. Copyright (C) 2002 Loris Degioanni./n");
+    printf("/nUsage:/n");
+    printf("/t sendcap file_name adapter [s]/n");
+    printf("/nParameters:/n");
+    printf("/nfile_name: the name of the dump file that will be sent to the network/n");
+    printf("/nadapter: the device to use. Use /"WinDump -D/" for a list of valid devices/n");
+    printf("/ns: if present, forces the packets to be sent synchronously, i.e. respecting the timestamps in the dump file. This option will work only under Windows NTx./n/n");
+
+    exit(0);
+}
+</textarea> </span></span></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;">&nbsp;</p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;">&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<div class="share_buttons" id="sharePanel"><span>分享到：</span> <a name="sina" class="share_sina" title="分享到新浪微博"></a><a name="qq" class="share_qq" title="分享到腾讯微博"></a></div>
+
+<div class="article_next_prev">
+        <li class="prev_article">
+            <span>上一篇：</span><a href="http://blog.csdn.net/qsycn/article/details/4458783">WinPcap基础知识（第七课：处理离线dump文件）</a></li>
+        <li class="next_article">
+            <span>下一篇：</span><a href="http://blog.csdn.net/qsycn/article/details/4459314">WinPcap基础知识（第九课：统计网络的通信量）</a></li>
+</div>
+
+
+</div>
+<div id="ad_cen"><iframe src="index_1.html" style="border-width: 0px; overflow: hidden; width: 732px; height: 0px;" id="ad_frm_0" frameborder="0" scrolling="no"></iframe></div>
+
+<div id="comment_title" class="panel_head">查看评论<a name="comments"></a></div>
+<div id="comment_list"><dl class="comment_item comment_topic" id="comment_item_1854765"><dt class="comment_head" floor="3">3楼 <span class="user"><a class="username" href="http://blog.csdn.net/seven_xjb" target="_top">seven_xjb</a> <span class="ptime">2011-07-26 17:24发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display: none;" commentid="1854765" username="seven_xjb"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/seven_xjb" target="_top"><img src="3_seven_xjb.jpg" height="40" width="40"></a></dd><dd class="comment_body">全是 WinPcap 技术文档中的示例代码，泥马有意思吗...</dd></dl><dl class="comment_item comment_topic" id="comment_item_1637201"><dt class="comment_head" floor="2">2楼 <span class="user"><a class="username" href="http://blog.csdn.net/confused9090" target="_top">confused9090</a> <span class="ptime">2011-04-10 15:04发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display: none;" commentid="1637201" username="confused9090"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/confused9090" target="_top"><img src="3_confused9090.jpg" height="40" width="40"></a></dd><dd class="comment_body"><img src="e01.gif"></dd></dl><dl class="comment_item comment_topic" id="comment_item_1510886"><dt class="comment_head" floor="1">1楼 <span class="user"><a class="username" href="http://blog.csdn.net/zhangleo1987" target="_top">zhangleo1987</a> <span class="ptime">2010-10-14 09:47发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display: none;" commentid="1510886" username="zhangleo1987"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/zhangleo1987" target="_top"><img src="3_zhangleo1987.jpg" height="40" width="40"></a></dd><dd class="comment_body"><img src="e03.gif"></dd></dl><div class="clear"></div></div>
+<div style="display: none;" id="comment_bar"></div>
+<div id="comment_form"><div class="guest_link">您还没有登录,请<a href="http://passport.csdn.net/Account/Login?from=http%3A%2F%2Fblog.csdn.net%2Fqsycn%2Farticle%2Fdetails%2F4459058">[登录]</a>或<a href="http://passport.csdn.net/Account/Register?from=http%3A%2F%2Fblog.csdn.net%2Fqsycn%2Farticle%2Fdetails%2F4459058">[注册]</a></div></div>
+<div class="announce">* 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场</div>
+
+
+<div id="ad_bot"><iframe src="index_2.html" style="border-width: 0px; overflow: hidden; width: 732px; height: 170px;" id="ad_frm_1" frameborder="0" scrolling="no"></iframe></div>
+
+<div id="report_dialog"></div>
+<div class="clear"></div>
+</div>
+</div>
+<div id="side">
+    <div class="side">
+<div id="panel_Profile" class="panel">
+    <ul class="panel_head"><span>个人资料</span></ul>
+    <ul class="panel_body profile">
+        <div id="blog_userface">
+            <a href="http://blog.csdn.net/qsycn" title="我的博客主页">
+            <img src="1_qsycn.jpg" style="max-width: 90%;">
+            </a>
+            <br>
+            <span>qsycn</span>
+        </div>
+        <div id="blog_medal">
+        <div id="bms_box"></div></div>
+        <ul id="blog_rank">
+            <li>访问：<span>30757次</span></li>
+            <li>积分：<span>609分</span></li>
+            <li>排名：<span>第11292名</span></li>
+        </ul>
+        <ul id="blog_statistics">
+            <li>原创：<span>11篇</span></li>
+            <li>转载：<span>99篇</span></li>
+            <li>译文：<span>0篇</span></li>
+            <li>评论：<span>22条</span></li>
+        </ul>
+    </ul>
+</div><div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input value="" id="inputSearch" class="blogsearch" title="请输入关键字" type="text"></span>
+        <input id="btnSubmit" value="搜索" title="search in blog" type="submit">
+        <input name="q" id="inputQ" type="hidden">
+        <input name="t" value="blog" type="hidden">
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div><div id="panel_Category" class="panel">
+    <ul class="panel_head"><span>文章分类</span></ul>
+    <ul class="panel_body">
+        <li>
+        <a href="http://blog.csdn.net/qsycn/article/category/550085">linux</a><span>(8)</span>
+        
+        </li>
+        <li>
+        <a href="http://blog.csdn.net/qsycn/article/category/549569">uClinux</a><span>(1)</span>
+        
+        </li>
+        <li>
+        <a href="http://blog.csdn.net/qsycn/article/category/584870">VC++</a><span>(37)</span>
+        
+        </li>
+        <li>
+        <a href="http://blog.csdn.net/qsycn/article/category/608094">Windows</a><span>(3)</span>
+        
+        </li>
+        <li>
+        <a href="http://blog.csdn.net/qsycn/article/category/554102">图像处理</a><span>(6)</span>
+        
+        </li>
+        <li>
+        <a href="http://blog.csdn.net/qsycn/article/category/546762">编程基础</a><span>(33)</span>
+        
+        </li>
+        <li>
+        <a href="http://blog.csdn.net/qsycn/article/category/555674">网络编程</a><span>(14)</span>
+        
+        </li>
+        <li>
+        <a href="http://blog.csdn.net/qsycn/article/category/587478">进程通信</a><span>(1)</span>
+        
+        </li>
+        <li>
+        <a href="http://blog.csdn.net/qsycn/article/category/718245">驱动</a><span>(2)</span>
+        
+        </li>
+    </ul>
+</div><div id="panel_Archive" class="panel">
+    <ul class="panel_head"><span>文章存档</span></ul>
+    <ul class="panel_body">
+        <div id="archive_list"><li><a href="http://blog.csdn.net/qsycn/article/month/2011/09">2011年09月</a>(1)</li><li><a href="http://blog.csdn.net/qsycn/article/month/2011/08">2011年08月</a>(2)</li><li><a href="http://blog.csdn.net/qsycn/article/month/2011/07">2011年07月</a>(1)</li><li><a href="http://blog.csdn.net/qsycn/article/month/2011/05">2011年05月</a>(2)</li><li><a href="http://blog.csdn.net/qsycn/article/month/2011/04">2011年04月</a>(1)</li><span class="hidelist" style="display: none;"><li><a href="http://blog.csdn.net/qsycn/article/month/2010/12">2010年12月</a>(2)</li><li><a href="http://blog.csdn.net/qsycn/article/month/2010/11">2010年11月</a>(3)</li><li><a href="http://blog.csdn.net/qsycn/article/month/2010/08">2010年08月</a>(2)</li><li><a href="http://blog.csdn.net/qsycn/article/month/2010/06">2010年06月</a>(4)</li><li><a href="http://blog.csdn.net/qsycn/article/month/2010/05">2010年05月</a>(1)</li><li><a href="http://blog.csdn.net/qsycn/article/month/2010/03">2010年03月</a>(3)</li><li><a href="http://blog.csdn.net/qsycn/article/month/2010/02">2010年02月</a>(5)</li><li><a href="http://blog.csdn.net/qsycn/article/month/2010/01">2010年01月</a>(4)</li><li><a href="http://blog.csdn.net/qsycn/article/month/2009/12">2009年12月</a>(2)</li><li><a href="http://blog.csdn.net/qsycn/article/month/2009/11">2009年11月</a>(8)</li><li><a href="http://blog.csdn.net/qsycn/article/month/2009/10">2009年10月</a>(5)</li><li><a href="http://blog.csdn.net/qsycn/article/month/2009/09">2009年09月</a>(12)</li><li><a href="http://blog.csdn.net/qsycn/article/month/2009/08">2009年08月</a>(20)</li><li><a href="http://blog.csdn.net/qsycn/article/month/2009/07">2009年07月</a>(5)</li><li><a href="http://blog.csdn.net/qsycn/article/month/2009/06">2009年06月</a>(20)</li><li><a href="http://blog.csdn.net/qsycn/article/month/2009/05">2009年05月</a>(6)</li></span><div id="archive_list_button" class="list_closed">展开</div></div>
+    </ul>
+</div>
+<div id="hotarticls" class="panel">
+    <ul class="panel_head"><span>阅读排行</span></ul>
+    <ul class="panel_body">
+        <li>
+            <a href="http://blog.csdn.net/qsycn/article/details/5999288" title="MFC中设置静态文本的字体颜色、背景透明以及解决字体重叠">MFC中设置静态文本的字体颜色、背景透明...</a> (1827)
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/qsycn/article/details/4455531" title="WinPcap 常见安装和运行错误">WinPcap 常见安装和运行错误</a> (1553)
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/qsycn/article/details/4793461" title="Richedit使用大全">Richedit使用大全</a> (1340)
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/qsycn/article/details/4541989" title="VC++ Tab控件的背景色的处理">VC++ Tab控件的背景色的处理</a> (1178)
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/qsycn/article/details/4459058" title="WinPcap基础知识（第八课：发送数据包）">WinPcap基础知识（第八课：发送数据...</a> (1076)
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/qsycn/article/details/4282683" title="VC 如何获取和改变一个RichEdit控件内的字体">VC 如何获取和改变一个RichEdit...</a> (955)
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/qsycn/article/details/4875790" title="VS2008在工具栏Toolbar里添加XP风格spin box control">VS2008在工具栏Toolbar里添加...</a> (881)
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/qsycn/article/details/4406552" title="VC用法汇总">VC用法汇总</a> (827)
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/qsycn/article/details/4261617" title="教你如何使用VFW调用视频压缩解压缩!花了我一个下午的时间[非常详细]">教你如何使用VFW调用视频压缩解压缩!花...</a> (790)
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/qsycn/article/details/4592619" title="VC6.0编写层析软件移植到VS2003心得">VC6.0编写层析软件移植到VS2003...</a> (653)
+        </li>
+    </ul>
+</div>
+<div id="hotarticls" class="panel">
+    <ul class="panel_head"><span>评论排行</span></ul>
+    <ul class="panel_body">
+        <li>
+            <a href="http://blog.csdn.net/qsycn/article/details/5999288" title="MFC中设置静态文本的字体颜色、背景透明以及解决字体重叠">MFC中设置静态文本的字体颜色、背景透明...</a> (7)
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/qsycn/article/details/4459058" title="WinPcap基础知识（第八课：发送数据包）">WinPcap基础知识（第八课：发送数据...</a> (3)
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/qsycn/article/details/4541989" title="VC++ Tab控件的背景色的处理">VC++ Tab控件的背景色的处理</a> (2)
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/qsycn/article/details/4344746" title="c如何实现可变参数">c如何实现可变参数</a> (2)
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/qsycn/article/details/4282683" title="VC 如何获取和改变一个RichEdit控件内的字体">VC 如何获取和改变一个RichEdit...</a> (1)
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/qsycn/article/details/5430886" title="几种CRC16算法">几种CRC16算法</a> (1)
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/qsycn/article/details/4458204" title="WinPcap基础知识（第三课：打开一个适配器捕捉数据包）">WinPcap基础知识（第三课：打开一个...</a> (1)
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/qsycn/article/details/4269361" title="VC定时器SetTimer的用法">VC定时器SetTimer的用法</a> (1)
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/qsycn/article/details/4261617" title="教你如何使用VFW调用视频压缩解压缩!花了我一个下午的时间[非常详细]">教你如何使用VFW调用视频压缩解压缩!花...</a> (1)
+        </li>
+        <li>
+            <a href="http://blog.csdn.net/qsycn/article/details/4579754" title="谈GDI绘图中的资源释放  ">谈GDI绘图中的资源释放  </a> (1)
+        </li>
+    </ul>
+</div>
+<div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body">
+    <li>
+    <a href="http://blog.csdn.net/qsycn/article/details/4541989#comments">VC++ Tab控件的背景色的处理</a>
+    <p style="margin: 0px;">qsycn:
+@flymolon:此法可行，同方法一大同小异，可能需要注意系统Theme风格
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/qsycn/article/details/4541989#comments">VC++ Tab控件的背景色的处理</a>
+    <p style="margin: 0px;">flymolon:
+说说我的做法：在用作tab页的窗口类里创建一个白色画刷，然后重载WM_CTLCOLOR，在响应函数里...
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/qsycn/article/details/5999288#comments">MFC中设置静态文本的字体颜色、背景透明以及解决字体重叠</a>
+    <p style="margin: 0px;">sb3day:
+感谢!解决了我的问题
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/qsycn/article/details/4459058#comments">WinPcap基础知识（第八课：发送数据包）</a>
+    <p style="margin: 0px;">seven_xjb:
+全是 WinPcap 技术文档中的示例代码，泥马有意思吗...
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/qsycn/article/details/4261617#comments">教你如何使用VFW调用视频压缩解压缩!花了我一个下午的时间[非常详细]</a>
+    <p style="margin: 0px;">fjaygrfjaygr:
+啥玩意？几乎都是msdn上的？
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/qsycn/article/details/4458204#comments">WinPcap基础知识（第三课：打开一个适配器捕捉数据包）</a>
+    <p style="margin: 0px;">liang_ys:
+十分感谢你的winpcap系列文章啊。。。。
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/qsycn/article/details/4579754#comments">谈GDI绘图中的资源释放  </a>
+    <p style="margin: 0px;">jingchunlong:
+
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/qsycn/article/details/4459058#comments">WinPcap基础知识（第八课：发送数据包）</a>
+    <p style="margin: 0px;">confused9090:
+
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/qsycn/article/details/4458618#comments">WinPcap基础知识（第六课：翻译数据包）</a>
+    <p style="margin: 0px;">LFLNGUO:
+很不错,通俗易懂!
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/qsycn/article/details/5999288#comments">MFC中设置静态文本的字体颜色、背景透明以及解决字体重叠</a>
+    <p style="margin: 0px;">jzf283600:
+谢了，我明白了，得先把静态文本的ID改了，否则不能添加成员变量
+    </p>
+    </li>
+</ul>
+</div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+
+<div class="clear"></div>
+</div>
+    
+
+
+<img src="pv.aspx" border="0" height="0" width="0">
+<img src="visitlog.php" alt="" border="0" height="1" width="1"><iframe id="myframe" name="myframe" border="0" src="index_3.html" frameborder="no" height="0" scrolling="no" width="0"></iframe>
+<div class="pub_footerall"><dl><dt></dt> <dd><a href="http://www.csdn.net/company/about.html" target="_top">公司简介</a>|<a href="http://www.csdn.net/company/recruit.html" target="_top">招贤纳士</a>|<a href="http://www.csdn.net/company/marketing.html" target="_top">广告服务</a>|<a href="http://www.csdn.net/company/account.html" target="_top">银行汇款帐号</a>|<a href="http://www.csdn.net/company/contact.html" target="_top">联系方式</a>|<a href="http://www.csdn.net/company/statement.html" target="_top">版权声明</a>|<a href="http://www.csdn.net/company/layer.html" target="_top">法律顾问</a>|<a href="mailto:webmaster@csdn.net">问题报告</a></dd><dd>北京创新乐知信息技术有限公司 版权所有,&nbsp;京&nbsp;ICP&nbsp;证&nbsp;070598&nbsp;号</dd><dd>世纪乐知(北京)网络技术有限公司 提供技术支持</dd><dd>江苏乐知网络技术有限公司 提供商务支持</dd><dd><img src="pic_email.gif" alt="" title=""> Email:webmaster@csdn.net</dd><dd>Copyright © 1999-2011, CSDN.NET, All Rights Reserved</dd><dd><a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202001032100010" target="_top"><img src="gongshang_logos.gif" alt="GongshangLogo" title=""></a></dd></dl></div>
+</div>
+
+</body>
+</html>

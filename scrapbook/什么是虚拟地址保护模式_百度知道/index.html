@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        
+        <title>什么是虚拟地址保护模式_百度知道     </title>
+        
+        
+        
+        
+        
+        
+        
+    
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body>
+        <div id="wrap">
+            <div style="width: auto;" id="usrbar">
+	<nobr>
+    
+		<a href="http://www.baidu.com/" id="baidu-index">百度首页</a>&nbsp;|&nbsp;
+		<a href="http://zhidao.baidu.com/" id="my-home" target="_top">百度知道</a>&nbsp;|&nbsp;
+		<a href="https://passport.baidu.com/?login" id="usrbar-login">登录</a>
+    
+	</nobr>
+
+
+
+</div><div style="left: 765px; top: 23px;" class="tip-holder" id="tip_holder"><div class="tip-right-arrow"></div><div class="tip-body"><a id="tip_icon" class="tip-icon" href="http://zhidao.baidu.com/s/health/index.html?name=health&amp;fr=bubbles" target="_top"><img src="jiankang-qipao.jpg" border="0" height="32" width="32"></a><img class="tip-close" src="close.gif" id="tip_close" alt="关闭" height="11" width="11"><dl><dt>你的私人健康顾问</dt><dd>你有强迫症吗？患者总被强迫思维所困扰，痛苦又无法摆脱。本期专题邀请心理咨询专家专业解答强迫症问题。</dd><dd id="tip_more" class="tip-more"><a href="http://zhidao.baidu.com/s/health/index.html?name=health&amp;fr=bubbles" target="_top">马上咨询</a></dd></dl></div></div>
+
+            <div id="page" class="container-33">
+                <div id="header">
+                    <div class="top-search-box mb10">
+	<a class="logo" href="http://zhidao.baidu.com/"><img src="logo-zhidao.gif" alt="百度知道" height="46" width="137"></a>
+    
+	<ul class="channel">
+            <li><a onclick="nslog(this.href,2012,{sc_pos:'c_news'});return iknow.channelChange(this)" href="http://news.baidu.com/">新闻</a></li>
+            <li><a onclick="nslog(this.href, 2012, {sc_pos: 'c_baidu'});return iknow.channelChange(this)" href="http://www.baidu.com/">网页</a></li>
+            <li><a onclick="nslog(this.href, 2012, {sc_pos: 'c_tieba'});return iknow.channelChange(this)" href="http://tieba.baidu.com/">贴吧</a></li>
+		<li><strong>知道</strong></li>
+                <li><a onclick="nslog(this.href, 2012, {sc_pos: 'c_mp3'});return iknow.channelChange(this)" href="http://mp3.baidu.com/">MP3</a></li>
+                <li><a onclick="nslog(this.href, 2012, {sc_pos: 'c_pic'});return iknow.channelChange(this)" href="http://image.baidu.com/">图片</a></li>
+                <li><a onclick="nslog(this.href, 2012, {sc_pos: 'c_video'});return iknow.channelChange(this)" href="http://video.baidu.com/">视频</a></li>
+                <li><a onclick="nslog(this.href, 2012, {sc_pos: 'c_baike'});return iknow.channelChange(this)" href="http://baike.baidu.com/">百科</a></li>
+                <li><a onclick="nslog(this.href, 2012, {sc_pos: 'c_doc'});return iknow.channelChange(this)" href="http://wenku.baidu.com/">文库</a></li>
+	</ul>
+	<form action="http://zhidao.baidu.com/q" name="top-search-form" method="get" id="top-search-form">
+	<div class="box" style="position: relative; width: 650px;">
+		<input value="" autocomplete="off" class="hdi" id="kw" maxlength="256" tabindex="1" size="46" name="word">
+		<a href="http://www.baidu.com/search/zhidao_help.html" target="_top">帮助</a>
+        <span class="pipe">|</span>
+		<a href="#" id="sug-set">设置</a>
+	</div>
+	<div class="btns" style="width: 650px;">
+		<input name="ct" value="17" type="hidden">
+		<input name="pn" value="0" type="hidden">
+		<input name="tn" value="ikaslist" type="hidden">
+		<input name="rn" value="10" type="hidden">
+		<input name="lm" value="0" autocomplete="off" type="hidden">
+		<input name="fr" value="search" autocomplete="off" type="hidden">
+		<input id="top-search-btn" tabindex="2" value="搜索答案" class="btn-global" type="submit">
+		<input id="top-ask-btn" style="margin: 0pt 8px;" tabindex="3" value="我要提问" class="btn-global" type="button">
+		<input id="top-answer-btn" class="btn-global" tabindex="4" value="我要回答" type="button">
+	</div>
+	</form>
+
+	<form name="top-ask-form" action="http://zhidao.baidu.com/q" method="get" id="top-ask-form">
+		<input name="ct" value="17" type="hidden">
+		<input name="pn" value="0" type="hidden">
+		<input name="tn" value="ikask" type="hidden">
+		<input name="rn" value="10" type="hidden">
+		<input name="word" value="" type="hidden">
+		<input name="cm" value="1" type="hidden">
+		<input name="lm" value="394496" type="hidden">
+        <input name="cidV" value="86" type="hidden">
+	</form>
+    <div class="clear"></div>
+</div>
+                    
+    
+        
+        <div style="margin: 10px 0pt; text-align: left; width: 100%;"> 
+
+<table border="0" cellpadding="0" cellspacing="0" height="90" width="760"><tbody><tr><td><div style="position: relative;"><embed style="position: absolute; z-index: 0;" src="id=nwmdpjm3n1m+gp=402+time=nhnknjdknjryr0.swf" quality="high" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" wmode="opaque" height="90" width="760"><div style="background: none repeat scroll 0% 0% white; opacity: 0; position: relative; z-index: 10; left: 0pt; top: 0pt; height: 90px;"><a href="http://www.baidu.com/adrc.php?t=00KZ00000fZ-K000z7t00c-MafK2NdGr00000000000R0000I8gCXu.THLH_o1S0A3qpyV8ULT0T1YsuyRvuWT3nAPbryDYrHFb0ZRqPWfvnRfYn1T3PRwjP16snYc3nbD1Pjn1f1-DwbD4nHT0mHdbXWKVmLCsIdGgNHFpphnYHRIrpYqgwHK5NDGoihYkph7gRH-PphP4HYwKIYdJfyduNjK3yZGKUywZnj-2U-uYR7PpIhPVp1-Pf1Klih4rnN-Vrg-9NjKVmY92T7KRRyduNdFlmvdPrRdKFHPDFHPD0ARqpZwYTjCEQL08Xy-kpyu9QhPEUiqW5LnqmHIBP1R4n1RhI1YLn1T4nzuW5HfknjchpHY1PHfzFhsqnau-5iuY5y9YIZ0lQzqLILT8IvqVmyb8mvqVQ1qdIAdxTvqdThP-5yF9pywdFMNYUNqVuywGIyYqTLbLPW0hIgwVgvP9UgK9pyI85g-GUyD0mLFW5HndPWck" target="_top" style="cursor: pointer; display: block; height: 90px;"></a></div></div></td></tr></tbody></table>
+ </div>
+        
+    
+
+                    
+                </div>
+
+                 
+
+
+
+
+
+<div id="body" class="body">
+    <div class="bread">
+        <a href="http://zhidao.baidu.com/">百度知道</a> &gt; <a href="http://zhidao.baidu.com/browse/74?lm=2">电脑/网络</a> &gt; <a href="http://zhidao.baidu.com/browse/86?lm=2">硬件</a>
+    </div>
+    <div class="l-grid-2 mb10">
+        <div class="l-main-col">
+            <div class="l-main-wrap span-23">
+
+<!--qbox start-->
+<div class="box-gr-top mb10 qbox" id="question-box">
+    <div class="header"></div>
+    <div class="body">
+        <div class="title clf">
+            <div class="question">
+                <h1 id="question-title">
+                
+                    
+                    <span class="icon i-finished"></span><span class="question-title">什么是虚拟地址保护模式</span>
+                    
+                
+                </h1>
+                <div class="details"><span class="visited-times">浏览次数：3844次</span>
+                    <span class="black i-reward">悬赏分：0</span>
+                    <span class="v-split">|</span>
+                    <span class="gray">解决时间：2007-11-23 11:35</span>
+                    <span class="v-split">|</span>
+                    <span class="gray">提问者：<a log="qbox.asker.username" href="http://passport.baidu.com/?business&amp;aid=6&amp;un=jjyb2#2" target="_top" uid="324d6a6a7962327402" uname="jjyb2" class="user-name">jjyb2</a>
+
+
+
+</span>
+                    
+                </div>
+            </div>
+        </div>
+        
+            <div id="question-content"></div>
+        
+        
+        
+    </div>
+    <div class="question-data">
+        <input name="askerId" value="41176370" type="hidden">
+        <input name="askerName" value="jjyb2" type="hidden">
+        <input name="askerNameEncode" value="jjyb2" type="hidden">
+        <input name="qTitle" value="什么是虚拟地址保护模式" type="hidden">
+        <input name="isAskerLogin" value="0" type="hidden">
+        <input name="giveScore" value="0" type="hidden">
+        <input name="pid" value="" type="hidden">
+    </div>
+</div>
+
+
+<!--qbox end-->
+
+    <div class="box-pink mb10 best-answer-panel" id="best-answer-panel">
+        <div class="header">
+            
+                
+                <span class="answer-type optimal"></span>
+                
+                <span class="best-answer-title ml10 bold">最佳答案</span>
+            
+        </div>
+        <div class="body">
+            <div class="content">
+                <pre id="best-answer-content" class="reply-text mb10">保护模式
+(Protected Mode，或有时简写为 pmode) 是一种 80286 系列和之后的 x86 兼容 CPU 操作模式。保护模式有一些新的特色，设计用来增强 多工 和系统稳定度，像是 内存保护，分页 系统，以及硬件支援的 虚拟内存。大部分的现今 x86 操作系统 都在保护模式下运行，包含 Linux、FreeBSD、以及 微软 Windows 2.0 和之后版本。
+
+另外一种 286 和其之后 CPU 的操作模式是 真实模式，一种向前兼容且关闭这些特色的模式。设计用来让新的芯片可以执行旧的软件。依照设计的规格，所有的 x86 CPU 都是在真实模式下开机来确保传统操作系统的向前兼容性。在任何保护模式的特色可用前，他们必须要由某些程序手动地切换到保护模式。在现今的电脑，这种切换通常是由 操作系统 在开机时候必须完成的第一件工作的一个。它也可能当 CPU 在保护模式下运行时，使用 虚拟86模式 来执行设计给真实模式的程序码。
+
+尽管用软件的方式也有某些可能在真实模式的系统下使用多工，但保护模式下内存保护的特色，可以避免有问题的程序破坏其他工作或是 操作系统 核心所拥有的内存。保护模式也有中断正在执行程序的硬件支援，可以把 execution content 交给其他工作，得以实现 先占式多工。
+
+大部分可以使用保护模式的 CPU 也拥有 32 位元暂存器 的特色 (例如 80386 系列和其后任何的芯片)，导入了融合保护模式而成为 32 位元处理的概念。80286 芯片虽有支援保护模式，但是仍然只有 16 位元暂存器。Windows 2.0 和之后版本中的保护模式增强称为 "386 增强模式"，是因为他们除了保护模式外，还需要 32 位元的暂存器，并且无法在 286 上面执行 (即使 286 支援保护模式)。
+
+即使在 32 位元芯片上已经打开了保护模式，但是 1 MB 以上的内存并无法存取，是由于一种仿照 IBM XT 系统设计特性的 memory wrap-around(内存连续) 的因素。这种限制可以由打开 A20 line 来回避。
+
+在保护模式下，前面 32 个中断都是保留给 CPU 例外处理用。举个例子，中断 0D (十进制 13) 是 一般保护模式错物 和 中断 00 是 除以零。
+
+在8086/8088时代，处理器只存在一种操作模式（Operation Mode），当时由于不存在其它操作模式，因此这种模式也没有被命名。自从80286到80386开始，处理器增加了另外两种操作模式——保护模式PM （Protected Mode）和系统管理模式SMM（System Management Mode），因此，8086/8088的模式被命名为实地址模式RM（Real-address Mode）。
+PM是处理器的native模式，在这种模式下，处理器支持所有的指令和所有的体系结构特性，提供最高的性能和兼容性。对于所有的新型应用程序和操作系统来说，建议都使用这种模式。为了保证PM的兼容性，处理器允许在受保护的，多任务的环境下执行RM程序。这个特性被称做虚拟8086模式（Virtual -8086 Mode），尽管它并不是一个真正的处理器模式。Virtual-8086模式实际上是一个PM的属性，任何任务都可以使用它。
+RM提供了Intel 8086处理器的编程环境，另外有一些扩展（比如切换到PM或SMM的能力）。当主机被Power-up或Reset后，处理器处于RM下。
+SMM是一个对所有Intel处理器都统一的标准体系结构特性。出现于Intel386 SL芯片。这个模式为OS实现平台指定的功能（比如电源管理或系统安全）提供了一种透明的机制。当外部的SMM interrupt pin（SMI#）被激活或者从APIC（Advanced Programming Interrupt Controller）收到一个SMI，处理器将进入SMM。在SMM下，当保存当前正在运行程序的整个上下文（Context）时，处理器切换到一个分离的地址空间。然后SMM指定的代码或许被透明的执行。当从SMM返回时，处理器将回到被系统管理中断之前的状态。
+
+由于机器在Power-up或Reset之后，处理器处于RM状态，而对于Intel 80386以及其后的芯片，只有使用PM才能发挥出最大的作用。所以我们就面临着一个从RM切换到PM的问题。
+本文不讨论SMM，本节的重点集中于在Booting阶段如何从RM切换到PM，这里不会过多的讨论PM的细节，因为《Intel Architecture Software Developer’s Manual Volume 3: System Programming》中有非常详尽和准确的介绍。
+1. What is GDT
+在Protected Mode下，一个重要的必不可少的数据结构就是GDT（Global Descriptor Table）。
+为什么要有GDT？我们首先考虑一下在Real Mode下的编程模型：
+在Real Mode下，我们对一个内存地址的访问是通过Segment:Offset的方式来进行的，其中Segment是一个段的Base Address，一个Segment的最大长度是64 KB，这是16-bit系统所能表示的最大长度。而Offset则是相对于此Segment Base Address的偏移量。Base Address+Offset就是一个内存绝对地址。由此，我们可以看出，一个段具备两个因素：Base Address和Limit（段的最大长度），而对一个内存地址的访问，则是需要指出：使用哪个段？以及相对于这个段Base Address的Offset，这个Offset应该小于此段的Limit。当然对于16-bit系统，Limit不要指定，默认为最大长度64KB，而 16-bit的Offset也永远不可能大于此Limit。我们在实际编程的时候，使用16-bit段寄存器CS（Code Segment），DS（Data Segment），SS（Stack Segment）来指定Segment，CPU将段积存器中的数值向左偏移4-bit，放到20-bit的地址线上就成为20-bit的Base Address。
+到了Protected Mode，内存的管理模式分为两种，段模式和页模式，其中页模式也是基于段模式的。也就是说，Protected Mode的内存管理模式事实上是：纯段模式和段页式。进一步说，段模式是必不可少的，而页模式则是可选的——如果使用页模式，则是段页式；否则这是纯段模式。
+既然是这样，我们就先不去考虑页模式。对于段模式来讲，访问一个内存地址仍然使用Segment:Offset的方式，这是很自然的。由于 Protected Mode运行在32-bit系统上，那么Segment的两个因素：Base Address和Limit也都是32位的。IA-32允许将一个段的Base Address设为32-bit所能表示的任何值（Limit则可以被设为32-bit所能表示的，以2^12为倍数的任何指），而不象Real Mode下，一个段的Base Address只能是16的倍数（因为其低4-bit是通过左移运算得来的，只能为0，从而达到使用16-bit段寄存器表示20-bit Base Address的目的），而一个段的Limit只能为固定值64 KB。另外，Protected Mode，顾名思义，又为段模式提供了保护机制，也就说一个段的描述符需要规定对自身的访问权限（Access）。所以，在Protected Mode下，对一个段的描述则包括3方面因素：[Base Address, Limit, Access]，它们加在一起被放在一个64-bit长的数据结构中，被称为段描述符。这种情况下，如果我们直接通过一个64-bit段描述符来引用一个段的时候，就必须使用一个64-bit长的段积存器装入这个段描述符。但Intel为了保持向后兼容，将段积存器仍然规定为16-bit（尽管每个段积存器事实上有一个64-bit长的不可见部分，但对于程序员来说，段积存器就是16-bit的），那么很明显，我们无法通过16-bit长度的段积存器来直接引用64-bit的段描述符。
+怎么办？解决的方法就是把这些长度为64-bit的段描述符放入一个数组中，而将段寄存器中的值作为下标索引来间接引用（事实上，是将段寄存器中的高13 -bit的内容作为索引）。这个全局的数组就是GDT。事实上，在GDT中存放的不仅仅是段描述符，还有其它描述符，它们都是64-bit长，我们随后再讨论。
+GDT可以被放在内存的任何位置，那么当程序员通过段寄存器来引用一个段描述符时，CPU必须知道GDT的入口，也就是基地址放在哪里，所以Intel的设计者门提供了一个寄存器GDTR用来存放GDT的入口地址，程序员将GDT设定在内存中某个位置之后，可以通过LGDT指令将GDT的入口地址装入此积存器，从此以后，CPU就根据此积存器中的内容作为GDT的入口来访问GDT了。
+GDT是Protected Mode所必须的数据结构，也是唯一的——不应该，也不可能有多个。另外，正象它的名字（Global Descriptor Table）所揭示的，它是全局可见的，对任何一个任务而言都是这样。
+除了GDT之外，IA-32还允许程序员构建与GDT类似的数据结构，它们被称作LDT（Local Descriptor Table），但与GDT不同的是，LDT在系统中可以存在多个，并且从LDT的名字可以得知，LDT不是全局可见的，它们只对引用它们的任务可见，每个任务最多可以拥有一个LDT。另外，每一个LDT自身作为一个段存在，它们的段描述符被放在GDT中。
+IA-32为LDT的入口地址也提供了一个寄存器LDTR，因为在任何时刻只能有一个任务在运行，所以LDT寄存器全局也只需要有一个。如果一个任务拥有自身的LDT，那么当它需要引用自身的LDT时，它需要通过LLDT将其LDT的段描述符装入此寄存器。LLDT指令与LGDT指令不同的时，LGDT指令的操作数是一个32-bit的内存地址，这个内存地址处存放的是一个32-bit GDT的入口地址，以及16-bit的GDT Limit。而LLDT指令的操作数是一个16-bit的选择子，这个选择子主要内容是：被装入的LDT的段描述符在GDT中的索引值——这一点和刚才所讨论的通过段积存器引用段的模式是一样的。
+
+LDT只是一个可选的数据结构，你完全可以不用它。使用它或许可以带来一些方便性，但同时也带来复杂性，如果你想让你的OS内核保持简洁性，以及可移植性，则最好不要使用它。
+引用GDT和LDT中的段描述符所描述的段，是通过一个16-bit的数据结构来实现的，这个数据结构叫做Segment Selector——段选择子。它的高13位作为被引用的段描述符在GDT/LDT中的下标索引，bit 2用来指定被引用段描述符被放在GDT中还是到LDT中，bit 0和bit 1是RPL——请求特权等级，被用来做保护目的，我们这里不详细讨论它。
+
+前面所讨论的装入段寄存器中作为GDT/LDT索引的就是Segment Selector，当需要引用一个内存地址时，使用的仍然是Segment:Offset模式，具体操作是：在相应的段寄存器装入Segment Selector，按照这个Segment Selector可以到GDT或LDT中找到相应的Segment Descriptor，这个Segment Descriptor中记录了此段的Base Address，然后加上Offset，就得到了最后的内存地址。如下图所示：
+
+2. Setup GDT
+由上一节的讨论得知，GDT是Protected Mode所必须的数据结构，那么我们在进入Protected Mode之前，必须设定好GDT，并通过LGDT将其装入相应的寄存器。
+尽管GDT允许被放在内存的任何位置，但由于GDT中的元素——描述符——都是64-bit长，也就是说都是8个字节，所以为了让CPU对GDT的访问速度达到最快，我们应该将GDT的入口地址放在以8个字节对齐，也就是说是8的倍数的地址位置。
+GDT中第一个描述符必须是一个空描述符，也就是它的内容应该全部为0。如果引用这个描述符进行内存访问，则是产生General Protection异常。
+如果一个OS不使用虚拟内存，段模式会是一个不错的选择。但现代OS没有不使用虚拟内存的，而实现虚拟内存的比较方便和有效的内存管理方式是页式管理。但是在IA-32上如果我们想使用页式管理，我们只能使用段页式——没有方法可以完全禁止段模式。但我们可以尽力让段的效果降低的最小。
+IA-32提供了一种被称作“Basic Flat Model”的分段模式可以达到这种效果。这种模式要求在GDT中至少要定义两个段描述符，一个用来引用Data Segment，另一个用来引用Code Segment。这2个Segment都包含整个线性空间，即Segment Limit = 4 GB，即使实际的物理内存远没有那么多，但这个空间定义是为了将来由页式管理来实现虚拟内存。
+在这里，我们只是处于Booting阶段，所以我们只需要初步设置一下GDT，等真正进入Protected Mode，启动了OS Kernel之后，具体OS打算如何设置GDT，使用何种内存管理模式，由Kernel自身来设置，Booting只需要给Kernel的数据段和代码段设置全部线性空间就可以了。
+段描述符的格式如下图所示：
+
+具体到代码段和数据段，它们的格式如下图所示：
+
+下面就是在Booting阶段为进入Protected Mode而设置的临时的gdt。这里定义了3个段描述符：第一个是系统规定的空描述符，第2个是引用4 GB线性空间的代码段，第3个是引用4 GB线性空间的数据段。这是"Basic Flat Model"所要求的最下GDT设置，但就booting阶段，只是为了进入Protected Mode，并为内核提供一个连续的，最大的线性空间这个目的而言，已经足够了。
+# Descriptor tables
+gdt:
+.word 0, 0, 0, 0 # dummy
+.word 0xFFFF # 4Gb - (0x100000*0x1000 = 4Gb)
+.word 0 # base address = 0
+.word 0x9A00 # code read/exec
+.word 0x00CF # granularity = 4096, 386
+# (+5th nibble of limit)
+.word 0xFFFF # 4Gb - (0x100000*0x1000 = 4Gb)
+.word 0 # base address = 0
+.word 0x9200 # data read/write
+.word 0x00CF # granularity = 4096, 386
+# (+5th nibble of limit)
+3. Load GDT
+设置好GDT之后，我们需要通过LGDT指令将设定的gdt的入口地址和gdt表的大小装入GDTR寄存器。
+GDTR寄存器包括两部分：32-bit的线性基地址，以及16-bit的GDT大小（以字节为单位）。需要注意的是，对于32-bit线性基地址，必须是32-bit绝对物理地址，而不是相对于某个段的偏移量。而我们在Booting阶段，在进入Protected Mode之前，我们CS和DS设置很可能不是0，所以我们必须计算出gdt的绝对物理地址。
+为了执行LGDT指令，你需要把这两部分内容放在内存的某个位置，然后将这个位置的内存地址作为操作数传递给LGDT指令。然后LGDT指令会自动将保存在这个位置的这两部分值装入GDTR寄存器。
+# 这是存放GDTR所需的两部分内容的位置
+gdt_48:
+.word 0x8000 # gdt limit=2048,
+# 256 GDT entries
+.word 0, 0 # gdt base (filled in later)
+# 下面这段代码用来计算GDT的32-bit线性地址，并将其装入GDTR寄存器。
+xorl %eax, %eax # Compute gdt_base
+movw %ds, %ax # (Convert %ds:gdt to a linear ptr)
+shll , %eax
+addl $gdt, %eax
+movl %eax, (gdt_48+2)
+lgdt gdt_48 # load gdt with whatever is appropriate
+4. Other Preparing Stuff
+在进入Protected Mode之前，除了需要设置和装入GDT之外，还需要做如下一些事情：
+屏蔽所有可屏蔽中断；
+装入IDTR；
+所有协处理器被正确的Reset。
+由于在Real Mode和Protected Mode下的中断处理机制有一些不同，所以在进入Protected Mode之前，务必禁止所有可屏蔽中断，这可以通过下面两种方法之一：
+使用CLI指令；
+对8259A可编程中断控制器编程以屏蔽所有中断。
+即使当我们进入Protected Mode之后，也不能马上将中断打开，这时因为我们必须在OS Kernel中对相关的Protected Mode中断处理所需的数据结构正确的初始化之后，才能打开中断，否则会产生处理器异常。
+在Real Mode下，中断处理使用IVT(Interrupt Vector Table)，在Protected Mode下，中断处理使用IDT（Interrupt Descriptor Table），所以，我们必须在进入Protected Mode之前设置IDTR。
+IDTR的格式和GDTR相同，IDTR的装入方式和GDTR也相同。由于IDT中相关的中断处理程序需要让OS Kernel来设定，所以在Booting阶段，我们只需要将IDTR中IDT的基地址和Size都设为0就可以了，随后，等进入Protected Mode之后，由OS Kernel来真正设置它。
+关于中断机制和中断处理，请参考 Interrupt &amp; Exception ，这里不再赘述。
+#
+# 这是存放IDTR所需的两部分内容的位置
+#
+idt_48:
+.word 0 # idt limit = 0
+.word 0, 0 # idt base = 0L
+# 对于IDTR的处理，只需要这一条指令即可
+lidt idt_48 # load idt with 0,0
+#
+# 通过设置8259A PIC，屏蔽所有可屏蔽中断
+#
+movb xFF, %al # mask all interrupts for now
+outb %al, xA1
+call delay
+
+movb xFB, %al # mask all irq's but irq2 which
+outb %al, x21 # is cascaded
+# 保证所有的协处理都被正确的Reset
+xorw %ax, %ax
+outb %al, xf0
+call delay
+outb %al, xf1
+call delay
+# Delay is needed after doing I/O
+delay:
+outb %al,x80
+ret
+
+5. Let's Go
+好了，一切准备就绪，Fire!:)
+进入Protected Mode，还是进入Real Mode，完全靠CR0寄存器的PE标志位来控制：如果PE=1，则CPU切换到PM，否则，则进入RM。
+
+设置CR0-PE位的方法有两种：
+第一种是80286所使用的LMSW指令，后来的80386及更高型号的CPU为了保持向后兼容，都保留了这个指令。这个指令只能影响最低的4 bit，即PE，MP，EM和TS，对其它的没有影响。
+#
+#通过LMSW指令进入Protected Mode
+#
+movw , %ax # protected mode (PE) bit
+lmsw %ax # This is it!
+第二种是Intel所建议的在80386以后的CPU上使用的进入PM的方式，即通过MOV指令。MOV指令可以设置CR0寄存器的所有域的值。
+#
+#通过MOV指令进入Protected Mode
+#
+movl %cr0, %eax
+xorb , %al # set PE = 1
+movl %eax, %cr0 # go!!
+OK，现在已经进入Protected Mode了。
+很简单，right？But It's not over yet!
+
+6. Start Kernel
+我们已经从Real Mode进入Protected Mode，现在我们马上就要启动OS Kernel了。
+OS Kernel运行在32-bit段模式，而当前我们却仍然处于16-bit段模式。这是怎么回事？为了了解这个问题，我们需要仔细探讨一下IA-32的段模式的实现方法。
+IA-32共提供了6个16-bit段寄存器：CS，DS，SS，ES，FS，GS。但事实上，这16-bit只是对程序员可见的部分，但每个寄存器仍然包括64-bit的不可见部分。
+
+可见部分是为了供程序员装载段寄存器，但一旦装载完成，CPU真正使用的就只是不可见部分，可见部分就完全没有用了。
+不可见部分存放的内容是什么？具体格式我没有看到相关资料，但可以确定的是隐藏部分的内容和段描述符的内容是一致的（请参考段描述的格式），只不过格式可能不完全相同。但格式对我们理解这一点并不重要，因为程序员不可能能够直接操作它。
+我们以CS寄存器为例，对于其它寄存器也是一样的：
+在Real Mode下，当我们执行一个装载CS寄存器的指令的时候（jmp，call，ret等），相关的值会被装入CS寄存器的可见部分，但同时CPU也会根据可见部分的内容来设置不可见部分。比如我们执行"ljmp x1234, $go "之后，CS寄存器的可见部分的内容就是1234h，同时，不可见部分的32-bit Base Address域被设置为00001234h，20-bit的Limit域被设置为固定值10000h，也就是64 KB，Access Information部分的其它值我们不去考虑，只考虑其D/B位，由于执行此指令时处于Real Mode模式，所以D/B被设置为0，表示此段是一个16-bit段。当对CS寄存器的可见部分和不可见部分的内容都被设置之后，CS寄存器的装载工作完成。随后当CPU需要通过CS的内容进行地址运算的时候，则仅仅引用不可见部分。
+在Protected Mode下，当我们执行一个装载CS寄存器的指令的时候，段选择子（Segment Selector）被装入CS寄存器的可见部分，同时CPU根据此选择子到相应的描述符表中（GDT或LDT）找到相应的段描述符并将其内容装载入CS寄存器的不可见部分。随后CPU当需要通过CS的内容进行地址运算的时候，也仅仅引用不可见部分。
+从上面的描述可以看出，事实上CPU在引用段寄存器的内容进行地址运算时，Real Mode和Protected Mode是一致的。另外，也明白了为什么我们在Real Mode下设置的段寄存器的内容到了Protected Mode下仍然引用的是16-bit段。
+那么我们如何将CS设置为引用32-bit段？方法就像我们前面所讨论的，使用jmp或call指令，引用一个段选择子，到GDT中装载一个引用32-bit段的段描述符。
+需要注意的是，如果CS寄存器的内容指出当前是一个16-bit段，那么当前的地址模式也就是16-bit地址模式，这与你当前是出于Real Mode还是Protected Mode无关。而我们装载32-bit段的jmp指令或call指令必须使用的是32-bit地址模式。而我们当前的boot部分代码是16-bit代码，所以我们必须在此jmp/call指令前加上地址转换前缀代码66h。
+下面的例子就是使用jmp指令装入32-bit段。Jmpi指令的含义是段间跳转，其Opcode为Eah，其格式为：jmpi Offset, Segment Selector。
+# 由于当前的代码是16-bit代码，而我们要执行32-bit地址模式的指令，指令前
+# 需要有地址模式切换前缀66h，如果我们直接写jmp指令，由编译器来生成代码
+# 的话，是无法作到这一点的，所以我们直接写相关数据。
+  .byte 0x66, 0xea # prefix + jmpi-opcode
+  .long 0x1000  # Offset
+  .word __KERNEL_CS # CS segment selector
+上面的代码相当于32-bit指令：
+jmpi 0x1000,__KERNEL_CS
+如果__KERNEL_CS段选择子所引用的段描述符设置的段空间为线形地址[0，4 GB]，而我们将OS Kernel放在物理地址1000h，那么此jmpi指令就跳转到OS Kernel的入口处，并开始执行它。
+此时，Booting阶段结束，OS正式开始运行！</pre>
+                
+                
+
+
+                
+                
+             </div>
+             <div class="details">
+                <div id="layer-share" class="layer-share">
+                    <div id="layer-share-inner" class="box-rod round-block-gray layer-share-inner">
+                        <div class="rod1"></div>
+                        <div class="rod2"></div>
+                        <div class="rod3"></div>
+                        <div class="rod">
+                            <div class="layer-share-kernel">
+                                <div class="share-hd">分享给你的朋友吧：</div>
+                                <ul class="share-list">
+                                   <li><a href="#" target="_top" title="分享到itieba" class="icon i-itieba share-itieba-e">i贴吧</a> </li>
+                                   <li><a href="#" target="_top" title="分享到新浪微博" class="icon i-sina share-sina-e">新浪微博</a></li>
+                                   <li><a href="#" target="_top" title="分享到腾讯微博" class="icon i-qqwb share-qqwb-e">腾讯微博</a></li>
+                                   <li><a href="#" target="_top" title="分享到QQ空间" class="icon i-qqzone share-qqzone-e">QQ空间</a></li>
+                                   <li><a href="#" target="_top" title="分享到人人网" class="icon i-renren share-renren-e">人人网</a></li>
+                                   <li><a href="#" target="_top" title="分享到豆瓣" class="icon i-douban share-douban-e">豆瓣</a></li>
+                                   <li><a href="#" target="_top" title="分享到MSN" class="icon i-msn share-msn-e">MSN</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="rod3"></div>
+                        <div class="rod2"></div>
+                        <div class="rod4"></div>
+                        <div id="share-arrow" class="share-arrow"></div>
+                    </div>
+                </div>
+            <div class="value-block" id="btn-value">
+                    <div class="value-tip" style="display: none;">对我有帮助</div>
+                    <div class="value-num">8</div>
+                </div>
+                <div class="time align-r">
+                    
+                    
+                    
+                    <span>回答时间：2007-11-17 14:11</span>
+                    <span class="v-split">|</span>
+                    <span class="accuse-link"><a log="besanswer.remark.entrance" href="http://zhidao.baidu.com/remark/39168925.html" target="_top">我来评论</a></span>
+                    
+                </div>
+                <div class="clear"></div>
+            </div>
+
+
+
+<div class="best-replyer">
+    <div class="avarta">
+        <div class="img">
+            <a log="bestreplyer.userhead.click" href="http://passport.baidu.com/?business&amp;aid=6&amp;un=kfbbtdut#2" target="_top">    <img uid="8a686b666262746475745600" uname="kfbbtdut" class="user-head-img" src="r6s1g6.gif" height="48" width="48">
+</a>        </div>
+        <div class="ask-btn align-c">
+            <a log="bestreplyer.icon.askhelp" href="#" onclick="FixedAsk.init('kfbbtdut');return false" class="button b-askhelp">向TA求助</a>
+        </div>
+    </div>
+    <div class="carefield ml10">
+        <p>
+            <span class="gray">回答者：</span>
+            <a log="bestreplyer.username.click" href="http://passport.baidu.com/?business&amp;aid=6&amp;un=kfbbtdut#2" target="_top" uid="8a686b666262746475745600" uname="kfbbtdut" class="user-name">kfbbtdut</a>
+
+
+            
+            
+            <span class="v-split">|</span>
+            <a log="bestreplyer.icon.grade" target="_top" href="http://www.baidu.com/search/zhidao_help.html#%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E5%A4%B4%E8%A1%94">六级</a>
+            
+            
+        </p>
+        <p>
+        <span class="gray">擅长领域：</span>
+        
+        
+            
+            <a log="bestreplyer.link.carefield" href="http://zhidao.baidu.com/browse/74" target="_top">电脑/网络</a>
+            
+            <a log="bestreplyer.link.carefield" href="http://zhidao.baidu.com/browse/82" target="_top">商业/理财</a>
+            
+            <a log="bestreplyer.link.carefield" href="http://zhidao.baidu.com/browse/201" target="_top">理工学科</a>
+            
+        
+        
+        </p>
+        <p>
+        <span class="gray">参加的活动：</span>
+        
+        
+        <span class="gray f12">暂时没有参加的活动</span>
+        </p>
+    </div>
+    <div class="clear"></div>
+</div>
+
+            
+            <div class="reply-data" id="data-136875910">
+    <input name="id" value="136875910" type="hidden">
+    <input name="userId" value="5662858" type="hidden">
+    <input name="imUserId" value="8a686b666262746475745600" type="hidden">
+    <input name="userName" value="kfbbtdut" type="hidden">
+    <input name="userNameEncode" value="kfbbtdut" type="hidden">
+    <input name="isUnloginReply" value="0" type="hidden">
+    <input name="isAnonymousReply" value="0" type="hidden">
+    <input name="mapUrl" value="" type="hidden">
+    <input name="refer" value="" type="hidden">
+    <input name="pid" value="" type="hidden">
+    <input name="replyasknum" value="0" type="hidden">
+</div>
+        </div>
+    </div>
+    
+
+<div id="extra-panel" class="extra-panel">
+
+
+
+<!-- relative-panel -->
+
+<div class="box-gray mb10 relative-panel" id="relative-panel">
+
+	<div class="header">
+        <span class="icon i-relatedanswer"><strong class="relative-panel-title">相关内容</strong></span>
+    </div>
+
+    <div class="body" id="relative-body-0">
+        <ul class="mb10">
+            
+            <li>
+               <span class="details">2009-7-31</span>
+                <a log="relative.title.click" href="http://zhidao.baidu.com/question/109287343.html?fr=qrl&amp;cid=86&amp;index=1" target="_top">请教下什么是实模式和保护模式，还有虚拟8086模式！</a>
+                
+                
+                <span class="mid">
+                    <span title="回答获得9个好评" class="icon i-thanks red">9</span>
+                </span>
+                
+            </li>
+            
+            <li>
+               <span class="details">2010-12-15</span>
+                <a log="relative.title.click" href="http://zhidao.baidu.com/question/205948847.html?fr=qrl&amp;cid=86&amp;index=2" target="_top">请用通俗的话帮我解释下实模式，保护模式和虚拟86模式的区别</a>
+                
+                
+            </li>
+            
+            <li>
+               <span class="details">2007-8-30</span>
+                <a log="relative.title.click" href="http://zhidao.baidu.com/question/34215908.html?fr=qrl&amp;cid=86&amp;index=3" target="_top">汇编语言中如何进入实模式 保护模式和虚拟86模式</a>
+                
+                
+                <span class="mid">
+                    <span title="回答获得28个好评" class="icon i-thanks red">28</span>
+                </span>
+                
+            </li>
+            
+            <li>
+               <span class="details">2007-11-16</span>
+                <a log="relative.title.click" href="http://zhidao.baidu.com/question/38941532.html?fr=qrl&amp;cid=86&amp;index=4" target="_top">Returnil虚拟影子系统 错误删除 原文件丢失了 但保护模式还开着</a>
+                
+                
+                <span class="mid">
+                    <span title="回答获得1个好评" class="icon i-thanks red">1</span>
+                </span>
+                
+            </li>
+            
+            <li>
+               <span class="details">2009-3-16</span>
+                <a log="relative.title.click" href="http://zhidao.baidu.com/question/88174745.html?fr=qrl&amp;cid=86&amp;index=5" target="_top">为什么保护模式下CPU不直接用一个寄存器来确定目标地址</a>
+                
+                
+                <span class="mid">
+                    <span title="回答获得3个好评" class="icon i-thanks red">3</span>
+                </span>
+                
+            </li>
+            
+        </ul>
+        
+            
+        
+        
+		
+    </div>
+</div>
+
+
+
+<!-- relative-panel -->
+<div class="box-gray mb10 push-panel" id="push-panel" style=""><div class="header"><span class="icon i-waitinganswer"><strong class="push-panel-title">等待您来回答</strong></span></div><div class="body"><ul id="push-ul"><li class="cle"><span class="push-ans-num">1回答</span><span class="push-score">5</span><a log="push.title.click" class="push-ans-title" href="http://zhidao.baidu.com/question/313165837.html?push=ql" target="_top" title="你好，想请教你个问题">你好，想请教你个问题</a></li><li class="cle"><span class="push-ans-num">0回答</span><a log="push.title.click" class="push-ans-title" href="http://zhidao.baidu.com/question/313165783.html?push=ql" target="_top" title="内存GB K mb 怎么排序的">内存GB K mb 怎么排序的</a></li><li class="cle"><span class="push-ans-num">2回答</span><a log="push.title.click" class="push-ans-title" href="http://zhidao.baidu.com/question/313165765.html?push=ql" target="_top" title="我家机子是xp系统，i5 2300的cpu,4G内存，gt430显卡玩孤岛危机2卡不？">我家机子是xp系统，i5 2300的cpu,4G内存，gt430显卡玩孤岛危机2卡不？</a></li><li class="cle"><span class="push-ans-num">0回答</span><a log="push.title.click" class="push-ans-title" href="http://zhidao.baidu.com/question/313165717.html?push=ql" target="_top" title="赛扬D 3.06 347 512K/533 C4D 3.06 775适合哪些主板,915GV主板是否适合">赛扬D 3.06 347 512K/533 C4D 3.06 775适合哪些主板,915GV主板是否适合</a></li><li class="cle"><span class="push-ans-num">0回答</span><a log="push.title.click" class="push-ans-title" href="http://zhidao.baidu.com/question/313165713.html?push=ql" target="_top" title="听音乐没噪音，就是玩游戏有啊，">听音乐没噪音，就是玩游戏有啊，</a></li><li class="cle"><span class="push-ans-num">0回答</span><span class="push-score">5</span><a log="push.title.click" class="push-ans-title" href="http://zhidao.baidu.com/question/313165653.html?push=ql" target="_top" title="请问怎样在win7上调为独显啊？玩实况2011老说显存不够！！我电脑显存770，也是独显啊··求解啊！">请问怎样在win7上调为独显啊？玩实况2011老说显存不够！！我电脑显存7...</a></li><li class="cle"><span class="push-ans-num">1回答</span><span class="push-score">50</span><a log="push.title.click" class="push-ans-title" href="http://zhidao.baidu.com/question/313165482.html?push=ql" target="_top" title="组装的电脑那些插头有没有多余的。">组装的电脑那些插头有没有多余的。</a></li><li class="cle"><span class="push-ans-num">0回答</span><a log="push.title.click" class="push-ans-title" href="http://zhidao.baidu.com/question/313165369.html?push=ql" target="_top" title="台式电脑键盘失灵 A Z">台式电脑键盘失灵 A Z</a></li></ul><div class="push-more"><a href="http://zhidao.baidu.com/browse/?lm=17" target="_top">更多等待您来回答的问题&gt;&gt;</a></div><div style="clear: both; font-size: 0px; line-height: 0px;"></div></div></div>
+
+<div class="box-gray share-panel mb10" id="share-panel">
+    <div class="details">
+    
+    <span class="black">分享到：</span>
+        <a href="#" target="_top" title="分享到itieba" class="icon i-itieba share-itieba-e"></a>
+        <a href="#" target="_top" title="分享到新浪微博" class="icon i-sina share-sina-e"></a>
+        <a href="#" target="_top" title="分享到腾讯微博" class="icon i-qqwb share-qqwb-e"></a>
+        <a href="#" target="_top" title="分享到QQ空间" class="icon i-qqzone share-qqzone-e"></a>
+        <a href="#" target="_top" title="分享到人人网" class="icon i-renren share-renren-e"></a>
+        <a href="#" target="_top" title="分享到豆瓣" class="icon i-douban share-douban-e"></a>
+        <a href="#" target="_top" title="分享到MSN" class="icon i-msn share-msn-e"></a>
+    </div>
+    <a name="share-anchor" style="float: left; font-size: 0pt; height: 0pt; line-height: 0; margin: 0pt; padding: 0pt;" id="share-anchor">&nbsp;</a>
+</div>
+</div>
+
+<div class="ad-fc-down">
+    <div style="width: 100%; position: relative; margin-bottom: 10px; font-size: 12px;">
+    <div style="border: 1px solid rgb(214, 214, 214); padding: 8px 11px 8px 9px;">
+        <div style="white-space: nowrap; width: 100%; overflow: hidden; padding-left: 1px; line-height: 20px;">
+            
+            
+			<span style="color: rgb(102, 102, 102); float: right;">推广链接</span>
+			<a target="_top" href="http://www.baidu.com/baidu.php?url=af0000jebJsJB4TnKXp68EIhUZpSgKhgkp1sYeRnTbtaqes-gwA_u-9N7xCje838HRpnPXV1XKxbfN8X-6aCOk5Ed1mbWAmgIFBbycvK_E5fx8EBR3lHmyD2GXUL.7R_K5fhZKfxqamRkRFbC69B6WHPqj3R4LpqU3R4lQCypjLwwswGhS9t2U_eVXVt2TO61tjGJPvIvEyS7rXEhGxvkr3ryZZn_nYQAHkzUS26.U1Yk0ZDqYe2tO6KY5UAkEJMflTHB_rz4Jtoi0A-V5Hc1r0KL5fKM5g93n0KdpHY0TA-b5HD0mv-b5H00Ugfqn0KopHYs0ANGujYs0AdGujYs0APzm1YknHb1n0" style="font-size: 14px;"><font color="#C60A00">北京虚拟</font>办公室 - 首月半价!</a>
+			<br><a href="http://www.baidu.com/baidu.php?url=af0000jebJsJB4TnKXp68EIhUZpSgKhgkp1sYeRnTbtaqes-gwA_u-9N7xCje838HRpnPXV1XKxbfN8X-6aCOk5Ed1mbWAmgIFBbycvK_E5fx8EBR3lHmyD2GXUL.7R_K5fhZKfxqamRkRFbC69B6WHPqj3R4LpqU3R4lQCypjLwwswGhS9t2U_eVXVt2TO61tjGJPvIvEyS7rXEhGxvkr3ryZZn_nYQAHkzUS26.U1Yk0ZDqYe2tO6KY5UAkEJMflTHB_rz4Jtoi0A-V5Hc1r0KL5fKM5g93n0KdpHY0TA-b5HD0mv-b5H00Ugfqn0KopHYs0ANGujYs0AdGujYs0APzm1YknHb1n0" id="bdfs0" target="_top" style="text-decoration: none;"><font color="#000000">申请<font color="#C60A00">北京虚拟</font>办公室服务,享受首月半价优惠!详情咨询+86(10)5811 1895顶级服务式办公..</font>
+			<span style="color: rgb(0, 128, 0);">www.executivecentre.com</span></a>
+			
+            <div style="height: 11px; overflow: hidden;"></div>
+			
+			<a target="_top" href="http://www.baidu.com/baidu.php?url=af0000jp7W_nESoUlP0x1ZO4NWezSER0HfWka4VZZMy5wMactmxv36XtplT1MATovVPGWZ4cSiLEs9d769ZGPq-pccLtX6BcPmDGMhai4bFpQ6hIkg_cLZ0KT0rX.7R_auroKZzfTnXBra2ZHZKsdu3pC32QnN1tYDpyuCpb4MkF6OKMS9tdj01wIodE9HMziqZxVHC3ZHgnmx5u9LetrOv3x5Gse5gjES8Z1LmIMVseO5j4e_r1I9qEs3x5I9qEM9qEu9tqvZu33xgv3x5ksSLkseOodC89uC5IDk9tS1jlenr1v3x5GsS8ejlS5gAOlcggFmOZ1OBxSEO7Ows4Q5kJu1NnEtE9OZoA-Wdukm7QSvFLKzs34-9h9movUPOBC.U1Yz0ZDqYe2tO6KY5TM58J5flTHB_rz4JegmdoT0pyYqnWn30ZTq0ATqXZ6s0ZNG5fKspyfqnfKWpyfqn0KVIjYs0AVG5H00uy-b5H00Uy-b5H00mLFW5HnznHRz" style="font-size: 14px;">上海<font color="#C60A00">虚拟</font>办公<font color="#C60A00">地址</font></a>
+			<br><a href="http://www.baidu.com/baidu.php?url=af0000jp7W_nESoUlP0x1ZO4NWezSER0HfWka4VZZMy5wMactmxv36XtplT1MATovVPGWZ4cSiLEs9d769ZGPq-pccLtX6BcPmDGMhai4bFpQ6hIkg_cLZ0KT0rX.7R_auroKZzfTnXBra2ZHZKsdu3pC32QnN1tYDpyuCpb4MkF6OKMS9tdj01wIodE9HMziqZxVHC3ZHgnmx5u9LetrOv3x5Gse5gjES8Z1LmIMVseO5j4e_r1I9qEs3x5I9qEM9qEu9tqvZu33xgv3x5ksSLkseOodC89uC5IDk9tS1jlenr1v3x5GsS8ejlS5gAOlcggFmOZ1OBxSEO7Ows4Q5kJu1NnEtE9OZoA-Wdukm7QSvFLKzs34-9h9movUPOBC.U1Yz0ZDqYe2tO6KY5TM58J5flTHB_rz4JegmdoT0pyYqnWn30ZTq0ATqXZ6s0ZNG5fKspyfqnfKWpyfqn0KVIjYs0AVG5H00uy-b5H00Uy-b5H00mLFW5HnznHRz" id="bdfs1" target="_top" style="text-decoration: none;"><font color="#000000">使用<font color="#C60A00">虚拟</font>办公室,不再错失任何商机.限时优惠再送2个月,立即登记!</font>
+			<span style="color: rgb(0, 128, 0);">www.Regus.cn/Shanghai</span></a>
+			
+            <div style="height: 11px; overflow: hidden;"></div>
+			
+			<a target="_top" href="http://www.baidu.com/baidu.php?url=af0000j41lxI6A1j90wn0uBCs68vqagkaLMbvotngsSmEO8pkJHLqOUmVUfABH31yV22vVx177PJ95IoXwTp6eJQKKjZvjDdn75i1_JLv9-fXxMl7Ql0H935rhHR.7R_aPnLYf8hkYswGhS9t2U_OY5hCmAprIvEyS7nTZ66EiO2OPKV4qt7jHzk8sHfGmEukmr8a9G4I2UM3PQDrrZo6CpXy6hUik9tqvZutrZx33x5_sSEVsSL3T5M_seqSZxeT5MY3IMo9LOgj4e_r1v3IOM9tqvZu8sSL3T5M8sSL1sSL_l32AM-9I7fH7fmtS9hA9Mqxqo-O3El5QgdsRP5Qa1Gk_EdwnxCrk4OO0Mwsrh8WREemMTZQjWhyAp7WIuu3qB6.U1Y10ZDqYe2tO6KY5UAkEJMflTHB_rz4Jtoi0A-V5Hc1r0KL5fKM5g93n0KdpHY0TA-b5HD0mv-b5H00Ugfqn0KopHYs0ANGujYs0AdGujYs0APzm1Y4rH61" style="font-size: 14px;"><font color="#C60A00">北京虚拟</font>办公室优惠-首月半价!</a>
+			<br><a href="http://www.baidu.com/baidu.php?url=af0000j41lxI6A1j90wn0uBCs68vqagkaLMbvotngsSmEO8pkJHLqOUmVUfABH31yV22vVx177PJ95IoXwTp6eJQKKjZvjDdn75i1_JLv9-fXxMl7Ql0H935rhHR.7R_aPnLYf8hkYswGhS9t2U_OY5hCmAprIvEyS7nTZ66EiO2OPKV4qt7jHzk8sHfGmEukmr8a9G4I2UM3PQDrrZo6CpXy6hUik9tqvZutrZx33x5_sSEVsSL3T5M_seqSZxeT5MY3IMo9LOgj4e_r1v3IOM9tqvZu8sSL3T5M8sSL1sSL_l32AM-9I7fH7fmtS9hA9Mqxqo-O3El5QgdsRP5Qa1Gk_EdwnxCrk4OO0Mwsrh8WREemMTZQjWhyAp7WIuu3qB6.U1Y10ZDqYe2tO6KY5UAkEJMflTHB_rz4Jtoi0A-V5Hc1r0KL5fKM5g93n0KdpHY0TA-b5HD0mv-b5H00Ugfqn0KopHYs0ANGujYs0AdGujYs0APzm1Y4rH61" id="bdfs2" target="_top" style="text-decoration: none;"><font color="#000000">在线申请世服宏图<font color="#C60A00">虚拟</font>办公室, 即可享获首月半价优惠!优惠包括,通讯,<font color="#C60A00">地址</font>及会议配套..</font>
+			<span style="color: rgb(0, 128, 0);">www.servcorp.com.cn</span></a>
+			
+        </div>
+    </div>
+</div>
+</div>
+
+            </div>
+        </div>
+        <div class="l-aside span-10">
+                <div class="box-rod mb10 round-block-gray login-panel">
+    <div class="rod1"></div><div class="rod2"></div><div class="rod3"></div>
+    <div class="rod">
+    
+    <div id="login-kernel" class="login-kernel">
+        <form action="https://passport.baidu.com/?login" id="pass-login-form" name="pass-login-form" method="post">
+            <p class="pass-username">
+                <label for="login-username">用户名：</label>
+                <input id="login-username" name="username" value="" type="text">
+            </p>
+            <p class="pass-password">
+                <label for="login-password">密<span style="visibility: hidden;">码</span>码：</label>
+                <input id="login-password" name="password" value="" type="password">
+            </p>
+            <p class="pass-mem_pass">
+                <input checked="checked" name="mem_pass" value="" id="login-mem-pass" type="checkbox">
+                <label for="login-mem-pass">记住我的登录状态</label>
+            </p>
+            <p class="pass-submit">
+                <button type="submit" id="login-submit-btn" class="operation">登&nbsp;录</button>
+                <a target="_top" href="http://passport.baidu.com/?getpass_index">忘记密码</a>
+                <input name="tpl" value="ik4" type="hidden">
+            </p>
+        </form>
+    </div>
+    <div id="reg-kernel" class="reg">
+        <a class="f12" log="user.reg" href="https://passport.baidu.com/?reg&amp;tpl=ik4" target="_top"><span>注册百度账号，遨游知识海洋</span></a>
+    </div>
+    
+    
+    </div>
+    <div class="rod3"></div><div class="rod2"></div><div class="rod4"></div>
+</div>
+                
+                
+                
+                <div id="qb-ad-cpro"><!--STATUS OK--><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td>
+
+
+<div class="r" id="bdfs0"><a id="dfs0" href="http://www.baidu.com/baidu.php?url=af0000jZEMb2M6hZvL2Cpw0UBVYDsKSJ_dqbYFmu0oueUwqAy0JOO1CgdQDamsBZNBRGvDFoFu_xPkuBUvD2MIWxissFT-HM17jB39DoHDzW3Y6Jx7sl3Dc-6H0h.7R_K5fhZKfxqamRkRFbC69B6WHPqj3R4LpqU3R4lQCypjLwwswGhS9t2U_eVXVt2TO61tjGJPvIvEyS7rXEhGxvkr3ryZZn_nYQAHkzUS26.U1Yk0ZDqYe2tO6KY5UAkEJMflTHB_rz4Jtoi0A-V5HcsPsKL5fKM5g93n0KdpHY0TA-b5HD0mv-b5H00Ugfqn0KopHYs0ANGujYs0AdGujYs0APzm1YkP10zP6" target="_top"><font><font color="#C60A00">北京虚拟</font>办公室 - 首月半价!</font></a><br>
+<span><a href="http://www.baidu.com/baidu.php?url=af0000jZEMb2M6hZvL2Cpw0UBVYDsKSJ_dqbYFmu0oueUwqAy0JOO1CgdQDamsBZNBRGvDFoFu_xPkuBUvD2MIWxissFT-HM17jB39DoHDzW3Y6Jx7sl3Dc-6H0h.7R_K5fhZKfxqamRkRFbC69B6WHPqj3R4LpqU3R4lQCypjLwwswGhS9t2U_eVXVt2TO61tjGJPvIvEyS7rXEhGxvkr3ryZZn_nYQAHkzUS26.U1Yk0ZDqYe2tO6KY5UAkEJMflTHB_rz4Jtoi0A-V5HcsPsKL5fKM5g93n0KdpHY0TA-b5HD0mv-b5H00Ugfqn0KopHYs0ANGujYs0AdGujYs0APzm1YkP10zP6" target="_top" style="text-decoration: none;"><font color="#000000">申请<font color="#C60A00">北京虚拟</font>办公室服务,享受首月半价优惠!详情咨询+86(10)5811 1895顶级服务式办公..</font><br><font color="#008000">www.executivecentre.com</font></a></span>
+</div><br>
+
+
+
+<div class="r" id="bdfs1"><a id="dfs1" href="http://www.baidu.com/baidu.php?url=af0000j6Gaz-GSLOe0N5SrRwLzFR8Tc2mOXK0PUE_3RE0F1ES434ANJlEJv_WkErfcH0GcZ1SOZgN_HZgtIR_nINTFV42oSlOjyJDBr04ByxU2ffSdKIvgiUdpwa.7R_auroKZzfTnXBra2ZHZKsdu3pC32QnN1tYDpyuCpb4MkF6OKMS9tdj01wIodE9HMziqZxVHC3ZHgnmx5u9LetrOv3x5Gse5gjES8Z1LmIMVseO5j4e_r1I9qEs3x5I9qEM9qEu9tqvZu33xgv3x5ksSLkseOodC89uC5IDk9tS1jlenr1v3x5GsS8ejlS5gAOlcggFmOZ1OBxSEO7Ows4Q5kJu1NnEtE9OZoA-Wdukm7QSvFLKzs34-9h9movUPOBC.U1Yz0ZDqYe2tO6KY5TM58J5flTHB_rz4JegmdoT0pyYqnW0L0ZTq0ATqXZ6s0ZNG5fKspyfqnfKWpyfqn0KVIjYs0AVG5H00uy-b5H00Uy-b5H00mLFW5HfYrj0" target="_top"><font>上海<font color="#C60A00">虚拟</font>办公<font color="#C60A00">地址</font></font></a><br>
+<span><a href="http://www.baidu.com/baidu.php?url=af0000j6Gaz-GSLOe0N5SrRwLzFR8Tc2mOXK0PUE_3RE0F1ES434ANJlEJv_WkErfcH0GcZ1SOZgN_HZgtIR_nINTFV42oSlOjyJDBr04ByxU2ffSdKIvgiUdpwa.7R_auroKZzfTnXBra2ZHZKsdu3pC32QnN1tYDpyuCpb4MkF6OKMS9tdj01wIodE9HMziqZxVHC3ZHgnmx5u9LetrOv3x5Gse5gjES8Z1LmIMVseO5j4e_r1I9qEs3x5I9qEM9qEu9tqvZu33xgv3x5ksSLkseOodC89uC5IDk9tS1jlenr1v3x5GsS8ejlS5gAOlcggFmOZ1OBxSEO7Ows4Q5kJu1NnEtE9OZoA-Wdukm7QSvFLKzs34-9h9movUPOBC.U1Yz0ZDqYe2tO6KY5TM58J5flTHB_rz4JegmdoT0pyYqnW0L0ZTq0ATqXZ6s0ZNG5fKspyfqnfKWpyfqn0KVIjYs0AVG5H00uy-b5H00Uy-b5H00mLFW5HfYrj0" target="_top" style="text-decoration: none;"><font color="#000000">使用<font color="#C60A00">虚拟</font>办公室,不再错失任何商机.限时优惠再送2个月,立即登记!</font><br><font color="#008000">www.Regus.cn/Shanghai</font></a></span>
+</div><br>
+
+
+
+<div class="r" id="bdfs2"><a id="dfs2" href="http://www.baidu.com/baidu.php?url=af0000jCWNqJGpsrtDMHoF25jEjlLZIb6NUqVSh0muiIbznbYflAj0XyYLZxEPTrNc_QqDq_175v6O8EOZB1DOsHPw-vVjFBdUPYns5NOuAXyXZRP1bhmQDD1UED.7R_aPnLYf8hkYswGhS9t2U_OY5hCmAprIvEyS7nTZ66EiO2OPKV4qt7jHzk8sHfGmEukmr8a9G4I2UM3PQDrrZo6CpXy6hUik9tqvZutrZx33x5_sSEVsSL3T5M_seqSZxeT5MY3IMo9LOgj4e_r1v3IOM9tqvZu8sSL3T5M8sSL1sSL_l32AM-9I7fH7fmtS9hA9Mqxqo-O3El5QgdsRP5Qa1Gk_EdwnxCrk4OO0Mwsrh8WREemMTZQjWhyAp7WIuu3qB6.U1Y10ZDqYe2tO6KY5UAkEJMflTHB_rz4Jtoi0A-V5HcsPsKL5fKM5g93n0KdpHY0TA-b5HD0mv-b5H00Ugfqn0KopHYs0ANGujYs0AdGujYs0APzm1YkrHDLPf" target="_top"><font><font color="#C60A00">北京虚拟</font>办公室优惠-首月半价!</font></a><br>
+<span><a href="http://www.baidu.com/baidu.php?url=af0000jCWNqJGpsrtDMHoF25jEjlLZIb6NUqVSh0muiIbznbYflAj0XyYLZxEPTrNc_QqDq_175v6O8EOZB1DOsHPw-vVjFBdUPYns5NOuAXyXZRP1bhmQDD1UED.7R_aPnLYf8hkYswGhS9t2U_OY5hCmAprIvEyS7nTZ66EiO2OPKV4qt7jHzk8sHfGmEukmr8a9G4I2UM3PQDrrZo6CpXy6hUik9tqvZutrZx33x5_sSEVsSL3T5M_seqSZxeT5MY3IMo9LOgj4e_r1v3IOM9tqvZu8sSL3T5M8sSL1sSL_l32AM-9I7fH7fmtS9hA9Mqxqo-O3El5QgdsRP5Qa1Gk_EdwnxCrk4OO0Mwsrh8WREemMTZQjWhyAp7WIuu3qB6.U1Y10ZDqYe2tO6KY5UAkEJMflTHB_rz4Jtoi0A-V5HcsPsKL5fKM5g93n0KdpHY0TA-b5HD0mv-b5H00Ugfqn0KopHYs0ANGujYs0AdGujYs0APzm1YkrHDLPf" target="_top" style="text-decoration: none;"><font color="#000000">在线申请世服宏图<font color="#C60A00">虚拟</font>办公室, 即可享获首月半价优惠!优惠包括,通讯,<font color="#C60A00">地址</font>及会议配套..</font><br><font color="#008000">www.servcorp.com.cn</font></a></span>
+</div><br>
+
+
+
+<div class="r" id="bdfs3"><a id="dfs3" href="http://www.baidu.com/baidu.php?url=af0000jMbQEv-7eQBIBqDud_D2CwtgAtq6d2gnJUxAWlAFwFlAe2LZgElgeRE7DCyj0USm9OHb9Qi2aZuGLoPhCYcVPWk5HS7YFI_XFwEltIwudtJADildjh7KVf.DY_KQP7h6h4a-OUDe64mTTzs1f_USrecC0.U1YY0ZDqYe2tO6KY5IjGkr2seQho0A-V5HcsPsKL5fKM5g93n0KdpHY0TA-b5HD0mv-b5H00Ugfqn0KopHYs0ANGujYs0AdGujYs0APzm1YzPHTkn6" target="_top"><font><font color="#C60A00">虚拟</font>办公尽在煜利特010-8419..</font></a><br>
+<span><a href="http://www.baidu.com/baidu.php?url=af0000jMbQEv-7eQBIBqDud_D2CwtgAtq6d2gnJUxAWlAFwFlAe2LZgElgeRE7DCyj0USm9OHb9Qi2aZuGLoPhCYcVPWk5HS7YFI_XFwEltIwudtJADildjh7KVf.DY_KQP7h6h4a-OUDe64mTTzs1f_USrecC0.U1YY0ZDqYe2tO6KY5IjGkr2seQho0A-V5HcsPsKL5fKM5g93n0KdpHY0TA-b5HD0mv-b5H00Ugfqn0KopHYs0ANGujYs0AdGujYs0APzm1YzPHTkn6" target="_top" style="text-decoration: none;"><font color="#000000">位于<font color="#C60A00">北京</font>十大标志性建筑之一的新保利大厦九层.尊贵的通讯<font color="#C60A00">地址</font>,专业的呼叫处理,高效..</font><br><font color="#008000">www.ealated.com</font></a></span>
+</div><br>
+
+
+
+<div class="r" id="bdfs4"><a id="dfs4" href="http://www.baidu.com/baidu.php?url=af0000auOwUy7Vx4r0J1uY-Xc-ODLQ-dycf--BH2kwwTRuzznYiCE6GnZM3IIG91m21Xm8qv7brZ6e-4HJWcDRkT57zHE16Y3xqJJriG86k30zBwjUQf7ukkHTVQ.7b_aWf89Sz-OUDe64mTTzs1f_uPvOG_R.U1Yd0ZDqYe2tO6KY5y9sYrMD3oH3ESc0pyYqnW0L0ZTq0ATqXZ6s0ZNG5fKspyfqnfKWpyfqn0KVIjYs0AVG5H00uy-b5H00Uy-b5H00mLFW5HnkrHT3" target="_top"><font>hp<font color="#C60A00">虚拟</font>带库HP金牌代理商</font></a><br>
+<span><a href="http://www.baidu.com/baidu.php?url=af0000auOwUy7Vx4r0J1uY-Xc-ODLQ-dycf--BH2kwwTRuzznYiCE6GnZM3IIG91m21Xm8qv7brZ6e-4HJWcDRkT57zHE16Y3xqJJriG86k30zBwjUQf7ukkHTVQ.7b_aWf89Sz-OUDe64mTTzs1f_uPvOG_R.U1Yd0ZDqYe2tO6KY5y9sYrMD3oH3ESc0pyYqnW0L0ZTq0ATqXZ6s0ZNG5fKspyfqnfKWpyfqn0KVIjYs0AVG5H00uy-b5H00Uy-b5H00mLFW5HnkrHT3" target="_top" style="text-decoration: none;"><font color="#000000">hp<font color="#C60A00">虚拟</font>带库,HP<font color="#C60A00">虚拟</font>磁带库.<font color="#C60A00">北京</font>利天达成,为您提供专业高效的存储备份解决方案.联系电..</font><br><font color="#008000">www.ltdc.net.cn</font></a></span>
+</div><br>
+
+
+
+<div class="r" id="bdfs5"><a id="dfs5" href="http://www.baidu.com/baidu.php?url=af0000KioXpn_ki6tS77MFg0d0RMfh3oak6qOynFpdZyKY4davZJg-ylRxXGipLo6hKW6PSW_oPcZtc5ln2s8UHBLZKeRXM-ld0wuUpPrLIfU3wu4Zx19SPZTxHW.7b_aPq7qKYiRfn1RZsYRSOXZDkYerV7tIKBPdZKfXlFiOVBIsT_rrumuCyr1u3de70.U1Yv0ZDqYe2tO6KY5UxS1EZAqqjGkr2eosKGUHYznjT0I1Y0u1d3Xj00Iybq0ZKGujYk0APGujYs0AdY5H00pvbqn0K-pyfqn0KVpyfqn0KWThnqPjmvPHn" target="_top"><font>服务器<font color="#C60A00">虚拟</font>化技术,请选实利..</font></a><br>
+<span><a href="http://www.baidu.com/baidu.php?url=af0000KioXpn_ki6tS77MFg0d0RMfh3oak6qOynFpdZyKY4davZJg-ylRxXGipLo6hKW6PSW_oPcZtc5ln2s8UHBLZKeRXM-ld0wuUpPrLIfU3wu4Zx19SPZTxHW.7b_aPq7qKYiRfn1RZsYRSOXZDkYerV7tIKBPdZKfXlFiOVBIsT_rrumuCyr1u3de70.U1Yv0ZDqYe2tO6KY5UxS1EZAqqjGkr2eosKGUHYznjT0I1Y0u1d3Xj00Iybq0ZKGujYk0APGujYs0AdY5H00pvbqn0K-pyfqn0KVpyfqn0KWThnqPjmvPHn" target="_top" style="text-decoration: none;"><font color="#000000">服务器<font color="#C60A00">虚拟</font>化解决方案,权威认证工程师为您服务.<font color="#C60A00">北京</font>,上海地区咨询热线:400 688 8582</font><br><font color="#008000">www.silitone.com</font></a></span>
+</div><br>
+
+
+
+<div class="r" id="bdfs6"><a id="dfs6" href="http://www.baidu.com/baidu.php?url=af00000Rx1Fsha0c-WKUX4lU8CDrGmlO0GLq0XZepAdJXuzRAPVkBSKxwywMkX8TzSeLsgrS_chCZc4ZFuRFqg-VL_9zQZKIW4vg8rnqBy_Q4479plM4Nzg6ml0d.DR_jQ-9dta7QSvFLKzs34-9h9mozUJqz60.U1YL0ZDqYe2tO6KY5IjGkr214Ppd0A-V5HcsPsKL5fKM5g93n0KdpHY0TA-b5HD0mv-b5H00Ugfqn0KopHYs0ANGujYs0AdGujYs0APzm1YvPH0vns" target="_top"><font><font color="#C60A00">虚拟</font>充值 新手开网店必读 开..</font></a><br>
+<span><a href="http://www.baidu.com/baidu.php?url=af00000Rx1Fsha0c-WKUX4lU8CDrGmlO0GLq0XZepAdJXuzRAPVkBSKxwywMkX8TzSeLsgrS_chCZc4ZFuRFqg-VL_9zQZKIW4vg8rnqBy_Q4479plM4Nzg6ml0d.DR_jQ-9dta7QSvFLKzs34-9h9mozUJqz60.U1YL0ZDqYe2tO6KY5IjGkr214Ppd0A-V5HcsPsKL5fKM5g93n0KdpHY0TA-b5HD0mv-b5H00Ugfqn0KopHYs0ANGujYs0AdGujYs0APzm1YvPH0vns" target="_top" style="text-decoration: none;"><font color="#000000"><font color="#C60A00">虚拟</font>充值官方授权,诚招全国总代理 店主开网店半年的真实经历专业售后让新手少走弯路..</font><br><font color="#008000">www.jjcfw.com</font></a></span>
+</div><br>
+
+
+<div class="r">
+<div style="background: none repeat scroll 0% 0% rgb(239, 242, 250); overflow: hidden; padding: 0pt 3px; line-height: 27px; height: 28px;">
+<a href="http://e.baidu.com/" target="_top"><font>来百度推广</font><font color="#c60a00">硬件</font></a>
+</div>
+</div><br></td></tr></tbody></table></div><div class="box-rod mb10 round-block-gray" id="ad-brand-down"><a href="http://ad.doubleclick.net/click;h=v2%7C3E39%7C0%7C0%7C%2a%7Ch;244798718;0-0;0;69143753;31-1%7C1;43515386%7C43533173%7C1;;%3fhttp://zhidao.baidu.com/s/2011zhixuan/index.html?utm_source=Baidu&amp;utm_medium=Baiduknowledge_QBpage_banner_06&amp;utm_campaign=BaiduKnowledge" target="_top"><img src="intel_270x170.jpg"></a></div>
+                
+
+                
+                <div id="wap-iknow-sms" style="margin: 10px 0pt;">
+    <a href="http://zhidao.baidu.com/s/mobile/index.html" target="_top" log="pic.wapiknow.sms">
+        <img src="wapiknow.jpg" alt="无线知道">
+    </a>
+</div>
+        </div>
+    </div>
+</div>
+
+
+                <div id="footer">
+    ©2011 Baidu&nbsp;&nbsp;
+    <a target="_top" href="http://www.baidu.com/duty/">使用百度前必读</a>&nbsp;&nbsp;
+    <a target="_top" href="http://www.baidu.com/search/zhidao_help.html#%E7%9F%A5%E9%81%93%E5%8D%8F%E8%AE%AE">知道协议</a>
+</div>
+            </div>
+
+
+
+        <div style="height: 100px;" id="new-guide-container" class="newuserguide"><div id="newuserguideHandle"></div><div class="guidenote"><p>百度知道是全球最大的问答型知识分享平台</p><ul><li>提问题，排疑解惑</li><li>答疑难，助人为乐</li><li>搜知识，学习提高</li><li>加团队，共同进步</li></ul><div class="clear"></div><p>我们真诚欢迎您加入，分享属于您的精彩~！</p></div><p class="guidbutton"><input class="guidjoin_btn" title="我要加入" id="guidejoinbtn" type="button"></p><div class="guidsearchPanel"><form action="http://zhidao.baidu.com/question/39168925.html" name="guideform" id="guideform"><input class="guideinput blur" value="" name="word" type="text"><input class="guidebutton" value="" id="guidesearchbutton" type="button"><input class="guidebutton" id="guideaskbutton" value="" type="button"> </form></div></div></div>
+
+        
+        
+
+
+    
+<iframe src="index_1.html" style="display: none; position: absolute; border-width: 0px;" class="tangram_sug_sd"></iframe><div style="display: none;" class="tangram_sug_wpr" id="tangram_sug_1314543452975"></div><div style="position: absolute; top: 200px; left: 560px; z-index: 500; display: none;" id="iknowguideegg"><div style="position: absolute; top: 0pt; left: 0pt; width: 300px; height: 35px; cursor: move; z-index: 500;" id="iknowguidehandle"></div><div id="iknowguidecontent"></div></div></body>
+</html>

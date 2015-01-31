@@ -1,0 +1,460 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="zh" xml:lang="zh" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    
+    <meta http-equiv="content-style-type" content="text/css">
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta name="version" content="neblog-1.0">
+    
+<title>程序员面试题精选100题(06)－二元查找树的后序遍历结果[数据结构] - 何海涛的日志 - 网易博客</title>
+<meta name="author" content="zhedahht,何海涛">
+<meta name="keywords" content="程序员面试题精选100题(06)－二元查找树的后序遍历结果[数据结构],日志,何海涛,微软、Google等面试题,网易博客,网易,blog">
+<meta name="description" content="程序员面试题精选100题(06)－二元查找树的后序遍历结果[数据结构],何海涛的网易博客,剑指Offer：名企面试官精讲典型编程题,海纳百川,涛声依旧,点石成金,成就未来">
+  
+    
+    
+  <!--[if lte IE 6]>
+  <style type="text/css">
+    html,body,#blog-163-com-ie6body{height:100%;width:100%;overflow:hidden;}
+    #blog-163-com-ie6body{overflow:auto;overflow-y:scroll;}
+    #blog-163-com{background:none;}
+  </style>
+  <![endif]-->
+  
+  
+  
+  
+  
+  
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body id="blog-163-com" class="nb-body nb-inr nb-prv">
+  <!--[if lte IE 6]><div id="blog-163-com-ie6bodywrap" class=""><![endif]-->
+    <!--[if lte IE 6]><div id="blog-163-com-ie6body" class="nb-body"><![endif]-->
+
+<div class="nb-nbar clearfix" id="blog-163-com-topbar">
+  <div class="pl fl clearfix">
+  <div id="" "="" class="nbw-im fl im im0">
+    <a rel="nofollow" class="lbl bd ia noul " href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://www.163.com/" target="_top" hidefocus="true"><span class="tx">网易</span><span class="iblock icn0 icn0-421">&nbsp;</span></a><div class="nbw-tcd box-shadow bd">
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://news.163.com/">
+            新闻
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://t.163.com/">
+            微博
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://email.163.com/">
+            邮箱
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://photo.163.com/">
+            相册
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://yuedu.163.com/">
+            阅读
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://www.youdao.com/">
+            有道
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://photo.163.com/pp/square/">
+            摄影
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://aipai.163.com?from=163blog">
+            爱拍
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://note.youdao.com/?vendor=163blog">
+            云笔记
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://fm.163.com/?fmblogzx0628">
+            闪电邮
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://m.123.163.com/?frombkcp">
+            手机邮
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://yxp.163.com/">
+            印像派
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://dream.163.com/?from=bkcp">
+            梦幻人生
+          </a>
+        <div class="sep bd space">&nbsp;</div>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://sitemap.163.com/">
+            更多
+          </a>
+        
+    </div>
+  </div>
+                               
+    <span style="margin-left: 0pt;" class="fl iblock space icn1 icn1-4">&nbsp;</span>
+    
+  <div id="" "="" class="nbw-im fl im im10">
+    <a class="lbl bd ia noul " href="http://blog.163.com/?frompersonalbloghome" target="_top" hidefocus="true"><span class="tx">博客</span><span class="iblock icn0 icn0-421">&nbsp;</span></a><div class="nbw-tcd box-shadow bd">
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/services/wapblog.html?frompersonalbloghome">
+            手机博客
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/clone/clone.html?frompersonalbloghome">
+            博客搬家
+          </a>
+          <a class="itm noul youcai " target="_top" hidefocus="true" href="http://blog.163.com/vip.do?frompersonalbloghome">
+            博客VIP服务
+          </a>
+        <div class="sep bd space">&nbsp;</div>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/blog_admin/blog/static/721279201082863728829/?frompersonalbloghome">
+            LiveWriter写博
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/blog_admin/blog/static/721279201092713253500/?frompersonalbloghome">
+            word写博
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/services/mailblog.html?frompersonalbloghome">
+            邮件写博
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/services/emsblog.html?frompersonalbloghome">
+            短信写博
+          </a>
+        <div class="sep bd space">&nbsp;</div>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/showMultiUser.do?frompersonalbloghome">
+            群博客
+          </a>
+          <a class="itm noul youcai " target="_top" hidefocus="true" href="http://blog.163.com/BLOG_YOUCAI/">
+            博客油菜地
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/ht/?frompersonalbloghome">
+            博客话题
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/hot/history/?frompersonalbloghome">
+            博客热点
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://q.163.com/#home?frompersonalbloghome">
+            博客圈子
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/findFriend.do?type=5?frompersonalbloghome">
+            找朋友
+          </a>
+        
+    </div>
+  </div>
+
+    
+    <div class="nbw-im fl im1 im explore"><a class="lbl bd ima spy" href="http://blog.163.com/public/explore/?frompersonalbloghome">发现</a></div>
+    <div class="nbw-im fl im1 im bloggroup"><a class="lbl bd ima spy" href="http://blog.163.com/g/?frompersonalbloghome">小组</a></div>
+    <div class="nbw-im fl im1 im customtheme"><a class="lbl bd ima spy" href="http://blog.163.com/public/theme/?frompersonalbloghome">风格</a></div>
+    <div class="nbw-im fl im1 im seebyway"><a rel="nofollow" title="随便看看" class="lbl bd ima spy" href="http://blog.163.com/randomUser.do">&nbsp;</a></div>
+    
+    <span class="fl iblock space icn1 icn1-4">&nbsp;</span>
+    <div id="topbar_randShowArea" class="fl">
+      <div class="nbw-im fl im1 im randtag"><a style="width: 110px;" target="_top" class="lbl bd ima moveblog randshow" href="http://www.lofter.com/" onclick="window.open('http://www.lofter.com/reg?from=blog');return false;">网易轻博客LOFTER</a></div>
+    </div>
+  </div>
+  <div class="fr pr clearfix">
+    <div id="topbar_loginAndReg" class="fr">
+      <a rel="nofollow" style="margin-left: 10px; color: rgb(255, 119, 0);" class="iblock fr ima" href="http://reg.163.com/reg/reg.jsp?product=blog&amp;url=http://blog.163.com/ntesRegBlank.html&amp;loginurl=http://blog.163.com/" target="_top">创建博客</a>
+      <a rel="nofollow" class="iblock fr ima ztag" href="#">登录</a>
+      <span class="fr iblock space icn1 icn1-4 spx">&nbsp;</span>
+      <div id="topbar_followArea" class="nbw-im fr"><span class="lbl bd ima followit fl ztag"><span class="fl addicon">&nbsp;</span><span class="fl">关注</span></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="blogtoptips phide" id="blog-163-com-toptips">
+ <div class="blogtoptipswrap">
+    <div id="newbulletinstip" class="newbulletinstip phide">
+    <a class="lnknews fc03 m2a tiptag phide" href="http://zhedahht.blog.163.com/blog/static/25411174200725319627/" target="_top"></a><span class="txtnews tiptag phide"></span>&nbsp;&nbsp;&nbsp;<a class="fc03 ul nextorprevnews tiptag phide" href="http://zhedahht.blog.163.com/blog/static/25411174200725319627/" hidefocus="true">显示下一条</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="fc03 ul close tiptag" href="http://zhedahht.blog.163.com/blog/static/25411174200725319627/" hidefocus="true">关闭</a>
+  </div>
+ </div>
+    <div id="$_faxiantip" class="faxiantip phide">
+      <div>
+	    <a class="m2a iblock" href="http://blog.163.com/public/explore/?fromblogbanner" target="_top"></a>
+	    <span class="faxiantag m2a"></span>
+      </div>
+    </div>
+    <div id="$_guanggaotip" class="guanggaotip phide">
+      <div>
+	    
+	    <span class="guanggaotag m2a"></span>
+      </div>
+    </div>
+    <div id="$_lofterInviteTip" class="lofterInviteTip phide">
+      <div>
+	    <a class="m2a iblock" href="http://www.lofter.com/invite/163blog/?email=" target="_top"></a>
+	    <span class="lofterInviteTag m2a"></span>
+      </div>
+    </div>
+</div>  <div class="nb-wrap wsy" id="blog-163-com-main"><div class="nb-are nb-top">
+  <div class="wkg h" id="blog-163-com-banner">
+    
+    <div class="t">
+      <h1 class="n c"><span class="ztag pre">微软、Google等面试题</span></h1>
+      <p class="d c"><span class="ztag pre">剑指Offer：名企面试官精讲典型编程题</span></p>
+    </div>
+    <div class="f h ztag">&nbsp;</div>
+    <a class="x" hidefocus="true" target="_top" href="#"><span class="xx ztag"></span></a>
+  </div>
+</div><div class="nb-are nb-nav">
+  <div class="wkg">
+    <div class="c h">
+      <h2>导航</h2>
+      <ul class="noul clearfix">
+                
+	        <li class="w w0">
+	          <a class="i i0 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/">首页</a>
+	        </li>
+	        <li class="w w1 selected">
+	          <a class="i i1 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/blog/">日志</a>
+	        </li>
+	        <li class="w w2">
+	          <a class="i i2 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/album/">相册</a>
+	        </li>
+	        <li class="w w3">
+	          <a class="i i3 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/music/">音乐</a>
+	        </li>
+	        <li class="w w4">
+	          <a class="i i4 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/collection/">收藏</a>
+	        </li>
+	        <li class="w w5">
+	          <a class="i i5 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/friends/">博友</a>
+	        </li>
+	        <li class="w w6">
+	          <a class="i i6 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/profile/">关于我</a>
+	        </li>
+      </ul><!--
+ --></div>
+    <div class="l h">&nbsp;</div>
+    <div class="r h">&nbsp;</div>
+  </div>
+</div>  <div class="nb-are nb-smt"><div class="wkg h space"><div class="l h">&nbsp;</div><div class="r h">&nbsp;</div><div class="c h">&nbsp;</div></div></div>
+  <div class="nb-are nb-cnt">
+    <div class="wkg">
+      <div class="c wc h clearfix " id="blog-163-com-container">
+  <div class="nb-mdl lcr m-3 " id="-3">
+  <div class="nb-mt lcr th fc02">
+    <div class="c tc th lcr"><h2 class="thide nb-jsc mdl_t_t">日志</h2></div>
+    <div class="r tm th nb-jsc"></div>
+    <div class="l tl th">&nbsp;</div>
+    <div class="r tr th">&nbsp;</div>
+  </div>
+    <div class="nb-mc lcr">
+      <div class="c cc lcr nb-jsc">
+<div class="nbw-ryt ztag clearfix js-fix-098">
+  <div class="right bdwl bds0 bdc0"><div class="cnt ztag"></div></div>
+  <div class="left">
+     <div class="lcnt bdwr bds0 bdc0 ">   
+      <div id="$_divTopLink" class="top fc03 bdwb bdc0 bds2 clearfix">
+        <span class="ilft iblock icn0 icn0-620">&nbsp;</span>
+        <div class="pleft thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/2541117420072432136859/">程序员面试题精选100题(05)－查找最小的k个元素[算法]</a></div>
+        <span class="irgt iblock icn0 icn0-619">&nbsp;</span>
+        <div class="pright thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/254111742007289205219/">程序员面试题精选100题(07)－翻转句子中单词的顺序[算法]</a></div>
+     </div> 
+     <div class="mcnt ztag"> 
+      <div class="nbw-bitm bdwb bds2 bdc0 ">
+        <div class="multicntwrap">
+	      <div class="multicnt">
+	      	<div>
+		      <h3 class="title pre fs1"><span class="tcnt">程序员面试题精选100题(06)－二元查找树的后序遍历结果[数据结构]</span>&nbsp;&nbsp;<span class="bgc0 fc07 fw0 fs0"></span></h3>
+		      <p class="tdep clearfix nbw-act fc06" style="line-height: 20px;">
+		        <span class="pleft">
+		          
+		          <span class="blogsep">2007-03-05 15:01:09</span><span class="blogsep">|&nbsp;&nbsp;分类：</span>
+		          <a class="fc03 m2a" href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=1&amp;c=fks_081075092084086070092074084070080087080066083082" title="树">树</a>
+		          <span class="blogsep" id="$_blogTagTitle">|&nbsp;&nbsp;标签：</span><span class="fc03" id="$_blogTagInfo"><a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E7%BC%96%E7%A8%8B" class="fc03 m2a">编程</a>&nbsp;&nbsp;<a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E5%B0%B1%E4%B8%9A" class="fc03 m2a">就业</a>&nbsp;&nbsp;<a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E6%89%BE%E5%B7%A5%E4%BD%9C" class="fc03 m2a">找工作</a>&nbsp;&nbsp;<a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E5%BE%AE%E8%BD%AF" class="fc03 m2a">微软</a>&nbsp;&nbsp;<a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" class="fc03 m2a">数据结构</a>&nbsp;&nbsp;</span>
+		        </span>
+		        <span class="pright fc07 ztag"><span class="blogsep">|</span><span class="zihao fc03" id="$_fontswitch">字号<span class="zihaoshow  phide" id="$_fontsTypes"><span class="zihaoc bdc0"><span class="stag"></span><span class="fc04 stag">大</span><span class="fc04 stag selected js-fcurrent fc05">中</span><span class="fc04 stag">小</span></span></span></span></span><span class="pright pnt fc03" id="$_blog_subscribe"><span class="iblock icn0 icn0-919">&nbsp;</span><a class="m2a">订阅</a></span>
+		      </p>
+		    </div>
+	      </div>
+        </div>
+        
+        <div>
+        
+        </div>
+        
+        <div class="nbw-blog-start"></div>
+        <div class="bct fc05 fc11 nbw-blog ztag js-fs2"><span style="font-family: SimSun;">题目：输入一个整数数组，判断该数组是不是某二元查找树的后序遍历的结果。如果是返回</span>true<span style="font-family: SimSun;">，否则返回</span>false<span style="font-family: SimSun;">。</span>   <p><span style="font-family: SimSun;">例如输入</span>5<span style="font-family: SimSun;">、</span>7<span style="font-family: SimSun;">、</span>6<span style="font-family: SimSun;">、</span>9<span style="font-family: SimSun;">、</span>11<span style="font-family: SimSun;">、</span>10<span style="font-family: SimSun;">、</span>8<span style="font-family: SimSun;">，由于这一整数序列是如下树的后序遍历结果：</span></p>  <p><span style="">&nbsp;&nbsp;&nbsp; </span><span style="">&nbsp;&nbsp;</span><span style="">&nbsp;&nbsp;</span><span style="">&nbsp;</span>8<br><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/<span style="">&nbsp; </span>\<br><span style="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="">&nbsp; </span>6<span style="">&nbsp;&nbsp;&nbsp; </span>10<br>&nbsp;&nbsp;&nbsp; / \<span style="">&nbsp;&nbsp;&nbsp;</span><span style="">&nbsp;</span>/ \<br><span style="">&nbsp;&nbsp; </span>5<span style="">&nbsp;&nbsp; </span>7<span style="">&nbsp;&nbsp;</span><span style="">&nbsp;</span>9&nbsp;<span style="">&nbsp;</span>11</p>  <p><span style="font-family: SimSun;">因此返回</span>true<span style="font-family: SimSun;">。</span></p>  <p><span style="font-family: SimSun;">如果输入</span>7<span style="font-family: SimSun;">、</span>4<span style="font-family: SimSun;">、</span>6<span style="font-family: SimSun;">、</span>5<span style="font-family: SimSun;">，没有哪棵树的后序遍历的结果是这个序列，因此返回</span>false<span style="font-family: SimSun;">。</span></p>  <p><span style="font-family: SimSun;">分析：这是一道</span>trilogy<span style="font-family: SimSun;">的笔试题，主要考查对二元查找树的理解。</span></p>  <p><span style="font-family: SimSun;">在后续遍历得到的序列中，最后一个元素为树的根结点。从头开始扫描这个序列，比根结点小的元素都应该位于序列的左半部分；从第一个大于跟结点开始到跟结点前面的一个元素为止，所有元素都应该大于跟结点，因为这部分元素对应的是树的右子树。根据这样的划分，把序列划分为左右两部分，我们递归地确认序列的左、右两部分是不是都是二元查找树。</span></p>  <p><span style="font-family: SimSun;">参考代码：</span></p>  <p><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">using</span><span style="font-family: 'Courier New'; font-size: 10pt;"> <span style="color: blue;">namespace</span> std;<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><br></span><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">///////////////////////////////////////////////////////////////////////<br></span><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">// Verify whether a squence of integers are the post order traversal<br></span><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">// of a binary search tree (BST)<br></span><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">// Input: squence - the squence of integers<br></span><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">//<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>length<span style="">&nbsp;&nbsp;</span>- the length of squence<br></span><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">// Return: return ture if the squence is traversal result of a BST,<br></span><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">//<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>otherwise, return false<br></span><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">///////////////////////////////////////////////////////////////////////<br></span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">bool</span><span style="font-family: 'Courier New'; font-size: 10pt;"> verifySquenceOfBST(<span style="color: blue;">int</span> squence[], <span style="color: blue;">int</span> length)<br></span><span style="font-family: 'Courier New'; font-size: 10pt;">{<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">if</span>(squence == NULL || length &lt;= 0)<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">return</span> <span style="color: blue;">false</span>;<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: green;">// root of a BST is at the end of post order traversal squence<br></span></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">int</span> root = squence[length - 1];<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: green;">// the nodes in left sub-tree are less than the root<br></span></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">int</span> i = 0;<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">for</span>(; i &lt; length - 1; ++ i)<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">if</span>(squence[i] &gt; root)<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">break</span>;<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<br><br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: green;">// the nodes in the right sub-tree are greater than the root<br></span></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">int</span> j = i;<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">for</span>(; j &lt; length - 1; ++ j)<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">if</span>(squence[j] &lt; root)<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">return</span> <span style="color: blue;">false</span>;<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<br><br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: green;">// verify whether the left sub-tree is a BST<br></span></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">bool</span> left = <span style="color: blue;">true</span>;<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">if</span>(i &gt; 0)<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>left = verifySquenceOfBST(squence, i);<br><br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: green;">// verify whether the right sub-tree is a BST<br></span></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">bool</span> right = <span style="color: blue;">true</span>;<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">if</span>(i &lt; length - 1)<br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>right = verifySquenceOfBST(squence + i, length - i - 1);<br><br></span><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">return</span> (left &amp;&amp; right);<br></span><span style="font-family: 'Courier New'; font-size: 10pt;">}</span></p><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="font-family: 宋体;" lang="ZH-CN"><font size="3">  <p style="text-indent: 0.5in; margin: 0in 0in 10pt;"><span style="font-family: 宋体;" lang="ZH-CN">本文已经收录到《</span><span style="font-family: 'Calibri','sans-serif';"><a target="_top" href="http://zhedahht.blog.163.com/blog/static/254111742011101624433132/"><font color="#0000ff"><span style="font-family: 宋体;" lang="ZH-CN">剑指</span>Offer<span style="font-family: 宋体;" lang="ZH-CN">——名企面试官精讲典型编程题</span></font></a></span><span style="font-family: 宋体;" lang="ZH-CN">》一书中，有改动，书中的分析讲解更加详细。欢迎关注。</span>这篇博客对应的英文版详见<a target="_top" rel="nofollow" href="http://codercareer.blogspot.com/2011/09/no-06-post-order-traversal-sequences-of.html">http://codercareer.blogspot.com/2011/09/no-06-post-order-traversal-sequences-of.html</a>。欢迎感兴趣的朋友阅读并批评指正。<br><br>&nbsp;&nbsp; &nbsp; &nbsp;博主何海涛对本博客文章享有版权。网络转载请注明出处</p></font></span><a href="http://zhedahht.blog.163.com/"><font color="#990000" face="Calibri" size="3">http://zhedahht.blog.163.com/</font></a><span style="font-family: 宋体;" lang="ZH-CN"><font size="3">。整理出版物请和作者联系。</font></span></span></div>
+        <div class="nbw-blog-end"></div>
+
+        <div>
+		</div>
+		
+        <div>
+		</div>
+		
+		<div>
+      	  <div>
+		  	<div class="wumii-hook"></div>
+		  </div>
+		</div>
+		
+        <div class="ptc phide ztag">
+          <span class="ptcp">
+            <span class="iblock bcmimg">&nbsp;</span>
+            <span class="nbc-0 nbc-0-40 ptcmt ptcmt-2">评论这张</span>
+          </span>
+        </div>
+		<div class="ptc phide ztag">
+          <span class="ptcp">
+            <span class="nbc-0 nbc-0-40 ptcmi">
+              <img src="microblog.png">
+            </span>
+            <span class="nbc-0 nbc-0-40 ptcmt">转发至微博</span>
+          </span>
+        </div>
+        <div class="ptc phide ztag">
+          <span class="ptcp">
+            <span class="nbc-0 nbc-0-40 ptcmi">
+              <img src="microblog.png">
+            </span>
+            <span class="nbc-0 nbc-0-40 ptcmt">转发至微博</span>
+          </span>
+        </div>
+        
+        
+        <div class="nbw-act tbar fc03 clearfix">
+         <div style="height: 24px; line-height: 24px;">
+          <div class="pleft rdif">
+	          <span class="pnt pleft" id="$_spanRecommend"><img class="pclass" src="tuijian.png"></span>
+	        <span id="$_spanShowRecommend" class="pleft rdct  phide">
+	          <span class="pleft ul fc03"><span id="$_spanRecommendCount">0</span>人</span><span class="pleft iblock icn0 icn0-722 nbw-tgl1 nas-icn0fix">&nbsp;</span><span class="pleft iblock icn0 icn0-621 nbw-tgl0 nas-icn0fix">&nbsp;</span><span class="fc07"></span>|&nbsp;
+	        </span>
+	         <span class="fc07 pleft nas-tofix">分享到：</span><span class="nas-wrap pleft"><span id="$_shareBtn_163weibo" title="分享到网易微博" class="nas-itm nas-itm0">&nbsp;</span><span id="$_shareBtn_sinaweibo" title="分享到新浪微博" class="nas-itm nas-itm6">&nbsp;</span><span id="$_shareBtn_qqweibo" title="分享到腾讯微博" class="nas-itm nas-itm9">&nbsp;</span><span class="nas-itm nas-itm7" title="分享到MSN" id="$_shareBtn_msn">&nbsp;</span><span class="nas-itm nas-itm3" title="分享到QQ空间" id="$_shareBtn_qq">&nbsp;</span><span class="nas-itm nas-itm1" title="分享到人人网" id="$_shareBtn_renren">&nbsp;</span><span class="nas-itm nas-itm2" title="分享到开心网" id="$_shareBtn_kaixin">&nbsp;</span><span class="nas-itm nas-itm4" title="分享到豆瓣" id="$_shareBtn_douban">&nbsp;</span><span class="nas-itm nas-itm8" title="分享到梦幻人生" id="$_shareBtn_dream">&nbsp;</span></span>
+          </div>
+          <div class="pright">
+              <span class="fc07">阅读(<span id="$_spaniReadCount">11311</span>)</span><span class="sep fc07">|</span>
+              <span class="fc07">评论(<span id="$_spaniCommentCount">34</span>)</span><span class="sep fc07">|</span>
+              <span class="m2a" id="$_spanCite">引用</span> <span class="m2a" id="$_spanCiteCount">(2)</span>
+              <span class="sep fc07">|</span><span id="$_spanReport" class="m2a">举报</span>
+          </div>
+         </div>
+        </div>
+      </div>
+      <div class="snl">
+        <div class="phide bdwb bds2 bdc0 rdcnt" id="$_divRecommendContent"></div>
+        <div id="yodaoad" class="bdwb bds2 bdc0" style="display: none;">&nbsp;</div>
+        <div id="$_divTopLink" class="top fc03 clearfix">
+	        <span class="ilft iblock icn0 icn0-620">&nbsp;</span>
+	        <div class="pleft thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/2541117420072432136859/">程序员面试题精选100题(05)－查找最小的k个元素[算法]</a></div>
+	        <span class="irgt iblock icn0 icn0-619">&nbsp;</span>
+	        <div class="pright thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/254111742007289205219/">程序员面试题精选100题(07)－翻转句子中单词的顺序[算法]</a></div>
+	     </div> 
+	    <div class="relateblog phide">
+          <h4 class="bdwb bds2 bdc0 fc07 fs0">历史上的今天</h4>
+          <div class="cnt ztag clearfix"></div>
+        </div>
+	    <div class="relateblog phide">
+          <h4 class="bdwb bds2 bdc0 fc07 fs0">相关文章</h4>
+          <div class="cnt ztag clearfix"></div>
+        </div>
+	    <div class="author">
+	      <h4 class="bdwb bds2 bdc0 fc07 fs0">最近读者</h4>
+	      <div class="cnt ztag clearfix"><div class="pleft nlogif clearfix"> <div class="pleft nbw-f50 nbw-fce"><img class="cwd pnt" onerror="this.src=location.f60" src="face60.png"></div> <div class="m2a pright fc03"><span class="ul">登录</span>后，您可以在此留下足迹。</div> </div>        <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/wwbszd/">            <img alt="wwbszd" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/wwbszd/">          wwbszd        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/494532337/">            <img alt="残阳" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_001.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/494532337/">          残阳        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/yu2945686/">            <img alt="yu2945686" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_002.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/yu2945686/">          yu294568        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/pilykuang/">            <img alt="狂人" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_003.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/pilykuang/">          狂人        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/zhezhi236/">            <img alt="zhezhi236" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_004.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/zhezhi236/">          zhezhi23        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/xhp26333@126/">            <img alt="xhp26333@126" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_005.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/xhp26333@126/">          xhp26333        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/boypiglun/">            <img alt="boypiglun" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_006.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/boypiglun/">          boypiglu        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/gtxorb/">            <img alt="gtxorb" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_007.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/gtxorb/">          gtxorb        </a>      </div>    </div>        </div>
+	    </div>
+	    <div class="phide" id="yodaoad_1" style=""></div>
+	    <div class="comment">
+	      <h4 class="bdwb bds2 bdc0 fc07 fs0">评论</h4>
+	      <a name="blogComment" id="blogComment"></a>
+	      <div class="ztag"><div>    <div class="publish ztag"><div class="nbw-cdt edt-cmt"><div class="nbw-act tp"> <span class="m2a fc03 ztag">点击登录</span><span class="sep">|</span><span class="fc05">昵称：</span><input value="" maxlength="18" class="znick bdwa bds0 bdc0 ztag" type="text"> </div> <div class="edt ztag"><div class="ui-1330862712"><div class="zcnt ztag zbrd bdc0"><iframe src="index_1.html" frameborder="0"></iframe></div> <div class="zbtn"> <span class="zfce zbgp ztag space">&nbsp;</span> <input class="zbok zhnd ztag nbtn fc09 bdc1 bgc2" value="发表" type="button"> <span class="zbcc zhnd ztag fc04">取消</span> <div class="zvcd ztag" style="display: none;"> <label>验证码：</label><input value="" class="zbrd xtag bdc0" maxlength="4" type="text"><img src="empty.png" class="xtag" title="点击刷新验证码"><span class="xtag fc04">换一张</span> </div> </div> <div class="zmsg fc07" style="display: none;"><span class="zicn zbgp iblock">&nbsp;</span><span class="ztag"></span></div></div></div> <div style="display: none;" class="hnt thide ztag"></div></div></div>
+    <div class="bdwt bds2 bdc0 phide" id="yodaoad_2" style=""></div>
+    <div class="ztag bdwt bds2 bdc0">
+      <div class="case"><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="上海 浦东新区" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">01-08 23:22</span><div class="tx atag"><span title="上海 浦东新区" class="fc07">Crystal</span></div></div> <div class="cnt pre atag">  <p>楼主没有考虑前面出现和最后一个相等的数字的情况 这种也不应该是</p>  <p>例如序列 9, 9</p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-03-07 13:27</span><div class="tx atag"><span class="fc07">网易博友60</span></div></div> <div class="cnt pre atag">题目比较easy,呵呵<br><br></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a target="_blank" hidefocus="true"><img title="上海 浦东新区" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">01-08 23:21</span><div class="tx atag"><span title="上海 浦东新区" class="fc07">crystal</span><span class="fc07">&nbsp;回复&nbsp;</span><span title="上海 浦东新区" class="fc07">网易博友60</span></div></div> <div class="cnt pre atag"><p>楼主没有考虑前面出现和最后一个相等的数字的情况 这种也不应该是</p>  <p>例如序列 9, 9</p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://jjdd719.blog.163.com/" target="_top" hidefocus="true"><img src="ava_008.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-10-19 15:56</span><div class="tx atag"><a title="jjdd719" class="fc03 noul" target="_top" href="http://jjdd719.blog.163.com/"><span class="m2a">jjdd719</span></a></div></div> <div class="cnt pre atag"><p>为什么不粘英文博客的内容呢？翻墙的都被天朝河蟹了</p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a href="http://zhedahht.blog.163.com/" target="_top" hidefocus="true"><img src="ava_009.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-10-19 17:50</span><div class="tx atag"><a class="fc03 noul" title="何海涛" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">何海涛</span></a><span class="fc07">&nbsp;回复&nbsp;</span><a class="fc03 noul" title="jjdd719" target="_top" href="http://jjdd719.blog.163.com/"><span class="m2a">jjdd719</span></a></div></div> <div class="cnt pre atag">这个博客绝大部分都是中文读者，有英文阅读习惯的估计不多。英文博客主要是针对国外的读者，163在国外的知名度不够，而且中文界面外国人也看不懂。因此把中、英文博客分开了。还请能够理解</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://shenxq5941.blog.163.com/" target="_top" hidefocus="true"><img src="ava_010.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-09-28 10:15</span><div class="tx atag"><a title="shenxq5941" class="fc03 noul" target="_top" href="http://shenxq5941.blog.163.com/"><span class="m2a">shenxq5941</span></a></div></div> <div class="cnt pre atag"><p>怎么才能登陆博主的英文博客呢？</p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a href="http://zhedahht.blog.163.com/" target="_top" hidefocus="true"><img src="ava_009.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-09-28 14:54</span><div class="tx atag"><a class="fc03 noul" title="何海涛" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">何海涛</span></a><span class="fc07">&nbsp;回复&nbsp;</span><a class="fc03 noul" title="shenxq5941" target="_top" href="http://shenxq5941.blog.163.com/"><span class="m2a">shenxq5941</span></a></div></div> <div class="cnt pre atag">英文博客需要翻墙......</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a href="http://shenxq5941.blog.163.com/" target="_top" hidefocus="true"><img src="ava_010.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-09-29 22:30</span><div class="tx atag"><a class="fc03 noul" title="shenxq5941" target="_top" href="http://shenxq5941.blog.163.com/"><span class="m2a">shenxq5941</span></a><span class="fc07">&nbsp;回复&nbsp;</span><a class="fc03 noul" title="何海涛" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">何海涛</span></a></div></div> <div class="cnt pre atag">现在已经很难找到这类的软件了.....不知道博主能不能方便指点下从哪里下载，我也终于把博主所有的文章都看完了</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://lcl2005617.blog.163.com/" target="_top" hidefocus="true"><img src="ava_011.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-09-05 03:49</span><div class="tx atag"><a title="lcl2005617" class="fc03 noul" target="_top" href="http://lcl2005617.blog.163.com/"><span class="m2a">lcl2005617</span></a></div></div> <div class="cnt pre atag"><p>楼主你太棒了，我爱死你了</p>  <p></p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://zhangzhibiao02005.blog.163.com/" target="_top" hidefocus="true"><img src="ava_012.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-05-04 15:11</span><div class="tx atag"><a title="zhangzhibiao02005" class="fc03 noul" target="_top" href="http://zhangzhibiao02005.blog.163.com/"><span class="m2a">zhangzhibiao02005</span></a></div></div> <div class="cnt pre atag">bool is_tree_postorder(int *seq, int left, int right)<br>{<br>&nbsp;&nbsp;&nbsp; if (right - left &lt;= 2)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return true;<br>&nbsp;&nbsp;&nbsp; int root = seq[right-1];<br>&nbsp;&nbsp;&nbsp; int ileft = left;<br>&nbsp;&nbsp;&nbsp; while (ileft &lt; right - 1 &amp;&amp; seq[ileft] &lt; root)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ileft++;<br>&nbsp;&nbsp;&nbsp; if (ileft == left)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return false;<br>&nbsp;&nbsp;&nbsp; int iright = ileft;<br>&nbsp;&nbsp;&nbsp; while (iright &lt; right-1 &amp;&amp; seq[iright] &gt; root)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; iright++;<br>&nbsp;&nbsp;&nbsp; if (iright != right - 1)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return false;<br>&nbsp;&nbsp;&nbsp; return is_tree_postorder(seq, left, ileft) &amp;&amp; is_tree_postorder(seq, ileft, right-1);<br>}<br><span style=""></span><span style=""></span></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://zeelich.blog.163.com/" target="_top" hidefocus="true"><img src="ava_013.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-03-28 00:56</span><div class="tx atag"><a title="zeelich" class="fc03 noul" target="_top" href="http://zeelich.blog.163.com/"><span class="m2a">zeelich</span></a></div></div> <div class="cnt pre atag">不用全扫描完整个序列吧？其实就是quicksort得一个变体，a[p,q]被扫描时，如果发现要交换i,j得情况，就说明肯定有本应该属于左树的节点被放到右树上了。这时直接返回false就可以了。如果quicksort一遍走完发现没有交换，就可以继续检查a[p, i]和a[i+1,q-1]<div><br></div></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a href="http://allenmoom.blog.163.com/" target="_top" hidefocus="true"><img src="ava_014.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-10-03 18:38</span><div class="tx atag"><a class="fc03 noul" title="allenmoom" target="_top" href="http://allenmoom.blog.163.com/"><span class="m2a">allenmoom</span></a><span class="fc07">&nbsp;回复&nbsp;</span><a class="fc03 noul" title="zeelich" target="_top" href="http://zeelich.blog.163.com/"><span class="m2a">zeelich</span></a></div></div> <div class="cnt pre atag">同觉得这样不错</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a target="_blank" hidefocus="true"><img title="上海 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-01-10 13:43</span><div class="tx atag"><span title="上海 " class="fc07">D</span><span class="fc07">&nbsp;回复&nbsp;</span><a class="fc03 noul" title="zeelich" target="_top" href="http://zeelich.blog.163.com/"><span class="m2a">zeelich</span></a></div></div> <div class="cnt pre atag">楼主的想法其实就是快排思想。<br>只是楼主多算了几步。如果左边返回false，根本不用判断右边了，直接return false.</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://liyaguang0123.blog.163.com/" target="_top" hidefocus="true"><img src="ava_015.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-12-21 11:09</span><div class="tx atag"><a title="冰神" class="fc03 noul" target="_top" href="http://liyaguang0123.blog.163.com/"><span class="m2a">冰神</span></a></div></div> <div class="cnt pre atag"><p>bool VerifySequenceBST(int *pData,unsigned int nLen,int nMax,int nMin)<br>{<br>&nbsp;int nHead=pData[nLen-1];<br>&nbsp;int bound=nLen-1;<br>&nbsp;if(nLen&lt;=1)<br>&nbsp;{<br>&nbsp;&nbsp;return true;<br>&nbsp;}<br>&nbsp;while(bound&gt;=0)<br>&nbsp;{<br>&nbsp;&nbsp;if(pData[bound]&lt;=nMin||pData[bound]&gt;=nMax)<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;return false;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;if(pData[bound]&lt;nHead)<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;return VerifySequenceBST(pData,bound+1,nHead,nMin)&amp;&amp;VerifySequenceBST(pData+bound+1,nLen-bound-2,nMax,nHead);<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;bound--;<br>&nbsp;}<br>&nbsp;return VerifySequenceBST(pData,nLen-1,nMax,nHead);<br>}</p>
+<p>其中nMax,nMin初始化为INT_MAX,INT_MIN</p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a href="http://liyaguang0123.blog.163.com/" target="_top" hidefocus="true"><img src="ava_015.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-12-21 11:11</span><div class="tx atag"><a class="fc03 noul" title="冰神" target="_top" href="http://liyaguang0123.blog.163.com/"><span class="m2a">冰神</span></a><span class="fc07">&nbsp;回复&nbsp;</span><a class="fc03 noul" title="冰神" target="_top" href="http://liyaguang0123.blog.163.com/"><span class="m2a">冰神</span></a></div></div> <div class="cnt pre atag"><p>通过传递上下界来判断是否符合要求</p>
+<p>将if(pData[bound]&lt;=nMin||pData[bound]&gt;=nMax)<br>改为if(pData[bound]&lt;nMin||pData[bound]&gt;nMax)<br>则允许出现重复</p>
+<p>望不吝指教<img src="face0.gif"></p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://blog.163.com/trojankiss@126/" target="_top" hidefocus="true"><img src="ava_016.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-12-08 18:20</span><div class="tx atag"><a title="永恒·沉睡" class="fc03 noul" target="_top" href="http://blog.163.com/trojankiss@126/"><span class="m2a">永恒·沉睡</span></a></div></div> <div class="cnt pre atag">下面那个程序是错的,不好意思各位,正确的我发到自己blog上了,O(n)<div><a href="http://blog.163.com/trojankiss@126/blog/static/5498847020101186201221/">http://blog.163.com/trojankiss@126/blog/static/5498847020101186201221/</a><br><div><br></div></div></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://blog.163.com/trojankiss@126/" target="_top" hidefocus="true"><img src="ava_016.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-12-08 15:09</span><div class="tx atag"><a title="永恒·沉睡" class="fc03 noul" target="_top" href="http://blog.163.com/trojankiss@126/"><span class="m2a">永恒·沉睡</span></a></div></div> <div class="cnt pre atag"><div>//意识流了下,测了几组情况,望各位大牛指教</div><div>int main()</div><div>{</div><div>&nbsp;&nbsp; &nbsp;int n,i;</div><div>&nbsp;&nbsp; &nbsp;cin &gt;&gt; n;</div><div>&nbsp;&nbsp; &nbsp;int *seq = new int[n];</div><div>&nbsp;&nbsp; &nbsp;for(i=0;i&lt;n;i++)</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;cin &gt;&gt; seq[i];</div><div>&nbsp;&nbsp; &nbsp;int root = seq[n-1];</div><div>&nbsp;&nbsp; &nbsp;int max = seq[0],min = seq[0];</div><div>&nbsp;&nbsp; &nbsp;inTree state = LEFT;</div><div>//接下面</div></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://blog.163.com/trojankiss@126/" target="_top" hidefocus="true"><img src="ava_016.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-12-08 15:09</span><div class="tx atag"><a title="永恒·沉睡" class="fc03 noul" target="_top" href="http://blog.163.com/trojankiss@126/"><span class="m2a">永恒·沉睡</span></a></div></div> <div class="cnt pre atag"><div>&nbsp;&nbsp; &nbsp;for(i=0;i&lt;n-1;i++)</div><div>&nbsp;&nbsp; &nbsp;{</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;if(state==LEFT &amp;&amp; seq[i]&gt;root)</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;state = RIGHT;</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;min = max = seq[i];</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;if(seq[i]&lt;max &amp;&amp; seq[i]&gt;min)</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;min = seq[i];</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;if(seq[i]&lt;max &amp;&amp; seq[i]&gt;min)</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;min = seq[i];</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}</div><div>//接下面</div></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://blog.163.com/trojankiss@126/" target="_top" hidefocus="true"><img src="ava_016.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-12-08 15:08</span><div class="tx atag"><a title="永恒·沉睡" class="fc03 noul" target="_top" href="http://blog.163.com/trojankiss@126/"><span class="m2a">永恒·沉睡</span></a></div></div> <div class="cnt pre atag"><div><div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;else if(seq[i]&gt;=max)</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;max = seq[i];</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;else if(state==LEFT&amp;&amp;seq[i]&gt;root</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;||state==RIGHT&amp;&amp;seq[i]&lt;root)</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cout &lt;&lt; "No!" &lt;&lt; endl;</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return 0;</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}</div><div>&nbsp;&nbsp; &nbsp;}</div><div>&nbsp;&nbsp; &nbsp;cout &lt;&lt; "Yes!" &lt;&lt; endl;</div><div>&nbsp;&nbsp; &nbsp;delete [] seq;</div><div>&nbsp;&nbsp; &nbsp;return 0;</div><div>}</div></div></div><div>其实可以O(n) //Jerome</div></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://stupidcat1984.blog.163.com/" target="_top" hidefocus="true"><img src="ava_017.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2009-08-14 22:32</span><div class="tx atag"><a title="stupidcat" class="fc03 noul" target="_top" href="http://stupidcat1984.blog.163.com/"><span class="m2a">stupidcat</span></a></div></div> <div class="cnt pre atag"><blockquote class="selitm bd01"><a class="c05" target="_top" href="http://stupidcat1984.blog.163.com/">stupidcat</a><span class="c05 dot">：</span><br><span>接上贴： <br>void&nbsp;FindKLeast(vector&lt;int&gt;&nbsp;&amp;data,&nbsp;int&nbsp;headId,&nbsp;int&nbsp;tailId,&nbsp;int&nbsp;k) <br>{ <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(headId&nbsp;&lt;&nbsp;tailId) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;midId&nbsp;=&nbsp;Partition(data,&nbsp;headId,&nbsp;tailId); <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(midId&nbsp;&gt;&nbsp;k) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FindKLeast(data,&nbsp;headId,&nbsp;midId&nbsp;-&nbsp;1,&nbsp;k); <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br></span></blockquote><img src="face27.gif">Sorry,&nbsp;回错帖了。请楼主删掉此楼和上楼</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://stupidcat1984.blog.163.com/" target="_top" hidefocus="true"><img src="ava_017.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2009-08-14 22:27</span><div class="tx atag"><a title="stupidcat" class="fc03 noul" target="_top" href="http://stupidcat1984.blog.163.com/"><span class="m2a">stupidcat</span></a></div></div> <div class="cnt pre atag">接上贴：
+<br>void&nbsp;FindKLeast(vector&lt;int&gt;&nbsp;&amp;data,&nbsp;int&nbsp;headId,&nbsp;int&nbsp;tailId,&nbsp;int&nbsp;k)
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(headId&nbsp;&lt;&nbsp;tailId)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;midId&nbsp;=&nbsp;Partition(data,&nbsp;headId,&nbsp;tailId);
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(midId&nbsp;&gt;&nbsp;k)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FindKLeast(data,&nbsp;headId,&nbsp;midId&nbsp;-&nbsp;1,&nbsp;k);
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="北京 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2009-08-14 10:04</span><div class="tx atag"><span title="北京 " class="fc07">网易博友59</span></div></div> <div class="cnt pre atag">没有考虑另外一种情况:因为二叉查找树还可以将相等的元素左右交替替换，即与根节点相等的点可以在左右子树中同时存在</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://lobatt.blog.163.com/" target="_top" hidefocus="true"><img src="ava_018.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-12-29 17:41</span><div class="tx atag"><a title="lobatt" class="fc03 noul" target="_top" href="http://lobatt.blog.163.com/"><span class="m2a">lobatt</span></a></div></div> <div class="cnt pre atag"><blockquote class="selitm bd01"><span class="a_a c05" href="http://jiangshunan.blog.163.com/" target="_blank">爱恶搞的猫</span><span class="c05 dot">：</span><br><span>将最后的数组元素从数组末尾向前查找,插到遇到的第一个小于它值的元素后面,这样就将整个数组分成左右2子树,然后依次对分开的2个子数组进行这样的递归操作,然后最后测试结果数组看是否该数组为升序就能判断了.</span></blockquote><p>分治？</p>
+<p>楼上的提醒了我，从最后一个开始，从后往前找第一个小于根的数，设为a[i]</p>
+<p>然后a[0]-a[i]和a[i+1]-a[n-1]分别递归调用该函数，然后在两次调用之间将根压入一个队列q，这样的到一个中序的输出，最后检查队列q是否递增就行。</p>
+<p>&nbsp;</p>
+<p>平均复杂度：o(nlogn+n) = o(nlogn)</p>
+<p>&nbsp;</p>
+<p>不知道是否这样？</p>
+<p>博主的算法没看懂...-___-||</p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://jiangshunan.blog.163.com/" target="_top" hidefocus="true"><img src="ava_019.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-09-26 20:42</span><div class="tx atag"><a title="爱恶搞的猫" class="fc03 noul" target="_top" href="http://jiangshunan.blog.163.com/"><span class="m2a">爱恶搞的猫</span></a></div></div> <div class="cnt pre atag">将最后的数组元素从数组末尾向前查找,插到遇到的第一个小于它值的元素后面,这样就将整个数组分成左右2子树,然后依次对分开的2个子数组进行这样的递归操作,然后最后测试结果数组看是否该数组为升序就能判断了.</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="安徽 合肥" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-08-07 14:38</span><div class="tx atag"><span title="安徽 合肥" class="fc07">网易博友</span></div></div> <div class="cnt pre atag"><blockquote class="selitm bd01"><span class="a_a c05" href="http://zhedahht.blog.163.com/" target="_blank">涛声依旧</span><br><span>To <span>网易博友101：这样写应该是没有问题。但有两点值得讨论：一是这样写虽然显得更加简洁，但对这段代码的读者来说，就需要仔细分析这个布尔运算究竟是什么意思了。相当于是用代码可读性换代码的简洁性；二是判断istree的第二个参数（数组的索引）是不是有效的(小于0)相关的代码需要调整。</span></span></blockquote>边界有问题.&nbsp;楼主可有测试过?</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://zhedahht.blog.163.com/" target="_top" hidefocus="true"><img src="ava_020.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-04-10 19:34</span><div class="tx atag"><a title="涛声依旧" class="fc03 noul" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">涛声依旧</span></a></div></div> <div class="cnt pre atag">To <span>网易博友101：这样写应该是没有问题。但有两点值得讨论：一是这样写虽然显得更加简洁，但对这段代码的读者来说，就需要仔细分析这个布尔运算究竟是什么意思了。相当于是用代码可读性换代码的简洁性；二是判断istree的第二个参数（数组的索引）是不是有效的(小于0)相关的代码需要调整。</span></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-04-09 20:31</span><div class="tx atag"><span class="fc07">网易博友101</span></div></div> <div class="cnt pre atag">这题还算比较简单，有个问题<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(i&nbsp;&gt;&nbsp;0)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left&nbsp;=&nbsp;verifySquenceOfBST(squence,&nbsp;i);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;verify&nbsp;whether&nbsp;the&nbsp;right&nbsp;sub-tree&nbsp;is&nbsp;a&nbsp;BST<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;right&nbsp;=&nbsp;true;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(i&nbsp;&lt;&nbsp;length&nbsp;-&nbsp;1)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;right&nbsp;=&nbsp;verifySquenceOfBST(squence&nbsp;+&nbsp;i,&nbsp;length&nbsp;-&nbsp;i&nbsp;-&nbsp;1);<br><br>这里两个if是否可以去掉，而是直接用<br>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;((istree(list,i))&amp;&amp;(istree(&amp;list[j],n-j-1)));<br>来代替？</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-04-05 20:49</span><div class="tx atag"><span class="fc07">网易博友104</span></div></div> <div class="cnt pre atag">&nbsp;仅依靠后续遍历能重建二叉树的?
+<br>&nbsp;如果不行,&nbsp;可以添加一段判断是否试顺序和逆序的代码,&nbsp;那时间复杂度就是o(nlogn)了...
+<br>&nbsp;
+<br>
+<br>
+<br></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-03-30 23:29</span><div class="tx atag"><span class="fc07">网易博友37</span></div></div> <div class="cnt pre atag">先依照后序遍历，重建二元树。<br>然后中序遍历，如果数值递增，则为二元查找树，否则不是。<br></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-03-30 23:25</span><div class="tx atag"><span class="fc07">网易博友37</span></div></div> <div class="cnt pre atag">先重建二元查找树,然后中序遍历,数值应该递增，否则不是二元查找树后序遍历。<br>时间复杂度为:&nbsp;O(N).<br></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://zhedahht.blog.163.com/" target="_top" hidefocus="true"><img src="ava_020.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-03-19 10:06</span><div class="tx atag"><a title="涛声依旧" class="fc03 noul" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">涛声依旧</span></a></div></div> <div class="cnt pre atag"><p><font style="background-color: rgb(204, 232, 207);">前面的讨论的算法的思路简单说来是这样的：用根结点把数组分成两部分，前面部分为左子树，后面部分为右子树。一般情况下需要递归分割O(logn)次，每次递归需要O(n)的操作，因此平均时间复杂度是O(nlogn)。当然，最坏情况下的时间复杂度是O(n^2）。出现这种最坏情况时的输入是一个排序（正序或者逆序）数组，对应的树退化成一个单向链表。我再想想有没有O(n)的解法，谢谢提醒。</font></p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-03-17 10:58</span><div class="tx atag"><span class="fc07">网易博友221</span></div></div> <div class="cnt pre atag">你的算法是O(n^2)，不是O(nlogn)
+<br>从后往前，应该可以O(n)</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://zhedahht.blog.163.com/" target="_top" hidefocus="true"><img src="ava_020.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-03-09 18:26</span><div class="tx atag"><a title="涛声依旧" class="fc03 noul" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">涛声依旧</span></a></div></div> <div class="cnt pre atag"><p style="margin: 0in 0in 10pt;"><font size="3"><span style="font-family: SimSun;" lang="ZH-CN">上面讨论的算法的时间复杂度是</span><font face="Calibri">O(nlogn)</font><span style="font-family: SimSun;" lang="ZH-CN">。如果哪位有</span><font face="Calibri">O(n)</font><span style="font-family: SimSun;" lang="ZH-CN">的方法，能不能和大家分享一下？</span></font></p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-03-08 16:20</span><div class="tx atag"><span class="fc07">网易博友56</span></div></div> <div class="cnt pre atag">这样的复杂度（&nbsp;O(N^2)&nbsp;）太大了吧，应该有O(N)的算法吧
+<br></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div></div>
+      <div style="" class="clearfix"><div style="display: none;" class="ui-8686812570 noselect js-zfrg-6540"><span class="pgi pgb iblock fc03 bgc9 bdc0 js-znpg-097">上一页</span> <span class="pgi zpg1 iblock fc03 bgc9 bdc0 js-zslt-987 fc05">1</span> <span class="frg fgp fc06">...</span> <span style="display: none;" class="pgi zpg2 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg3 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg4 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg5 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg6 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg7 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg8 iblock fc03 bgc9 bdc0">-1</span> <span class="frg fgn fc06">...</span> <span style="display: none;" class="pgi zpg9 iblock fc03 bgc9 bdc0">-1</span> <span class="pgi pgb iblock fc03 bgc9 bdc0 js-znpg-097">下一页</span></div></div>
+    </div>
+  </div></div>
+	    </div>
+	    <div class="phide" id="yodaoad_3" style=""></div>
+      </div>
+      <div class="cite ztag fc03 phide"></div>
+    </div>
+   </div>
+  </div>
+</div>
+
+
+
+</div>
+      <div class="l cl h100">&nbsp;</div>
+      <div class="r cr h100">&nbsp;</div>
+    </div>
+    <div class="nb-mb lcr bh space">
+      <div class="l bl bh">&nbsp;</div>
+      <div class="r br bh">&nbsp;</div>
+      <div class="c bc bh lcr">&nbsp;</div>
+    </div>
+  </div>
+
+</div>
+      <div class="l wl g lg h100">&nbsp;</div>
+      <div class="l wl t lt">&nbsp;</div>
+      <div class="l wl b lb">&nbsp;</div>
+      <div class="r wr g rg h100">&nbsp;</div>
+      <div class="r wr t rt">&nbsp;</div>
+      <div class="r wr b rb">&nbsp;</div>
+    </div>
+  </div>
+  <div class="nb-are nb-smb"><div class="wkg h space"><div class="l h">&nbsp;</div><div class="r h">&nbsp;</div><div class="c h">&nbsp;</div></div></div>
+<div class="nb-are nb-fot">
+  <div class="wkg h">
+    <h2>页脚</h2>
+    <div class="k">      <a rel="nofollow" class="m2a fc08" target="_top" href="http://corp.163.com/index_gb.html">公司简介</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://gb.corp.163.com/gb/contactus.html">联系方法</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://corp.163.com/gb/job/job.html">招聘信息</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://help.163.com/?b13abk1">客户服务</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://corp.163.com/gb/legal/legal.html">隐私政策</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://blog.163.com/public/theme/">博客风格</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://blog.163.com/services/wapblog.html">手机博客</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://blog.163.com/vip.do">VIP博客</a>
+      
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="http://zhedahht.blog.163.com/rss/">
+      <span class="p fc10">-</span><span class="fc08" id="$_foot_subscribe"><span class="iblock m2a icn0 icn0-919">&nbsp;</span><a class="m2a fc08">订阅此博客</a></span>
+    </div>
+    <p class="fc08">网易公司版权所有&nbsp;©1997-2012</p>
+  </div>
+</div></div>
+    <!--[if lte IE 6]></div><![endif]-->
+  <!--[if lte IE 6]></div><![endif]-->
+  <div class="nb-layer" id="blog-163-com-layer"></div>
+  
+
+     <div style="position: absolute; top: 0pt; right: 0pt; z-index: 999; width: 1px; height: 1px; overflow: hidden;"> <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="ntsstorage" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" height="1" width="1"> <param name="movie" value="/common/storage.swf?t=1332948055964"> <param name="AllowScriptAccess" value="sameDomain"> <embed src="storage.swf" name="ntsstorage" allowscriptaccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" height="1" width="1">  </object> </div><iframe src="index_2.html" id="api.blog.163.com" name="api.blog.163.com" style="display: none;" height="0" width="0"></iframe><iframe src="index_3.html" id="photo.163.com" name="photo.163.com" style="display: none;" height="0" width="0"></iframe><iframe src="index_4.html" id="ud.blog.163.com" name="ud.blog.163.com" style="display: none;" height="0" width="0"></iframe>
+    
+  
+  
+
+
+    
+
+
+</body>
+</html>

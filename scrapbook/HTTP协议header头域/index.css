@@ -1,0 +1,95 @@
+/* ::::: http://www.iwms.net/style/iwms/style.css_gzip.aspx ::::: */
+
+body { margin: 0pt; font-size: 12px; color: rgb(51, 51, 51); font-family: tahoma,宋体; }
+td, div { font-size: 12px; word-wrap: break-word; }
+input, button { font-size: 12px; border-width: 1px; }
+textarea { font-size: 12px; border: 1px solid rgb(204, 204, 204); }
+form { margin: 0pt; }
+img { border: 0pt none; }
+button, input.btn { background: url('btnbg.gif') repeat-x scroll 0pt 0pt rgb(255, 248, 197); border: 1px solid rgb(180, 201, 26); color: rgb(0, 136, 0); line-height: 20px; height: 20px; }
+.twidth { width: 950px; background: none repeat scroll 0% 0% rgb(255, 255, 255); margin: 0pt auto; overflow-x: hidden; }
+.mR { margin-right: 5px; }
+a:link, a:visited { color: rgb(65, 81, 154); text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul.dnl { list-style: none outside none; margin: 0pt; padding: 0pt; }
+ul.dnl li { line-height: 22px; }
+ul.dnl .diggN { float: left; color: rgb(115, 105, 72); font-family: arial; background: url('digg.gif') no-repeat scroll -300px 0pt transparent; width: 30px; line-height: 18px; margin-right: 5px; text-align: center; cursor: pointer; text-decoration: none; }
+ul.dnl a:hover .diggN { background-position: -400px 0pt; }
+a.highlight:link, a.highlight:visited { color: red; }
+a.highlight:hover { color: red; }
+a.thisclass:link, a.thisclass:visited { font-weight: bold; text-decoration: none; }
+a.thisclass:hover { font-weight: bold; text-decoration: none; }
+.aTitle { font-size: 16px; font-weight: bold; position: relative; padding-top: 10px; }
+#content { font-size: 14px; font-family: tahoma,宋体; line-height: 1.6; margin: 20px auto; width: 96%; }
+#sitehead { overflow: hidden; }
+#sitehead .l { display: none; }
+#sitehead .r { display: none; }
+#middle { overflow: hidden; }
+#footer { text-align: center; line-height: 1.5; margin: 10px 0pt; }
+#navbar { overflow: hidden; }
+#navbar .m { text-align: center; line-height: 30px; background: url('bg.gif') repeat-x scroll 0pt -200px rgb(107, 188, 237); border: 0px solid rgb(170, 204, 238); }
+#navbar .l { display: none; }
+#navbar .r { display: none; }
+#navbar a:link, #navbar a:visited { color: rgb(255, 255, 255); text-decoration: none; background: url('iwms.gif') no-repeat scroll 0pt -150px transparent; padding: 0pt 6px 0pt 8px; }
+#navbar a:hover {  }
+#navbar a.first { background: none repeat scroll 0% 0% transparent ! important; }
+#navsub { overflow: hidden; }
+#navsub .m { text-align: left; line-height: 25px; height: 25px; }
+#navsub .l { display: none; }
+#navsub .r { display: none; }
+.gray { color: gray ! important; text-decoration: none; font-size: 12px; }
+.inputbg { background: url('inputborder.gif') no-repeat scroll left top transparent; border: 1px solid rgb(213, 222, 233); }
+.mframe { margin-bottom: 4px; }
+.mframe .tm { height: 25px; line-height: 25px; background: url('bg.gif') repeat-x scroll 0% 0% transparent; border: 1px solid rgb(170, 204, 238); }
+.mframe .tl { display: none; }
+.mframe .tr { display: none; }
+.mframe span.tt { font-size: 14px; color: rgb(65, 81, 154); font-weight: bold; padding-left: 10px; }
+.mframe .mm { background: none repeat scroll 0% 0% rgb(255, 255, 255); padding: 3px; border-right: 1px solid rgb(170, 204, 238); border-width: 0pt 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(170, 204, 238) rgb(170, 204, 238); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-image: none; }
+.mframe .ml { display: none; }
+.mframe .mr { display: none; }
+.mframe .bm { display: none; }
+.mframe .bl { display: none; }
+.mframe .br { display: none; }
+.lframe { margin-bottom: 4px; }
+.lframe .tm { height: 25px; line-height: 25px; background: url('bg.gif') repeat-x scroll 0% 0% transparent; border: 1px solid rgb(170, 204, 238); }
+.lframe .tl { display: none; }
+.lframe .tr { display: none; }
+.lframe span.tt { font-size: 14px; color: rgb(65, 81, 154); font-weight: bold; padding-left: 10px; }
+.lframe .mm { padding: 5px 3px; border-right: 1px solid rgb(170, 204, 238); border-width: 0pt 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(170, 204, 238) rgb(170, 204, 238); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-image: none; }
+.lframe .ml { display: none; }
+.lframe .mr { display: none; }
+.lframe .bm { display: none; }
+.lframe .bl { display: none; }
+.lframe .br { display: none; }
+.moreR { float: right; padding-right: 8px; }
+.wrapper { overflow: hidden; }
+.tl, .bl { float: left; }
+.tr, .br { float: right; }
+.ml, .l { float: left; padding-bottom: 10000px; margin-bottom: -10000px; }
+.mr, .r { float: right; padding-bottom: 10000px; margin-bottom: -10000px; }
+.reCont .reHead { color: rgb(102, 102, 102); background: none repeat scroll 0% 0% rgb(249, 249, 249); border-bottom: 1px solid rgb(170, 204, 238); padding: 3px 5px; }
+.reCont .reLayer { float: right; color: rgb(153, 153, 153); font-size: 12px; }
+.reCont .reBody { padding: 5px 10px 5px 25px; line-height: 1.5; }
+.reCont .reFun { background: url('bg.gif') repeat-x scroll 0pt -400px transparent; height: 25px; line-height: 25px; padding-left: 25px; }
+.reCont .reName { font-weight: bold; }
+.reCont .reDate { color: rgb(153, 153, 153); font-size: 12px; }
+.reCont2 .reFun { background: url('bg.gif') repeat-x scroll 0pt -500px transparent; height: 25px; line-height: 25px; padding-left: 25px; }
+.face1, .face2, .face3, .face4, .face5, .face6, .face7, .face8, .face9, .face10, .face11, .face12, .face13, .face14, .face15, .face16, .face17, .face18 { background: url('face.gif') no-repeat scroll 0pt 0pt transparent; width: 15px; height: 15px; }
+#digg { float: right; clear: both; padding: 10px 5px; }
+.digg { width: 51px; margin: 0pt; text-align: center; list-style: none outside none; padding: 0pt; }
+.digg1 { background: url('digg.gif') repeat scroll 0% 0% transparent; height: 52px; line-height: 52px; font-size: 16px; color: rgb(115, 105, 72); font-family: sans-serif; font-weight: bold; }
+.digg2 { margin-top: 2px; height: 25px; line-height: 25px; font-size: 12px; float: left; width: 51px; }
+.digg2 a { display: block; background: url('digg.gif') repeat scroll -100px 0pt transparent; color: rgb(15, 92, 195); text-decoration: none; }
+.digg2 a:hover { background: url('digg.gif') repeat scroll -200px 0pt transparent; color: rgb(51, 51, 51); }
+.nearNews { color: rgb(153, 153, 153); padding: 5px 0pt; clear: both; overflow: hidden; }
+.nextNews, .prevNews { overflow: hidden; white-space: nowrap; }
+.prevNews { float: left; width: 50%; }
+.nextNews { text-align: right; }
+.prevNews a { background: url('iwms.gif') no-repeat scroll 0pt -400px transparent; padding: 0pt 20px; float: left; }
+.nextNews a { background: url('iwms.gif') no-repeat scroll right -450px transparent; padding: 0pt 20px; float: right; }
+.fav { background: url('iwms.gif') no-repeat scroll 0pt -500px transparent; padding-left: 20px; }
+.mail { background: url('iwms.gif') no-repeat scroll 0pt -550px transparent; padding-left: 20px; }
+.print { background: url('iwms.gif') no-repeat scroll 0pt -600px transparent; padding-left: 20px; }
+.topBar { width: 100%; background: url('bg.gif') repeat scroll 0pt -600px transparent; border-bottom: 1px solid rgb(230, 230, 230); height: 28px; line-height: 28px; }
+.topBar .twidth { height: 100%; background: none repeat scroll 0% 0% transparent; }
+#topUser a { padding-left: 15px; background: url('iwms.gif') no-repeat scroll 0pt -750px transparent; }

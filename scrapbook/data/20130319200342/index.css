@@ -1,0 +1,177 @@
+/* ::::: http://djangobook.py3k.cn/sitemedia/v2/css/reset-min.css ::::: */
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td { margin: 0pt; padding: 0pt; }
+table { border-collapse: collapse; border-spacing: 0pt; }
+fieldset, img { border: 0pt none; }
+address, caption, cite, code, dfn, em, strong, th, var { font-style: normal; font-weight: normal; }
+ol, ul { list-style: none outside none; }
+caption, th { text-align: left; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+/* ::::: http://djangobook.py3k.cn/sitemedia/v2/css/grids-min.css ::::: */
+
+body { text-align: center; }
+#doc { width: 57.69em; min-width: 770px; margin: auto; text-align: left; }
+#hd, #bd { margin-bottom: 1em; text-align: left; }
+#ft { font-size: 77%; font-family: verdana; clear: both; }
+#bd:after, .yui-g:after, .yui-gb:after, .yui-gc:after, .yui-gd:after, .yui-ge:after, .yui-gf:after { content: "."; display: block; height: 0pt; clear: both; visibility: hidden; }
+#bd, .yui-g, .yui-gb, .yui-gc, .yui-gd, .yui-ge, .yui-gf {  }
+/* ::::: http://djangobook.py3k.cn/sitemedia/v2/css/djangobook.css ::::: */
+
+body { font: 12px/1.5 Verdana,sans-serif; background: none repeat scroll 0% 0% rgb(9, 46, 32); color: white; }
+#bd { background: none repeat scroll 0% 0% rgb(72, 120, 88); }
+#doc { padding-top: 16px; }
+a img { border: medium none; }
+a { text-decoration: none; }
+a:hover { color: rgb(255, 231, 97); }
+a:link, a:visited { color: rgb(255, 199, 87); }
+#bd a:hover { background-color: rgb(224, 255, 184); color: rgb(35, 79, 50); text-decoration: none; }
+#bd a:link, #bd a:visited { color: rgb(171, 86, 3); }
+div.nav { margin: 0pt; font-size: 11px; text-align: right; color: rgb(72, 120, 88); }
+#hd div.nav { margin-top: -27px; }
+#ft div.nav { margin-bottom: -18px; }
+#hd h1 a { color: white; }
+#global-nav { position: absolute; top: 5px; padding: 7px 0pt; color: rgb(38, 62, 43); }
+#global-nav a:link, #global-nav a:visited { color: rgb(72, 120, 88); }
+#global-nav a { padding: 0pt 4px; }
+#global-nav a.about { padding-left: 0pt; }
+#global-nav:hover { color: rgb(255, 255, 255); }
+#global-nav:hover a:link, #global-nav:hover a:visited { color: rgb(255, 199, 87); }
+#chapter-body { position: relative; }
+#yui-main div.yui-b { margin: 0pt 20px; background: none repeat scroll 0% 0% white; color: black; padding: 0.3em 2em 1em; }
+dd { margin-left: 15px; }
+h1 { font-size: 218%; margin-top: 0.6em; margin-bottom: 0.4em; line-height: 1.1em; }
+h1, h2, h3, h4 { margin-top: 1.4em; font-family: "Trebuchet MS",sans-serif; font-weight: normal; }
+h2 { font-size: 140%; color: rgb(72, 120, 88); }
+h3 { font-size: 150%; margin-bottom: 0.6em; line-height: 1.2em; color: rgb(9, 46, 32); }
+h4 { font-size: 125%; font-weight: bold; margin-bottom: 0.2em; color: rgb(72, 120, 88); }
+p, ul, dl { margin-top: 0.6em; margin-bottom: 1em; padding-bottom: 0.1em; }
+#chapter-body img { max-width: 50em; margin-left: auto; margin-right: auto; display: block; }
+table { color: rgb(0, 0, 0); margin-bottom: 1em; width: 100%; }
+table.docutils td, table.docutils th { border-bottom: 1px solid rgb(223, 223, 223); padding: 4px 2px; }
+table.docutils thead th { border-bottom: 2px solid rgb(223, 223, 223); text-align: left; font-weight: bold; white-space: nowrap; }
+table.docutils { border-collapse: collapse; }
+blockquote { padding: 0pt 1em; margin: 1em 0pt; font: 125%/1.2em "Trebuchet MS",sans-serif; color: rgb(35, 79, 50); border-left: 2px solid rgb(148, 218, 58); }
+strong { font-weight: bold; }
+em { font-style: italic; }
+ul { padding-left: 30px; }
+ol { padding-left: 30px; }
+ol.arabic { list-style-type: decimal; }
+ul li { list-style-type: square; margin-bottom: 0.4em; }
+ol li { margin-bottom: 0.4em; }
+dt { font-weight: bold; margin-top: 0.5em; font-size: 1.1em; }
+dd { margin-bottom: 0.8em; }
+.literal { white-space: nowrap; }
+.literal, .literal-block { color: rgb(35, 79, 50); }
+pre, .literal-block { font-size: medium; background: none repeat scroll 0% 0% rgb(224, 255, 184); border-style: solid; border-color: rgb(148, 218, 58); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-image: none; border-width: 1px 0pt; margin: 1em 0pt; padding: 0.3em 0.4em; overflow: hidden; }
+dt .literal, table .literal { background: none repeat scroll 0% 0% transparent; }
+.cn { position: relative; }
+#djangobookcomments { padding: 0pt; border: 1px solid rgb(9, 46, 32); top: 0pt; position: absolute; z-index: 10; background-color: rgb(224, 255, 184); width: 600px; height: 400px; color: black; overflow: hidden; display: none; text-align: left; }
+#comment-tabs { padding: 6px; }
+#djangobookcomments .ft { height: 50px; overflow: hidden; padding: 6px; }
+#djangobookcomments .tabset .hd li a { background-color: rgb(72, 120, 88); color: white; }
+#djangobookcomments .tabset .hd li.on em { color: rgb(9, 46, 32); }
+#djangobookcomments .yui-ext-tabbody { font-size: 90%; background-color: white; border-right: 1px solid rgb(153, 153, 153); border-width: medium 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(153, 153, 153) rgb(153, 153, 153); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-image: none; height: 285px; overflow: auto; padding: 1em; }
+#djangobookcomments div.tab input { width: 100%; }
+#djangobookcomments div.tab input#id_name { width: 70%; }
+#djangobookcomments div.tab label { font-weight: bold; display: block; color: rgb(72, 120, 88); }
+#djangobookcomments div.tab textarea { width: 100%; height: 100px; }
+#djangobookcomments div.tab p { margin-bottom: 0pt; }
+#djangobookcomments-head .close { position: absolute; top: 3px; right: 4px; height: 13px; width: 17px; margin: 0pt; padding: 0pt; overflow: hidden; text-indent: -999px; background: url('close.png') no-repeat scroll left top transparent; }
+#djangobookcomments-head { background-color: rgb(72, 120, 88); color: white; padding: 2px 4px; font-weight: bold; margin: 0pt 0pt 6px; position: relative; }
+#djangobookcomments-message { font-size: 90%; padding-left: 20px; float: left; clear: none; width: 270px; }
+#comments-submit-wrapper { float: right; clear: none; white-space: nowrap; width: 150px; text-align: right; }
+#comments-submit-wrapper input { font-size: 11px; }
+#highlight-floater { position: absolute; z-index: 5; background: none repeat scroll 0% 0% rgb(72, 120, 88); top: 0pt; left: 0pt; width: 100%; height: 10px; visibility: hidden; border-top: 1px solid black; border-bottom: 1px solid black; border-left: 20px solid black; }
+#djangobookcomments .yresizable-handle-east { background-image: url('e-handle-dark.gif'); border: 0px none; }
+#djangobookcomments .yresizable-handle-south { background-image: url('s-handle-dark.gif'); border: 0px none; }
+#djangobookcomments .yresizable-handle-southeast { background-image: url('se-handle-dark.gif'); border: 0px none; }
+#comment-tabs div.tab ol { padding: 0pt; margin: 0pt; font-size: 90%; }
+#comment-tabs div.tab a:hover { background-color: rgb(224, 255, 184); color: rgb(35, 79, 50); text-decoration: none; }
+#comment-tabs div.tab a:link, #comment-tabs div.tab a:visited { color: rgb(171, 86, 3); }
+div.comment-indicator { position: absolute; width: 20px; z-index: 999; text-align: center; color: black; font-size: 11px; left: -44px; top: 0pt; display: block; }
+li.cn div.comment-indicator { left: -74px; }
+pre div.has-comments > span, div.has-comments:hover > span { background-image: url('translation-active.png'); }
+blockquote div.comment-indicator { left: -46px; }
+div.comment-indicator:hover { background-color: rgb(64, 107, 78); }
+div.comment-indicator span { position: absolute; top: -10px; left: -10px; width: 25px; height: 25px; }
+div.comment-indicator:hover span { background-image: url('comment-hover.png'); }
+div.has-comments > span, div.has-comments:hover > span { background-image: url('comment-active.png'); }
+#djangobooktranslations { padding: 0pt; border: 1px solid rgb(9, 46, 32); top: 0pt; position: absolute; z-index: 10; background-color: rgb(224, 255, 184); width: 600px; height: 400px; color: black; overflow: hidden; display: none; text-align: left; }
+#translation-tabs { padding: 6px; }
+#djangobooktranslations .ft { height: 50px; overflow: hidden; padding: 6px; }
+#djangobooktranslations .tabset .hd li a { background-color: rgb(72, 120, 88); color: white; }
+#djangobooktranslations .tabset .hd li.on em { color: rgb(9, 46, 32); }
+#djangobooktranslations .yui-ext-tabbody { font-size: 90%; background-color: white; border-right: 1px solid rgb(153, 153, 153); border-width: medium 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(153, 153, 153) rgb(153, 153, 153); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-image: none; height: 285px; overflow: auto; padding: 1em; }
+#djangobooktranslations-head .close { position: absolute; top: 3px; right: 4px; height: 13px; width: 17px; margin: 0pt; padding: 0pt; overflow: hidden; text-indent: -999px; background: url('close.png') no-repeat scroll left top transparent; }
+#djangobooktranslations-head { background-color: rgb(72, 120, 88); color: white; padding: 2px 4px; font-weight: bold; margin: 0pt 0pt 6px; position: relative; }
+#djangobooktranslations-message { font-size: 90%; padding-left: 20px; float: left; clear: none; width: 270px; }
+#translations-submit-wrapper { float: right; clear: none; white-space: nowrap; width: 250px; text-align: right; }
+#translations-submit-wrapper input { font-size: 11px; }
+#djangobooktranslations .yresizable-handle-east { background-image: url('e-handle-dark.gif'); border: 0px none; }
+#djangobooktranslations .yresizable-handle-south { background-image: url('s-handle-dark.gif'); border: 0px none; }
+#djangobooktranslations .yresizable-handle-southeast { background-image: url('se-handle-dark.gif'); border: 0px none; }
+#translation-tabs div.tab ol { padding: 0pt; margin: 0pt; font-size: 90%; }
+div.translation-indicator { position: absolute; width: 20px; z-index: 999; text-align: center; color: black; background-color: rgb(64, 107, 78); font-size: 11px; right: -44px; top: 0pt; display: block; }
+div.translation-indicator:hover { background-color: rgb(64, 107, 78); }
+div.translation-indicator span { position: absolute; top: -10px; left: 10px; width: 25px; height: 25px; }
+div.translation-indicator:hover span { background-image: url('translation-hover.png'); }
+blockquote div.translation-indicator { right: -59px; }
+table div.translation-indicator { right: -44px; }
+#comment-tabs-help h4 { margin-top: 0pt; }
+#comment-tabs-help p.image { text-align: center; }
+#comment-tabs-help img { padding: 4px; border: 1px solid rgb(153, 153, 153); }
+#ft { color: rgb(72, 120, 88); font-size: 90%; padding-bottom: 2em; }
+* pre { width: 100%; }
+* div.has-comments span {  }
+/* ::::: http://djangobook.py3k.cn/sitemedia/v2/css/new.css ::::: */
+
+body { font: 75%/1.5 "Microsoft YaHei","Lucida Grande",Verdana ! important; }
+h1, h2, h3, h4, h5, h6 { font-family: "Microsoft YaHei","Lucida Grande",Verdana ! important; }
+p { font-size: 115% ! important; line-height: 1.8 ! important; color: rgb(51, 51, 51) ! important; }
+pre { font-family: Anonymous,Consolas,"Courier New" ! important; font-size: 12px ! important; }
+.pre { font: 800 12px Consolas,"Courier New" ! important; }
+blockquote { font-size: 12px ! important; color: rgb(51, 51, 51) ! important; }
+blockquote div.translation-indicator { right: -56px ! important; }
+blockquote div.comment-indicator { left: -58px ! important; }
+blockquote blockquote { border: medium none ! important; }
+blockquote blockquote div.comment-indicator { left: -70px ! important; }
+blockquote blockquote div.translation-indicator { right: -68px ! important; }
+.tabset li { font-size: 12px ! important; }
+#djangobookcomments { z-index: 1000 ! important; }
+#djangobooktranslations { z-index: 1000 ! important; }
+/* ::::: http://djangobook.py3k.cn/sitemedia/v2/css/container.css ::::: */
+
+/* ::::: http://djangobook.py3k.cn/sitemedia/v2/css/tabs.css ::::: */
+
+.tabset { border-bottom: 1px solid rgb(153, 153, 153); }
+.tabset .hd li em { font-weight: bold; }
+.tabset .hd li a { color: rgb(102, 102, 102); }
+.tabset .hd li a:hover { text-decoration: none; }
+.tabset .hd li.on em, .tabset .hd li.on strong a { color: rgb(51, 102, 204); }
+.tabset .hd li.on strong { background-color: white; border-bottom: 1px solid white; }
+.tabset .hd li a, .tabset .hd li strong { background: url('tr_999.gif') no-repeat scroll right top rgb(204, 204, 204); }
+.tabset .hd li em { background: url('tl_999.gif') no-repeat scroll 0% 0% transparent; }
+.tabset { width: 100%; }
+.tabset a { text-decoration: none; }
+.tabset ul, .tabset li { margin: 0pt; padding: 0pt; list-style: none outside none; }
+.tabset li { float: left; display: inline; cursor: pointer; }
+.tabset li.on { cursor: default; }
+.tabset li a:hover { text-decoration: underline; }
+.tabset ul:after { clear: both; content: "."; display: block; height: 0pt; visibility: hidden; }
+.tabset ul {  }
+.tabset .hd ul { font: bold 78%/1.2em verdana; margin-bottom: -1px; padding-left: 0.3em; position: relative; }
+.tabset .hd li { margin-right: 0.33em; padding: 0pt; }
+.tabset .hd li a, .tabset .hd li strong, .tabset .hd li em { display: block; }
+.tabset .hd li a, .tabset .hd li strong {  }
+.tabset .hd li em { font-style: normal; padding: 0.5em 0.6em; }
+/* ::::: http://djangobook.py3k.cn/sitemedia/v2/css/resizable.css ::::: */
+
+.yresizable-handle { position: absolute; z-index: 100; font-size: 1px; line-height: 1px; overflow: hidden; background: none repeat scroll 0% 0% white; opacity: 0; }
+.yresizable-handle-east { width: 5px; cursor: e-resize; right: 0px; top: 0px; height: 100%; }
+.yresizable-handle-south { width: 100%; cursor: s-resize; left: 0px; bottom: 0px; height: 5px; }
+.yresizable-handle-southeast { width: 6px; cursor: se-resize; right: 0px; bottom: 0px; height: 6px; z-index: 101; }
+.yresizable-over .yresizable-handle, .yresizable-pinned .yresizable-handle { opacity: 1; }
+.yresizable-over .yresizable-handle-east, .yresizable-pinned .yresizable-handle-east { background: url('e-handle.gif') repeat scroll left center transparent; border-left: 1px solid rgb(152, 192, 244); }
+.yresizable-over .yresizable-handle-south, .yresizable-pinned .yresizable-handle-south { background: url('s-handle.gif') repeat scroll center top transparent; border-top: 1px solid rgb(152, 192, 244); }
+.yresizable-over .yresizable-handle-southeast, .yresizable-pinned .yresizable-handle-southeast { background: url('se-handle.gif') repeat scroll 0% 0% transparent; }
+.yresizable-proxy { border: 1px dashed rgb(101, 147, 207); position: absolute; overflow: hidden; visibility: hidden; z-index: 1001; }

