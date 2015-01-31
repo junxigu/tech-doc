@@ -361,6 +361,7 @@
   <RDF:Seq RDF:about="urn:scrapbook:item20150131154207">
     <RDF:li RDF:resource="urn:scrapbook:item20150131154358"/>
     <RDF:li RDF:resource="urn:scrapbook:item20150131155132"/>
+    <RDF:li RDF:resource="urn:scrapbook:item20150131161121"/>
   </RDF:Seq>
   <RDF:Description RDF:about="urn:scrapbook:item20150131154207"
                    NS1:id="20150131154207"
@@ -980,6 +981,14 @@
                    NS1:comment=""
                    NS1:icon=""
                    NS1:source="" />
+  <RDF:Description RDF:about="urn:scrapbook:item20150131161121"
+                   NS1:id="20150131161121"
+                   NS1:type=""
+                   NS1:title="ESLint Rule"
+                   NS1:chars="UTF-8"
+                   NS1:icon="resource://scrapbook/data/20150131161121/favicon.512x512_001.png"
+                   NS1:source="http://eslint.org/docs/rules/"
+                   NS1:comment="" />
   <RDF:Description RDF:about="urn:scrapbook:item20120420111301"
                    NS1:id="20120420111301"
                    NS1:type=""
