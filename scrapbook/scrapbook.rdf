@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:NS1="http://amb.vis.ne.jp/mozilla/scrapbook-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Seq RDF:about="urn:scrapbook:item20150131115835">
+    <RDF:li RDF:resource="urn:scrapbook:item20141206212918"/>
+    <RDF:li RDF:resource="urn:scrapbook:item20141207113235"/>
+    <RDF:li RDF:resource="urn:scrapbook:item20141216181422"/>
+    <RDF:li RDF:resource="urn:scrapbook:item20150127111217"/>
+  </RDF:Seq>
+  <RDF:Description RDF:about="urn:scrapbook:item20150131115835"
+                   NS1:id="20150131115835"
+                   NS1:type="folder"
+                   NS1:title="JS"
+                   NS1:chars=""
+                   NS1:comment=""
+                   NS1:icon=""
+                   NS1:source="" />
+  <RDF:Description RDF:about="urn:scrapbook:item20141216181422"
+                   NS1:id="20141216181422"
+                   NS1:type=""
+                   NS1:title="Promises"
+                   NS1:chars="UTF-8"
+                   NS1:comment=""
+                   NS1:icon="resource://scrapbook/data/20141216181422/favicon.ico"
+                   NS1:source="https://www.promisejs.org/" />
+  <RDF:Seq RDF:about="urn:scrapbook:root">
+    <RDF:li RDF:resource="urn:scrapbook:item20150131115835"/>
+  </RDF:Seq>
+  <RDF:Description RDF:about="urn:scrapbook:item20141207113235"
+                   NS1:id="20141207113235"
+                   NS1:type=""
+                   NS1:title="Underscore.js"
+                   NS1:chars="UTF-8"
+                   NS1:comment=""
+                   NS1:icon="resource://scrapbook/data/20141207113235/favicon_001.ico"
+                   NS1:source="http://underscorejs.org/#each" />
+  <RDF:Description RDF:about="urn:scrapbook:item20141206212918"
+                   NS1:id="20141206212918"
+                   NS1:type=""
+                   NS1:title="Backbone.js"
+                   NS1:chars="UTF-8"
+                   NS1:comment=""
+                   NS1:icon="resource://scrapbook/data/20141206212918/favicon.ico"
+                   NS1:source="http://backbonejs.org/" />
+  <RDF:Description RDF:about="urn:scrapbook:item20150127111217"
+                   NS1:id="20150127111217"
+                   NS1:type=""
+                   NS1:title="JavaScript Promises: There and back again - HTML5 Rocks"
+                   NS1:chars="UTF-8"
+                   NS1:comment=""
+                   NS1:icon="chrome://global/skin/icons/warning-16.png#-moz-resolution=16,16"
+                   NS1:source="http://www.html5rocks.com/zh/tutorials/es6/promises/" />
+</RDF:RDF>

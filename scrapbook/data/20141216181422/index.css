@@ -1,0 +1,84 @@
+/* ::::: https://www.promisejs.org/static/3.0.11/style/bundle.css ::::: */
+
+html { font-family: sans-serif; }
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
+a { background: none repeat scroll 0px 0px transparent; }
+a:active, a:hover { outline: 0px none; }
+b, strong { font-weight: 700; }
+h1 { margin: 0.67em 0px; }
+pre { overflow: auto; }
+code, kbd, pre, samp { font-size: 1em; }
+*, *:after, *:before { box-sizing: border-box; }
+html { font-size: 62.5%; }
+body { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 15px; line-height: 1.42857; color: rgb(44, 62, 80); background-color: rgb(255, 255, 255); }
+a { color: rgb(24, 188, 156); text-decoration: none; }
+a:focus, a:hover { color: rgb(24, 188, 156); text-decoration: underline; }
+a:focus { outline: thin dotted; outline-offset: -2px; }
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-weight: 400; line-height: 1.1; color: inherit; }
+.h1, .h2, .h3, h1, h2, h3 { margin-top: 21px; margin-bottom: 10.5px; }
+.h1, h1 { font-size: 39px; }
+.h2, h2 { font-size: 32px; }
+.h3, h3 { font-size: 26px; }
+p { margin: 0px 0px 10.5px; }
+.small, small { font-size: 85%; }
+ol, ul { margin-top: 0px; margin-bottom: 10.5px; }
+code, kbd, pre, samp { font-family: Menlo,Monaco,Consolas,"Courier New",monospace; }
+code { padding: 2px 4px; font-size: 90%; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); white-space: nowrap; border-radius: 4px; }
+pre { display: block; padding: 10px; font-size: 14px; line-height: 1.42857; word-break: break-all; word-wrap: break-word; color: rgb(123, 138, 139); border: 1px solid rgb(204, 204, 204); }
+pre code { padding: 0px; background-color: transparent; border-radius: 0px; }
+.container { margin-right: auto; margin-left: auto; padding-left: 15px; padding-right: 15px; }
+@font-face {
+	font-family: "Glyphicons Halflings";
+	src: url('glyphicons-halflings-regular.eot') format("embedded-opentype"), url('glyphicons-halflings-regular.woff') format("woff"), url('glyphicons-halflings-regular.ttf') format("truetype"), url('glyphicons-halflings-regular.svg') format("svg");
+}
+.nav { margin-bottom: 0px; padding-left: 0px; list-style: none outside none; }
+.nav > li { position: relative; display: block; }
+.nav > li > a { position: relative; display: block; padding: 10px 15px; }
+.nav > li > a:focus, .nav > li > a:hover { text-decoration: none; background-color: rgb(236, 240, 241); }
+.navbar { position: relative; min-height: 60px; margin-bottom: 21px; border: 1px solid transparent; }
+.navbar-static-top { z-index: 1000; border-width: 0px 0px 1px; }
+.navbar-nav { margin: 9.75px -15px; }
+.navbar-nav > li > a { padding-top: 10px; padding-bottom: 10px; line-height: 21px; }
+.navbar-default { background-color: rgb(44, 62, 80); border-color: transparent; }
+.navbar-default .navbar-nav > li > a { color: rgb(255, 255, 255); }
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover { color: rgb(24, 188, 156); background-color: transparent; }
+.pager { padding-left: 0px; margin: 21px 0px; list-style: none outside none; text-align: center; }
+.pager li { display: inline; }
+.pager li > a, .pager li > span { display: inline-block; padding: 5px 14px; background-color: rgb(24, 188, 156); border: 1px solid transparent; border-radius: 15px; }
+.pager li > a:focus, .pager li > a:hover { text-decoration: none; background-color: rgb(15, 120, 100); }
+.pager .next > a, .pager .next > span { float: right; }
+.panel { margin-bottom: 21px; background-color: rgb(255, 255, 255); border: 1px solid transparent; border-radius: 4px; box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05); }
+.panel-body { padding: 15px; }
+.panel-heading { padding: 10px 15px; border-bottom: 1px solid transparent; border-top-right-radius: 3px; border-top-left-radius: 3px; }
+.panel-title { margin-top: 0px; margin-bottom: 0px; font-size: 17px; color: inherit; }
+.panel-danger { border-color: rgb(231, 76, 60); }
+.panel-danger > .panel-heading { color: rgb(255, 255, 255); background-color: rgb(231, 76, 60); border-color: rgb(231, 76, 60); }
+.btn-group-vertical > .btn-group:after, .btn-group-vertical > .btn-group:before, .btn-toolbar:after, .btn-toolbar:before, .clearfix:after, .clearfix:before, .container-fluid:after, .container-fluid:before, .container:after, .container:before, .form-horizontal .form-group:after, .form-horizontal .form-group:before, .modal-footer:after, .modal-footer:before, .nav:after, .nav:before, .navbar-collapse:after, .navbar-collapse:before, .navbar-header:after, .navbar-header:before, .navbar:after, .navbar:before, .pager:after, .pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before { content: " "; display: table; }
+.btn-group-vertical > .btn-group:after, .btn-toolbar:after, .clearfix:after, .container-fluid:after, .container:after, .form-horizontal .form-group:after, .modal-footer:after, .nav:after, .navbar-collapse:after, .navbar-header:after, .navbar:after, .pager:after, .panel-body:after, .row:after { clear: both; }
+.navbar { border-width: 0px; }
+.pager a, .pager a:hover { color: rgb(255, 255, 255); }
+.diff .hljs-header, .hljs-comment, .hljs-javadoc, .hljs-template_comment { color: rgb(153, 153, 136); font-style: italic; }
+.css .rule .hljs-keyword, .hljs-keyword, .hljs-request, .hljs-status, .hljs-subst, .hljs-winutils, .javascript .hljs-title, .nginx .hljs-title { color: rgb(51, 51, 51); font-weight: 700; }
+.hljs-phpdoc, .hljs-string, .hljs-tag .hljs-value, .tex .hljs-formula { color: rgb(221, 17, 68); }
+.django .hljs-tag .hljs-keyword, .hljs-rules .hljs-property, .hljs-tag, .hljs-tag .hljs-title { color: navy; font-weight: 400; }
+.hljs-attribute, .hljs-variable, .lisp .hljs-body { color: teal; }
+.gittip-widget { font-size: 9pt; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; color: rgb(97, 76, 62); }
+.gittip-widget b { font-size: 12pt; line-height: 14pt; }
+.gittip-widget a { color: rgb(42, 143, 121); }
+.gittip-0002 { width: 84pt; display: inline-block; border: 2px solid rgb(97, 76, 62); border-radius: 6pt; background: url('gittip-heart.gif') no-repeat scroll 64pt 31pt rgb(255, 255, 255); text-align: left; }
+.gittip-0002 .gittip-inner { display: block; padding: 6pt 0px 6pt 9pt; }
+body { margin: 0px; }
+.title { position: relative; text-align: center; margin-top: 1em; margin-bottom: 1em; }
+h1 { font-size: 80px; font-weight: 700; letter-spacing: -1px; line-height: 1; text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4), 0px 0px 30px rgba(0, 0, 0, 0.075); }
+body, html { height: 100%; }
+#wrap { min-height: 100%; height: auto ! important; margin: 0px auto -130px; }
+#footer-wrapper, #push { height: 130px; }
+#footer-wrapper { background-color: rgb(245, 245, 245); }
+footer { padding: 30px 0px; border-top: 1px solid rgb(229, 229, 229); background-color: rgb(245, 245, 245); }
+footer .right { float: right; }
+footer p { margin-bottom: 0px; color: rgb(119, 119, 119); }
+a.jepso, a.jepso:active, a.jepso:hover { color: rgb(191, 0, 128); }
+pre { margin: 1em; }
+pre code { white-space: pre; word-break: normal; word-wrap: normal; font-size: 1.6em; font-family: Consolas,'Liberation Mono',Menlo,Courier,monospace; color: rgb(0, 0, 0); }
+pre { background: none repeat scroll 0% 0% rgb(255, 255, 255); box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); border-radius: 0px; }
+.small-code pre code { font-size: 1.2em; }
