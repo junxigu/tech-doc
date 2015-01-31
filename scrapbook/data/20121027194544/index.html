@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body><div id="bd_snap">
+    <div id="bd_snap_head">
+        <a href="http://www.baidu.com/" id="bd_snap_logo" title="到百度首页"></a>
+    </div>
+    <div id="bd_snap_txt">您查询的关键词是：<span><a style="color: black; background-color: rgb(255, 255, 102); padding: 0pt 3px; font-weight: bold;" href="http://cache.baidu.com/c?m=9f65cb4a8c8507ed4fece7631043803a4e14d33d2bd7a7452189c65f93135c421620beac275541598cd8776704af4256f7f037773d0422a3de95c81cd2fdc36a38895723016c913014c418dfdc3623d651e74de8df0e96cde74494b9a3a0c82257&amp;p=ce6fde5686cc42a95babc7710e169f7e&amp;newp=80769a46d69d5aff57ee927d5852897d5c5bc4387ebad0157c8a88&amp;user=baidu&amp;fm=sc&amp;query=tcp%CB%C4%B4%CE%CE%D5%CA%D6&amp;qid=83fa9c621bec67c4&amp;p1=1#baidusnap0">tcp</a><a style="color: black; background-color: rgb(160, 255, 255); padding: 0pt 3px; font-weight: bold;" href="http://cache.baidu.com/c?m=9f65cb4a8c8507ed4fece7631043803a4e14d33d2bd7a7452189c65f93135c421620beac275541598cd8776704af4256f7f037773d0422a3de95c81cd2fdc36a38895723016c913014c418dfdc3623d651e74de8df0e96cde74494b9a3a0c82257&amp;p=ce6fde5686cc42a95babc7710e169f7e&amp;newp=80769a46d69d5aff57ee927d5852897d5c5bc4387ebad0157c8a88&amp;user=baidu&amp;fm=sc&amp;query=tcp%CB%C4%B4%CE%CE%D5%CA%D6&amp;qid=83fa9c621bec67c4&amp;p1=1#baidusnap1">四次握手</a></span> 。如果打开速度慢，可以尝试<a href="http://cache.baidu.com/c?m=9f65cb4a8c8507ed4fece7631043803a4e14d33d2bd7a7452189c65f93135c421620beac275541598cd8776704af4256f7f037773d0422a3de95c81cd2fdc36a38895723016c913014c418dfdc3623d651e74de8df0e96cde74494b9a3a0c82257&amp;p=ce6fde5686cc42a95babc7710e169f7e&amp;newp=80769a46d69d5aff57ee927d5852897d5c5bc4387ebad0157c8a88&amp;user=baidu&amp;fm=sc&amp;query=tcp%CB%C4%B4%CE%CE%D5%CA%D6&amp;qid=83fa9c621bec67c4&amp;p1=1&amp;fast=y">快速版</a>；如果想保存快照，可以<a onclick="window.open('http://cang.baidu.com/do/add?it='+encodeURIComponent(document.title)+'&amp;iu='+encodeURIComponent(location.href)+'&amp;fr=ps#nw=1','_s','scrollbars=no,width=600,height=450,right=75,top=20,status=no,resizable=yes'); return false;" href="http://cang.baidu.com/do/add" target="_top">添加到搜藏</a>；如果想更新或删除快照，可以<a href="http://tousu.baidu.com/webmaster/add?link=http%3A%2F%2Fcache.baidu.com%2Fc%3Fm%3D9f65cb4a8c8507ed4fece7631043803a4e14d33d2bd7a7452189c65f93135c421620beac275541598cd8776704af4256f7f037773d0422a3de95c81cd2fdc36a38895723016c913014c418dfdc3623d651e74de8df0e96cde74494b9a3a0c82257%26p%3Dce6fde5686cc42a95babc7710e169f7e%26newp%3D80769a46d69d5aff57ee927d5852897d5c5bc4387ebad0157c8a88%26user%3Dbaidu%26fm%3Dsc%26query%3Dtcp%25CB%25C4%25B4%25CE%25CE%25D5%25CA%25D6%26qid%3D83fa9c621bec67c4%26p1%3D1" id="bd_tousu">投诉快照</a>。</div>
+
+    <div id="bd_snap_note">(百度和网页<a href="http://general.blog.51cto.com/927298/237850">http://general.blog.51cto.com/927298/237850</a>的作者无关，不对其内容负责。百度快照谨为网络故障时之索引，不代表被搜索网站的即时页面。)</div>
+</div>
+<div id="bd_snap_search">
+	<form action="http://www.baidu.com/s"><input name="cl" value="3" type="hidden"><input value="" name="wd" id="bd_snap_kw" maxlength="100"><span id="bd_snap_btn_wr"><input id="bd_snap_su" value="百度一下" class="bd_snap_btn" onmousedown="this.className='bd_snap_btn bd_snap_btn_h'" type="submit"></span></form>
+</div>
+<div id="bd_snap_ln"></div>
+<div style="position: relative;">
+
+
+
+
+
+
+<title> TCP三次握手/四次挥手详解 - general195 - 51CTO技术博客</title>
+<meta name="description" content="版权声明：原创作品，允许转载，转载时请务必以超链接形式标明文章原始出处、作者信息和本声明。否则将追究法律责任。http://justim.blog.51cto.com/740099/237548TCP(TransmissionControlProtocol)　传输控制协..">
+<meta name="keywords" content=" TCP三次握手/四次挥手详解">
+<meta http-equiv="Cache-Control" content="private">
+
+
+
+
+
+
+
+<link rel="alternate" href="http://general.blog.51cto.com/rss.php?uid=927298" type="application/rss+xml" title="RSS 2.0">
+<link rel="edituri" type="application/rsd+xml" title="rsd" href="http://general.blog.51cto.com/927298/xmlrpc.php?rsd=1">
+
+
+
+
+
+
+
+
+
+
+<div id="home_top">
+<div class="top_nav" style="width: 990px;">
+<div class="left" style="margin-top: 10px; width: 470px;"><a href="http://blog.51cto.com/" target="_top"><img src="head_blog_sibebar_logo.gif" style="margin-top: -4px;" align="absmiddle"></a><a target="_top" href="http://www.51cto.com/">51CTO首页</a><img src="top_bg_xian.gif" style="margin-top: -4px;" align="absmiddle" height="25" width="16"><a href="http://blog.51cto.com/" target="_top">51CTO博客</a><img src="top_bg_xian.gif" style="margin-top: -4px;" align="absmiddle" height="25" width="16"><a href="http://home.51cto.com/?reback=http%253A%252F%252Fgeneral.blog.51cto.com%252F927298%252F237850">我的博客</a><img src="top_bg_xian.gif" style="margin-top: -4px;" align="absmiddle" height="25" width="16">
+
+<a target="_top" href="http://blog.51cto.com/search.php">搜索</a>
+<a href="javascript:void(0);" style="color: rgb(255, 0, 0); text-decoration: underline; display: none;" id="showMessagerDim">每日博报</a>
+</div>
+
+<div class="right" style="width: 520px;">
+<div class="more"><img src="top_shequ.gif" align="absmiddle" height="16" width="27">社区：<a target="_top" href="http://bbs.51cto.com/">论坛</a><a target="_top" href="http://blog.51cto.com/">博客</a><a target="_top" href="http://down.51cto.com/">下载</a><a target="_top" href="http://book.51cto.com/">读书</a><a href="javascript:viod(0);">更多<img style="padding-left: 4px;" src="nav_ico1.gif" align="absmiddle"></a>            </div>            <span id="login_status"><div class="login" id="login_status"></div>    </span>                </div>    </div></div>
+
+
+
+<div class="subMenu3" id="s3">
+<ul>
+<li><a href="http://home.51cto.com/" target="_top">家园</a></li>
+<li><a href="http://t.51cto.com/" target="_top">微博</a></li>
+<li><a href="http://blog.51cto.com/" target="_top">博客</a></li>
+<li><a href="http://bbs.51cto.com/" target="_top">论坛</a></li>
+<li><a href="http://down.51cto.com/" target="_top">下载</a></li>
+<li><a href="http://selftest.51cto.com/" target="_top">自测</a></li>
+<li><a href="http://doctor.51cto.com/" target="_top">门诊</a></li>
+<li><a href="http://blog.51cto.com/newsletter/" target="_top">周刊</a></li>
+<li><a href="http://book.51cto.com/" target="_top">读书</a></li>
+<li><a href="http://g.51cto.com/" target="_top">技术圈</a></li>
+<li><a href="http://zhidao.51cto.com/" target="_top">知道</a></li>
+</ul>
+</div>
+<!--简导航end-->
+
+
+
+<div class="headerBox">
+<div class="header">
+<div class="header_l">
+<div class="logo_blogname">
+
+
+
+<div class="blogName">
+<a href="http://general.blog.51cto.com/"><h1>general195</h1></a>
+</div>
+</div><!--logo_blogname end-->
+<div class="blogLink">
+
+<a href="http://general.blog.51cto.com/">http://general.blog.51cto.com</a> <input id="txtUser" size="32" value="http://general.blog.51cto.com" type="hidden">   <a href="javascript:void(0);" onclick="copy();">【复制】</a> <a href="http://general.blog.51cto.com/rss.php?uid=927298" target="_top"></a><a href="http://general.blog.51cto.com/rss.php?uid=927298" target="_top">【订阅】</a>
+
+</div>
+
+
+
+</div><!--header_l end-->
+<div class="header_r">
+<div class="blogInfo"><span><a href="http://general.blog.51cto.com/927298/o" title="察看general195所有原创文章">原创</a>:28</span><span><a href="http://general.blog.51cto.com/927298/t" title="察看general195所有翻译文章">翻译</a>:0</span><span><a href="http://general.blog.51cto.com/927298/c" title="察看general195所有转载文章">转载</a>:132</span></div>
+<div class="blogNav"><a href="http://general.blog.51cto.com/">博 客</a>|<a href="http://general.blog.51cto.com/pic/">图库</a>|<a href="http://general.blog.51cto.com/addblog.php">写博文</a>|<a href="http://51ctoblog.blog.51cto.com/all/26414/4" target="_top">帮 助</a></div>
+</div>
+</div>
+<!--header end-->
+</div><!--headerBox end-->
+<div class="mainNav">
+<span class="mainNavT"></span>
+<ul>
+<li><a href="#">首页</a></li>|<li><a href="http://general.blog.51cto.com/927298/d-1">Linux</a></li>|<li><a href="http://general.blog.51cto.com/927298/d-2">学习笔记</a></li>|<li><a href="http://general.blog.51cto.com/927298/d-3">CUDA</a></li>|<li><a href="http://general.blog.51cto.com/927298/d-4">Opengl</a></li>|<li><a href="http://general.blog.51cto.com/927298/d-5">点点滴滴</a></li>|<li><a href="http://general.blog.51cto.com/927298/d-6">Tomcat+Jsp+Mysq</a></li>|<li><a href="http://general.blog.51cto.com/927298/d-7">图像处理</a></li>|<li><a href="http://general.blog.51cto.com/927298/d-8">Gstreamer</a></li>|<li><a href="http://general.blog.51cto.com/927298/d-9">流媒体服务器开发</a></li>|<li><a href="http://general.blog.51cto.com/927298/d-10">VxWorks</a></li>|<li><a href="http://general.blog.51cto.com/927298/d-11">Mingw+SDL</a></li>|<li><a href="http://general.blog.51cto.com/927298/d-12">游戏引擎</a></li>
+</ul>
+<span class="mainNavB"></span>
+</div>
+<!--mainNav end-->
+
+
+
+<!--[if IE 6]>
+  
+  
+<![endif]-->
+
+
+
+
+
+
+
+
+<div id="add_sys_type_div" style="width: 600px; border: 1px solid rgb(88, 176, 221); background-color: rgb(255, 255, 255); position: absolute; left: 30%; top: 300px; display: none; z-index: 255;"></div>
+<div id="add_sys_type_divs" style="width: 550px; border: 1px solid rgb(88, 176, 221); background-color: rgb(255, 255, 255); position: absolute; left: 30%; top: 300px; display: none; z-index: 255;"></div>
+
+
+<div class="blogMain">
+<div class="blogLeft">
+
+
+<div class="box moduleUser">
+<div class="title">
+<h2><strong>general195</strong> 的BLOG  </h2>
+</div>
+<div class="modCon">
+
+<div class="userImage" style="margin: 10px auto 5px; text-align: center; width: 130px; border: 1px solid rgb(212, 212, 212);">
+	<table cellpadding="0" cellspacing="0" width="100%">
+		<tbody><tr>
+			<td align="center" height="130" valign="middle"></td>
+		</tr>
+	</tbody></table>
+</div>
+<div class="photo_links">
+	<p class="photo_links_red photo_links_red02"><a href="http://51ctoblog.blog.51cto.com/26414/928875">头像升级了？来看看&gt;&gt;</a></p>
+</div>
+
+
+
+
+
+
+
+
+<div class="crumbs">
+<a href="http://home.51cto.com/index.php?s=/space/927298#message" class="writeMessage" target="_top">写留言</a><a href="http://g.51cto.com/addgroup.php?uid=" class="inCircle" target="_top">邀请进圈子</a><a href="http://home.51cto.com/index.php?s=/Notify/write/uid/927298" class="message" target="_top">发消息</a> <a href="http://general.blog.51cto.com/" onclick="add_flink(927298);return false" class="joinLinks">加友情链接</a><a href="http://home.51cto.com/index.php?s=/space/927298" class="joinFriends" target="_top">进家园 加好友</a>
+</div>
+
+</div><!--modCon end-->
+<span class="modBot"></span>
+</div>
+
+
+<div class="infoList box">
+<div class="title">
+<h2>博客统计信息</h2>
+</div>
+<div class="modCon">
+<p>
+<span class="infoListHead"></span>
+用户名：general195<br>
+文章数：161<br>
+评论数：34<br>
+访问量：189197<br>
+无忧币：360<br>
+<a href="http://51ctoblog.blog.51cto.com/26414/5591" target="_top">博客积分</a>：764<br>
+<a href="http://51ctoblog.blog.51cto.com/26414/5591" target="_top">博客等级</a>：4<br>
+注册日期：2009-09-05<br>
+ 
+</p>
+</div>
+<span class="modBot"></span>
+</div>
+
+
+<div class="hotArt box">
+<div class="title">
+<h2>热门文章</h2>
+</div>
+<div class="modCon">
+<ul>
+<li><a href="http://general.blog.51cto.com/927298/235077">解决 multiple definitio..</a></li>
+<li><a href="http://general.blog.51cto.com/927298/200090">RTSP服务器实例live555源..</a></li>
+<li><a href="http://general.blog.51cto.com/927298/200088">基于liveMedia的RTSP/RTP..</a></li>
+<li><a href="http://general.blog.51cto.com/927298/354523">配置/etc/exports文件</a></li>
+<li><a href="http://general.blog.51cto.com/927298/269044">linux静态库的生成与使用</a></li>
+<li><a name="baidusnap0"></a><a href="http://general.blog.51cto.com/927298/237850"> <b style="color: black; background-color: rgb(255, 255, 102);">TCP</b>三次握手/四次挥手详解</a></li>
+<li><a href="http://general.blog.51cto.com/927298/248445">gstreamer安装经验</a></li>
+<li><a href="http://general.blog.51cto.com/927298/324523">freetype2 中文显示</a></li>
+
+</ul>
+</div>
+<span class="modBot"></span>
+</div>
+<div class="search box">
+<div class="title"><h2>搜索BLOG文章</h2></div>
+<div class="modCon">
+<form method="post" action="http://general.blog.51cto.com/927298/search.php?" tabindex="99">
+<input name="step" value="2" type="hidden">
+<input name="authorid" value="927298" type="hidden">
+<input name="sch_area" value="S" type="hidden">
+<input value="" name="keyword" class="searchInput" type="text">
+<input value="搜 索" class="searchBtn" type="submit">
+</form>
+</div><!--modCon end-->
+<span class="modBot"></span>
+</div>
+
+
+<div class="myHome box">
+<div class="title"><h2 class="fl">我的技术圈(<a href="http://general.blog.51cto.com/mygroup.php" target="_top"><b>4</b></a>)</h2>
+<a href="http://home.51cto.com/apps/group/index.php?s=/Index/index/" class="fr" target="_top">更多&gt;&gt;</a></div>
+<div class="modCon">
+<ul>
+
+<li><a href="http://g.51cto.com/linux" target="_top">linux-北京圈</a>&nbsp;&nbsp;
+
+<img src="1.gif" alt="有新推送博文">
+
+</li>
+
+<li><a href="http://g.51cto.com/ultraembedded" target="_top">嵌入式系统开发</a>&nbsp;&nbsp;
+
+
+</li>
+
+<li><a href="http://g.51cto.com/gpu" target="_top">GPU高性能计算</a>&nbsp;&nbsp;
+
+
+</li>
+
+<li><a href="http://g.51cto.com/it100" target="_top">IT网工技术</a>&nbsp;&nbsp;
+
+
+</li>
+
+</ul>
+</div><!--modCon end-->
+<span class="modBot"></span>
+</div>
+
+
+<div class="box recentGuests">
+<div class="title">
+<h2>最近访客</h2>
+</div>
+<div class="modCon">
+<ul>
+
+<li><a href="http://808599.blog.51cto.com/"><img src="avatar.php"></a>
+<p><a href="http://808599.blog.51cto.com/">lovey..</a></p>
+
+</li><li><a href="http://5615538.blog.51cto.com/"><img src="avatar_001.php"></a>
+<p><a href="http://5615538.blog.51cto.com/">dingf..</a></p>
+
+</li><li><a href="http://1731260.blog.51cto.com/"><img src="avatar_002.php"></a>
+<p><a href="http://1731260.blog.51cto.com/">my51_cto</a></p>
+
+</li><li><a href="http://4159699.blog.51cto.com/"><img src="avatar_003.php"></a>
+<p><a href="http://4159699.blog.51cto.com/">scorp..</a></p>
+
+</li><li><a href="http://2047636.blog.51cto.com/"><img src="avatar_004.php"></a>
+<p><a href="http://2047636.blog.51cto.com/">王槐鸿</a></p>
+
+</li><li><a href="http://5730924.blog.51cto.com/"><img src="avatar_005.php"></a>
+<p><a href="http://5730924.blog.51cto.com/">f3121..</a></p>
+
+</li><li><a href="http://194222.blog.51cto.com/"><img src="avatar_006.php"></a>
+<p><a href="http://194222.blog.51cto.com/">zhy4013</a></p>
+
+</li><li><a href="http://3093375.blog.51cto.com/"><img src="avatar_007.php"></a>
+<p><a href="http://3093375.blog.51cto.com/">lifu_jie</a></p>
+
+</li><li><a href="http://5137801.blog.51cto.com/"><img src="avatar_008.php"></a>
+<p><a href="http://5137801.blog.51cto.com/">yule516</a></p>
+
+</li><li><a href="http://612763.blog.51cto.com/"><img src="avatar_009.php"></a>
+<p><a href="http://612763.blog.51cto.com/">wdc110</a></p>
+
+</li><li><a href="http://4669674.blog.51cto.com/"><img src="avatar_010.php"></a>
+<p><a href="http://4669674.blog.51cto.com/">xianou</a></p>
+
+</li><li><a href="http://5762027.blog.51cto.com/"><img src="avatar_011.php"></a>
+<p><a href="http://5762027.blog.51cto.com/">yuyon..</a></p>
+
+</li></ul>
+<span class="clear"></span>
+</div>
+<span class="modBot"></span>
+</div>
+
+
+<div class="newComments box">
+<div class="title">
+<h2>最新评论 
+
+</h2>
+
+
+
+</div>
+<div class="modCon">
+<ul>
+
+<li><a href="http://960255.blog.51cto.com/" class="operlink" target="_top"><b>Angora</b></a>：<a href="http://general.blog.51cto.com/927298/237850" target="_top">受教啦！</a></li>
+
+<li><a href="http://5704765.blog.51cto.com/" class="operlink" target="_top"><b>xianxianyue12</b></a>：<a href="http://general.blog.51cto.com/927298/237850" target="_top">很好，有用。谢谢！</a></li>
+
+<li><a href="http://5791100.blog.51cto.com/" class="operlink" target="_top"><b>蓝色主场</b></a>：<a href="http://general.blog.51cto.com/927298/237850" target="_top">写的很详细，受教了。。。</a></li>
+
+<li><a href="http://5791100.blog.51cto.com/" class="operlink" target="_top"><b>蓝色主场</b></a>：<a href="http://general.blog.51cto.com/927298/237850" target="_top">写的很详细，受教了。。。</a></li>
+
+<li><a href="http://general.blog.51cto.com/" class="operlink" target="_top"><b>general195</b></a>：<a href="http://general.blog.51cto.com/927298/362679" target="_top">回复 yizhongliu: 这是我在原单位..</a></li>
+
+
+</ul>
+</div>
+<span class="modBot"></span>
+</div>
+
+
+<div class="hotBlogArt box">
+<div class="title">
+  <h2 class="fl">51CTO推荐博文</h2>
+  <a href="http://blog.51cto.com/artcommend" class="fr">更多&gt;&gt;</a></div>
+<div class="modCon">
+<ul>
+<li><a href="http://300second.blog.51cto.com/7582/1019577" title="cwRsync server服务启动失败故障排除手记" target="_top">cwRsync server服务启动失败故障..</a></li>
+<li><a href="http://rfyiamcool.blog.51cto.com/1030776/1016636" title="用xtrabackup实现mysql的主从复制快速部署【主不锁表】" target="_top">用xtrabackup实现mysql的主从复制..</a></li>
+<li><a href="http://433266.blog.51cto.com/423266/1017909" title="使用 LDIFDE 将目录对象导入或导出到 Active Directory" target="_top">使用 LDIFDE 将目录对象导入或导..</a></li>
+<li><a href="http://liuyuan51.blog.51cto.com/5971950/1018119" title="yum服务器配置网络源与本地源" target="_top">yum服务器配置网络源与本地源</a></li>
+<li><a href="http://gaowenlong.blog.51cto.com/451336/1018095" title="2008R2 Hyper-v 高可用性（Livemigration）集合" target="_top">2008R2 Hyper-v 高可用性（Livemi..</a></li>
+<li><a href="http://kindit.blog.51cto.com/2286921/1018070" title="EIGRP 等价/非等价负载均衡" target="_top">EIGRP 等价/非等价负载均衡</a></li>
+<li><a href="http://miracle219.blog.51cto.com/3415762/1018062" title="论CCNA的学习方法" target="_top">论CCNA的学习方法</a></li>
+<li><a href="http://jqq1982.blog.51cto.com/515663/1018168" title="ADRMS权限管理服务器(六)---外部客户端访问" target="_top">ADRMS权限管理服务器(六)---外部..</a></li>
+<li><a href="http://houzhiqing.blog.51cto.com/6086337/1019333" title="思科GNS3和华为eNSP完美结合" target="_top">思科GNS3和华为eNSP完美结合</a></li>
+<li><a href="http://5503845.blog.51cto.com/5493845/1018278" title="postfix+web页面+身份验证" target="_top">postfix+web页面+身份验证</a></li>
+<li><a href="http://wujicun.blog.51cto.com/682093/1018241" title="cisco2950与ros软路由vlan单臂路由" target="_top">cisco2950与ros软路由vlan单臂路由</a></li>
+
+</ul>
+</div><!--modCon end-->
+<span class="modBot"></span>
+</div>
+
+
+<div class="friendLink box">
+<div class="title">
+  <h2>友情链接</h2>
+</div>
+<div class="modCon">
+<ul>
+
+<li><a href="http://ironpeak.blog.51cto.com/" title="西安铁峰电子有限公司" target="_top">西安铁峰电子有限公司</a></li>
+
+<li><a href="http://licong.blog.51cto.com/" title="licong" target="_top">licong</a></li>
+
+<li><a href="http://wiliiwin.blog.51cto.com/" title="linux学习者" target="_top">linux学习者</a></li>
+
+<li><a href="http://yangchangqing.blog.51cto.com/" title="杨常青" target="_top">杨常青</a></li>
+
+<li><a href="http://kymsha.blog.51cto.com/" title="kym" target="_top">kym</a></li>
+
+<li><a href="http://543925535.blog.51cto.com/" title="曾垂鑫——follow my heart" target="_top">曾垂鑫——follow ..</a></li>
+
+<li><a href="http://hukunlin.blog.51cto.com/" title="成功不仅是个人荣誉，更是对家人责任" target="_top">成功不仅是个人荣..</a></li>
+
+<li><a href="http://amao99.blog.51cto.com/" title="狼剩阿毛之笑傲江湖" target="_top">狼剩阿毛之笑傲江湖</a></li>
+
+<li><a href="http://gaoxingf.blog.51cto.com/" title="高兴F" target="_top">高兴F</a></li>
+
+<li><a href="http://openhero.blog.51cto.com/" title="开勇" target="_top">开勇</a></li>
+
+<li><a href="http://gtstorageworld.blog.51cto.com/" title="郭涛的存储世界" target="_top">郭涛的存储世界</a></li>
+
+<li><a href="http://lancelot.blog.51cto.com/" title="rainman" target="_top">rainman</a></li>
+
+<li><a href="http://justim.blog.51cto.com/" title="梅岩〃s博客" target="_top">梅岩〃s博客</a></li>
+
+<li><a href="http://lifj07.blog.51cto.com/" title="allenli" target="_top">allenli</a></li>
+
+<li><a href="http://jeremiah.blog.51cto.com/" title="Jeremiah的程序乐园" target="_top">Jeremiah的程序乐园</a></li>
+
+<li><a href="http://yunli.blog.51cto.com/" title="李云" target="_top">李云</a> <img src="tubiao2.gif" alt="三日内更新"></li>
+
+<li><a href="http://51ctoblog.blog.51cto.com/" title="51CTO博客开发" target="_top">51CTO博客开发</a> <img src="tubiao3.gif" alt="本周内更新"></li>
+
+</ul>
+</div><!--modCon end-->
+<span class="modBot"></span>
+</div>
+
+
+
+</div>
+<!--left end-->
+
+
+
+<div class="blogRight">
+	<div class="artShow box">
+   	  <div class="share" id="share">
+
+    <div class="shareItem">
+		<div class="m_sharelinks"><a target="_top" href="http://51ctomvp.blog.51cto.com/192695/1019865" style="color: blue;">2012年10月MVP名单公布啦！</a><a target="_top" href="http://blog.51cto.com/newsletter/175/" style="color: red;">周刊：从需求看《IT人员应聘建议》</a><a target="_top" href="http://doctor.51cto.com/develop-271.html" style="color: blue;">【有奖门诊】探索式测试的奥秘</a></div>
+		<p class="shareMored"><a href="http://general.blog.51cto.com/all/927298">博主的更多文章&gt;&gt;</a></p>
+	</div>
+      </div>
+       <div class="modCon">
+   	  <div class="showBox" style="margin: 0pt 0pt 10px;">
+      <div class="line_hd_r"></div>
+      <div class="art_tj">
+
+      </div>
+    		<div class="showHead">
+    		  <div class="showTitleBOx" style="text-align: center;">
+              <div class="showTitle">
+
+	 		<img src="arttype02.jpg">
+
+
+    		     <b style="color: black; background-color: rgb(255, 255, 102);">TCP</b>三次握手/四次挥手详解
+                </div>
+  		    </div>
+   		    <span class="artTime">2009-12-02 18:35:28</span></div><!--showHead end-->
+    <div class="showTags">标签：<a href="http://blog.51cto.com/tagindex.php?keyword=TCP" target="_top" class="operlink"><b style="color: black; background-color: rgb(255, 255, 102);">TCP</b></a> <a href="http://blog.51cto.com/tagindex.php?keyword=%C8%FD%B4%CE" target="_top" class="operlink">三次</a> <a href="http://blog.51cto.com/tagindex.php?keyword=%CE%D5%CA%D6" target="_top" class="operlink">握手</a> <a href="http://blog.51cto.com/tagindex.php?keyword=%D0%DD%CF%D0" target="_top" class="operlink">休闲</a> <a href="http://blog.51cto.com/tagindex.php?keyword=%BB%D3%CA%D6" target="_top" class="operlink">挥手</a>
+
+	</div>
+
+
+            <!--正文 begin-->
+    		<div class="showContent">
+    		  <div class="copy"><strong>版权声明：</strong>原创作品，允许转载，转载时请务必以超链接形式标明文章 <a href="http://justim.blog.51cto.com/740099/237548" target="_top" style="text-decoration: underline;">原始出处</a> 、作者信息和本声明。否则将追究法律责任。<a href="http://justim.blog.51cto.com/740099/237548">http://justim.blog.51cto.com/740099/237548</a></div>
+		<div>
+<div class="cnt">
+<div><strong><b style="color: black; background-color: rgb(255, 255, 102);">TCP</b>(Transmission Control Protocol)　传输控制协议</strong></div>
+<div><strong></strong>&nbsp;</div>
+<div><b style="color: black; background-color: rgb(255, 255, 102);">TCP</b>是主机对主机层的传输控制协议，提供可靠的连接服务，采用三次握手确认建立一个连接:</div>
+<div>位码即<b style="color: black; background-color: rgb(255, 255, 102);">tcp</b>标志位,有6种标示:SYN(synchronous建立联机) ACK(acknowledgement 确认) PSH(push传送) FIN(finish结束) RST(reset重置) URG(urgent紧急)</div>
+<div>Sequence number(顺序号码) Acknowledge number(确认号码)</div>
+<div>第一次握手：主机A发送位码为syn＝1,随机产生seq number=1234567的数据包到服务器，主机B由SYN=1知道，A要求建立联机；</div>
+<div>第二次握手：主机B收到请求后要确认联机信息，向A发送ack number=(主机A的seq+1),syn=1,ack=1,随机产生seq=7654321的包</div>
+<div>第三次握手：主机A收到后检查ack number是否正确，即第一次发送的seq number+1,以及位码ack是否为1，若正确，主机A会再发送ack number=(主机B的seq+1),ack=1，主机B收到后确认seq值与ack=1则连接建立成功。</div>
+<div>完成三次握手，主机A与主机B开始传送数据。</div><font color="#0000ff">
+</font><div><font color="#0000ff"><br><font color="#ff0000">在<b style="color: black; background-color: rgb(255, 255, 102);">TCP</b>/IP协议中，<b style="color: black; background-color: rgb(255, 255, 102);">TCP</b>协议提供可靠的连接服务，采用三次握手建立一个连接。 <br>第一次握手：建立连接时，客户端发送syn包(syn=j)到服务器，并进入SYN_SEND状态，等待服务器确认； <br>第
+二次握手：服务器收到syn包，必须确认客户的SYN（ack=j+1），同时自己也发送一个SYN包（syn=k），即SYN+ACK包，此时服务器
+进入SYN_RECV状态；
+第三次握手：客户端收到服务器的SYN＋ACK包，向服务器发送确认包ACK(ack=k+1)，此包发送完毕，客户端和服务器进入
+ESTABLISHED状态，完成三次握手。 完成三次握手，客户端与服务器开始传送数据.</font></font></div>
+<div><font color="#0000ff">&nbsp;</font></div>
+<div>&nbsp;</div>
+<div><strong>实例:</strong></div>
+<div>&nbsp;</div>
+<div>IP 192.168.1.116.3337 &gt; 192.168.1.123.7788: S 3626544836:3626544836<br>IP 192.168.1.123.7788 &gt; 192.168.1.116.3337: S 1739326486:1739326486 ack 3626544837<br>IP 192.168.1.116.3337 &gt; 192.168.1.123.7788: ack 1739326487,ack 1</div>
+<div>第一次握手：192.168.1.116发送位码syn＝1,随机产生seq number=3626544836的数据包到192.168.1.123,192.168.1.123由SYN=1知道192.168.1.116要求建立联机;</div>
+<div>第二次握手：192.168.1.123收到请求后要确认联机信息，向192.168.1.116发送ack number=3626544837,syn=1,ack=1,随机产生seq=1739326486的包;</div>
+<div>第 三次握手：192.168.1.116收到后检查ack number是否正确，即第一次发送的seq
+number+1,以及位码ack是否为1，若正确，192.168.1.116会再发送ack
+number=1739326487,ack=1，192.168.1.123收到后确认seq=seq+1,ack=1则连接建立成功。</div>
+<div>&nbsp;</div>
+<div>图解：<br>一个三次握手的过程（图1，图2）<br><img onclick='window.open("http://blog.51cto.com/viewpic.php?refimg=" + this.src)' src="2_ohpocnrkjkyf.jpg" border="0"><br>（图1）<br><img onclick='window.open("http://blog.51cto.com/viewpic.php?refimg=" + this.src)' src="3_05oo5wmge1jf.jpg" border="0"><br>（图2）<br><br>第一次握手的标志位（图3）<br>我们可以看到标志位里面只有个同步位，也就是在做请求(SYN)<br><img onclick='window.open("http://blog.51cto.com/viewpic.php?refimg=" + this.src)' src="4_xvympl8sjb75.jpg" border="0"><br>（图3）<br><br>第二次握手的标志位（图4）<br>我们可以看到标志位里面有个确认位和同步位，也就是在做应答(SYN + ACK)<br><img onclick='window.open("http://blog.51cto.com/viewpic.php?refimg=" + this.src)' src="5_d1shcrwww25u.jpg" border="0"><br>（图4）<br><br>第三次握手的标志位（图5）<br>我们可以看到标志位里面只有个确认位，也就是再做再次确认(ACK)<br><img onclick='window.open("http://blog.51cto.com/viewpic.php?refimg=" + this.src)' src="6_b9jdjghea5cj.jpg" border="0"><br>（图5）<br><br>一个完整的三次握手也就是 请求---应答---再次确认</div>
+<div><br>&nbsp;</div>
+<div>&nbsp;</div>
+<div><strong>四次分手：</strong></div>
+<div><strong></strong>&nbsp;</div>
+<div style="margin: 0cm 0cm 0pt; line-height: 120%; text-indent: 18pt;" class="MsoNormal"><span style="line-height: 120%; font-size: 9pt;">由于</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman"><b style="color: black; background-color: rgb(255, 255, 102);">TCP</b></font></span><span style="line-height: 120%; font-size: 9pt;">连接是全双工的，因此每个方向都必须单独进行关闭。这个原则是当一方完成它的数据发送任务后就能发送一个</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">FIN</font></span><span style="line-height: 120%; font-size: 9pt;">来终止这个方向的连接。收到一个</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman"> FIN</font></span><span style="line-height: 120%; font-size: 9pt;">只意味着这一方向上没有数据流动，一个</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman"><b style="color: black; background-color: rgb(255, 255, 102);">TCP</b></font></span><span style="line-height: 120%; font-size: 9pt;">连接在收到一个</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">FIN</font></span><span style="line-height: 120%; font-size: 9pt;">后仍能发送数据。首先进行关闭的一方将执行主动关闭，而另一方执行被动关闭。</span></div>
+<div style="margin: 0cm 0cm 0pt; line-height: 120%; text-indent: 18pt;" class="MsoNormal"><span style="line-height: 120%; font-size: 9pt;"></span>&nbsp;</div>
+<div style="margin: 0cm 0cm 0pt; line-height: 120%; text-indent: 18pt;" class="MsoNormal"><span style="line-height: 120%; font-size: 9pt;">（</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">1</font></span><span style="line-height: 120%; font-size: 9pt;">）客户端</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">A</font></span><span style="line-height: 120%; font-size: 9pt;">发送一个</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">FIN</font></span><span style="line-height: 120%; font-size: 9pt;">，用来关闭客户</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">A</font></span><span style="line-height: 120%; font-size: 9pt;">到服务器</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">B</font></span><span style="line-height: 120%; font-size: 9pt;">的数据传送（报文段</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">4</font></span><span style="line-height: 120%; font-size: 9pt;">）。</span></div>
+<div style="margin: 0cm 0cm 0pt; line-height: 120%; text-indent: 18pt;" class="MsoNormal"><span style="line-height: 120%; font-size: 9pt;">（</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">2</font></span><span style="line-height: 120%; font-size: 9pt;">）服务器</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">B</font></span><span style="line-height: 120%; font-size: 9pt;">收到这个</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">FIN</font></span><span style="line-height: 120%; font-size: 9pt;">，它发回一个</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">ACK</font></span><span style="line-height: 120%; font-size: 9pt;">，确认序号为收到的序号加</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">1</font></span><span style="line-height: 120%; font-size: 9pt;">（报文段</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">5</font></span><span style="line-height: 120%; font-size: 9pt;">）。和</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">SYN</font></span><span style="line-height: 120%; font-size: 9pt;">一样，一个</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">FIN</font></span><span style="line-height: 120%; font-size: 9pt;">将占用一个序号。</span></div>
+<div style="margin: 0cm 0cm 0pt; line-height: 120%; text-indent: 18pt;" class="MsoNormal"><span style="line-height: 120%; font-size: 9pt;">（</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">3</font></span><span style="line-height: 120%; font-size: 9pt;">）服务器</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">B</font></span><span style="line-height: 120%; font-size: 9pt;">关闭与客户端</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">A</font></span><span style="line-height: 120%; font-size: 9pt;">的连接，发送一个</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">FIN</font></span><span style="line-height: 120%; font-size: 9pt;">给客户端</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">A</font></span><span style="line-height: 120%; font-size: 9pt;">（报文段</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">6</font></span><span style="line-height: 120%; font-size: 9pt;">）。</span></div>
+<div style="margin: 0cm 0cm 0pt; line-height: 120%; text-indent: 18pt;" class="MsoNormal"><span style="line-height: 120%; font-size: 9pt;">（</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">4</font></span><span style="line-height: 120%; font-size: 9pt;">）客户端</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">A</font></span><span style="line-height: 120%; font-size: 9pt;">发回</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">ACK</font></span><span style="line-height: 120%; font-size: 9pt;">报文确认，并将确认序号设置为收到序号加</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">1</font></span><span style="line-height: 120%; font-size: 9pt;">（报文段</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">7</font></span><span style="line-height: 120%; font-size: 9pt;">）。</span></div>
+<div style="margin: 0cm 0cm 0pt; line-height: 120%; text-indent: 18pt;" class="MsoNormal"><span style="line-height: 120%; font-size: 9pt;"></span>&nbsp;</div>
+<div style="margin: 0cm 0cm 0pt; line-height: 120%; text-indent: 18pt;" class="MsoNormal"><span style="line-height: 120%; font-size: 9pt;"></span>&nbsp;</div>
+<span style="font-size: 10pt;"><span style="font-size: 9pt;"><span><span style="font-size: 10pt;"></span></span></span></span></div><span style="font-size: 10pt;"><span style="font-size: 9pt;"><span><span style="font-size: 10pt;"></span></span></span></span></div>
+<div><span style="font-size: 10pt;"><span style="font-size: 9pt;"><span><span style="font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font style="background-color: rgb(173, 255, 47);" color="#ff0000">状态详解:</font></span></span></span></span></div>
+<div><span style="font-size: 10pt;"><span style="font-size: 9pt;"><span><span style="font-size: 10pt;"></span></span></span></span>&nbsp;</div>
+<div><span style="font-size: 10pt;"><span style="font-size: 9pt;"><span><span style="font-size: 10pt;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CLOSED：</strong> 这个没什么好说的了，表示初始状态。</span></span></span></span></div>
+<div><span style="font-size: 10pt;"><span style="font-size: 9pt;"><span><span style="font-size: 10pt;">&nbsp;</span></span></span></span></div>
+<div>　　LISTEN： 这个也是非常容易理解的一个状态，表示服务器端的某个SOCKET处于监听状态，可以接受连接了。</div>
+<div>&nbsp;</div>
+<div>　<strong>　SYN_RCVD：</strong>
+这个状态表示接受到了SYN报文，在正常情况下，这个状态是服务器端的SOCKET在建立<b style="color: black; background-color: rgb(255, 255, 102);">TCP</b>连接时的三次握手会话过程中的一个中间状态，很短暂，基本
+上用netstat你是很难看到这种状态的，除非你特意写了一个客户端测试程序，故意将三次<b style="color: black; background-color: rgb(255, 255, 102);">TCP</b>握手过程中最后一个ACK报文不予发送。因此这种状态
+时，当收到客户端的ACK报文后，它会进入到ESTABLISHED状态。</div>
+<div>&nbsp;</div>
+<div><strong>　　SYN_SENT：</strong> 这个状态与SYN_RCVD遥想呼应，当客户端SOCKET执行CONNECT连接时，它首先发送SYN报文，因此也随即它会进入到了SYN_SENT状态，并等待服务端的发送三次握手中的第2个报文。SYN_SENT状态表示客户端已发送SYN报文。</div>
+<div>&nbsp;</div>
+<div>　<strong>　ESTABLISHED：</strong>这个容易理解了，表示连接已经建立了。</div>
+<div>&nbsp;</div>
+<div>　　<strong>FIN_WAIT_1：</strong>
+这个状态要好好解释一下，其实FIN_WAIT_1和FIN_WAIT_2状态的真正含义都是表示等待对方的FIN报文。而这两种状态的区别
+是：FIN_WAIT_1状态实际上是当SOCKET在ESTABLISHED状态时，它想主动关闭连接，向对方发送了FIN报文，此时该SOCKET即
+进入到FIN_WAIT_1状态。而当对方回应ACK报文后，则进入到FIN_WAIT_2状态，当然在实际的正常情况下，无论对方何种情况下，都应该马
+上回应ACK报文，所以FIN_WAIT_1状态一般是比较难见到的，而FIN_WAIT_2状态还有时常常可以用netstat看到。</div>
+<div>　　<strong>FIN_WAIT_2：</strong>上面已经详细解释了这种状态，实际上FIN_WAIT_2状态下的SOCKET，表示半连接，也即有一方要求close连接，但另外还告诉对方，我暂时还有点数据需要传送给你，稍后再关闭连接。</div>
+<div>　　<strong>TIME_WAIT：</strong> 表示收到了对方的FIN报文，并发送出了ACK报文，就等2MSL后即可回到CLOSED可用状态了。如果FIN_WAIT_1状态下，收到了对方同时带FIN标志和ACK标志的报文时，可以直接进入到TIME_WAIT状态，而无须经过FIN_WAIT_2状态。</div>
+<div><strong>　　CLOSING：</strong>
+这种状态比较特殊，实际情况中应该是很少见，属于一种比较罕见的例外状态。正常情况下，当你发送FIN报文后，按理来说是应该先收到（或同时收到）对方的
+ACK报文，再收到对方的FIN报文。但是CLOSING状态表示你发送FIN报文后，并没有收到对方的ACK报文，反而却也收到了对方的FIN报文。什
+么情况下会出现此种情况呢？其实细想一下，也不难得出结论：那就是如果双方几乎在同时close一个SOCKET的话，那么就出现了双方同时发送FIN报
+文的情况，也即会出现CLOSING状态，表示双方都正在关闭SOCKET连接。</div>
+<div>　　<strong>CLOSE_WAIT：</strong>
+这种状态的含义其实是表示在等待关闭。怎么理解呢？当对方close一个SOCKET后发送FIN报文给自己，你系统毫无疑问地会回应一个ACK报文给对
+方，此时则进入到CLOSE_WAIT状态。接下来呢，实际上你真正需要考虑的事情是察看你是否还有数据发送给对方，如果没有的话，那么你也就可以
+close这个SOCKET，发送FIN报文给对方，也即关闭连接。所以你在CLOSE_WAIT状态下，需要完成的事情是等待你去关闭连接。</div>
+<div>　　<strong>LAST_ACK：</strong> 这个状态还是比较容易好理解的，它是被动关闭一方在发送FIN报文后，最后等待对方的ACK报文。当收到ACK报文后，也即可以进入到CLOSED可用状态了。</div>
+<div><span style="font-size: 10pt;"><span style="font-size: 9pt;"><span><span style="font-size: 10pt;"></span></span></span></span>&nbsp;</div>
+<div><span style="font-size: 10pt;"><span style="font-size: 9pt;"><span><span style="font-size: 10pt;"></span></span></span></span>&nbsp;</div>
+<div><span style="font-size: 10pt;"><span style="font-size: 9pt;"><span><span style="font-size: 10pt;"><strong>总结：</strong></span></span></span></span></div>
+<div><span style="font-size: 10pt;"><span style="font-size: 9pt;"><span><span style="font-size: 10pt;"><strong></strong>&nbsp;</span></span></span></span></div>
+<div class="cnt"><span style="line-height: 120%; font-size: 9pt;"><strong><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1</font></span><span style="line-height: 120%; font-size: 9pt;">．为什么建立连接协议是三次握手，而关闭连接却是<a name="baidusnap1"></a><b style="color: black; background-color: rgb(160, 255, 255);">四次握手</b>呢？</span></strong></span></div>
+<div class="cnt"><span style="line-height: 120%; font-size: 9pt;"><strong><span style="line-height: 120%; font-size: 9pt;"></span></strong></span>&nbsp;</div>
+<div style="margin: 0cm 0cm 0pt; line-height: 120%; text-indent: 18pt;" class="MsoNormal"><span style="line-height: 120%; font-size: 9pt;">这是因为服务端的</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">LISTEN</font></span><span style="line-height: 120%; font-size: 9pt;">状态下的</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">SOCKET</font></span><span style="line-height: 120%; font-size: 9pt;">当收到</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">SYN</font></span><span style="line-height: 120%; font-size: 9pt;">报文的建连请求后，它可以把</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">ACK</font></span><span style="line-height: 120%; font-size: 9pt;">和</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">SYN</font></span><span style="line-height: 120%; font-size: 9pt;">（</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">ACK</font></span><span style="line-height: 120%; font-size: 9pt;">起应答作用，而</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">SYN</font></span><span style="line-height: 120%; font-size: 9pt;">起同步作用）放在一个报文里来发送。但关闭连接时，当收到对方的</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">FIN</font></span><span style="line-height: 120%; font-size: 9pt;">报文通知时，它仅仅表示对方没有数据发送给你了；但未必你所有的数据都全部发送给对方了，所以你可以未必会马上会关闭</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">SOCKET,</font></span><span style="line-height: 120%; font-size: 9pt;">也即你可能还需要发送一些数据给对方之后，再发送</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">FIN</font></span><span style="line-height: 120%; font-size: 9pt;">报文给对方来表示你同意现在可以关闭连接了，所以它这里的</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">ACK</font></span><span style="line-height: 120%; font-size: 9pt;">报文和</span><span style="line-height: 120%; font-size: 9pt;"><font face="Times New Roman">FIN</font></span><span style="line-height: 120%; font-size: 9pt;">报文多数情况下都是分开发送的.</span></div>
+<div style="margin: 0cm 0cm 0pt; line-height: 120%; text-indent: 18pt;" class="MsoNormal"><span style="line-height: 120%; font-size: 9pt;"></span>&nbsp;</div>
+<div style="margin: 0cm 0cm 0pt; line-height: 120%; text-indent: 18pt;" class="MsoNormal"><span style="line-height: 120%; font-size: 9pt;"></span><strong><span style="font-size: 9pt;"><font face="Times New Roman">2</font></span><span style="font-size: 9pt;">．为什么</span><span style="font-size: 9pt;"><font face="Times New Roman">TIME_WAIT</font></span><span style="font-size: 9pt;">状态还需要等</span><span style="font-size: 9pt;"><font face="Times New Roman">2MSL</font></span><span style="font-size: 9pt;">后才能返回到</span><span style="font-size: 9pt;"><font face="Times New Roman">CLOSED</font></span><span style="font-size: 9pt;">状态？</span></strong></div>
+<div style="margin: 0cm 0cm 0pt; line-height: 120%; text-indent: 18pt;" class="MsoNormal"><strong><span style="font-size: 9pt;"></span></strong>&nbsp;</div>
+<div style="margin: 0cm 0cm 0pt; line-height: 120%; text-indent: 18pt;" class="MsoNormal"><span style="font-size: 9pt;"></span><span style="font-size: 9pt;">这是因为虽然双方都同意关闭连接了，而且握手的</span><span style="font-size: 9pt;"><font face="Times New Roman">4</font></span><span style="font-size: 9pt;">个报文也都协调和发送完毕，按理可以直接回到</span><span style="font-size: 9pt;"><font face="Times New Roman">CLOSED</font></span><span style="font-size: 9pt;">状态（就好比从</span><span style="font-size: 9pt;"><font face="Times New Roman">SYN_SEND</font></span><span style="font-size: 9pt;">状态到</span><span style="font-size: 9pt;"><font face="Times New Roman">ESTABLISH</font></span><span style="font-size: 9pt;">状态那样）；但是因为我们必须要假想网络是不可靠的，你无法保证你最后发送的</span><span style="font-size: 9pt;"><font face="Times New Roman">ACK</font></span><span style="font-size: 9pt;">报文会一定被对方收到，因此对方处于</span><span style="font-size: 9pt;"><font face="Times New Roman">LAST_ACK</font></span><span style="font-size: 9pt;">状态下的</span><span style="font-size: 9pt;"><font face="Times New Roman">SOCKET</font></span><span style="font-size: 9pt;">可能会因为超时未收到</span><span style="font-size: 9pt;"><font face="Times New Roman">ACK</font></span><span style="font-size: 9pt;">报文，而重发</span><span style="font-size: 9pt;"><font face="Times New Roman">FIN</font></span><span style="font-size: 9pt;">报文，所以这个</span><span style="font-size: 9pt;"><font face="Times New Roman">TIME_WAIT</font></span><span style="font-size: 9pt;">状态的作用就是用来重发可能丢失的</span><span style="font-size: 9pt;"><font face="Times New Roman">ACK</font></span><span style="font-size: 9pt;">报文。</span></div><div>本文出自 “<a href="http://justim.blog.51cto.com/">梅岩〃s博客</a>” 博客，请务必保留此出处<a href="http://justim.blog.51cto.com/740099/237548">http://justim.blog.51cto.com/740099/237548</a></div>
+    		</div><!--正文 end-->
+		
+<div class="m_sharebtn">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	  <tbody><tr>
+		<td align="center" height="43" valign="middle" width="11%"><img src="ssk.png" alt="分享至"></td>
+		<td align="left" valign="top" width="77%">
+			<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare" data="{'wbuid':1706976420}">
+				<a class="bds_tsina"></a>
+				<a class="bds_qzone"></a>
+				<a class="bds_tqq"></a>
+				<a class="bds_baidu"></a>
+				<a class="bds_renren"></a>
+				<a class="bds_qq"></a>
+				<a class="bds_douban"></a>
+				<a class="bds_hi"></a>
+				<a class="bds_msn"></a>
+				<em style="background-image: url('ico_mweibo.gif');" title="分享到51CTO微博" class="weibo_51cto" onclick="show51share();"></em>
+				<span class="bds_more">更多</span>
+				
+				<a class="shareCount"></a>
+			</div>
+	
+	
+	
+	<!-- Baidu Button END --></td>
+		<td align="right" valign="middle" width="12%"><a href="javascript:favorBox('open');" title="一键收藏，随时查看，分享好友！"><img src="favorite_add_small.gif" alt="一键收藏，随时查看，分享好友！" border="0"></a></td>
+	  </tr>
+	</tbody></table>
+
+</div>			
+    		<div class="showBottom">
+            <!--<div class="reviews"><span class="fl" style="cursor:pointer;"><a onclick="openFavoulist();" id="favourer">蓝色主场、xianxianyue12、Angora</a>
+
+            </span><div id="favourdiv" class="support01">3人</div>
+              <span class="fl">了这篇文章</span></div>-->
+              <table border="0" cellpadding="0" cellspacing="0" width="720">
+  <tbody><tr>
+    <td align="right"><img src="icon01.png" height="16" width="15"> <span style="cursor: pointer;"><a onclick="openFavoulist();" id="favourer">蓝色主场、xianxianyue12、Angora</a></span></td>
+    <td align="left" width="70"><div style="line-height: 28px;" id="favourdiv" class="support01">3人</div></td>
+    <td align="left" width="60">了这篇文章</td>
+  </tr>
+</tbody></table>
+
+
+
+
+            <div class="showType">类别：<a href="http://general.blog.51cto.com/927298/d-2" class="operlink">学习笔记</a>┆<a class="operlink" onclick="javascript:joingroups(237850,'general');return false;">技术圈</a>()┆阅读()┆评论()
+
+┆
+
+	<a href="http://home.51cto.com/index.php?reback=http%253A%252F%252Fgeneral.blog.51cto.com%252F927298%252F237850" class="operlink">
+
+推送到技术圈</a>┆<a href="http://general.blog.51cto.com/">返回首页</a></div>
+            <div class="prevNext">
+
+			上一篇 <a href="http://general.blog.51cto.com/927298/235409" class="operlink" title="C Struct 对齐方式">C Struct 对齐方式</a>
+
+
+			下一篇 <a href="http://general.blog.51cto.com/927298/238940" class="operlink" title="setsockopt">setsockopt</a>
+
+
+            </div>
+
+            </div>
+
+	  </div><!--showBottom end-->
+      </div><!--modCon-->
+    <span class="modBot"></span>
+    </div><!--artShow end-->
+    <span class="blank"></span>
+
+
+    <div class="relatedArt box">
+    <div class="title" name="zhuanti" id="zhuanti"><h2>相关文章</h2></div>
+    <div class="modCon">
+<ul>
+
+<li><a href="http://justim.blog.51cto.com/740099/237548" title="TCP三次握手/四次挥手详解 " target="_top"><b style="color: black; background-color: rgb(255, 255, 102);">TCP</b>三次握手/四次挥手详解 </a></li>
+
+
+<li><a href="http://wanlong.blog.51cto.com/287340/114592" title="TCP三次握手/四次挥手详解" target="_top"><b style="color: black; background-color: rgb(255, 255, 102);">TCP</b>三次握手/四次挥手详解</a></li>
+
+
+<li><a href="http://ylyqd.blog.51cto.com/493/2212" title="TCP Syn Flooding" target="_top"><b style="color: black; background-color: rgb(255, 255, 102);">TCP</b> Syn Flooding</a></li>
+
+
+<li><a href="http://gauyanm.blog.51cto.com/629619/235333" title="TCP序列号和确认号详解" target="_top"><b style="color: black; background-color: rgb(255, 255, 102);">TCP</b>序列号和确认号详解</a></li>
+
+
+<li><a href="http://syqrjk.blog.51cto.com/58254/40752" title="WinSockFix &amp; LSP-fix" target="_top">WinSockFix &amp; LSP-fix</a></li>
+
+
+<li><a href="http://botao.blog.51cto.com/314893/137721" title="TCP,IP数据包结构" target="_top"><b style="color: black; background-color: rgb(255, 255, 102);">TCP</b>,IP数据包结构</a></li>
+
+
+<li><a href="http://protocol.blog.51cto.com/32877/74223" title="TCP状态变迁图" target="_top"><b style="color: black; background-color: rgb(255, 255, 102);">TCP</b>状态变迁图</a></li>
+
+
+<li><a href="http://rickcheung.blog.51cto.com/913220/195643" title="如何才能知道TCP网络端口是否打开？" target="_top">如何才能知道<b style="color: black; background-color: rgb(255, 255, 102);">TCP</b>网络端口是否打开？</a></li>
+
+
+<li><a href="http://zoukejian.blog.51cto.com/131276/57141" title="TCP/IP协议和抓包" target="_top"><b style="color: black; background-color: rgb(255, 255, 102);">TCP</b>/IP协议和抓包</a></li>
+
+
+
+</ul>
+
+
+
+<span class="blank6"></span>
+</div><!--modCon end-->
+<span class="modBot"></span>
+</div><!--相关文章 end-->
+
+<div class="artComm box">
+    <div class="title"><a name="replay"></a><h2>文章评论</h2></div>
+    <div class="modCon" id="artcomment">
+		<div>  &nbsp;</div><a name="504754"></a><div class="itcomment" style="table-layout: fixed; word-wrap: break-word;" id="itcommentid0"><div><div style="width: 100%; border-bottom: 1px solid rgb(160, 160, 160); height: 20px;"><label style="float: left;">[1楼]&nbsp;&nbsp;&nbsp;&nbsp;<img src="reply.gif">&nbsp;&nbsp;<a target="_top" href="http://5791100.blog.51cto.com/" class="operlink" ref="nofollow"><b>蓝色主场</b></a></label><label style="float: right;">&nbsp;<a href="#" class="repost operlink" user_name="蓝色主场" parentid="504754">回复</a></label></div></div><div align="right">2012-08-22 15:28:16</div><div class="commentcontent">写的很详细，受教了。。。</div></div><br><a name="504755"></a><div class="itcomment" style="table-layout: fixed; word-wrap: break-word;" id="itcommentid1"><div><div style="width: 100%; border-bottom: 1px solid rgb(160, 160, 160); height: 20px;"><label style="float: left;">[2楼]&nbsp;&nbsp;&nbsp;&nbsp;<img src="reply.gif">&nbsp;&nbsp;<a target="_top" href="http://5791100.blog.51cto.com/" class="operlink" ref="nofollow"><b>蓝色主场</b></a></label><label style="float: right;">&nbsp;<a href="#" class="repost operlink" user_name="蓝色主场" parentid="504755">回复</a></label></div></div><div align="right">2012-08-22 15:28:49</div><div class="commentcontent">写的很详细，受教了。。。</div></div><br><a name="510707"></a><div class="itcomment" style="table-layout: fixed; word-wrap: break-word;" id="itcommentid2"><div><div style="width: 100%; border-bottom: 1px solid rgb(160, 160, 160); height: 20px;"><label style="float: left;">[3楼]&nbsp;&nbsp;&nbsp;&nbsp;<img src="reply.gif">&nbsp;&nbsp;<a target="_top" href="http://5704765.blog.51cto.com/" class="operlink" ref="nofollow"><b>xianxianyue12</b></a></label><label style="float: right;">&nbsp;<a href="#" class="repost operlink" user_name="xianxianyue12" parentid="510707">回复</a></label></div></div><div align="right">2012-09-20 10:54:10</div><div class="commentcontent">很好，有用。谢谢！</div></div><br><a name="510942"></a><div class="itcomment" style="table-layout: fixed; word-wrap: break-word;" id="itcommentid3"><div><div style="width: 100%; border-bottom: 1px solid rgb(160, 160, 160); height: 20px;"><label style="float: left;">[4楼]&nbsp;&nbsp;&nbsp;&nbsp;<img src="reply.gif">&nbsp;&nbsp;<a target="_top" href="http://960255.blog.51cto.com/" class="operlink" ref="nofollow"><b>Angora</b></a></label><label style="float: right;">&nbsp;<a href="#" class="repost operlink" user_name="Angora" parentid="510942">回复</a></label></div></div><div align="right">2012-09-20 21:52:51</div><div class="commentcontent">受教啦！</div></div><br><div>  &nbsp;</div>
+    </div><!--modCon-->
+        <span class="modBot"></span>
+</div><!--commBox end-->
+<a href="http://general.blog.51cto.com/927298/237850" id="com_top_top"></a>
+<form action="http://general.blog.51cto.com/comment.php?" method="post" name="form1" id="form1" onsubmit='return commentSubmit(this,"");'>
+<span class="blank1"></span>
+<div class="box writeComm">
+<a name="comment"></a>
+<input name="action" value="comment" type="hidden">
+<input id="commenttid" name="tid" value="237850" type="hidden">
+<input name="com_count_ajax" id="com_count_ajax" value="1" type="hidden">
+
+ <div class="title">
+	<h2 class="fl">发表评论&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+	<span class="fl"><a class="mred" target="_top" href="http://51ctomvp.blog.51cto.com/192695/1019565">2013年1月MVP申请公告[截止10月15日]</a></span>
+	
+</div>
+ <div class="modCon">
+ <div class="commForm">
+<dl>
+<dt>昵&nbsp;&nbsp;称：</dt>
+<dd>
+
+<input id="commentusername" name="username" value="" class="commInput fl" type="text"><span><a href="http://home.51cto.com/index.php?reback=http%253A%252F%252Fgeneral.blog.51cto.com%252F927298%252F237850" style="text-decoration: underline;">登录</a>&nbsp;&nbsp;<a href="http://ucenter.51cto.com/reg_01.php?reback=http://blog.51cto.com" target="_top" style="text-decoration: underline;">快速注册</a></span>
+
+
+
+</dd>
+</dl>
+
+
+
+<dl id="commentyanzheng">
+
+
+<dt>验证码：</dt>
+<dd><input class="code" value="" id="commentauthnum" name="authnum" onclick="displaysecunum();" type="text">
+
+  <img class="fl" id="secunum" onclick="refimg()" style="display: none;" height="29" width="78"><p class="fl"><span style="display: none;" id="spanfont">点击图片可刷新验证码</span><span style="display: inline;" id="clickfont">请点击后输入验证码</span><span class="pl5"><a href="http://51ctoblog.blog.51cto.com/26414/5591" target="_top" style="text-decoration: underline;">博客过2级，无需填写验证码</a></span></p></dd>
+</dl>
+<dl>
+<dt>内&nbsp;&nbsp;容：</dt>
+<dd>
+<textarea class="writeCommCon f12" id="commentcontent" name="content"></textarea>
+</dd>
+</dl>
+</div>
+<div class="writeCommBot">
+  <input name="parentid" value="" id="parentid" type="hidden">
+  <input class="commBtn fl" name="submit" id="commentsubmit" value="" onclick="commentSubmitend2()" type="button">
+
+ <p class="fl" style="display: none;"><input class="fl" name="favour" id="favour" checked="checked" value="1" type="checkbox"><span class="fl">同时赞一个</span></p>
+
+</div>
+<span class="blank"></span>
+</div><!--modCon-->
+<span class="modBot"></span>
+</div>
+</form>
+
+<iframe src="index_1.html" id="iframe1" name="iframe1" height="0" width="0"></iframe>
+<!--发表评论 end-->
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="clear"></div>
+<!--  -->
+
+<div id="footer">
+  <div id="innerFooter">
+	<center>
+		<small>
+			Copyright By 51CTO.COM 版权所有<br><br>
+			<a href="http://blog.51cto.com/" target="_top"><img src="copyright.jpg"></a>
+	  </small>
+	</center>
+  </div>
+</div>
+
+<div style="display: none;">
+
+
+<iframe src="index_2.html" frameborder="0" height="0" scrolling="no" width="0"></iframe>
+</div>
+<div style="display: none;"><div>
+
+
+
+</div>
+
+
+
+</div></body>
+</html>

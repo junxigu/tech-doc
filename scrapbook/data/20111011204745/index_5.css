@@ -1,0 +1,15 @@
+body { margin: 0px; padding: 0px; }
+.blog_behind_ad { clear: both; display: block; }
+.blog_behind_ad:after { content: "."; display: block; height: 0pt; clear: both; visibility: hidden; }
+.blog_ad { position: relative; float: left; width: 47%; margin: 0pt 1%; padding: 1px; border: 1px solid rgb(215, 203, 193); background: none repeat scroll 0% 0% rgb(255, 255, 255); color: rgb(0, 0, 0); list-style: none outside none; font-size: 12px; line-height: 20px; }
+.blog_ad #scrollDiv { padding: 0pt 8px; }
+.blog_ad #scrollDiv2 { padding: 0pt 8px; }
+.blog_ad a { color: rgb(71, 56, 28); text-decoration: none; }
+.blog_ad a:hover { text-decoration: underline; }
+.blog_ad * { margin: 0pt; padding: 0pt; list-style: none outside none; }
+.blog_ad h5 { height: 24px; padding: 0pt 5px; background: none repeat scroll 0% 0% rgb(224, 219, 211); color: rgb(71, 56, 28); font-size: 12px; line-height: 24px; }
+.blog_ad ul { height: 120px; overflow: hidden; margin: 10px 5px; }
+.blog_ad li { padding: 0pt 0pt 0pt 17px; background: url('point_tui.gif') no-repeat scroll left 3px transparent; }
+.blog_ad #btn1, .blog_ad #btn12 { position: absolute; right: 30px; bottom: 10px; width: 15px; height: 15px; border: medium none; background: none repeat scroll 0% 0% rgb(93, 93, 93); color: rgb(255, 255, 255); font-size: 11px; line-height: 15px; cursor: pointer; text-align: center; }
+.blog_ad #btn2, .blog_ad #btn22 { position: absolute; right: 10px; bottom: 10px; width: 15px; height: 15px; border: medium none; background: none repeat scroll 0% 0% rgb(93, 93, 93); color: rgb(255, 255, 255); font-size: 11px; line-height: 15px; cursor: pointer; text-align: center; }
+#recommended li { background-image: url('point_pin.gif'); }

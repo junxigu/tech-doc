@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>发生了错误或者内容不存在</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style>
+	a:link,a:visited,a:active{color: #075DB3;text-decoration: underline;}
+     a:hover	{color: red;}
+	</style>
+</head>
+<body style="font-size:13px;font-family:Courier New;line-height:150%;">
+<div align="center">
+<div id="main" style="width:800px;text-align:left">
+<div id="logo"><a href="http://www.cnblogs.com/"><img src="http://www.cnblogs.com/images/logo150.gif" alt="博客园logo" style="border:0px"/></a></div>
+<div id="tips" style="margin-top:10px;margin-bottom:10px;">
+<p><b style="font-size:14px">抱歉！系统发生了错误或者内容不存在!</b></p>
+<span id="url"></span>
+<p>麻烦您立即<a href="http://space.cnblogs.com/forum/public">在线反馈</a>或发邮件至<a href="mailto:contact&#64;cnblogs.com">contact&#64;cnblogs.com</a>与管理员联系（联系电话：021-58950900）。</p>
+</div>
+<script type="text/javascript">
+function QueryString(fieldName)
+    {  
+      var urlString = document.location.search;
+      if(urlString != null)
+      {
+           var typeQu = fieldName+"=";
+           var urlEnd = urlString.indexOf(typeQu);
+           if(urlEnd != -1)
+           {
+                var paramsUrl = urlString.substring(urlEnd+typeQu.length);
+                var isEnd =  paramsUrl.indexOf('&');
+                if(isEnd != -1)
+                {
+                     return paramsUrl.substring(0, isEnd);
+                }
+                else
+                {
+                    return paramsUrl;
+                }
+           }
+           else 
+           {
+                return null;
+           }
+      }
+     else
+     {
+        return null;
+     }
+    }
+var url = QueryString("aspxerrorpath");
+if (url != null){
+    url = "http://"+location.hostname+url;
+	document.getElementById("url").innerHTML = '发生错误的网址：<a href="'+url+'">'+url+'</a>';
+}
+</script>
+<div id="sitelink">
+网站导航：
+<div style="padding-top:5px">
+<a href="http://www.cnblogs.com">博客园首页</a>&nbsp;&nbsp;<a href="http://news.cnblogs.com/">IT新闻</a>&nbsp;&nbsp;<a href="http://home.cnblogs.com">个人主页</a>&nbsp;&nbsp;<a href="http://home.cnblogs.com/ing/">闪存</a>&nbsp;&nbsp;<a href="http://space.cnblogs.com">社区</a>&nbsp;&nbsp;<a href="http://zzk.cnblogs.com">找找看</a>&nbsp;&nbsp;<a href="http://space.cnblogs.com/group/">小组</a>&nbsp;&nbsp;<a href="http://space.cnblogs.com/q/">博问</a>&nbsp;&nbsp;<a href="http://wz.cnblogs.com/">网摘</a>&nbsp;&nbsp;<a href="http://job.cnblogs.com">招聘频道</a>&nbsp;<a href="http://kb.cnblogs.com">知识库</a>&nbsp;&nbsp;<a href="http://www.cnblogs.com/SiteMap.aspx">更多...</a>
+</div>
+</div>
+<div style="margin-top:10px;color:gray">
+技术改变世界！
+</div>
+</div>
+</div>
+<div>
+</div>
+</body>
+</html>

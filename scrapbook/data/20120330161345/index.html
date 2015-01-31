@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="zh" xml:lang="zh" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    
+    <meta http-equiv="content-style-type" content="text/css">
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta name="version" content="neblog-1.0">
+    
+<title>程序员面试题精选100题(34)-数组中只出现一次的数字[算法] - 何海涛的日志 - 网易博客</title>
+<meta name="author" content="zhedahht,何海涛">
+<meta name="keywords" content="程序员面试题精选100题(34)-数组中只出现一次的数字[算法],日志,何海涛,微软、Google等面试题,网易博客,网易,blog">
+<meta name="description" content="程序员面试题精选100题(34)-数组中只出现一次的数字[算法],何海涛的网易博客,剑指Offer：名企面试官精讲典型编程题,海纳百川,涛声依旧,点石成金,成就未来">
+  
+    
+    
+  <!--[if lte IE 6]>
+  <style type="text/css">
+    html,body,#blog-163-com-ie6body{height:100%;width:100%;overflow:hidden;}
+    #blog-163-com-ie6body{overflow:auto;overflow-y:scroll;}
+    #blog-163-com{background:none;}
+  </style>
+  <![endif]-->
+  
+  
+  
+  
+  
+  
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body id="blog-163-com" class="nb-body nb-inr nb-prv">
+  <!--[if lte IE 6]><div id="blog-163-com-ie6bodywrap" class=""><![endif]-->
+    <!--[if lte IE 6]><div id="blog-163-com-ie6body" class="nb-body"><![endif]-->
+
+<div class="nb-nbar clearfix" id="blog-163-com-topbar">
+  <div class="pl fl clearfix">
+  <div id="" "="" class="nbw-im fl im im0">
+    <a rel="nofollow" class="lbl bd ia noul " href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://www.163.com/" target="_top" hidefocus="true"><span class="tx">网易</span><span class="iblock icn0 icn0-421">&nbsp;</span></a><div class="nbw-tcd box-shadow bd">
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://news.163.com/">
+            新闻
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://t.163.com/">
+            微博
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://email.163.com/">
+            邮箱
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://photo.163.com/">
+            相册
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://yuedu.163.com/">
+            阅读
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://www.youdao.com/">
+            有道
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://photo.163.com/pp/square/">
+            摄影
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://aipai.163.com?from=163blog">
+            爱拍
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://note.youdao.com/?vendor=163blog">
+            云笔记
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://fm.163.com/?fmblogzx0628">
+            闪电邮
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://m.123.163.com/?frombkcp">
+            手机邮
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://yxp.163.com/">
+            印像派
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://dream.163.com/?from=bkcp">
+            梦幻人生
+          </a>
+        <div class="sep bd space">&nbsp;</div>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://sitemap.163.com/">
+            更多
+          </a>
+        
+    </div>
+  </div>
+                               
+    <span style="margin-left: 0pt;" class="fl iblock space icn1 icn1-4">&nbsp;</span>
+    
+  <div id="" "="" class="nbw-im fl im im10">
+    <a class="lbl bd ia noul " href="http://blog.163.com/?frompersonalbloghome" target="_top" hidefocus="true"><span class="tx">博客</span><span class="iblock icn0 icn0-421">&nbsp;</span></a><div class="nbw-tcd box-shadow bd">
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/services/wapblog.html?frompersonalbloghome">
+            手机博客
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/clone/clone.html?frompersonalbloghome">
+            博客搬家
+          </a>
+          <a class="itm noul youcai " target="_top" hidefocus="true" href="http://blog.163.com/vip.do?frompersonalbloghome">
+            博客VIP服务
+          </a>
+        <div class="sep bd space">&nbsp;</div>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/blog_admin/blog/static/721279201082863728829/?frompersonalbloghome">
+            LiveWriter写博
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/blog_admin/blog/static/721279201092713253500/?frompersonalbloghome">
+            word写博
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/services/mailblog.html?frompersonalbloghome">
+            邮件写博
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/services/emsblog.html?frompersonalbloghome">
+            短信写博
+          </a>
+        <div class="sep bd space">&nbsp;</div>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/showMultiUser.do?frompersonalbloghome">
+            群博客
+          </a>
+          <a class="itm noul youcai " target="_top" hidefocus="true" href="http://blog.163.com/BLOG_YOUCAI/">
+            博客油菜地
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/ht/?frompersonalbloghome">
+            博客话题
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/hot/history/?frompersonalbloghome">
+            博客热点
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://q.163.com/#home?frompersonalbloghome">
+            博客圈子
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/findFriend.do?type=5?frompersonalbloghome">
+            找朋友
+          </a>
+        
+    </div>
+  </div>
+
+    
+    <div class="nbw-im fl im1 im explore"><a class="lbl bd ima spy" href="http://blog.163.com/public/explore/?frompersonalbloghome">发现</a></div>
+    <div class="nbw-im fl im1 im bloggroup"><a class="lbl bd ima spy" href="http://blog.163.com/g/?frompersonalbloghome">小组</a></div>
+    <div class="nbw-im fl im1 im customtheme"><a class="lbl bd ima spy" href="http://blog.163.com/public/theme/?frompersonalbloghome">风格</a></div>
+    <div class="nbw-im fl im1 im seebyway"><a rel="nofollow" title="随便看看" class="lbl bd ima spy" href="http://blog.163.com/randomUser.do">&nbsp;</a></div>
+    
+    <span class="fl iblock space icn1 icn1-4">&nbsp;</span>
+    <div id="topbar_randShowArea" class="fl">
+      <div class="nbw-im fl im1 im randtag"><a style="width: 110px;" target="_top" class="lbl bd ima moveblog randshow" href="http://www.lofter.com/" onclick="window.open('http://www.lofter.com/reg?from=blog');return false;">网易轻博客LOFTER</a></div>
+    </div>
+  </div>
+  <div class="fr pr clearfix">
+    <div id="topbar_loginAndReg" class="fr">
+      <a rel="nofollow" style="margin-left: 10px; color: rgb(255, 119, 0);" class="iblock fr ima" href="http://reg.163.com/reg/reg.jsp?product=blog&amp;url=http://blog.163.com/ntesRegBlank.html&amp;loginurl=http://blog.163.com/" target="_top">创建博客</a>
+      <a rel="nofollow" class="iblock fr ima ztag" href="#">登录</a>
+      <span class="fr iblock space icn1 icn1-4 spx">&nbsp;</span>
+      <div id="topbar_followArea" class="nbw-im fr"><span class="lbl bd ima followit fl ztag"><span class="fl addicon">&nbsp;</span><span class="fl">关注</span></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="blogtoptips phide" id="blog-163-com-toptips">
+ <div class="blogtoptipswrap">
+    <div id="newbulletinstip" class="newbulletinstip phide">
+    <a class="lnknews fc03 m2a tiptag phide" href="http://zhedahht.blog.163.com/blog/static/2541117420071128950682/" target="_top"></a><span class="txtnews tiptag phide"></span>&nbsp;&nbsp;&nbsp;<a class="fc03 ul nextorprevnews tiptag phide" href="http://zhedahht.blog.163.com/blog/static/2541117420071128950682/" hidefocus="true">显示下一条</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="fc03 ul close tiptag" href="http://zhedahht.blog.163.com/blog/static/2541117420071128950682/" hidefocus="true">关闭</a>
+  </div>
+ </div>
+    <div id="$_faxiantip" class="faxiantip phide">
+      <div>
+	    <a class="m2a iblock" href="http://blog.163.com/public/explore/?fromblogbanner" target="_top"></a>
+	    <span class="faxiantag m2a"></span>
+      </div>
+    </div>
+    <div id="$_guanggaotip" class="guanggaotip phide">
+      <div>
+	    
+	    <span class="guanggaotag m2a"></span>
+      </div>
+    </div>
+    <div id="$_lofterInviteTip" class="lofterInviteTip phide">
+      <div>
+	    <a class="m2a iblock" href="http://www.lofter.com/invite/163blog/?email=" target="_top"></a>
+	    <span class="lofterInviteTag m2a"></span>
+      </div>
+    </div>
+</div>  <div class="nb-wrap wsy" id="blog-163-com-main"><div class="nb-are nb-top">
+  <div class="wkg h" id="blog-163-com-banner">
+    
+    <div class="t">
+      <h1 class="n c"><span class="ztag pre">微软、Google等面试题</span></h1>
+      <p class="d c"><span class="ztag pre">剑指Offer：名企面试官精讲典型编程题</span></p>
+    </div>
+    <div class="f h ztag">&nbsp;</div>
+    <a class="x" hidefocus="true" target="_top" href="#"><span class="xx ztag"></span></a>
+  </div>
+</div><div class="nb-are nb-nav">
+  <div class="wkg">
+    <div class="c h">
+      <h2>导航</h2>
+      <ul class="noul clearfix">
+                
+	        <li class="w w0">
+	          <a class="i i0 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/">首页</a>
+	        </li>
+	        <li class="w w1 selected">
+	          <a class="i i1 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/blog/">日志</a>
+	        </li>
+	        <li class="w w2">
+	          <a class="i i2 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/album/">相册</a>
+	        </li>
+	        <li class="w w3">
+	          <a class="i i3 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/music/">音乐</a>
+	        </li>
+	        <li class="w w4">
+	          <a class="i i4 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/collection/">收藏</a>
+	        </li>
+	        <li class="w w5">
+	          <a class="i i5 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/friends/">博友</a>
+	        </li>
+	        <li class="w w6">
+	          <a class="i i6 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/profile/">关于我</a>
+	        </li>
+      </ul><!--
+ --></div>
+    <div class="l h">&nbsp;</div>
+    <div class="r h">&nbsp;</div>
+  </div>
+</div>  <div class="nb-are nb-smt"><div class="wkg h space"><div class="l h">&nbsp;</div><div class="r h">&nbsp;</div><div class="c h">&nbsp;</div></div></div>
+  <div class="nb-are nb-cnt">
+    <div class="wkg">
+      <div class="c wc h clearfix " id="blog-163-com-container">
+  <div class="nb-mdl lcr m-3 " id="-3">
+  <div class="nb-mt lcr th fc02">
+    <div class="c tc th lcr"><h2 class="thide nb-jsc mdl_t_t">日志</h2></div>
+    <div class="r tm th nb-jsc"></div>
+    <div class="l tl th">&nbsp;</div>
+    <div class="r tr th">&nbsp;</div>
+  </div>
+    <div class="nb-mc lcr">
+      <div class="c cc lcr nb-jsc">
+<div class="nbw-ryt ztag clearfix js-fix-098">
+  <div class="right bdwl bds0 bdc0"><div class="cnt ztag"></div></div>
+  <div class="left">
+     <div class="lcnt bdwr bds0 bdc0 ">   
+      <div id="$_divTopLink" class="top fc03 bdwb bdc0 bds2 clearfix">
+        <span class="ilft iblock icn0 icn0-620">&nbsp;</span>
+        <div class="pleft thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/254111742007112255248202/">程序员面试题精选100题(33)-在O(1)时间删除链表结点[数据结构]</a></div>
+        <span class="irgt iblock icn0 icn0-619">&nbsp;</span>
+        <div class="pright thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/254111742008053169567/">程序员面试题精选100题(35)-两链表的第一个公共结点[数据结构]</a></div>
+     </div> 
+     <div class="mcnt ztag"> 
+      <div class="nbw-bitm bdwb bds2 bdc0 ">
+        <div class="multicntwrap">
+	      <div class="multicnt">
+	      	<div>
+		      <h3 class="title pre fs1"><span class="tcnt">程序员面试题精选100题(34)-数组中只出现一次的数字[算法]</span>&nbsp;&nbsp;<span class="bgc0 fc07 fw0 fs0"></span></h3>
+		      <p class="tdep clearfix nbw-act fc06" style="line-height: 20px;">
+		        <span class="pleft">
+		          
+		          <span class="blogsep">2007-12-28 21:50:06</span><span class="blogsep">|&nbsp;&nbsp;分类：</span>
+		          <a class="fc03 m2a" href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=1&amp;c=fks_081075092084086069082074084070080087080066083082" title="数组">数组</a>
+		          <span class="blogsep" id="$_blogTagTitle">|&nbsp;&nbsp;标签：</span><span class="fc03" id="$_blogTagInfo"><a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E9%9D%A2%E8%AF%95%E9%A2%98" class="fc03 m2a">面试题</a>&nbsp;&nbsp;<a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E7%BC%96%E7%A8%8B" class="fc03 m2a">编程</a>&nbsp;&nbsp;<a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E5%B0%B1%E4%B8%9A" class="fc03 m2a">就业</a>&nbsp;&nbsp;<a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E6%89%BE%E5%B7%A5%E4%BD%9C" class="fc03 m2a">找工作</a>&nbsp;&nbsp;<a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E7%AE%97%E6%B3%95" class="fc03 m2a">算法</a>&nbsp;&nbsp;</span>
+		        </span>
+		        <span class="pright fc07 ztag"><span class="blogsep">|</span><span class="zihao fc03" id="$_fontswitch">字号<span class="zihaoshow  phide" id="$_fontsTypes"><span class="zihaoc bdc0"><span class="stag"></span><span class="fc04 stag">大</span><span class="fc04 stag selected js-fcurrent fc05">中</span><span class="fc04 stag">小</span></span></span></span></span><span class="pright pnt fc03" id="$_blog_subscribe"><span class="iblock icn0 icn0-919">&nbsp;</span><a class="m2a">订阅</a></span>
+		      </p>
+		    </div>
+	      </div>
+        </div>
+        
+        <div>
+        
+        </div>
+        
+        <div class="nbw-blog-start"></div>
+        <div class="bct fc05 fc11 nbw-blog ztag js-fs2"><p style="margin: 0in 0in 10pt;"><font size="3"><span style="font-family: SimSun;" lang="ZH-CN">题目：一个整型数组里除了两个数字之外，其他的数字都出现了两次。请写程序找出这两个只出现一次的数字。要求时间复杂度是</span><font face="Calibri">O(n)</font><span style="font-family: SimSun;" lang="ZH-CN">，空间复杂度是</span><font face="Calibri">O(1)</font><span style="font-family: SimSun;" lang="ZH-CN">。</span></font></p> <p style="margin: 0in 0in 10pt;"><span style="font-family: SimSun;" lang="ZH-CN"><font size="3">分析：这是一道很新颖的关于位运算的面试题。</font></span></p> <p style="margin: 0in 0in 10pt;"><span style="font-family: SimSun;" lang="ZH-CN"><font size="3">首先我们考虑这个问题的一个简单版本：一个数组里除了一个数字之外，其他的数字都出现了两次。请写程序找出这个只出现一次的数字。</font></span></p> <p style="margin: 0in 0in 10pt;"><font size="3"><span style="font-family: SimSun;" lang="ZH-CN">这个题目的突破口在哪里？题目为什么要强调有一个数字出现一次，其他的出现两次？我们想到了异或运算的性质：任何一个数字异或它自己都等于</span><font face="Calibri">0</font><span style="font-family: SimSun;" lang="ZH-CN">。也就是说，如果我们从头到尾依次异或数组中的每一个数字，那么最终的结果刚好是那个只出现依次的数字，因为那些出现两次的数字全部在异或中抵消掉了。</span></font></p> <p style="margin: 0in 0in 10pt;"><span style="font-family: SimSun;" lang="ZH-CN"><font size="3">有了上面简单问题的解决方案之后，我们回到原始的问题。如果能够把原数组分为两个子数组。在每个子数组中，包含一个只出现一次的数字，而其他数字都出现两次。如果能够这样拆分原数组，按照前面的办法就是分别求出这两个只出现一次的数字了。</font></span></p> <p style="margin: 0in 0in 10pt;"><font size="3"><span style="font-family: SimSun;" lang="ZH-CN">我们还是从头到尾依次异或数组中的每一个数字，那么最终得到的结果就是两个只出现一次的数字的异或结果。因为其他数字都出现了两次，在异或中全部抵消掉了。由于这两个数字肯定不一样，那么这个异或结果肯定不为</span><font face="Calibri">0</font><span style="font-family: SimSun;" lang="ZH-CN">，也就是说在这个结果数字的二进制表示中至少就有一位为</span><font face="Calibri">1</font><span style="font-family: SimSun;" lang="ZH-CN">。我们在结果数字中找到第一个为</span><font face="Calibri">1</font><span style="font-family: SimSun;" lang="ZH-CN">的位的位置，记为第</span><font face="Calibri">N</font><span style="font-family: SimSun;" lang="ZH-CN">位。现在我们以第</span><font face="Calibri">N</font><span style="font-family: SimSun;" lang="ZH-CN">位是不是</span><font face="Calibri">1</font><span style="font-family: SimSun;" lang="ZH-CN">为标准把原数组中的数字分成两个子数组，第一个子数组中每个数字的第</span><font face="Calibri">N</font><span style="font-family: SimSun;" lang="ZH-CN">位都为</span><font face="Calibri">1</font><span style="font-family: SimSun;" lang="ZH-CN">，而第二个子数组的每个数字的第</span><font face="Calibri">N</font><span style="font-family: SimSun;" lang="ZH-CN">位都为</span><font face="Calibri">0</font><span style="font-family: SimSun;" lang="ZH-CN">。</span></font></p> <p style="margin: 0in 0in 10pt;"><span style="font-family: SimSun;" lang="ZH-CN"><font size="3">现在我们已经把原数组分成了两个子数组，每个子数组都包含一个只出现一次的数字，而其他数字都出现了两次。因此到此为止，所有的问题我们都已经解决。</font></span></p> <p style="margin: 0in 0in 10pt;"><span style="font-family: SimSun;" lang="ZH-CN"><font size="3">基于上述思路，我们不难写出如下代码：</font></span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">///////////////////////////////////////////////////////////////////////</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">// Find two numbers which only appear once in an array</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">// Input: data - an array contains two number appearing exactly once,</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">//<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>while others appearing exactly twice</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">//<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>length - the length of data</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">// Output: num1 - the first number appearing once in data</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">//<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>num2 - the second number appearing once in data</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">///////////////////////////////////////////////////////////////////////</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">void</span><span style="font-family: 'Courier New'; font-size: 10pt;"> <span style="color: rgb(1, 0, 1);">FindNumsAppearOnce</span>(<span style="color: blue;">int</span> <span style="color: rgb(1, 0, 1);">data</span>[], <span style="color: blue;">int</span> <span style="color: rgb(1, 0, 1);">length</span>, <span style="color: blue;">int</span> &amp;<span style="color: rgb(1, 0, 1);">num1</span>, <span style="color: blue;">int</span> &amp;<span style="color: rgb(1, 0, 1);">num2</span>)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">{</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">if</span> (<span style="color: rgb(1, 0, 1);">length</span> &lt; 2)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">return</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: green;">// get num1 ^ num2</span></span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">int</span> <span style="color: rgb(1, 0, 1);">resultExclusiveOR</span> = 0;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">for</span> (<span style="color: blue;">int</span> <span style="color: rgb(1, 0, 1);">i</span> = 0; <span style="color: rgb(1, 0, 1);">i</span> &lt; <span style="color: rgb(1, 0, 1);">length</span>; ++ <span style="color: rgb(1, 0, 1);">i</span>)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: rgb(1, 0, 1);">resultExclusiveOR</span> ^= <span style="color: rgb(1, 0, 1);">data</span>[<span style="color: rgb(1, 0, 1);">i</span>];</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: green;">// get&nbsp;index of the first bit, which is 1 in resultExclusiveOR</span></span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">unsigned</span> <span style="color: blue;">int</span> <span style="color: rgb(1, 0, 1);">indexOf1</span> = <span style="color: rgb(1, 0, 1);">FindFirstBitIs1</span>(<span style="color: rgb(1, 0, 1);">resultExclusiveOR</span>);<span style=""> </span></span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: rgb(1, 0, 1);">num1</span> = <span style="color: rgb(1, 0, 1);">num2</span> = 0;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">for</span> (<span style="color: blue;">int</span> <span style="color: rgb(1, 0, 1);">j</span> = 0; <span style="color: rgb(1, 0, 1);">j</span> &lt; <span style="color: rgb(1, 0, 1);">length</span>; ++ <span style="color: rgb(1, 0, 1);">j</span>)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: green;">// divide the numbers in data into two groups,</span></span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: green;">// the indexOf1 bit of numbers in the first group is 1,</span></span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: green;">// while in the second group is 0</span></span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">if</span>(<span style="color: rgb(1, 0, 1);">IsBit1</span>(<span style="color: rgb(1, 0, 1);">data</span>[<span style="color: rgb(1, 0, 1);">j</span>], <span style="color: rgb(1, 0, 1);">indexOf1</span>))</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: rgb(1, 0, 1);">num1</span> ^= <span style="color: rgb(1, 0, 1);">data</span>[<span style="color: rgb(1, 0, 1);">j</span>];</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">else</span></span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: rgb(1, 0, 1);">num2</span> ^= <span style="color: rgb(1, 0, 1);">data</span>[<span style="color: rgb(1, 0, 1);">j</span>];</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">}</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">///////////////////////////////////////////////////////////////////////</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">// Find the index of first bit which is 1 in num (assuming not 0)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">///////////////////////////////////////////////////////////////////////</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">unsigned</span><span style="font-family: 'Courier New'; font-size: 10pt;"> <span style="color: blue;">int</span> <span style="color: rgb(1, 0, 1);">FindFirstBitIs1</span>(<span style="color: blue;">int</span> <span style="color: rgb(1, 0, 1);">num</span>)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">{</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">int</span> <span style="color: rgb(1, 0, 1);">indexBit</span> = 0;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">while</span> (((<span style="color: rgb(1, 0, 1);">num</span> &amp; 1) == 0) &amp;&amp; (<span style="color: rgb(1, 0, 1);">indexBit</span> &lt; 32))</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: rgb(1, 0, 1);">num</span> = <span style="color: rgb(1, 0, 1);">num</span> &gt;&gt; 1;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>++ <span style="color: rgb(1, 0, 1);">indexBit</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">return</span> <span style="color: rgb(1, 0, 1);">indexBit</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">}</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">///////////////////////////////////////////////////////////////////////</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">// Is the indexBit bit of num 1?</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">///////////////////////////////////////////////////////////////////////</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">bool</span><span style="font-family: 'Courier New'; font-size: 10pt;"> <span style="color: rgb(1, 0, 1);">IsBit1</span>(<span style="color: blue;">int</span> <span style="color: rgb(1, 0, 1);">num</span>, <span style="color: blue;">unsigned</span> <span style="color: blue;">int</span> <span style="color: rgb(1, 0, 1);">indexBit</span>)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">{</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: rgb(1, 0, 1);">num</span> = <span style="color: rgb(1, 0, 1);">num</span> &gt;&gt; <span style="color: rgb(1, 0, 1);">indexBit</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">return</span> (<span style="color: rgb(1, 0, 1);">num</span> &amp; 1);</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">}</span></p> <p style="margin: 0in 0in 10pt;"><font face="Calibri" size="3">&nbsp;</font></p> <p style="text-indent: 0.5in; margin: 0in 0in 10pt;">  </p><p style="margin: 0in 0in 10pt; text-indent: 0.5in;"><span style="font-family: 宋体;" courier="" new="" lang="ZH-CN">本文已经收录到《</span><span style="" calibrisans-serif="" mso-ascii-theme-fontminor-latinmso-fareast-font-familymso-fareast-theme-font="" minor-fareastmso-hansi-theme-fontminor-latinmso-bidi-font-familycourier="" new=""><a target="_top" href="http://zhedahht.blog.163.com/blog/static/254111742011101624433132/"><span style="font-family: 宋体;" lang="ZH-CN">剑指</span>Offer<span style="font-family: 宋体;" lang="ZH-CN">——名企面试官精讲典型编程题</span></a></span><span style="font-family: 宋体;" courier="" new="" lang="ZH-CN">》一书中，有改动，书中的分析讲解更加详细。欢迎关注。</span><span style="font-family: 宋体;"></span></p>  <p style="text-indent: 0.5in; margin: 0in 0in 10pt;"><span style="font-family: 宋体;" lang="ZH-CN"><font size="3">博主何海涛对本博客文章享有版权。网络转载请注明出处</font></span><a href="http://zhedahht.blog.163.com/"><font color="#990000" face="Calibri" size="3">http://zhedahht.blog.163.com/</font></a><span style="font-family: 宋体;" lang="ZH-CN"><font size="3">。整理出版物请和作者联系。</font></span></p></div>
+        <div class="nbw-blog-end"></div>
+
+        <div>
+		</div>
+		
+        <div>
+		</div>
+		
+		<div>
+      	  <div>
+		  	<div class="wumii-hook"></div>
+		  </div>
+		</div>
+		
+        <div class="ptc phide ztag">
+          <span class="ptcp">
+            <span class="iblock bcmimg">&nbsp;</span>
+            <span class="nbc-0 nbc-0-40 ptcmt ptcmt-2">评论这张</span>
+          </span>
+        </div>
+		<div class="ptc phide ztag">
+          <span class="ptcp">
+            <span class="nbc-0 nbc-0-40 ptcmi">
+              <img src="microblog.png">
+            </span>
+            <span class="nbc-0 nbc-0-40 ptcmt">转发至微博</span>
+          </span>
+        </div>
+        <div style="left: -20px; top: 663px;" class="ptc ztag phide">
+          <span class="ptcp">
+            <span class="nbc-0 nbc-0-40 ptcmi">
+              <img src="microblog.png">
+            </span>
+            <span class="nbc-0 nbc-0-40 ptcmt">转发至微博</span>
+          </span>
+        </div>
+        
+        
+        <div class="nbw-act tbar fc03 clearfix">
+         <div style="height: 24px; line-height: 24px;">
+          <div class="pleft rdif">
+	          <span class="pnt pleft" id="$_spanRecommend"><img class="pclass" src="tuijian.png"></span>
+	        <span id="$_spanShowRecommend" class="pleft rdct  phide">
+	          <span class="pleft ul fc03"><span id="$_spanRecommendCount">0</span>人</span><span class="pleft iblock icn0 icn0-722 nbw-tgl1 nas-icn0fix">&nbsp;</span><span class="pleft iblock icn0 icn0-621 nbw-tgl0 nas-icn0fix">&nbsp;</span><span class="fc07"></span>|&nbsp;
+	        </span>
+	         <span class="fc07 pleft nas-tofix">分享到：</span><span class="nas-wrap pleft"><span id="$_shareBtn_163weibo" title="分享到网易微博" class="nas-itm nas-itm0">&nbsp;</span><span id="$_shareBtn_sinaweibo" title="分享到新浪微博" class="nas-itm nas-itm6">&nbsp;</span><span id="$_shareBtn_qqweibo" title="分享到腾讯微博" class="nas-itm nas-itm9">&nbsp;</span><span class="nas-itm nas-itm7" title="分享到MSN" id="$_shareBtn_msn">&nbsp;</span><span class="nas-itm nas-itm3" title="分享到QQ空间" id="$_shareBtn_qq">&nbsp;</span><span class="nas-itm nas-itm1" title="分享到人人网" id="$_shareBtn_renren">&nbsp;</span><span class="nas-itm nas-itm2" title="分享到开心网" id="$_shareBtn_kaixin">&nbsp;</span><span class="nas-itm nas-itm4" title="分享到豆瓣" id="$_shareBtn_douban">&nbsp;</span><span class="nas-itm nas-itm8" title="分享到梦幻人生" id="$_shareBtn_dream">&nbsp;</span></span>
+          </div>
+          <div class="pright">
+              <span class="fc07">阅读(<span id="$_spaniReadCount">11285</span>)</span><span class="sep fc07">|</span>
+              <span class="fc07">评论(<span id="$_spaniCommentCount">20</span>)</span><span class="sep fc07">|</span>
+              <span class="m2a" id="$_spanCite">引用</span> <span class="m2a" id="$_spanCiteCount">(6)</span>
+              <span class="sep fc07">|</span><span id="$_spanReport" class="m2a">举报</span>
+          </div>
+         </div>
+        </div>
+      </div>
+      <div class="snl">
+        <div class="phide bdwb bds2 bdc0 rdcnt" id="$_divRecommendContent"></div>
+        <div id="yodaoad" class="bdwb bds2 bdc0" style="display: none;">&nbsp;</div>
+        <div id="$_divTopLink" class="top fc03 clearfix">
+	        <span class="ilft iblock icn0 icn0-620">&nbsp;</span>
+	        <div class="pleft thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/254111742007112255248202/">程序员面试题精选100题(33)-在O(1)时间删除链表结点[数据结构]</a></div>
+	        <span class="irgt iblock icn0 icn0-619">&nbsp;</span>
+	        <div class="pright thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/254111742008053169567/">程序员面试题精选100题(35)-两链表的第一个公共结点[数据结构]</a></div>
+	     </div> 
+	    <div class="relateblog phide">
+          <h4 class="bdwb bds2 bdc0 fc07 fs0">历史上的今天</h4>
+          <div class="cnt ztag clearfix"></div>
+        </div>
+	    <div class="relateblog phide">
+          <h4 class="bdwb bds2 bdc0 fc07 fs0">相关文章</h4>
+          <div class="cnt ztag clearfix"></div>
+        </div>
+	    <div class="author">
+	      <h4 class="bdwb bds2 bdc0 fc07 fs0">最近读者</h4>
+	      <div class="cnt ztag clearfix"><div class="pleft nlogif clearfix"> <div class="pleft nbw-f50 nbw-fce"><img class="cwd pnt" onerror="this.src=location.f60" src="face60.png"></div> <div class="m2a pright fc03"><span class="ul">登录</span>后，您可以在此留下足迹。</div> </div>        <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/cdkakaowen/">            <img alt="cdkakaowen" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/cdkakaowen/">          cdkakaow        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/wwbszd/">            <img alt="wwbszd" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_001.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/wwbszd/">          wwbszd        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/scyehan/">            <img alt="scyehan" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="face140.png">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/scyehan/">          scyehan        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/fu1985zong/">            <img alt="stubborn" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_002.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/fu1985zong/">          stubborn        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/fangjing066385/">            <img alt="Fangj" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_003.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/fangjing066385/">          Fangj        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/guotao114/">            <img alt="guotao114" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_004.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/guotao114/">          guotao11        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/aikai12345/">            <img alt="艾凯" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_005.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/aikai12345/">          艾凯        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/ccking69/">            <img alt="ccking69" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_006.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/ccking69/">          ccking69        </a>      </div>    </div>        </div>
+	    </div>
+	    <div class="phide" id="yodaoad_1" style=""></div>
+	    <div class="comment">
+	      <h4 class="bdwb bds2 bdc0 fc07 fs0">评论</h4>
+	      <a name="blogComment" id="blogComment"></a>
+	      <div class="ztag"><div>    <div class="publish ztag"><div class="nbw-cdt edt-cmt"><div class="nbw-act tp"> <span class="m2a fc03 ztag">点击登录</span><span class="sep">|</span><span class="fc05">昵称：</span><input value="" maxlength="18" class="znick bdwa bds0 bdc0 ztag" type="text"> </div> <div class="edt ztag"><div class="ui-4654883133"><div class="zcnt ztag zbrd bdc0"><iframe src="index_1.html" frameborder="0"></iframe></div> <div class="zbtn"> <span class="zfce zbgp ztag space">&nbsp;</span> <input class="zbok zhnd ztag nbtn fc09 bdc1 bgc2" value="发表" type="button"> <span class="zbcc zhnd ztag fc04">取消</span> <div class="zvcd ztag" style="display: none;"> <label>验证码：</label><input value="" class="zbrd xtag bdc0" maxlength="4" type="text"><img src="empty.png" class="xtag" title="点击刷新验证码"><span class="xtag fc04">换一张</span> </div> </div> <div class="zmsg fc07" style="display: none;"><span class="zicn zbgp iblock">&nbsp;</span><span class="ztag"></span></div></div></div> <div style="display: none;" class="hnt thide ztag"></div></div></div>
+    <div class="bdwt bds2 bdc0 phide" id="yodaoad_2" style=""></div>
+    <div class="ztag bdwt bds2 bdc0">
+      <div class="case"><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://aige123609.blog.163.com/" target="_top" hidefocus="true"><img src="ava_007.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">03-07 21:43</span><div class="tx atag"><a title="白鸽子" class="fc03 noul" target="_top" href="http://aige123609.blog.163.com/"><span class="m2a">白鸽子</span></a></div></div> <div class="cnt pre atag"><p>哈哈哈</p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://youzhr.blog.163.com/" target="_top" hidefocus="true"><img src="ava_008.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">03-01 21:16</span><div class="tx atag"><a title="youzhr" class="fc03 noul" target="_top" href="http://youzhr.blog.163.com/"><span class="m2a">youzhr</span></a></div></div> <div class="cnt pre atag">学习了，O(∩_∩)O谢谢</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://cmili.blog.163.com/" target="_top" hidefocus="true"><img src="ava_009.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-11-04 23:39</span><div class="tx atag"><a title="歌鬼" class="fc03 noul" target="_top" href="http://cmili.blog.163.com/"><span class="m2a">歌鬼</span></a></div></div> <div class="cnt pre atag">c语言中，int型，右移位运算不会移动符号位的。<br>可以考虑用unsigned int的移位运算。<br>int n = ?;<br>unsigned int &amp;uInt = *( (unsigned int*)&amp;n);</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="北京 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-10-02 20:53</span><div class="tx atag"><span title="北京 " class="fc07">clseer</span></div></div> <div class="cnt pre atag">求一个非零数X的二进制表示中，最低位1的位置，可以这样：<br>(X^(X-1))+1</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a target="_blank" hidefocus="true"><img title="北京 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-10-02 20:54</span><div class="tx atag"><span title="北京 " class="fc07">clseer</span><span class="fc07">&nbsp;回复&nbsp;</span><span title="北京 " class="fc07">clseer</span></div></div> <div class="cnt pre atag">可以用这个表达式代替函数<span style=""><span style="">FindFirstBitIs1</span></span></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://lcl2005617.blog.163.com/" target="_top" hidefocus="true"><img src="ava_010.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-09-11 14:43</span><div class="tx atag"><a title="lcl2005617" class="fc03 noul" target="_top" href="http://lcl2005617.blog.163.com/"><span class="m2a">lcl2005617</span></a></div></div> <div class="cnt pre atag"><p>这方法真棒，要是我面试的时候估计想不出来</p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="浙江 杭州" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-09-02 14:24</span><div class="tx atag"><span title="浙江 杭州" class="fc07">其实不想走</span></div></div> <div class="cnt pre atag">方法值得启发</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://yuanruiau.blog.163.com/" target="_top" hidefocus="true"><img src="ava_011.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-08-25 16:38</span><div class="tx atag"><a title="lostinarctic" class="fc03 noul" target="_top" href="http://yuanruiau.blog.163.com/"><span class="m2a">lostinarctic</span></a></div></div> <div class="cnt pre atag">看过前面题目之后，对本题的小小启发：<div>可用22题的flag法找出flag，用(flag&amp;data[j])是否为0，来区分分组</div></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="上海 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-06-09 19:31</span><div class="tx atag"><span title="上海 " class="fc07">bulukaka</span></div></div> <div class="cnt pre atag"><span class="Apple-style-span" style=""><span style="">IsBit1那个函数 要是负数的话会不会有问题</span></span></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a href="http://zhedahht.blog.163.com/" target="_top" hidefocus="true"><img src="ava_012.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-06-10 07:58</span><div class="tx atag"><a class="fc03 noul" title="何海涛" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">何海涛</span></a><span class="fc07">&nbsp;回复&nbsp;</span><span class="fc07">bulukaka</span></div></div> <div class="cnt pre atag">为什么会有问题？能不能说说可能会出现什么问题？</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://hxk622.blog.163.com/" target="_top" hidefocus="true"><img src="ava_013.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-05-19 15:07</span><div class="tx atag"><a title="我帅故我在" class="fc03 noul" target="_top" href="http://hxk622.blog.163.com/"><span class="m2a">我帅故我在</span></a></div></div> <div class="cnt pre atag">是不是需要提前确定N啊？？确定N的时间复杂度就O(N)了吧。。我也不清楚，自己瞎琢磨的。。<br><br></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://gobr.blog.163.com/" target="_top" hidefocus="true"><img src="ava_014.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2009-08-22 16:47</span><div class="tx atag"><a title="gobr" class="fc03 noul" target="_top" href="http://gobr.blog.163.com/"><span class="m2a">gobr</span></a></div></div> <div class="cnt pre atag">呵呵&nbsp;找出3个只出现一次的数字比较复杂些。</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a href="http://zhangzhibiao02005.blog.163.com/" target="_top" hidefocus="true"><img src="ava_015.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-04-30 16:34</span><div class="tx atag"><a class="fc03 noul" title="zhangzhibiao02005" target="_top" href="http://zhangzhibiao02005.blog.163.com/"><span class="m2a">zhangzhibiao02005</span></a><span class="fc07">&nbsp;回复&nbsp;</span><a class="fc03 noul" title="gobr" target="_top" href="http://gobr.blog.163.com/"><span class="m2a">gobr</span></a></div></div> <div class="cnt pre atag">这个的确有些复杂，直接扫描把。&nbsp;<br><br></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://sunmujie-123.blog.163.com/" target="_top" hidefocus="true"><img src="ava_016.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-03-11 17:28</span><div class="tx atag"><a title="木林森" class="fc03 noul" target="_top" href="http://sunmujie-123.blog.163.com/"><span class="m2a">木林森</span></a></div></div> <div class="cnt pre atag">方法很巧妙，很受用</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="广东 广州" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-02-11 22:25</span><div class="tx atag"><span title="广东 广州" class="fc07">AIR</span></div></div> <div class="cnt pre atag">用(data[i] ^ <span style=""><span style=""></span><span style="">resultExclusiveOR) == </span></span><span style=""><span style=""></span><span style="">resultExclusiveOR<br>来把数组分成两个部分似乎也可以。这样更简单一些。</span> </span></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-01-24 10:56</span><div class="tx atag"><span class="fc07">sdf</span></div></div> <div class="cnt pre atag">The Idea is kind of right, but you missed 1 critical part in your program, which i will not tell u what it is. &nbsp;PLease test your program before you post it. &nbsp;Your program is full of bugs.</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a href="http://zhedahht.blog.163.com/" target="_top" hidefocus="true"><img src="ava_012.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-01-24 12:08</span><div class="tx atag"><a class="fc03 noul" title="何海涛" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">何海涛</span></a><span class="fc07">&nbsp;回复&nbsp;</span><span class="fc07">sdf</span></div></div> <div class="cnt pre atag"><p>All of my code has passed my unit tests. If you find any bugs, will you please tell me explicitly, including your inputs? Thank you!</p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="浙江 宁波" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-12-28 11:39</span><div class="tx atag"><span title="浙江 宁波" class="fc07">stukid</span></div></div> <div class="cnt pre atag">确实巧妙</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="北京 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2008-01-01 22:20</span><div class="tx atag"><span title="北京 " class="fc07">凌绝顶</span></div></div> <div class="cnt pre atag">第一步后，再将数组分成两个的想法也很妙。</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="陕西 西安" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-12-29 17:19</span><div class="tx atag"><span title="陕西 西安" class="fc07">网易博友</span></div></div> <div class="cnt pre atag">不试不知道，一试吓一跳
+<br>原来还真有这种性质
+<br>太神奇了
+<br></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div></div>
+      <div style="" class="clearfix"><div style="display: none;" class="ui-7940618508 noselect js-zfrg-6540"><span class="pgi pgb iblock fc03 bgc9 bdc0 js-znpg-097">上一页</span> <span class="pgi zpg1 iblock fc03 bgc9 bdc0 js-zslt-987 fc05">1</span> <span class="frg fgp fc06">...</span> <span style="display: none;" class="pgi zpg2 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg3 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg4 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg5 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg6 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg7 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg8 iblock fc03 bgc9 bdc0">-1</span> <span class="frg fgn fc06">...</span> <span style="display: none;" class="pgi zpg9 iblock fc03 bgc9 bdc0">-1</span> <span class="pgi pgb iblock fc03 bgc9 bdc0 js-znpg-097">下一页</span></div></div>
+    </div>
+  </div></div>
+	    </div>
+	    <div class="phide" id="yodaoad_3" style=""></div>
+      </div>
+      <div class="cite ztag fc03 phide"></div>
+    </div>
+   </div>
+  </div>
+</div>
+
+
+
+</div>
+      <div class="l cl h100">&nbsp;</div>
+      <div class="r cr h100">&nbsp;</div>
+    </div>
+    <div class="nb-mb lcr bh space">
+      <div class="l bl bh">&nbsp;</div>
+      <div class="r br bh">&nbsp;</div>
+      <div class="c bc bh lcr">&nbsp;</div>
+    </div>
+  </div>
+
+</div>
+      <div class="l wl g lg h100">&nbsp;</div>
+      <div class="l wl t lt">&nbsp;</div>
+      <div class="l wl b lb">&nbsp;</div>
+      <div class="r wr g rg h100">&nbsp;</div>
+      <div class="r wr t rt">&nbsp;</div>
+      <div class="r wr b rb">&nbsp;</div>
+    </div>
+  </div>
+  <div class="nb-are nb-smb"><div class="wkg h space"><div class="l h">&nbsp;</div><div class="r h">&nbsp;</div><div class="c h">&nbsp;</div></div></div>
+<div class="nb-are nb-fot">
+  <div class="wkg h">
+    <h2>页脚</h2>
+    <div class="k">      <a rel="nofollow" class="m2a fc08" target="_top" href="http://corp.163.com/index_gb.html">公司简介</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://gb.corp.163.com/gb/contactus.html">联系方法</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://corp.163.com/gb/job/job.html">招聘信息</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://help.163.com/?b13abk1">客户服务</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://corp.163.com/gb/legal/legal.html">隐私政策</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://blog.163.com/public/theme/">博客风格</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://blog.163.com/services/wapblog.html">手机博客</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://blog.163.com/vip.do">VIP博客</a>
+      
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="http://zhedahht.blog.163.com/rss/">
+      <span class="p fc10">-</span><span class="fc08" id="$_foot_subscribe"><span class="iblock m2a icn0 icn0-919">&nbsp;</span><a class="m2a fc08">订阅此博客</a></span>
+    </div>
+    <p class="fc08">网易公司版权所有&nbsp;©1997-2012</p>
+  </div>
+</div></div>
+    <!--[if lte IE 6]></div><![endif]-->
+  <!--[if lte IE 6]></div><![endif]-->
+  <div class="nb-layer" id="blog-163-com-layer"></div>
+  
+
+     <div style="position: absolute; top: 0pt; right: 0pt; z-index: 999; width: 1px; height: 1px; overflow: hidden;"> <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="ntsstorage" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" height="1" width="1"> <param name="movie" value="/common/storage.swf?t=1333093861416"> <param name="AllowScriptAccess" value="sameDomain"> <embed src="storage.swf" name="ntsstorage" allowscriptaccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" height="1" width="1">  </object> </div><iframe src="index_2.html" id="api.blog.163.com" name="api.blog.163.com" style="display: none;" height="0" width="0"></iframe><iframe src="index_3.html" id="photo.163.com" name="photo.163.com" style="display: none;" height="0" width="0"></iframe><iframe src="index_4.html" id="ud.blog.163.com" name="ud.blog.163.com" style="display: none;" height="0" width="0"></iframe>
+    
+  
+  
+
+    
+
+
+</body>
+</html>

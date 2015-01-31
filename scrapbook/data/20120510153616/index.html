@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta content="IE=7" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
+<link href="http://img.baidu.com/img/baike/wap/iphone4_logo.png" rel="apple-touch-icon">
+<meta content="6cxg7fjbSrYQta0LB_ceiPVV7KOb9Sis_o0e4QGYDec" name="google-site-verification"><title>STL map_百度百科</title>
+
+
+
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+
+<link rel="stylesheet" id="scrapbook-sticky-css" type="text/css" href="chrome://scrapbook/skin/annotation.css" media="all">
+</head>
+<body id="view"><iframe src="index_1.html" style="display: none;" frameborder="0"></iframe><div id="bdshare_s"><iframe src="index_2.html" id="bdsIfr" style="position: absolute; display: none; z-index: 9999;" frameborder="0"></iframe><div style="display: none;" id="bdshare_l"><div id="bdshare_l_c"><h6>分享到</h6><ul><li><a href="#" class="bds_qzone qqkj">QQ空间</a></li><li><a href="#" class="bds_tsina xlwb">新浪微博</a></li><li><a href="#" class="bds_baidu bdsc">百度搜藏</a></li><li><a href="#" class="bds_renren rrw">人人网</a></li><li><a href="#" class="bds_tqq txwb">腾讯微博</a></li><li><a href="#" class="bds_kaixin001 kxw">开心网</a></li><li><a href="#" class="bds_tqf txpy">腾讯朋友</a></li><li><a href="#" class="bds_hi bdkj">百度空间</a></li><li><a href="#" class="bds_douban db">豆瓣网</a></li><li><a href="#" class="bds_tsohu shwb">搜狐微博</a></li><li><a href="#" class="bds_msn msn">MSN</a></li><li><a href="#" class="bds_qq qqsc">QQ收藏</a></li><li><a href="#" class="bds_taobao tjh">淘宝</a></li><li><a href="#" class="bds_tieba bdtb">百度贴吧</a></li><li><a href="#" class="bds_sohu shbsh">搜狐白社会</a></li><li><a href="#" class="bds_more">更多...</a></li></ul><p><a href="#" class="goWebsite">百度分享</a></p></div></div></div>
+
+<div id="wrap">
+
+<div id="page">
+<div class="layout grid-m0s245 w1000" id="content-wrap">
+<div class="col-main article" id="content">
+<div class="main-wrap main-shadow" id="main-wrap">
+<div class="content-hd">
+<div class="content-hd-wrap"></div>
+</div>
+<div class="content-bd main-body">
+<div class="text" id="sec-content0">
+<div class="bk-editable-lemma-btns">
+<a class="tpldivide-lemma lemma-top-link" hidefocus="true" href="http://baike.baidu.com/tpldivideload?lemmaId=4256069" id="tmpdivide" style="display: none; margin-right: 14px;" target="_top"></a>
+<a class="dividable-lemma lemma-top-link" data-edit-id="4256069" hidefocus="true" href="http://baike.baidu.com/divideload?lemmaid=4256069" id="polyin" style="display: none;">拆分词条</a>
+
+<span style="height: 100%;"></span>
+</div>
+<h1 class="title" id="lemmaTitle-4256069">STL map</h1>
+
+
+<div class="clear"></div>
+<div class="mod-top">
+
+<div class="card-summary nslog-area" data-nslog-type="72">
+
+<div class="card-summary-content">
+<p>
+映射和多重映射基于某一类型Key的键集的存在，提供对T类型的数据进行快速和高效的检索。对map而言，键只是指存储在容器中的某一成员。Map不支持副本键，multimap支持副本键。Map和multimap对象包涵了键和各个键有关的值，键和值的数据类型是不相同的，这与set不同。set中的key和value是Key类型的，而map中的key和value是一个pair结构中的两个分量。</p>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+
+<div class="clear"></div>
+
+<div class="lemma-main-content" id="lemmaContent-0">
+<h2 class="headline-1 first bk-sidecatalog-title"><span class="text_edit editable-title" data-edit-id="4256069:4256069:1"></span><a name="1"></a><a name="sub4256069_1"></a><span class="headline-content">1.map介绍</span></h2>　　使用map得包含map类所在的头文件：　
+<div class="spctrl"></div>　　#include &lt;map&gt; //注意，STL头文件没有扩展名.h<h3 class="headline-2 bk-sidecatalog-title"><a name="1_1"></a><a name="sub4256069_1_1"></a><span class="headline-content">1.1 map的构造</span></h3>　　Template&lt;class T1, class T2&gt;
+<div class="spctrl"></div>　　map(); // 默认构造函数
+<div class="spctrl"></div>　　map(const map&amp; m) // 拷贝构造函数
+<div class="spctrl"></div>　　map(iterator begin, iterator end ); //区间构造函数
+<div class="spctrl"></div>　　map(iterator begin, iterator end, const traits&amp; _compare) //带比较谓词的构造函数
+<div class="spctrl"></div>　　map(iterator begin, iterator end, const traits&amp; _compare, const allocator&amp; all) //带分配器<h3 class="headline-2 bk-sidecatalog-title"><a name="1_2"></a><a name="sub4256069_1_2"></a><span class="headline-content">1.2 map定义</span></h3>　　<b>1.2.1map的基本定义 </b>
+<div class="spctrl"></div>　　map对象是模板类，需要关键字和存储对象两个模板参数：
+<div class="spctrl"></div>　　std:map&lt;int, string&gt; personnel;
+<div class="spctrl"></div>　　这样就定义了一个用int作为索引,并拥有相关联的指向string的指针.
+<div class="spctrl"></div>　　为了使用方便，可以对模板类进行一下类型定义：
+<div class="spctrl"></div>　　typedef map&lt;int, CString&gt; UDT_MAP_INT_CSTRING;
+<div class="spctrl"></div>　　UDT_MAP_INT_CSTRING <b>enumMap</b>; //后面会依此例说明
+<div class="spctrl"></div>　　<b>1.2.2 map的嵌套定义</b>
+<div class="spctrl"></div>　　<span style="border-bottom: medium solid #33FF33;" class="linemarker-marked-line">map&lt;sring,map&lt;string,long&gt; &gt; //注意：最后两个&gt;之间</span><b><i><span style="border-bottom: medium solid #33FF33;" class="linemarker-marked-line">有个空格</span></i></b>
+<div class="spctrl"></div>　　map支持下标运算符operator[]，用访问普通数组的方式来访问map；不过下标为map的键，在multimap中一个键可以对应多个不同的值。<div class="bpctrl"></div><h2 class="headline-1 bk-sidecatalog-title"><span class="text_edit editable-title" data-edit-id="4256069:4256069:2"></span><a name="2"></a><a name="sub4256069_2"></a><span class="headline-content">2.map的方法</span></h2><h3 class="headline-2 bk-sidecatalog-title"><a name="2_1"></a><a name="sub4256069_2_1"></a><span class="headline-content">2.1 在map中插入元素</span></h3>　　三种插入方式： 
+<div class="spctrl"></div>　　<b>2.1.1用insert方法插入pair对象：
+<div class="spctrl"></div>　　</b>　<span style="border-bottom: medium solid #33FF33;" class="linemarker-marked-line">enumMap.insert(pair&lt;int, Cstring&gt;(1, “One”));
+</span><div class="spctrl"></div>　　<b>2.1.2 用insert方法插入</b><b>value</b><b>_</b><b>type</b><b>对象：
+<div class="spctrl"></div>　　</b>　<span style="border-bottom: medium solid #33FF33;" class="linemarker-marked-line">enumMap.insert(map&lt;int, Cstring&gt;::value_type (1, “One”));
+</span><div class="spctrl"></div>　　<b>2.1.3 用数组方式插入值：
+<div class="spctrl"></div>　　</b>　enumMap[1] = "One";
+<div class="spctrl"></div>　　enumMap[2] = "Two";
+<div class="spctrl"></div>　　......
+<div class="spctrl"></div>　　这样非常直观，但存在一个性能的问题。插入2时,先在enumMap中查找主键为2的项，没发现，然后将一个新的对象插入enumMap，键是2，值是一个空字符串，插入完成后，将字符串赋为"Two"; 该方法会将每个值都赋为缺省值，然后再赋为显示的值，如果元素是类对象，则开销比较大。用前两种方法可以避免开销。<h3 class="headline-2 bk-sidecatalog-title"><a name="2_2"></a><a name="sub4256069_2_2"></a><span class="headline-content">2.2 查找并获取map中元素</span></h3>　　<b>2.2.1</b><b>下标操作符给出了获得一个值的最简单方法：</b>
+<div class="spctrl"></div>　　CString tmp = enumMap[2];
+<div class="spctrl"></div>　　但是,只有当map中有这个键的实例时才对，否则会自动插入一个实例，值为初始化值。
+<div class="spctrl"></div>　　<b>2.2.2</b><b>我们可以使用find()</b><b>和count()</b><b>方法来发现一个键是否存在</b>
+<div class="spctrl"></div>　　查找map中是否包含某个关键字条目用find()方法，传入的参数是要查找的key，在这里需要提到的是begin()和end()两个成员，分别代表map对象中第一个条目和最后一个条目，这两个数据的类型是iterator.
+<div class="spctrl"></div>　　int nFindKey = 2; //要查找的Key
+<div class="spctrl"></div>　　//定义一个条目变量(实际是指针)
+<div class="spctrl"></div>　　UDT_MAP_INT_CSTRING::iterator it= enumMap.find(nFindKey);
+<div class="spctrl"></div>　　if(it == enumMap.end()) {
+<div class="spctrl"></div>　　cout&lt;&lt;"没找到"&lt;&lt;endl;
+<div class="spctrl"></div>　　} 
+<div class="spctrl"></div>　　else {
+<div class="spctrl"></div>　　cout&lt;&lt;"找到了"&lt;&lt;endl;
+<div class="spctrl"></div>　　}
+<div class="spctrl"></div>　　通过map对象的方法获取的iterator数据类型是一个std::pair对象，包括两个数据。 
+<div class="spctrl"></div>　　iterator-&gt;first 关键字(key)
+<div class="spctrl"></div>　　iterator-&gt;second 存储的数据(value)<h3 class="headline-2 bk-sidecatalog-title"><a name="2_3"></a><a name="sub4256069_2_3"></a><span class="headline-content">2.3 从map中删除元素</span></h3>　　<b>2.3.1移除某个map中某个条目用erase()</b>
+<div class="spctrl"></div>　　该成员方法的定义如下：
+<div class="spctrl"></div>　　1．iterator erase(iterator it); //通过一个条目对象删除 
+<div class="spctrl"></div>　　2．iterator erase(iterator first, iterator last); //删除一个范围 
+<div class="spctrl"></div>　　3．size_type erase(const Key&amp; key); //通过关键字删除 
+<div class="spctrl"></div>　　<b>2.3.2清除所有的元素clear()</b>
+<div class="spctrl"></div>　　clear()就相当于 enumMap.erase(enumMap.begin(), enumMap.end());<h3 class="headline-2 bk-sidecatalog-title"><a name="2_4"></a><a name="sub4256069_2_4"></a><span class="headline-content">2.4 map中swap的用法</span></h3>　　map中的swap不是一个容器中的元素交换，而是两个容器交换；
+<div class="spctrl"></div>　　For example：
+<div class="spctrl"></div>　　#include &lt;map&gt;
+<div class="spctrl"></div>　　#include &lt;iostream&gt;
+<div class="spctrl"></div>　　using namespace std;
+<div class="spctrl"></div>　　int main( )
+<div class="spctrl"></div>　　{
+<div class="spctrl"></div>　　map &lt;int, int&gt; m1, m2, m3;
+<div class="spctrl"></div>　　map &lt;int, int&gt;::iterator m1_Iter;
+<div class="spctrl"></div>　　m1.insert ( pair &lt;int, int&gt; ( 1, 10 ) );
+<div class="spctrl"></div>　　m1.insert ( pair &lt;int, int&gt; ( 2, 20 ) );
+<div class="spctrl"></div>　　m1.insert ( pair &lt;int, int&gt; ( 3, 30 ) );
+<div class="spctrl"></div>　　m2.insert ( pair &lt;int, int&gt; ( 10, 100 ) );
+<div class="spctrl"></div>　　m2.insert ( pair &lt;int, int&gt; ( 20, 200 ) );
+<div class="spctrl"></div>　　m3.insert ( pair &lt;int, int&gt; ( 30, 300 ) );
+<div class="spctrl"></div>　　cout &lt;&lt; "The original map m1 is:";
+<div class="spctrl"></div>　　for ( m1_Iter = m1.begin( ); m1_Iter != m1.end( ); m1_Iter++ )
+<div class="spctrl"></div>　　cout &lt;&lt; " " &lt;&lt; m1_Iter-&gt;second;
+<div class="spctrl"></div>　　cout &lt;&lt; "." &lt;&lt; endl;
+<div class="spctrl"></div>　　// This is the member function version of swap
+<div class="spctrl"></div>　　//m2 is said to be the argument map; m1 the target map
+<div class="spctrl"></div>　　m1.swap( m2 );
+<div class="spctrl"></div>　　cout &lt;&lt; "After swapping with m2, map m1 is:";
+<div class="spctrl"></div>　　for ( m1_Iter = m1.begin( ); m1_Iter != m1.end( ); m1_Iter++ )
+<div class="spctrl"></div>　　cout &lt;&lt; " " &lt;&lt; m1_Iter -&gt; second;
+<div class="spctrl"></div>　　cout &lt;&lt; "." &lt;&lt; endl;
+<div class="spctrl"></div>　　cout &lt;&lt; "After swapping with m2, map m2 is:";
+<div class="spctrl"></div>　　for ( m1_Iter = m2.begin( ); m1_Iter != m2.end( ); m1_Iter++ )
+<div class="spctrl"></div>　　cout &lt;&lt; " " &lt;&lt; m1_Iter -&gt; second;
+<div class="spctrl"></div>　　cout &lt;&lt; "." &lt;&lt; endl;
+<div class="spctrl"></div>　　// This is the specialized template version of swap
+<div class="spctrl"></div>　　swap( m1, m3 );
+<div class="spctrl"></div>　　cout &lt;&lt; "After swapping with m3, map m1 is:";
+<div class="spctrl"></div>　　for ( m1_Iter = m1.begin( ); m1_Iter != m1.end( ); m1_Iter++ )
+<div class="spctrl"></div>　　cout &lt;&lt; " " &lt;&lt; m1_Iter -&gt; second;
+<div class="spctrl"></div>　　cout &lt;&lt; "." &lt;&lt; endl;
+<div class="spctrl"></div>　　}<h3 class="headline-2 bk-sidecatalog-title"><a name="2_5"></a><a name="sub4256069_2_5"></a><span class="headline-content">2.5 map的sort问题</span></h3>　　Map中的元素是自动按key升序排序,所以不能对map用sort函数：
+<div class="spctrl"></div> .<h3 class="headline-2 bk-sidecatalog-title"><a name="2_6"></a><a name="sub4256069_2_6"></a><span class="headline-content">2.6 map的基本操作函数</span></h3>　　C++ Maps是一种关联式容器，包含“关键字/值”对
+<div class="spctrl"></div>　　begin() 返回指向map头部的迭代器
+<div class="spctrl"></div>　　clear(） 删除所有元素
+<div class="spctrl"></div>　　<span style="border-bottom: medium solid #33FF33;" class="linemarker-marked-line">count() 返回指定元素出现的次数</span>
+<div class="spctrl"></div>　　empty() 如果map为空则返回true
+<div class="spctrl"></div>　　end() 返回指向map末尾的迭代器
+<div class="spctrl"></div>　　<span style="border-bottom: medium solid #33FF33;" class="linemarker-marked-line">equal_range() 返回特殊条目的迭代器对
+</span><div class="spctrl"></div>　　erase() 删除一个元素
+<div class="spctrl"></div>　　find() 查找一个元素
+<div class="spctrl"></div>　　get_allocator() 返回map的配置器
+<div class="spctrl"></div>　　insert() 插入元素
+<div class="spctrl"></div>　　key_comp() 返回比较元素key的函数
+<div class="spctrl"></div>　　<span style="border-bottom: medium solid #33FF33;" class="linemarker-marked-line">lower_bound() 返回键值&gt;=给定元素的第一个位置
+</span><div class="spctrl"></div>　　max_size() 返回可以容纳的最大元素个数
+<div class="spctrl"></div>　　rbegin() 返回一个指向map尾部的逆向迭代器
+<div class="spctrl"></div>　　rend() 返回一个指向map头部的逆向迭代器
+<div class="spctrl"></div>　　size() 返回map中元素的个数
+<div class="spctrl"></div>　　swap() 交换两个map
+<div class="spctrl"></div>　　<span style="border-bottom: medium solid #33FF33;" class="linemarker-marked-line">upper_bound() 返回键值&gt;给定元素的第一个位置
+</span><div class="spctrl"></div>　　value_comp() 返回比较元素value的函数<div class="bpctrl"></div><h2 class="headline-1 bk-sidecatalog-title"><span class="text_edit editable-title" data-edit-id="4256069:4256069:3"></span><a name="3"></a><a name="sub4256069_3"></a><span class="headline-content">3.例子</span></h2>　　#include &lt;iostream&gt;
+<div class="spctrl"></div>　　#include &lt;map&gt;
+<div class="spctrl"></div>　　using namespace std;
+<div class="spctrl"></div>　　int main(void)
+<div class="spctrl"></div>　　{
+<div class="spctrl"></div>　　map&lt;char,int,less&lt;char&gt; &gt; map1;
+<div class="spctrl"></div>　　map&lt;char,int,less&lt;char&gt; &gt;::iterator mapIter;
+<div class="spctrl"></div>　　//char 是键的类型，int是值的类型
+<div class="spctrl"></div>　　//下面是初始化，与数组类似
+<div class="spctrl"></div>　　//也可以用map1.insert(map&lt;char,int,less&lt;char&gt; &gt;::value_type('c',3)); 
+<div class="spctrl"></div>　　map1['c']=3;
+<div class="spctrl"></div>　　map1['d']=4; 
+<div class="spctrl"></div>　　map1['a']=1;
+<div class="spctrl"></div>　　map1['b']=2; 
+<div class="spctrl"></div>　　for(mapIter=map1.begin();mapIter!=map1.end();++mapIter)
+<div class="spctrl"></div>　　cout&lt;&lt;" "&lt;&lt;(*mapIter).first&lt;&lt;": "&lt;&lt;(*mapIter).second;
+<div class="spctrl"></div>　　//first对应定义中的char键，second对应定义中的int值 
+<div class="spctrl"></div>　　//检索对应于d键的值是这样做的：
+<div class="spctrl"></div>　　map&lt;char,int,less&lt;char&gt; &gt;::const_iterator ptr; 
+<div class="spctrl"></div>　　ptr=map1.find('d');
+<div class="spctrl"></div>　　cout&lt;&lt;''\n''&lt;&lt;" "&lt;&lt;(*ptr).first&lt;&lt;" 键对应于值："&lt;&lt;(*ptr).second; 
+<div class="spctrl"></div>　　cin.get();
+<div class="spctrl"></div>　　return 0;
+<div class="spctrl"></div>　　}
+<div class="spctrl"></div>　　从以上例程中，我们可以看到map对象的行为和一般数组的行为类似。Map允许两个或多个值使用比较操作符。下面我们再看看multimap: 
+<div class="spctrl"></div>　　#include &lt;iostream&gt;
+<div class="spctrl"></div>　　#include &lt;map&gt;
+<div class="spctrl"></div>　　#include &lt;string&gt;
+<div class="spctrl"></div>　　using namespace std;
+<div class="spctrl"></div>　　int main(void)
+<div class="spctrl"></div>　　{
+<div class="spctrl"></div>　　multimap&lt;string,string,less&lt;string&gt; &gt;mulmap;
+<div class="spctrl"></div>　　multimap&lt;string,string,less&lt;string&gt; &gt;::iterator p;
+<div class="spctrl"></div>　　//初始化多重映射mulmap: 
+<div class="spctrl"></div>　　typedef multimap&lt;string,string,less&lt;string&gt; &gt;::value_type vt;
+<div class="spctrl"></div>　　typedef string s;
+<div class="spctrl"></div>　　mulmap.insert(vt(s("Tom "),s("is a student")));
+<div class="spctrl"></div>　　mulmap.insert(vt(s("Tom "),s("is a boy")));
+<div class="spctrl"></div>　　mulmap.insert(vt(s("Tom "),s("is a bad boy of blue!")));
+<div class="spctrl"></div>　　mulmap.insert(vt(s("Jerry "),s("is a student")));
+<div class="spctrl"></div>　　mulmap.insert(vt(s("Jerry "),s("is a beatutiful girl")));
+<div class="spctrl"></div>　　mulmap.insert(vt(s("DJ "),s("is a student")));
+<div class="spctrl"></div>　　//输出初始化以后的多重映射mulmap: 
+<div class="spctrl"></div>　　for(p=mulmap.begin();p!=mulmap.end();++p)
+<div class="spctrl"></div>　　cout&lt;&lt;(*p).first&lt;&lt;(*p).second&lt;&lt;endl;
+<div class="spctrl"></div>　　//检索并输出Jerry键所对应的所有的值
+<div class="spctrl"></div>　　cout&lt;&lt;"find Jerry :"&lt;&lt;endl;
+<div class="spctrl"></div>　　p=mulmap.find(s("Jerry "));
+<div class="spctrl"></div>　　while((*p).first=="Jerry ")
+<div class="spctrl"></div>　　{ 
+<div class="spctrl"></div>　　cout&lt;&lt;(*p).first&lt;&lt;(*p).second&lt;&lt;endl;
+<div class="spctrl"></div>　　++p;
+<div class="spctrl"></div>　　} 
+<div class="spctrl"></div>　　cin.get();
+<div class="spctrl"></div>　　return 0;
+<div class="spctrl"></div>　　} 
+<div class="spctrl"></div>　　在map中是不允许一个键对应多个值的，在multimap中，不支持operator[],也就是说不支持map中允许的下标操作。<div class="bpctrl" style="clear: both;"></div><div class="clear"></div>
+</div>
+<div class="clear"></div>
+
+<div class="reinforce" id="lemmaExtend">
+
+<div class="clear"></div>
+<div class="clear"></div>
+</div>
+
+</div>
+<div class="clear"></div>
+</div>
+
+</div>
+</div>
+<div class="col-sub" id="side">
+<div class="userinfo-side">
+<div id="userInfoDiv">
+</div>
+</div>
+<div class="box2" id="lemma-overview">
+
+</div>
+
+<div class="box2" id="bkDynamic" style="">
+
+</div>
+<div class="box2" id="mabox" style="display: none;">
+<div class="box2-inner" id="box2-inner">
+
+
+</div>
+</div>
+<div class="clear">
+</div>
+</div>
+</div><img src="c.gif" style="display: none;"><input id="titleVal" value="STL map" type="hidden">
+</div>
+
+</div>
+<div id="sidecatalog" style="position: fixed; top: 414px; left: 744px; display: none;">
+<div class="sidebar" id="sidebar"></div>
+<a class="gotop" href="#" id="gotop" title="返回顶部"></a>
+</div>
+<div id="side-catalog-content" style="display: none; position: fixed; overflow: hidden; height: 312px; top: 192px; left: 771px;"><div id="side-catalog-up"><div></div></div><div id="side-lemma-title">STL map</div><div style="height: 242px;" id="side-title-panel"><div id="side-title-list"><h2><a href="#1" class="nslog:1026" title="1.map介绍">1.map介绍</a></h2><h3><a href="#1_1" class="nslog:1026" title="1.1 map的构造">1.1 map的构造</a></h3><h3><a href="#1_2" class="nslog:1026" title="1.2 map定义">1.2 map定义</a></h3><h2><a href="#2" class="nslog:1026" title="2.map的方法">2.map的方法</a></h2><h3><a href="#2_1" class="nslog:1026" title="2.1 在map中插入元素">2.1 在map中插入元素</a></h3><h3><a href="#2_2" class="nslog:1026" title="2.2 查找并获取map中元素">2.2 查找并获取map中元素</a></h3><h3><a href="#2_3" class="nslog:1026" title="2.3 从map中删除元素">2.3 从map中删除元素</a></h3><h3><a href="#2_4" class="nslog:1026" title="2.4 map中swap的用法">2.4 map中swap的用法</a></h3><h3><a href="#2_5" class="nslog:1026" title="2.5 map的sort问题">2.5 map的sort问题</a></h3><h3><a href="#2_6" class="nslog:1026" title="2.6 map的基本操作函数">2.6 map的基本操作函数</a></h3><h2><a href="#3" class="nslog:1026" title="3.例子">3.例子</a></h2></div></div><div id="side-catalog-down"><div></div></div></div>
+
+
+
+
+<div id="usercard-wrap"><div style="opacity: 0;" class="user-card fix"><div class="top-bg"></div><div class="card-body fix"><div class="uc-l"><div class="uc-pic"></div><div class="uc-name"><a class="uc-id" href="http://baike.baidu.com/view/4256069.htm"></a></div><div class="uc-level"></div></div><div class="uc-r"><div class="uc-items"><div class="uc-role fix"></div><div class="uc-badge fix"></div><div class="uc-honor"></div><div class="uc-going-task fix"></div><div class="uc-gq"></div><div class="uc-default"></div><div class="uc-edit"></div></div><span class="pillar"></span></div></div></div></div>
+
+
+
+<div class="scrapbook-sticky" style="left: 771px; top: 12px; position: absolute; width: 254px; height: 132px;"><div class="scrapbook-sticky-header"></div>构造函数：
+map&lt;int, int&gt; c;
+map&lt;int, int&gt; c( c1 );
+map&lt;int, int&gt; c( begin, end );
+...详见下文</div>
+<div class="scrapbook-sticky" style="left: 774px; top: 148px; position: absolute; width: 259px; height: 271px;"><div class="scrapbook-sticky-header"></div>修改函数：
+c.insert( pair&lt;int, int&gt;(1, 1) );
+c.insert( map&lt;int, int&gt;::value_type(1, 1) );
+c[1] = 1;
+
+c.erase( pos );
+c.erase( begin, end );
+c.erase( key );
+c.clear();
+
+c.swap();</div>
+<div class="scrapbook-sticky" style="left: 775px; top: 424px; position: absolute; width: 249px; height: 102px;"><div class="scrapbook-sticky-header"></div>容量函数：
+c.empty();
+c.size();</div>
+<div class="scrapbook-sticky" style="left: 775px; top: 529px; position: absolute; width: 247px; height: 185px;"><div class="scrapbook-sticky-header"></div>引用函数：
+c.find( 1 );
+c.begin();
+c.end();
+c.lower_bound();
+c.upper_bound();</div>
+
+</body></html>

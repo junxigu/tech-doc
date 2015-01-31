@@ -1,0 +1,7 @@
+id	20150131154358
+type	
+title	ESLint
+chars	UTF-8
+icon	resource://scrapbook/data/20150131154358/favicon.512x512_001.png
+source	http://eslint.org/docs/about/
+comment	ESLint是一个静态代码检查工具；  __BR__ 检查可能存在问题，不符合规范的代码；  __BR__  __BR__ ESLint的所有检查规则都是可插拔的，已经存在部分自带的规则；

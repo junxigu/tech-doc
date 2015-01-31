@@ -1,0 +1,20 @@
+/* ::::: http://www.newsmth.net/pc/default.css ::::: */
+
+BODY { background-color: rgb(255, 255, 255); font-size: 12px; font-family: 宋体; }
+.t1 { border-width: 1px; border-top: 1px solid rgb(153, 153, 153); border-left: 1px solid rgb(153, 153, 153); border-color: rgb(153, 153, 153); font-size: 12px; }
+.t3 { border-width: 1px; border-right: 1px solid rgb(153, 153, 153); border-bottom: 1px solid rgb(153, 153, 153); border-color: rgb(153, 153, 153); text-align: center; background-color: rgb(246, 246, 246); }
+.t5 { border-width: 1px; border-right: 1px solid rgb(153, 153, 153); border-bottom: 1px solid rgb(153, 153, 153); border-color: rgb(153, 153, 153); background-color: rgb(255, 255, 255); word-wrap: break-word; }
+.tt1 { font-size: 12px; color: rgb(0, 0, 0); background-color: rgb(242, 242, 242); border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0); border-color: rgb(0, 0, 0); }
+.tt3 { font-size: 12px; color: rgb(0, 0, 0); background-color: rgb(242, 242, 242); border-width: 1px; border-top: 1px solid rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); border-color: rgb(0, 0, 0); }
+.f1 { font-size: 12px; color: rgb(0, 0, 0); text-decoration: none; text-align: left; }
+.tt2 { font-size: 14px; color: rgb(102, 102, 204); font-weight: bold; text-indent: 100pt; }
+.f2 { font-size: 14px; font-weight: bold; text-decoration: none; color: rgb(255, 102, 0); }
+.t8 { border-width: 1px; border-right: 1px solid rgb(153, 153, 153); border-bottom: 1px solid rgb(153, 153, 153); border-color: rgb(153, 153, 153); background-color: rgb(246, 246, 246); word-wrap: break-word; }
+.t9 { font-weight: bold; font-size: 14px; background-color: rgb(113, 139, 214); border-width: 1px; border-right: 1px solid rgb(153, 153, 153); border-bottom: 1px solid rgb(153, 153, 153); border-color: rgb(153, 153, 153); color: rgb(255, 255, 255); word-wrap: break-word; }
+.f4 { font-family: "Arial","Helvetica","sans-serif"; font-weight: bold; color: rgb(255, 0, 0); }
+.content { font-size: 14px; line-height: 24px; word-wrap: normal; }
+ul { margin: 0px 0px 0px 5px; padding: 0px; }
+li { padding: 0px; margin-left: 10px; text-align: left; }
+.PoweredBySmth { font-size: 12px; font-family: "Verdana","Arial","Helvetica","sans-serif"; color: rgb(0, 0, 0); font-weight: bold; text-align: center; }
+.PoweredBySmth A { color: rgb(204, 0, 0); text-decoration: none; }
+.PoweredBySmth A:hover { text-decoration: underline; }

@@ -1,0 +1,207 @@
+/* ::::: http://s.codeproject.com/App_Themes/Std/CSS/CodeProject.min.css?dt=2.5.111004.1 ::::: */
+
+.theme1-background { background-color: rgb(255, 153, 0); }
+.contrast1-background { background-color: rgb(72, 142, 0); }
+.blank-background { background-color: White; }
+html { font-size: 100.01%; }
+body, p, h1, h2, h3, h4, h5, h6, li, tr, td, th, dd, dt { font-family: Verdana,Arial,Sans-Serif; font-size: 10pt; }
+body { background-color: rgb(255, 255, 255); margin: 0pt; }
+h1, h2, h3, h4, h5, th { font-weight: bold; }
+h1 { padding-bottom: 0pt; color: rgb(72, 142, 0); margin-top: 10px; text-align: left; margin-bottom: 5px; letter-spacing: -1px; }
+h2, h3, h5 { color: rgb(255, 153, 0); }
+h1 { font-size: 1.6em; }
+h2 { font-size: 13pt; }
+h3 { font-size: 11pt; }
+pre { background-color: rgb(251, 237, 187); padding: 6px; font: 9pt "Courier New",Courier,mono; white-space: pre; overflow: auto ! important; border: 1px solid rgb(251, 237, 187); }
+code { color: rgb(153, 0, 0); font: 11pt "Courier New",Courier,mono; }
+table { background-color: Transparent; }
+img {  }
+a { text-decoration: none; color: rgb(0, 76, 213); }
+a:visited { color: purple; }
+a:active { text-decoration: underline; }
+a:hover { text-decoration: underline; }
+a:focus { outline: medium none; }
+ul.outdent { padding-left: 15px; margin-left: 0pt; margin-bottom: 5px; margin-top: 5px; }
+ul.outdent li { padding-bottom: 2px; font-size: 8pt; }
+a.button, a.button-large, .button, .button-large { color: white; background-color: rgb(224, 137, 0); border-width: 2px; border-style: outset; font-weight: bold; text-decoration: none ! important; white-space: nowrap; font-size: 100%; padding: 2px; }
+.button:active { border-style: inset; }
+.button:hover, .button-large:hover { border-style: outset; }
+input[type="text"]:focus, textarea:focus { border: 2px solid rgb(160, 172, 191); }
+input[type="radio"] { border: medium none; }
+.small-text, .small-text li, .small-text td { font-size: 8pt ! important; }
+.tiny-text, input-prompt, .action-link { font-size: 7pt; }
+.align-left { text-align: left ! important; }
+.align-right { text-align: right ! important; }
+.align-center { text-align: center; }
+.align-middle { vertical-align: middle; }
+.align-bottom { vertical-align: bottom; }
+.float-right { float: right; }
+.float-left { float: left; }
+.extended { width: 100%; }
+.tight { margin: 0pt ! important; padding: 0pt ! important; }
+.nowrap { white-space: nowrap; }
+.fixed-layout { table-layout: fixed; }
+.clipped { overflow: hidden; }
+.header { background-color: rgb(255, 153, 0); }
+.row { overflow: hidden; }
+.access-link { position: absolute; top: 0pt; left: 0pt; width: 1px; height: 1px; z-index: 100; border-style: none; overflow: hidden; }
+.box { margin-bottom: 10px; padding: 5px; font-size: 8pt; border: 1px solid rgb(221, 221, 221); border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; }
+.raised { background-color: rgb(255, 248, 223); box-shadow: 5px 5px 10px 1px rgb(153, 153, 153); }
+div.box, td.box {  }
+div.header, td.header {  }
+.feature { background-color: rgb(255, 248, 223); border-color: rgb(255, 153, 0); }
+.hover-container { display: block; position: relative; }
+.hover-row.hover, .hover-row.hover td, .hover-row:hover, .hover-row:hover td { background-color: rgb(255, 248, 223) ! important; }
+.breadcrumb { font-size: 8pt; }
+.toolbar { border: 1px solid transparent; padding: 1px; -moz-transition: background-color 0.1s linear 0s; }
+.toolbar:hover { border: 1px solid rgb(255, 153, 0); background-color: rgb(255, 204, 153); -moz-transition: background-color 0.1s linear 0s; }
+.list-socialbookmark { position: absolute; top: -90px; left: -5000px; z-index: 200; display: none; white-space: nowrap; padding: 10px; border: 2px solid rgb(255, 153, 0); background-color: rgb(255, 255, 204); border-radius: 5px 5px 5px 5px; text-align: left; }
+.search-bar { padding: 2px 5px; }
+.search-bar input.search { width: 210px; border: medium none; }
+.search td { background-color: white; }
+.search-bar .search-advanced { padding: 8px; width: 205px; z-index: 1000; background-color: rgb(255, 248, 223); border: 1px solid rgb(204, 204, 204); box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5); position: absolute; top: 1px; right: 5px; }
+.search-highlight { border-bottom: 1px dotted rgb(255, 153, 0); font-weight: bold; }
+.results { border-left: 1px solid rgb(211, 225, 249); padding-left: 7px; border-right: 1px solid rgb(211, 225, 249); padding-right: 7px; }
+.page-width { margin: auto; width: 110px; }
+.page-background { background-color: rgb(204, 204, 204); }
+.container-related-item { margin-bottom: 5px; }
+.container-content { background-color: White; max-width: 1040px; margin: auto; position: relative; border-left: 1px solid rgb(238, 238, 238); border-right: 1px solid rgb(238, 238, 238); }
+.container-content pre, .container-code pre, .answer pre { white-space: pre-wrap; word-wrap: break-word; }
+.pre-action-link { font-size: 0.8em; text-align: right; color: rgb(0, 76, 213); display: inline; border-bottom: 1px solid rgb(204, 204, 204); }
+.error, .error li { color: Red; }
+.highlight { background-color: yellow ! important; }
+.subdue { color: rgb(102, 102, 102); }
+.bold { font-weight: bold; }
+.announce { margin-bottom: 20px; }
+.announce-header { padding: 2px 2px 7px 0pt; font-size: 11pt; font-weight: bold; margin: 0pt; letter-spacing: 0pt; border-bottom: 1px solid rgb(255, 153, 0); }
+.announce-content, .announce-content td { font-size: 8pt; padding: 2px; margin-bottom: 5px; overflow: hidden; border-radius: 5px 5px 5px 5px; }
+table.feature { border-top: 1px solid rgb(204, 204, 204); border-left: 1px solid rgb(204, 204, 204); background-color: White; }
+table.feature td, table.feature th { border-bottom: 1px solid rgb(204, 204, 204); border-right: 1px solid rgb(204, 204, 204); margin: 0pt; padding: 5px; font-size: 8pt; }
+.code-comment { color: rgb(0, 128, 0); font-style: italic; }
+.code-keyword { color: Blue; }
+.code-preprocessor { color: Navy; }
+.code-string { color: Purple; }
+.code-leadattribute { color: rgb(128, 0, 0); }
+.code-digit { color: Navy; }
+.container-article { background-color: White ! important; position: relative; }
+.container-article .action-links { margin-right: 10px; white-space: nowrap; }
+.container-article .text { padding: 10px; max-width: 800px; margin-right: 230px; }
+.container-article .infobox { color: rgb(51, 51, 51); width: 200px; margin: 0pt 10px 5px; }
+.container-article .header { margin-right: 227px; padding: 5px 10px 0pt 5px; background-color: rgb(253, 243, 226); }
+.container-article .header-sidebar { padding: 7px 7px 0pt 10px; position: absolute; right: 0pt; top: 0pt; width: 210px; }
+.container-article .container-nav { width: 100%; margin: 0pt; }
+.tabs { margin-left: 3px; }
+.container-article .tabs-container { border-bottom: 1px solid rgb(255, 153, 0); background-color: rgb(253, 243, 226); margin-right: 227px; padding-top: 10px; }
+.container-article .tabs-sidebar { float: right; width: 208px; font-size: 11pt; font-weight: bold; border-bottom: 1px solid rgb(255, 153, 0); letter-spacing: 0pt; margin: -23px 8px 0pt 0pt; padding-bottom: 6px; }
+.container-article h1 { margin-top: 10px; font-size: 1.8em; color: rgb(25, 25, 25); }
+.container-article img { overflow: auto; }
+.container-article pre { overflow: auto; }
+.container-article .author { font-size: 10pt; }
+.container-article .abstract { color: rgb(51, 51, 51); padding: 5px 0pt; font-size: 10pt; margin-top: 15px; }
+.container-related-item { font-size: 8pt; margin-bottom: 5px; }
+.container-article .container-text { position: relative; }
+.container-article .text-sidebar { position: absolute; top: 0pt; right: 0pt; width: 210px; padding: 7px 7px 0pt 10px; min-height: 100%; border-left: 1px solid rgb(238, 238, 238); }
+.container-article .results { border: 0pt none; padding: 0pt; }
+.alert-bar ul.see-also { font-weight: normal; margin-top: 5px; }
+.forum { background-color: rgb(255, 248, 223); border-color: rgb(255, 153, 0) ! important; table-layout: fixed; margin: 0pt ! important; padding: 0pt ! important; width: 100%; }
+.forum tr.hover-row:hover td { background-color: inherit ! important; }
+.forum-header1, .forum-header1 TD { color: rgb(0, 0, 0); background-color: rgb(251, 237, 187); font-size: 8pt; vertical-align: middle; }
+.forum-header2, .forum-header2 TD { color: rgb(0, 0, 0); background-color: rgb(255, 153, 0); font-size: 8pt; vertical-align: middle; }
+.forum-footer, .forum-footer TD { color: rgb(0, 0, 0); background-color: rgb(251, 237, 187); font-size: 8pt; padding: 3px; }
+.forum-navbar, .forum-navbar TD { color: rgb(0, 0, 0); background-color: rgb(251, 237, 187); font-size: 8pt; padding-top: 5px; }
+td.root, .root.msg-divide { border-bottom: 1px dotted rgb(255, 153, 0); }
+.msg-divide { height: 7px; background-color: white; border-style: none; }
+.ForumSig, .signature { border-top: 1px solid rgb(204, 204, 204); padding-top: 0pt; margin-top: 10px; max-height: 150px; overflow: auto; }
+.msg-footer, .msg-footer td { background-color: rgb(237, 248, 255); padding: 15px 0pt 3px; font-size: 8pt ! important; }
+.MsgHd, .MsgHd td { font-size: 8pt; }
+.MsgBd, .MsgBd td, .MsgBd p, .MsgBd li, .MsgBd th, .MsgBd dd, .MsgBd dt { font-size: 9pt; }
+.HdUnSel, .HdUnSel td { background-color: rgb(255, 250, 240); }
+.BdSel, .BdSel td { background-color: rgb(237, 248, 255); }
+.Rt, .Rt td { font-weight: bold; }
+.LoVote, .LoVote a { color: gray ! important; }
+.Frm_MsgIndent, td.Frm_MsgIndent { background-color: white ! important; text-align: right; padding-right: 5px; vertical-align: top; }
+tr.hover-row:hover td.Frm_MsgIndent { background-color: white ! important; }
+.MsgHd .hover-row:hover { background-color: inherit ! important; }
+.Frm_MsgIcon { width: 20px; white-space: nowrap; vertical-align: top; }
+.Frm_MsgAuthor { text-align: left; width: 140px; padding-left: 2px; }
+.Frm_MsgAuthor a { padding-bottom: 3px; vertical-align: text-top; width: 140px; overflow: hidden; }
+.Frm_MsgDate { text-align: right; width: 130px ! important; }
+.Frm_MsgDate { text-align: right; width: 130px ! important; }
+.Frm_Input { background-color: rgb(254, 249, 231); font-size: 95%; }
+.Frm_DropDown { background-color: rgb(254, 249, 231); font-size: 95%; margin-left: 5px; }
+.nav-memberbar { border-bottom: 1px solid rgb(255, 153, 0); color: rgb(51, 51, 51); font-size: 11px; letter-spacing: -1px; padding: 0pt 5px 1px; }
+.member-stats { font-size: 11px; color: rgb(102, 102, 102); letter-spacing: 0pt; font-weight: bold; text-align: left; }
+.voting-bar { background-color: rgb(251, 237, 187); border: 1px solid rgb(255, 153, 0); }
+.voting-bar tr { font-size: 8pt; }
+td.chart-column { vertical-align: bottom; font-size: 6pt ! important; text-align: center; }
+.rating-ignore-vote img, .rating-ignore-vote span { opacity: 0.25; }
+.rating-comment { display: none; background-color: White; position: absolute; right: 0pt; top: 0pt; width: 250px; border: 1px solid rgb(204, 204, 204); z-index: 1000; box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4); }
+.TopPad, .pad-top { padding-top: 10px; }
+.tags { line-height: 1.3em; }
+.tags .t { font-size: 8pt; padding: 2px; border: 1px solid rgb(221, 221, 221); margin: 0pt 2px; color: rgb(102, 102, 102); }
+.tags .t a { color: rgb(63, 119, 255); }
+.tags .t a:hover { color: rgb(0, 76, 213); }
+.tags .t:hover { color: rgb(0, 76, 213) ! important; border-color: rgb(255, 153, 0); background-color: rgb(255, 248, 223); -moz-transition: background-color 0.1s linear 0s; }
+.container-header .tags { margin-top: 7px; margin-bottom: -10px; }
+.container-adwords { font-size: 8pt; margin-bottom: 7px; }
+.container-adwords a { text-decoration: none ! important; }
+.container-adwords .title:hover { text-decoration: underline; }
+.container-adwords .link { color: green; }
+.container-adwords .desc { color: rgb(102, 102, 102); }
+.lqm_ad { overflow: hidden; }
+.navbar .simple { font-weight: normal ! important; background-color: Transparent ! important; }
+.navbar a, #nav { padding: 0pt; margin: 0pt; list-style: none outside none; font-size: 9pt; z-index: 200; height: 24px; }
+.navbar, #nav ul { padding: 0pt; margin: 0pt; list-style: none outside none; background: none repeat scroll 0% 0% rgb(72, 142, 0); border-top: 1px solid rgb(72, 142, 0); }
+#nav li { float: left; }
+#nav li li { float: none; border-left: 1px solid rgb(72, 142, 0); border-right: 1px solid rgb(72, 142, 0); }
+.navbar { border-style: none; }
+.navbar a, #nav li a { display: block; float: left; color: rgb(255, 255, 255); height: 24px; padding: 0pt 9px; line-height: 24px; text-decoration: none; white-space: nowrap; font-weight: bold; }
+#nav li li a { display: block; float: none; height: 19px; line-height: 19px; font-size: 9pt; padding: 0pt 5px; font-weight: normal; letter-spacing: 0pt; }
+#nav li li a.fly { white-space: nowrap; }
+a.fly.highlight { border: 1px solid Yellow; margin: 5px 0pt ! important; padding: 3px ! important; }
+.navbar a:hover, #nav li:hover { position: relative; z-index: 300; background-color: rgb(195, 222, 108); }
+#nav > li:hover { box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5); }
+.navbar a:hover, #nav li.cssplay_hover { position: relative; z-index: 300; background-color: rgb(195, 222, 108); }
+#nav li li a { color: rgb(255, 255, 255); font-weight: bold; }
+#nav li:hover ul { left: 0pt; top: 24px; z-index: 500; }
+#nav ul { position: absolute; left: -9999px; top: -9999px; box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5); }
+#nav li:hover li:hover > ul { left: -5px; margin-left: 100%; top: -1px; z-index: 500; }
+#nav li:hover > ul ul { position: absolute; left: -9999px; top: -9999px; width: auto; }
+#nav li:hover > a, #nav li a.selected { color: rgb(0, 0, 0) ! important; background-color: rgb(195, 222, 108) ! important; font-weight: bold; }
+#nav li li:hover > a { color: rgb(0, 0, 0) ! important; background-color: rgb(195, 222, 108) ! important; font-weight: bold; }
+#nav .heading { white-space: nowrap; color: rgb(255, 255, 255) ! important; font-weight: bold; margin: 7px 0pt 3px 3px; padding: 2px; background-color: rgb(72, 142, 0); }
+#nav li.heading:hover { color: rgb(0, 0, 0) ! important; background-color: rgb(195, 222, 108) ! important; }
+#nav li li a, #nav li li li a, #nav li li li li a, #nav li li li li li a, #nav li li li li li li a { color: rgb(255, 255, 255) ! important; background-color: rgb(72, 142, 0) ! important; font-weight: bold; padding-left: 10px; }
+.navbar a:hover, #nav li.cssplay_hover li.cssplay_hover a, #nav li.cssplay_hover li.cssplay_hover li.cssplay_hover a, #nav li.cssplay_hover li.cssplay_hover li.cssplay_hover li.cssplay_hover a, #nav li.cssplay_hover li.cssplay_hover li.cssplay_hover li.cssplay_hover li.cssplay_hover a, #nav li.cssplay_hover li.cssplay_hover li.cssplay_hover li.cssplay_hover li.cssplay_hover li.cssplay_hover a { color: rgb(0, 0, 0) ! important; background-color: rgb(195, 222, 108) ! important; font-weight: bold; }
+.fly.break { border-bottom: 1px solid rgb(195, 222, 108); height: 20px; }
+.fly-menu { position: absolute; right: 5px; }
+a:hover .fly-menu {  }
+.tab-selected { background-color: rgb(255, 204, 102); border-width: 1px 1px 0pt; border-style: solid solid none; border-color: rgb(255, 204, 102) rgb(255, 204, 102) -moz-use-text-color; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-image: none; font-weight: bold; font-size: 9pt; padding: 5px; color: rgb(51, 51, 51); border-top-left-radius: 5px; border-top-right-radius: 5px; }
+.tab-unselected { border-width: 1px; border-style: solid; border-color: rgb(255, 204, 102) rgb(153, 153, 153) transparent rgb(255, 204, 102); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-image: none; background-color: rgb(255, 248, 223); font-weight: bold; font-size: 9pt; padding: 5px; color: rgb(102, 102, 102); border-top-left-radius: 5px; border-top-right-radius: 5px; }
+.tab-unselected a { color: rgb(102, 102, 102); }
+.tab-unselected:hover { background-color: rgb(255, 204, 102); border-width: 1px 1px 0pt; border-style: solid solid none; border-color: rgb(255, 204, 102) rgb(153, 153, 153) -moz-use-text-color rgb(255, 204, 102); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-image: none; color: Black; }
+.tab-unselected a:hover { color: rgb(51, 51, 51); text-decoration: none; }
+.speech-bubble-container-down, .speech-bubble-container-up, .speech-bubble-container-up-right, .speech-bubble-container-left, .speech-bubble-container-right { position: relative; }
+.speech-bubble-up, .speech-bubble-down, .speech-bubble-left, .speech-bubble-right { padding: 0.6em; border: 2px solid rgb(255, 153, 0); background-color: rgb(255, 255, 204) ! important; margin: 15px; text-decoration: none; font-weight: normal; text-align: left; border-radius: 5px 5px 5px 5px; white-space: normal; }
+.speech-bubble-pointer-up, .speech-bubble-pointer-up-inner { width: 0pt; height: 0pt; border-top-width: 0pt; background: none repeat scroll 0% 0% transparent; }
+.speech-bubble-pointer-up { border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 14px solid rgb(255, 153, 0); margin-left: 35px; position: absolute; top: -12px; }
+.speech-bubble-pointer-up-inner { border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 10px solid rgb(255, 255, 204); margin-left: -5px; margin-bottom: -16px; padding-top: 4px; }
+.tooltip { position: relative; text-decoration: none; }
+.tooltip .speech-bubble-container-up, .tooltip .speech-bubble-container-down, .tooltip .speech-bubble-container-left, .tooltip .speech-bubble-container-right, .tooltip .speech-bubble-container-up-right, .tooltip .tooltip-flyout { display: none; }
+a.tooltip:hover { text-decoration: none ! important; }
+.tooltip:hover .speech-bubble-container-up-right, .tooltip:hover .speech-bubble-container-up { text-decoration: none ! important; position: absolute; left: -35px; display: block; width: 150px; color: black ! important; cursor: text; z-index: 10000; }
+.tooltip:hover .speech-bubble-container-up-right .speech-bubble-pointer-up, .tooltip:hover .speech-bubble-container-up .speech-bubble-pointer-up, .tooltip:hover .tooltip-flyout { top: 3px; z-index: 10000; }
+.tooltip-flyout { position: relative; padding: 0.6em; border: 1px solid rgb(255, 153, 0); background-color: white; margin: 15px; text-decoration: none; z-index: 10000; white-space: normal; }
+.clearfix:after, .container:after { display: block; content: "."; visibility: hidden; height: 0pt; clear: both; }
+.clearfix, .container { display: block; }
+.sitemap-anchor { position: relative; }
+.sitemap-anchor #map { display: none; height: 0pt; width: 0pt; background-color: White; }
+a:hover .sitemap-anchor #map { display: block; position: absolute; top: 0pt; left: 0pt; border: 1px solid rgb(255, 153, 0); z-index: 1000; background-color: White; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4); }
+@media projection, screen {
+}
+.alert-bar { top: 0pt; left: 0pt; z-index: 105; background-color: rgb(255, 255, 204); border-bottom: 1px solid rgb(255, 153, 0); overflow: hidden; font-weight: bold; width: 100%; }
+.alert-bar div { width: 95%; float: right; padding: 5px; }
+.alert-bar-command { font-size: 8pt; text-align: right; float: right; margin: -24px 0pt 0pt; }
+.alert-bar-command a { border-bottom: 1px dotted orange; }
+.close-notify { font-family: Arial,Sans-Serif; font-size: 13pt; font-weight: bold; float: right; color: black; text-decoration: none; border: 2px solid rgb(255, 204, 102); padding: 0pt 4px; margin-top: 2px; margin-right: 10px; }
+a.close-notify:hover { border: 2px solid rgb(255, 153, 0); background-color: rgb(255, 204, 102); text-decoration: none; }

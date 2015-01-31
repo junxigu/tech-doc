@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body><div id="bd_snap">
+    <div id="bd_snap_head">
+        <a href="http://www.baidu.com/" id="bd_snap_logo" title="到百度首页"></a>
+    </div>
+    <div id="bd_snap_txt">您查询的关键词是：<span><a style="color: black; background-color: rgb(255, 255, 102); padding: 0pt 3px; font-weight: bold;" href="http://cache.baidu.com/c?m=9d78d513d9991cee1ebac8381a17a771682097144fc0a06368a3935cd424054e1d20a5f930236319ce9a377001d8141dbbaa6d2e641420c0c79fce579aa6922b2c8b25376d4cd81c47ce18a5cf4420&amp;p=9361c64ad5c311a05bed913c554dcf2e&amp;user=baidu&amp;fm=sc&amp;query=hostent%CF%EA%BD%E2&amp;qid=fae6f3fa0203a7e5&amp;p1=1#baidusnap0">hostent详解</a></span> 。如果打开速度慢，可以尝试<a href="http://cache.baidu.com/c?m=9d78d513d9991cee1ebac8381a17a771682097144fc0a06368a3935cd424054e1d20a5f930236319ce9a377001d8141dbbaa6d2e641420c0c79fce579aa6922b2c8b25376d4cd81c47ce18a5cf4420&amp;p=9361c64ad5c311a05bed913c554dcf2e&amp;user=baidu&amp;fm=sc&amp;query=hostent%CF%EA%BD%E2&amp;qid=fae6f3fa0203a7e5&amp;p1=1&amp;fast=y">快速版</a>；如果想保存快照，可以<a onclick="window.open('http://cang.baidu.com/do/add?it='+encodeURIComponent(document.title)+'&amp;iu='+encodeURIComponent(location.href)+'&amp;fr=ps#nw=1','_s','scrollbars=no,width=600,height=450,right=75,top=20,status=no,resizable=yes'); return false;" href="http://cang.baidu.com/do/add" target="_top">添加到搜藏</a>；如果想更新或删除快照，可以<a href="http://tousu.baidu.com/webmaster/add?link=http%3A%2F%2Fcache.baidu.com%2Fc%3Fm%3D9d78d513d9991cee1ebac8381a17a771682097144fc0a06368a3935cd424054e1d20a5f930236319ce9a377001d8141dbbaa6d2e641420c0c79fce579aa6922b2c8b25376d4cd81c47ce18a5cf4420%26p%3D9361c64ad5c311a05bed913c554dcf2e%26user%3Dbaidu%26fm%3Dsc%26query%3Dhostent%25CF%25EA%25BD%25E2%26qid%3Dfae6f3fa0203a7e5%26p1%3D1" id="bd_tousu">投诉快照</a>。</div>
+
+    <div id="bd_snap_note">(百度和网页<a href="http://my.oschina.net/u/211101/blog/38607">http://my.oschina.net/u/211101/blog/38607</a>的作者无关，不对其内容负责。百度快照谨为网络故障时之索引，不代表被搜索网站的即时页面。)</div>
+</div>
+<div id="bd_snap_search">
+	<form action="http://www.baidu.com/s"><input name="cl" value="3" type="hidden"><input value="" name="wd" id="bd_snap_kw" maxlength="100"><span id="bd_snap_btn_wr"><input id="bd_snap_su" value="百度一下" class="bd_snap_btn" onmousedown="this.className='bd_snap_btn bd_snap_btn_h'" type="submit"></span></form>
+</div>
+<div id="bd_snap_ln"></div>
+<div style="position: relative;">
+
+
+
+  
+  <meta http-equiv="Content-Language" content="zh-CN">
+  <meta name="robots" content="index, follow">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <title>gethostbyname和struct hostent详解 -  Timeline的个人空间 - 开源中国社区</title>
+      <meta name="Description" content="gethostbyname和struct hostent详解：struct hostent *gethostbyname(const char *name); gethostbyname函数根据域名解析出服务器的ip地址，它...">
+    <link rel="stylesheet/less" href="http://my.oschina.net/u/211101/styles.less?ver=20120408" type="text/css" media="screen">
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="最新博客" href="http://my.oschina.net/u/211101/rss">
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://my.oschina.net/action/xmlrpc/rsd?space=211101">
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://my.oschina.net/action/xmlrpc/wlwmanifest?space=211101"> 
+  
+
+
+<div id="OSC_Screen">
+	<div id="OSC_Banner">
+		<div id="OSC_Logo">
+        	<a href="http://www.oschina.net/" title="开源中国社区首页">开源中国社区</a>
+        </div>
+        <div id="OSC_Slogon">找到您想要的开源软件，分享和交流</div>
+        <div id="OSC_Channels">
+        	<ul>
+        	<li><a href="http://www.oschina.net/project" class="project">软件</a></li>
+        	<li><a href="http://www.oschina.net/question" class="question">讨论</a></li>
+        	<li><a href="http://www.oschina.net/code/list" class="code">代码</a></li>
+        	<li><a href="http://www.oschina.net/news" class="news">资讯</a></li>
+        	<li><a href="http://www.oschina.net/blog" class="space">博客</a></li>
+        	<li><a href="http://www.oschina.net/android" class="space">Android</a></li>
+        	<li><a href="http://www.oschina.net/wp7" class="space">WP7</a></li>
+        	</ul>
+        </div>
+        <div class="clear"></div>
+	</div>
+	<div id="OSC_Topbar">
+		<div id="VisitorInfo">
+		当前访客身份：
+				游客 [ <a href="http://www.oschina.net/home/login?goto_page=http%3A%2F%2Fmy.oschina.net%2Fu%2F211101">登录</a> | <a href="http://www.oschina.net/home/reg">加入开源中国</a> ]
+				<span id="OSC_Notification">			
+						<a href="http://www.oschina.net/home/login?goto_page=http%3A%2F%2Fmy.oschina.net%2Fu%2F211101" class="msgbox" title="进入我的留言箱">你有<em>0</em>新留言</a>			
+								</span>
+		</div>
+		<div id="SearchBar">
+    		<form action="http://www.oschina.net/search">
+				<input name="user" value="211101" type="hidden">
+																<span class="ipt f_l">
+    			<input id="txt_q" name="q" class="SERACH" value="在 20371 款开源软件中搜索" onblur="(this.value=='')?this.value='在 20371 款开源软件中搜索':this.value" onfocus="if(this.value=='在 20371 款开源软件中搜索'){this.value='';};this.select();" type="text">
+				</span>
+				                <div class="search-by selectbox">
+    				<span class="hide">
+    				<select name="scope">					
+                        <option value="project" selected="selected">软件</option>
+                        <option value="code">代码</option>
+                        <option value="bbs">讨论区</option>
+                        <option value="news">新闻</option>
+                        <option value="blog">博客</option>
+    				</select>
+    				</span>
+                  <div class="search_on" id="search-item"><span class="text">软件</span></div>
+                  <ul class="search_list">
+                     <li class="search-item"><a href="#1">软件</a></li>
+                     <li><a href="#2">代码</a></li>
+                     <li><a href="#3">讨论区</a></li>
+                     <li><a href="#4">新闻</a></li>
+                     <li><a href="#5">博客</a></li>
+                  </ul>
+                </div>
+				<input value="搜索" class="bnt f_r" type="submit">			
+    		</form>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div id="OSC_Content">	
+
+
+				
+
+<div id="SpaceLeft">
+<div class="Owner">
+	    <a href="http://my.oschina.net/u/211101" class="Img"><img src="211101_100.jpg" alt="Timeline" title="Timeline" class="LargePortrait" align="absmiddle"></a>
+    <span class="U">
+        <a href="http://my.oschina.net/u/211101" class="Name" title="男">Timeline</a>
+		<span class="opts">
+        			<a href="http://my.oschina.net/u/211101/admin/profile" class="Gender_1" id="gender_icon"></a>
+										</span>
+    </span>
+    <div class="clear"></div>
+    <div class="stat">
+    	<a href="http://my.oschina.net/u/211101/fellow">关注(4)</a>
+    	<a href="http://my.oschina.net/u/211101/fans">粉丝(6)</a>
+    	<a href="http://www.oschina.net/question/3307_20931" title="查看OSCHINA积分规则">积分(10)</a>
+    </div>
+</div>
+<div class="Resume" id="MyResume">
+当你想放弃的时候,想想为什么坚持到现在 </div>
+
+<div class="Opts clearfix">
+	<a href="javascript:sendmsg(211101,%200)" class="a1 sendmsg"><i>.</i><span>发送留言</span></a>
+	<a href="http://www.oschina.net/question/ask?user=211101" class="a2 ask"><i>.</i><span>请教问题</span></a>
+</div><div class="Mod" id="BlogCatalogs">
+  <strong> 博客分类</strong>
+  <ul>
+	    	<li><a href="http://my.oschina.net/u/211101/blog?catalog=171227">J2ME</a><span>(1)</span></li>
+		<li><a href="http://my.oschina.net/u/211101/blog?catalog=171226">cocos2d</a><span>(4)</span></li>
+		<li><a href="http://my.oschina.net/u/211101/blog?catalog=161890">游戏开发日志</a><span>(8)</span></li>
+		<li><a href="http://my.oschina.net/u/211101/blog?catalog=124496">语言沼泽</a><span>(6)</span></li>
+		<li><a href="http://my.oschina.net/u/211101/blog?catalog=171222">设计模式</a><span>(1)</span></li>
+		<li><a href="http://my.oschina.net/u/211101/blog?catalog=127014">网络编程</a><span>(20)</span></li>
+		<li><a href="http://my.oschina.net/u/211101/blog?catalog=126793">多线程</a><span>(3)</span></li>
+		<li><a href="http://my.oschina.net/u/211101/blog?catalog=124388">数据结构</a><span>(4)</span></li>
+		<li><a href="http://my.oschina.net/u/211101/blog?catalog=124387">排序算法</a><span>(8)</span></li>
+		<li><a href="http://my.oschina.net/u/211101/blog?catalog=127098">IO流</a><span>(1)</span></li>
+		<li><a href="http://my.oschina.net/u/211101/blog?catalog=124497">linux程序设计</a><span>(1)</span></li>
+		<li><a href="http://my.oschina.net/u/211101/blog?catalog=124386">thttpd阅读笔记</a><span>(3)</span></li>
+		<li><a href="http://my.oschina.net/u/211101/blog?catalog=155696">wget阅读笔记</a><span>(0)</span></li>
+		<li><a href="http://my.oschina.net/u/211101/blog?catalog=155695">nginx阅读笔记</a><span>(0)</span></li>
+		<li><a href="http://my.oschina.net/u/211101/blog?catalog=135429">axel阅读笔记</a><span>(28)</span></li>
+		<li><a href="http://my.oschina.net/u/211101/blog?catalog=124351">日常记录</a><span>(3)</span></li>
+		<li><a href="http://my.oschina.net/u/211101/blog?catalog=124350">工作日志</a><span>(5)</span></li>
+		<li><a href="http://my.oschina.net/u/211101/blog?catalog=126794">工作周报</a><span>(1)</span></li>
+		<li><a href="http://my.oschina.net/u/211101/blog?catalog=155309">面试笔记</a><span>(11)</span></li>
+	  </ul>
+</div><div class="Mod" id="HotBlogs">
+  <strong>阅读排行</strong>
+  <ol>
+			<li><a href="http://my.oschina.net/u/211101/blog/36721">1. 基于TCP的socket编程网络掉线重连</a></li>
+				<li><a href="http://my.oschina.net/u/211101/blog/36153">2. thttpd 2.25b源码分析</a></li>
+				<li><a href="http://my.oschina.net/u/211101/blog/36763">3. JAVA IO流小结</a></li>
+				<li><a href="http://my.oschina.net/u/211101/blog/36154">4. 基于thttpd的Web服务器的简单架设</a></li>
+				<li><a href="http://my.oschina.net/u/211101/blog/41078">5. 高性能服务器软件开发</a></li>
+				<li><a href="http://my.oschina.net/u/211101/blog/36151">6. 几款C语言实现的Web Server开源程序</a></li>
+				<li><a href="http://my.oschina.net/u/211101/blog/39802">7. 二分查找（递归、循环）</a></li>
+				<li><a href="http://my.oschina.net/u/211101/blog/42365">8. 简单http_server的C语言实现</a></li>
+		  </ol>
+</div>
+<div class="Mod" id="BlogReplies">
+  <strong> 最新评论</strong>  
+      <ul>
+		<li>
+		<a href="http://my.oschina.net/dourgulf">@啊达</a>：进一步海阔天空：）
+		<a href="http://my.oschina.net/action/tweet/go?obj=266462237&amp;type=18&amp;user=137852">查看»</a>
+	</li>
+		<li>
+		<a href="http://my.oschina.net/u/211101">@Timeline</a>：引用来自“gschen”的评论 充斥了太多的if-else...
+		<a href="http://my.oschina.net/action/tweet/go?obj=266203270&amp;type=18&amp;user=211101">查看»</a>
+	</li>
+		<li>
+		<a href="http://my.oschina.net/u/130889">@gschen</a>：充斥了太多的if-else语句，影响代码阅读
+		<a href="http://my.oschina.net/action/tweet/go?obj=266200568&amp;type=18&amp;user=130889">查看»</a>
+	</li>
+		<li>
+		<a href="http://my.oschina.net/u/130889">@gschen</a>：充斥了太多的if-else语句，影响代码阅读
+		<a href="http://my.oschina.net/action/tweet/go?obj=266200565&amp;type=18&amp;user=130889">查看»</a>
+	</li>
+	  </ul>
+  </div><div class="Mod" id="Stat">
+<strong>访客统计</strong>
+<ul>
+	<li><label>今日访问：</label>6</li>
+    <li><label>昨日访问：</label>24</li>
+    <li><label>本周访问：</label>6</li>
+    <li><label>本月访问：</label>214</li>
+    <li><label>所有访问：</label>2696</li>
+</ul>
+</div></div>
+
+
+<div class="SpaceList">
+	<div class="TopBar">
+    	<div class="NavPath">		
+    		<a href="http://my.oschina.net/u/211101">空间</a> » <a href="http://my.oschina.net/u/211101/blog">博客</a>			
+			» <a href="http://my.oschina.net/u/211101/blog?catalog=135429">axel阅读笔记</a>
+			» 博客正文
+    	</div>
+	</div>
+	
+    	<div class="BlogEntity">		
+      <div class="BlogTitle">
+        <h1>gethostbyname和struct <a name="baidusnap0"></a><b style="color: black; background-color: rgb(255, 255, 102);">hostent详解</b></h1>
+        <div class="BlogStat">
+    		    		    	    <span class="admin">
+								
+
+<em id="p_attention_count">0</em>人收藏此文章,
+<span id="attention_it">
+	
+</span>			</span>
+    		    		发表于4个月前 , 
+    		已有<strong>77</strong>次阅读  
+    		共<strong><a href="#comments">0</a></strong>个评论
+    	</div> 
+      </div>
+	  <div class="BlogContent"><p><span style="font-size: medium;">struct hostent *gethostbyname(const char *name);</span></p> 
+<p><span style="font-size: small;">gethostbyname函数根据域名解析出服务器的ip地址，它返回一个结构体struct hostent：</span></p> 
+<p><span style="font-size: small;"><br> </span></p> 
+<pre><span style="font-size: small;">#include &lt;netdb.h&gt;
+
+struct hostent {
+	char  *h_name;            /* official name of host */
+	char **h_aliases;         /* alias list */
+	int    h_addrtype;        /* host address type */
+	int    h_length;          /* length of address */
+	char **h_addr_list;       /* list of addresses */
+}
+#define h_addr h_addr_list[0]  /* for backward compatibility */</span></pre>
+<p><span style="font-size: small;"><br> </span></p> 
+<p><span style="font-size: small;">除了服务器的ip地址外，这个结构体还包含了更多服务器的信息，有：</span></p> 
+<p><span style="font-size: small;"><br> </span></p> 
+<p><span style="color: rgb(0, 0, 255);"><span style="font-size: x-small;"><span style="font-size: small;">char *h_name</span></span></span></p> 
+<p><span style="font-size: x-small;"><span style="font-size: small;">This is the “official” name of the host.&nbsp;</span></span></p> 
+<p><span style="font-size: x-small;"><span style="font-size: small;"><br> </span></span></p> 
+<p><span style="color: rgb(0, 0, 255);"><span style="font-size: x-small;"><span style="font-size: small;">char **h_aliases</span></span></span></p> 
+<p><span style="font-size: x-small;"><span style="font-size: small;">These are alternative names for the host, represented as a null-terminated vector of strings.&nbsp;</span></span></p> 
+<p><span style="font-size: x-small;"><span style="font-size: small;">主机的可选名字，以NULL做为结束标记</span></span></p> 
+<p><span style="font-size: x-small;"><span style="font-size: small;"><br> </span></span></p> 
+<p><span style="color: rgb(0, 0, 255);"><span style="font-size: x-small;"><span style="font-size: small;">int h_addrtype</span></span></span></p> 
+<p><span style="font-size: x-small;"><span style="font-size: small;">This is the host address type; in practice, its value is always either AF_INET or AF_INET6, with the latter being used for IPv6 hosts. In principle other kinds of addresses could be represented in the database as well as Internet addresses; if this were done, you might find a value in this field other than AF_INET or AF_INET6. See Socket Addresses.&nbsp;</span></span></p> 
+<p><span style="font-size: x-small;"><span style="font-size: small;"><br> </span></span></p> 
+<p><span style="color: rgb(0, 0, 255);"><span style="font-size: x-small;"><span style="font-size: small;">int h_length</span></span></span></p> 
+<p><span style="font-size: x-small;"><span style="font-size: small;">This is the length, in bytes, of each address.&nbsp;</span></span></p> 
+<p><span style="font-size: x-small;"><span style="font-size: small;">ip地址的长度，ipv4对应4个字节</span></span></p> 
+<p><span style="font-size: x-small;"><span style="font-size: small;"><br> </span></span></p> 
+<p><span style="color: rgb(0, 0, 255);"><span style="font-size: x-small;"><span style="font-size: small;">char **h_addr_list</span></span></span></p> 
+<p><span style="font-size: x-small;"><span style="font-size: small;">This is the vector of addresses for the host. (Recall that the host might be connected to multiple networks and have different addresses on each one.) The vector is terminated by a null pointer.&nbsp;</span></span></p> 
+<p><span style="font-size: x-small;"><span style="font-size: small;">一般主机可以有多个ip地址，比如www.163.com就有121.14.228.43和121.11.151.72两个ip，h_addr_list就用来</span></span></p> 
+<p><span style="font-size: x-small;"><span style="font-size: small;">保存多个ip地址</span></span></p> 
+<p><span style="font-size: x-small;"><span style="font-size: small;"><br> </span></span></p> 
+<p><span style="color: rgb(0, 0, 255);"><span style="font-size: x-small;"><span style="font-size: small;">char *h_addr</span></span></span></p> 
+<p><span style="font-size: x-small;"><span style="font-size: small;">This is a synonym for h_addr_list[0]; in other words, it is the first host address.</span></span></p> 
+<p><span style="font-size: x-small;"><span style="font-size: small;">即为h_addr_list[0]，表示第一个地址，这个符号其实是兼容老系统而存在的</span></span></p> 
+<p><span style="font-size: small;"><br> </span></p> 
+<p><span style="font-size: small;"><br> </span></p> 
+<p><span style="font-size: small;">我们写一个程序来获取主机www.163.com的详细信息：</span></p> 
+<p><span style="font-size: small;"><br> </span></p> 
+<pre><span style="font-size: small;">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/socket.h&gt;
+#include &lt;netdb.h&gt;
+#include &lt;netinet/in.h&gt;
+#include &lt;arpa/inet.h&gt;
+#include &lt;sys/socket.h&gt;
+
+#define SERVPORT 80
+
+int main(int argc, char **argv)
+{
+    int i, sockfd;
+    struct hostent *host;
+    struct sockaddr_in serv_addr;
+
+    if ((host = gethostbyname(argv[1])) == NULL) {
+        printf("gethostbyname error\n");
+        exit(0);
+    }
+
+    printf("official name: %s\n\n", host-&gt;h_name);
+    printf("address length: %d bytes\n\n", host-&gt;h_length);
+
+    printf("host name alias: \n");
+    for (i = 0; host-&gt;h_aliases[i]; i++) {
+        printf("%s\n", host-&gt;h_aliases[i]);
+    }
+    printf("\naddress list: \n");
+
+    for (i = 0; host-&gt;h_addr_list[i]; i++) {
+        if ((sockfd = socket(AF_INET, SOCK_STREAM,0)) == -1) {
+            printf("socket error\n");
+            exit(0);
+        }
+        // 先清零，然后用struct sockaddr_in来填值
+        bzero(&amp;serv_addr, sizeof(serv_addr));
+        serv_addr.sin_family = AF_INET;
+        serv_addr.sin_port = htons(SERVPORT);
+        /* h_addr_list[i]指向in_addr类型 */
+        serv_addr.sin_addr = *((struct in_addr *)host-&gt;h_addr_list[i]);
+        const char *ip = inet_ntoa(serv_addr.sin_addr);
+        printf("connect to %s  ", ip);
+
+        // 系统调用的时候，把sockaddr_in转换成sockaddr
+        if (connect(sockfd, (struct sockaddr *)&amp;serv_addr, \
+                    sizeof(struct sockaddr)) == -1) {
+            printf("error\n");
+            exit(0);
+        }
+        printf("success\n");
+    }
+
+    return 0;
+}</span></pre>
+<p><span style="font-size: small;"><br> </span></p> 
+<p><span style="font-size: small;">运行结果如下：</span></p> 
+<p><span style="font-size: small;"><img src="02a3fee2-eb17-350b-bb75-86a30a1b26ae.jpg" alt=""></span></p> 
+<p><span style="font-size: small;"><br> </span></p> 
+<p><span style="font-size: small;">这个程序首先调用gethostbyname得到服务器的各种信息，其中就包含它拥有的ip地址，保存在h_addr_list中，然后</span></p> 
+<p><span style="font-size: small;">对于h_addr_list中的每个ip地址，都调用connect连接其80端口。h_addr_list保存的ip地址类型是char *，</span></p> 
+<p><span style="font-size: small;">struct sockaddr_in中sin_addr的类型是struct in_addr，而程序中却直接把h_addr_list[i]强制转换成struct in_addr *</span></p> 
+<p><span style="font-size: small;">serv_addr.sin_addr = *((struct in_addr *)host-&gt;h_addr_list[i]);</span></p> 
+<p><span style="font-size: small;">这是没有问题的，因为h_addr_list保存的并不是真正的字符串，而是指向struct in_addr类型的指针。</span></p> 
+<p><span style="font-size: small;"><br> </span></p> 
+<p><span style="font-size: small;"><br> </span></p> 
+<p><span style="font-size: small;">另外，struct in_addr用来表示ip地址，本质上是一个long类型，刚好4个字节。然后我们调用<span style="white-space: pre;">inet_ntoa把它转换</span></span></p> 
+<p><span style="font-size: small;">成可读性更强的dots-and-number字符串。关于ip地址和dots-and-number字符串之间的转换有4个函数：</span></p> 
+<p>&nbsp;</p> 
+<pre>#include &lt;arpa/inet.h&gt;
+/* network to ascii */
+char *inet_ntoa(struct in_addr in);     						
+/* ascii to network */
+int inet_aton(const char *cp, struct in_addr *inp);
+
+const char *inet_ntop(int af, const void *src, 
+								char *dst, socklen_t size);
+int inet_pton(int af, const char *src, void *dst);  /* presentation format to network */</pre>
+<span style="font-family: Helvetica,Tahoma,Arial,sans-serif; font-size: 14px; line-height: 25px; text-align: left;">&nbsp;</span>
+<p>&nbsp;</p> 
+<p><span style="font-size: small;">inet_ntoa和inet_aton不支持ipv6, 据说迟早要废除，不过目前来说，很多系统都可以看见这两个函数</span></p></div>	  
+      	  	  
+      <div class="BlogCopyright">		
+	  		原文地址：<a href="http://kenby.iteye.com/blog/1149534" target="_top">http://kenby.iteye.com/blog/1149534</a>
+	  	  </div>
+      <div class="BlogLinks">
+    	<ul>
+                <li class="prev"><a href="http://my.oschina.net/u/211101/blog/38606" title="上一篇：struct hostent结构体">« struct hostent结构体</a></li>        <li class="next"><a href="http://my.oschina.net/u/211101/blog/39284" title="下一篇：多线程机制">多线程机制 »</a></li>    	</ul>
+      </div>
+	</div>
+	<div class="BlogShare">
+	<!-- JiaThis Button BEGIN -->
+    <div id="jiathis_style_32x32">
+    <a class="jiathis_button_tsina"></a>
+    <a class="jiathis_button_tqq"></a>
+    <a class="jiathis_button_kaixin001"></a>
+    <a class="jiathis_button_renren"></a>
+    <a class="jiathis_button_douban"></a>
+    <a href="http://www.jiathis.com/share?uid=1567353" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_top"></a>
+    <a class="jiathis_counter_style"></a>
+    </div>
+    
+    
+    <!-- JiaThis Button END -->
+	<span id="BlogVote">
+    <a href="javascript:vote(38607)">顶</a><span>已有 <em id="vote_count">0</em>人顶</span>
+	</span>
+	</div>
+	</div>
+<div class="SpaceList" style="margin-top: 20px;">
+<div class="BlogComments">
+    <h2><a name="comments"></a>共有 0 条网友评论</h2>
+			<p class="NoData">尚无网友评论</p>
+		<ul id="BlogComments">
+		</ul>
+</div>
+	</div>
+
+<div id="inline_reply_editor" style="display: none;">
+<div class="BlogCommentForm">
+	<form id="form_inline_comment" action="http://my.oschina.net/action/blog/add_comment?blog=38607" method="POST">
+	  <input id="inline_reply_id" name="reply_id" value="" type="hidden">          
+      <textarea name="content" style="width: 550px; height: 60px;" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){$('#form_inline_comment').submit();}"></textarea><br>
+	  <input value="回复" id="btn_comment" class="SUBMIT" type="submit"> 
+	  <input value="关闭" class="SUBMIT" id="btn_close_inline_reply" type="button"> 文明上网，理性发言
+    </form>
+</div>
+</div>
+
+<div class="SpaceList" style="margin-top: 20px;">
+  <a name="postform" id="postform"></a>
+    <div class="BlogCommentForm">
+    <form id="form_comment" action="http://my.oschina.net/action/blog/add_comment?blog=38607" method="POST">          
+      <textarea id="ta_post_content" name="content" style="width: 550px; height: 100px;" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){$('#form_comment').submit();}"></textarea><br>
+	  <input value="发表评论" id="btn_comment" class="SUBMIT" type="submit"> 
+	  <img id="submiting" style="display: none;" src="loading.gif" align="absmiddle">
+	  <span id="cmt_tip">文明上网，理性发言</span>
+    </form>
+	<a href="#" class="more">回到页首</a>&nbsp;|&nbsp;<a href="#comments" class="more">回到评论列表</a>
+  </div>
+  </div>
+	
+<div id="RelativeBlogs">
+	<strong><a id="btn_close">关闭</a>相关文章阅读</strong>
+	<ul>
+			<li>
+		<span class="date">2012/01/06</span>
+		<a href="http://my.oschina.net/u/211101/blog/38606" title="struct hostent结构体">struct hostent结构体</a>
+	</li>
+				<li>
+		<span class="date">2011/08/11</span>
+		<a href="http://my.oschina.net/u/166231/blog/29624" title="typedef struct与struct的区别 自学">typedef struct与struct的区别 自学...</a>
+	</li>
+				<li>
+		<span class="date">2011/12/14</span>
+		<a href="http://my.oschina.net/renhc/blog/37115" title="【网络编程】域名解析">【网络编程】域名解析</a>
+	</li>
+				<li>
+		<span class="date">2012/03/09</span>
+		<a href="http://my.oschina.net/dtec/blog/44885" title="引用重解析和struct继承">引用重解析和struct继承</a>
+	</li>
+				<li>
+		<span class="date">2012/04/24</span>
+		<a href="http://my.oschina.net/cnet2001/blog/55002" title="一个模仿Struct的Action类">一个模仿Struct的Action类</a>
+	</li>
+			</ul>
+</div>
+
+
+
+
+
+<!--[if lt IE 7]>
+
+<![endif]-->
+    </div>
+	<div class="clear"></div>
+	<div id="OSC_Footer">© 开源中国社区(OsChina.NET) | <a href="http://www.oschina.net/home/about">关于我们</a> | <a href="mailto:oschina.net@gmail.com">广告联系</a> | <a href="http://my.oschina.net/javayou">站长空间</a> | <a href="http://weibo.com/oschina2010" target="_top">@新浪微博</a> | <a href="http://m.oschina.net/">开源中国手机版</a> | 粤ICP备12009483号-3
+</div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="zh" xml:lang="zh" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    
+    <meta http-equiv="content-style-type" content="text/css">
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta name="version" content="neblog-1.0">
+    
+<title>程序员面试题精选100题(35)-两链表的第一个公共结点[数据结构] - 何海涛的日志 - 网易博客</title>
+<meta name="author" content="zhedahht,何海涛">
+<meta name="keywords" content="程序员面试题精选100题(35)-两链表的第一个公共结点[数据结构],日志,何海涛,微软、Google等面试题,网易博客,网易,blog">
+<meta name="description" content="程序员面试题精选100题(35)-两链表的第一个公共结点[数据结构],何海涛的网易博客,剑指Offer：名企面试官精讲典型编程题,海纳百川,涛声依旧,点石成金,成就未来">
+  
+    
+    
+  <!--[if lte IE 6]>
+  <style type="text/css">
+    html,body,#blog-163-com-ie6body{height:100%;width:100%;overflow:hidden;}
+    #blog-163-com-ie6body{overflow:auto;overflow-y:scroll;}
+    #blog-163-com{background:none;}
+  </style>
+  <![endif]-->
+  
+  
+  
+  
+  
+  
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body id="blog-163-com" class="nb-body nb-inr nb-prv">
+  <!--[if lte IE 6]><div id="blog-163-com-ie6bodywrap" class=""><![endif]-->
+    <!--[if lte IE 6]><div id="blog-163-com-ie6body" class="nb-body"><![endif]-->
+
+<div class="nb-nbar clearfix" id="blog-163-com-topbar">
+  <div class="pl fl clearfix">
+  <div id="" "="" class="nbw-im fl im im0">
+    <a rel="nofollow" class="lbl bd ia noul " href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://www.163.com/" target="_top" hidefocus="true"><span class="tx">网易</span><span class="iblock icn0 icn0-421">&nbsp;</span></a><div class="nbw-tcd box-shadow bd">
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://news.163.com/">
+            新闻
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://t.163.com/">
+            微博
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://email.163.com/">
+            邮箱
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://photo.163.com/">
+            相册
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://yuedu.163.com/">
+            阅读
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://www.youdao.com/">
+            有道
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://photo.163.com/pp/square/">
+            摄影
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://aipai.163.com?from=163blog">
+            爱拍
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://note.youdao.com/?vendor=163blog">
+            云笔记
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://fm.163.com/?fmblogzx0628">
+            闪电邮
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://m.123.163.com/?frombkcp">
+            手机邮
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://yxp.163.com/">
+            印像派
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://dream.163.com/?from=bkcp">
+            梦幻人生
+          </a>
+        <div class="sep bd space">&nbsp;</div>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://sitemap.163.com/">
+            更多
+          </a>
+        
+    </div>
+  </div>
+                               
+    <span style="margin-left: 0pt;" class="fl iblock space icn1 icn1-4">&nbsp;</span>
+    
+  <div id="" "="" class="nbw-im fl im im10">
+    <a class="lbl bd ia noul " href="http://blog.163.com/?frompersonalbloghome" target="_top" hidefocus="true"><span class="tx">博客</span><span class="iblock icn0 icn0-421">&nbsp;</span></a><div class="nbw-tcd box-shadow bd">
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/services/wapblog.html?frompersonalbloghome">
+            手机博客
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/clone/clone.html?frompersonalbloghome">
+            博客搬家
+          </a>
+          <a class="itm noul youcai " target="_top" hidefocus="true" href="http://blog.163.com/vip.do?frompersonalbloghome">
+            博客VIP服务
+          </a>
+        <div class="sep bd space">&nbsp;</div>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/blog_admin/blog/static/721279201082863728829/?frompersonalbloghome">
+            LiveWriter写博
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/blog_admin/blog/static/721279201092713253500/?frompersonalbloghome">
+            word写博
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/services/mailblog.html?frompersonalbloghome">
+            邮件写博
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/services/emsblog.html?frompersonalbloghome">
+            短信写博
+          </a>
+        <div class="sep bd space">&nbsp;</div>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/showMultiUser.do?frompersonalbloghome">
+            群博客
+          </a>
+          <a class="itm noul youcai " target="_top" hidefocus="true" href="http://blog.163.com/BLOG_YOUCAI/">
+            博客油菜地
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/ht/?frompersonalbloghome">
+            博客话题
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/hot/history/?frompersonalbloghome">
+            博客热点
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://q.163.com/#home?frompersonalbloghome">
+            博客圈子
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/findFriend.do?type=5?frompersonalbloghome">
+            找朋友
+          </a>
+        
+    </div>
+  </div>
+
+    
+    <div class="nbw-im fl im1 im explore"><a class="lbl bd ima spy" href="http://blog.163.com/public/explore/?frompersonalbloghome">发现</a></div>
+    <div class="nbw-im fl im1 im bloggroup"><a class="lbl bd ima spy" href="http://blog.163.com/g/?frompersonalbloghome">小组</a></div>
+    <div class="nbw-im fl im1 im customtheme"><a class="lbl bd ima spy" href="http://blog.163.com/public/theme/?frompersonalbloghome">风格</a></div>
+    <div class="nbw-im fl im1 im seebyway"><a rel="nofollow" title="随便看看" class="lbl bd ima spy" href="http://blog.163.com/randomUser.do">&nbsp;</a></div>
+    
+    <span class="fl iblock space icn1 icn1-4">&nbsp;</span>
+    <div id="topbar_randShowArea" class="fl">
+      <div class="nbw-im fl im1 im randtag"><a style="width: 110px;" target="_top" class="lbl bd ima moveblog randshow" href="http://www.lofter.com/" onclick="window.open('http://www.lofter.com/reg?from=blog');return false;">网易轻博客LOFTER</a></div>
+    </div>
+  </div>
+  <div class="fr pr clearfix">
+    <div id="topbar_loginAndReg" class="fr">
+      <a rel="nofollow" style="margin-left: 10px; color: rgb(255, 119, 0);" class="iblock fr ima" href="http://reg.163.com/reg/reg.jsp?product=blog&amp;url=http://blog.163.com/ntesRegBlank.html&amp;loginurl=http://blog.163.com/" target="_top">创建博客</a>
+      <a rel="nofollow" class="iblock fr ima ztag" href="#">登录</a>
+      <span class="fr iblock space icn1 icn1-4 spx">&nbsp;</span>
+      <div id="topbar_followArea" class="nbw-im fr"><span class="lbl bd ima followit fl ztag"><span class="fl addicon">&nbsp;</span><span class="fl">关注</span></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="blogtoptips phide" id="blog-163-com-toptips">
+ <div class="blogtoptipswrap">
+    <div id="newbulletinstip" class="newbulletinstip phide">
+    <a class="lnknews fc03 m2a tiptag phide" href="http://zhedahht.blog.163.com/blog/static/254111742008053169567/" target="_top"></a><span class="txtnews tiptag phide"></span>&nbsp;&nbsp;&nbsp;<a class="fc03 ul nextorprevnews tiptag phide" href="http://zhedahht.blog.163.com/blog/static/254111742008053169567/" hidefocus="true">显示下一条</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="fc03 ul close tiptag" href="http://zhedahht.blog.163.com/blog/static/254111742008053169567/" hidefocus="true">关闭</a>
+  </div>
+ </div>
+    <div id="$_faxiantip" class="faxiantip phide">
+      <div>
+	    <a class="m2a iblock" href="http://blog.163.com/public/explore/?fromblogbanner" target="_top"></a>
+	    <span class="faxiantag m2a"></span>
+      </div>
+    </div>
+    <div id="$_guanggaotip" class="guanggaotip phide">
+      <div>
+	    
+	    <span class="guanggaotag m2a"></span>
+      </div>
+    </div>
+    <div id="$_lofterInviteTip" class="lofterInviteTip phide">
+      <div>
+	    <a class="m2a iblock" href="http://www.lofter.com/invite/163blog/?email=" target="_top"></a>
+	    <span class="lofterInviteTag m2a"></span>
+      </div>
+    </div>
+</div>  <div class="nb-wrap wsy" id="blog-163-com-main"><div class="nb-are nb-top">
+  <div class="wkg h" id="blog-163-com-banner">
+    
+    <div class="t">
+      <h1 class="n c"><span class="ztag pre">微软、Google等面试题</span></h1>
+      <p class="d c"><span class="ztag pre">剑指Offer：名企面试官精讲典型编程题</span></p>
+    </div>
+    <div class="f h ztag">&nbsp;</div>
+    <a class="x" hidefocus="true" target="_top" href="#"><span class="xx ztag"></span></a>
+  </div>
+</div><div class="nb-are nb-nav">
+  <div class="wkg">
+    <div class="c h">
+      <h2>导航</h2>
+      <ul class="noul clearfix">
+                
+	        <li class="w w0">
+	          <a class="i i0 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/">首页</a>
+	        </li>
+	        <li class="w w1 selected">
+	          <a class="i i1 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/blog/">日志</a>
+	        </li>
+	        <li class="w w2">
+	          <a class="i i2 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/album/">相册</a>
+	        </li>
+	        <li class="w w3">
+	          <a class="i i3 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/music/">音乐</a>
+	        </li>
+	        <li class="w w4">
+	          <a class="i i4 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/collection/">收藏</a>
+	        </li>
+	        <li class="w w5">
+	          <a class="i i5 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/friends/">博友</a>
+	        </li>
+	        <li class="w w6">
+	          <a class="i i6 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/profile/">关于我</a>
+	        </li>
+      </ul><!--
+ --></div>
+    <div class="l h">&nbsp;</div>
+    <div class="r h">&nbsp;</div>
+  </div>
+</div>  <div class="nb-are nb-smt"><div class="wkg h space"><div class="l h">&nbsp;</div><div class="r h">&nbsp;</div><div class="c h">&nbsp;</div></div></div>
+  <div class="nb-are nb-cnt">
+    <div class="wkg">
+      <div class="c wc h clearfix " id="blog-163-com-container">
+  <div class="nb-mdl lcr m-3 " id="-3">
+  <div class="nb-mt lcr th fc02">
+    <div class="c tc th lcr"><h2 class="thide nb-jsc mdl_t_t">日志</h2></div>
+    <div class="r tm th nb-jsc"></div>
+    <div class="l tl th">&nbsp;</div>
+    <div class="r tr th">&nbsp;</div>
+  </div>
+    <div class="nb-mc lcr">
+      <div class="c cc lcr nb-jsc">
+<div class="nbw-ryt ztag clearfix js-fix-098">
+  <div class="right bdwl bds0 bdc0"><div class="cnt ztag"></div></div>
+  <div class="left">
+     <div class="lcnt bdwr bds0 bdc0 ">   
+      <div id="$_divTopLink" class="top fc03 bdwb bdc0 bds2 clearfix">
+        <span class="ilft iblock icn0 icn0-620">&nbsp;</span>
+        <div class="pleft thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/2541117420071128950682/">程序员面试题精选100题(34)-数组中只出现一次的数字[算法]</a></div>
+        <span class="irgt iblock icn0 icn0-619">&nbsp;</span>
+        <div class="pright thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/25411174200801931426484/">程序员面试题精选100题(36)-在字符串中删除特定的字符[算法]</a></div>
+     </div> 
+     <div class="mcnt ztag"> 
+      <div class="nbw-bitm bdwb bds2 bdc0 ">
+        <div class="multicntwrap">
+	      <div class="multicnt">
+	      	<div>
+		      <h3 class="title pre fs1"><span class="tcnt">程序员面试题精选100题(35)-两链表的第一个公共结点[数据结构]</span>&nbsp;&nbsp;<span class="bgc0 fc07 fw0 fs0"></span></h3>
+		      <p class="tdep clearfix nbw-act fc06" style="line-height: 20px;">
+		        <span class="pleft">
+		          
+		          <span class="blogsep">2008-01-05 15:16:09</span><span class="blogsep">|&nbsp;&nbsp;分类：</span>
+		          <a class="fc03 m2a" href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=1&amp;c=fks_081075092084086069092074084070080087080066083082" title="链表">链表</a>
+		          <span class="blogsep" id="$_blogTagTitle">|&nbsp;&nbsp;标签：</span><span class="fc03" id="$_blogTagInfo"><a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E7%BC%96%E7%A8%8B" class="fc03 m2a">编程</a>&nbsp;&nbsp;<a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E5%B0%B1%E4%B8%9A" class="fc03 m2a">就业</a>&nbsp;&nbsp;<a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E9%9D%A2%E8%AF%95%E9%A2%98" class="fc03 m2a">面试题</a>&nbsp;&nbsp;<a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E6%89%BE%E5%B7%A5%E4%BD%9C" class="fc03 m2a">找工作</a>&nbsp;&nbsp;<a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" class="fc03 m2a">数据结构</a>&nbsp;&nbsp;</span>
+		        </span>
+		        <span class="pright fc07 ztag"><span class="blogsep">|</span><span class="zihao fc03" id="$_fontswitch">字号<span class="zihaoshow  phide" id="$_fontsTypes"><span class="zihaoc bdc0"><span class="stag"></span><span class="fc04 stag">大</span><span class="fc04 stag selected js-fcurrent fc05">中</span><span class="fc04 stag">小</span></span></span></span></span><span class="pright pnt fc03" id="$_blog_subscribe"><span class="iblock icn0 icn0-919">&nbsp;</span><a class="m2a">订阅</a></span>
+		      </p>
+		    </div>
+	      </div>
+        </div>
+        
+        <div>
+        
+        </div>
+        
+        <div class="nbw-blog-start"></div>
+        <div class="bct fc05 fc11 nbw-blog ztag js-fs2"><p style="margin: 0in 0in 10pt;"><span style="font-family: SimSun;" lang="ZH-CN"><font size="3">题目：两个单向链表，找出它们的第一个公共结点。</font></span></p> <p style="margin: 0in 0in 10pt;"><span style="font-family: SimSun;" lang="ZH-CN"><font size="3">链表的结点定义为：</font></span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">struct</span><span style="font-family: 'Courier New'; font-size: 10pt;"> <span style="color: rgb(1, 0, 1);">ListNode</span></span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">{</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">int</span><span style="">&nbsp;&nbsp; </span><span style="">&nbsp; </span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: rgb(1, 0, 1);">m_nKey</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: rgb(1, 0, 1);">ListNode</span>* <span style="">&nbsp;&nbsp;</span><span style="color: rgb(1, 0, 1);">m_pNext</span>;</span></p> <p style="margin: 0in 0in 10pt;"><span style="line-height: 115%; font-family: 'Courier New'; font-size: 10pt;">};</span></p> <p style="margin: 0in 0in 10pt;"><span style="font-family: SimSun;" lang="ZH-CN"><font size="3">分析：这是一道微软的面试题。微软非常喜欢与链表相关的题目，因此在微软的面试题中，链表出现的概率相当高。</font></span></p> <p style="margin: 0in 0in 10pt;"><font size="3"><span style="font-family: SimSun;" lang="ZH-CN">如果两个单向链表有公共的结点，也就是说两个链表从某一结点开始，它们的</span><font face="Calibri">m_pNext</font><span style="font-family: SimSun;" lang="ZH-CN">都指向同一个结点。但由于是单向链表的结点，每个结点只有一个</span><font face="Calibri">m_pNext</font><span style="font-family: SimSun;" lang="ZH-CN">，因此从第一个公共结点开始，之后它们所有结点都是重合的，不可能再出现分叉。所以，两个有公共结点而部分重合的链表，拓扑形状看起来像一个</span><font face="Calibri">Y</font><span style="font-family: SimSun;" lang="ZH-CN">，而不可能像</span><font face="Calibri">X</font><span style="font-family: SimSun;" lang="ZH-CN">。</span></font></p> <p style="margin: 0in 0in 10pt;"><font size="3"><span style="font-family: SimSun;" lang="ZH-CN">看到这个题目，第一反应就是蛮力法：在第一链表上顺序遍历每个结点。每遍历一个结点的时候，在第二个链表上顺序遍历每个结点。如果此时两个链表上的结点是一样的，说明此时两个链表重合，于是找到了它们的公共结点。如果第一个链表的长度为</span><font face="Calibri">m</font><span style="font-family: SimSun;" lang="ZH-CN">，第二个链表的长度为</span><font face="Calibri">n</font><span style="font-family: SimSun;" lang="ZH-CN">，显然，该方法的时间复杂度为</span><font face="Calibri">O(mn)</font><span style="font-family: SimSun;" lang="ZH-CN">。</span></font></p> <p style="margin: 0in 0in 10pt;"><span style="font-family: SimSun;" lang="ZH-CN"><font size="3">接下来我们试着去寻找一个线性时间复杂度的算法。我们先把问题简化：如何判断两个单向链表有没有公共结点？前面已经提到，如果两个链表有一个公共结点，那么该公共结点之后的所有结点都是重合的。那么，它们的最后一个结点必然是重合的。因此，我们判断两个链表是不是有重合的部分，只要分别遍历两个链表到最后一个结点。如果两个尾结点是一样的，说明它们用重合；否则两个链表没有公共的结点。</font></span></p> <p style="margin: 0in 0in 10pt;"><font size="3"><span style="font-family: SimSun;" lang="ZH-CN">在上面的思路中，顺序遍历两个链表到尾结点的时候，我们不能保证在两个链表上同时到达尾结点。这是因为两个链表不一定长度一样。但如果假设一个链表比另一个长</span><font face="Calibri">l</font><span style="font-family: SimSun;" lang="ZH-CN">个结点，我们先在长的链表上遍历</span><font face="Calibri">l</font><span style="font-family: SimSun;" lang="ZH-CN">个结点，之后再同步遍历，这个时候我们就能保证同时到达最后一个结点了。由于两个链表从第一个公共结点考试到链表的尾结点，这一部分是重合的。因此，它们肯定也是同时到达第一公共结点的。于是在遍历中，第一个相同的结点就是第一个公共的结点。</span></font></p> <p style="margin: 0in 0in 10pt;"><font size="3"><span style="font-family: SimSun;" lang="ZH-CN">在这个思路中，我们先要分别遍历两个链表得到它们的长度，并求出两个长度之差。在长的链表上先遍历若干次之后，再同步遍历两个链表，知道找到相同的结点，或者一直到链表结束。此时，如果第一个链表的长度为</span><font face="Calibri">m</font><span style="font-family: SimSun;" lang="ZH-CN">，第二个链表的长度为</span><font face="Calibri">n</font><span style="font-family: SimSun;" lang="ZH-CN">，该方法的时间复杂度为</span><font face="Calibri">O(m+n)</font><span style="font-family: SimSun;" lang="ZH-CN">。</span></font></p> <p style="margin: 0in 0in 10pt;"><span style="font-family: SimSun;" lang="ZH-CN"><font size="3">基于这个思路，我们不<font size="3"></font>难写出如下的代码：</font></span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">///////////////////////////////////////////////////////////////////////</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">// Find the first common node in the list with head pHead1 and </span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">// the list with head pHead2</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">// Input: pHead1 - the head of the first list</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">//<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>pHead2 - the head of the second list</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">// Return: the first common node in two list. If there is no common</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">//<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>nodes, return NULL</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">///////////////////////////////////////////////////////////////////////</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: rgb(1, 0, 1); font-size: 10pt;">ListNode</span><span style="font-family: 'Courier New'; font-size: 10pt;">* <span style="color: rgb(1, 0, 1);">FindFirstCommonNode</span>( <span style="color: rgb(1, 0, 1);">ListNode</span> *<span style="color: rgb(1, 0, 1);">pHead1</span>, <span style="color: rgb(1, 0, 1);">ListNode</span> *<span style="color: rgb(1, 0, 1);">pHead2</span>)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">{</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: green;">// Get the length of two lists</span></span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">unsigned</span> <span style="color: blue;">int</span> <span style="color: rgb(1, 0, 1);">nLength1</span> = <span style="color: rgb(1, 0, 1);">ListLength</span>(<span style="color: rgb(1, 0, 1);">pHead1</span>);</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">unsigned</span> <span style="color: blue;">int</span> <span style="color: rgb(1, 0, 1);">nLength2</span> = <span style="color: rgb(1, 0, 1);">ListLength</span>(<span style="color: rgb(1, 0, 1);">pHead2</span>);</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">int</span> <span style="color: rgb(1, 0, 1);">nLengthDif</span> = <span style="color: rgb(1, 0, 1);">nLength1</span> - <span style="color: rgb(1, 0, 1);">nLength2</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: green;">// Get the longer list</span></span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: rgb(1, 0, 1);">ListNode</span> *<span style="color: rgb(1, 0, 1);">pListHeadLong</span> = <span style="color: rgb(1, 0, 1);">pHead1</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: rgb(1, 0, 1);">ListNode</span> *<span style="color: rgb(1, 0, 1);">pListHeadShort</span> = <span style="color: rgb(1, 0, 1);">pHead2</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">if</span>(<span style="color: rgb(1, 0, 1);">nLength2</span> &gt; <span style="color: rgb(1, 0, 1);">nLength1</span>)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: rgb(1, 0, 1);">pListHeadLong</span> = <span style="color: rgb(1, 0, 1);">pHead2</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: rgb(1, 0, 1);">pListHeadShort</span> = <span style="color: rgb(1, 0, 1);">pHead1</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: rgb(1, 0, 1);">nLengthDif</span> = <span style="color: rgb(1, 0, 1);">nLength2</span> - <span style="color: rgb(1, 0, 1);">nLength1</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: green;">// Move on the longer list</span></span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">for</span>(<span style="color: blue;">int</span> <span style="color: rgb(1, 0, 1);">i</span> = 0; <span style="color: rgb(1, 0, 1);">i</span> &lt; <span style="color: rgb(1, 0, 1);">nLengthDif</span>; ++ <span style="color: rgb(1, 0, 1);">i</span>)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: rgb(1, 0, 1);">pListHeadLong</span> = <span style="color: rgb(1, 0, 1);">pListHeadLong</span>-&gt;<span style="color: rgb(1, 0, 1);">m_pNext</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: green;">// Move on both lists</span></span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">while</span>((<span style="color: rgb(1, 0, 1);">pListHeadLong</span> != <span style="color: rgb(1, 0, 1);">NULL</span>) &amp;&amp; </span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>(<span style="color: rgb(1, 0, 1);">pListHeadShort</span> != <span style="color: rgb(1, 0, 1);">NULL</span>) &amp;&amp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>(<span style="color: rgb(1, 0, 1);">pListHeadLong</span> != <span style="color: rgb(1, 0, 1);">pListHeadShort</span>))</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: rgb(1, 0, 1);">pListHeadLong</span> = <span style="color: rgb(1, 0, 1);">pListHeadLong</span>-&gt;<span style="color: rgb(1, 0, 1);">m_pNext</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: rgb(1, 0, 1);">pListHeadShort</span> = <span style="color: rgb(1, 0, 1);">pListHeadShort</span>-&gt;<span style="color: rgb(1, 0, 1);">m_pNext</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: green;">// Get the first common node in two lists</span></span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: rgb(1, 0, 1);">ListNode</span> *<span style="color: rgb(1, 0, 1);">pFisrtCommonNode</span> = <span style="color: rgb(1, 0, 1);">NULL</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">if</span>(<span style="color: rgb(1, 0, 1);">pListHeadLong</span> == <span style="color: rgb(1, 0, 1);">pListHeadShort</span>)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: rgb(1, 0, 1);">pFisrtCommonNode</span> = <span style="color: rgb(1, 0, 1);">pListHeadLong</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">return</span> <span style="color: rgb(1, 0, 1);">pFisrtCommonNode</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">}</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">///////////////////////////////////////////////////////////////////////</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">// Get the length of list with head pHead</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">// Input: pHead - the head of list</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">// Return: the length of list</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: green; font-size: 10pt;">///////////////////////////////////////////////////////////////////////</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">unsigned</span><span style="font-family: 'Courier New'; font-size: 10pt;"> <span style="color: blue;">int</span> <span style="color: rgb(1, 0, 1);">ListLength</span>(<span style="color: rgb(1, 0, 1);">ListNode</span>* <span style="color: rgb(1, 0, 1);">pHead</span>)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">{</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">unsigned</span> <span style="color: blue;">int</span> <span style="color: rgb(1, 0, 1);">nLength</span> = 0;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: rgb(1, 0, 1);">ListNode</span>* <span style="color: rgb(1, 0, 1);">pNode</span> = <span style="color: rgb(1, 0, 1);">pHead</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">while</span>(<span style="color: rgb(1, 0, 1);">pNode</span> != <span style="color: rgb(1, 0, 1);">NULL</span>)</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>++ <span style="color: rgb(1, 0, 1);">nLength</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: rgb(1, 0, 1);">pNode</span> = <span style="color: rgb(1, 0, 1);">pNode</span>-&gt;<span style="color: rgb(1, 0, 1);">m_pNext</span>;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;</span></p> <p style="line-height: normal; margin: 0in 0in 0pt;"><span style="font-family: 'Courier New'; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: blue;">return</span> <span style="color: rgb(1, 0, 1);">nLength</span>;</span></p> <p style="margin: 0in 0in 10pt;"><span style="line-height: 115%; font-family: 'Courier New'; font-size: 10pt;">}</span></p><span style="line-height: 115%; font-family: 'Courier New'; font-size: 10pt;"> <p style="text-indent: 0.5in; margin: 0in 0in 10pt;">  </p></span><p style="margin: 0in 0in 10pt; text-indent: 0.5in;"><span style="font-family: 宋体;" courier="" new="" lang="ZH-CN">本文已经收录到《</span><span style="" calibrisans-serif="" mso-ascii-theme-fontminor-latinmso-fareast-font-familymso-fareast-theme-font="" minor-fareastmso-hansi-theme-fontminor-latinmso-bidi-font-familycourier="" new=""><a target="_top" href="http://zhedahht.blog.163.com/blog/static/254111742011101624433132/"><span style="font-family: 宋体;" lang="ZH-CN">剑指</span>Offer<span style="font-family: 宋体;" lang="ZH-CN">——名企面试官精讲典型编程题</span></a></span><span style="font-family: 宋体;" courier="" new="" lang="ZH-CN">》一书中，有改动，书中的分析讲解更加详细。欢迎关注。</span><span style="font-family: 宋体;"></span></p>  <span style="line-height: 115%; font-family: 'Courier New'; font-size: 10pt;"><p style="text-indent: 0.5in; margin: 0in 0in 10pt;"><span style="font-family: 宋体;" lang="ZH-CN"><font size="3">博主何海涛对本博客文章享有版权。网络转载请注明出处</font></span><a href="http://zhedahht.blog.163.com/"><font color="#990000" face="Calibri" size="3">http://zhedahht.blog.163.com/</font></a><span style="font-family: 宋体;" lang="ZH-CN"><font size="3">。整理出版物请和作者联系。</font></span></p></span></div>
+        <div class="nbw-blog-end"></div>
+
+        <div>
+		</div>
+		
+        <div>
+		</div>
+		
+		<div>
+      	  <div>
+		  	<div class="wumii-hook"></div>
+		  </div>
+		</div>
+		
+        <div class="ptc phide ztag">
+          <span class="ptcp">
+            <span class="iblock bcmimg">&nbsp;</span>
+            <span class="nbc-0 nbc-0-40 ptcmt ptcmt-2">评论这张</span>
+          </span>
+        </div>
+		<div class="ptc phide ztag">
+          <span class="ptcp">
+            <span class="nbc-0 nbc-0-40 ptcmi">
+              <img src="microblog.png">
+            </span>
+            <span class="nbc-0 nbc-0-40 ptcmt">转发至微博</span>
+          </span>
+        </div>
+        <div style="left: 489px; top: 936px;" class="ptc ztag phide">
+          <span class="ptcp">
+            <span class="nbc-0 nbc-0-40 ptcmi">
+              <img src="microblog.png">
+            </span>
+            <span class="nbc-0 nbc-0-40 ptcmt">转发至微博</span>
+          </span>
+        </div>
+        
+        
+        <div class="nbw-act tbar fc03 clearfix">
+         <div style="height: 24px; line-height: 24px;">
+          <div class="pleft rdif">
+	          <span class="pnt pleft" id="$_spanRecommend"><img class="pclass" src="tuijian.png"></span>
+	        <span id="$_spanShowRecommend" class="pleft rdct  phide">
+	          <span class="pleft ul fc03"><span id="$_spanRecommendCount">0</span>人</span><span class="pleft iblock icn0 icn0-722 nbw-tgl1 nas-icn0fix">&nbsp;</span><span class="pleft iblock icn0 icn0-621 nbw-tgl0 nas-icn0fix">&nbsp;</span><span class="fc07"></span>|&nbsp;
+	        </span>
+	         <span class="fc07 pleft nas-tofix">分享到：</span><span class="nas-wrap pleft"><span id="$_shareBtn_163weibo" title="分享到网易微博" class="nas-itm nas-itm0">&nbsp;</span><span id="$_shareBtn_sinaweibo" title="分享到新浪微博" class="nas-itm nas-itm6">&nbsp;</span><span id="$_shareBtn_qqweibo" title="分享到腾讯微博" class="nas-itm nas-itm9">&nbsp;</span><span class="nas-itm nas-itm7" title="分享到MSN" id="$_shareBtn_msn">&nbsp;</span><span class="nas-itm nas-itm3" title="分享到QQ空间" id="$_shareBtn_qq">&nbsp;</span><span class="nas-itm nas-itm1" title="分享到人人网" id="$_shareBtn_renren">&nbsp;</span><span class="nas-itm nas-itm2" title="分享到开心网" id="$_shareBtn_kaixin">&nbsp;</span><span class="nas-itm nas-itm4" title="分享到豆瓣" id="$_shareBtn_douban">&nbsp;</span><span class="nas-itm nas-itm8" title="分享到梦幻人生" id="$_shareBtn_dream">&nbsp;</span></span>
+          </div>
+          <div class="pright">
+              <span class="fc07">阅读(<span id="$_spaniReadCount">11639</span>)</span><span class="sep fc07">|</span>
+              <span class="fc07">评论(<span id="$_spaniCommentCount">18</span>)</span><span class="sep fc07">|</span>
+              <span class="m2a" id="$_spanCite">引用</span> <span class="m2a" id="$_spanCiteCount">(7)</span>
+              <span class="sep fc07">|</span><span id="$_spanReport" class="m2a">举报</span>
+          </div>
+         </div>
+        </div>
+      </div>
+      <div class="snl">
+        <div class="phide bdwb bds2 bdc0 rdcnt" id="$_divRecommendContent"></div>
+        <div id="yodaoad" class="bdwb bds2 bdc0" style="display: none;">&nbsp;</div>
+        <div id="$_divTopLink" class="top fc03 clearfix">
+	        <span class="ilft iblock icn0 icn0-620">&nbsp;</span>
+	        <div class="pleft thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/2541117420071128950682/">程序员面试题精选100题(34)-数组中只出现一次的数字[算法]</a></div>
+	        <span class="irgt iblock icn0 icn0-619">&nbsp;</span>
+	        <div class="pright thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/25411174200801931426484/">程序员面试题精选100题(36)-在字符串中删除特定的字符[算法]</a></div>
+	     </div> 
+	    <div class="relateblog phide">
+          <h4 class="bdwb bds2 bdc0 fc07 fs0">历史上的今天</h4>
+          <div class="cnt ztag clearfix"></div>
+        </div>
+	    <div class="relateblog phide">
+          <h4 class="bdwb bds2 bdc0 fc07 fs0">相关文章</h4>
+          <div class="cnt ztag clearfix"></div>
+        </div>
+	    <div class="author">
+	      <h4 class="bdwb bds2 bdc0 fc07 fs0">最近读者</h4>
+	      <div class="cnt ztag clearfix"><div class="pleft nlogif clearfix"> <div class="pleft nbw-f50 nbw-fce"><img class="cwd pnt" onerror="this.src=location.f60" src="face60.png"></div> <div class="m2a pright fc03"><span class="ul">登录</span>后，您可以在此留下足迹。</div> </div>        <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/turnerks@126/">            <img alt="turnerks" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/turnerks@126/">          turnerks        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/wyishanjian/">            <img alt="大疯车" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_001.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/wyishanjian/">          大疯车        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/wwbszd/">            <img alt="wwbszd" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_002.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/wwbszd/">          wwbszd        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/scyehan/">            <img alt="scyehan" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_003.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/scyehan/">          scyehan        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/yu2945686/">            <img alt="yu2945686" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="face140.png">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/yu2945686/">          yu294568        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/fu1985zong/">            <img alt="stubborn" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_004.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/fu1985zong/">          stubborn        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/luodan_000/">            <img alt="蛋蛋" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_005.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/luodan_000/">          蛋蛋        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/ccking69/">            <img alt="ccking69" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_006.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/ccking69/">          ccking69        </a>      </div>    </div>        </div>
+	    </div>
+	    <div class="phide" id="yodaoad_1" style=""></div>
+	    <div class="comment">
+	      <h4 class="bdwb bds2 bdc0 fc07 fs0">评论</h4>
+	      <a name="blogComment" id="blogComment"></a>
+	      <div class="ztag"><div>    <div class="publish ztag"><div class="nbw-cdt edt-cmt"><div class="nbw-act tp"> <span class="m2a fc03 ztag">点击登录</span><span class="sep">|</span><span class="fc05">昵称：</span><input value="" maxlength="18" class="znick bdwa bds0 bdc0 ztag" type="text"> </div> <div class="edt ztag"><div class="ui-5851530125"><div class="zcnt ztag zbrd bdc0"><iframe src="index_1.html" frameborder="0"></iframe></div> <div class="zbtn"> <span class="zfce zbgp ztag space">&nbsp;</span> <input class="zbok zhnd ztag nbtn fc09 bdc1 bgc2" value="发表" type="button"> <span class="zbcc zhnd ztag fc04">取消</span> <div class="zvcd ztag" style="display: none;"> <label>验证码：</label><input value="" class="zbrd xtag bdc0" maxlength="4" type="text"><img src="empty.png" class="xtag" title="点击刷新验证码"><span class="xtag fc04">换一张</span> </div> </div> <div class="zmsg fc07" style="display: none;"><span class="zicn zbgp iblock">&nbsp;</span><span class="ztag"></span></div></div></div> <div style="display: none;" class="hnt thide ztag"></div></div></div>
+    <div class="bdwt bds2 bdc0 phide" id="yodaoad_2" style=""></div>
+    <div class="ztag bdwt bds2 bdc0">
+      <div class="case"><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="河北 唐山" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">01-11 08:40</span><div class="tx atag"><span title="河北 唐山" class="fc07">litong1981</span></div></div> <div class="cnt pre atag">何老师此题被2012全国硕士研究生计算机专业统考选中</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-10-20 21:33</span><div class="tx atag"><span class="fc07">zippon.wu@gmail.co</span></div></div> <div class="cnt pre atag">其实呢，遍历某个链表(1或2都可以）每次都把当前节点其中的<span style=""><span style=""></span><span style="">m_nKey</span>设置为某个不可能出现的数字（如9999)，并把原先的m_nkey存放到的某个队列中用以将来找到之后还原。然后遍历另一个链表，当出现这个9999时的节点就是第一个公共节点。然后可以用之前的队列将第一次破坏的链表还原。<br></span></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="江苏 南京" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-08-03 16:34</span><div class="tx atag"><span title="江苏 南京" class="fc07">hanxx3380@163.com</span></div></div> <div class="cnt pre atag">从公共节点开始，一定同时到达链表尾巴么？如果一个链表的尾巴长点，一个尾巴短点，就是尾巴短点的先指向NULL了。这种情况也存在吧。</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a target="_blank" hidefocus="true"><img title="江苏 南京" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-08-03 16:38</span><div class="tx atag"><span title="江苏 南京" class="fc07">hanxx3380@163.com</span><span class="fc07">&nbsp;回复&nbsp;</span><span title="江苏 南京" class="fc07">hanxx3380@163.com</span></div></div> <div class="cnt pre atag">我弄错了，应该是没有这种情况，sorry<img src="face22.gif"></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="江苏 南京" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-07-27 20:36</span><div class="tx atag"><span title="江苏 南京" class="fc07">兔子</span></div></div> <div class="cnt pre atag">这个我觉得要先判断链表有没有环，通过pfast与pslow指针判断是否有环，若pfast追上pslow则有环并记录相遇点，然后再找到环入口（两个指针同步从开始、相遇点移动首次相遇点就是环入口）；计算开始到环入口的步差，然后按照LZ的方法开始遍历，就能找到有环情况下第一个公共点……</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="北京 海淀区" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-05-15 23:21</span><div class="tx atag"><span title="北京 海淀区" class="fc07">pennymax</span></div></div> <div class="cnt pre atag"><div>有个方法是把list2的头接到list1的尾，链表相交的话就构造出一个环，找到环的入口点就是第一个公共点。判断环和找环入口点都有现成的算法。</div><div><br></div><div>这个算法前提是两个链表本身没有环，有环另说....</div><div><br></div><div><br></div></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://zhangzhibiao02005.blog.163.com/" target="_top" hidefocus="true"><img src="ava_007.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-04-30 15:56</span><div class="tx atag"><a title="zhangzhibiao02005" class="fc03 noul" target="_top" href="http://zhangzhibiao02005.blog.163.com/"><span class="m2a">zhangzhibiao02005</span></a></div></div> <div class="cnt pre atag">如果链表带环，则博主提供的算法就不对了。<div>要首先判断链表是否有环，如果没有环，那么博主的算法是对的。如果链表有环，先找到环的入口点，而且相同结点肯定不会出现在环的内部，找到两个链表的入口点，从后往前遍历比较即可。<br><br></div></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://blog.163.com/lqbjy@126/" target="_top" hidefocus="true"><img src="ava_008.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-04-20 19:39</span><div class="tx atag"><a title="lqbjy@126" class="fc03 noul" target="_top" href="http://blog.163.com/lqbjy@126/"><span class="m2a">lqbjy@126</span></a></div></div> <div class="cnt pre atag">我有一个思路，但是感觉写出代码的难度较大，可以用来开拓思路。<div>对其中一个链表每个节点的<span class="Apple-style-span" style=""><span style="">pNode</span></span><span class="Apple-style-span" style="">-&gt;</span><span class="Apple-style-span" style=""><span style="">m_pNext值进行哈希运算，然后对另一个链表的每个节点的</span></span><span class="Apple-style-span" style=""><span style="">pNode</span>-&gt;<span style="">m_pNext也进行同样的哈希运算，得到第一个出现重复的节点。难点在于，32位机器上的地址都是4个byte的，如何设计哈希运算比较麻烦。</span></span></div></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://zhangzhibiao02005.blog.163.com/" target="_top" hidefocus="true"><img src="ava_007.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-03-16 09:41</span><div class="tx atag"><a title="zhangzhibiao02005" class="fc03 noul" target="_top" href="http://zhangzhibiao02005.blog.163.com/"><span class="m2a">zhangzhibiao02005</span></a></div></div> <div class="cnt pre atag">我觉得这个要出题人定义下什么是公共节点</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="北京 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-10-29 15:47</span><div class="tx atag"><span title="北京 " class="fc07">kurtdz</span></div></div> <div class="cnt pre atag">先把两个链表反向链接了，然后从两个单链表的尾部开始向头部遍历，出现指针不一样的情况，就找到那个分叉了</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="北京 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-09-23 16:13</span><div class="tx atag"><span title="北京 " class="fc07">大洋仔哥</span></div></div> <div class="cnt pre atag"><p>博主好。</p>
+<p>链表有肯能有环，像这样：</p>
+<p>A&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; __</p>
+<p>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \____________()</p>
+<p>B _____&nbsp;/</p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a href="http://blog.163.com/oceans126@126/" target="_top" hidefocus="true"><img src="ava_009.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-10-25 14:13</span><div class="tx atag"><a class="fc03 noul" title="oceans126" target="_top" href="http://blog.163.com/oceans126@126/"><span class="m2a">oceans126</span></a><span class="fc07">&nbsp;回复&nbsp;</span><span title="上海 浦东新区" class="fc07">大洋仔哥</span></div></div> <div class="cnt pre atag">编程之美有判断链表是否存在环的情况。<div>设置两个不长不同的指针，就OK了。</div></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a href="http://blog.163.com/oceans126@126/" target="_top" hidefocus="true"><img src="ava_009.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-10-25 14:16</span><div class="tx atag"><a class="fc03 noul" title="oceans126" target="_top" href="http://blog.163.com/oceans126@126/"><span class="m2a">oceans126</span></a><span class="fc07">&nbsp;回复&nbsp;</span><a class="fc03 noul" title="oceans126" target="_top" href="http://blog.163.com/oceans126@126/"><span class="m2a">oceans126</span></a></div></div> <div class="cnt pre atag">不长 -&gt; 步长<img src="face0.gif"></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-10-08 11:04</span><div class="tx atag"><span class="fc07">dutzzds</span></div></div> <div class="cnt pre atag">对于pHead1 == pHead2的case，没有必要求他们的链表长度</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://blog.163.com/rocl_li77/" target="_top" hidefocus="true"><img src="ava_010.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2010-08-25 10:42</span><div class="tx atag"><a title="rocl_li77" class="fc03 noul" target="_top" href="http://blog.163.com/rocl_li77/"><span class="m2a">rocl_li77</span></a></div></div> <div class="cnt pre atag">很棒的思路！！！</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="广东 广州" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2009-05-17 23:47</span><div class="tx atag"><span title="广东 广州" class="fc07">ERIK</span></div></div> <div class="cnt pre atag">关键是这点：两个有公共结点而部分重合的链表，拓扑形状看起来像一个Y，而不可能像X。<br><br>赞！</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="陕西 西安" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2008-01-09 17:29</span><div class="tx atag"><span title="陕西 西安" class="fc07">网易博友138</span></div></div> <div class="cnt pre atag">不错，全看了，期待后面的</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="北京 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2008-01-06 17:10</span><div class="tx atag"><span title="北京 " class="fc07">凌绝顶</span></div></div> <div class="cnt pre atag">聪明的算法如艺术品般给人带来美的享受。</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div></div>
+      <div style="" class="clearfix"><div style="display: none;" class="ui-6441408013 noselect js-zfrg-6540"><span class="pgi pgb iblock fc03 bgc9 bdc0 js-znpg-097">上一页</span> <span class="pgi zpg1 iblock fc03 bgc9 bdc0 js-zslt-987 fc05">1</span> <span class="frg fgp fc06">...</span> <span style="display: none;" class="pgi zpg2 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg3 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg4 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg5 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg6 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg7 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg8 iblock fc03 bgc9 bdc0">-1</span> <span class="frg fgn fc06">...</span> <span style="display: none;" class="pgi zpg9 iblock fc03 bgc9 bdc0">-1</span> <span class="pgi pgb iblock fc03 bgc9 bdc0 js-znpg-097">下一页</span></div></div>
+    </div>
+  </div></div>
+	    </div>
+	    <div class="phide" id="yodaoad_3" style=""></div>
+      </div>
+      <div class="cite ztag fc03 phide"></div>
+    </div>
+   </div>
+  </div>
+</div>
+
+
+
+</div>
+      <div class="l cl h100">&nbsp;</div>
+      <div class="r cr h100">&nbsp;</div>
+    </div>
+    <div class="nb-mb lcr bh space">
+      <div class="l bl bh">&nbsp;</div>
+      <div class="r br bh">&nbsp;</div>
+      <div class="c bc bh lcr">&nbsp;</div>
+    </div>
+  </div>
+
+</div>
+      <div class="l wl g lg h100">&nbsp;</div>
+      <div class="l wl t lt">&nbsp;</div>
+      <div class="l wl b lb">&nbsp;</div>
+      <div class="r wr g rg h100">&nbsp;</div>
+      <div class="r wr t rt">&nbsp;</div>
+      <div class="r wr b rb">&nbsp;</div>
+    </div>
+  </div>
+  <div class="nb-are nb-smb"><div class="wkg h space"><div class="l h">&nbsp;</div><div class="r h">&nbsp;</div><div class="c h">&nbsp;</div></div></div>
+<div class="nb-are nb-fot">
+  <div class="wkg h">
+    <h2>页脚</h2>
+    <div class="k">      <a rel="nofollow" class="m2a fc08" target="_top" href="http://corp.163.com/index_gb.html">公司简介</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://gb.corp.163.com/gb/contactus.html">联系方法</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://corp.163.com/gb/job/job.html">招聘信息</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://help.163.com/?b13abk1">客户服务</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://corp.163.com/gb/legal/legal.html">隐私政策</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://blog.163.com/public/theme/">博客风格</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://blog.163.com/services/wapblog.html">手机博客</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://blog.163.com/vip.do">VIP博客</a>
+      
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="http://zhedahht.blog.163.com/rss/">
+      <span class="p fc10">-</span><span class="fc08" id="$_foot_subscribe"><span class="iblock m2a icn0 icn0-919">&nbsp;</span><a class="m2a fc08">订阅此博客</a></span>
+    </div>
+    <p class="fc08">网易公司版权所有&nbsp;©1997-2012</p>
+  </div>
+</div></div>
+    <!--[if lte IE 6]></div><![endif]-->
+  <!--[if lte IE 6]></div><![endif]-->
+  <div class="nb-layer" id="blog-163-com-layer"></div>
+  
+
+     <div style="position: absolute; top: 0pt; right: 0pt; z-index: 999; width: 1px; height: 1px; overflow: hidden;"> <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="ntsstorage" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" height="1" width="1"> <param name="movie" value="/common/storage.swf?t=1333095235817"> <param name="AllowScriptAccess" value="sameDomain"> <embed src="storage.swf" name="ntsstorage" allowscriptaccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" height="1" width="1">  </object> </div><iframe src="index_2.html" id="api.blog.163.com" name="api.blog.163.com" style="display: none;" height="0" width="0"></iframe><iframe src="index_3.html" id="photo.163.com" name="photo.163.com" style="display: none;" height="0" width="0"></iframe><iframe src="index_4.html" id="ud.blog.163.com" name="ud.blog.163.com" style="display: none;" height="0" width="0"></iframe>
+    
+  
+  
+
+
+    
+
+
+</body>
+</html>

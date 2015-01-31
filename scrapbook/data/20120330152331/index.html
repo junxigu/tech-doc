@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="zh" xml:lang="zh" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    
+    <meta http-equiv="content-style-type" content="text/css">
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta name="version" content="neblog-1.0">
+    
+<title>程序员面试题精选100题(30)-赋值运算符重载函数[C/C++/C#] - 何海涛的日志 - 网易博客</title>
+<meta name="author" content="zhedahht,何海涛">
+<meta name="keywords" content="程序员面试题精选100题(30)-赋值运算符重载函数[C/C++/C#],日志,何海涛,微软、Google等面试题,网易博客,网易,blog">
+<meta name="description" content="程序员面试题精选100题(30)-赋值运算符重载函数[C/C++/C#],何海涛的网易博客,剑指Offer：名企面试官精讲典型编程题,海纳百川,涛声依旧,点石成金,成就未来">
+  
+    
+    
+  <!--[if lte IE 6]>
+  <style type="text/css">
+    html,body,#blog-163-com-ie6body{height:100%;width:100%;overflow:hidden;}
+    #blog-163-com-ie6body{overflow:auto;overflow-y:scroll;}
+    #blog-163-com{background:none;}
+  </style>
+  <![endif]-->
+  
+  
+  
+  
+  
+  
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body id="blog-163-com" class="nb-body nb-inr nb-prv">
+  <!--[if lte IE 6]><div id="blog-163-com-ie6bodywrap" class=""><![endif]-->
+    <!--[if lte IE 6]><div id="blog-163-com-ie6body" class="nb-body"><![endif]-->
+
+<div class="nb-nbar clearfix" id="blog-163-com-topbar">
+  <div class="pl fl clearfix">
+  <div id="" "="" class="nbw-im fl im im0">
+    <a rel="nofollow" class="lbl bd ia noul " href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://www.163.com/" target="_top" hidefocus="true"><span class="tx">网易</span><span class="iblock icn0 icn0-421">&nbsp;</span></a><div class="nbw-tcd box-shadow bd">
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://news.163.com/">
+            新闻
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://t.163.com/">
+            微博
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://email.163.com/">
+            邮箱
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://photo.163.com/">
+            相册
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://yuedu.163.com/">
+            阅读
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://www.youdao.com/">
+            有道
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://photo.163.com/pp/square/">
+            摄影
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://aipai.163.com?from=163blog">
+            爱拍
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://note.youdao.com/?vendor=163blog">
+            云笔记
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://fm.163.com/?fmblogzx0628">
+            闪电邮
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://m.123.163.com/?frombkcp">
+            手机邮
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://yxp.163.com/">
+            印像派
+          </a>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://dream.163.com/?from=bkcp">
+            梦幻人生
+          </a>
+        <div class="sep bd space">&nbsp;</div>
+          <a rel="nofollow" class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/redirect.html?frompersonalbloghome&amp;url=http://sitemap.163.com/">
+            更多
+          </a>
+        
+    </div>
+  </div>
+                               
+    <span style="margin-left: 0pt;" class="fl iblock space icn1 icn1-4">&nbsp;</span>
+    
+  <div id="" "="" class="nbw-im fl im im10">
+    <a class="lbl bd ia noul " href="http://blog.163.com/?frompersonalbloghome" target="_top" hidefocus="true"><span class="tx">博客</span><span class="iblock icn0 icn0-421">&nbsp;</span></a><div class="nbw-tcd box-shadow bd">
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/services/wapblog.html?frompersonalbloghome">
+            手机博客
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/clone/clone.html?frompersonalbloghome">
+            博客搬家
+          </a>
+          <a class="itm noul youcai " target="_top" hidefocus="true" href="http://blog.163.com/vip.do?frompersonalbloghome">
+            博客VIP服务
+          </a>
+        <div class="sep bd space">&nbsp;</div>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/blog_admin/blog/static/721279201082863728829/?frompersonalbloghome">
+            LiveWriter写博
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/blog_admin/blog/static/721279201092713253500/?frompersonalbloghome">
+            word写博
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/services/mailblog.html?frompersonalbloghome">
+            邮件写博
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/services/emsblog.html?frompersonalbloghome">
+            短信写博
+          </a>
+        <div class="sep bd space">&nbsp;</div>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/showMultiUser.do?frompersonalbloghome">
+            群博客
+          </a>
+          <a class="itm noul youcai " target="_top" hidefocus="true" href="http://blog.163.com/BLOG_YOUCAI/">
+            博客油菜地
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/ht/?frompersonalbloghome">
+            博客话题
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/hot/history/?frompersonalbloghome">
+            博客热点
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://q.163.com/#home?frompersonalbloghome">
+            博客圈子
+          </a>
+          <a class="itm noul  " target="_top" hidefocus="true" href="http://blog.163.com/findFriend.do?type=5?frompersonalbloghome">
+            找朋友
+          </a>
+        
+    </div>
+  </div>
+
+    
+    <div class="nbw-im fl im1 im explore"><a class="lbl bd ima spy" href="http://blog.163.com/public/explore/?frompersonalbloghome">发现</a></div>
+    <div class="nbw-im fl im1 im bloggroup"><a class="lbl bd ima spy" href="http://blog.163.com/g/?frompersonalbloghome">小组</a></div>
+    <div class="nbw-im fl im1 im customtheme"><a class="lbl bd ima spy" href="http://blog.163.com/public/theme/?frompersonalbloghome">风格</a></div>
+    <div class="nbw-im fl im1 im seebyway"><a rel="nofollow" title="随便看看" class="lbl bd ima spy" href="http://blog.163.com/randomUser.do">&nbsp;</a></div>
+    
+    <span class="fl iblock space icn1 icn1-4">&nbsp;</span>
+    <div id="topbar_randShowArea" class="fl">
+      <div class="nbw-im fl im1 im randtag"><a style="width: 110px;" target="_top" class="lbl bd ima moveblog randshow" href="http://www.lofter.com/" onclick="window.open('http://www.lofter.com/reg?from=blog');return false;">网易轻博客LOFTER</a></div>
+    </div>
+  </div>
+  <div class="fr pr clearfix">
+    <div id="topbar_loginAndReg" class="fr">
+      <a rel="nofollow" style="margin-left: 10px; color: rgb(255, 119, 0);" class="iblock fr ima" href="http://reg.163.com/reg/reg.jsp?product=blog&amp;url=http://blog.163.com/ntesRegBlank.html&amp;loginurl=http://blog.163.com/" target="_top">创建博客</a>
+      <a rel="nofollow" class="iblock fr ima ztag" href="#">登录</a>
+      <span class="fr iblock space icn1 icn1-4 spx">&nbsp;</span>
+      <div id="topbar_followArea" class="nbw-im fr"><span class="lbl bd ima followit fl ztag"><span class="fl addicon">&nbsp;</span><span class="fl">关注</span></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="blogtoptips phide" id="blog-163-com-toptips">
+ <div class="blogtoptipswrap">
+    <div id="newbulletinstip" class="newbulletinstip phide">
+    <a class="lnknews fc03 m2a tiptag phide" href="http://zhedahht.blog.163.com/blog/static/25411174200741543224391/" target="_top"></a><span class="txtnews tiptag phide"></span>&nbsp;&nbsp;&nbsp;<a class="fc03 ul nextorprevnews tiptag phide" href="http://zhedahht.blog.163.com/blog/static/25411174200741543224391/" hidefocus="true">显示下一条</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="fc03 ul close tiptag" href="http://zhedahht.blog.163.com/blog/static/25411174200741543224391/" hidefocus="true">关闭</a>
+  </div>
+ </div>
+    <div id="$_faxiantip" class="faxiantip phide">
+      <div>
+	    <a class="m2a iblock" href="http://blog.163.com/public/explore/?fromblogbanner" target="_top"></a>
+	    <span class="faxiantag m2a"></span>
+      </div>
+    </div>
+    <div id="$_guanggaotip" class="guanggaotip phide">
+      <div>
+	    
+	    <span class="guanggaotag m2a"></span>
+      </div>
+    </div>
+    <div id="$_lofterInviteTip" class="lofterInviteTip phide">
+      <div>
+	    <a class="m2a iblock" href="http://www.lofter.com/invite/163blog/?email=" target="_top"></a>
+	    <span class="lofterInviteTag m2a"></span>
+      </div>
+    </div>
+</div>  <div class="nb-wrap wsy" id="blog-163-com-main"><div class="nb-are nb-top">
+  <div class="wkg h" id="blog-163-com-banner">
+    
+    <div class="t">
+      <h1 class="n c"><span class="ztag pre">微软、Google等面试题</span></h1>
+      <p class="d c"><span class="ztag pre">剑指Offer：名企面试官精讲典型编程题</span></p>
+    </div>
+    <div class="f h ztag">&nbsp;</div>
+    <a class="x" hidefocus="true" target="_top" href="#"><span class="xx ztag"></span></a>
+  </div>
+</div><div class="nb-are nb-nav">
+  <div class="wkg">
+    <div class="c h">
+      <h2>导航</h2>
+      <ul class="noul clearfix">
+                
+	        <li class="w w0">
+	          <a class="i i0 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/">首页</a>
+	        </li>
+	        <li class="w w1 selected">
+	          <a class="i i1 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/blog/">日志</a>
+	        </li>
+	        <li class="w w2">
+	          <a class="i i2 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/album/">相册</a>
+	        </li>
+	        <li class="w w3">
+	          <a class="i i3 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/music/">音乐</a>
+	        </li>
+	        <li class="w w4">
+	          <a class="i i4 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/collection/">收藏</a>
+	        </li>
+	        <li class="w w5">
+	          <a class="i i5 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/friends/">博友</a>
+	        </li>
+	        <li class="w w6">
+	          <a class="i i6 fc01 h" hidefocus="true" href="http://zhedahht.blog.163.com/profile/">关于我</a>
+	        </li>
+      </ul><!--
+ --></div>
+    <div class="l h">&nbsp;</div>
+    <div class="r h">&nbsp;</div>
+  </div>
+</div>  <div class="nb-are nb-smt"><div class="wkg h space"><div class="l h">&nbsp;</div><div class="r h">&nbsp;</div><div class="c h">&nbsp;</div></div></div>
+  <div class="nb-are nb-cnt">
+    <div class="wkg">
+      <div class="c wc h clearfix " id="blog-163-com-container">
+  <div class="nb-mdl lcr m-3 " id="-3">
+  <div class="nb-mt lcr th fc02">
+    <div class="c tc th lcr"><h2 class="thide nb-jsc mdl_t_t">日志</h2></div>
+    <div class="r tm th nb-jsc"></div>
+    <div class="l tl th">&nbsp;</div>
+    <div class="r tr th">&nbsp;</div>
+  </div>
+    <div class="nb-mc lcr">
+      <div class="c cc lcr nb-jsc">
+<div class="nbw-ryt ztag clearfix js-fix-098">
+  <div class="right bdwl bds0 bdc0"><div class="cnt ztag"></div></div>
+  <div class="left">
+     <div class="lcnt bdwr bds0 bdc0 ">   
+      <div id="$_divTopLink" class="top fc03 bdwb bdc0 bds2 clearfix">
+        <span class="ilft iblock icn0 icn0-620">&nbsp;</span>
+        <div class="pleft thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/25411174200741295930898/">程序员面试题精选100题(29)-调整数组顺序使奇数位于偶数前面[算法]</a></div>
+        <span class="irgt iblock icn0 icn0-619">&nbsp;</span>
+        <div class="pright thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/2541117420079237185699/">程序员面试题精选100题(31)-从尾到头输出链表[数据结构]</a></div>
+     </div> 
+     <div class="mcnt ztag"> 
+      <div class="nbw-bitm bdwb bds2 bdc0 ">
+        <div class="multicntwrap">
+	      <div class="multicnt">
+	      	<div>
+		      <h3 class="title pre fs1"><span class="tcnt">程序员面试题精选100题(30)-赋值运算符重载函数[C/C++/C#]</span>&nbsp;&nbsp;<span class="bgc0 fc07 fw0 fs0"></span></h3>
+		      <p class="tdep clearfix nbw-act fc06" style="line-height: 20px;">
+		        <span class="pleft">
+		          
+		          <span class="blogsep">2007-05-15 16:32:24</span><span class="blogsep">|&nbsp;&nbsp;分类：</span>
+		          <a class="fc03 m2a" href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=1&amp;c=fks_081075092084086068081074084070080087080066083082" title="C/C++">C/C++</a>
+		          <span class="blogsep" id="$_blogTagTitle">|&nbsp;&nbsp;标签：</span><span class="fc03" id="$_blogTagInfo"><a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E7%BC%96%E7%A8%8B" class="fc03 m2a">编程</a>&nbsp;&nbsp;<a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E5%B0%B1%E4%B8%9A" class="fc03 m2a">就业</a>&nbsp;&nbsp;<a href="http://zhedahht.blog.163.com/blog/#m=0&amp;t=3&amp;c=%E6%89%BE%E5%B7%A5%E4%BD%9C" class="fc03 m2a">找工作</a>&nbsp;&nbsp;</span>
+		        </span>
+		        <span class="pright fc07 ztag"><span class="blogsep">|</span><span class="zihao fc03" id="$_fontswitch">字号<span class="zihaoshow  phide" id="$_fontsTypes"><span class="zihaoc bdc0"><span class="stag"></span><span class="fc04 stag">大</span><span class="fc04 stag selected js-fcurrent fc05">中</span><span class="fc04 stag">小</span></span></span></span></span><span class="pright pnt fc03" id="$_blog_subscribe"><span class="iblock icn0 icn0-919">&nbsp;</span><a class="m2a">订阅</a></span>
+		      </p>
+		    </div>
+	      </div>
+        </div>
+        
+        <div>
+        
+        </div>
+        
+        <div class="nbw-blog-start"></div>
+        <div class="bct fc05 fc11 nbw-blog ztag js-fs2"><span style="font-family: SimSun;"><span style="font-family: 宋体;" lang="ZH-CN"><font size="3">  <p style="line-height: normal; text-indent: 0.5in; margin: 0in 0in 7.5pt;"><span style="font-family: 宋体;" lang="ZH-CN">问题：<b style="">给出如下</b></span><b style=""><font face="Calibri">CMyString</font></b><b style=""><span style="font-family: 宋体;" lang="ZH-CN">的声明，要求为该类型添加赋值运算符函数。</span></b></p>  <p style="line-height: normal; margin: 0in 0in 7.5pt 0.5in;"><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">class</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"> CMyString<br>{<br></span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">public</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">:<br></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">CMyString(</span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">char</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">* pData = NULL);<br></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">CMyString(</span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">const</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"> CMyString&amp; str);<br></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">~CMyString(</span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">void</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">);<br><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><br></span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">private</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">:<br></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">char</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">* m_pData;<br>};</span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9pt;"></span></p>  <p style="line-height: normal; margin: 0in 0in 7.5pt 0.5in;"><span style="font-family: 宋体;" lang="ZH-CN">当面试官要求应聘者定义一个复制运算符函数时，他会关注如下几点：</span></p>  <p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 7.5pt 0.75in;"><span style="font-family: Symbol;"><span style="">·<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 宋体;" lang="ZH-CN">是否把返回值的类型声明为该类型的引用，并在函数结束前返回实例自身（即</span><font face="Calibri">*this</font><span style="font-family: 宋体;" lang="ZH-CN">）的引用？只有返回一个引用，才可以允许连续赋值。否则如果函数的返回值是</span><font face="Calibri">void</font><span style="font-family: 宋体;" lang="ZH-CN">，假设有三个</span><font face="Calibri">CMyString</font><span style="font-family: 宋体;" lang="ZH-CN">的对象，</span><font face="Calibri">str1</font><span style="font-family: 宋体;" lang="ZH-CN">、</span><font face="Calibri">str2</font><span style="font-family: 宋体;" lang="ZH-CN">和</span><font face="Calibri">str3</font><span style="font-family: 宋体;" lang="ZH-CN">，在程序中语句</span><font face="Calibri">str1=str2=str3</font><span style="font-family: 宋体;" lang="ZH-CN">将不能通过编译。</span></p>  <p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 7.5pt 0.75in;"><span style="font-family: Symbol;"><span style="">·<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 宋体;" lang="ZH-CN">是否把传入的参数的类型声明为常量引用？如果传入的参数不是引用而是实例，那么从形参到实参会调用一次构造拷贝函数。把参数申明为引用可以避免这样的无谓消耗，能提高代码的效率。同时，我们在赋值运算符函数内是不会改变传入的实例的状态的，因此应该为传入的引用参数加上</span><font face="Calibri">const</font><span style="font-family: 宋体;" lang="ZH-CN">关键字。</span></p>  <p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 7.5pt 0.75in;"><span style="font-family: Symbol;"><span style="">·<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 宋体;" lang="ZH-CN">是否记得释放实例自身已有的内存？如果忘了在分配新内存之前释放自身已有的空间，将出现内存泄露。</span></p>  <p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 7.5pt 0.75in;"><span style="font-family: Symbol;"><span style="">·<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 宋体;" lang="ZH-CN">是否判断传入的参数是不是和当前的实例（</span><font face="Calibri">*this</font><span style="font-family: 宋体;" lang="ZH-CN">）是不是同一个实例？如果是同一个，则不进行赋值操作，直接返回。如果事先不判断，就进行赋值，那么在释放实例自身的内存的时候就会导致严重的问题：当</span><font face="Calibri">*this</font><span style="font-family: 宋体;" lang="ZH-CN">和传入的参数是同一个实例时，那么一旦释放了自身的内存，传入的参数的内存也同时被释放了，因此再也找不到需要赋值的内容了。</span></p>  <p style="line-height: normal; margin: 0in 0in 7.5pt 0.5in;"><span style="font-family: 宋体;" lang="ZH-CN">当我们完整地考虑了上述几方面之后，我们可以写出如下的代码：</span></p>  <p style="line-height: normal; margin: 0in 0in 7.5pt 0.5in;"><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">CMyString&amp; CMyString::</span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">operator</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"> =(</span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">const</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"> CMyString &amp;str)<br>{<br></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">if</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">(</span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">this</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"> == &amp;str)<br></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">return</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"> *</span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">this</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">;<br><br></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">delete</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"> []m_pData;<br></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">m_pData = NULL;<br><br></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">m_pData = </span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">new</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"> </span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">char</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">[strlen(str.m_pData) + 1];<br></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">strcpy(m_pData, str.m_pData);<br><br></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">return</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"> *</span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">this</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">;<br>}</span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9pt;"></span></p>  <p style="line-height: normal; text-indent: 0.5in; margin: 0in 0in 7.5pt;"><span style="font-family: 宋体;" lang="ZH-CN">这是一般</span><font face="Calibri">C++</font><span style="font-family: 宋体;" lang="ZH-CN">教材上提供的参考代码。如果是面试的是应届毕业生或者</span><font face="Calibri">C++</font><span style="font-family: 宋体;" lang="ZH-CN">初级程序员，如果能全面地考虑到前面四点并完整地写出代码，面试官可能会让他通过这轮面试。但如果面试的是</span><font face="Calibri">C++</font><span style="font-family: 宋体;" lang="ZH-CN">的高级程序员，面试官可能会提出更高的要求。</span></p>  <p style="line-height: normal; text-indent: 0.5in; margin: 0in 0in 7.5pt;"><span style="font-family: 宋体;" lang="ZH-CN">面试官会提醒我们在前面的函数中，显示地用</span><font face="Calibri">delete</font><span style="font-family: 宋体;" lang="ZH-CN">释放自身</span><font face="Calibri">m_pData</font><span style="font-family: 宋体;" lang="ZH-CN">的内存。同时我们也会在析构函数中用</span><font face="Calibri">delete</font><span style="font-family: 宋体;" lang="ZH-CN">释放自身</span><font face="Calibri">m_pData</font><span style="font-family: 宋体;" lang="ZH-CN">的内存。如果这个类型中添加新的指针成员变量，那么我们至少需要做两处修改，即同时在析构函数和这个赋值运算符函数里添加一条</span><font face="Calibri">delete</font><span style="font-family: 宋体;" lang="ZH-CN">语句来释放新指针所指向的内存。一个改动需要在代码中多个地方修改代码，通常是有安全隐患的。通常我们会记得在析构函数里用</span><font face="Calibri">delete</font><span style="font-family: 宋体;" lang="ZH-CN">释放指针成员变量，但未必每次都记得到赋值运算符函数来添加代码释放内存。</span></p>  <p style="line-height: normal; text-indent: 0.5in; margin: 0in 0in 7.5pt;"><span style="font-family: 宋体;" lang="ZH-CN">更好的办法在复制运算符函数中利用析构函数自动释放实例已有的内存。下面是这种思路的参考代码：</span></p>  <p style="line-height: normal; margin: 0in 0in 7.5pt 0.5in;"><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">CMyString&amp; CMyString::</span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">operator</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"> =(</span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">const</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"> CMyString &amp;str)<br>{<br></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">if</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">(</span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">this</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"> != &amp;str)<br></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">{<br></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">CMyString strTemp(str);<br><br></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">char</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">* pTemp = strTemp.m_pData;<br></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">strTemp.m_pData = m_pData;<br></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">m_pData = pTemp;<br></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">}<br><br></span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"><span style="">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">return</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;"> *</span><span style="font-family: 'Courier New'; color: blue; font-size: 10pt;">this</span><span style="font-family: 'Courier New'; color: black; font-size: 10pt;">;<br>}</span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9pt;"></span></p>  <p><span style="line-height: 115%; font-family: 宋体; font-size: 11pt;" lang="ZH-CN">在这个函数中，我们定义一个临时实例</span><span style="line-height: 115%; font-family: 'Calibri','sans-serif'; font-size: 11pt;">strTemp</span><span style="line-height: 115%; font-family: 宋体; font-size: 11pt;" lang="ZH-CN">，并把</span><span style="line-height: 115%; font-family: 'Calibri','sans-serif'; font-size: 11pt;">strTemp</span><span style="line-height: 115%; font-family: 宋体; font-size: 11pt;" lang="ZH-CN">的</span><span style="line-height: 115%; font-family: 'Calibri','sans-serif'; font-size: 11pt;">m_pData</span><span style="line-height: 115%; font-family: 宋体; font-size: 11pt;" lang="ZH-CN">指向当前实例（</span><span style="line-height: 115%; font-family: 'Calibri','sans-serif'; font-size: 11pt;">*this</span><span style="line-height: 115%; font-family: 宋体; font-size: 11pt;" lang="ZH-CN">）的</span><span style="line-height: 115%; font-family: 'Calibri','sans-serif'; font-size: 11pt;">m_pData</span><span style="line-height: 115%; font-family: 宋体; font-size: 11pt;" lang="ZH-CN">。由于</span><span style="line-height: 115%; font-family: 'Calibri','sans-serif'; font-size: 11pt;">strTemp</span><span style="line-height: 115%; font-family: 宋体; font-size: 11pt;" lang="ZH-CN">是个局部变量，但程序员运行到</span><span style="line-height: 115%; font-family: 'Calibri','sans-serif'; font-size: 11pt;">if</span><span style="line-height: 115%; font-family: 宋体; font-size: 11pt;" lang="ZH-CN">的外面是也就出了的该变量的域，就会自动调用</span><span style="line-height: 115%; font-family: 'Calibri','sans-serif'; font-size: 11pt;">strTemp</span><span style="line-height: 115%; font-family: 宋体; font-size: 11pt;" lang="ZH-CN">的析构函数，就会把</span><span style="line-height: 115%; font-family: 'Calibri','sans-serif'; font-size: 11pt;">strTemp.m_pData</span><span style="line-height: 115%; font-family: 宋体; font-size: 11pt;" lang="ZH-CN">所指向的内存释放掉。由于</span><span style="line-height: 115%; font-family: 'Calibri','sans-serif'; font-size: 11pt;">strTemp.m_pData</span><span style="line-height: 115%; font-family: 宋体; font-size: 11pt;" lang="ZH-CN">指向的内存就是当前实例之前</span><span style="line-height: 115%; font-family: 'Calibri','sans-serif'; font-size: 11pt;">m_pData</span><span style="line-height: 115%; font-family: 宋体; font-size: 11pt;" lang="ZH-CN">的内存。这就相当于自动调用析构函数释放当前实例的内存。如果新增加指针成员变量，我们只需要在析构函数里正确地释放，而不需要对赋值运算符函数做任何修改。</span></p></font></span></span><br><span style="font-family: SimSun;"><p style="text-indent: 0.5in; margin: 0in 0in 10pt;"><font size="3"><span style="font-family: 宋体;" lang="ZH-CN">本文已经收录到《</span><span style="font-family: 'Calibri','sans-serif';"><a target="_top" href="http://zhedahht.blog.163.com/blog/static/254111742011101624433132/"><font color="#0000ff"><span style="font-family: 宋体;" lang="ZH-CN">剑指</span>Offer<span style="font-family: 宋体;" lang="ZH-CN">——名企面试官精讲典型编程题</span></font></a></span><span style="font-family: 宋体;" lang="ZH-CN">》一书中，有改动，书中的分析讲解更加详细。欢迎关注。</span></font></p></span><p style="text-indent: 0.5in; margin: 0in 0in 10pt;"><span style="font-family: 宋体;" lang="ZH-CN"><font size="3">博主何海涛对本博客文章享有版权。网络转载请注明出处</font></span><a href="http://zhedahht.blog.163.com/"><font color="#990000" face="Calibri" size="3">http://zhedahht.blog.163.com/</font></a><span style="font-family: 宋体;" lang="ZH-CN"><font size="3">。整理出版物请和作者联系。</font></span></p><span style="font-family: SimSun;"></span></div>
+        <div class="nbw-blog-end"></div>
+
+        <div>
+		</div>
+		
+        <div>
+		</div>
+		
+		<div>
+      	  <div>
+		  	<div class="wumii-hook"></div>
+		  </div>
+		</div>
+		
+        <div class="ptc phide ztag">
+          <span class="ptcp">
+            <span class="iblock bcmimg">&nbsp;</span>
+            <span class="nbc-0 nbc-0-40 ptcmt ptcmt-2">评论这张</span>
+          </span>
+        </div>
+		<div class="ptc phide ztag">
+          <span class="ptcp">
+            <span class="nbc-0 nbc-0-40 ptcmi">
+              <img src="microblog.png">
+            </span>
+            <span class="nbc-0 nbc-0-40 ptcmt">转发至微博</span>
+          </span>
+        </div>
+        <div style="left: 587px; top: 96px;" class="ptc ztag phide">
+          <span class="ptcp">
+            <span class="nbc-0 nbc-0-40 ptcmi">
+              <img src="microblog.png">
+            </span>
+            <span class="nbc-0 nbc-0-40 ptcmt">转发至微博</span>
+          </span>
+        </div>
+        
+        
+        <div class="nbw-act tbar fc03 clearfix">
+         <div style="height: 24px; line-height: 24px;">
+          <div class="pleft rdif">
+	          <span class="pnt pleft" id="$_spanRecommend"><img class="pclass" src="tuijian.png"></span>
+	        <span id="$_spanShowRecommend" class="pleft rdct  phide">
+	          <span class="pleft ul fc03"><span id="$_spanRecommendCount">0</span>人</span><span class="pleft iblock icn0 icn0-722 nbw-tgl1 nas-icn0fix">&nbsp;</span><span class="pleft iblock icn0 icn0-621 nbw-tgl0 nas-icn0fix">&nbsp;</span><span class="fc07"></span>|&nbsp;
+	        </span>
+	         <span class="fc07 pleft nas-tofix">分享到：</span><span class="nas-wrap pleft"><span id="$_shareBtn_163weibo" title="分享到网易微博" class="nas-itm nas-itm0">&nbsp;</span><span id="$_shareBtn_sinaweibo" title="分享到新浪微博" class="nas-itm nas-itm6">&nbsp;</span><span id="$_shareBtn_qqweibo" title="分享到腾讯微博" class="nas-itm nas-itm9">&nbsp;</span><span class="nas-itm nas-itm7" title="分享到MSN" id="$_shareBtn_msn">&nbsp;</span><span class="nas-itm nas-itm3" title="分享到QQ空间" id="$_shareBtn_qq">&nbsp;</span><span class="nas-itm nas-itm1" title="分享到人人网" id="$_shareBtn_renren">&nbsp;</span><span class="nas-itm nas-itm2" title="分享到开心网" id="$_shareBtn_kaixin">&nbsp;</span><span class="nas-itm nas-itm4" title="分享到豆瓣" id="$_shareBtn_douban">&nbsp;</span><span class="nas-itm nas-itm8" title="分享到梦幻人生" id="$_shareBtn_dream">&nbsp;</span></span>
+          </div>
+          <div class="pright">
+              <span class="fc07">阅读(<span id="$_spaniReadCount">10140</span>)</span><span class="sep fc07">|</span>
+              <span class="fc07">评论(<span id="$_spaniCommentCount">26</span>)</span><span class="sep fc07">|</span>
+              <span class="m2a" id="$_spanCite">引用</span> <span class="m2a" id="$_spanCiteCount">(2)</span>
+              <span class="sep fc07">|</span><span id="$_spanReport" class="m2a">举报</span>
+          </div>
+         </div>
+        </div>
+      </div>
+      <div class="snl">
+        <div class="phide bdwb bds2 bdc0 rdcnt" id="$_divRecommendContent"></div>
+        <div id="yodaoad" class="bdwb bds2 bdc0" style="display: none;">&nbsp;</div>
+        <div id="$_divTopLink" class="top fc03 clearfix">
+	        <span class="ilft iblock icn0 icn0-620">&nbsp;</span>
+	        <div class="pleft thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/25411174200741295930898/">程序员面试题精选100题(29)-调整数组顺序使奇数位于偶数前面[算法]</a></div>
+	        <span class="irgt iblock icn0 icn0-619">&nbsp;</span>
+	        <div class="pright thide"><a class="m2a" href="http://zhedahht.blog.163.com/blog/static/2541117420079237185699/">程序员面试题精选100题(31)-从尾到头输出链表[数据结构]</a></div>
+	     </div> 
+	    <div class="relateblog phide">
+          <h4 class="bdwb bds2 bdc0 fc07 fs0">历史上的今天</h4>
+          <div class="cnt ztag clearfix"></div>
+        </div>
+	    <div class="relateblog phide">
+          <h4 class="bdwb bds2 bdc0 fc07 fs0">相关文章</h4>
+          <div class="cnt ztag clearfix"></div>
+        </div>
+	    <div class="author">
+	      <h4 class="bdwb bds2 bdc0 fc07 fs0">最近读者</h4>
+	      <div class="cnt ztag clearfix"><div class="pleft nlogif clearfix"> <div class="pleft nbw-f50 nbw-fce"><img class="cwd pnt" onerror="this.src=location.f60" src="face60.png"></div> <div class="m2a pright fc03"><span class="ul">登录</span>后，您可以在此留下足迹。</div> </div>        <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/wwbszd/">            <img alt="wwbszd" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/wwbszd/">          wwbszd        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/scyehan/">            <img alt="scyehan" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_001.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/scyehan/">          scyehan        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/fu1985zong/">            <img alt="stubborn" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_002.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/fu1985zong/">          stubborn        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/diichen/">            <img alt="diichen" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_003.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/diichen/">          diichen        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/yanfengdu/">            <img alt="yanfengdu" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_004.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/yanfengdu/">          yanfengd        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/byzgn/">            <img alt="byzgn" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_005.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/byzgn/">          byzgn        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/ccking69/">            <img alt="ccking69" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_006.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/ccking69/">          ccking69        </a>      </div>    </div>                <div class="iblock nbw-fce nbw-f40">      <a class="fc03 noul" target="_top" hidefocus="true" href="http://blog.163.com/ice2000feng/">            <img alt="pip" onerror="this.src=location.f40" class="cwd bdwa bdc0" src="ava_007.s">            </a>      <div class="cwd vname thide">                <a class="fc03 m2a" target="_top" hidefocus="true" href="http://blog.163.com/ice2000feng/">          pip        </a>      </div>    </div>        </div>
+	    </div>
+	    <div class="phide" id="yodaoad_1" style=""></div>
+	    <div class="comment">
+	      <h4 class="bdwb bds2 bdc0 fc07 fs0">评论</h4>
+	      <a name="blogComment" id="blogComment"></a>
+	      <div class="ztag"><div>    <div class="publish ztag"><div class="nbw-cdt edt-cmt"><div class="nbw-act tp"> <span class="m2a fc03 ztag">点击登录</span><span class="sep">|</span><span class="fc05">昵称：</span><input value="" maxlength="18" class="znick bdwa bds0 bdc0 ztag" type="text"> </div> <div class="edt ztag"><div class="ui-4286933094"><div class="zcnt ztag zbrd bdc0"><iframe src="index_1.html" frameborder="0"></iframe></div> <div class="zbtn"> <span class="zfce zbgp ztag space">&nbsp;</span> <input class="zbok zhnd ztag nbtn fc09 bdc1 bgc2" value="发表" type="button"> <span class="zbcc zhnd ztag fc04">取消</span> <div class="zvcd ztag" style="display: none;"> <label>验证码：</label><input value="" class="zbrd xtag bdc0" maxlength="4" type="text"><img src="empty.png" class="xtag" title="点击刷新验证码"><span class="xtag fc04">换一张</span> </div> </div> <div class="zmsg fc07" style="display: none;"><span class="zicn zbgp iblock">&nbsp;</span><span class="ztag"></span></div></div></div> <div style="display: none;" class="hnt thide ztag"></div></div></div>
+    <div class="bdwt bds2 bdc0 phide" id="yodaoad_2" style=""></div>
+    <div class="ztag bdwt bds2 bdc0">
+      <div class="case"><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="江苏 南京" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">02-14 21:21</span><div class="tx atag"><span title="江苏 南京" class="fc07">longxy</span></div></div> <div class="cnt pre atag"><span style="">针对最后的版本，加入新的指针类型的数据成员，依然需要同时修改赋值运算符函数和析构函数，在赋值运算符函数中拷贝该成员的数据，在析构函数中释放其内存。所以为了避免遗漏而使用这个版本好像说不通。</span><div><span style=""><br></span></div><div><span style=""><br></span></div></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://zhedahht.blog.163.com/" target="_top" hidefocus="true"><img src="ava_008.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2008-01-14 09:34</span><div class="tx atag"><a title="海纳百川，涛声依旧" class="fc03 noul" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">海纳百川，涛声依旧</span></a></div></div> <div class="cnt pre atag"><blockquote class="selitm bd01"><span class="a_a c05" href="http://zyin3526.blog.163.com/" target="_blank">张尹</span><span class="c05 dot">：</span><br><span><blockquote class="selitm bd01"><span class="a_a c05" href="http://zhedahht.blog.163.com/" target="_blank">海纳百川，涛声依旧</span><span class="c05 dot">：</span><br><span>
+<p>网易博友22和张尹：</p>
+<p>你们的观点中关于strTemp会在赋值结束之后被析构掉的部分是正确的。但是，析构是在赋值之后，被释放的内存是原来的m_pData，而新的m_pData指向了新分配的内存，这部分内存不会随着strTemp的析构而被释放掉。</p>
+<p>感兴趣的话可以试着debug一下。</p>
+<p>另外，张尹您给出的代码有内存泄露。您忘了释放原来的m_pData，对吧？</p></span></blockquote>"海纳百川，涛声依旧"<br>你好，如果临时对象strTemp被析构，那么你所复制的对象就保存了一个指向已经被释放的内存的指针m_pData（因为你只是进行指针赋值，它们指向同一块内存）；<br>另外，你所说的内存泄漏问题根本不存在，因为赋值不能改变原有对象的内容，你自己把原来对象的m_pData释放掉试试，你的程序不异常才怪</span></blockquote>你这么坚信我的代码会有异常啊<img src="face0.gif">不知道有没有拿我的代码去调试过？</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a target="_blank" hidefocus="true"><img title="辽宁 大连" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-09-24 15:43</span><div class="tx atag"><span title="辽宁 大连" class="fc07">123</span><span class="fc07">&nbsp;回复&nbsp;</span><a class="fc03 noul" title="海纳百川，涛声依旧" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">海纳百川，涛声依旧</span></a></div></div> <div class="cnt pre atag">海涛，是不是要说明下拷贝构造函数是深拷贝啊？</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="北京 西城区" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2009-06-28 18:35</span><div class="tx atag"><span title="北京 西城区" class="fc07">网易博友72</span></div></div> <div class="cnt pre atag"><blockquote class="selitm bd01"><a class="c05" target="_top" href="http://zyin3526.blog.163.com/">张尹</a><span class="c05 dot">：</span><br><span><blockquote class="selitm bd01"><span class="a_a c05" href="http://zhedahht.blog.163.com/" target="_blank">海纳百川，涛声依旧</span><span class="c05 dot">：</span><br><span><p>网易博友22和张尹：</p>
+<p>你们的观点中关于strTemp会在赋值结束之后被析构掉的部分是正确的。但是，析构是在赋值之后，被释放的内存是原来的m_pData，而新的m_pData指向了新分配的内存，这部分内存不会随着strTemp的析构而被释放掉。</p>
+<p>感兴趣的话可以试着debug一下。</p>
+<p>另外，张尹您给出的代码有内存泄露。您忘了释放原来的m_pData，对吧？</p> </span></blockquote>"海纳百川，涛声依旧"<br>你好，如果临时对象strTemp被析构，那么你所复制的对象就保存了一个指向已经被释放的内存的指针m_pData（因为你只是进行指针赋值，它们指向同一块内存）；<br>另外，你所说的内存泄漏问题根本不存在，因为赋值不能改变原有对象的内容，你自己把原来对象的m_pData释放掉试试，你的程序不异常才怪</span></blockquote>还是多看书多学习吧</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a target="_blank" hidefocus="true"><img title="辽宁 大连" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-09-24 15:42</span><div class="tx atag"><span title="辽宁 大连" class="fc07">123</span><span class="fc07">&nbsp;回复&nbsp;</span><span title="辽宁 大连" class="fc07">网易博友72</span></div></div> <div class="cnt pre atag">张尹说的没错，lz没说拷贝构造函数是深拷贝，容易让人误解</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://zyin3526.blog.163.com/" target="_top" hidefocus="true"><img src="ava_009.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2008-01-10 21:37</span><div class="tx atag"><a title="张尹" class="fc03 noul" target="_top" href="http://zyin3526.blog.163.com/"><span class="m2a">张尹</span></a></div></div> <div class="cnt pre atag"><blockquote class="selitm bd01"><span class="a_a c05" href="http://zhedahht.blog.163.com/" target="_blank">海纳百川，涛声依旧</span><span class="c05 dot">：</span><br><span><p>网易博友22和张尹：</p>
+<p>你们的观点中关于strTemp会在赋值结束之后被析构掉的部分是正确的。但是，析构是在赋值之后，被释放的内存是原来的m_pData，而新的m_pData指向了新分配的内存，这部分内存不会随着strTemp的析构而被释放掉。</p>
+<p>感兴趣的话可以试着debug一下。</p>
+<p>另外，张尹您给出的代码有内存泄露。您忘了释放原来的m_pData，对吧？</p> </span></blockquote>"海纳百川，涛声依旧"<br>你好，如果临时对象strTemp被析构，那么你所复制的对象就保存了一个指向已经被释放的内存的指针m_pData（因为你只是进行指针赋值，它们指向同一块内存）；<br>另外，你所说的内存泄漏问题根本不存在，因为赋值不能改变原有对象的内容，你自己把原来对象的m_pData释放掉试试，你的程序不异常才怪</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div class="reps atag"><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a target="_blank" hidefocus="true"><img title="陕西 西安" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-01-24 15:01</span><div class="tx atag"><span title="陕西 西安" class="fc07">新手</span><span class="fc07">&nbsp;回复&nbsp;</span><a class="fc03 noul" title="张尹" target="_top" href="http://zyin3526.blog.163.com/"><span class="m2a">张尹</span></a></div></div> <div class="cnt pre atag">博主的拷贝构造函数应该是浅拷贝吧 &nbsp; 个人觉得如果是浅拷贝应该不存在你说的这个问题吧<div>鄙人菜鸟 &nbsp;说错勿怪</div></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div><div class="nbw-cmt bdwt bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f40 pleft"> <a target="_blank" hidefocus="true"><img title="辽宁 大连" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-09-24 15:37</span><div class="tx atag"><span title="辽宁 大连" class="fc07">123</span><span class="fc07">&nbsp;回复&nbsp;</span><a class="fc03 noul" title="张尹" target="_top" href="http://zyin3526.blog.163.com/"><span class="m2a">张尹</span></a></div></div> <div class="cnt pre atag">拷贝构造函数应该是深拷贝，应该可以避免这种情况，lz没把拷贝函数也贴出来，容易让人误解。</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> </div> </div></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://a929060944.blog.163.com/" target="_top" hidefocus="true"><img src="ava_010.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-09-19 16:43</span><div class="tx atag"><a title="929060944" class="fc03 noul" target="_top" href="http://a929060944.blog.163.com/"><span class="m2a">929060944</span></a></div></div> <div class="cnt pre atag">你好，非常感谢你的分享，我学到了很多。在这个题改进算法中直接使用对象的私有成员，是不是不合法的呀？谢谢</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="江苏 南京" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-07-27 14:58</span><div class="tx atag"><span title="江苏 南京" class="fc07">兔子</span></div></div> <div class="cnt pre atag">copy and swap 技术</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-05-20 17:20</span><div class="tx atag"><span class="fc07">gnuhpc</span></div></div> <div class="cnt pre atag"><span class="Apple-style-span" style="">&nbsp;Effective C++ Third Edition 55 Specific Ways to Improve Your Programs and Designs&nbsp;&gt;&nbsp;Constructors, Destructors, And Assignment Operators&nbsp;&gt;&nbsp;Item 11 Handle Assignment To Self In Operator</span><div><br></div><div>这个确实没有什么可以争论的。</div></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://zhedahht.blog.163.com/" target="_top" hidefocus="true"><img src="ava_008.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2011-04-20 08:36</span><div class="tx atag"><a title="何海涛" class="fc03 noul" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">何海涛</span></a></div></div> <div class="cnt pre atag"><p>之前的分析说明问题不够清晰。今天做了修改。欢迎大家批评指正。</p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://wust2001.blog.163.com/" target="_top" hidefocus="true"><img src="ava_011.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2008-06-20 18:23</span><div class="tx atag"><a title="wust2001" class="fc03 noul" target="_top" href="http://wust2001.blog.163.com/"><span class="m2a">wust2001</span></a></div></div> <div class="cnt pre atag"><blockquote class="selitm bd01"><span class="a_a c05" href="http://zyin3526.blog.163.com/" target="_blank">张尹</span><span class="c05 dot">：</span><br><span><blockquote class="selitm bd01"><span class="a_a c05" target="_blank" href="http://zhedahht.blog.163.com/">海纳百川，涛声依旧</span><span class="c05 dot">：</span><br><span>
+<p>网易博友22和张尹：</p>
+<p>你们的观点中关于strTemp会在赋值结束之后被析构掉的部分是正确的。但是，析构是在赋值之后，被释放的内存是原来的m_pData，而新的m_pData指向了新分配的内存，这部分内存不会随着strTemp的析构而被释放掉。</p>
+<p>感兴趣的话可以试着debug一下。</p>
+<p>另外，张尹您给出的代码有内存泄露。您忘了释放原来的m_pData，对吧？</p></span></blockquote>"海纳百川，涛声依旧"<br>你好，如果临时对象strTemp被析构，那么你所复制的对象就保存了一个指向已经被释放的内存的指针m_pData（因为你只是进行指针赋值，它们指向同一块内存）；<br>另外，你所说的内存泄漏问题根本不存在，因为赋值不能改变原有对象的内容，你自己把原来对象的m_pData释放掉试试，你的程序不异常才怪 </span></blockquote>楼主的代码没有问题.&nbsp;<br>张尹&nbsp;&nbsp;的代码会导致内存泄漏.&nbsp;<br>m_pData&nbsp;=&nbsp;pMyStrTmp-&gt;m_pData&nbsp;<br>这段操作导致析构时释放新申请的空间,而原来m_pData指向的空间没有被释放.&nbsp;<br>&nbsp;<br>临时对象在函数返回时就析构了&nbsp;,这句话本身没错.&nbsp;<br>但是因为临时对象和需要被赋值的对象的m_pData指针交换过,因此析构时释放的是需赋值对象的原来的字符串空间,而不是临时对象的空间.一般教科书上面讲"当内存申请成功后,一般情况下不允许改变指针变量的值.除非在程序中提供了恢复该指针变量初值的措施．否则，将会引起系统内存管理的混乱"&nbsp;&nbsp;这里相当于使用了一个小技巧．&nbsp;<br></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://zhedahht.blog.163.com/" target="_top" hidefocus="true"><img src="ava_008.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-12-29 13:45</span><div class="tx atag"><a title="海纳百川，涛声依旧" class="fc03 noul" target="_top" href="http://zhedahht.blog.163.com/"><span title="博主" class="iblock icn0 icn0-49">&nbsp;</span><span class="m2a">海纳百川，涛声依旧</span></a></div></div> <div class="cnt pre atag"><p>网易博友22和张尹：</p>
+<p>你们的观点中关于strTemp会在赋值结束之后被析构掉的部分是正确的。但是，析构是在赋值之后，被释放的内存是原来的m_pData，而新的m_pData指向了新分配的内存，这部分内存不会随着strTemp的析构而被释放掉。</p>
+<p>感兴趣的话可以试着debug一下。</p>
+<p>另外，张尹您给出的代码有内存泄露。您忘了释放原来的m_pData，对吧？</p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://zyin3526.blog.163.com/" target="_top" hidefocus="true"><img src="ava_009.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-11-07 00:16</span><div class="tx atag"><a title="张尹" class="fc03 noul" target="_top" href="http://zyin3526.blog.163.com/"><span class="m2a">张尹</span></a></div></div> <div class="cnt pre atag">网易博友22，你说对了，楼主的解决方案存在很明显的严重错误，临时对象在函数返回时就析构了，所以赋值操作的结果是未知的。<br>类似情况，在工作中一定要避免，特别是在大型系统软件中。<br>建议大家增强C++内存管理机制的理解。<br><br>网易博友56的实现，也有问题，如果m_pData指向的内存存放的不是字符串，对其求strlen就是未知的，即使存放字符串这种做法也是错误的。<br><br>网易博友188的实现也是不可以的，因为在析构时会造成对同一内存地址重复释放的问题，一定要避免。<br><br>下面的实现供大家参考：<br>CMyString&amp;&nbsp;CMyString::operator&nbsp;=(const&nbsp;CMyString&nbsp;&amp;str)<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(this&nbsp;==&nbsp;&amp;str)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;*this;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CMyString*&nbsp;pMyStrTmp&nbsp;=&nbsp;new&nbsp;CMyString(str);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(NULL&nbsp;==&nbsp;pMyStrTmp)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;std::bad_alloc();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_pData&nbsp;=&nbsp;pMyStrTmp-&gt;m_pData;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;*this;<br>}<br>注：该类必须重载“==”操作符，而且主程序也要处理内存申请失败的异常。</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="山东 滨州" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-10-03 12:37</span><div class="tx atag"><span title="山东 滨州" class="fc07">网易博友22</span></div></div> <div class="cnt pre atag">为什么这个类中没有析构函数的实现啊？析构函数应该负责释放动态分配的内存空间。
+<br>那么：
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CMyString&nbsp;strTemp(str);
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这个变量&nbsp;strtemp的m_pData&nbsp;指向的内存空间应该在赋值结束后被释放
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;char*&nbsp;pTemp&nbsp;=&nbsp;strTemp.m_pData;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strTemp.m_pData&nbsp;=&nbsp;m_pData;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_pData&nbsp;=&nbsp;pTemp;
+<br>
+<br>最后程序肯定会出错。
+<br>我的观点不一定对，有错的话请告诉我。zfg87415@163.com</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://qf-bupt.blog.163.com/" target="_top" hidefocus="true"><img src="ava_012.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-08-28 16:23</span><div class="tx atag"><a title="qf-bupt" class="fc03 noul" target="_top" href="http://qf-bupt.blog.163.com/"><span class="m2a">qf-bupt</span></a></div></div> <div class="cnt pre atag">恩，这个方法不错！</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="上海 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-07-29 15:20</span><div class="tx atag"><span title="上海 " class="fc07">aqian</span></div></div> <div class="cnt pre atag">呵呵，不错，支持博主</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="上海 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-07-20 01:36</span><div class="tx atag"><span title="上海 " class="fc07">网易博友42</span></div></div> <div class="cnt pre atag">看看effective&nbsp;c++第三版
+<br>里面有说到swap的安全操作，以及最新的operator=实现方式</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://2008gi.gi.blog.163.com/" target="_top" hidefocus="true"><img src="ava_013.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-07-01 10:41</span><div class="tx atag"><a title="2008gi.gi" class="fc03 noul" target="_top" href="http://2008gi.gi.blog.163.com/"><span class="m2a">2008gi.gi</span></a></div></div> <div class="cnt pre atag">经常可以来吗？因为我是初学者。所以没有什么言论发表！</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://dz1150.blog.163.com/" target="_top" hidefocus="true"><img src="ava_014.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-06-19 07:14</span><div class="tx atag"><a title="dz1150" class="fc03 noul" target="_top" href="http://dz1150.blog.163.com/"><span class="m2a">dz1150</span></a></div></div> <div class="cnt pre atag">看一看，学一学<br><br></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="江苏 南京" src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-06-05 13:04</span><div class="tx atag"><span title="江苏 南京" class="fc07">网易博友163</span></div></div> <div class="cnt pre atag">交换了两个指针，这只是个小技巧而已，谈不上优雅吧，
+<br>而且看上去有点怪。。。</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="上海 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-05-26 13:36</span><div class="tx atag"><span title="上海 " class="fc07">网易博友56</span></div></div> <div class="cnt pre atag">我觉得这样就可以了啊&nbsp;很直观&nbsp;不需要copy&nbsp;constructor，感觉用copy&nbsp;constructor&nbsp;有太多弯路要走，很不直观，不易理解。<br>CMyString&amp;&nbsp;CMyString::operator&nbsp;=(const&nbsp;CMyString&nbsp;&amp;str)<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(this&nbsp;!=&nbsp;&amp;str)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;char&nbsp;tmp[]&nbsp;=&nbsp;new&nbsp;char[strlen(str.m_pData)&nbsp;+&nbsp;1];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delete&nbsp;m_pData&nbsp;[];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_pData=tmp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;*this;<br>}</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a href="http://blog.163.com/lizzy161@126/" target="_top" hidefocus="true"><img src="ava_015.s" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-05-25 10:05</span><div class="tx atag"><a title="会飞的小猫" class="fc03 noul" target="_top" href="http://blog.163.com/lizzy161@126/"><span class="m2a">会飞的小猫</span></a></div></div> <div class="cnt pre atag"><p><font color="#ff99cc" size="7">猫咪的软件，收藏！</font></p></div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="北京 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-05-21 19:51</span><div class="tx atag"><span title="北京 " class="fc07">网易博友188</span></div></div> <div class="cnt pre atag">请问我这样做可以吗？
+<br>
+<br>CMyString&amp;&nbsp;CMyString::operator&nbsp;=(const&nbsp;CMyString&nbsp;&amp;str)
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(this&nbsp;!=&nbsp;&amp;str)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_pData&nbsp;=&nbsp;str.m_pData;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;*this;
+<br>}</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div><div class="nbw-cmt bdwb bds2 bdc0 clearfix"> <div class="nbw-fce nbw-f50 pleft"> <a target="_blank" hidefocus="true"><img title="上海 " src="face60.png" class="cwd atag"></a> </div> <div class="thde"> <div class="tt"><span class="pright fc07 atag">2007-05-16 08:57</span><div class="tx atag"><span title="上海 " class="fc07">Stoney</span></div></div> <div class="cnt pre atag">The&nbsp;new&nbsp;operator&nbsp;has&nbsp;three&nbsp;overloaded&nbsp;version:&nbsp;new(size_t)&nbsp;or&nbsp;the&nbsp;plain&nbsp;new,&nbsp;new(size_t,&nbsp;void&nbsp;*)&nbsp;or&nbsp;the&nbsp;inplacement&nbsp;new,&nbsp;and&nbsp;new(size_t,&nbsp;const&nbsp;std::nothrow&nbsp;&amp;)&nbsp;or&nbsp;the&nbsp;non-throw&nbsp;new.&nbsp;So,&nbsp;we&nbsp;may&nbsp;use&nbsp;non-throw&nbsp;new&nbsp;here&nbsp;to&nbsp;get&nbsp;a&nbsp;NULL&nbsp;pointer&nbsp;rather&nbsp;than&nbsp;throwing&nbsp;std::bad_alloc&nbsp;exception.<br>When&nbsp;rewrite&nbsp;new&nbsp;operator&nbsp;for&nbsp;a&nbsp;class,&nbsp;it&nbsp;is&nbsp;recommended&nbsp;to&nbsp;provide&nbsp;all&nbsp;the&nbsp;three&nbsp;versions.&nbsp;Otherwise,&nbsp;it&nbsp;may&nbsp;fail&nbsp;to&nbsp;fit&nbsp;STL&nbsp;containers,&nbsp;because&nbsp;if&nbsp;defination&nbsp;of&nbsp;new&nbsp;operator&nbsp;is&nbsp;found&nbsp;in&nbsp;the&nbsp;class's&nbsp;scope&nbsp;although&nbsp;it&nbsp;doesn't&nbsp;match,&nbsp;compiler&nbsp;will&nbsp;not&nbsp;look&nbsp;the&nbsp;global&nbsp;scope&nbsp;for&nbsp;other&nbsp;versions&nbsp;of&nbsp;new&nbsp;operator.<br>Another&nbsp;use&nbsp;of&nbsp;automatic&nbsp;destruction&nbsp;of&nbsp;object&nbsp;on&nbsp;stack&nbsp;is&nbsp;to&nbsp;lock&nbsp;a&nbsp;function.&nbsp;If&nbsp;lock&nbsp;primative&nbsp;is&nbsp;executed&nbsp;in&nbsp;its&nbsp;constructor&nbsp;and&nbsp;unlock&nbsp;in&nbsp;destructor,&nbsp;the&nbsp;function&nbsp;can&nbsp;be&nbsp;protected&nbsp;well.&nbsp;It&nbsp;is&nbsp;useful&nbsp;especially&nbsp;when&nbsp;there're&nbsp;several&nbsp;return-pathes.</div> <div class="op fc03 nbw-act atag"><span class="m2a">回复</span></div> <div style="display: none;" class="reps atag"></div> <div class="cover"></div> </div> </div></div>
+      <div style="" class="clearfix"><div style="display: none;" class="ui-9908898950 noselect js-zfrg-6540"><span class="pgi pgb iblock fc03 bgc9 bdc0 js-znpg-097">上一页</span> <span class="pgi zpg1 iblock fc03 bgc9 bdc0 js-zslt-987 fc05">1</span> <span class="frg fgp fc06">...</span> <span style="display: none;" class="pgi zpg2 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg3 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg4 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg5 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg6 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg7 iblock fc03 bgc9 bdc0">-1</span> <span style="display: none;" class="pgi zpg8 iblock fc03 bgc9 bdc0">-1</span> <span class="frg fgn fc06">...</span> <span style="display: none;" class="pgi zpg9 iblock fc03 bgc9 bdc0">-1</span> <span class="pgi pgb iblock fc03 bgc9 bdc0 js-znpg-097">下一页</span></div></div>
+    </div>
+  </div></div>
+	    </div>
+	    <div class="phide" id="yodaoad_3" style=""></div>
+      </div>
+      <div class="cite ztag fc03 phide"></div>
+    </div>
+   </div>
+  </div>
+</div>
+
+
+
+</div>
+      <div class="l cl h100">&nbsp;</div>
+      <div class="r cr h100">&nbsp;</div>
+    </div>
+    <div class="nb-mb lcr bh space">
+      <div class="l bl bh">&nbsp;</div>
+      <div class="r br bh">&nbsp;</div>
+      <div class="c bc bh lcr">&nbsp;</div>
+    </div>
+  </div>
+
+</div>
+      <div class="l wl g lg h100">&nbsp;</div>
+      <div class="l wl t lt">&nbsp;</div>
+      <div class="l wl b lb">&nbsp;</div>
+      <div class="r wr g rg h100">&nbsp;</div>
+      <div class="r wr t rt">&nbsp;</div>
+      <div class="r wr b rb">&nbsp;</div>
+    </div>
+  </div>
+  <div class="nb-are nb-smb"><div class="wkg h space"><div class="l h">&nbsp;</div><div class="r h">&nbsp;</div><div class="c h">&nbsp;</div></div></div>
+<div class="nb-are nb-fot">
+  <div class="wkg h">
+    <h2>页脚</h2>
+    <div class="k">      <a rel="nofollow" class="m2a fc08" target="_top" href="http://corp.163.com/index_gb.html">公司简介</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://gb.corp.163.com/gb/contactus.html">联系方法</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://corp.163.com/gb/job/job.html">招聘信息</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://help.163.com/?b13abk1">客户服务</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://corp.163.com/gb/legal/legal.html">隐私政策</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://blog.163.com/public/theme/">博客风格</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://blog.163.com/services/wapblog.html">手机博客</a>
+      <span class="p fc10">-</span>
+      <a rel="nofollow" class="m2a fc08" target="_top" href="http://blog.163.com/vip.do">VIP博客</a>
+      
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="http://zhedahht.blog.163.com/rss/">
+      <span class="p fc10">-</span><span class="fc08" id="$_foot_subscribe"><span class="iblock m2a icn0 icn0-919">&nbsp;</span><a class="m2a fc08">订阅此博客</a></span>
+    </div>
+    <p class="fc08">网易公司版权所有&nbsp;©1997-2012</p>
+  </div>
+</div></div>
+    <!--[if lte IE 6]></div><![endif]-->
+  <!--[if lte IE 6]></div><![endif]-->
+  <div class="nb-layer" id="blog-163-com-layer"></div>
+  
+
+     <div style="position: absolute; top: 0pt; right: 0pt; z-index: 999; width: 1px; height: 1px; overflow: hidden;"> <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="ntsstorage" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" height="1" width="1"> <param name="movie" value="/common/storage.swf?t=1333092130894"> <param name="AllowScriptAccess" value="sameDomain"> <embed src="storage.swf" name="ntsstorage" allowscriptaccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" height="1" width="1">  </object> </div><iframe src="index_2.html" id="api.blog.163.com" name="api.blog.163.com" style="display: none;" height="0" width="0"></iframe><iframe src="index_3.html" id="photo.163.com" name="photo.163.com" style="display: none;" height="0" width="0"></iframe><iframe src="index_4.html" id="ud.blog.163.com" name="ud.blog.163.com" style="display: none;" height="0" width="0"></iframe>
+    
+  
+  
+
+
+    
+
+
+</body>
+</html>

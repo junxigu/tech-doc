@@ -1,0 +1,119 @@
+/* ::::: http://dev.yesky.com/TLimages2009/yesky/css/yesky_content_soft.css ::::: */
+
+body { font-size: 12px; font-family: "Arial","宋体"; margin: 0pt; padding: 0pt; background: none repeat scroll 0% 0% rgb(255, 255, 255); }
+img, form, div, ul, li, dl, dt, dd, p, input, table, tr, td, h1, h2 { border: 0pt none; padding: 0pt; margin: 0pt; }
+a:link { text-decoration: underline; color: rgb(31, 58, 135); font-family: "Arial"; }
+a:visited { text-decoration: underline; color: rgb(31, 58, 135); }
+a:hover { text-decoration: underline; color: rgb(204, 0, 0); }
+a:active { text-decoration: underline; color: rgb(204, 0, 0); }
+ul, li { list-style-type: none; padding: 0pt; margin: 0pt; }
+.w950 { margin: auto; width: 950px; clear: both; }
+.floatl { float: left; }
+.floatr { float: right; }
+.mgt6 { margin-top: 6px; }
+.fontb { font-weight: bold; }
+.font14 { font-size: 14px; }
+.pdl8 { padding-left: 8px; }
+.none { display: none; }
+.clear { clear: both; font-size: 0pt; }
+.clearh { clear: both; height: 8px; font-size: 0pt; }
+.content_dh .moredq, .c_search .input, .c_search .sub, .c_back, .c_pagedh, .c_qltitle, .c_rmenu, .c_rpartner .linkname, .c_bottomdhbox, .c_sqlist li, #numpage, .c_szxgxist li, .c_szxgxist p, .c_rprobox div { background: url('y_contentbgsoft.gif') no-repeat scroll 0% 0% transparent; }
+.content_dh { width: 944px; margin: auto; padding: 15px 0pt 4px 6px; height: 18px; position: relative; z-index: 999; }
+.content_dh p a:link, .content_dh p a:visited { text-decoration: none; margin-right: 9px; }
+.content_dh p a:active, .content_dh p a:hover { text-decoration: underline; margin-right: 9px; }
+.content_dh p { float: left; }
+.content_dh .floatr { float: right; }
+.content_dh .line { font-size: 12px; margin: 0pt 5px 0pt -5px; }
+.content_dh .moredq { width: 60px; background-position: -260px 5px; height: 18px; cursor: pointer; }
+.content_dh .morelist { background: none repeat scroll 0% 0% rgb(245, 248, 253); border: 1px solid rgb(194, 217, 242); padding: 6px 0pt 6px 10px; text-align: center; width: 70px; line-height: 21px; position: absolute; z-index: 999; left: 700px; top: 30px; }
+.ad950 { width: 760px; float: left; }
+.adtext { width: 176px; float: right; border: 1px solid rgb(151, 172, 193); padding: 4px 0pt 0pt 6px; }
+.adtext li { width: 170px; height: 21px; overflow: hidden; white-space: nowrap; float: left; font-family: "宋体"; }
+.ad580 { text-align: center; margin: auto; }
+.adpip { float: left; margin: 0pt 6px 6px 0pt; }
+.adright { width: 300px; text-align: center; }
+.guanggao { float: left; margin-right: 6px; }
+.dh_tj { border: 1px solid rgb(191, 191, 191); width: 948px; height: 25px; line-height: 25px; margin: 6px auto 0pt; font-size: 14px; clear: both; }
+.dh_tj span { color: rgb(255, 102, 0); font-weight: bold; margin-left: 12px; }
+.dh_tj a:link, .dh_tj a:visited { text-decoration: none; margin: 0pt 4px; font-weight: bold; }
+.dh_tj a:active, .dh_tj a:hover { text-decoration: underline; margin: 0pt 4px; font-weight: bold; }
+.dh_bline { border-top: 2px solid rgb(232, 235, 243); width: 950px; margin: 0pt auto 4px; font-size: 1px; }
+.c_position { float: left; font-size: 14px; color: rgb(31, 58, 135); border-left: 1px solid rgb(219, 219, 219); height: 22px; line-height: 22px; margin: 6px 0pt 0pt 8px; }
+.c_position a:link, .c_position a:visited { text-decoration: none; margin: 0pt 2px; }
+.c_position a:active, .c_position a:hover { text-decoration: underline; margin: 0pt 2px; }
+.c_search { float: right; width: 300px; margin-top: 6px; }
+.c_search p { float: left; }
+.c_search .input { background-position: 0pt 0pt; width: 150px; height: 17px; color: rgb(154, 154, 154); border: 1px solid rgb(164, 164, 164); padding: 4px 0pt 0pt 23px; }
+.c_search select { border: 1px solid rgb(164, 164, 164); width: 56px; margin: 1px 0pt 0pt 3px; font-size: 15px; }
+.c_search .sub { background-position: 0pt -27px; width: 62px; height: 25px; color: rgb(255, 255, 255); margin: 1px 0pt 0pt 3px; font-weight: bold; font-size: 14px; line-height: 25px; padding-bottom: 6px; border: 0pt none; }
+.c_left { width: 638px; float: left; border: 1px solid rgb(194, 217, 242); background: none repeat scroll 0% 0% rgb(245, 248, 253); }
+.c_othertitle { width: 636px; margin: 1px; height: 27px; }
+.c_right { width: 300px; float: right; }
+.c_title { width: 600px; margin: auto; border-bottom: 1px solid rgb(194, 217, 242); padding: 6px 0pt; clear: both; }
+.c_title h1 { font-size: 21px; font-weight: bold; font-family: "Arial"; text-align: center; }
+.c_title h2 { font-size: 12px; font-family: "Arial"; text-align: center; font-weight: normal; margin-top: 6px; }
+.c_title h2 span { margin: 0pt 6px; }
+.c_wenzhang { width: 600px; margin: 6px auto; text-align: left; font-size: 10.5pt; line-height: 24px; }
+.c_wenzhang p { margin-bottom: 12px; }
+.c_xgbox { width: 600px; margin: auto; clear: both; }
+.c_xiangguan ul { width: 380px; float: left; margin-left: 5px; }
+.c_back { background-position: 0pt -167px; width: 170px; height: 21px; float: right; font-size: 14px; font-weight: bold; padding: 12px 0pt 0pt 20px; margin-top: 78px; }
+.c_back a:link, .c_back a:visited { text-decoration: none; }
+.c_back a:active, .c_back a:hover { text-decoration: underline; }
+#numpage { padding: 9px 6px 12px 0pt; float: left; font-weight: bold; border: 1px solid rgb(194, 217, 242); width: 594px; text-align: right; background-position: -216px -227px; margin-top: 6px; }
+#numpage span { color: rgb(255, 0, 0); }
+#textpage { clear: both; }
+#textpage ul { width: 576px; margin: 0pt 0pt 6px 19px; border-right: 1px solid rgb(194, 217, 242); border-width: 0pt 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(194, 217, 242) rgb(194, 217, 242); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-image: none; background: url('y_contentlinegif.gif') repeat-y scroll 0% 0% rgb(255, 255, 255); padding: 12px 0pt 12px 24px; float: left; }
+#textpage li { float: left; width: 280px; overflow: hidden; white-space: nowrap; line-height: 21px; }
+#textpage li span { color: rgb(255, 102, 0); }
+.c_include { width: 180px; color: rgb(31, 58, 135); text-align: right; float: right; padding-top: 14px; }
+.c_include a { text-decoration: none; }
+.c_leftmenu { background: none repeat scroll 0% 0% rgb(255, 127, 0); width: 588px; margin: 6px 0pt 0pt 19px; height: 22px; border: 1px solid rgb(193, 102, 11); line-height: 22px; color: rgb(255, 255, 255); padding: 0pt 6px; float: left; }
+.c_probox { border-right: 1px solid rgb(194, 217, 242); border-width: 0pt 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(194, 217, 242) rgb(194, 217, 242); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-image: none; width: 600px; margin-left: 19px; font-family: "宋体"; color: rgb(31, 58, 135); background: none repeat scroll 0% 0% rgb(255, 255, 255); float: left; }
+.c_qlbox { width: 600px; margin-left: 20px; font-family: "宋体"; background: none repeat scroll 0% 0% rgb(255, 255, 255); float: left; }
+.c_sqlist { margin: 6px 0pt; line-height: 23px; padding-bottom: 6px; }
+.c_sqlist li { background-position: -297px -200px; float: left; margin-left: 10px; line-height: 23px; width: 280px; overflow: hidden; white-space: nowrap; padding-left: 10px; }
+.c_hottj li { width: 108px; float: left; line-height: 21px; margin: 12px 20px; text-align: center; }
+.c_hottj li img { width: 104px; height: 85px; padding: 2px; border: 1px solid rgb(217, 217, 217); }
+.c_hottj li a:link, .c_hottj li a:visited { font-family: "Arial","宋体"; }
+.c_hottj li a:active, .c_hottj li a:hover { font-family: "Arial","宋体"; }
+.c_rightc { border: 1px solid rgb(194, 217, 242); width: 278px; float: left; padding: 10px; }
+.c_rmenu { width: 278px; background-position: -3px -79px; height: 25px; float: left; }
+.c_rmenu p { padding: 7px 0pt 0pt 14px; }
+.c_rbox { width: 270px; margin: 2px 0pt 2px 4px; float: left; }
+.c_rbox li { width: 270px; line-height: 21px; overflow: hidden; white-space: nowrap; font-family: "宋体"; color: rgb(31, 58, 135); }
+.c_rcenter { width: 270px; margin: 2px 0pt 2px 4px; float: left; }
+.c_rwygz { width: 274px; margin: 2px auto; float: left; }
+.c_rwygz li { width: 274px; clear: both; height: 21px; }
+.c_rwygz li b { display: block; float: left; background: none repeat scroll 0% 0% rgb(141, 161, 198); width: 11px; margin: 5px 5px 0pt 0pt; color: rgb(255, 255, 255); text-align: center; font-size: 9px; height: 12px; font-family: "sans-serif"; font-weight: normal; }
+.c_rwygz li div { float: left; width: 206px; margin-top: 3px; overflow: hidden; white-space: nowrap; }
+.c_rwygz li span { float: right; display: block; width: 46px; overflow: hidden; white-space: nowrap; margin-top: 3px; text-align: right; }
+#red1 { background: none repeat scroll 0% 0% rgb(255, 0, 0); }
+#red2 { background: none repeat scroll 0% 0% rgb(255, 102, 0); }
+#red3 { background: none repeat scroll 0% 0% rgb(255, 153, 0); }
+.active { cursor: pointer; border-width: 1px 1px 0pt; border-style: solid solid none; border-color: rgb(217, 217, 217) rgb(217, 217, 217) -moz-use-text-color; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-image: none; padding: 0pt 2px; text-align: center; height: 21px; line-height: 21px; font-weight: bold; background: none repeat scroll 0% 0% rgb(255, 255, 255); float: left; color: rgb(31, 58, 135); margin-left: 3px; font-family: "Arial"; }
+.normal { cursor: pointer; border: 1px solid rgb(217, 217, 217); padding: 0pt 2px; text-align: center; height: 21px; line-height: 21px; float: left; background: none repeat scroll 0% 0% rgb(214, 230, 248); margin-left: 3px; font-family: "Arial"; }
+.c_rartph { width: 274px; margin: 2px auto; float: left; }
+.c_rartphl { float: left; }
+.c_rartphl b { display: block; background: none repeat scroll 0% 0% rgb(141, 161, 198); width: 11px; margin: 5px 5px 9px 0pt; color: rgb(255, 255, 255); text-align: center; font-size: 9px; height: 12px; font-family: "sans-serif"; font-weight: normal; }
+.c_rartphr { float: right; width: 252px; }
+.c_rartphr li { width: 252px; overflow: hidden; white-space: nowrap; float: left; line-height: 21px; }
+a.y12:link, a.y12:visited { color: rgb(255, 102, 0); }
+a.y12:active, a.y12:hover { color: rgb(204, 0, 0); }
+.mgb20 { margin-bottom: 20px; }
+.channel_content { float: left; }
+.c_commentname { margin-bottom: 1px; font-size: 14px; font-weight: bold; color: rgb(255, 255, 255); }
+.c_commentname a { color: rgb(255, 255, 255); }
+.c_commentname span { color: rgb(255, 102, 0); }
+.c_commentlist td { background: none repeat scroll 0% 0% rgb(255, 255, 255); font-size: 12px; padding: 0pt 4px; line-height: 21px; font-family: "Arial"; }
+.c_commentlist b { color: rgb(255, 0, 0); }
+.c_commentlist span { color: rgb(0, 128, 0); }
+.c_commentbox { border: 1px solid rgb(194, 217, 242); padding: 6px; background: none repeat scroll 0% 0% rgb(255, 255, 255); margin-top: 6px; font-size: 12px; }
+#content { cursor: text; padding: 2px 1px; width: 98%; height: 75px; vertical-align: top; border: 1px solid rgb(163, 185, 205); background: url('yesky_alpha_logo.gif') no-repeat scroll center center rgb(255, 255, 255); font-size: 13px; white-space: pre; margin-top: 6px; }
+.nickName { width: 112px; height: 20px; border: 1px solid rgb(163, 185, 205); line-height: 20px; font-size: 12px; }
+.submit { border: 1px solid rgb(163, 185, 205); height: 20px; padding: 1px 2px; margin: 0pt 0pt 0pt 10px; font-size: 12px; background: none repeat scroll 0% 0% rgb(200, 216, 251); color: rgb(0, 0, 0); }
+.noteBoxStyle { line-height: 30px; background: none repeat scroll 0% 0% rgb(193, 211, 251); border: 1px solid rgb(153, 153, 153); text-align: center; font-size: 16px; color: rgb(0, 0, 0); opacity: 1; }
+.channel_content { width: 950px; color: rgb(89, 89, 89); margin-right: auto; margin-left: auto; text-align: center; padding: 0pt; font-size: 12px; font-family: "宋体"; line-height: 22px; margin-top: 17px; margin-bottom: 15px ! important; }
+.channel_content a { margin: 0pt 5px 0pt 11px; }
+.channel_content a:link, .channel_content a:visited { text-decoration: none; color: rgb(89, 89, 89); }
+.channel_content a:hover, .channel_content a:active { text-decoration: underline; color: rgb(89, 89, 89); }

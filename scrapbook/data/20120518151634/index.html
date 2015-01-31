@@ -1,0 +1,464 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xml:lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    
+    <title> 通俗易懂客户端与服务器端交互原理（HTTP数据请求与HTTP响应，包括Servlet部分） - Java Log - ITeye技术网站</title>
+    <meta name="description" content="CSDN 的博客不在去写了 功能增加了太多 反而不知道如何使用 非常的不方便 ！因此将以前的博客给整理过来，只不过里面的URL地址举例就使用的是JAVA EYE 的了 ！ 以下为整理出来的正文 经常看到HTTP 客户端与服务器段交互原理的各种版本的文章，但是专业术语太多，且流程过于复杂，不容易消化。 于是就按照在Servlet里面的内容大致做了一些穿插。本来连TOMCAT容器和Servlet的生命周 ...">
+    <meta name="keywords" content="应用服务器, Servlet, 浏览器, 数据结构, Web  通俗易懂客户端与服务器端交互原理（HTTP数据请求与HTTP响应，包括Servlet部分）">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="search" type="application/opensearchdescription+xml" href="http://lvp.iteye.com/open_search.xml" title="ITeye">
+    <link href="http://lvp.iteye.com/rss" rel="alternate" title="Java Log" type="application/rss+xml">
+    
+
+    
+    
+
+
+      
+  
+
+  
+
+  
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body>
+    <div id="header">
+      <div id="blog_site_nav">
+  <a href="http://www.iteye.com/" class="homepage">首页</a>
+  <a href="http://www.iteye.com/news">资讯</a>
+  <a href="http://www.iteye.com/magazines">精华</a>
+  <a href="http://www.iteye.com/forums">论坛</a>
+  <a href="http://www.iteye.com/ask">问答</a>
+  <a href="http://www.iteye.com/blogs">博客</a>
+  <a href="http://www.iteye.com/blogs/subjects">专栏</a>
+  <a href="http://www.iteye.com/groups">群组</a>
+  <a href="#" onclick="return false;" id="msna"><u>更多</u> <small>▼</small></a>
+  <div class="quick_menu" style="display: none;">
+    <a href="http://www.iteye.com/job">招聘</a>
+    <a href="http://www.iteye.com/search">搜索</a>
+  </div>
+</div>
+      <div id="user_nav">
+      <a href="http://lvp.iteye.com/login" class="welcome" title="登录">您还未登录 !</a>
+    <a href="http://lvp.iteye.com/login">登录</a>
+    <a href="http://lvp.iteye.com/signup" class="nobg">注册</a>
+  </div>
+
+    </div>
+
+    <div id="page">
+      <div id="branding" class="clearfix">
+        <div id="blog_name">
+          <h1><a href="http://lvp.iteye.com/">Java Log</a></h1>
+        </div>
+        <div id="fd"></div>
+        <div id="blog_navbar">
+          <ul>
+            <li class="blog_navbar_for"><a href="http://lvp.iteye.com/"><strong>博客</strong></a></li>
+            <li><a href="http://lvp.iteye.com/weibo">微博</a></li>
+            <li><a href="http://lvp.iteye.com/album">相册</a></li>
+            <li><a href="http://lvp.iteye.com/link">收藏</a></li>
+            <li><a href="http://lvp.iteye.com/blog/guest_book">留言</a></li>
+            <li><a href="http://lvp.iteye.com/blog/profile">关于我</a></li>
+          </ul>
+    
+          <div class="search">
+            <form action="http://lvp.iteye.com/blog/search" method="get">
+              <input value="" class="search_text" id="query" name="query" style="margin-left: 10px; width: 110px;" type="text">
+              <input class="submit_search" value="" type="submit">
+            </form>
+          </div> 
+          <div id="fd"></div>         
+        </div>
+      </div>
+      
+      <div id="content" class="clearfix">
+        <div id="main">
+          
+
+
+
+          
+
+
+<div class="blog_main">
+  <div class="blog_title">
+    <h3>
+      <a href="http://lvp.iteye.com/blog/353861"> 通俗易懂客户端与服务器端交互原理（HTTP数据请求与HTTP响应，包括Servlet部分）</a>
+      <em class="actions">      </em>
+    </h3>
+    <ul class="blog_categories"><strong>博客分类：</strong> <li><a href="http://lvp.iteye.com/category/61401">JSP和Servlet</a></li> </ul>
+        <div class="news_tag"><a href="http://www.iteye.com/blogs/tag/%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8">应用服务器</a><a href="http://www.iteye.com/blogs/tag/Servlet">Servlet</a><a href="http://www.iteye.com/blogs/tag/%E6%B5%8F%E8%A7%88%E5%99%A8">浏览器</a><a href="http://www.iteye.com/blogs/tag/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">数据结构</a><a href="http://www.iteye.com/blogs/tag/Web">Web</a></div>
+  </div>
+
+  <div id="blog_content" class="blog_content">
+    CSDN 的博客不在去写了 功能增加了太多 反而不知道如何使用 非常的不方便 ！因此将以前的博客给整理过来，只不过里面的URL地址举例就使用的是JAVA EYE 的了 ！
+<br>
+<br>以下为整理出来的正文
+<br>
+<br>经常看到HTTP 客户端与服务器段交互原理的各种版本的文章，但是专业术语太多，且流程过于复杂，不容易消化。 于是就按照在Servlet里面的内容大致做了一些穿插。本来连TOMCAT容器和Servlet的生命周期也准备在这里一起写的，但怕过于庞大，于是就简单了引用了一些Servlet对象。这样的一个整个流程看下来，相信至少在理解HTTP协议和request和 response是如何完成从请求到生成响应结果回发的。在后续的一些文章里会专门讲一讲Tomcat和Servlet是如何处理请求和完成响应的，更多的是说明Servlet的生命周期.
+<br>
+<br><span style="color: green;">HTTP 介绍</span>
+<br>
+<br>1.HTTP 是一种超文本传送协议（HyperText Transfer Protocal），是一套计算机在网络中通信的一种规则。在TCP/IP体系结构中，HTTP 属于应用层协议，位于TCP/IP协议的顶层.
+<br>
+<br>2.HTTP 是一种无状态的协议，意思是指在WEB浏览器客户端 和WEB服务器之间不需要建立持久的连接。整个过程就是当一个客户端向服务器端发送一个请求 request ，然后WEB服务器返回一个响应 response，之后连接就关闭了，在服务端此时是没有保留连接的信息.
+<br>
+<br>3.HTTP 遵循 请求/响应&nbsp; request/response 模型的，所有的通信交互都被构造在一套请求和响应模型中。
+<br>
+<br>4.浏览WEB时，浏览器通过HTTP协议与WEB服务器交换信息，WEB服务器向WEB浏览器返回的文件都有与之相关的类型，这些信息类型的格式由MIME定义。
+<br>
+<br><strong>HTTP 定义的事物处理由以下四步组成:</strong>
+<br>
+<br><span style="color: blue;">1.建立连接
+<br>2.客户端发送HTTP请求
+<br>3.服务器段响应生成结果 回发
+<br>4.服务器端关闭连接，客户端解析回发响应头，恢复页面</span>
+<br>
+<br>
+<br>
+<br>1.建立连接：以下用我的另一篇文章的地址作为例子--Servlet 介绍 以及Servlet生命周期（详细）
+<br>
+<br><a href="http://lvp.iteye.com/admin/blogs/234610" target="_top">http://lvp.iteye.com/admin/blogs/234610</a> 
+<br>
+<br>客户端，也就是我请求一个地址时，即打开了到WEB服务器的HTTP端口的一个套接字。因为在网络中间作为传递数据的实体介质就是网线，数据实质上是通过IO流进行输出和输入，这就不难理解我们为什么在写一个Servlet的时候要引用 import java.io.*;的原因，包括我们在向客户端回发结果的时候要用到 PrintWriter 对象的 println()方法.
+<br>
+<br>比如我在这里请求 JAVA EYE 社区的一个地址 <a href="http://www.iteye.com/" target="_top">http://www.iteye.com/</a>
+<br>实际上首先要请求这个地址，以及一个端口 80(8080) http://www.iteye.com:80&nbsp;&nbsp; 80可以不写，是因为浏览器网页服务默认的端口号是 80
+<br>
+<br>在JAVA 底层代码中是这样实现的，只不过它们已经帮我们做了
+<br>Socket socket = new Socket("www.iteye.com",8080);
+<br>InputStream in = socket.getInputStream();
+<br>OutputStream out = socket.getOutputStream();
+<br>
+<br>2.客户端发送HTTP请求头
+<br>&nbsp;&nbsp; 一旦建立了TCP连接，WEB浏览器就会向WEB服务器发送请求命令，是一个ASCII文本请求行，后跟0个或多个HTTP头标，一个空行和实现请求的任意数据。
+<br>
+<br>四个部分： 请求行 请求头标 空行和请求数据
+<br>1） 请求行由三个标记组成&nbsp; 请求方法 请求URL&nbsp; HTTP版本 中间用空格分开
+<br>例如&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GET&nbsp;&nbsp;&nbsp;&nbsp; admin/blogs/234610&nbsp;&nbsp; HTTP/1.1
+<br>&nbsp;&nbsp;&nbsp; HTTP 规范定义了8种可能的请求方法 ，最常见的是GET 和POST
+<br><span style="color: red;">GET&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 检索URI中标识资源的一个简单请求</span>HEAD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 与GET方法相同，服务器只返回状态行和头标，并不返回请求文档
+<br><span style="color: red;">POST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 服务器接受被写入客户端输出流中的数据的请求</span>PUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 服务器保存请求数据作为指定URI新内容的请求
+<br>DELETE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 服务器删除URI中命名的资源的请求
+<br>OPTIONS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 关于服务器支持的请求方法信息的请求
+<br>TRACE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Web服务器反馈Http请求和其头标的请求
+<br>CONNECT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 已文档化但当前未实现的一个方法，预留做隧道处理
+<br>
+<br>
+<br>2）请求头标，由KEY:VALUE 键值组成，每行一对。请求头标通知服务器有关客户端的功能和标识。
+<br>
+<br>HOST&nbsp; 请求的哪一个服务端地址，主地址 ，比如我所在的 lvp.iteye.com (域名解析定位到服务器端地址)
+<br>User-Agent&nbsp; 用户即客户端可以使用的浏览器 如 Mozilla/4.0
+<br>Accpet&nbsp;&nbsp; 客户端可以接受的MIME 类型列表 如 image/gif&nbsp; text/html&nbsp; application/msword 等等&nbsp; 还有很多 
+<br>Content-length&nbsp;&nbsp; 只适用于POST 请求，以字节给出POST 数据的尺寸
+<br>
+<br>3) 空行 发送回车符和退行 ，通知服务器以下不再有头标
+<br>4) 请求数据: 使用POST 传送数据，最常用使用的是 Content-Type 和Content-Length头标
+<br>总结以上 我们可以这样写出一个标准的HTTP请求
+<br>
+<br>POST /admin/blogs/234610&nbsp;&nbsp;&nbsp; HTTP1.1
+<br>HOST&nbsp; http://lvp.iteye.com
+<br>User-Agent Mozilla/4.0
+<br>Accept&nbsp; image/gif&nbsp; ,text/html,application/pdf,...
+<br>key=value&amp;key=value&amp;key=value&nbsp; (POST)请求的数据
+<br>
+<br>那么，这上面的一个例子说明的就是
+<br>我要去访问的服务器端地址是 lvp.iteye.com/ 它下面的资源admin/blogs/234610
+<br>
+<br>连接起来就是 http://lvp.iteye.com/admin/blogs/234610
+<br>这个页面用的是HTTP1.1规范 我的浏览器版本是Mozilla/4.0
+<br>可以支持的MIME格式为 image/gif,text/html,application/pdf...
+<br>这个MIME 格式在我们写的 response.setContentType("text/html;charset=gb2312") 中出现过
+<br>或者在
+<br>&lt;%@ page contentType="text/html;charset=gb2312"%&gt;中也出现过
+<br>或者在
+<br>&lt;meta ..contentType="text/html;charset=gb2312"&gt;中也见到过
+<br>
+<br>那么在这里如何理解 GET和POST 最直接的区别就是，GET方法将数据的请求跟在了所请求的URL后面，也就是在请求行里面我们是这样来做的：
+<br>GET admin/blogs/234610?key=value&amp;key=value...HTTP
+<br>也就是实际上 用GET如此传递数据
+<br>http://lvp.iteye.com/admin/blogs/234610?name=lvpin&amp;password=simonlv
+<br>
+<br>
+<br>3.服务器端接受请求，处理数据后生成响应返回数据到客户端 (部分Servlet内容穿插)
+<br>WEB 服务器解析请求&nbsp; ，定义制定的资源 http://lvp.iteye.com/admin/blogs/234610
+<br>
+<br>1)根据在请求是的GET/POST来按照响应的 doGet()/doPost()方法来处理（有可能是一些业务逻辑，也有可能是一些验证等等，也有可能是一些数据查询，提交等等） 其有效的数据就来源于 name=lvpin&amp;password=simonlv,还有其它的一些封装在request对象中的数据资源。
+<br>
+<br>2)处理请求之后，由response对象得到PrinterWriter 输出流对象 out，通过out.println()将数据以在客户端提交过的采用Accept中形式中的一种，如按照 response.setContentType("text/html;charset=gb2312")的格式输出流。
+<br>
+<br>它的响应信息与请求信息非常类似，其区别就在于我们在请求阶段的请求行被状态行给替换了，再来看响应头
+<br>
+<br>一个响应由四个部分组成；状态行、响应头标、空行、响应数据
+<br>
+<br>1.状态行：状态行由三个标记组成：HTTP版本、响应代码和响应描述。
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HTTP1.1&nbsp;&nbsp;&nbsp; 100&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; continue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ------继续追加后继内容
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HTTP/1.1&nbsp;&nbsp; 200&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --------一切正常
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HTTP1.1&nbsp;&nbsp;&nbsp; 301&nbsp; Moved Permanently&nbsp;&nbsp;&nbsp; ---请求的文档在其它地方，会自动连接 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HTTP1.1&nbsp;&nbsp;&nbsp;&nbsp; 403&nbsp; Forbidden&nbsp;&nbsp; -------绝对拒绝你访问这个资源，不管授权没有
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HTTP1.1&nbsp;&nbsp;&nbsp;&nbsp; 400&nbsp;&nbsp;&nbsp; Bad Request&nbsp; -----客户端请求中的不良语法
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HTTP1.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 404&nbsp;&nbsp; Not Found&nbsp; ---最常见，绝对是大名鼎鼎的找不到
+<br>
+<br>HTTP响应码：
+<br>1xx：提示性信息，告诉客户端应该对某些其它的动作作出响应
+<br>2xx：这些就代表了请求成功
+<br>3xx：重定向，为了完成请求，必须进一步执行的动作
+<br>4xx：客户端错误
+<br>500-599:服务器端的错误
+<br>
+<br>2.响应头标：像请求头标一样，它们指出服务器的功能，标识出响应数据的细节。
+<br>Date: Sat, 31 Dec 2005 23:59:59 GMT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --响应生成的日期和时间
+<br>ContentType: text/html;charset=gb2312'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Content-Length: 122 ---响应中的字节数，只在浏览器使用永久（Keep-alive）HTTP连接时需要。
+<br>
+<br>3.空行：最后一个响应头标之后是一个空行，发送回车符和退行，表明服务器以下不再有头标。
+<br>4.响应数据：HTML文档和图像等，也就是HTML本身。out.println("&lt;html&gt;").......写出的。。。
+<br>
+<br><div id="" class="dp-highlighter"><div class="bar"><div class="tools">Java代码 <embed wmode="transparent" src="clipboard_new.swf" flashvars="clipboard=%EF%BC%9Chtml%EF%BC%9E%0A%EF%BC%9Chead%EF%BC%9E%0A%EF%BC%9Ctitle%EF%BC%9EWelcom%20to%20simon%20lv%20's%20home%EF%BC%9C%2Ftitle%EF%BC%9E%0A%EF%BC%9C%2Fhead%EF%BC%9E%0A%EF%BC%9Cbody%EF%BC%9E%0A%EF%BC%9C!--%20%E8%BF%99%E9%87%8C%E6%98%AF%E5%85%B7%E4%BD%93%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%8C%E7%9C%8B%E5%88%B0%E4%BA%86%E8%BF%99%E9%87%8C%0A%0A%E7%9B%B8%E4%BF%A1%E5%A4%A7%E5%AE%B6%E5%AF%B9%20HTTP%20%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%92%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%A4%E4%BA%92%E8%BF%87%E7%A8%8B%E5%B7%B2%E7%BB%8F%E5%BE%88%E6%B8%85%E6%A5%9A%E4%BA%86%E5%90%A7%0A%0A--%EF%BC%9E%20%0A%EF%BC%9C%2Fbody%EF%BC%9E%0A%EF%BC%9C%2Fhtml%EF%BC%9E" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" height="15" width="14">&nbsp;<a href="javascript:void()" title="收藏这段代码" onclick="code_favorites_do_favorite(this);return false;"><img class="star" src="icon_star.png" alt="收藏代码"><img class="spinner" src="spinner.gif" style="display: none;"></a></div></div><ol class="dp-j" start="1"><li><span><span>＜html＞&nbsp;&nbsp;</span></span></li><li><span>＜head＞&nbsp;&nbsp;</span></li><li><span>＜title＞Welcom&nbsp;to&nbsp;simon&nbsp;lv&nbsp;'s&nbsp;home＜/title＞&nbsp;&nbsp;</span></li><li><span>＜/head＞&nbsp;&nbsp;</span></li><li><span>＜body＞&nbsp;&nbsp;</span></li><li><span>＜!--&nbsp;这里是具体的内容，看到了这里&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;</span></li><li><span>相信大家对&nbsp;HTTP&nbsp;工作原理和服务器交互过程已经很清楚了吧&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;</span></li><li><span>--＞&nbsp;&nbsp;&nbsp;</span></li><li><span>＜/body＞&nbsp;&nbsp;</span></li><li><span>＜/html＞&nbsp;&nbsp;</span></li></ol></div><pre title=" 通俗易懂客户端与服务器端交互原理（HTTP数据请求与HTTP响应，包括Servlet部分）" pre_index="0" source_url="http://lvp.iteye.com/blog/353861" codeable_type="Blog" codeable_id="353861" style="display: none;" class="java" name="code">＜html＞
+＜head＞
+＜title＞Welcom to simon lv 's home＜/title＞
+＜/head＞
+＜body＞
+＜!-- 这里是具体的内容，看到了这里
+
+相信大家对 HTTP 工作原理和服务器交互过程已经很清楚了吧
+
+--＞ 
+＜/body＞
+＜/html＞</pre>
+<br>
+<br>4.服务器端关闭连接，客户端解析回发响应头，恢复页面
+<br>
+<br>1）浏览器先解析状态行，查看请求是否成功的状态代码--HTTP响应码：404 400 200 ....
+<br>2) 解析 每一个响应头标 如
+<br>ContentType: text/html;charset=gb2312&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Content-Length: 122 ---响应中的字节数，只在浏览器使用永久（Keep-alive）HTTP连接时需要。
+<br>
+<br>3） 读取响应数据HTML，根据它的语法标签&lt;html&gt;&lt;/html&gt;等和内容恢复标准的HTML格式页面或者其它。
+<br>4）一个HTML 文档可能包含其它的需要被载入的资源，浏览器会识别，并对这些资源再进行额外的请求，这个过程可以一直循环到所有的数据都按照响应头标中规定的格式恢复到页面中。
+<br>5）数据传送完毕，服务器端关闭连接，即无状态协议。
+<br>
+<br>写了很长时间，估计里面也有些没有表达清楚的地方，但是整个流程可以清晰的展现，对于大家理解HTTP请求头和响应头的内容以及他们之间的关系应该很有帮助。
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  </div>
+
+  
+
+
+  
+  
+  <div id="bottoms" class="clearfix">
+    
+    <div id="share_weibo">分享到：
+      <a data-type="sina" href="javascript:;" title="分享到新浪微博"><img src="sina.jpg"></a>
+      <a data-type="qq" href="javascript:;" title="分享到腾讯微博"><img src="tec.jpg"></a>
+    </div>
+  </div>
+
+  <div class="blog_nav">
+    <div class="pre_next">
+      <a href="http://lvp.iteye.com/blog/356477" class="next" title="JAVA 基础问题 JDK JRE JVM 运行时数据区 instanceof">JAVA 基础问题 JDK JRE JVM 运行时数据区 ...</a>
+      |
+      <a href="http://lvp.iteye.com/blog/343278" class="pre" title="读 softGiant 将书籍翻烂，将键盘敲穿，将板凳坐跨 有感">读 softGiant 将书籍翻烂，将键盘敲穿，将 ...</a>
+    </div>
+  </div>
+  <div class="blog_bottom">
+    <ul>
+      <li>2009-03-23 23:25</li>
+      <li>浏览 1773</li>
+      <li><a href="#comments">评论(0)</a></li>
+      
+      
+            
+      <li class="last"><a href="http://www.iteye.com/wiki/blog/353861" target="_top" class="more">相关推荐</a></li>
+    </ul>
+  </div>
+
+  <div class="blog_comment">
+    <h5>评论</h5>
+    <a id="comments" name="comments"></a>
+    
+    
+    
+  </div>
+
+  <div class="blog_comment">
+    <h5>发表评论</h5>
+            <p style="text-align: center; margin-top: 30px; margin-bottom: 0px;"><a href="http://lvp.iteye.com/login" style="background-color: white;"> <img src="login_icon.png" style="vertical-align: middle; margin-right: 10px;"></a><a href="http://lvp.iteye.com/login">  您还没有登录,请您登录后再发表评论 </a></p>
+      </div>
+</div>
+
+
+
+
+
+
+
+        </div>
+
+        <div id="local">
+          <div class="local_top"></div>
+          <div id="blog_owner">
+  <div id="blog_owner_logo"><a href="http://lvp.iteye.com/"><img alt="lvp的博客" class="logo" src="eac39c44-a97c-3668-9843-92344311344c.jpg" title="lvp的博客: Java Log"></a></div>
+  <div id="blog_owner_name">lvp</div>
+</div>
+
+          <div id="blog_actions">
+            <ul>
+              <li>浏览: 44766 次</li>
+              <li>性别: <img alt="Icon_minigender_1" src="icon_minigender_1.gif" title="男"></li>
+              <li>来自: 北京</li>
+              <li><img src="offline.gif"></li>
+              
+            </ul>
+          </div>
+          <div id="user_visits" class="clearfix">
+            <h5>最近访客 <span style="font-weight: normal; font-size: 12px; padding-left: 30px;"><a href="http://lvp.iteye.com/blog/user_visits">更多访客&gt;&gt;</a></span></h5>
+            
+              <div class="user_visit">
+                <div class="logo"><a href="http://a784069473.iteye.com/" target="_top"><img alt="a784069473的博客" class="logo" src="user-logo-thumb.gif" title="a784069473的博客: "></a></div>
+                <div class="left"><a href="http://a784069473.iteye.com/" target="_top">a784069473</a></div>
+              </div>
+            
+              <div class="user_visit">
+                <div class="logo"><a href="http://smj227227.iteye.com/" target="_top"><img alt="smj227227的博客" class="logo" src="user-logo-thumb.gif" title="smj227227的博客: "></a></div>
+                <div class="left"><a href="http://smj227227.iteye.com/" target="_top">smj227227</a></div>
+              </div>
+            
+              <div class="user_visit">
+                <div class="logo"><a href="http://arkilis.iteye.com/" target="_top"><img alt="arkilis的博客" class="logo" src="user-logo-thumb.gif" title="arkilis的博客: "></a></div>
+                <div class="left"><a href="http://arkilis.iteye.com/" target="_top">arkilis</a></div>
+              </div>
+            
+              <div class="user_visit">
+                <div class="logo"><a href="http://gyfok.iteye.com/" target="_top"><img alt="gyfok的博客" class="logo" src="user-logo-thumb.gif" title="gyfok的博客: "></a></div>
+                <div class="left"><a href="http://gyfok.iteye.com/" target="_top">gyfok</a></div>
+              </div>
+            
+          </div>
+
+          
+
+                      <div id="blog_menu">
+              <h5>文章分类</h5>
+              <ul>
+                <li><a href="http://lvp.iteye.com/">全部博客 (32)</a></li>
+                
+                  <li><a href="http://lvp.iteye.com/category/39895">日常生活 (3)</a></li>
+                
+                  <li><a href="http://lvp.iteye.com/category/39896">异常,配置,问题处理记录 (2)</a></li>
+                
+                  <li><a href="http://lvp.iteye.com/category/61402">Ajax,JQuery,Ext js... (8)</a></li>
+                
+                  <li><a href="http://lvp.iteye.com/category/61401">JSP和Servlet (8)</a></li>
+                
+                  <li><a href="http://lvp.iteye.com/category/61404">Java 基础 (10)</a></li>
+                
+                  <li><a href="http://lvp.iteye.com/category/39897">DHTML (3)</a></li>
+                
+                  <li><a href="http://lvp.iteye.com/category/96726">ORM (0)</a></li>
+                
+                  <li><a href="http://lvp.iteye.com/category/108800">Struts 2 (0)</a></li>
+                
+                  <li><a href="http://lvp.iteye.com/category/111023">json (0)</a></li>
+                
+                  <li><a href="http://lvp.iteye.com/category/111024">web services (0)</a></li>
+                
+                  <li><a href="http://lvp.iteye.com/category/112122">http 协议相关 (0)</a></li>
+                
+              </ul>
+            </div>
+            <div id="month_blogs">
+              <h5>社区版块</h5>
+              <ul>
+                <li><a href="http://lvp.iteye.com/blog/news">我的资讯</a> (0)</li>
+                <li>
+                  <a href="http://lvp.iteye.com/blog/post">我的论坛</a> (30)
+                </li>
+                <li><a href="http://lvp.iteye.com/blog/solution">我解决的问题</a> (0)</li>
+              </ul>
+            </div>
+            <div id="month_blogs">
+              <h5>存档分类</h5>
+              <ul>
+                
+                  <li><a href="http://lvp.iteye.com/blog/monthblog/2010-03">2010-03</a> (8)</li>
+                
+                  <li><a href="http://lvp.iteye.com/blog/monthblog/2009-04">2009-04</a> (3)</li>
+                
+                  <li><a href="http://lvp.iteye.com/blog/monthblog/2009-03">2009-03</a> (15)</li>
+                
+                <li><a href="http://lvp.iteye.com/blog/monthblog_more">更多存档...</a></li>
+              </ul>
+            </div>
+            
+            
+
+            <div id="guest_books">
+              <h5>最新评论</h5>
+              <ul>
+                
+                <li>
+                  <a href="http://lengku-zy.iteye.com/" target="_top">lengku_zy</a>： 
+                  请问simon.UploadDao是用于监控的类吗？addFi ...<br>
+                  <a href="http://lvp.iteye.com/blog/343239#bc2254026">JSP 上传和下载DEMO 源码加数据库</a>
+                </li>
+                
+                <li>
+                  <a href="http://invalid.iteye.com/" target="_top">invalid</a>： 
+                  到底是应该给生成menifest还是manifest，看上面截 ...<br>
+                  <a href="http://lvp.iteye.com/blog/358635#bc2252113">简单jar打包示例 合并第三方jar包打包操作</a>
+                </li>
+                
+                <li>
+                  <a href="http://syd6815892.iteye.com/" target="_top">syd6815892</a>： 
+                  没有java文件？<br>
+                  <a href="http://lvp.iteye.com/blog/366126#bc2243016">AJAX无刷新聊天室实现(压缩包附件下载)</a>
+                </li>
+                
+                <li>
+                  <a href="http://jyjava.iteye.com/" target="_top">jyjava</a>： 
+                  不错，基础的东西<br>
+                  <a href="http://lvp.iteye.com/blog/357009#bc2235053">JAVA 修饰符public final static abstract transient </a>
+                </li>
+                
+                <li>
+                  <a href="http://wsldk.iteye.com/" target="_top">wsldk</a>： 
+                   [size=medium][/size][color=bro ...<br>
+                  <a href="http://lvp.iteye.com/blog/366126#bc2225647">AJAX无刷新聊天室实现(压缩包附件下载)</a>
+                </li>
+                
+              </ul>
+            </div>
+
+            <div class="local_bottom"></div>
+          
+        </div>
+      </div>
+
+      <div id="footer" class="clearfix">
+        <div id="copyright">
+          <hr>
+          声明：ITeye文章版权属于作者，受法律保护。没有作者书面许可不得转载。若作者同意转载，必须以超链接形式标明文章原始出处和作者。<br>
+          © 2003-2011 ITeye.com.   All rights reserved.  [ 京ICP证110151号  京公网安备110105010620 ]
+        </div>
+      </div>
+    </div>
+    <img src="untitled" height="0" width="0">
+
+    
+  
+
+</body>
+</html>

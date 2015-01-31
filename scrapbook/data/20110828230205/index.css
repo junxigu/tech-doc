@@ -1,0 +1,117 @@
+body { position: relative; }
+body, form { margin: 0pt ! important; padding: 0pt ! important; }
+#bd_snap { font: 14px arial; color: rgb(0, 0, 0); background: none repeat scroll 0% 0% rgb(255, 255, 255); text-align: left; padding: 7px 0pt 0pt 20px; }
+#bd_snap_txt { clear: both; padding: 10px 0pt; }
+#bd_snap_note { font-size: 12px; color: rgb(102, 102, 102); padding-bottom: 10px; }
+#bd_snap a { font: 14px arial; color: rgb(0, 0, 204); text-decoration: underline; }
+#bd_snap_head { width: 860px; }
+#bd_snap_logo { width: 162px; height: 38px; display: block; background: url('logo-snap.gif') no-repeat scroll 0% 0% transparent; margin-right: 15px; float: left; }
+#bd_snap_search { padding-top: 10px; float: left; }
+#bd_snap_kw { width: 519px; height: 22px; padding: 4px 7px; margin-right: 5px; font: 16px arial; background: url('i-1.0.0.png') no-repeat scroll -304px 0pt transparent; border-width: 1px; border-style: solid; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-image: none; border-color: rgb(154, 154, 154) rgb(205, 205, 205) rgb(205, 205, 205) rgb(154, 154, 154); vertical-align: top; }
+#bd_snap_su { width: 95px; height: 32px; font-size: 14px; color: rgb(0, 0, 0); padding: 0pt; border: 0pt none; }
+input.bd_snap_btn { background: url('i-1.0.0.png') repeat scroll 0% 0% rgb(221, 221, 221); cursor: pointer; }
+#bd_snap_btn_wr { width: 97px; height: 34px; display: inline-block; background: url('i-1.0.0.png') no-repeat scroll -202px 0pt transparent; }
+#bd_snap_ln { height: 1px; border-top: 1px solid rgb(172, 168, 153); background: none repeat scroll 0% 0% rgb(236, 233, 216); overflow: hidden; }
+#bd_snap_txt span a { text-decoration: none; }
+.error { color: rgb(255, 0, 0); font-size: 12px; }
+/* ::::: http://hi.baidu.com/ui/css/mods.css ::::: */
+
+.error { color: red; }
+/* ::::: http://hitn.bdimg.com/pplinlive/css/item/737aed266bfd5103918f9dfd.css ::::: */
+
+body { margin: 0pt; border: 0px none; padding: 0px; overflow-x: hidden; color: rgb(83, 66, 59); background-color: rgb(83, 66, 59); background-image: url('1465a35169624c07377abe7e.jpeg'); }
+a:link, a:visited { font-size: 12px; color: rgb(83, 66, 59); text-decoration: underline; }
+a:hover { font-size: 12px; color: rgb(52, 52, 52); text-decoration: underline; }
+#main { width: 1010px ! important; background-image: url('4e5aab990a7a86176f068c7e.jpeg'); background-repeat: no-repeat; background-position: center bottom; margin: 0px 0px -50px ! important; padding: 0px 0px 75px ! important; }
+#header { height: 442px ! important; background-image: url('03bc6e1e8b60c4eb1ad5767d.jpeg'); background-repeat: no-repeat; background-position: center top; }
+#header DIV.lc { background: url('a1fe5b1f6bfc7215314e1571.jpg') repeat scroll 0% 0% transparent; left: 100px; width: 900px; line-height: 180px; }
+#header div.tit, #header div.tit a.titlink, #header div.tit a.titlink:visited { font-family: "宋体"; top: 320px; left: 625px; font-size: 18px; color: rgb(83, 66, 59); line-height: 50px; text-align: left; text-decoration: none; }
+#header div.desc { top: 60px; left: 80px; color: rgb(83, 66, 59); font-size: 13px; width: 400px; text-align: left; line-height: 25px; }
+#tabline { display: none; }
+#tab { left: 120px; top: 375px; background: none no-repeat scroll 2% bottom transparent; }
+#tab A.on { color: rgb(83, 66, 59); text-decoration: none; }
+#tab A.on:link { color: rgb(83, 66, 59); }
+#tab A.on:visited { color: rgb(83, 66, 59); }
+#tab A.on:hover { color: rgb(83, 66, 59); }
+#tab SPAN { display: none; }
+#tab A:link { font-size: 11pt; color: rgb(83, 66, 59); text-decoration: none; }
+#tab A:visited { font-size: 11pt; color: rgb(83, 66, 59); text-decoration: none; }
+#tab A:hover { font-size: 11pt; color: rgb(52, 52, 52); background: url('7613c109fdf595d03ac76371.jpg') no-repeat scroll 0% 0% transparent; }
+.stage { background-image: url('766d60f0f77990b0a50f527d.jpeg'); background-repeat: repeat; margin: 0px; }
+.stagepad { margin: 0px 80px 0pt; width: 820px; }
+#page { height: 30px; font-size: 12px; font-family: Arial; text-align: center; }
+.modth { height: 35px; background-image: url(''); background-repeat: no-repeat; background-position: left top; }
+.modhead { padding: 0px 4px 0pt; }
+.modtit, a.modtit, a.modtit:visited { color: rgb(83, 66, 59); font-size: 12px; font-weight: bold; line-height: 30px; margin-left: 25px; text-decoration: none; }
+.modtl {  }
+.modtc {  }
+.modtr {  }
+.modbox {  }
+.modbl {  }
+.modbc {  }
+.modbr {  }
+div.line { border-top: 1px dotted rgb(83, 66, 59); }
+div.tit, div.tit a, div.tit a:visited { font-size: 12px; font-weight: bold; color: rgb(83, 66, 59); }
+div.opt { color: rgb(83, 66, 59); }
+#m_blog div.tit { line-height: 35px; background-image: url('c3adc338d310743c96ddd871.jpg'); background-repeat: no-repeat; background-position: left bottom; text-indent: 50px; text-decoration: none; }
+#m_blog div.date { margin: -20px 0pt 8px; text-indent: 35px; font-size: 13px; font-family: Georgia; text-align: right; }
+#m_blog div.cnt { line-height: 20px; font-size: 14px; }
+#m_blog div.cnt a { color: rgb(83, 66, 59); }
+#m_blog div.opt { font-size: 12px; color: rgb(52, 52, 52); }
+#m_blog div.opt a { font-size: 12px; }
+#m_blog div.opt a:visited {  }
+#m_blog div.line { border-top: 1px dotted rgb(83, 66, 59); margin-top: 10px; }
+#m_links div.item a:link, a:visited { font-size: 12px; }
+.stagepad {  }
+#in_comment { width: 710px; }
+#in_send div.tit { margin: 10px 0pt; font-size: 12px; font-weight: bold; }
+#spBlogCmtText { color: rgb(52, 52, 52); }
+#spBlogCmtText { border: 3px solid rgb(255, 255, 255); background: url('e83433a48758c3e89152ee7e.jpeg') no-repeat scroll center top transparent; }
+/* ::::: http://hi.baidu.com/space.css ::::: */
+
+body, form { margin: 0pt; }
+body, td, div { font-family: Arial; word-wrap: break-word; visibility: visible ! important; filter: none; }
+td, div { font-size: 12px; line-height: 18px; }
+html body center, html body center #usrbar, html body center #ft, html body center #usrbar nobr, html body center #usrbar strong, html body center #usrbar a, html body center #usrbar a:link, html body center #usrbar a:visited, html body center #ft a, html body center #ft a:link, html body center #ft a:visited { max-width: none ! important; text-transform: none ! important; direction: inherit ! important; vertical-align: baseline ! important; word-spacing: normal ! important; font-variant: normal ! important; text-decoration: none ! important; font-size-adjust: none ! important; border: medium none ! important; background: none repeat scroll 0% 0% transparent ! important; overflow: visible ! important; width: auto ! important; clear: both ! important; float: none ! important; margin: 0pt ! important; position: static ! important; visibility: visible ! important; letter-spacing: normal ! important; font-size: 12px ! important; font-family: Arial ! important; filter: none ! important; }
+html body center #usrbar, html body center #ft, html body center #usrbar nobr { display: block ! important; height: 19px ! important; line-height: 19px ! important; }
+html body center { display: block ! important; }
+html body center #main, html body center #usrbar, html body center #ft { position: relative ! important; top: auto ! important; bottom: auto ! important; left: auto ! important; right: auto ! important; }
+html body center #ft { z-index: 65534 ! important; color: rgb(102, 102, 102) ! important; text-align: center ! important; }
+html body center #main { z-index: 10000 ! important; padding: 0pt 10px; min-width: 756px; max-width: 1000px; }
+#header { position: relative; }
+#header div.lc { position: relative; height: 100%; font-size: 0pt; }
+#header div.rc { position: relative; right: 0px; height: 100%; font-size: 0pt; }
+#header div.tit { position: absolute; }
+#header div.desc { position: absolute; }
+#tabline { position: absolute; width: 100%; height: 1px; line-height: 1px; font-size: 0px; }
+#tab { position: absolute; padding-left: 10px; height: 22px; line-height: 22px; width: 99% ! important; }
+#tab a.on { float: left; padding: 0px 10px 0px 12px; font-size: 13px; font-weight: bold; }
+#tab span { float: left; font-size: 13px; }
+#tab a { float: left; padding: 0px 14px; font-size: 13px; }
+.stage { padding-top: 10px; width: 100%; height: auto; }
+.stagepad { padding: 0pt 10px 10px; }
+.f14 { font-size: 14px; }
+#m_blog div.cnt, #m_albumlist div.desc, #m_blog div.tit, #m_artclg div.item, #m_comment div.item, #m_links div.item, #m_cang div.item, #m_album div.image, #m_links div.item, #in_comment div.desc, #m_friblog div.item { overflow: hidden; }
+#m_blog div.cnt { overflow: hidden; position: relative ! important; }
+#m_blog div.cnt * { line-height: normal; }
+#m_blog table { table-layout: auto ! important; }
+#in_comment div.tit, #in_send div.tit, #in_reader div.tit { text-align: left; }
+#ft { clear: both; height: 20px; line-height: 20px; color: rgb(102, 102, 102); font-size: 12px; font-family: Arial; text-align: center; }
+.userbar { height: 30px; background: url('nav_bg.gif') repeat-x scroll 0% 0% transparent; }
+.userbar * { margin: 0pt; padding: 0pt; list-style: none outside none; }
+#nav { height: 30px; line-height: 30px; padding-left: 20px; width: 970px; margin: 0pt auto; }
+#nav .logo { float: left; margin-top: 4px; }
+#nav .manage { float: right; color: rgb(102, 102, 102); line-height: 30px; }
+#nav .manage a, #nav .manage a:link, #nav .manage a:visited { text-decoration: underline; color: rgb(51, 51, 51) ! important; padding: 0pt 5px; font-size: 12px ! important; }
+#nav .manage form { display: inline; }
+#nav .manage form * { font-family: 宋体 ! important; }
+#nav .manage input { width: 90px; height: 22px; line-height: 22px; border: 1px solid rgb(201, 201, 201); vertical-align: middle; padding: 1px 0pt; }
+#nav .manage .loginlink, #nav .manage .loginlink:link, #nav .manage .loginlink:visited { width: 49px; height: 22px; line-height: 22px; background: url('login_btn.gif') no-repeat scroll 0% 0% transparent; display: inline-block; padding: 0pt; text-align: center; text-decoration: none; }
+#nav .manage .loginlink:hover { background-position: -51px 0pt; padding: 0pt; text-decoration: none; }
+#nav .manage .reglink { color: rgb(255, 0, 0) ! important; }
+/* ::::: http://hi.bdimg.com/static/base/css/base.css?v=20110503 ::::: */
+
+/* ::::: http://hi.baidu.com/ui/css/userset.css ::::: */
+
+/* ::::: http://hi.baidu.com/ui/css/beautify/widget.css ::::: */
+

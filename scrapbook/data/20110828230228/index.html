@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta content="IE=7" http-equiv="X-UA-Compatible">
+
+<link href="http://img.baidu.com/img/baike/wap/iphone4_logo.png" rel="apple-touch-icon">
+
+<title>Makefile_百度百科 </title>
+
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body id="view">
+<div id="usrbar"><a href="http://www.baidu.com/" class="nslog:87">百度首页</a><span class="usrbar-split">|</span><a href="https://passport.baidu.com/?login&amp;tpl=wk" class="nslog:88" onclick="userlogin();return false">登录</a></div>
+<div id="wrap">
+<div id="header">
+
+<div id="search">
+<div id="logo">
+<a href="http://baike.baidu.com/"><img alt="到百科首页" class="nslog:1008" src="logo-baike.gif" border="0" height="46" width="137"></a>
+</div>
+<div id="search-content">
+<p class="nv nslog-area" data-nslog-type="1009">
+<a href="http://news.baidu.com/ns?fr=bk&amp;cl=2&amp;rn=20&amp;tn=news&amp;word=Makefile">新闻</a><a href="http://www.baidu.com/s?fr=bk&amp;cl=3&amp;wd=Makefile&amp;t=5">网页</a><a href="http://tieba.baidu.com/f?fr=bk&amp;kw=Makefile">贴吧</a><a href="http://zhidao.baidu.com/q?fr=bk&amp;ct=17&amp;pn=0&amp;tn=ikaslist&amp;rn=10&amp;word=Makefile">知道</a><a href="http://mp3.baidu.com/m?fr=bk&amp;tn=baidump3&amp;ct=134217728&amp;lm=-1&amp;word=Makefile">MP3</a><a href="http://image.baidu.com/i?fr=bk&amp;tn=baiduimage&amp;ct=201326592&amp;lm=-1&amp;cl=2&amp;word=Makefile">图片</a><a href="http://video.baidu.com/v?fr=bk&amp;ct=301989888&amp;rn=20&amp;pn=0&amp;db=0&amp;s=24&amp;word=Makefile">视频</a><strong>百科</strong><a href="http://wenku.baidu.com/search?fr=bk&amp;word=Makefile&amp;lm=0&amp;od=0">文库</a>
+</p>
+<form action="http://baike.baidu.com/searchword/" method="get" name="f1" target="_self">
+<input autocomplete="off" id="word" maxlength="400" name="word" tabindex="1" value="Makefile">
+<input class="search-btn nslog:1010" onclick="document.f1.pic.value=1" tabindex="2" value="进入词条" type="submit"><input class="search-btn nslog:1011" onclick="document.f1.pic.value=2" tabindex="3" value="搜索词条" type="submit">
+<input id="sw1" name="pic" value="1" type="hidden">
+<input name="sug" value="1" type="hidden">
+<input id="search-enc" name="enc" value="gbk" type="hidden">
+<iframe style="display: none; position: absolute; border-width: 0px;" class="tangram_sug_sd" src="index_1.html"></iframe><div style="display: none;" class="tangram_sug_wpr" id="tangram_sug_1314543731971"></div></form>
+</div>
+<div id="help">
+<a class="nslog:1012" href="http://www.baidu.com/search/baike_help.html" target="_top">帮助</a><a class="nslog:1013" href="#" onclick="setSug();return false">设置</a>
+</div>
+<div class="clear"></div>
+</div><div class="nslog-area" data-nslog-type="1000" id="path">
+
+<ul class="nav f14 clearfix">    
+            <li class="home"><a href="http://baike.baidu.com/">首页</a></li>
+                <li><a href="http://baike.baidu.com/ziran/">自然</a></li>
+                 <li><a href="http://baike.baidu.com/wenhua/">文化</a></li>
+                 <li><a href="http://baike.baidu.com/dili/">地理</a></li>
+                 <li><a href="http://baike.baidu.com/lishi/">历史</a></li>
+                 <li><a href="http://baike.baidu.com/shenghuo/">生活</a></li>
+                 <li><a href="http://baike.baidu.com/shehui/">社会</a></li>
+                 <li><a href="http://baike.baidu.com/yishu/">艺术</a></li>
+                 <li><a href="http://baike.baidu.com/renwu/">人物</a></li>
+                 <li><a href="http://baike.baidu.com/jingji/">经济</a></li>
+                 <li><a href="http://baike.baidu.com/kexue/">科技</a></li>
+                 <li><a href="http://baike.baidu.com/tiyu/">体育</a></li>
+             <li><div class="nav-channel-hot"></div>          <a href="http://baike.baidu.com/cms/s/baikekehuduan/index.html?name=baikekehuduan&amp;fr=bkhomebaikekehuduan" target="_top" onclick="nslog(location.href,3020);">手机百科</a></li>
+     <li>          <a href="http://baike.baidu.com/hezuo" target="_top" onclick="nslog(location.href,3021);">百科合作</a></li>
+     <li>          <a href="http://baike.baidu.com/cms/s/zhuanti-hot1107/index.html?name=hotword1107&amp;fr=bkhomeHotword1107" target="_top" onclick="nslog(location.href,3022);">7月热词</a></li>
+    
+       
+</ul>
+
+</div>
+</div>
+<div id="page">
+<div class="layout grid-m0s245 w1000" id="content-wrap">
+<div class="col-main article" id="content">
+<div class="main-wrap main-shadow">
+<div class="content-hd">
+<div class="content-hd-wrap"></div>
+</div>
+<div class="content-bd main-body">
+<div class="text">
+<div class="bk-editable-lemma-btns">
+<a class="dividable-lemma lemma-top-link" data-edit-id="974566" hidefocus="true" href="http://baike.baidu.com/divideload?lemmaid=974566" id="subSet" style="display: none;">拆分词条</a>
+<span class="editable-lemma " data-edit-id="974566"></span>
+<span style="height: 100%;"></span>
+</div>
+<h1 class="title">Makefile</h1>
+
+<div class="clear"></div>
+<div class="mod-top">
+<h4 class="card-title"><a class="throwbtl-link-view" href="#" isviewcard="1" onclick="userlogin();return false" sublemmaid="" sublemmatitle="">求助编辑</a>百科名片</h4>
+<div class="card-summary nslog-area" data-nslog-type="72">
+<div style="width: 200px;" class="pic" id="cardpic0">
+<a hidefocus="true" href="http://baike.baidu.com/image/0b3a1c08267bbbee63d98674" target="_top">
+<img alt="Makefile" class="card-image editorImg" onerror='this.parentNode.parentNode.style.width="150px"' src="0b3a1c08267bbbee63d98674.jpg" title="Makefile">
+</a>
+<a class="card-pic-handle" href="http://baike.baidu.com/image/0b3a1c08267bbbee63d98674" target="_top" title="查看图片">&nbsp;&nbsp;</a>
+<div>Makefile</div>
+</div>
+<div class="card-summary-content">
+<p>
+Makefile文件 Makefile 一个工程中的源文件不计数，其按类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定，哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为 makefile就像一个<a target="_top" href="http://baike.baidu.com/view/1440787.htm">Shell脚本</a>一样，其中也可以执行<a target="_top" href="http://baike.baidu.com/view/880.htm">操作系统</a>的命令。</p>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<fieldset class="text_dir nslog-area" data-nslog-type="1016" data-subindex="0" id="catalog-0">
+<p>目录</p>
+<dl class="holder1" id="catalog-holder-0">
+<dd><a href="#1" log-data-detail="" class="nslog:1274" name="STAT_ONCLICK_UNSUBMIT_CATALOG">自动化编译</a></dd><dd><a href="#2" log-data-detail="" class="nslog:1274" name="STAT_ONCLICK_UNSUBMIT_CATALOG">主要功能</a></dd><dd><a href="#3" log-data-detail="" class="nslog:1274" name="STAT_ONCLICK_UNSUBMIT_CATALOG">$ make -f Makefile.debug</a></dd><dd><a href="#4" log-data-detail="" class="nslog:1274" name="STAT_ONCLICK_UNSUBMIT_CATALOG">文件定义与命令</a></dd><dd><a href="#5" log-data-detail="" class="nslog:1274" name="STAT_ONCLICK_UNSUBMIT_CATALOG">下面都是有效的宏引用：</a></dd><dd><a href="#6" log-data-detail="" class="nslog:1274" name="STAT_ONCLICK_UNSUBMIT_CATALOG">预定义变量</a></dd></dl>
+<dl class="holder2" id="catalog-holder-2-0"></dl>
+</fieldset>
+<div class="clear"></div>
+
+<div class="lemma-main-content" id="lemmaContent-0">
+<h2 class="headline-1 first bk-sidecatalog-title"><span class="text_edit editable-title" data-edit-id="974566:974566:1"><a href="#" class="nslog:1019" onclick='bk.view.editLemma("/edit/",974566,974566,1);return false'>编辑本段</a></span><a name="1"></a><span class="headline-content">自动化编译</span></h2>　　<div class="album-view log-set-param" log-set-param="album_view" id="alb_3069503" style="float: right; width: 219px;"><p class="album-div" style="background-color: rgb(255, 255, 255); height: 159px; width: 219px;"><span class="album-border1" style="height: 142px; width: 202px;"></span><span class="album-border2" style="height: 142px; width: 202px;"></span><a class="album-overlay  nslog:1212" href="http://baike.baidu.com/albums/974566/974566.html#2532503$" target="_top" style="height: 159px; width: 219px;"><img src="0b07ec1fa3fe7805f724e4fa.jpg" class="album-cover hook-lemma-ext-module" data-src="http://imgsrc.baidu.com/baike/abpic/item/0b07ec1fa3fe7805f724e4fa.jpg" style="height: 139px; width: 200px;"><span class="album-logo"></span></a></p><span class="title">makefile</span><span class="count">(3张)</span></div>　makefile带来的好处就是——“自动化编译”，一旦写好，只需要一个make命令，整个工程完全自动编译，极大的提高了软件开发的效率。make是一个命令工具，是一个解释makefile中指令的命令工具，一般来说，大多数的IDE都有这个命令，比如：Delphi的make，<a target="_top" href="http://baike.baidu.com/view/100377.htm">Visual C++</a>的nmake，Linux下GNU的make。可见，makefile都成为了一种在工程方面的编译方法。<div class="bpctrl"></div><h2 class="headline-1 bk-sidecatalog-title"><span class="text_edit editable-title" data-edit-id="974566:974566:2"><a href="#" class="nslog:1019" onclick='bk.view.editLemma("/edit/",974566,974566,2);return false'>编辑本段</a></span><a name="2"></a><span class="headline-content">主要功能</span></h2>　　Make工具最主要也是最基本的功能就是通过makefile文件来描述源程序之间的相互关系并自动维护编译工作。而makefile 文件需要按照某种语法进行编写，文件中需要说明如何编译各个源文件并连接生成<a target="_top" href="http://baike.baidu.com/view/159830.htm">可执行文件</a>，并要求定义源文件之间的依赖关系。makefile 文件是许多编译器--包括 Windows NT 下的编译器--维护编译信息的常用方法，只是在<a target="_top" href="http://baike.baidu.com/view/14867.htm">集成开发环境</a>中，用户通过友好的界面修改 makefile 文件而已。
+<div class="spctrl"></div>　　在 UNIX 系统中，习惯使用 Makefile 作为 makfile 文件。如果要使用其他文件作为 makefile，则可利用类似下面的 make 命令选项指定 makefile 文件：<div class="bpctrl"></div><h2 class="headline-1 bk-sidecatalog-title"><span class="text_edit editable-title" data-edit-id="974566:974566:3"><a href="#" class="nslog:1019" onclick='bk.view.editLemma("/edit/",974566,974566,3);return false'>编辑本段</a></span><a name="3"></a><span class="headline-content">$ make -f Makefile.debug</span></h2>　　例如，一个名为prog的程序由三个C源文件filea.c、fileb.c和filec<div style="float: right; visibility: visible; padding-bottom: 3px; width: 200px; position: relative;" class="text_pic"><a target="_top" href="http://baike.baidu.com/image/a8ad9413c4f60de9f6039e28" title="查看图片" class="pic-handle">&nbsp;&nbsp;</a><a href="http://baike.baidu.com/image/a8ad9413c4f60de9f6039e28" target="_top"><img class="editorImg log-set-param" log-set-param="img_view" title="Makefile文件工程样例" src="a8ad9413c4f60de9f6039e28.jpg"></a><p class="pic-info">Makefile文件工程样例</p></div>.c以及库文件LS编译生成，这三个文件还分别包含自己的头文件a.h 、b.h和c.h。通常情况下，C编译器将会输出三个目标文件filea.o、fileb.o和filec.o。假设filea.c和fileb.c都要声明用到一个名为defs的文件，但filec.c不用。即在filea.c和fileb.c里都有这样的声明：
+<div class="spctrl"></div>　　#include "defs"
+<div class="spctrl"></div>　　那么下面的文档就描述了这些文件之间的相互联系:
+<div class="spctrl"></div>　　---------------------------------------------------------
+<div class="spctrl"></div>　　#It is a example for describing makefile
+<div class="spctrl"></div>　　prog : filea.o fileb.o filec.o
+<div class="spctrl"></div>　　cc filea.o fileb.o filec.o -LS -o prog
+<div class="spctrl"></div>　　filea.o : filea.c a.h defs
+<div class="spctrl"></div>　　cc -c filea.c
+<div class="spctrl"></div>　　fileb.o : fileb.c b.h defs
+<div class="spctrl"></div>　　cc -c fileb.c
+<div class="spctrl"></div>　　filec.o : filec.c c.h
+<div class="spctrl"></div>　　cc -c filec.c
+<div class="spctrl"></div>　　----------------------------------------------------------
+<div class="spctrl"></div>　　这个描述文档就是一个简单的makefile文件。
+<div class="spctrl"></div>　　从上面的例子注意到，第一个字符为 # 的行为注释行。第一个非注释行指定prog由三个目标文件filea.o、fileb.o和filec.o链接生成。第三行描述了如何从prog所依赖的文件建立可执行文件。接下来的4、6行分别指定三个目标文件，以及它们所依赖的.c和.h文件以及defs文件。而5、7、9行则指定了如何从目标所依赖的文件建立目标。
+<div class="spctrl"></div>　　当filea.c或a.h文件在编译之后又被修改，则 make 工具可自动重新编译filea.o，如果在前后两次编译之间，filea.c 和a.h 均没有被修改，而且filea.o还存在的话，就没有必要重新编译。这种依赖关系在多源文件的程序编译中尤其重要。通过这种依赖关系的定义，make 工具可避免许多不必要的编译工作。当然，利用Shell<a target="_top" href="http://baike.baidu.com/view/54.htm">脚本</a>也可以达到自动编译的效果，但是，Shell 脚本将全部编译任何源文件，包括哪些不必要重新编译的源文件，而 make 工具则可根据目标上一次编译的时间和目标所依赖的源文件的更新时间而自动判断应当编译哪个源文件。
+<div class="spctrl"></div>　　Makefile文件准备好之后，接着在Makefile文件所在的目录下敲入make这个命令就可以了，根据Makefile文件，以告诉make命令需要怎么样的去编译和链接目标程序。<div class="bpctrl"></div><h2 class="headline-1 bk-sidecatalog-title"><span class="text_edit editable-title" data-edit-id="974566:974566:4"><a href="#" class="nslog:1019" onclick='bk.view.editLemma("/edit/",974566,974566,4);return false'>编辑本段</a></span><a name="4"></a><span class="headline-content">文件定义与命令</span></h2>　　Makefile文件作为一种描述文档一般需要包含以下内容:
+<div class="spctrl"></div>　　◆ 宏定义<div style="float: right; visibility: visible; padding-bottom: 3px; width: 197px; position: relative;" class="text_pic"><a target="_top" href="http://baike.baidu.com/image/8367d1fc63fde5bbb801a001" title="查看图片" class="pic-handle">&nbsp;&nbsp;</a><a href="http://baike.baidu.com/image/8367d1fc63fde5bbb801a001" target="_top"><img class="editorImg log-set-param" log-set-param="img_view" title="命令行中执行makefile" src="8367d1fc63fde5bbb801a001.jpg"></a><p class="pic-info">命令行中执行makefile</p></div>◆ 源文件之间的相互依赖关系
+<div class="spctrl"></div>　　◆ 可执行的命令
+<div class="spctrl"></div>　　Makefile中允许使用简单的宏指代源文件及其相关编译信息，在Linux中也称宏为变量。在引用宏时只需在变量前加$符号，但值得注意的是，如果变量名的长度超过一个字符，在引用时就必须加圆括号（）。<div class="bpctrl"></div><h2 class="headline-1 bk-sidecatalog-title"><span class="text_edit editable-title" data-edit-id="974566:974566:5"><a href="#" class="nslog:1019" onclick='bk.view.editLemma("/edit/",974566,974566,5);return false'>编辑本段</a></span><a name="5"></a><span class="headline-content">下面都是有效的宏引用：</span></h2>　　$(CFLAGS)
+<div class="spctrl"></div>　　$Z
+<div class="spctrl"></div>　　$(Z)
+<div class="spctrl"></div>　　其中最后两个引用是完全一致的。
+<div class="spctrl"></div>　　需要注意的是一些宏的预定义变量，在Unix系统中，$*、$@、$?和$&lt;四个特殊宏的值在执行命令的过程中会发生相应的变化，而在GNU make中则定义了更多的预定义变量。关于预定义变量的详细内容，宏定义的使用可以使我们脱离那些冗长乏味的编译选项，为编写makefile文件带来很大的方便。
+<div class="spctrl"></div>　　---------------------------------------------------------
+<div class="spctrl"></div>　　# Define a macro for the object files
+<div class="spctrl"></div>　　OBJECTS= filea.o fileb.o filec.o
+<div class="spctrl"></div>　　# Define a macro for the library file
+<div class="spctrl"></div>　　LIBES= -LS
+<div class="spctrl"></div>　　# use macros rewrite makefile
+<div class="spctrl"></div>　　prog: $(OBJECTS)
+<div class="spctrl"></div>　　cc $(OBJECTS) $(LIBES) -o prog
+<div class="spctrl"></div>　　……
+<div class="spctrl"></div>　　---------------------------------------------------------
+<div class="spctrl"></div>　　此时如果执行不带参数的make命令，将连接三个目标文件和库文件LS；但是如果在make命令后带有新的宏定义：
+<div class="spctrl"></div>　　make "LIBES= -LL -LS" #如何实现？
+<div class="spctrl"></div>　　则命令行后面的宏定义将覆盖makefile文件中的宏定义。若LL也是库文件，此时make命令将连接三个目标文件以及两个库文件LS和LL。
+<div class="spctrl"></div>　　在Unix系统中没有对常量NULL作出明确的定义，因此我们要定义NULL字符串时要使用下述宏定义：
+<div class="spctrl"></div>　　STRINGNAME= //这里有待考证
+<div class="spctrl"></div>　　makefile 中的变量（宏） 
+<div class="spctrl"></div>　　GNU 的 make 工具除提供有建立目标的基本功能之外，还有许多便于表达依赖性关系 
+<div class="spctrl"></div>　　以及建立目标的命令的特色。其中之一就是变量或宏的定义能力。如果你要以相同的编译 
+<div class="spctrl"></div>　　选项同时编译十几个 C 源文件，而为每个目标的编译指定冗长的编译选项的话，将是非 
+<div class="spctrl"></div>　　常乏味的。但利用简单的变量定义，可避免这种乏味的工作： 
+<div class="spctrl"></div>　　# Define macros for name of compiler 
+<div class="spctrl"></div>　　CC = gcc 
+<div class="spctrl"></div>　　# Define a macr o for the CC flags 
+<div class="spctrl"></div>　　CCFLAGS = -D_DEBUG -g -m486 
+<div class="spctrl"></div>　　# A rule for building a object file 
+<div class="spctrl"></div>　　test.o: test.c test.h 
+<div class="spctrl"></div>　　$(CC) -c $(CCFLAGS) test.c 
+<div class="spctrl"></div>　　在上面的例子中，CC 和 CCFLAGS 就是 make 的变量。GNU make 通常称之为变量， 
+<div class="spctrl"></div>　　而其他 UNIX 的 make 工具称之为宏，实际是同一个东西。在 makefile 中引用变量的值 
+<div class="spctrl"></div>　　时，只需变量名之前添加 $ 符号，如上面的 $(CC) 和 $(CCFLAGS)。 
+<div class="spctrl"></div>　　GNU make 有许多预定义的变量，这些变量具有特殊的含义，可在规则中使用。表 13-2 
+<div class="spctrl"></div>　　给出了一些主要的预定义变量，除这些变量外，GNU make 还将所有的环境变量作为自己 
+<div class="spctrl"></div>　　的预定义变量。 
+<div class="spctrl"></div>　　表 13-2 GNU make 的主要预定义变量<div class="bpctrl"></div><h2 class="headline-1 bk-sidecatalog-title"><span class="text_edit editable-title" data-edit-id="974566:974566:6"><a href="#" class="nslog:1019" onclick='bk.view.editLemma("/edit/",974566,974566,6);return false'>编辑本段</a></span><a name="6"></a><span class="headline-content">预定义变量</span></h2>　　含义 
+<div class="spctrl"></div>　　$* 
+<div class="spctrl"></div>　　不包含扩展名的目标文件名称。 
+<div class="spctrl"></div>　　$+ 
+<div class="spctrl"></div>　　所有的依赖文件，以空格分开，并以出现的先后为序，可能包含重复的依赖文件。 
+<div class="spctrl"></div>　　$&lt; 
+<div class="spctrl"></div>　　第一个依赖文件的名称。 
+<div class="spctrl"></div>　　$? 
+<div class="spctrl"></div>　　所有的依赖文件，以空格分开，这些依赖文件的修改日期比目标的创建日期晚。 
+<div class="spctrl"></div>　　$@ 
+<div class="spctrl"></div>　　目标的完整名称。 
+<div class="spctrl"></div>　　$^ 
+<div class="spctrl"></div>　　所有的依赖文件，以空格分开，不包含重复的依赖文件。 
+<div class="spctrl"></div>　　$% 
+<div class="spctrl"></div>　　如果目标是归档成员，则该变量表示目标的归档成员名称。例如，如果目标名称为 
+<div class="spctrl"></div>　　(image.o)，则 $@ 为 ，而 $% 为 image.o。 
+<div class="spctrl"></div>　　AR 
+<div class="spctrl"></div>　　归档维护程序的名称，默认值为 ar。 
+<div class="spctrl"></div>　　ARFLAGS 
+<div class="spctrl"></div>　　归档维护程序的选项。 
+<div class="spctrl"></div>　　AS 
+<div class="spctrl"></div>　　汇编程序的名称，默认值为 as。 
+<div class="spctrl"></div>　　ASFLAGS 
+<div class="spctrl"></div>　　汇编程序的选项。 
+<div class="spctrl"></div>　　CC 
+<div class="spctrl"></div>　　C 编译器的名称，默认值为 cc。 
+<div class="spctrl"></div>　　CFLAGS 
+<div class="spctrl"></div>　　C 编译器的选项。 
+<div class="spctrl"></div>　　CPP 
+<div class="spctrl"></div>　　C 预编译器的名称，默认值为 $(CC) -E。 
+<div class="spctrl"></div>　　CPPFLAGS 
+<div class="spctrl"></div>　　C 预编译的选项。 
+<div class="spctrl"></div>　　CXX 
+<div class="spctrl"></div>　　C++ 编译器的名称，默认值为 g++。 
+<div class="spctrl"></div>　　CXXFLAGS 
+<div class="spctrl"></div>　　C++ 编译器的选项。 
+<div class="spctrl"></div>　　FC 
+<div class="spctrl"></div>　　FORTRAN 编译器的名称，默认值为 f77。 
+<div class="spctrl"></div>　　FFLAGS 
+<div class="spctrl"></div>　　FORTRAN 编译器的选项。 
+<div class="spctrl"></div>　　Makefile以文件名:文件名的形式比较冒号右边的文件是不是较左边的文件有更新，如果有更新则执行下一行的程序代码。因此Makefile可以把文件关联起来<div class="bpctrl" style="clear: both;"></div><div class="clear"></div>
+</div>
+<div class="clear"></div>
+<div class="reinforce" id="lemmaExtend">
+<div class="clear"></div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="content-ft">
+<div class="reinforce">
+<dl class="nslog-area" data-nslog-type="18" id="relatedLemmaDown">
+<dt>
+“Makefile”相关词条：
+</dt>
+<dd class="relative">
+<div class="clear"></div>
+<div>
+<a class="relatedhelp" href="http://www.baidu.com/search/baike_help.html#%E5%A6%82%E4%BD%95%E5%AE%8C%E5%96%84%E7%9B%B8%E5%85%B3%E8%AF%8D%E6%9D%A1" target="_top" title="什么是相关词条">什么是相关词条</a>
+<a class="myedit nslog:1005" href="#" onclick='userlogin.check(bk.view.editRelated,false,"editrelated");return false'>我来完善</a>
+</div>
+<div class="clear"></div>
+</dd>
+</dl>
+</div>
+<div class="clear"></div>
+<div class="clear"></div>
+<div class="end">
+<p class="declare">百度百科中的词条内容仅供参考，如果您需要解决具体问题（尤其在法律、医学等领域），建议您咨询相关领域专业人士。</p>
+<div class="text_vote1" id="vote_btn"><b id="vote_num">915</b><span id="vote_txt">本词条对我有帮助</span></div>
+</div><div class="layout share">
+<div class="share-item-title">
+<a class="cang nslog:99" href="http://cang.baidu.com/do/add" onclick='window.open("http://cang.baidu.com/do/add?it="+encodeURIComponent(document.title)+"&amp;iu="+encodeURIComponent(location.href)+"&amp;tn=%E7%99%BE%E7%A7%91%E8%AF%8D%E6%9D%A1%2C&amp;fr=bk#nw=1","_s","scrollbars=no,width=600,height=450,left=75,top=20,status=no,resizable= yes");return false' target="_top" title="添加到搜藏">添加到搜藏</a>
+</div>
+<div class="share-item clearfix">
+<span class="share-tip">分享到:</span>
+<a class="itieBa nslog:97" href="http://tieba.baidu.com/i/sys/share?link=http%3A%2F%2Fbaike.baidu.com%2Fview%2F974566.htm&amp;type=text&amp;title=Makefile_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91&amp;content=%E3%80%90Makefile%E3%80%91%E6%96%87%E4%BB%B6%20Makefile%20%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B%E4%B8%AD%E7%9A%84%E6%BA%90%E6%96%87%E4%BB%B6%E4%B8%8D%E8%AE%A1%E6%95%B0%EF%BC%8C%E5%85%B6%E6%8C%89%E7%B1%BB%E5%9E%8B%E3%80%81%E5%8A%9F%E8%83%BD%E3%80%81%E6%A8%A1%E5%9D%97%E5%88%86%E5%88%AB%E6%94%BE%E5%9C%A8%E8%8B%A5%E5%B9%B2%E4%B8%AA%E7%9B%AE%E5%BD%95%E4%B8%AD%EF%BC%8Cmakefile%E5%AE%9A%E4%B9%89%E4%BA%86%E4%B8%80%E7%B3%BB%E5%88%97%E7%9A%84%E8%A7%84%E5%88%99%E6%9D%A5%E6%8C%87%E5%AE%9A%EF%BC%8C%E5%93%AA%E4%BA%9B%E6%96%87%E4%BB%B6%E9%9C%80%E8%A6%81%E5%85%88%E7%BC%96%E8%AF%91%EF%BC%8C%E5%93%AA%E4%BA%9B%E6%96%87%E4%BB%B6%E9%9C%80......" target="_top" title="分享到i贴吧"></a>
+<a class="itieBa nslog:359" href="http://apps.hi.baidu.com/share?url=http%3A%2F%2Fbaike.baidu.com%2Fview%2F974566.htm" style="background-position: 0pt -271px;" target="_top" title="转贴到百度空间"></a>
+<a class="tsina" href="#" onclick='window.open("http://service.weibo.com/share/share.php?url=http%3A%2F%2Fbaike.baidu.com%2Fview%2F974566.htm&amp;type=3&amp;count=0&amp;appkey=3417820038&amp;title=【Makefile】文件 Makefile 一个工程中的源文件不计数，其按类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定，哪些文件需要先编译，哪些文件需......&amp;pic=http://imgsrc.baidu.com/baike/abpic/item/0b3a1c08267bbbee63d98674.jpg&amp;ralateUid=1647247597&amp;rnd="+new Date().valueOf(),"newwindow","height=440,width=430,top="+(screen.height-440)/2+",left="+(screen.width-430)/2+", toolbar=no, menubar=no, scrollbars=no,resizable=yes,location=no, status=no");nslog(location.href,94,{name:"tsina",id:"974566",title:"Makefile"});return false' title="分享到新浪微博"></a>
+<a class="tdouban" href="javascript:void((function(s,d,e,r,l,p,t,ab,z,c){var%20f='http://www.douban.com/recommend/',u=z||d.location,p=['?&amp;url=',e(u),'&amp;title=',e(t||d.title),'&amp;abstract=',e(ab||'')].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=440,height=430,left=',(s.width-440)/2,',top=',(s.height-430)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'BAIDUBAIKE','http://baike.baidu.com','','%E3%80%90Makefile_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91%E3%80%91','Makefile%E6%96%87%E4%BB%B6%20Makefile%20%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B%E4%B8%AD%E7%9A%84%E6%BA%90%E6%96%87%E4%BB%B6%E4%B8%8D%E8%AE%A1%E6%95%B0%EF%BC%8C%E5%85%B6%E6%8C%89%E7%B1%BB%E5%9E%8B%E3%80%81%E5%8A%9F%E8%83%BD%E3%80%81%E6%A8%A1%E5%9D%97%E5%88%86%E5%88%AB%E6%94%BE%E5%9C%A8%E8%8B%A5%E5%B9%B2%E4%B8%AA%E7%9B%AE%E5%BD%95%E4%B8%AD%EF%BC%8Cmakefile%E5%AE%9A%E4%B9%89%E4%BA%86%E4%B8%80%E7%B3%BB%E5%88%97%E7%9A%84%E8%A7%84%E5%88%99%E6%9D%A5%E6%8C%87%E5%AE%9A%EF%BC%8C%E5%93%AA%E4%BA%9B%E6%96%87%E4%BB%B6%E9%9C%80%E8%A6%81%E5%85%88%E7%BC%96%E8%AF%91%EF%BC%8C%E5%93%AA%E4%BA%9B%E6%96%87%E4%BB%B6%E9%9C%80......','http://baike.baidu.com/view/974566.htm',''));nslog(location.href,257,{name:'tdouban',id:'974566',title:'Makefile'})" title="分享到豆瓣网"></a>
+<a class="tsohu" href="javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f='http://t.sohu.com/third/post.jsp?',u=z||d.location,p=['&amp;url=',e(u),'&amp;title=',e(t||d.title),'&amp;content=',c||'gb2312','&amp;pic=',e(p||'')].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=660,height=470,left=',(s.width-660)/2,',top=',(s.height-470)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'','','','%E3%80%90Makefile%E3%80%91%E6%96%87%E4%BB%B6%20Makefile%20%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B%E4%B8%AD%E7%9A%84%E6%BA%90%E6%96%87%E4%BB%B6%E4%B8%8D%E8%AE%A1%E6%95%B0%EF%BC%8C%E5%85%B6%E6%8C%89%E7%B1%BB%E5%9E%8B%E3%80%81%E5%8A%9F%E8%83%BD%E3%80%81%E6%A8%A1%E5%9D%97%E5%88%86%E5%88%AB%E6%94%BE%E5%9C%A8%E8%8B%A5%E5%B9%B2%E4%B8%AA%E7%9B%AE%E5%BD%95%E4%B8%AD%EF%BC%8Cmakefile%E5%AE%9A%E4%B9%89%E4%BA%86%E4%B8%80%E7%B3%BB%E5%88%97%E7%9A%84%E8%A7%84%E5%88%99%E6%9D%A5%E6%8C%87%E5%AE%9A%EF%BC%8C%E5%93%AA%E4%BA%9B%E6%96%87%E4%BB%B6%E9%9C%80%E8%A6%81%E5%85%88%E7%BC%96%E8%AF%91%EF%BC%8C%E5%93%AA%E4%BA%9B%E6%96%87%E4%BB%B6%E9%9C%80......','http://baike.baidu.com/view/974566.htm','utf-8'));nslog(location.href,327,{name:'tsohu',id:'974566',title:'Makefile'})" title="分享到搜狐微博"></a>
+<a href="javascript:void((function(){var%20url%20=%20'link=http://baike.baidu.com&amp;source='+%20encodeURIComponent('%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91')+%20'&amp;info='+encodeURIComponent('%E3%80%90Makefile%E3%80%91%E6%96%87%E4%BB%B6%20Makefile%20%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B%E4%B8%AD%E7%9A%84%E6%BA%90%E6%96%87%E4%BB%B6%E4%B8%8D%E8%AE%A1%E6%95%B0%EF%BC%8C%E5%85%B6%E6%8C%89%E7%B1%BB%E5%9E%8B%E3%80%81%E5%8A%9F%E8%83%BD%E3%80%81%E6%A8%A1%E5%9D%97%E5%88%86%E5%88%AB%E6%94%BE%E5%9C%A8%E8%8B%A5%E5%B9%B2%E4%B8%AA%E7%9B%AE%E5%BD%95%E4%B8%AD%EF%BC%8Cmakefile%E5%AE%9A%E4%B9%89%E4%BA%86%E4%B8%80%E7%B3%BB%E5%88%97%E7%9A%84%E8%A7%84%E5%88%99%E6%9D%A5%E6%8C%87%E5%AE%9A%EF%BC%8C%E5%93%AA%E4%BA%9B%E6%96%87%E4%BB%B6%E9%9C%80%E8%A6%81%E5%85%88%E7%BC%96%E8%AF%91%EF%BC%8C%E5%93%AA%E4%BA%9B%E6%96%87%E4%BB%B6%E9%9C%80......http://baike.baidu.com/view/974566.htm');window.open('http://t.163.com/article/user/checkLogin.do?'+url+'&amp;'+new%20Date().getTime(),'newwindow','height=330,width=550,top='+(screen.height-280)/2+',left='+(screen.width-550)/2+',%20toolbar=no,%20menubar=no,%20scrollbars=no,resizable=yes,location=no,%20status=no');})());nslog(location.href,1275,{name:'t163',id:'974566',title:'Makefile'})" style="color: rgb(114, 113, 113); background: url('wblog.gif') no-repeat scroll left center transparent;" target="_self" title="分享到网易微博"></a>
+<a href="javascript:void((function(s,d,e,r,l,p,t,z,c){%20var%20f='http://share.renren.com/share/buttonshare/post/2001',%20u=z||d.location,%20p=['?url=',%20e(u),%20'&amp;title=',e(t||d.title),%20'&amp;source=',e(r),%20'&amp;sourceUrl=',e(l),%20'&amp;content=',e(c||d.title),%20'&amp;pic=',e(p||'')].join('');%20function%20a(){%20if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=440,height=430,left=',(s.width-440)/2,',top=',(s.height-430)/2].join('')))%20u.href=[f,p].join('');%20};%20if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();%20})%20(screen,document,encodeURIComponent,'BAIDUBAIKE','http://baike.baidu.com','','Makefile_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91'%20,window.location.href,'%E3%80%90Makefile%E3%80%91%E6%96%87%E4%BB%B6%20Makefile%20%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B%E4%B8%AD%E7%9A%84%E6%BA%90%E6%96%87%E4%BB%B6%E4%B8%8D%E8%AE%A1%E6%95%B0%EF%BC%8C%E5%85%B6%E6%8C%89%E7%B1%BB%E5%9E%8B%E3%80%81%E5%8A%9F%E8%83%BD%E3%80%81%E6%A8%A1%E5%9D%97%E5%88%86%E5%88%AB%E6%94%BE%E5%9C%A8%E8%8B%A5%E5%B9%B2%E4%B8%AA%E7%9B%AE%E5%BD%95%E4%B8%AD%EF%BC%8Cmakefile%E5%AE%9A%E4%B9%89%E4%BA%86%E4%B8%80%E7%B3%BB%E5%88%97%E7%9A%84%E8%A7%84%E5%88%99%E6%9D%A5%E6%8C%87%E5%AE%9A%EF%BC%8C%E5%93%AA%E4%BA%9B%E6%96%87%E4%BB%B6%E9%9C%80%E8%A6%81%E5%85%88%E7%BC%96%E8%AF%91%EF%BC%8C%E5%93%AA%E4%BA%9B%E6%96%87%E4%BB%B6%E9%9C%80......'));nslog(window.location.href,%201640,{name:'renren',id:'974566',title:'Makefile'});" style="background: url('share-tinybtn.png') no-repeat scroll left center transparent;" title="分享到人人"></a>
+</div>
+</div>
+<dl class="lemma-ext-bottom nslog-area" data-nslog-type="16">
+<dt>合作编辑者</dt>
+<dd>
+<div class="onelineonly">
+<span id="co-editors">
+<span>
+<a title="查看此用户资料" class="usercard" username="lin040444" target="_top" href="http://passport.baidu.com/?business&amp;aid=7&amp;default_tab=2&amp;un=lin040444#3">lin040444</a></span>
+<span>
+，<a title="查看此用户资料" class="usercard" username="753909030" target="_top" href="http://passport.baidu.com/?business&amp;aid=7&amp;default_tab=2&amp;un=753909030#3">753909030</a></span>
+<span>
+，<a title="查看此用户资料" class="usercard" username="faiyou79" target="_top" href="http://passport.baidu.com/?business&amp;aid=7&amp;default_tab=2&amp;un=faiyou79#3">faiyou79</a></span>
+<span>
+，<a title="查看此用户资料" class="usercard" username="tinglu10" target="_top" href="http://passport.baidu.com/?business&amp;aid=7&amp;default_tab=2&amp;un=tinglu10#3">tinglu10</a></span>
+<span>
+，<a title="查看此用户资料" class="usercard" username="百科ROBOT" target="_top" href="http://passport.baidu.com/?business&amp;aid=7&amp;default_tab=2&amp;un=%B0%D9%BF%C6ROBOT#3">百科ROBOT</a></span>
+<span>
+，<a title="查看此用户资料" class="usercard" username="mashuxiaoxiao" target="_top" href="http://passport.baidu.com/?business&amp;aid=7&amp;default_tab=2&amp;un=mashuxiaoxiao#3">mashuxiaoxiao</a></span>
+<span>
+，<a title="查看此用户资料" class="usercard" username="anglexiner" target="_top" href="http://passport.baidu.com/?business&amp;aid=7&amp;default_tab=2&amp;un=anglexiner#3">anglexiner</a></span>
+
+
+
+</span>
+</div>
+<a class="f12 ref_more" href="http://baike.baidu.com/update/id=974566?from=au" id="more-coeditor" style="" target="_top">更多</a>
+<div class="clear"></div>
+<div class="try f12">如果您认为本词条还需进一步完善，百科欢迎您也来参与<a class="try-edit" href="#" onclick='bk.view.editLemma("/edit/","974566");return false'>编辑词条</a>在开始编辑前，您还可以先学习<a href="http://www.baidu.com/search/baike_help.html#%E7%BC%96%E8%BE%91%E5%8E%9F%E5%88%99" target="_top">如何编辑词条</a></div>
+</dd>
+</dl>
+<p class="bk-feedback">
+如想投诉，请到<a class="nslog:1006" href="http://tousu.baidu.com/baike" target="_top">百度百科投诉中心</a>；如想提出意见、建议，请到<a class="nslog:1007" href="http://tieba.baidu.com/f?kw=%b0%d9%b6%c8%b0%d9%bf%c6" target="_top">百度百科吧</a>。
+</p>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<div class="col-sub" id="side">
+<div class="userinfo-side">
+<div id="userInfoDiv">
+<div class="userinfo-inner fix">
+<div class="fix mb10" id="userMessage">
+<a href="http://baike.baidu.com/uc/home" onclick="nslog(this.href,221)" target="_top">
+<img class="userinfo-pic" id="userPic">
+</a>
+<div id="userDetail">
+<div id="userTitle">
+<a href="http://baike.baidu.com/cms/s/kdt/index.html" id="kedoutuanPic" onclick="nslog(this.href,223)" target="_top">
+<img alt="百科蝌蚪团" id="iconOdp" title="百科蝌蚪团" border="0">
+</a><a href="http://baike.baidu.com/cms/topic/master/index.html" id="masterPic" target="_top">
+<img alt="百科分类管理员" id="iconAdmin" title="百科分类管理员" border="0">
+</a><a href="http://baike.baidu.com/cms/s/core/index.html" id="corePic" target="_top">
+<img alt="核心用户" id="iconVip" title="核心用户" border="0">
+</a>
+<a href="http://baike.baidu.com/uc/home" id="userTitleLink" onclick="nslog(this.href,222)" target="_top">
+</a>
+</div>
+<p>
+<a href="http://www.baidu.com/search/baike_help.html#%E7%99%BE%E7%A7%91%E7%A7%AF%E5%88%86%E4%BD%93%E7%B3%BB" target="_top"><img id="userTitlePic" src="blank.gif" align="absmiddle">
+</a>
+<a href="http://www.baidu.com/search/baike_help.html#%E9%AB%98%E8%B4%A8%E9%87%8F%E7%89%88%E6%9C%AC%E4%B8%8E%E4%BC%98%E8%B4%A8%E7%89%88%E6%9C%AC%E8%AF%84%E9%80%89%E8%A7%84%E5%88%99%EF%BC%882011-02-14%EF%BC%89" id="highVersionLink" target="_top" title="高质量版本"></a><span id="highVersionNum"></span>
+<a href="http://www.baidu.com/search/baike_help.html#%E9%AB%98%E8%B4%A8%E9%87%8F%E7%89%88%E6%9C%AC%E4%B8%8E%E4%BC%98%E8%B4%A8%E7%89%88%E6%9C%AC%E8%AF%84%E9%80%89%E8%A7%84%E5%88%99%EF%BC%882011-02-14%EF%BC%89" id="goodVersionLink" target="_top" title="优质版本"></a><span id="goodVersionNum"></span>
+</p>
+<div id="userProcessBack"><div id="userProcess"></div></div>
+</div>
+</div>
+<div class="userin-split"></div>
+<div class="piece dnone">
+<div class="mb10 dnone" id="growupTask">
+<h3 class="fix">
+<a class="mr8 icon-growup-task" href="http://baike.baidu.com/uc/task" onclick="nslog(this.href,447)" target="_top"></a>
+<a class="title" href="http://baike.baidu.com/uc/task" onclick="nslog(this.href,447)" target="_top">成长任务</a>
+</h3>
+<ul id="growupTasks"></ul>
+</div>
+<div class="mb10 dnone" id="dailyTask">
+<h3 class="fix">
+<a class="mr8 icon-common-task" href="http://baike.baidu.com/uc/task#3" onclick="nslog(this.href,460)" target="_top"></a>
+<a class="title" href="http://baike.baidu.com/uc/task#3" onclick="nslog(this.href,460)" target="_top">日常任务</a>
+</h3>
+<ul class="dnone" id="dailyTasks">
+</ul>
+</div>
+<div class="mb10 dnone" id="hotWord">
+<div style="position: relative;">
+<h3 class="fix">
+<a class="mr8 icon-hotword" href="http://www.baidu.com/search/baike/hothelp/" id="hotHelp" target="_top"></a>
+<a class="title" href="http://baike.baidu.com/uc/recommend" onclick="nslog(this.href,224)" target="_top">热词推送</a>
+<a class="hot-word-refresh" href="javascript:void(0)" id="hotWordRefresh" onclick="showHotwords();nslog(this.href,225)"></a>
+</h3>
+<ul id="hotWords">
+</ul>
+<div class="tip" id="hotHelpTip"><div class="tipMain" id="hotHelpTipMain"><p>编辑热词可获得额外经验值</p></div></div>
+<div class="tip" id="completeTip"><div class="tipMain" id="completeTipMain"></div></div>
+<div class="tip reason-tip" id="hotReasonTip"><div class="tipMain" id="hotReasonTipMain"></div></div>
+</div>
+</div>
+</div>
+<div class="piece dnone">
+<div class="mb10" id="encourage">
+<h3 class="fix">
+<a class="mr8 fl" href="#" id="encourage_icon_href">
+<img src="encourage-title.gif">
+</a>
+<a class="title" href="#" id="encourage_title"></a>
+</h3>
+<ul id="encouragements">
+</ul>
+</div>
+</div>
+<div class="piece dnone">
+<div class="mb10 dnone" id="effort">
+<h3 class="fix">
+<a class="mr8 icon-lemma" href="http://baike.baidu.com/uc/effort" onclick="nslog(this.href,241)" target="_top"></a>
+<a class="title" href="http://baike.baidu.com/uc/effort" onclick="nslog(this.href,241)" target="_top">词条动态</a>
+</h3>
+<ul id="efforts">
+</ul>
+</div>
+</div>
+<div class="gotouc-wrap">
+<a class="gotouc" href="http://baike.baidu.com/uc/home" onclick="nslog(this.href,227)" target="_top">进入我的百科</a>
+</div>
+<div class="tip" id="userTip"><div class="tipMain" id="userTipMain"><p>您目前的等级是<span id="userLevel"></span>级<br>您目前的经验值是<span id="totalscore"></span>点<br>您还需<span id="scorediff"></span>点经验值即可升为<span id="nextlevel"></span>级<br></p></div><div id="userTipArrow"></div><div id="userTipBack"></div></div>
+</div>
+</div>
+</div>
+<div class="box2" id="lemma-overview">
+<div class="box2-inner">
+<h2>词条统计</h2>
+<p class="info f12">
+浏览次数：约 <span id="viewPV">98759</span>
+次
+<br>
+编辑次数：17次 <a class="nslog:1021" href="http://baike.baidu.com/update/id=974566" target="_top">历史版本</a>
+<br>
+最近更新：<span id="lastModifyTime">2天前</span>
+<br>
+创建者：<span class="nslog:1022"><a title="查看此用户资料" class="usercard" username="wjtao291" target="_top" href="http://passport.baidu.com/?business&amp;aid=7&amp;default_tab=2&amp;un=wjtao291#3">wjtao291</a></span>
+</p>
+</div>
+</div>
+<div class="box2" id="bkDynamic" style="">
+<div class="box2-inner">
+<h5 id="profileTitle">最新动态</h5>
+<div class="f12">
+<dl class="task nslog-area" data-nslog-type="1023" id="task" style=""><dt><strong>百度世界</strong>：<a href="http://baiduworld.baidu.com/index.html" target="_top"></a></dt> <dd><a href="http://baiduworld.baidu.com/index.html" target="_top"><img src="a07ba4fffaf3474e313b095d10f12a27.gif" height="81" width="160"></a></dd></dl>
+<dl class="notice nslog-area" data-nslog-type="1024" id="notice"><dt><strong>百科消息</strong>：</dt><dd><a href="http://hi.baidu.com/%B0%D9%BF%C6%D0%A3%D4%B0%B4%F3%CA%B9/blog/item/b9af752c37db3580023bf6f7.html" target="_top">2011百度百科知识先锋培训营回顾</a></dd><dd><a href="http://baike.baidu.com/cms/s/shoujizhuanti/index.html?name=shoujizhuanti&amp;fr=bkhomeshoujizhuanti" target="_top">百科解密智能手机系统之谜</a></dd><dd><a href="http://baike.baidu.com/cms/s/xinhuanzhugege/index.html?name=xinhuanzhugege&amp;fr=bkCtXinhuanzhugege" target="_top">百度百科《新还珠格格》专题</a></dd><dd><a href="http://baike.baidu.com/cms/s/taifengzhuanti/index.html?name=taifeng&amp;fr=bkhomeTaifeng" target="_top">百度百科揭示台风的奥秘</a></dd><dd><a href="http://baike.baidu.com/cms/s/shbozhixing/index.html?name=shbozhixing&amp;fr=bkhomeshbozhixing" target="_top">参观陕西历史博物馆知识行专题</a></dd><dd><a href="http://hi.baidu.com/%B0%D9%B6%C8%B0%D9%BF%C6%B9%AB%B8%E6/blog/item/2e589f02d8e25a154afb5174.html" target="_top">科友参观陕西历史博物馆活动回顾</a></dd><dd><a href="http://list.video.baidu.com/iph_promote.html" target="_top">立即体验百度视频安卓版</a></dd><dd><a href="http://baike.baidu.com/cms/s/wuxian-preandroid/index.html" target="_top">百度百科无线客户端即将上线</a></dd><dd><a href="http://baike.baidu.com/cms/s/zhuti-hosi/index.html" target="_top">解秘天文现象与自然灾害</a></dd></dl>
+</div>
+</div>
+</div>
+<div class="box2" id="mabox" style="display: none;">
+<div class="box2-inner" id="box2-inner">
+
+
+</div>
+</div>
+<div class="clear">
+</div>
+</div>
+</div><img src="c.gif" style="display: none;"><input id="titleVal" value="Makefile" type="hidden">
+</div>
+<div class="nslog-area" data-nslog-type="1001" id="footer">
+© 2011 Baidu <a href="http://www.baidu.com/search/baike_help.html#%E7%99%BE%E7%A7%91%E5%8D%8F%E8%AE%AE" target="_top">权利声明</a>
+</div>
+</div>
+<div id="sidecatalog" style="position: fixed; display: none; top: 430px; left: 734px;">
+<div class="sidebar" id="sidebar"></div>
+<a class="gotop" href="#" id="gotop" title="返回顶部"></a>
+</div>
+<div id="side-catalog-content" style="display: none; position: fixed; overflow: hidden; height: 202px; top: 318px; left: 761px;"><div id="side-catalog-up"><div></div></div><div id="side-lemma-title">Makefile</div><div style="height: 132px;" id="side-title-panel"><div id="side-title-list"><h2><a href="#" class="nslog:1026" data-index="0" title="自动化编译">自动化编译</a></h2><h2><a href="#" class="nslog:1026" data-index="1" title="主要功能">主要功能</a></h2><h2><a href="#" class="nslog:1026" data-index="2" title="$ make -f Makefile.debug">$ make -f Makefile.debug</a></h2><h2><a href="#" class="nslog:1026" data-index="3" title="文件定义与命令">文件定义与命令</a></h2><h2><a href="#" class="nslog:1026" data-index="4" title="下面都是有效的宏引用：">下面都是有效的宏引用：</a></h2><h2><a href="#" class="nslog:1026" data-index="5" title="预定义变量">预定义变量</a></h2></div></div><div id="side-catalog-down"><div></div></div></div>
+
+
+
+<div id="usercard-wrap"><div style="opacity: 0;" class="user-card fix"><div class="top-bg"></div><div class="card-body fix"><div class="uc-l"><div class="uc-pic"></div><div class="uc-name"><a class="uc-id" href="http://baike.baidu.com/view/974566.htm"></a></div><div class="uc-level"></div></div><div class="uc-r"><div class="uc-items"><div class="uc-role fix"></div><div class="uc-badge fix"></div><div class="uc-honor"></div><div class="uc-going-task fix"></div><div class="uc-gq"></div><div class="uc-default"></div><div class="uc-edit"></div></div><span class="pillar"></span></div></div></div></div></body>
+</html>

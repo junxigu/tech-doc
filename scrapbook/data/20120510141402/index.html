@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta content="IE=7" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
+<link href="http://img.baidu.com/img/baike/wap/iphone4_logo.png" rel="apple-touch-icon">
+<meta content="6cxg7fjbSrYQta0LB_ceiPVV7KOb9Sis_o0e4QGYDec" name="google-site-verification"><title>STL List_百度百科</title>
+
+
+
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+
+<link rel="stylesheet" id="scrapbook-sticky-css" type="text/css" href="chrome://scrapbook/skin/annotation.css" media="all">
+</head>
+<body id="view"><iframe src="index_1.html" style="display: none;" frameborder="0"></iframe><div id="bdshare_s"><iframe src="index_2.html" id="bdsIfr" style="position: absolute; display: none; z-index: 9999;" frameborder="0"></iframe><div style="display: none;" id="bdshare_l"><div id="bdshare_l_c"><h6>分享到</h6><ul><li><a href="#" class="bds_qzone qqkj">QQ空间</a></li><li><a href="#" class="bds_tsina xlwb">新浪微博</a></li><li><a href="#" class="bds_baidu bdsc">百度搜藏</a></li><li><a href="#" class="bds_renren rrw">人人网</a></li><li><a href="#" class="bds_tqq txwb">腾讯微博</a></li><li><a href="#" class="bds_kaixin001 kxw">开心网</a></li><li><a href="#" class="bds_tqf txpy">腾讯朋友</a></li><li><a href="#" class="bds_hi bdkj">百度空间</a></li><li><a href="#" class="bds_douban db">豆瓣网</a></li><li><a href="#" class="bds_tsohu shwb">搜狐微博</a></li><li><a href="#" class="bds_msn msn">MSN</a></li><li><a href="#" class="bds_qq qqsc">QQ收藏</a></li><li><a href="#" class="bds_taobao tjh">淘宝</a></li><li><a href="#" class="bds_tieba bdtb">百度贴吧</a></li><li><a href="#" class="bds_sohu shbsh">搜狐白社会</a></li><li><a href="#" class="bds_more">更多...</a></li></ul><p><a href="#" class="goWebsite">百度分享</a></p></div></div></div>
+<div id="userbar"><ul><li></li><li class="line">|</li></ul></div>
+<div id="wrap">
+
+<div id="page">
+<div class="layout grid-m0s245 w1000" id="content-wrap">
+<div class="col-main article" id="content">
+<div class="main-wrap main-shadow" id="main-wrap">
+<div class="content-hd">
+<div class="content-hd-wrap"></div>
+</div>
+<div class="content-bd main-body">
+<div class="text" id="sec-content0">
+<div class="bk-editable-lemma-btns">
+<a class="tpldivide-lemma lemma-top-link" hidefocus="true" href="http://baike.baidu.com/tpldivideload?lemmaId=4255293" id="tmpdivide" style="display: none; margin-right: 14px;" target="_top"></a>
+<a class="dividable-lemma lemma-top-link" data-edit-id="4255293" hidefocus="true" href="http://baike.baidu.com/divideload?lemmaid=4255293" id="polyin" style="display: none;">拆分词条</a>
+
+<span style="height: 100%;"></span>
+</div>
+<h1 class="title" id="lemmaTitle-4255293">STL List</h1>
+
+
+<div class="clear"></div>
+<div class="mod-top">
+
+<div class="card-summary nslog-area" data-nslog-type="72">
+<div class="card-summary-content">
+<p>
+就是一双向链表，可高效地进行插入删除元素。包括构造、方法等。</p>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+
+<div class="clear"></div>
+
+<div class="lemma-main-content" id="lemmaContent-0">
+<h2 class="headline-1 first bk-sidecatalog-title"><span class="text_edit editable-title" data-edit-id="4255293:4255293:1"></span><a name="1"></a><a name="sub4255293_1"></a><span class="headline-content">构造：</span></h2>　　list&lt;int&gt; c0; //空链表
+<div class="spctrl"></div>　　list&lt;int&gt; c1(3); //建一个含三个默认值是0的元素的链表
+<div class="spctrl"></div>　　list&lt;int&gt; c2(5,2); //建一个含五个元素的链表，值都是2
+<div class="spctrl"></div>　　list&lt;int&gt; c4(c2); //建一个c2的copy链表
+<div class="spctrl"></div>　　list&lt;int&gt; c5(c1.begin(),c1.end()); ////c5含c1一个区域的元素[_First, _Last)。<div class="bpctrl"></div><h2 class="headline-1 bk-sidecatalog-title"><span class="text_edit editable-title" data-edit-id="4255293:4255293:2"></span><a name="2"></a><a name="sub4255293_2"></a><span class="headline-content">方法：</span></h2>　　assign() //分配值，有两个重载：
+<div class="spctrl"></div>　　c1.assign(++c2.begin(), c2.end()) //c1现在为(50,60)。
+<div class="spctrl"></div>　　c1.assign(7,4) //c1中现在为7个4,c1(4,4,4,4,4,4,4)。
+<div class="spctrl"></div>　　back() //返回最后一元素的引用：
+<div class="spctrl"></div>　　begin() //返回第一个元素的指针(iterator)
+<div class="spctrl"></div>　　clear() //删除所有元素
+<div class="spctrl"></div>　　empty() //判断是否链表为空
+<div class="spctrl"></div>　　end() //返回最后一个元素的下一位置的指针(list为空时end()=begin())
+<div class="spctrl"></div>　　erase() //删除一个元素或一个区域的元素(两个重载)
+<div class="spctrl"></div>　　front() //返回第一个元素的引用：
+<div class="spctrl"></div>　　insert() //在指定位置插入一个或多个元素(三个重载)：
+<div class="spctrl"></div>　　max_size() //返回链表最大可能长度(<a target="_top" href="http://baike.baidu.com/view/3495546.htm">size_type</a>就是int型)：
+<div class="spctrl"></div>　　merge() //合并两个链表并使之默认升序(也可改)：
+<div class="spctrl"></div>　　pop_back() //删除链表尾的一个元素
+<div class="spctrl"></div>　　pop_front() //删除链表头的一元素
+<div class="spctrl"></div>　　<a target="_top" href="http://baike.baidu.com/view/4645139.htm">push_back</a>() //增加一元素到链表尾
+<div class="spctrl"></div>　　push_front() //增加一元素到链表头
+<div class="spctrl"></div>　　rbegin() //返回链表最后一元素的后向指针(reverse_iterator or const)
+<div class="spctrl"></div>　　rend() //返回链表第一元素的下一位置的后向指针
+<div class="spctrl"></div>　　remove //()删除链表中匹配值的元素(匹配元素全部删除)
+<div class="spctrl"></div>　　remove_if() //删除条件满足的元素(会遍历一遍链表)
+<div class="spctrl"></div>　　resize() //重新定义链表长度(两重载)：
+<div class="spctrl"></div>　　reverse() //反转链表:
+<div class="spctrl"></div>　　size() //返回链表中元素个数
+<div class="spctrl"></div>　　sort() //对链表排序，默认升序(可自定义)
+<div class="spctrl"></div>　　splice() //对两个链表进行结合(三个重载)
+<div class="spctrl"></div>　　swap() //交换两个链表(两个重载)
+<div class="spctrl"></div>　　unique() //删除相邻重复元素(断言已经排序，因为它不会删除不相邻的相同元素)
+<div class="spctrl"></div>　　STL中list的使用：
+<div class="spctrl"></div>　　STL中的list就是一双向链表，可高效地进行插入删除元素。现总结一下它的操作。
+<div class="spctrl"></div>　　文中所用到两个list对象c1,c2分别有元素c1(10,20,30) c2(40,50,60)。还有一个list&lt;int&gt;::iterator citer用来指向c1或c2元素。
+<div class="spctrl"></div>　　list对象的声明构造()：
+<div class="spctrl"></div>　　<span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">A. list&lt;int&gt;c0; //空链表
+</span><div class="spctrl"></div><span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">　　B. list&lt;int&gt;c1(3); //建一个含三个默认值是0的元素的链表
+</span><div class="spctrl"></div><span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">　　C. list&lt;int&gt;c2(5,2); //建一个含五个元素的链表，值都是2
+</span><div class="spctrl"></div><span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">　　D. list&lt;int&gt;c4(c2); //建一个c2的copy链表
+</span><div class="spctrl"></div><span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">　　E. list&lt;int&gt;c5(c1.begin(),c1.end()); 
+</span><div class="spctrl"></div>　　//c5含c1一个区域的元素[_First, _Last)。
+<div class="spctrl"></div>　　1. assign()分配值，有两个重载：
+<div class="spctrl"></div>　　c1.assign(++c2.begin(), c2.end()) //c1现在为(50,60)。
+<div class="spctrl"></div>　　c1.assing(7,4) //c1中现在为7个4,c1(4,4,4,4,4,4,4)。
+<div class="spctrl"></div>　　2. back()返回最后一元素的引用：
+<div class="spctrl"></div>　　int i=c1.back(); //i=30
+<div class="spctrl"></div>　　const int i=c2.back(); //i=60且不可修改
+<div class="spctrl"></div>　　3. begin()返回第一个元素的指针(iterator)
+<div class="spctrl"></div>　　citer=c1.begin(); // *citer=10
+<div class="spctrl"></div>　　list&lt;int&gt;::const_iterator cciter=c1.begin(); //*cciter=10且为const。
+<div class="spctrl"></div>　　4. clear()删除所有元素
+<div class="spctrl"></div>　　c1.clear(); //c1为空 c1.size为0；
+<div class="spctrl"></div>　　5. empty()判断是否链表为空
+<div class="spctrl"></div>　　bool B=c1.empty(); //若c1为空B=true；否则B=false;
+<div class="spctrl"></div>　　6. end()返回最后一个元素的下一位置的指针(list为空时end()=begin())
+<div class="spctrl"></div>　　citer=c1.end(); //*(--citer)=30;
+<div class="spctrl"></div>　　同begin()返回一个常指针，不能修改其中元素。
+<div class="spctrl"></div>　　7. erase()删除一个元素或一个区域的元素(两个重载)
+<div class="spctrl"></div>　　c1.erase(c1.begin()); // c1现为(20,30);
+<div class="spctrl"></div>　　c1.erase(++c1.begin(),c1.end()); //　c1现为(10);
+<div class="spctrl"></div>　　8. front() 返回第一个元素的引用：
+<div class="spctrl"></div>　　int i=c1.front(); //i=10;
+<div class="spctrl"></div>　　const int i=c1.front(); //i=10且不可修改。
+<div class="spctrl"></div>　　9. insert()在指定位置插入一个或多个元素(三个重载)：
+<div class="spctrl"></div><span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">　　c1.insert(++c1.begin(),100); //c1(10,100,20,30)
+</span><div class="spctrl"></div><span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">　　c1.insert(c1.begin(),2,200); //c1(200,200,20,30);
+</span><div class="spctrl"></div><span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">　　c1.insert(++c1.begin(),c2.begin(),--c2.end());
+</span><div class="spctrl"></div>　　//c1(10,40,50,20,30);
+<div class="spctrl"></div>　　10. max_size()返回链表最大可能长度(size_type就是int型)：
+<div class="spctrl"></div>　　list&lt;int&gt;::size_type i=c1.max_size(); //i=1073741823
+<div class="spctrl"></div>　　11. merge()合并两个链表并使之默认升序(也可改)：
+<div class="spctrl"></div><span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">　　c2.merge(c1); //c1现为空;c2现为c2(10,20,30,40,50,60)
+</span><div class="spctrl"></div>　　c2.merge(c1,greater&lt;int&gt;()); //同上，但c2现为降序
+<div class="spctrl"></div>　　<span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">12. pop_back()删除链表尾的一个元素</span>
+<div class="spctrl"></div>　　c1.pop_back() //c1(10,20);
+<div class="spctrl"></div>　　<span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">13. pop_front()删除链表头的一元素
+</span><div class="spctrl"></div>　　c1.pop_front()　//c1(20,30)
+<div class="spctrl"></div>　　<span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">14. push_back()增加一元素到链表尾
+</span><div class="spctrl"></div>　　c1.push_back(100) //c1(10,20,30,100)
+<div class="spctrl"></div>　　<span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">15. push_front()增加一元素到链表头
+</span><div class="spctrl"></div>　　c1.push_front(100) //c1(100,10,20,30)
+<div class="spctrl"></div>　　16. rbegin()返回链表最后一元素的后向指针(reverse_iterator or const)
+<div class="spctrl"></div>　　list&lt;int&gt;::reverse_iterator riter=c1.rbegin(); //*riter=30
+<div class="spctrl"></div>　　17. rend()返回链表第一元素的下一位置的后向指针
+<div class="spctrl"></div>　　list&lt;int&gt;::reverse_iterator riter=c1.rend(); // *(--riter)=10
+<div class="spctrl"></div>　　18. <span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">remove()删除链表中匹配值的元素</span>(匹配元素全部删除)
+<div class="spctrl"></div>　　c1.remove(10); //c1(20,30)
+<div class="spctrl"></div>　　19. remove_if()删除条件满足的元素(会遍历一遍链表)
+<div class="spctrl"></div>　　c1.remove_if( is_odd&lt;int&gt; () ); //c1(10,20,30)　
+<div class="spctrl"></div>　　//is_odd自己写(表奇数)　
+<div class="spctrl"></div>　　20. resize()重新定义链表长度(两重载)：
+<div class="spctrl"></div>　　c1.resize(4) //c1(10,20,30,0)用默认值填补
+<div class="spctrl"></div>　　c1.resize(4,100) //c1(10,20,30,100)用指定值填补
+<div class="spctrl"></div>　　21.<span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line"> reverse()反转链表:
+</span><div class="spctrl"></div>　　c1.reverse(); //c1(30,20,10)
+<div class="spctrl"></div>　　22. size()返回链表中元素个数
+<div class="spctrl"></div>　　list&lt;int&gt;::size_type i=c1.size(); //i=3
+<div class="spctrl"></div>　　23. <span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">sort()对链表排序，默认升序(可自定义)
+</span><div class="spctrl"></div>　　c1.sort(); //c1(10,20,30)
+<div class="spctrl"></div>　　c1.sort(great&lt;int&gt;()); //c1(30,20,10)
+<div class="spctrl"></div>　　24. splice()对两个链表进行结合(三个重载)
+<div class="spctrl"></div>　　c1.splice(++c1.begin(),c2); 
+<div class="spctrl"></div>　　//c1(10,40,50,60,20,30) c2为空全合并
+<div class="spctrl"></div>　　c1.splice(++c1.begin(),c2,++c2.begin()); 
+<div class="spctrl"></div>　　//c1(10,50,20,30) ; c2(40,60)　指定元素合并
+<div class="spctrl"></div>　　c1.splice(++c1.begin(),c2,++c2.begin(),c2.end()); 
+<div class="spctrl"></div>　　//c1(10,50,60,20,30); c2(40) 指定范围合并
+<div class="spctrl"></div>　　25. <span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">swap()交换两个链表(两个重载)
+</span><div class="spctrl"></div>　　c1.swap(c2); //c1(40,50,60);
+<div class="spctrl"></div>　　swap(c1,c2); //c1(40,50,60)
+<div class="spctrl"></div>　　26. <span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">unique()删除相邻重复元素(断言已经排序，因为它不会删除不相邻的相同元素)
+</span><div class="spctrl"></div><span style="border-bottom: medium solid rgb(51, 255, 51);" class="linemarker-marked-line">　　c1.unique(); 
+</span><div class="spctrl"></div>　　//假设c1开始(-10,10,10,20,20,-10)则之后为c1(-10,10,20,-10)
+<div class="spctrl"></div>　　c1.unique(mypred); //自定义谓词<sup>[1]</sup><a name="ref_[1]_4255293"></a><div class="bpctrl" style="clear: both;"></div><div class="clear"></div>
+</div>
+<div class="clear"></div>
+
+<div class="reinforce" id="lemmaExtend">
+
+<div class="clear"></div>
+</div>
+
+</div>
+<div class="clear"></div>
+</div>
+
+</div>
+</div>
+<div class="col-sub" id="side">
+<div class="userinfo-side">
+<div id="userInfoDiv">
+</div>
+</div>
+<div class="box2" id="lemma-overview">
+
+</div>
+
+<div class="box2 nslog-area" id="pro-contributors">
+
+</div>
+<div class="box2" id="bkDynamic" style="">
+
+</div>
+<div class="box2" id="mabox" style="display: none;">
+<div class="box2-inner" id="box2-inner">
+
+
+</div>
+</div>
+<div class="clear">
+</div>
+</div>
+</div><img src="c.gif" style="display: none;"><input id="titleVal" value="STL List" type="hidden">
+</div>
+
+</div>
+<div id="sidecatalog" style="position: fixed; display: none; top: 431px; left: 744px;">
+<div class="sidebar" id="sidebar"></div>
+<a class="gotop" href="#" id="gotop" title="返回顶部"></a>
+</div>
+<div id="side-catalog-content" style="display: none; position: fixed; overflow: hidden; height: 114px; top: 407px; left: 771px;"><div id="side-catalog-up"><div></div></div><div id="side-lemma-title">STL List</div><div style="height: 44px;" id="side-title-panel"><div id="side-title-list"><h2><a href="#1" class="nslog:1026" title="构造：">构造：</a></h2><h2><a href="#2" class="nslog:1026" title="方法：">方法：</a></h2></div></div><div id="side-catalog-down"><div></div></div></div>
+
+
+
+
+<div id="usercard-wrap"><div style="opacity: 0;" class="user-card fix"><div class="top-bg"></div><div class="card-body fix"><div class="uc-l"><div class="uc-pic"></div><div class="uc-name"><a class="uc-id" href="http://baike.baidu.com/view/4255293.htm"></a></div><div class="uc-level"></div></div><div class="uc-r"><div class="uc-items"><div class="uc-role fix"></div><div class="uc-badge fix"></div><div class="uc-honor"></div><div class="uc-going-task fix"></div><div class="uc-gq"></div><div class="uc-default"></div><div class="uc-edit"></div></div><span class="pillar"></span></div></div></div></div>
+
+
+<div class="scrapbook-sticky" style="left: 772px; top: 17px; position: absolute; width: 256px; height: 128px;"><div class="scrapbook-sticky-header"></div>构造方法：
+list&lt;int&gt; c;
+list&lt;int&gt; c( 10, 1 );
+list&lt;int&gt; c( c1 );
+list&lt;int&gt; c( begin, end );</div>
+<div class="scrapbook-sticky" style="left: 770px; top: 150px; position: absolute; width: 261px; height: 507px;"><div class="scrapbook-sticky-header"></div>修改函数：
+c.assign( 10, 2 );
+c.assign( begin, end );
+
+c.pop_front();
+c.pop_back()
+c.erase( pos );
+c.erase( begin, end );
+c.clear();
+c.remove( 10 );
+
+c.push_front();
+c.push_back();
+c.insert( pos, 10 );
+c.insert( pos, 10, 2 );
+c.insert( pos, begin, end );
+
+c.reverse();
+c.swap( c1 );
+c.splice( begin, c1 );
+c.splice( begin, c1, c1.begin() );
+c.splice( begin, c1, c1.begin(), c1.end() );
+c.unique();
+c.merge();</div>
+<div class="scrapbook-sticky" style="left: 773px; top: 663px; position: absolute; width: 239px; height: 112px;"><div class="scrapbook-sticky-header"></div>容量函数：
+c.size();
+c.max_size();
+c.empty();</div>
+<div class="scrapbook-sticky" style="left: 772px; top: 780px; position: absolute; width: 250px; height: 130px;"><div class="scrapbook-sticky-header"></div>c.front();
+c.back();
+
+c.begin();
+c.end();</div>
+</body></html>

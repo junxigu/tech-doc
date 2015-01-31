@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A tool for identifying and reporting on patterns in JavaScript.">
+
+  <title>ESLint</title>
+
+  
+  <link rel="icon" href="favicon.512x512.png">
+  <link rel="alternate" type="application/rss+xml" title="ESLint" href="http://eslint.org/feed.xml">
+
+  
+
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+
+<link rel="stylesheet" id="scrapbook-sticky-css" type="text/css" href="chrome://scrapbook/skin/annotation.css" media="all">
+</head>
+<body>
+
+    <div class="navbar navbar-default navbar-demo" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="http://eslint.org/" class="navbar-brand">
+            <img alt="" src="logo.svg">
+            ESLint</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://eslint.org/docs/about">About</a></li>
+            <li><a href="http://eslint.org/blog">Blog</a></li>
+            <li><a href="http://eslint.org/demo">Demo</a></li>
+            <li><a href="http://eslint.org/docs">Docs</a></li>
+            <li><a href="http://eslint.org/docs/rules">Rules</a></li>
+            <li><a href="http://eslint.org/docs/developer-guide">Developer Guide</a></li>
+            <li><a href="http://eslint.org/docs/command-line-interface">Command Line</a></li>
+            <!--<li><a href="/interactive.html">Demo</a></li>-->
+          </ul>
+        </div>
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+
+<div class="container">
+<!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
+<h1 id="about">About</h1>
+
+<p>ESLint is an open source JavaScript linting utility originally created by Nicholas C. Zakas in June 2013. Code <a href="http://en.wikipedia.org/wiki/Lint_(software)">linting</a> is a type of static analysis that is frequently use to find problematic patterns or code that doesn't adhere to certain style guidelines. There are code linters for most programming languages, and compilers sometimes incorporate linting into the compilation process.</p>
+
+<p>JavaScript, being a dynamic and loosely-typed language, is especially prone to developer error. Without the benefit of a compilation process, JavaScript code is typically executed in order to find syntax or other errors. Linting tools like ESLint allow developers to discover problems with their JavaScript code without executing it.</p>
+
+<p>The primary reason ESLint was created was to allow developers to create their own linting rules. ESLint is designed to have all rules completely pluggable. The default rules are written just like any plugin rules would be. They can all follow the same pattern, both for the rules themselves as well as tests. While ESLint will ship with some built-in rules to make it useful from the start, you'll be able to dynamically load rules at any point in time.</p>
+
+<p>ESLint is written using Node.js to provide a fast runtime environment and easy installation via <a href="http://npmjs.org/">npm</a>.</p>
+
+<h2 id="philosophy">Philosophy</h2>
+
+<p>Everything is pluggable:</p>
+
+<ul>
+<li>Rule API is used both by bundled and custom rules</li>
+<li>Formatter API is used both by bundled and custom formatters</li>
+<li>Additional rules and formatters can be specified at runtime</li>
+<li>Rules and formatters don't have to be bundled to be used</li>
+</ul>
+
+<p>Every rule:</p>
+
+<ul>
+<li>Is standalone</li>
+<li>Can be able to be turned off or on (nothing can be deemed "too important to turn off")</li>
+<li>Can be set to be a warning or error individually</li>
+<li>Is turned on by providing a non-zero number and off by providing zero</li>
+</ul>
+
+<p>Additionally:</p>
+
+<ul>
+<li>Rules are "agenda free" - ESLint does not promote any particular coding style</li>
+<li>Any bundled rules are generalizable</li>
+</ul>
+
+<p>The project:</p>
+
+<ul>
+<li>Values documentation and clear communication</li>
+<li>Is as transparent as possible</li>
+<li>Believes in the importance of testing</li>
+</ul>
+
+</div>
+
+    <hr>
+
+    <div class="container">
+
+      <footer>
+        <ul class="list-inline">
+          <li><a href="https://groups.google.com/group/eslint">Mailing List</a></li>
+          <li><a href="https://github.com/eslint/eslint">GitHub</a></li>
+          <li><a href="https://twitter.com/geteslint">Twitter</a></li>
+        </ul>
+      </footer>
+    </div><!-- /.container -->
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+</body></html>
