@@ -1,0 +1,1241 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta property="og:title" content="Pivotal Software" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://www.pivotal.io/" />
+<meta property="og:description" content="Pivotal, the company at the intersection of big data, PaaS, and agile development, helps companies transform into great software companies." />
+<meta property="og:image" content="http://www.gopivotal.com/assets/images/P_WhiteOnTeal_RGB300.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no" id="viewport" />
+<link rel="shortcut icon" href="http://www.pivotal.io/sites/all/themes/gopo13/images/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="/home" />
+<link rel="shortlink" href="/node/964" />
+<meta content="Home" about="/home" property="dc:title" />
+<meta about="/home" property="sioc:num_replies" content="0" datatype="xsd:integer" />
+  <title>Home | Pivotal</title>
+  <link type="text/css" rel="stylesheet" href="http://www.pivotal.io/sites/default/files/css/css_pbm0lsQQJ7A7WCCIMgxLho6mI_kBNgznNUWmTWcnfoE.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://www.pivotal.io/sites/default/files/css/css_2KVgb-KG7K_xmcxXlaXqcvBdCkOiV1FRpdcoCf8n9Bc.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://www.pivotal.io/sites/default/files/css/css_pRq26yQgFLdk1xMQ2byNXmVJkVZ_w6XJQsnGDdo5RZc.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://www.pivotal.io/sites/default/files/css/css_bk9e76N_aTZ-AnfwymBbgDt_jneCwq43E5eiwk0yfwM.css" media="all" />
+
+<!--[if lte IE 7]>
+<link type="text/css" rel="stylesheet" href="http://www.pivotal.io/sites/all/themes/gopo13/css/ie.css?ngoxv3" media="all" />
+<![endif]-->
+
+<!--[if IE 6]>
+<link type="text/css" rel="stylesheet" href="http://www.pivotal.io/sites/all/themes/gopo13/css/ie6.css?ngoxv3" media="all" />
+<![endif]-->
+  <script type="text/javascript" src="http://www.pivotal.io/sites/default/files/js/js_7K_0gVzZn6VlrXve4NcsWcOxSsL0CcYDx8NTG8FLvmM.js"></script>
+<script type="text/javascript" src="http://www.pivotal.io/sites/default/files/js/js_rv_BKYv7yieH0IgHddhWHDC-bWGan8yiJbusyOpr0mw.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-39702075-1"]);_gaq.push(["_setDomainName", ".pivotal.io"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://www.pivotal.io/sites/default/files/js/js_l2iK74sugJxB4D8U6JcS4rPLta1In8GX2aRqDp-U6Ec.js"></script>
+<script type="text/javascript" src="http://www.pivotal.io/sites/default/files/js/js_yNQjxkXnjNlhZJ4j2H4tTmuC7tmis2ATM5NdDvjKkG0.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"gopo13","theme_token":"JYHWEEhldQX-u_mudT7JfLVl4LorAar_cZcahCIxRQM","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/themes\/gopo13\/js\/jquery-migrate-1.2.1.min.js":1,"sites\/all\/themes\/gopo13\/js\/fancybox\/jquery.fancybox.pack.js":1,"sites\/all\/themes\/gopo13\/js\/mediaelement\/mediaelement-and-player.min.js":1,"sites\/all\/themes\/gopo13\/js\/global.js":1,"sites\/all\/themes\/gopo13\/js\/jquery.gop.extend.js":1,"sites\/all\/themes\/gopo13\/js\/resources.js":1,"sites\/all\/themes\/gopo13\/bootstrap\/js\/bootstrap.min.js":1,"sites\/all\/themes\/gopo13\/js\/application.js":1,"sites\/all\/themes\/gopo13\/..\/..\/..\/..\/service_checklang\/checklang.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/themes\/gopo13\/js\/fancybox\/jquery.fancybox.css":1,"sites\/all\/themes\/gopo13\/js\/mediaelement\/mediaelementplayer.min.css":1,"sites\/all\/themes\/gopo13\/bootstrap\/css\/bootstrap.css":1,"sites\/all\/themes\/gopo13\/font-awesome\/css\/font-awesome.min.css":1,"sites\/all\/themes\/gopo13\/css\/style.css":1,"sites\/all\/themes\/gopo13\/css\/ie.css":1,"sites\/all\/themes\/gopo13\/css\/ie6.css":1}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip","trackDomainMode":"1"}});
+//--><!]]>
+</script>
+</head>
+<body class="html front not-logged-in no-sidebars page-node page-node- page-node-964 node-type-page-general" >
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    
+<style>
+
+#checklang {
+    background: none repeat scroll 0 0 #fff;
+    right: 24px;
+    position: fixed;
+    top: 120px;
+    z-index: 9900;
+    width: 520px;
+    display:none;
+}
+
+#checklang #daDeText,
+#checklang #daJaText {
+    background: none repeat scroll 0 0 #fff;
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    right: 80px;
+    top: -15px;
+    width: 460px;
+    z-index: 9990;
+}
+
+#checklang #daDeText:after,
+#checklang #daJaText:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 11px 0 11px 20px;
+    border-color: transparent #FFFFFF;
+    display: block;
+    width: 0;
+    z-index: 9990;
+    right: -16px;
+    top: 44px;
+}
+
+#checklang #daFlag {
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    z-index: 9990;
+}
+
+#checklang #daFlag img {
+    width: 38px;
+    height: 26px;
+}
+
+</style>
+
+<div id="checklang">
+  <div id="daDeText">Es sieht aus wie Sie aus Deutschland kommen . Wenn Sie die Pivotal Web Seite auf Deutsch anzeigen möchten, klicken Sie bitte auf die Flagge . Wenn nicht das Fenster zu schließen , und fahren in englischer Sprache.</div>
+  <div id="daJaText">あなたは、日本から来ているように見えます。あなたは日本語でピボタルWebサイトを表示したい場合は、フラグをクリック>し>てください。そうでない場合は、ウィンドウを閉じて、英語で進行する。</div>
+  <div id="daFlag"></div>
+</div>
+
+
+  <script src="//use.typekit.net/clb0qji.js" type="text/javascript"></script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try{Typekit.load();}catch(e){}
+  //--><!]]>
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  document.domain = "pivotal.io";
+  //--><!]]>
+  </script>
+
+
+  <a name="top"></a>
+  <div class="viewport">
+       <div id="search-dropdown-box">
+        <div class="search-dropdown--container js-search-dropdown">
+          <div class="container-fluid">
+            <div class="close-menu-large"><img src="/sites/all/themes/gopo13/images/icon-close.png" /></div>
+            <div class="search-form--container">
+              <div class="form-search">
+<div class='gcse-search'></div>
+  <script src="//www.google.com/jsapi" type="text/javascript"></script>
+<style type='text/css'>.gsc-input input.gsc-input {background: url(/sites/all/themes/gopo13/images/icon-p-green.jpg) no-repeat left white !important;}</style>
+ <span>
+  <span class='en'><script type="text/javascript">googleCSEen();</script></span>
+       
+ </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    <!--[if LT IE 9]>
+<script type='text/javascript'>
+alert('You are using a browser which is not supported. Please upgrade or try Google Chrome Frame.');
+</script>
+<![endif]-->
+
+<div id="sticky-anchor"></div>
+
+<header class="navbar header--navbar desktop-only" id="nav">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+
+      <div class="pivotal-logo--container">
+        <a class="pivotal-logo en" href="/"><span></span></a>
+                      </div><!--end of pivotal-logo-->
+
+      <div class="open-menu-large-main">
+        <img src="/sites/all/themes/gopo13/images/icon-menu-large.png">
+      </div><!--end of open-menu-large-main-->
+      
+      <div class="close-menu-large-main">
+        <img src="/sites/all/themes/gopo13/images/icon-close.png">
+      </div><!--end of close-menu-large-main-->
+
+      <ul class="nav pull-right">
+        <li class="navbar-link" id='paas-nav-link'>
+            <a href="/platform-as-a-service/pivotal-cf" class='en'>PaaS</a>
+                                </li>
+        <li class="navbar-link" id='big-data-nav-link'>
+            <a href="/big-data" class='en'>BIG DATA</a>
+                                </li>
+        <li class="navbar-link" id='agile-nav-link'>
+            <a href="/agile" class='en'>AGILE</a>
+                                </li>
+        <li class="navbar-link" id='oss-nav-link'>
+            <a href="/oss" class='en'>OSS</a>
+                                </li>
+        <li class="nav-search">
+          <a class="js-search-input-open" id="click-to-search"><span></span></a>
+        </li>
+      </ul>
+
+    </div><!--end of container fluid-->
+<span>
+    <span class='en'><a role="lightbox" form="/contact-pop-up" href="/contact-pop-up"><img id="get-started" src="/sites/all/themes/gopo13/images/get-started.png" /></a></span>
+        </span>
+  </div><!--end of navbar-inner -->
+  
+  <div class="large-menu-main">
+    <div class="nav-section-left">
+      <h3  class='active-main-menu-section' id='large-menu-main-products-link'><span class='en'>Pivotal Products</span></h3>
+      <h3 id='large-menu-main-agile-link'><span class='en'>Agile</span></h3>
+      <h3  id='large-menu-main-solutions-link'><span class='en'>Solutions</span></h3>
+      <h3 id='large-menu-main-about-link'><span class='en'>About Pivotal</span></h3>
+
+<div id='flags'>
+<span class='en'><a href='/de'><img src="/assets/images/icons/DE.png"></a>
+<a href='/jp'><img src="/assets/images/icons/JP.png"></a></span>
+</div><!--end flags-->
+
+    </div><!--end of nav-section-left-->
+
+    <div class="large-menu-content">
+      <div class="column">
+        <div id='large-menu-main-products-section'>
+          <div class="column">
+            <div class="nav-section">
+              <h3><span class='en'>Data</span></h3>
+              <span>
+                 <span class='en'><a href='/big-data/pivotal-big-data-suite'></span>Pivotal Big Data Suite</a>
+              </span>
+              <br>
+              <a href='/big-data/hadoop'>Hadoop for the Enterprise</a>
+              <br>
+              <span>
+                  <span class='en'><a href="/big-data/pivotal-hd"></span>Pivotal HD</a>
+              </span>
+              <br>
+              <span>
+                  <span class='en'><a href="/big-data/pivotal-greenplum-database"></span>Pivotal Greenplum DB</a>
+             </span>
+              <br>
+              <span>
+                  <span class='en'><a href="/big-data/pivotal-dca"></span>Pivotal DCA</a>
+             </span>
+             <br>
+              <span>
+                  <span class='en'><a href="/big-data/pivotal-gemfire"></span>Pivotal GemFire</a>
+             </span>
+              <br>
+              <span>
+                  <span class='en'><a href="/big-data/pivotal-gemfire-xd"></span>Pivotal GemFire XD</a>
+             </span>
+           </div><!--end of nav-section-->
+          </div><!--end of column-->
+
+          <div class="column">
+            <div class="nav-section">
+              <h3 style='text-transform:none'>PaaS</h3>
+              <span>
+                  <span class='en'><a href="/platform-as-a-service/pivotal-cf"></span>Pivotal CF</a>
+             </span>
+              <br>
+              <a href="/platform-as-a-service/pivotal-vmware-cloud">Pivotal VMware Cloud</a>
+              <br>
+              <a href="http://run.pivotal.io" target="_blank">Pivotal Web Services</a>
+              <br>
+              <span>
+                  <span class='en'><a href="/platform-as-a-service/cloud-foundry"></span>Cloud Foundry</a>
+             </span>
+            </div><!--end of nav-section-->
+            <div class="nav-section">
+              <h3><span class='en'>DATA TOOLS</span></h3>
+              <a href="/big-data/data-tools">Pivotal VRP</a>
+              <br>
+              <a href="/big-data/data-tools">Pivotal Command Center</a>
+            </div><!--end of nav-section-->
+          </div><!--end of column-->
+
+          <div class="column">
+            <div class="nav-section">
+              <h3>
+                   <span class='en'>ANALYTICS</span>
+                                 </h3>
+              <a href="/big-data/madlib">MADlib</a>
+            </div><!--end of nav-section-->
+
+            <div class="nav-section">
+              <h3><a href='/products/pivotal-app-suite'>
+                   <span class='en'>APP SUITE</span>
+                                 </a></h3>
+              <a href="/products/pivotal-tc-server">Pivotal tc Server</a>
+              <br>
+              <a href="/products/pivotal-web-server">Pivotal Web Server</a>
+              <br>
+              <a href="/products/pivotal-rabbitmq">Pivotal RabbitMQ</a>
+              <br>
+              <a href="/products/spring">Spring</a>
+              <br>
+              <a href="/big-data/redis">Redis</a>
+            </div><!--end of nav-section-->
+
+           <!-- <div class="nav-section">
+              <h3 style='text-transform:none'><a href="/products/vfabric">vFABRIC SUITE</a></h3>
+            </div> -->
+          </div><!--end of column-->
+
+
+        </div><!--end of large-menu-main-products-section-->
+        
+        <div id='large-menu-main-agile-section'>
+
+          <div class="nav-section">
+             <h3><span class='en'>Agile</span></h3>
+            <p>
+              <span class='en'>Our engineers are at the forefront of modern software development, ﬂuent in the latest enterprise, mobile, and web development languages.</span>
+                                         </p>
+            <a href="http://pivotallabs.com/" target="_blank">Pivotal Labs</a>
+            <br>
+            <a href="http://pivotaltracker.com/" target="_blank">Pivotal Tracker</a>
+            <br>
+            <a href="/pivotal-data-labs">Pivotal Data Labs</a>
+          </div><!--end of nav-section-->
+
+        </div><!--end of large-menu-main-agile-section-->
+
+        <div id='large-menu-main-solutions-section'>
+          <div class="column">
+            <div class="nav-section">
+              <h3>
+                   <span class='en'>Pivotal Solutions</span>
+                                                    </h3>
+                <a href="/solutions/corporate-communications">
+                   <span class='en'>Corporate Communications</span>
+                                                      </a>
+              <br>
+                <a href="/solutions/network-security">
+                   <span class='en'>Network Security</span>
+                                                      </a>
+              <br>
+                <a href="/solutions/telecommunications">
+                   <span class='en'>Telecommunications</span>
+                                                      </a>
+            </div><!--end of nav-section-->
+          </div><!--end of column-->
+
+          <div class="column">
+            <div class="nav-section">
+              <h3>
+                   <span class='en'>PARTNER SOLUTIONS</span>
+                                                   </h3>
+              <a href="/solutions/analytics-workbench">Analytics Workbench</a>
+              <br>
+              <a href="/solutions/alpine-predictive-analytics">Alpine Predictive Analytics</a>
+              <br>
+              <a href="/solutions/sas-high-performance-analytics">SAS High-Performance Analytics</a>
+              <br>
+              <a href="/businessdatalake">Capgemini - Business Data Lake</a>
+            </div><!--end of nav-section-->
+          </div><!--end of column-->
+        </div><!--end of large-menu-main-solutions-section--> 
+   
+        <div id='large-menu-main-about-section'>
+          <div class="nav-section">
+            <h3>
+             <span class='en'>About Pivotal</span>
+                                      </h3>
+            <p>
+             <span class='en'>Pivotal is enabling the creation of modern software applications that leverage big & fast data – on a single, cloud independent platform.</span>
+                                      </p>
+            <div class="column">
+             <span>
+               <span class='en'><a href="/about">The Company</a></span>
+                              </a>
+             </span>
+              <br>
+             <span>
+                <span class='en'><a href="/team">Team</a></span>
+                                </a>
+             </span>
+              <br>
+             <span>
+                <span class='en'><a href="/press-center">Press Center</a></span>
+                                </a>
+             </span>
+              <br>
+              <a href="/news-events">
+                   <span class='en'>News & Events</span>
+                                                    </a>
+              <br>
+                <a href="/careers">
+                   <span class='en'>Careers</span>
+                                                      </a>
+              <br>
+                <a href="http://blog.pivotal.io">
+                   <span class='en'>Blog</span>
+                                   </a>
+              <br>
+                <a href="/podcasts">
+                   Podcasts
+                </a>
+            </div><!--end of column-->
+            <div class="column">
+                <a href="/support">
+                   <span class='en'>Help & Support</span>
+                                                      </a>
+              <br>
+                <a href="/customers">
+                   <span class='en'>Customers</span>
+                                                      </a>
+              <br>
+                <a href="/partners">
+                   <span class='en'>Partners</span>
+                                                      </a>
+              <br>
+                <a href="/training">
+                   <span class='en'>Training</span>
+                                                     </a>
+              <br>
+                 <span>
+                   <span class='en'><a href="/resources">Resources</a></span>
+                                                       </span>
+              <br>
+                 <span>
+                   <span class='en'><a href="/contact">Contact Us</a></span>
+                                                       </span>
+            </div><!--end of column-->
+          </div><!--end of nav-section-->
+        </div><!--end of large-menu-main-about-section--> 
+
+      </div><!-- end of column -->
+    </div><!-- end of large-menu-content -->
+  </div><!-- end of large-menu-main -->
+
+</header>
+
+<div class="mobile-navigation--wrapper mobile-only">
+  <div class="navigation-drawer--container">
+  <!--    <div class="mobile-search--container">
+    <form action="/search" class="form-inline form-search" method="get" onsubmit="return submitQuery()">
+        <input autocomplete="off" class="search-query search-form--form js-search-input" id="search-query" name="q" placeholder="Search..." type="search" value="" />
+        <button class="search-form--submit" type="submit"><i class="icon-search"></i></button>
+      </form>
+    </div>-->
+    <div class="navigation-item-list">
+      <div class="navbar-link active">    
+          <span class='en'><a href="/">Home<i class="icon-chevron-right pull-right"></i></a></span>      </div>
+      <div class="navbar-link">
+          <span class='en'><a href="/platform-as-a-service/pivotal-cf">PaaS<i class="icon-chevron-right pull-right"></i></a></span>      </div>
+      <div class="navbar-link">
+          <span class='en'><a href="/big-data">Big Data<i class="icon-chevron-right pull-right"></i></a></span>
+                          </div>
+      <div class="navbar-link">
+          <span class='en'><a href="/agile">Agile<i class="icon-chevron-right pull-right"></i></a></span>      </div>
+      <div class="navbar-link">
+          <span class='en'> <a href="/support">Help & Support<i class="icon-chevron-right pull-right"></i></a></span>
+                
+      </div>
+      <div class="navbar-link">
+          <span class='en'><a href="/products">Products<i class="icon-chevron-right pull-right"></i></a></span>
+                    
+      </div>
+      <div class="navbar-link">
+          <span class='en'><a href="/solutions">Solutions<i class="icon-chevron-right pull-right"></i> </a></span>
+                          </div>
+      <div class="navbar-link">
+          <span class='en'> <a href="/partners">Partners<i class="icon-chevron-right pull-right"></i></a></span>
+                          </div>
+      <div class="navbar-link">
+          <span class='en'><a href="/about">About<i class="icon-chevron-right pull-right"></i></a></span>
+                          </div>
+      <div class="navbar-link">
+          <span class='en'><a href="/careers">Careers<i class="icon-chevron-right pull-right"></i></a></span>
+                          </div>
+      <div class="navbar-link">
+          <span class='en'><a href="/contact">Contact<i class="icon-chevron-right pull-right"></i></a></span>
+                          </div>
+    </div><!--end of navigation-item-list-->
+  </div><!--navigation-drawer container-->
+  <div class="mobile-nav">
+    <div class="nav-icon js-open-nav-drawer">
+      <i class="icon-reorder"></i>
+    </div>
+    <div class="header-center-icon">
+      <a href="/">
+        <div class="icon icon-pivotal-logo-mobile"></div>
+      </a>
+    </div>
+  </div><!--end of mobile-nav-->
+</div><!--end of mobile-navigation wrapper--><style type='text/css'>
+#billboard-1 .cta {
+width: 200px;
+background-color: #67aea8;
+padding: 15px 30px 18px;
+}
+body.page-node-964 .nav-dots {
+width:250px;
+}
+#billboard-1 .cta:hover {
+background-color: #01786e;
+}
+#billboard-1 h1 {
+color: white;
+font-size: 60px;
+line-height: 1em;
+text-transform: uppercase;
+font-weight: 500;
+margin: 0;
+}
+#billboard-1 h2 {
+margin: 0;
+font-size: 36px;
+line-height: 1.2em;
+}
+#billboard-1 h3 {
+color: white;
+text-transform: uppercase;
+font-weight: 300;
+margin: 10px 0 40px;
+}
+#billboard-1 .container-top {
+padding-top:50px;
+}
+#billboard-1 .text-container {
+  margin-left: 30px;
+}
+#billboard-2 {
+background-image: url(/assets/images/Qrious_Large_Logo.png) !important;
+background-repeat: no-repeat;
+background-size: 100%;
+background-position: bottom center;
+}
+.webinar {
+background-repeat: no-repeat;
+width: 32px;
+height: 34px;
+float: right;
+margin-top: -3px;
+background-image: url(/assets/images/webinars/icon-webinar.png);
+}
+
+#billboard-3 {
+background-image: url(/assets/images/Billboard_Axel_Springer_Large.png);
+background-size: 2000px;
+background-position: bottom center;
+}
+.billboard .billboard-testimonial-products .cta {
+margin-top: 20px;
+}
+#billboard-3 .home-customer-logo {
+padding-top: 50px;
+}
+#axel-springer-products {
+padding-top: 0px;
+}
+#billboard-4 {
+background-image: url(/assets/images/Corelogic-large-logo.png);
+background-repeat: no-repeat;
+background-size: 50%;
+background-position: bottom right;
+}
+#billboard-4 .home-customer-logo {
+margin-top: 50px;
+margin-left: 125px;
+}
+@media(max-width:1000px){#billboard-1 {background:#3c3d42;padding-left: 40px;}}
+@media(max-width:875px){#billboard-1 {padding-left: 0;}}
+@media(max-width:800px){#billboard-1 {padding-left:0px;}#billboard-1 .cta {width:160px}#billboard-3 .home-customer-logo {float: none; }}
+@media(max-width:400px){#billboard-1 h1{font-size: 48px;}#billboard-1 h2 {font-size:16px;}#billboard-1 .text-container{margin-left:0;}}
+@media(max-width:400px){#billboard-3 .billboard-testimonial-products {margin-right: -20px;}.home-billboard-container .cloud-platform-roadshow .container-top h3{font-size: 45px;}}
+@media(max-width:1300px){#billboard-3 .home-customer-logo {max-width: 300px; padding-left: 50px;}}
+@media (max-width: 832px) {#billboard-3 .home-customer-logo {width: 80% !important; padding-top: 50px !important;} #billboard-3 img {padding-left: 0px !important;}#billboard-3 #axel-springer-products {padding-top: 100px;}}
+@media (max-width: 500px) {#billboard-3 #axel-springer-products {padding-right: 50px; margin-top: -50px;} .billboard .h1-span {font-size: 30px !important;}.home-customer-logo {padding-bottom: 50px;}}
+@media(max-width: 700px) {.webinar {background-image: url()};}
+@media(max-width:1000px) {#billboard-4 .home-customer-logo {max-width: 200px;}}
+@media(max-width: 800px){#billboard-4 .home-customer-logo{margin-left: 0px;}}
+@media(max-width: 400px) {#billboard-4 .home-customer-logo {margin-top: 0px;} #billboard-4 .billboard .billboard-testimonial-products .cta {margin-left: 0px !important; margin-right: 0px !important;}}
+</style>
+
+<span>
+<span class='en'>
+<div id="home-billboard-section" class="home-section">
+
+<div id="billboard-1" class="billboard" style="background: url(/assets/images/webinars/webinar-cloud.png) 100% 100% no-repeat rgb(60, 61, 66);">
+  <div class="home-billboard-container">
+   <div class="cloud-platform-roadshow">
+    <div class="container-top">
+      <h2>Pivotal</h2>
+            <h1>Cloud Platform</h1>
+            <h3>Webinar Series</h3>
+            <a href="/platform-as-a-service/cloud-platform-webinar-series">
+      <div class="cta" style="
+          background-image: url(/assets/images/webinars/icon-webinar.png); 
+          padding: 13px 0 16px 55px;
+          background-repeat: no-repeat;
+          background-position: 10px;
+          margin: 40px 0 0;
+      ">See series listing </div></a>
+      </div>
+    </div>
+  </div><!--end of home-billboard-container-->
+</div><!--end of billboard-1-->
+
+  <div id="billboard-2" class="billboard">
+    <div class="home-billboard-container">
+      <div class='h1-span'>Pivotal helps Qrious create value from data, analytics and applications.</div>
+      <img src='/assets/images/Qrious_Logo.png' id='qrious-logo-home' class='home-customer-logo'>
+      <div class="billboard-testimonial-products-container">
+        <div class="billboard-testimonial-products">
+          <h2>Qrious uses:</h2>
+          <p>
+             <a href="/platform-as-a-service/pivotal-cf">Pivotal CF</a><br><a href="/big-data/pivotal-hd">Pivotal HD with HAWQ</a><br><a  href="/big-data/pivotal-greenplum-database">Pivotal Greenplum Database</a>
+          </p>
+          <a class='cta-link' href="//player.vimeo.com/video/106865586" role='lightbox'>
+            <div class="cta">
+               View Video
+<div class='webinar'></div>
+            </div>
+          </a>
+        </div><!--end of billboard-testimonial-products-->
+      </div><!--end of billboard-testimonial-products-container-->
+    </div><!--end of home-billboard-container-->
+  </div><!--end of billboard-2-->
+
+  <div id="billboard-3" class="billboard">
+    <div class="home-billboard-container">
+      <div class='h1-span' style="float: none !important;">Pivotal helps Axel Springer develop solutions to shape the future of media. </div>
+      <img src='/assets/images/billboard_axel_springer_logo.png' id='axel-springer-logo-home' class='home-customer-logo'>
+      <div class="billboard-testimonial-products-container">
+        <div class="billboard-testimonial-products">
+<div id='axel-springer-products'>
+          <h2>Axel Springer uses:</h2>
+          <p>
+            <a href="/platform-as-a-service/pivotal-cf">Pivotal CF</a>
+          </p>
+          <a class='cta-link' href="https://www.youtube.com/watch?v=p0bgnytLbaY&feature=youtu.be" target="_blank">
+            <div class="cta">
+               View Video
+<div class='webinar'></div>
+            </div>
+          </a>
+          <a class='cta-link' href="/sites/default/files/Axel%20Springer_Case%20Study_091614.pdf" target="_blank">
+            <div class="cta">
+               View Case Study
+               <div class="cta-arrow-download"></div>
+            </div>
+          </a>
+</div><!-- end axel-springer-products -->
+        </div><!--end of billboard-testimonial-products-->
+      </div><!--end of billboard-testimonial-products-container-->
+    </div><!--end of home-billboard-container-->
+  </div><!--end of billboard-3-->
+
+  <div id="billboard-4" class="billboard">
+    <div class="home-billboard-container">
+      <div class='h1-span'>CoreLogic Leverages Data to Provide Clients with Valuable Insights, Better Decisions.</div>
+      <img src='/assets/images/Corelogic-logo.png' id='sthwst-logo-home' class='home-customer-logo'>
+      <div class="billboard-testimonial-products-container">
+        <div class="billboard-testimonial-products">
+           <h2>CoreLogic Uses:</h2>
+           <p>
+           <a href="/platform-as-a-service/pivotal-cf">Pivotal CF</a>
+           </p>
+           <a class='cta-link' href="/sites/default/files/CoreLogic_Case%20Study_111714.pdf" target="_blank">
+            <div class="cta">
+              View Case Study
+              <div class="cta-arrow-download"></div>
+            </div>
+          </a>
+           <a class='cta-link' href="https://www.youtube.com/watch?v=_PWzVwytrX4&feature=youtu.be" target="_blank">
+            <div class="cta">
+              View Video
+<div class='webinar'></div>
+            </div>
+          </a>
+        </div><!--end of billboard-testimonial-products-->
+      </div><!--end of billboard-testimonial-products-container-->
+    </div><!--end of home-billboard-container-->
+  </div><!--end of billboard-4-->
+</div><!--end of home-billboard-section-->
+
+    <div class="page-left"></div>
+    <div class="page-right"></div>
+<div class='nav-dots-down-arrow'>
+    <ul class="nav-dots">
+      <li class="dot dot-billboard-1 active-dot"></li>
+      <li class="dot dot-billboard-2"></li>
+      <li class="dot dot-billboard-3"></li>
+      <li class="dot dot-billboard-4"></li>
+    </ul>
+   <!-- <div class="down-arrow-container">
+        <img src="/sites/all/themes/gopo13/images/arrow-down.png" class="down-arrow">
+    </div>-->
+</div><!--end of nav-dots-down-arrow-->
+
+</span><!--end en-->
+
+</span>
+    <div class="header--container"></div>
+    <div class="container-fluid"></div>
+    <div></div>
+    <div class="body--container">
+      <div class="main-body--wrapper">
+        <div class="min-height">
+<div class='page-container'>
+
+<div id="node-964" class="node node-page-general node-full clearfix" about="/home" typeof="sioc:Item foaf:Document">
+
+      
+  
+  <div class="content clearfix">
+    
+       <div class="home-paas home-section" id='divtop'>
+        <div class="home-banner-header" style='text-shadow: 0 0 1em #254360;'>
+          Delivering 
+          <br> 
+          Pivotal CF.
+        </div>
+        <div class="home-banner-text" style='text-shadow: 0 0 1em #254360;'>
+           Introducing the World’s First Comprehensive Multi-Cloud Enterprise PaaS.
+        </div>
+        <a href="/paas">
+          <div class="cta home-paas">
+            Enterprise PaaS
+            <div class="cta-arrow"></div>
+          </div>
+        </a>
+
+<div class="down-arrow-container">
+<img src="/sites/all/themes/gopo13/images/arrow-down.png" class="down-arrow">
+</div>
+
+      </div>
+      <div class="home-big-data home-section">
+        <div class="home-banner-header">
+          Are You Data-Driven?
+        </div>
+        <div class="home-banner-text">
+          Utilize the Industry's Most Advanced Set of Data Products to Power Your Business.
+        </div>
+        <a href="/big-data">
+          <div class="cta home-big-data">
+            Real Big Data Value
+            <div class="cta-arrow"></div>
+          </div>
+        </a>
+<div class="down-arrow-container">
+ <img src="/sites/all/themes/gopo13/images/arrow-down.png" class="down-arrow">
+ </div>
+      </div>
+
+      <div class="home-agile home-section">
+        <div class="home-banner-header">
+          Build Great Software.
+        </div>
+        <div class="home-banner-text">
+          We can show you the way.
+        </div>
+        <a href="/agile">
+          <div class="cta home-paas">
+            Be Agile
+            <div class="cta-arrow"></div>
+          </div>
+        </a>
+
+<div class="down-arrow-container">
+<img src="/sites/all/themes/gopo13/images/arrow-down.png" class="down-arrow">
+</div>
+      </div>
+
+      <div class="home-oss home-section">
+        <div class="home-banner-header">
+       Committed to<br>Open Source Software.
+        </div>
+        <div class="home-banner-text">
+          Pivotal is Committed to Driving the Future of Open Source Software.
+        </div>
+        <a href="/community">
+          <div class="cta home-paas">
+            Join Our Community
+            <div class="cta-arrow"></div>
+          </div>
+        </a>
+<div class='container-fluid'>
+  <div id='home-oss-logos-cf'>
+    <a href='http://cloudfoundry.org'><img src='/assets/images/home/home-oss/home-oss-logos-cf.png' style='width:100%'></a>
+  </div>
+  <div id='home-oss-logos-s-h'>
+    <a href='http://spring.io'><img src='/assets/images/home/home-oss/home-oss-logos-spring.png' style='width:100%;margin:0 0 7px 0'></a>
+    <br>
+    <a href='http://hadoop.apache.org/'><img src='/assets/images/home/home-oss/home-oss-logos-hadoop.png' style='width:100%'></a>
+  </div>
+  <div id='home-oss-logos-g-r'>
+    <a href='http://groovy.codehaus.org'><img src='/assets/images/home/home-oss/home-oss-logos-groovy.png' style='width:100%;'></a>
+    <br>
+    <a href='http://rabbitmq.com'><img src='/assets/images/home/home-oss/home-oss-logos-rabbitmq.png' style='width:100%;margin-top:10px'></a>
+  </div>
+  <div id='home-oss-logos-g-c'>
+    <a href='http://grails.org'><img src='/assets/images/home/home-oss/home-oss-logos-grails.png' style='width:100%;'></a>
+    <br>
+    <a href='https://github.com/GreenplumChorus/chorus/wiki'><img src='/assets/images/home/home-oss/home-oss-logos-chorus.png' style='width:100%;margin-top:10px'></a>
+  </div>
+  <div id='home-oss-logos-r-m'>
+    <a href='http://redis.io'><img src='/assets/images/home/home-oss/home-oss-logos-redis.png' style='width:100%;'></a>
+    <br>
+    <a href='http://madlib.net'><img src='/assets/images/home/home-oss/home-oss-logos-madlib.png' style='width:100%;margin-top:10px'></a>
+  </div>
+<div id="home-oss-logos-g-r">
+  <a href="http://tomcat.apache.org/" target="_blank"><img src="/assets/images/home/home-oss/home-oss-logos-tomcat.png" style="width: 100%;"></a>
+</div>
+<div id="home-oss-logos-g-c">
+  <a href="http://httpd.apache.org/" target="_blank"><img src="/assets/images/home/home-oss/home-oss-logos-apache.png" style="width: 100%;"></a>
+</div>
+<div id="home-oss-logos-r-m"></div>
+</div><!--end of home-logos-oss container-fluid-->
+      </div>  </div>
+
+  
+  
+</div>
+
+<!-- DRUPAL LOGIN FORM -->
+<!-- DRUPAL LOGIN FORM -->
+
+
+</div>
+        </div>
+      </div>
+    </div>
+
+
+<style>
+.box {
+	float: none !important;
+}
+</style>
+
+
+        <div class="contact--wrapper">
+          <div class="container-fluid">
+            <div class="row-fluid">
+              <div class="span6 contact--container mobile-left-pane">
+                <div class="icon icon-contact"></div>
+                <span class='en'><div class="contact--title">Contact Pivotal</div><div class="contact--links"><a href="/contact">Sales</a><a href="/contact">Information</a><a href="/contact">Questions</a></div></span>
+                              </div>
+              <div class="span6 contact--container mobile-left-pane">
+                <div class="icon icon-support"></div>
+                <span class='en'><div class="contact--title" style="margin: 24px 0;">Pivotal Support</div><div class="contact--links"><a href="/support">Help & Support</a><a href="/training">Training</a></div></span>
+                              </div>
+            </div>
+          </div>
+        </div>
+        <div class="social--wrapper">
+          <div class="container-fluid">
+            <div class="row-fluid">
+              <div class="social-container">
+                <div class="social-box">
+                  <a href="https://twitter.com/pivotal" target="_blank">
+                    <div class="social-text">
+                      Twitter
+                    </div>
+                    <div class="icon icon-social-twitter"></div>
+                    <div class="follow-text">
+                      <span class='en'>Follow Us</span>
+                                          </div>
+                  </a>
+                </div>
+                <div class="social-box">
+                  <a href="http://www.linkedin.com/company/3048967" target="_blank">
+                    <div class="social-text">
+                      LinkedIn
+                    </div>
+                    <div class="icon icon-social-linkedin"></div>
+                    <div class="follow-text">
+                      <span class='en'>Follow Us</span>
+                                          </div>
+                  </a>
+                </div>
+                <div class="social-box">
+                  <a href="https://www.facebook.com/pivotalsoftware" target="_blank">
+                    <div class="social-text">
+                      Facebook
+                    </div>
+                    <div class="icon icon-social-facebook"></div>
+                    <div class="friend-text">
+                      <span class='en'>Become a Friend</span>
+                                          </div>
+                  </a>
+                </div>
+                <div class="social-box">
+                  <a href="https://plus.google.com/105320112436428794490/posts" target="_blank">
+                    <div class="social-text">
+                      Google Plus
+                    </div>
+                    <div class="icon icon-social-google"></div>
+                    <div class="add-us-text">
+                      <span class='en'>Add Us to Your Circle</span>
+                                          </div>
+                  </a>
+                </div>
+                <div class="social-box">
+                  <a href="http://www.youtube.com/gopivotal" target="_blank">
+                    <div class="social-text">
+                      YouTube
+                    </div>
+                    <div class="icon icon-social-youtube"></div>
+                    <div class="watch-text">
+                      <span class='en'>Watch Our Videos</span>
+                                          </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    <footer class="footer">
+      <div class="container-fluid">
+        <img src="/sites/all/themes/gopo13/images/pivotal-p-green.png" />
+        <div class="row-fluid">
+          <div class="span4">
+           <span class="footer-header">
+             <span class='en'><a href='/about'>About Pivotal</a></span>
+                                     </span><!--end footer-header-->
+<div id='flags'>
+<span class='en'><a href='/de'><img src="/assets/images/icons/DE.png"></a>
+<a href='/jp'><img src="/assets/images/icons/JP.png"></a></span>
+</div><!--end flags-->
+            <p>
+               <span class='en'>Pivotal is enabling the creation of modern software applications that leverage big & fast data – on a single, cloud independent platform.</span>
+               </span>
+                           </p>
+            <div class="footer-list">
+              <p>
+               <span class='en'><a href="/about">The Company</a></span>
+                              </a>
+              </p>
+              <p>
+                <span class='en'><a href="/team">Team</a></span>
+                                </a>
+              </p>
+              <p>
+                <span class='en'><a href="/press-center">Press Center</a></span>
+                                </a>
+              </p>
+              <p>
+                <a href="/news-events">
+                   <span class='en'>News & Events</span>
+                                                       </a>
+              </p>
+              <p>
+                <a href="/careers">
+                   <span class='en'>Careers</span>
+                                                      </a>
+              </p>
+              <p>
+                <a href="http://blog.pivotal.io">
+                   <span class='en'>Blog</span>
+                                   </a>
+              </p>
+              <p>
+                <a href="/podcasts">
+                   Podcasts
+                </a>
+              </p>
+              <p>
+                <a href="/support">
+                   <span class='en'>Help & Support</span>
+                                                      </a>
+              </p>
+              <p>
+                <a href="/customers">
+                   <span class='en'>Customers</span>
+                                                      </a>
+              </p>
+              <p>
+                <a href="/partners">
+                   <span class='en'>Partners</span>
+                                                      </a>
+              </p>
+              <p>
+                <a href="/training">
+                   <span class='en'>Training</span>
+                                                     </a>
+              </p>
+              <p>
+                 <span>
+                   <span class='en'><a href="/resources">Resources</a></span>
+                                                       </span>
+              </p>
+              <p>
+                   <span class='en'><a href="/contact">Contact Us</a></span>
+                                                    </p>
+              <p>
+                <a href="/privacy-policy">
+                   <span class='en'>Cookie and Privacy Policy</span>
+                                                      </a>
+              </p>
+              <p>
+                <a href="/terms-of-use">
+                   <span class='en'>Terms of Use</span>
+                                                      </a>
+              </p>
+              <p>
+                <a href="/product-guide" target='_blank'>
+                   <span class='en'>Product Guide</span>
+                                                     </a>
+              </p>
+              <p>
+                <a href="/open-source">Open Source Disclosure Information</a>
+              </p>
+              <p>
+                <a href="/open-source-indemnification-program">Open Source Indemnification Program</a>
+              </p>
+            </div>
+          </div>
+          <div class="span4" style="width: 42%;">
+<a href="http://network.pivotal.io">
+      <span class="footer-header">
+                   <span class='en'>Pivotal Network</span>
+                                           </span>
+</a>
+<p>
+                  <span class='en'>Download, access and get support for Pivotal software.</span>
+                                      </p>
+            <a href='/products'>
+              <span class="footer-header">
+                   <span class='en'>Pivotal Products</span>
+                                                     </span>
+            </a>
+            <p>
+                   <span class='en'>Pivotal offers a complete portfolio of products that converge apps, data and analytics along with Pivotal’s comprehensive PaaS platform, powered by Cloud Foundry. </span>
+                                                  </p>
+
+
+            <div class="footer-product-column">
+              <span class="footer-product-column-header">
+                   <span class='en'>DATA</span>
+                                 </span>
+              <div class="footer-list">
+                <p>
+                  <span class='en'><a href='/big-data/pivotal-big-data-suite'></span>Pivotal Big Data Suite</a>
+                </p>
+                <p>
+                  <a href='/big-data/hadoop'>Hadoop for the Enterprise</a>
+                </p>
+                <p>
+                  <span class='en'><a href="/big-data/pivotal-hd"></span>Pivotal HD</a>
+                </p>
+                <p>
+                  <span class='en'><a href="/big-data/pivotal-greenplum-database"></span>Pivotal Greenplum DB</a>
+                </p>
+                <p>
+                  <span class='en'><a href="/big-data/pivotal-dca"></span>Pivotal DCA</a>
+                </p>
+                <p>
+                  <span class='en'><a href="/big-data/pivotal-gemfire"></span>Pivotal GemFire</a>
+                </p>
+                <p>
+                  <span class='en'><a href="/big-data/pivotal-gemfire-xd"></span>Pivotal GemFire XD</a>
+                </p>
+              </div>
+              <br />
+              <span class="footer-product-column-header"><span class='en'>DATA TOOLS</span></span>
+              <div class="footer-list">
+                <p>
+                  <a href="/big-data/data-tools">Pivotal VRP</a>
+                </p>
+                <p>
+                  <a href="/big-data/data-tools">Pivotal Command Center</a>
+                </p>
+              </div>
+            </div>
+            <div class="footer-product-column" style='margin-bottom:20px'>
+              <span class="footer-product-column-header">PaaS</span>
+              <div class="footer-list">
+                <p>
+                  <span class='en'><a href="/platform-as-a-service/pivotal-cf"></span>Pivotal CF</a>
+                </p>
+                <p>
+                <a href="/platform-as-a-service/pivotal-vmware-cloud">Pivotal VMware Cloud</a>
+               </p>
+                <p>
+                  <a href="http://run.pivotal.io" target="_blank">Pivotal Web Services</a>
+                </p>
+                <p>
+                  <span class='en'><a href="/platform-as-a-service/cloud-foundry"></span>Cloud Foundry</a>
+                </p>
+              </div>
+            </div>
+            <div class="footer-product-column" style='margin-bottom:20px'>
+              <span class="footer-product-column-header">
+                   <span class='en'>ANALYTICS</span>
+                                 </span>
+              <div class="footer-list">
+                <p>
+                  <a href="/big-data/madlib">MADlib</a>
+                </p>
+              </div>
+              <br />
+              <span class="footer-product-column-header">
+                <a href='/products/pivotal-app-suite'>
+                   <span class='en'>APP SUITE</span>
+                                                       </a>
+              </span>
+              <div class="footer-list" style='margin-bottom: 30px;'>
+                <p>
+                  <a href="/products/pivotal-tc-server">Pivotal tc Server</a>
+                </p>
+                <p>
+                  <a href="/products/pivotal-web-server">Pivotal Web Server</a>
+                </p>
+                <p>
+                  <a href="/products/pivotal-rabbitmq">Pivotal RabbitMQ</a>
+                </p>
+                <p>
+                  <a href="/products/spring">Spring</a>
+                </p>
+                <p>
+                  <a href="/big-data/redis">Redis</a>
+                </p>
+              </div>
+              <!--<span class="footer-product-column-header"><a href="/products/vfabric">vFABRIC SUITE</a></span>-->
+            </div>
+
+          </div>
+          <div class="span4" style="width:21%">
+              <span class="footer-header">
+                   <span class='en'><a href='/agile'>Agile</a></span>
+                                                     </span>
+            <br />
+            <p>
+              <span class='en'>Our engineers are at the forefront of modern software development, ﬂuent in the latest enterprise, mobile, and web development languages.</span>
+                                       </p>
+            <div class="footer-list">
+              <p>
+                <a href="http://pivotallabs.com/" target="_blank">Pivotal Labs</a>
+              </p>
+              <p>
+                <a href="http://pivotaltracker.com/" target="_blank">Pivotal Tracker</a>
+              </p>
+              <p>
+                <a href="/pivotal-data-labs">Pivotal Data Labs</a>
+              </p>
+            </div>
+            <br />
+            <a href='/solutions'>
+              <span class="footer-header">
+                   <span class='en'>Pivotal Solutions</span>
+                                                    </span>
+            </a>
+            <br />
+            <div class="footer-list">
+              <p>
+                <a href="/solutions/corporate-communications">
+                   <span class='en'>Corporate Communications</span>
+                                                      </a>
+              </p>
+              <p>
+                <a href="/solutions/network-security">
+                   <span class='en'>Network Security</span>
+                                                      </a>
+              </p>
+              <p>
+                <a href="/solutions/telecommunications">
+                   <span class='en'>Telecommunications</span>
+                                                      </a>
+              </p>
+            </div>
+            <br />
+            <a href='/solutions'>
+               <span class="footer-header">
+                   <span class='en'>Partner Solutions</span>
+                                                     </span>
+            </a>
+            <br />
+            <div class="footer-list">
+              <p>
+                <a href="/solutions/analytics-workbench">Analytics Workbench</a>
+              </p>
+              <p>
+                <a href="/solutions/alpine-predictive-analytics">Alpine Predictive Analytics</a>
+              </p>
+              <p>
+                <a href="/solutions/sas-high-performance-analytics">SAS High-Performance Analytics</a>
+              </p>
+              <p>
+                <a href="/businessdatalake">Capgemini - Business Data Lake</a>
+              </p>
+          </div>
+
+          
+
+      </div>
+
+      <div style="width: 100%; text-align: center; margin: 20px 0 0 0; height: 20px; float: left;">
+            <p>
+               <a href='/trademarks'>&copy;</a> <script type="text/javascript"> var d = new Date();
+                document.write(d.getFullYear());</script> <a href="/">Pivotal Software</a>, Inc. 
+                <span><span class='en'>All Rights Reserved</span></span>.<br />
+            </p>
+          </div>
+
+    </div></div></footer>
+<script>
+  (function() {
+    var didInit = false;
+    function initMunchkin() {
+      if(didInit === false) {
+        didInit = true;
+        Munchkin.init('625-IUJ-009');
+      }
+    }
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = document.location.protocol + '//munchkin.marketo.net/munchkin.js';
+    s.onreadystatechange = function() {
+      if (this.readyState == 'complete' || this.readyState == 'loaded') {
+        initMunchkin();
+      }
+    };
+    s.onload = initMunchkin;
+    document.getElementsByTagName('head')[0].appendChild(s);
+  })();
+</script>
+
+<!--Crazy Egg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0020/8294.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+<!--end of Crazy Egg -->
+
+
+
+</div><!--end of viewport-->
+  </div>
+
+<script src="//platform.twitter.com/oct.js" type="text/javascript"></script>
+<script type="text/javascript">
+twttr.conversion.trackPid('l4umn');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l4umn&p_id=Twitter" />
+<img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=l4umn&p_id=Twitter" />
+</noscript>
+  </body>
+</html>
