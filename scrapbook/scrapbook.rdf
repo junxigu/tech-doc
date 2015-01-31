@@ -373,6 +373,7 @@
     <RDF:li RDF:resource="urn:scrapbook:item20150131161336"/>
     <RDF:li RDF:resource="urn:scrapbook:item20150131161428"/>
     <RDF:li RDF:resource="urn:scrapbook:item20150131161525"/>
+    <RDF:li RDF:resource="urn:scrapbook:item20150131161616"/>
   </RDF:Seq>
   <RDF:Description RDF:about="urn:scrapbook:item20150131154207"
                    NS1:id="20150131154207"
@@ -1136,6 +1137,14 @@
                    NS1:comment=""
                    NS1:icon="resource://scrapbook/data/20120331151829/favicon.ico"
                    NS1:source="http://zhedahht.blog.163.com/blog/static/254111742010819104710337/" />
+  <RDF:Description RDF:about="urn:scrapbook:item20150131161616"
+                   NS1:id="20150131161616"
+                   NS1:type=""
+                   NS1:title="Parser API - Mozilla | MDN"
+                   NS1:chars="UTF-8"
+                   NS1:comment=""
+                   NS1:source="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Parser_API"
+                   NS1:icon="resource://scrapbook/data/20150131161616/favicon32_001.png" />
   <RDF:Description RDF:about="urn:scrapbook:item20120330222351"
                    NS1:id="20120330222351"
                    NS1:type=""
