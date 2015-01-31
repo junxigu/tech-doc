@@ -237,6 +237,14 @@
                    NS1:comment=""
                    NS1:icon="resource://scrapbook/data/20120329161714/favicon.ico"
                    NS1:source="http://zhedahht.blog.163.com/blog/static/25411174200722991933440/" />
+  <RDF:Description RDF:about="urn:scrapbook:item20150131164651"
+                   NS1:id="20150131164651"
+                   NS1:type=""
+                   NS1:title="Promises Implementing"
+                   NS1:chars="UTF-8"
+                   NS1:icon="resource://scrapbook/data/20150131164651/favicon.ico"
+                   NS1:source="https://www.promisejs.org/implementing/"
+                   NS1:comment="" />
   <RDF:Description RDF:about="urn:scrapbook:item20120331165333"
                    NS1:id="20120331165333"
                    NS1:type=""
@@ -887,6 +895,7 @@
     <RDF:li RDF:resource="urn:scrapbook:item20141207113235"/>
     <RDF:li RDF:resource="urn:scrapbook:item20141216181422"/>
     <RDF:li RDF:resource="urn:scrapbook:item20150127111217"/>
+    <RDF:li RDF:resource="urn:scrapbook:item20150131164651"/>
   </RDF:Seq>
   <RDF:Description RDF:about="urn:scrapbook:item20150131115835"
                    NS1:id="20150131115835"
