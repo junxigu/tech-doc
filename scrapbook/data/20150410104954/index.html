@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body><div id="bd_snap">
+    <div id="bd_snap_head">
+        <a href="http://www.baidu.com/" id="bd_snap_logo" title="到百度首页"></a>
+    </div>
+    <div id="bd_snap_txt">您查询的关键词是：<span><a style="color: black; background-color: rgb(255, 255, 102); padding: 0px 3px; font-weight: bold;" href="http://cache.baiducontent.com/c?m=9d78d513d99f1cf90fb5d5690d679526440bdb226bc3975521dbc90ed5264c40347bfeeb797f4513d3b22d2657f35e5c9dac61342a4167ebca92db578efbd4737ed67029264bc012498d58b2c04727c2229a5b&amp;p=c0759a46d6c016e513be9b7c1e088d&amp;newp=8449c95b9e904ead08e2977e0e078b231610db2151d0d512&amp;user=baidu&amp;fm=sc&amp;query=nodejs+promise&amp;qid=8bd54b5c00002eff&amp;p1=1#baidusnap0">nodejs</a><a style="color: black; background-color: rgb(160, 255, 255); padding: 0px 3px; font-weight: bold;" href="http://cache.baiducontent.com/c?m=9d78d513d99f1cf90fb5d5690d679526440bdb226bc3975521dbc90ed5264c40347bfeeb797f4513d3b22d2657f35e5c9dac61342a4167ebca92db578efbd4737ed67029264bc012498d58b2c04727c2229a5b&amp;p=c0759a46d6c016e513be9b7c1e088d&amp;newp=8449c95b9e904ead08e2977e0e078b231610db2151d0d512&amp;user=baidu&amp;fm=sc&amp;query=nodejs+promise&amp;qid=8bd54b5c00002eff&amp;p1=1#baidusnap1">promise</a></span> 。如果打开速度慢，可以尝试<a href="http://cache.baiducontent.com/c?m=9d78d513d99f1cf90fb5d5690d679526440bdb226bc3975521dbc90ed5264c40347bfeeb797f4513d3b22d2657f35e5c9dac61342a4167ebca92db578efbd4737ed67029264bc012498d58b2c04727c2229a5b&amp;p=c0759a46d6c016e513be9b7c1e088d&amp;newp=8449c95b9e904ead08e2977e0e078b231610db2151d0d512&amp;user=baidu&amp;fm=sc&amp;query=nodejs+promise&amp;qid=8bd54b5c00002eff&amp;p1=1&amp;fast=y">快速版</a>；如果想保存快照，可以<a onclick="window.open('http://cang.baidu.com/do/add?it='+encodeURIComponent(document.title)+'&amp;iu='+encodeURIComponent(location.href)+'&amp;fr=ps#nw=1','_s','scrollbars=no,width=600,height=450,right=75,top=20,status=no,resizable=yes'); return false;" href="http://cang.baidu.com/do/add" target="_top">添加到搜藏</a>；如果想更新或删除快照，可以<a href="http://tousu.baidu.com/webmaster/add?link=http%3A%2F%2Fcache.baiducontent.com%2Fc%3Fm%3D9d78d513d99f1cf90fb5d5690d679526440bdb226bc3975521dbc90ed5264c40347bfeeb797f4513d3b22d2657f35e5c9dac61342a4167ebca92db578efbd4737ed67029264bc012498d58b2c04727c2229a5b%26p%3Dc0759a46d6c016e513be9b7c1e088d%26newp%3D8449c95b9e904ead08e2977e0e078b231610db2151d0d512%26user%3Dbaidu%26fm%3Dsc%26query%3Dnodejs%2Bpromise%26qid%3D8bd54b5c00002eff%26p1%3D1" id="bd_tousu">投诉快照</a>。</div>
+
+    <div id="bd_snap_note">(百度和网页<a href="http://blog.csdn.net/puncha/article/details/9301083">http://blog.csdn.net/puncha/article/details/9301083</a>的作者无关，不对其内容负责。百度快照谨为网络故障时之索引，不代表被搜索网站的即时页面。)</div>
+</div>
+<div id="bd_snap_search">
+	<form action="http://www.baidu.com/s"><input name="cl" value="3" type="hidden"><input value="" name="wd" id="bd_snap_kw" maxlength="100"><span id="bd_snap_btn_wr"><input id="bd_snap_su" value="百度一下" class="bd_snap_btn" onmousedown="this.className='bd_snap_btn bd_snap_btn_h'" type="submit"></span></form>
+</div>
+<div id="bd_snap_ln"></div>
+<div style="position: relative;">
+
+     
+    
+    
+    
+      
+
+    
+
+     
+ <meta http-equiv="Cache-Control" content="no-siteapp"><link rel="alternate" media="handheld" href="http://blog.csdn.net/puncha/article/details/9301083#">
+
+    <title>Nodejs的Promise库 - PunCha (PCH)
+        - 博客频道 - CSDN.NET</title>
+    
+    <meta name="description" content="今天研究了下nodejs的Promise库，发现学到了不少，他的源代码不多，但是很精辟，我加了点注释，可能比不加还难懂。。。凑活着看吧。。库：https://npmjs.org/package/promisePromise/A+规范：http://promises-aplus.github.io/promises-spec/'use strict'var nextT">
+    
+    
+        <!--new top-->
+       
+        
+        <!--new top-->
+
+    
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://blog.csdn.net/puncha/rss/list">
+    <link rel="shortcut icon" href="favicon.ico">
+    
+ 
+
+
+
+
+    
+   
+      <!--new top-->
+    
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/puncha">PunCha (PCH)</a></h2>
+            <h3>编程研究</h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>
+            
+                <li id="btnContents"><a href="http://blog.csdn.net/puncha?viewmode=contents"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])">
+                    <img src="ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/puncha?viewmode=list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])">
+                    <img src="ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/puncha/rss/list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])">
+                    <img src="ico_rss.gif">订阅</span></a></li>                
+
+            </ul>
+    </div>
+</div>
+
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod="popu_3"> 
+
+<a href="http://blog.csdn.net/csdnedu/article/details/43306129">
+<font color="blue">CSDN学院讲师招募，诚邀您加入！</font></a>
+&nbsp;&nbsp;
+
+
+<a href="http://blog.csdn.net/csdnproduct/article/details/43561659">
+<font color="red">博客Markdown编辑器全新体验</font></a>
+&nbsp;&nbsp;
+
+<a href="http://edu.csdn.net/lecturer/lecturer_detail?lecturer_id=95">
+<font color="blue">PMBOK第五版精讲视频教程
+</font></a>
+&nbsp;&nbsp;
+
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/44561379">
+<font color="red">读文章说感想 获好礼
+</font></a>
+&nbsp;&nbsp;
+
+<a href="http://edu.csdn.net/course/detail/443">
+<font color="blue">火星人敏捷开发1001问
+</font></a>
+
+
+</div>                        </div>
+                        
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Original"></span>
+
+
+    <h1>
+        <span class="link_title"><a name="baidusnap0"></a><a name="baidusnap1"></a><a href="http://blog.csdn.net/puncha/article/details/9301083">
+        <b style="color: black; background-color: rgb(255, 255, 102);">Nodejs</b>的<b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>库
+        </a></span>
+    </h1>
+</div>
+
+    <div class="article_manage">
+        <span class="link_categories">
+        分类：
+            <a href="http://blog.csdn.net/puncha/article/category/1303610" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">Node.js</a> 
+            <a href="http://blog.csdn.net/puncha/article/category/1303604" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">异步编程（Async）</a> 
+        </span>
+    <span class="link_postdate">2013-07-11 15:25</span>
+    <span class="link_view" title="阅读次数">4862人阅读</span>
+    <span class="link_comments" title="评论次数"><a href="#comments" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])">评论</a>(0)</span>
+    <span class="link_collect"><a href="javascript:void(0);" onclick="javascript:_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shoucang']);collectArticle('Nodejs的Promise库','9301083');return false;" title="收藏">收藏</a></span>
+    <span class="link_report"><a href="#report" onclick="javascript:_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_jubao']);report(9301083,2);return false;" title="举报">举报</a></span>
+    
+</div>
+
+  
+    
+<div id="article_content" class="article_content">
+
+<p><span style="font-family: Microsoft YaHei; font-size: 14px;">今天研究了下<b style="color: black; background-color: rgb(255, 255, 102);">nodejs</b>的<b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>库，发现学到了不少，他的源代码不多，但是很精辟，我加了点注释，可能比不加还难懂。。。凑活着看吧。。</span></p>
+<p></p>
+<p><span style="font-family: Microsoft YaHei; font-size: 14px;">库：<a href="https://npmjs.org/package/promise" target="_top">https://npmjs.org/package/<b style="color: black; background-color: rgb(160, 255, 255);">promise</b><br>
+</a></span></p>
+<p><span style="font-family: Microsoft YaHei; font-size: 14px;"><b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>/A+规范：<a href="http://promises-aplus.github.io/promises-spec/" target="_top">http://promises-aplus.github.io/promises-spec/</a></span></p>
+<p><br>
+</p>
+<p><span style="font-family: Microsoft YaHei; font-size: 14px;"><u><strong>core.js</strong></u></span></p>
+<p></p>
+<pre name="code" class="javascript">'use strict'
+
+var nextTick = require('./lib/next-tick')
+
+module.exports = <b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>
+function <b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>(fn) {
+
+    // 如果不是一个<b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>对象，那么调用构造函数包装下
+    if (!(this instanceof <b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>)) return new <b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>(fn)
+
+    // 参数必须是一个函数
+    if (typeof fn !== 'function') throw new TypeError('not a function')
+
+    var state = null
+    var delegating = false
+    var value = null
+    var deferreds = []
+    var self = this
+
+    // 成员函数：then。返回<b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>2
+    this.then = function (onFulfilled, onRejected) {
+        // 返回一个新的<b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>，<b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>2。
+        return new <b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>(function (resolve, reject) {
+            // Handler没特别的，就是为了保存4个参数
+            handle(new Handler(onFulfilled, onRejected, resolve, reject))
+        })
+    }
+
+    // 处理defer，fulfill, reject等问题
+    //
+    function handle(deferred) {
+        // 还在pending？那么走人
+        if (state === null) {
+            deferreds.push(deferred)
+            return
+        }
+        // 状态已变：
+        nextTick(function () {
+            // 根据state来决定是调用fulfill还是reject
+            var cb = state ? deferred.onFulfilled : deferred.onRejected
+            if (cb === null) {
+                // 假如没有提供对应的callback，那么调用“默认”的回调
+                (state ? deferred.resolve : deferred.reject)(value)
+                return
+            }
+
+            // 调用对应的回调
+            var ret
+            try {
+                ret = cb(value)
+            }
+            catch (e) {
+                // 出现异常了，那么把状态改成reject
+                deferred.reject(e)
+                return
+            }
+
+            // 回调运行没问题，那么就把回调的返回值作为自己的值，状态变成fulfilled
+            deferred.resolve(ret)
+        })
+    }
+
+    // 作为第一个参数传给你写的那个函数
+    //
+    function resolve(newValue) {
+        // 这里有点没搞懂，为啥要针对delegating flag来return，
+        // 其实假如delegating标记已设置，这个函数就再也进不来了呀。
+        // 难道仅仅为了防止出错？
+        if (delegating)
+            return
+        resolve_(newValue)
+    }
+
+    function resolve_(newValue) {
+        // 说明已经被处理过了！不用再处理了，其实如果会被调用两次，应该是出错了!
+        if (state !== null)
+            return
+        try { //<b style="color: black; background-color: rgb(160, 255, 255);">Promise</b> Resolution Procedure: https://github.com/promises-aplus/promises-spec#the-<b style="color: black; background-color: rgb(160, 255, 255);">promise</b>-resolution-procedure
+            if (newValue === self) throw new TypeError('A <b style="color: black; background-color: rgb(160, 255, 255);">promise</b> cannot be resolved with itself.')
+
+            // resolve的返回值可以是普通值，也可以是一个<b style="color: black; background-color: rgb(160, 255, 255);">promise</b>，针对<b style="color: black; background-color: rgb(160, 255, 255);">promise</b>要特殊处理下
+            if (newValue &amp;&amp; (typeof newValue === 'object' || typeof newValue === 'function')) {
+
+                // 判别他是不是一个<b style="color: black; background-color: rgb(160, 255, 255);">promise</b>
+                var then = newValue.then
+                if (typeof then === 'function') {
+
+                    // 是的。。那就有点麻烦，设个标记先
+                    delegating = true
+                    // 根据 <b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>/A+，当前<b style="color: black; background-color: rgb(160, 255, 255);">promise</b>的状态保持pending，且依赖于返回的<b style="color: black; background-color: rgb(160, 255, 255);">promise</b>的状态，即newValue
+                    // 所以调用 newValue.then。
+                    then.call(newValue, resolve_, reject_)
+                    return
+                }
+            }
+
+            // 普通值，简单了
+            state = true
+            value = newValue
+            // 触发依赖于这个<b style="color: black; background-color: rgb(160, 255, 255);">promise</b>的所有回调（通过then设置上去的）
+            finale()
+        } catch (e) { reject_(e) }
+    }
+
+    // 作为第二个参数传给你写的那个函数
+    //
+    function reject(newValue) {
+        if (delegating)
+            return
+        reject_(newValue)
+    }
+
+    function reject_(newValue) {
+        if (state !== null)
+            return
+        state = false
+        value = newValue
+        finale()
+    }
+
+    // 触发依赖于这个<b style="color: black; background-color: rgb(160, 255, 255);">promise</b>的所有回调（通过then设置上去的）
+    function finale() {
+        for (var i = 0, len = deferreds.length; i &lt; len; i++)
+            handle(deferreds[i])
+        deferreds = null
+    }
+
+    // 创建完，马上就调用，真直接
+    //
+    try { fn(resolve, reject) }
+    catch (e) { reject(e) }
+}
+
+
+function Handler(onFulfilled, onRejected, resolve, reject) {
+    this.onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : null
+    this.onRejected = typeof onRejected === 'function' ? onRejected : null
+    this.resolve = resolve
+    this.reject = reject
+}
+</pre><br>
+<p><span style="font-weight: bold; font-family: 'Microsoft YaHei'; font-size: 14px;"><u>index.js</u></span></p>
+<p><span style="font-weight: bold; font-family: 'Microsoft YaHei'; font-size: 14px;"></span></p><pre name="code" class="javascript">'use strict'
+
+//This file contains then/<b style="color: black; background-color: rgb(160, 255, 255);">promise</b> specific extensions to the core <b style="color: black; background-color: rgb(160, 255, 255);">promise</b> API
+
+var <b style="color: black; background-color: rgb(160, 255, 255);">Promise</b> = require('./core.js')
+var nextTick = require('./lib/next-tick')
+
+module.exports = <b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>
+
+
+// 静态函数，为了将一个普通值变成<b style="color: black; background-color: rgb(160, 255, 255);">promise</b>，或者把类<b style="color: black; background-color: rgb(160, 255, 255);">promise</b>（即有then成员函数的对象）变成<b style="color: black; background-color: rgb(160, 255, 255);">promise</b>
+//
+<b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>.from = function (value) {
+    if (value instanceof <b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>) return value
+    return new <b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>(function (resolve) { resolve(value) })
+}
+
+// 静态函数，去<b style="color: black; background-color: rgb(255, 255, 102);">NodeJs</b>化，把<b style="color: black; background-color: rgb(255, 255, 102);">nodeJs</b>风格的callback，变成能够返回<b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>的函数。
+//
+<b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>.denodeify = function (fn) {
+    // 返回的是一个包装过的函数
+    return function () {
+        var self = this
+        var args = Array.prototype.slice.call(arguments)
+        // 就是返回了一个<b style="color: black; background-color: rgb(160, 255, 255);">promise</b>，不过自己写了resolver函数
+        return new <b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>(function (resolve, reject) {
+            // 很简单，就参数最后，加一个callback
+            args.push(function (err, res) {
+                if (err) reject(err)
+                else resolve(res)
+            })
+            fn.apply(self, args)
+        })
+    }
+}
+
+// 静态函数，<b style="color: black; background-color: rgb(255, 255, 102);">NodeJs</b>化，把返回<b style="color: black; background-color: rgb(160, 255, 255);">promise</b>的函数变成<b style="color: black; background-color: rgb(255, 255, 102);">nodeJs</b>风格的callback。
+//
+<b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>.nodeify = function (fn) {
+    // 返回的是一个包装过的函数
+    return function () {
+        var args = Array.prototype.slice.call(arguments)
+
+        // 如果原函数最后参数是callback，就取出来
+        var callback = typeof args[args.length - 1] === 'function' ? args.pop() : null
+        try {
+            // 执行<b style="color: black; background-color: rgb(160, 255, 255);">promise</b>本身，但是通过成员函数nodeify挂了1个then的回调上去。
+            return fn.apply(this, arguments).nodeify(callback)
+        } catch (ex) {
+            if (callback == null) {
+                // 有异常了，
+                return new <b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>(function (resolve, reject) { reject(ex) })
+            } else {
+                nextTick(function () {
+                    callback(ex)
+                })
+            }
+        }
+    }
+}
+
+// 静态函数
+//
+<b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>.all = function () {
+    var args = Array.prototype.slice.call(arguments.length === 1 &amp;&amp; Array.isArray(arguments[0]) ? arguments[0] : arguments)
+    // 返回一个新的<b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>
+    return new <b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>(function (resolve, reject) {
+        if (args.length === 0) return resolve([])
+        var remaining = args.length
+        function res(i, val) {
+            try {
+
+                // 判断是不是一个<b style="color: black; background-color: rgb(160, 255, 255);">promise</b>
+                if (val &amp;&amp; (typeof val === 'object' || typeof val === 'function')) {
+                    var then = val.then
+                    // 是的话，麻烦，要等一下他
+                    if (typeof then === 'function') {
+                        // 回调res函数（就是自身）
+                        then.call(val, function (val) { res(i, val) }, reject)
+                        return
+                    }
+                }
+
+                // 不是，那么简单，保存它的值
+                args[i] = val
+
+                // 等到所有的值都取到了，就可以返回了
+                if (--remaining === 0) {
+                    resolve(args);
+                }
+            } catch (ex) {
+                reject(ex)
+            }
+        }
+        for (var i = 0; i &lt; args.length; i++) {
+            res(i, args[i])
+        }
+    })
+}
+
+
+
+// 成员函数： 加入了抛异常功能，但是也不会返回<b style="color: black; background-color: rgb(160, 255, 255);">promise</b>了。
+//
+<b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>.prototype.done = function (onFulfilled, onRejected) {
+
+    // 先执行then，然后附加一个then，这里做了优化，没有参数就直接附加then。
+    var self = arguments.length ? this.then.apply(this, arguments) : this
+
+    self.then(null, function (err) {
+        nextTick(function () {
+            throw err
+        })
+    })
+}
+
+// 成员函数： <b style="color: black; background-color: rgb(255, 255, 102);">nodeJs</b>话，其实实现的很简单。
+//
+<b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>.prototype.nodeify = function (callback) {
+    if (callback == null) return this
+
+    this.then(function (value) {
+        nextTick(function () {
+            callback(null, value)
+        })
+    }, function (err) {
+        nextTick(function () {
+            callback(err)
+        })
+    })
+}</pre><br>
+<br>
+<p></p>
+<p></p>
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+<div class="bdsharebuttonbox" style="float: right;">
+<a href="#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间" style="background-position:0 -52px !important"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博" style="background-position:0 -104px !important"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博" style="background-position:0 -260px !important"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网" style="background-position:0 -208px !important"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信" style="background-position:0 -1612px !important"></a>
+</div>
+
+<!-- Baidu Button END -->
+
+<!--192.168.100.34-->
+<ul class="article_next_prev">
+            <li class="prev_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);location.href='/puncha/article/details/9236275';">上一篇</span><a href="http://blog.csdn.net/puncha/article/details/9236275" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">强大的async.auto！</a></li>
+            <li class="next_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='/puncha/article/details/9378197';">下一篇</span><a href="http://blog.csdn.net/puncha/article/details/9378197" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])">延长<b style="color: black; background-color: rgb(255, 255, 102);">Nodejs</b> HTTP 的连接时长</a></li>
+</ul>
+
+<!-- Baidu Button BEGIN -->
+
+
+
+<!-- Baidu Button END -->
+
+
+</div>
+      <dl class="blog-associat-tag">
+        <dt>主题推荐</dt>
+        <dd>
+                <a href="http://www.csdn.net/tag/nodejs" target="_top" class="blog-tage-red"><b style="color: black; background-color: rgb(255, 255, 102);">nodejs</b></a> 
+                <a href="http://www.csdn.net/tag/javascript" target="_top" class="blog-tage-red">javascript</a> 
+                <a href="http://www.csdn.net/tag/%E6%BA%90%E4%BB%A3%E7%A0%81" target="_top" class="blog-tage-red">源代码</a> 
+                <a href="http://www.csdn.net/tag/%E5%BC%82%E5%B8%B8" target="_top" class="blog-tage-red">异常</a> 
+                <a href="http://www.csdn.net/tag/object" target="_top" class="blog-tage-red">object</a> 
+        </dd>
+    </dl> 
+
+
+<dl class="blog-ass-articl tracking-ad" data-mod="popu_36" id="res-relatived"> 
+     <dt><span>猜你在找</span></dt>    
+</dl>
+<div id="job_blog_reco">
+
+   
+     
+
+</div>
+
+   
+
+
+
+    <div id="ad_cen">
+   
+          
+    </div>
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list">
+    </div>
+    <div id="comment_bar">
+    </div>
+    <div id="comment_form">
+    </div>
+
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+
+
+    <div id="ad_bot">
+    </div>
+    
+<div id="report_dialog">
+</div>
+
+<div id="d-top" style="bottom: 60px;">
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="blog-icon-reply.png" alt="快速回复">
+        </a>    
+
+    <a id="d-top-a" class="btn btn-top backtop" style="display: none;" title="返回顶部" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])">         
+         <img src="top.png" alt="TOP">
+    </a>
+</div>
+
+
+<div class="tag_list">
+    <h5>
+        <a href="http://www.csdn.net/tag/" target="_top">核心技术类目</a></h5>
+    <div class="classify">
+<a title="全部主题" href="http://www.csdn.net/tag" target="_top" onclick="LogClickCount(this,336);">全部主题</a>
+<a title="Hadoop" href="http://g.csdn.net/5272865" target="_top" onclick="LogClickCount(this,336);">Hadoop</a>
+<a title="AWS" href="http://g.csdn.net/5272866" target="_top" onclick="LogClickCount(this,336);">AWS</a>
+<a title="移动游戏" href="http://g.csdn.net/5272870" target="_top" onclick="LogClickCount(this,336);">移动游戏</a>
+<a title="Java" href="http://g.csdn.net/5272871" target="_top" onclick="LogClickCount(this,336);">Java</a>
+<a title="Android" href="http://g.csdn.net/5272872" target="_top" onclick="LogClickCount(this,336);">Android</a>
+<a title="iOS" href="http://g.csdn.net/5272873" target="_top" onclick="LogClickCount(this,336);">iOS</a>
+<a title="Swift" href="http://g.csdn.net/5272868" target="_top" onclick="LogClickCount(this,336);">Swift</a>
+<a title="智能硬件" href="http://g.csdn.net/5272869" target="_top" onclick="LogClickCount(this,336);">智能硬件</a>
+<a title="Docker" href="http://g.csdn.net/5272867" target="_top" onclick="LogClickCount(this,336);">Docker</a>
+<a title="OpenStack" href="http://g.csdn.net/5272925" target="_top" onclick="LogClickCount(this,336);">OpenStack</a>
+<a title="VPN" href="http://www.csdn.net/tag/vpn" target="_top" onclick="LogClickCount(this,336);">VPN</a>
+<a title="Spark" href="http://g.csdn.net/5272924" target="_top" onclick="LogClickCount(this,336);">Spark</a>
+<a title="ERP" href="http://www.csdn.net/tag/erp" target="_top" onclick="LogClickCount(this,336);">ERP</a>
+<a title="IE10" href="http://www.csdn.net/tag/ie10" target="_top" onclick="LogClickCount(this,336);">IE10</a>
+<a title="Eclipse" href="http://www.csdn.net/tag/eclipse" target="_top" onclick="LogClickCount(this,336);">Eclipse</a>
+<a title="CRM" href="http://www.csdn.net/tag/crm" target="_top" onclick="LogClickCount(this,336);">CRM</a>
+<a title="JavaScript" href="http://www.csdn.net/tag/javascript" target="_top" onclick="LogClickCount(this,336);">JavaScript</a>
+<a title="数据库" href="http://www.csdn.net/tag/%E6%95%B0%E6%8D%AE%E5%BA%93" target="_top" onclick="LogClickCount(this,336);">数据库</a>
+<a title="Ubuntu" href="http://www.csdn.net/tag/ubuntu" target="_top" onclick="LogClickCount(this,336);">Ubuntu</a>
+<a title="NFC" href="http://www.csdn.net/tag/nfc" target="_top" onclick="LogClickCount(this,336);">NFC</a>
+<a title="WAP" href="http://www.csdn.net/tag/wap" target="_top" onclick="LogClickCount(this,336);">WAP</a>
+<a title="jQuery" href="http://www.csdn.net/tag/jquery" target="_top" onclick="LogClickCount(this,336);">jQuery</a>
+<a title="BI" href="http://www.csdn.net/tag/bi" target="_top" onclick="LogClickCount(this,336);">BI</a>
+<a title="HTML5" href="http://www.csdn.net/tag/html5" target="_top" onclick="LogClickCount(this,336);">HTML5</a>
+<a title="Spring" href="http://www.csdn.net/tag/spring" target="_top" onclick="LogClickCount(this,336);">Spring</a>
+<a title="Apache" href="http://www.csdn.net/tag/apache" target="_top" onclick="LogClickCount(this,336);">Apache</a>
+<a title=".NET" href="http://www.csdn.net/tag/.net" target="_top" onclick="LogClickCount(this,336);">.NET</a>
+<a title="API" href="http://www.csdn.net/tag/api" target="_top" onclick="LogClickCount(this,336);">API</a>
+<a title="HTML" href="http://www.csdn.net/tag/html" target="_top" onclick="LogClickCount(this,336);">HTML</a>
+<a title="SDK" href="http://www.csdn.net/tag/sdk" target="_top" onclick="LogClickCount(this,336);">SDK</a>
+<a title="IIS" href="http://www.csdn.net/tag/iis" target="_top" onclick="LogClickCount(this,336);">IIS</a>
+<a title="Fedora" href="http://www.csdn.net/tag/fedora" target="_top" onclick="LogClickCount(this,336);">Fedora</a>
+<a title="XML" href="http://www.csdn.net/tag/xml" target="_top" onclick="LogClickCount(this,336);">XML</a>
+<a title="LBS" href="http://www.csdn.net/tag/lbs" target="_top" onclick="LogClickCount(this,336);">LBS</a>
+<a title="Unity" href="http://www.csdn.net/tag/unity" target="_top" onclick="LogClickCount(this,336);">Unity</a>
+<a title="Splashtop" href="http://www.csdn.net/tag/splashtop" target="_top" onclick="LogClickCount(this,336);">Splashtop</a>
+<a title="UML" href="http://www.csdn.net/tag/uml" target="_top" onclick="LogClickCount(this,336);">UML</a>
+<a title="components" href="http://www.csdn.net/tag/components" target="_top" onclick="LogClickCount(this,336);">components</a>
+<a title="Windows Mobile" href="http://www.csdn.net/tag/windowsmobile" target="_top" onclick="LogClickCount(this,336);">Windows Mobile</a>
+<a title="Rails" href="http://www.csdn.net/tag/rails" target="_top" onclick="LogClickCount(this,336);">Rails</a>
+<a title="QEMU" href="http://www.csdn.net/tag/qemu" target="_top" onclick="LogClickCount(this,336);">QEMU</a>
+<a title="KDE" href="http://www.csdn.net/tag/kde" target="_top" onclick="LogClickCount(this,336);">KDE</a>
+<a title="Cassandra" href="http://www.csdn.net/tag/cassandra" target="_top" onclick="LogClickCount(this,336);">Cassandra</a>
+<a title="CloudStack" href="http://www.csdn.net/tag/cloudstack" target="_top" onclick="LogClickCount(this,336);">CloudStack</a>
+<a title="FTC" href="http://www.csdn.net/tag/ftc" target="_top" onclick="LogClickCount(this,336);">FTC</a>
+<a title="coremail" href="http://www.csdn.net/tag/coremail" target="_top" onclick="LogClickCount(this,336);">coremail</a>
+<a title="OPhone " href="http://www.csdn.net/tag/ophone" target="_top" onclick="LogClickCount(this,336);">OPhone </a>
+<a title="CouchBase" href="http://www.csdn.net/tag/couchbase" target="_top" onclick="LogClickCount(this,336);">CouchBase</a>
+<a title="云计算" href="http://www.csdn.net/tag/%E4%BA%91%E8%AE%A1%E7%AE%97" target="_top" onclick="LogClickCount(this,336);">云计算</a>
+<a title="iOS6" href="http://www.csdn.net/tag/iOS6" target="_top" onclick="LogClickCount(this,336);">iOS6</a>
+<a title="Rackspace " href="http://www.csdn.net/tag/rackspace" target="_top" onclick="LogClickCount(this,336);">Rackspace </a>
+<a title="Web App" href="http://www.csdn.net/tag/webapp" target="_top" onclick="LogClickCount(this,336);">Web App</a>
+<a title="SpringSide" href="http://www.csdn.net/tag/springside" target="_top" onclick="LogClickCount(this,336);">SpringSide</a>
+<a title="Maemo" href="http://www.csdn.net/tag/maemo" target="_top" onclick="LogClickCount(this,336);">Maemo</a>
+<a title="Compuware" href="http://www.csdn.net/tag/compuware" target="_top" onclick="LogClickCount(this,336);">Compuware</a>
+<a title="大数据" href="http://www.csdn.net/tag/%E5%A4%A7%E6%95%B0%E6%8D%AE" target="_top" onclick="LogClickCount(this,336);">大数据</a>
+<a title="aptech" href="http://www.csdn.net/tag/aptech" target="_top" onclick="LogClickCount(this,336);">aptech</a>
+<a title="Perl" href="http://www.csdn.net/tag/perl" target="_top" onclick="LogClickCount(this,336);">Perl</a>
+<a title="Tornado" href="http://www.csdn.net/tag/tornado" target="_top" onclick="LogClickCount(this,336);">Tornado</a>
+<a title="Ruby" href="http://www.csdn.net/tag/ruby" target="_top" onclick="LogClickCount(this,336);">Ruby</a>
+<a title="Hibernate" href="http://www.csdn.net/hibernate" target="_top" onclick="LogClickCount(this,336);">Hibernate</a>
+<a title="ThinkPHP" href="http://www.csdn.net/tag/thinkphp" target="_top" onclick="LogClickCount(this,336);">ThinkPHP</a>
+<a title="HBase" href="http://www.csdn.net/tag/hbase" target="_top" onclick="LogClickCount(this,336);">HBase</a>
+<a title="Pure" href="http://www.csdn.net/tag/pure" target="_top" onclick="LogClickCount(this,336);">Pure</a>
+<a title="Solr" href="http://www.csdn.net/tag/solr" target="_top" onclick="LogClickCount(this,336);">Solr</a>
+<a title="Angular" href="http://www.csdn.net/tag/angular" target="_top" onclick="LogClickCount(this,336);">Angular</a>
+<a title="Cloud Foundry" href="http://www.csdn.net/tag/cloudfoundry" target="_top" onclick="LogClickCount(this,336);">Cloud Foundry</a>
+<a title="Redis" href="http://www.csdn.net/tag/redis" target="_top" onclick="LogClickCount(this,336);">Redis</a>
+<a title="Scala" href="http://www.csdn.net/tag/scala" target="_top" onclick="LogClickCount(this,336);">Scala</a>
+<a title="Django" href="http://www.csdn.net/tag/django" target="_top" onclick="LogClickCount(this,336);">Django</a>
+<a title="Bootstrap" href="http://www.csdn.net/tag/bootstrap" target="_top" onclick="LogClickCount(this,336);">Bootstrap</a>
+    </div>
+</div>
+
+<div id="pop_win" style="display: none; position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none repeat scroll 0px 0px rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+
+
+
+
+
+
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+            <div id="side">
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/puncha" target="_top">
+    <img src="1_puncha.jpg" title="访问我的空间" style="max-width: 90%;">
+    </a>
+    <br>
+    <span><a href="http://my.csdn.net/puncha" class="user_name" target="_top">puncha</a></span>
+</div>
+<div class="interact">
+<a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_guanzhu'])"></a>
+
+ <a href="http://msg.csdn.net/letters/model?receiver=puncha" class="letter" title="[发私信]"></a>  
+</div>
+<div id="blog_medal">
+                <div id="bms_box">
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>243709次</span></li>
+    <li>积分：<span>3719</span> </li>    
+    <li>等级： <span style="position: relative; display: inline-block; z-index: 1;">
+            <img src="blog5.png" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style="position: absolute; left: -24px; top: 25px; text-align: center; width: 101px; height: 32px; background-color: rgb(255, 255, 255); line-height: 32px; border: 2px solid rgb(221, 221, 221); display: none; z-index: 999;">
+            <div style="left: 42%; top: -8px; position: absolute; width: 0px; height: 0px; border-left: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 8px solid rgb(234, 234, 234);"></div>
+            积分：3719 </div>
+        </span>  </li>
+    <li>排名：<span>第3478名</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>119篇</span></li>
+    <li>转载：<span>73篇</span></li>
+    <li>译文：<span>0篇</span></li>
+    <li>评论：<span>49条</span></li>
+</ul>
+</ul>
+</div>
+
+
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input value="" id="inputSearch" class="blogsearch" title="请输入关键字" type="text"></span>
+        <input id="btnSubmit" value="搜索" title="search in blog" type="button">
+        <input name="q" id="inputQ" type="hidden">
+        <input name="t" value="blog" type="hidden">
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+
+<div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1111228" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">WPF</a><span>(26)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/405348" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">C++</a><span>(17)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1114486" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Visual Studio</a><span>(1)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1114520" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">C#</a><span>(26)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1166106" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">手机</a><span>(9)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1168867" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">安卓(Andriod)</a><span>(6)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1278244" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Win8 Metro</a><span>(5)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1281266" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">LinQ</a><span>(2)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1287046" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">JavaScript</a><span>(27)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1287047" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Web Programming</a><span>(26)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1296363" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">书评</a><span>(3)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1298211" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Cloud</a><span>(24)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1303604" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">异步编程（Async）</a><span>(16)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1303610" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Node.js</a><span>(45)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1303611" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">No-SQL</a><span>(6)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1303612" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">HTML5</a><span>(6)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1315240" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">RabbitMQ</a><span>(12)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1344414" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Linux</a><span>(8)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1361054" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Amazon/AWS</a><span>(2)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1376012" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Chef</a><span>(7)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1442491" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Redis</a><span>(2)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1452071" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">笔记</a><span>(1)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1621955" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">源码阅读</a><span>(1)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1651107" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">WinDbg</a><span>(5)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1695549" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">游戏</a><span>(1)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1783625" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">运维</a><span>(1)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1810965" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">VC++/MFC</a><span>(1)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1862449" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">AngularJs</a><span>(8)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1871485" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">TSF (Text Service Framework)</a><span>(3)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1876923" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Python</a><span>(1)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/puncha/article/category/1877265" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Misc</a><span>(1)</span>
+            </li>
+</ul>
+</div><div id="panel_Archive" class="panel">
+<ul class="panel_head"><span>文章存档</span></ul>
+<ul class="panel_body">
+<div id="archive_list">
+<!--归档统计-->
+<li><a href="http://blog.csdn.net/puncha/article/month/2014/03">2014年03月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/puncha/article/month/2014/02">2014年02月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/puncha/article/month/2014/01">2014年01月</a><span>(11)</span></li><li><a href="http://blog.csdn.net/puncha/article/month/2013/12">2013年12月</a><span>(6)</span></li><li><a href="http://blog.csdn.net/puncha/article/month/2013/11">2013年11月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/puncha/article/month/2013/10">2013年10月</a><span>(6)</span></li><li><a href="http://blog.csdn.net/puncha/article/month/2013/09">2013年09月</a><span>(10)</span></li><li><a href="http://blog.csdn.net/puncha/article/month/2013/08">2013年08月</a><span>(7)</span></li><li><a href="http://blog.csdn.net/puncha/article/month/2013/07">2013年07月</a><span>(8)</span></li><li><a href="http://blog.csdn.net/puncha/article/month/2013/06">2013年06月</a><span>(14)</span></li><li><a href="http://blog.csdn.net/puncha/article/month/2013/05">2013年05月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/puncha/article/month/2013/04">2013年04月</a><span>(7)</span></li><li><a href="http://blog.csdn.net/puncha/article/month/2013/03">2013年03月</a><span>(10)</span></li><li><a href="http://blog.csdn.net/puncha/article/month/2013/02">2013年02月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/puncha/article/month/2013/01">2013年01月</a><span>(17)</span></li><li><a href="http://blog.csdn.net/puncha/article/month/2012/12">2012年12月</a><span>(34)</span></li><li><a href="http://blog.csdn.net/puncha/article/month/2012/11">2012年11月</a><span>(9)</span></li><li><a href="http://blog.csdn.net/puncha/article/month/2012/10">2012年10月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/puncha/article/month/2012/07">2012年07月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/puncha/article/month/2012/06">2012年06月</a><span>(7)</span></li><li><a href="http://blog.csdn.net/puncha/article/month/2012/04">2012年04月</a><span>(23)</span></li><li><a href="http://blog.csdn.net/puncha/article/month/2012/03">2012年03月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/puncha/article/month/2008/06">2008年06月</a><span>(2)</span></li>
+</div>
+</ul>
+</div>
+<div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="http://blog.csdn.net/puncha/article/details/9015317" title="Nodejs 发送HTTP POST请求实例"><b style="color: black; background-color: rgb(255, 255, 102);">Nodejs</b> 发送HTTP POST请求实例</a><span>(15468)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/puncha/article/details/7670615" title="如何将应用安装到/system/app下">如何将应用安装到/system/app下</a><span>(7190)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/puncha/article/details/11237955" title="Nodejs之require加载机制（模块可以污染全局空间）"><b style="color: black; background-color: rgb(255, 255, 102);">Nodejs</b>之require加载机制（模块可以污染全局空间）</a><span>(4865)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/puncha/article/details/9301083" title="Nodejs的Promise库"><b style="color: black; background-color: rgb(255, 255, 102);">Nodejs</b>的<b style="color: black; background-color: rgb(160, 255, 255);">Promise</b>库</a><span>(4852)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/puncha/article/details/9112293" title="StatsD与Graphite联合作战">StatsD与Graphite联合作战</a><span>(4200)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/puncha/article/details/7434308" title="The 'Microsoft.ACE.OLEDB.12.0' provider is not registered on the local Machine 完美解决">The 'Microsoft.ACE.OLEDB.12.0' provider is not registered on the local Machine 完美解决</a><span>(3965)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/puncha/article/details/7670778" title="备份和恢复Android手机的NAND分区">备份和恢复Android手机的NAND分区</a><span>(3951)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/puncha/article/details/7670482" title="Framework-Res.apk 反编译、编译、打包、替换详细教程">Framework-Res.apk 反编译、编译、打包、替换详细教程</a><span>(3878)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/puncha/article/details/9083061" title="StatsD学习">StatsD学习</a><span>(3778)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/puncha/article/details/8580275" title="Ubuntu之：解决无线网卡驱动问题">Ubuntu之：解决无线网卡驱动问题</a><span>(3549)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="http://blog.csdn.net/puncha/article/details/9198689" title="Mocha实践">Mocha实践</a><span>(9)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/puncha/article/details/11237955" title="Nodejs之require加载机制（模块可以污染全局空间）"><b style="color: black; background-color: rgb(255, 255, 102);">Nodejs</b>之require加载机制（模块可以污染全局空间）</a><span>(4)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/puncha/article/details/17068837" title="Paypal开源nodejs框架研究（二）KrakenJs之Enrouten">Paypal开源<b style="color: black; background-color: rgb(255, 255, 102);">nodejs</b>框架研究（二）KrakenJs之Enrouten</a><span>(3)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/puncha/article/details/7670778" title="备份和恢复Android手机的NAND分区">备份和恢复Android手机的NAND分区</a><span>(2)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/puncha/article/details/9092765" title="在Ubuntu Server 12.04 x64下安装Graphite">在Ubuntu Server 12.04 x64下安装Graphite</a><span>(2)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/puncha/article/details/17068589" title="Paypal开源nodejs框架研究（一）KrakenJs">Paypal开源<b style="color: black; background-color: rgb(255, 255, 102);">nodejs</b>框架研究（一）KrakenJs</a><span>(2)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/puncha/article/details/8258172" title="书评： HTML5程序设计（第2版）">书评： HTML5程序设计（第2版）</a><span>(2)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/puncha/article/details/8487854" title="并发学习之：不使用内核对象同步的并发队列">并发学习之：不使用内核对象同步的并发队列</a><span>(2)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/puncha/article/details/9198859" title="Restify实践">Restify实践</a><span>(2)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/puncha/article/details/8979098" title="jqPlot 实际应用2例： 自定义渲染X坐标轴、另存为图片">jqPlot 实际应用2例： 自定义渲染X坐标轴、另存为图片</a><span>(2)</span>
+</li>
+</ul>
+</div>
+<div id="homepageArticles" class="panel tracking-ad" data-mod="popu_4">
+<ul class="panel_head"><span>推荐文章</span></ul>
+<ul class="panel_body" id="ad_commend"></ul>
+</div>
+<div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+   
+         <a href="http://blog.csdn.net/puncha/article/details/8258172#comments">书评： HTML5程序设计（第2版）</a>
+    <p style="margin: 0px;"><a href="http://blog.csdn.net/puncha" class="user_name">puncha</a>:
+@fly51tosky:可以，这本书没什么内容，一小时能看几十页
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/puncha/article/details/8258172#comments">书评： HTML5程序设计（第2版）</a>
+    <p style="margin: 0px;"><a href="http://blog.csdn.net/fly51tosky" class="user_name">fly51tosky</a>:
+15小时能看完？
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/puncha/article/details/9092765#comments">在Ubuntu Server 12.04 x64下安装Graphite</a>
+    <p style="margin: 0px;"><a href="http://blog.csdn.net/cindynorth" class="user_name">cindynorth</a>:
+我按照这个步骤装完之后，start carbon 显示Starting carbon-cache (...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/puncha/article/details/10174873#comments">jQueryUI Plugin TableSorter的2个widget扩展</a>
+    <p style="margin: 0px;"><a href="http://blog.csdn.net/wenzidashu" class="user_name">wenzidashu</a>:
+可不可以把这个 demo发一下？
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/puncha/article/details/7656652#comments">使用Mtk的flash tool时要注意的问题</a>
+    <p style="margin: 0px;"><a href="http://blog.csdn.net/zmdliuyun" class="user_name">zmdliuyun</a>:
+原来是这样啊。在哪下载最新工具和教程呢
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/puncha/article/details/7656652#comments">在Ubuntu Server 12.04 x64下安装Graphite</a>
+    <p style="margin: 0px;"><a href="http://blog.csdn.net/qtluck" class="user_name">qtluck</a>:
+能够完整搭起来。很好。
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/puncha/article/details/7426965#comments">ListBox Grouping的研究（三）：Grouping 级联</a>
+    <p style="margin: 0px;"><a href="http://blog.csdn.net/aaaawwwwww" class="user_name">aaaawwwwww</a>:
+学习了，讲的很好
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/puncha/article/details/11237955#comments"><b style="color: black; background-color: rgb(255, 255, 102);">Nodejs</b>之require加载机制（模块可以污染全局空间）</a>
+    <p style="margin: 0px;"><a href="http://blog.csdn.net/puncha" class="user_name">puncha</a>:
+@networkdragon:我多台机器测试下来，都是false
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/puncha/article/details/8979098#comments">jqPlot 实际应用2例： 自定义渲染X坐标轴、另存为图片</a>
+    <p style="margin: 0px;"><a href="http://blog.csdn.net/puncha" class="user_name">puncha</a>:
+@sinat_18969917:你试试把IE缩放率设置成100%
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/puncha/article/details/8979098#comments"><b style="color: black; background-color: rgb(255, 255, 102);">Nodejs</b>之require加载机制（模块可以污染全局空间）</a>
+    <p style="margin: 0px;"><a href="http://blog.csdn.net/networkdragon" class="user_name">networkdragon</a>:
+._contextLoad 这个默认是true，这文章不成立，跟你的所谓全局this没关系，转为mo...
+    </p>
+    </li>
+</ul>
+</div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+
+            <div class="clear">
+            </div>
+        </div>
+        
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+    </div>
+      <!--new top-->
+    
+    
+     <!--new top-->
+   
+    
+    
+    
+    
+    
+
+
+
+
+</div>
+
+
+
+
+
+</body>
+</html>
