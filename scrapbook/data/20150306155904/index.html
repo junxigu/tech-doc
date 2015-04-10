@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" class="client-js" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta charset="UTF-8">
+<title>BirtPOJO Viewer WebLogic Deployment - Eclipsepedia</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+<meta name="generator" content="MediaWiki 1.23.2">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.eclipse.org/opensearch_desc.php" title="Eclipsepedia (en)">
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.eclipse.org/api.php?action=rsd">
+<link rel="alternate" type="application/atom+xml" title="Eclipsepedia Atom feed" href="http://wiki.eclipse.org/index.php?title=Special:RecentChanges&amp;feed=atom">
+
+<meta name="ResourceLoaderDynamicStyles" content="">
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-BirtPOJO_Viewer_WebLogic_Deployment skin-solstice action-view" id="solstice">
+    <a class="sr-only" href="#content">Skip to main content</a>
+<div class="thin-header">
+    <header role="banner" class="hidden-print noprint">
+      <div class="container-fluid">
+        <div id="row-logo-search">
+          <div id="header-left">
+            <div class="row">
+              <div class="hidden-xs col-sm-6 logo-container">
+                  <a href="https://www.eclipse.org/"><img class="logo-eclipse-default" src="eclipse-800x188.png" alt="Eclipsepedia"></a>
+               </div>
+               <div class="navbar col-sm-18 yamm" id="main-menu">
+                <div class="navbar-collapse collapse" id="navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+                    <li><a target="_self" href="https://eclipse.org/downloads/">Download</a></li>
+                    <li><a target="_self" href="https://eclipse.org/users/">Getting Started </a></li>
+                    <li><a target="_self" href="https://eclipse.org/membership/">Members</a></li>
+                    <li><a target="_self" href="https://eclipse.org/projects/">Projects</a></li>
+                    <li class="dropdown visible-xs"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Community <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="http://marketplace.eclipse.org/">Marketplace</a></li><li><a href="http://events.eclipse.org/">Events</a></li><li><a href="http://www.planeteclipse.org/">Planet Eclipse</a></li><li><a href="https://eclipse.org/community/eclipse_newsletter/">Newsletter</a></li><li><a href="https://www.youtube.com/user/EclipseFdn">Videos</a></li></ul></li><li class="dropdown visible-xs"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Participate <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="https://bugs.eclipse.org/bugs/">Report a Bug</a></li><li><a href="https://eclipse.org/forums/">Forums</a></li><li><a href="https://eclipse.org/mail/">Mailing Lists</a></li><li><a href="https://wiki.eclipse.org/">Wiki</a></li><li><a href="https://wiki.eclipse.org/IRC">IRC</a></li><li><a href="https://eclipse.org/contribute/">How to Contribute</a></li></ul></li><li class="dropdown visible-xs"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Working Groups <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="http://wiki.eclipse.org/Auto_IWG">Automotive</a></li><li><a href="http://iot.eclipse.org/">Internet of Things</a></li><li><a href="http://locationtech.org/">LocationTech</a></li><li><a href="http://lts.eclipse.org/">Long-Term Support</a></li><li><a href="http://polarsys.org/">PolarSys</a></li><li><a href="http://science.eclipse.org/">Science</a></li><li><a href="http://openmdm.org/">OpenMDM</a></li></ul></li><!-- More -->
+                    <li class="dropdown hidden-xs"><a class="dropdown-toggle" data-toggle="dropdown">More<b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <!-- Content container to add padding -->
+                          <div class="yamm-content">
+                            <div class="row">
+                              <ul class="col-sm-8 list-unstyled"><li><p><strong>Community</strong></p></li><li><a href="http://marketplace.eclipse.org/">Marketplace</a></li><li><a href="http://events.eclipse.org/">Events</a></li><li><a href="http://www.planeteclipse.org/">Planet Eclipse</a></li><li><a href="https://eclipse.org/community/eclipse_newsletter/">Newsletter</a></li><li><a href="https://www.youtube.com/user/EclipseFdn">Videos</a></li></ul><ul class="col-sm-8 list-unstyled"><li><p><strong>Participate</strong></p></li><li><a href="https://bugs.eclipse.org/bugs/">Report a Bug</a></li><li><a href="https://eclipse.org/forums/">Forums</a></li><li><a href="https://eclipse.org/mail/">Mailing Lists</a></li><li><a href="https://wiki.eclipse.org/">Wiki</a></li><li><a href="https://wiki.eclipse.org/IRC">IRC</a></li><li><a href="https://eclipse.org/contribute/">How to Contribute</a></li></ul><ul class="col-sm-8 list-unstyled"><li><p><strong>Working Groups</strong></p></li><li><a href="http://wiki.eclipse.org/Auto_IWG">Automotive</a></li><li><a href="http://iot.eclipse.org/">Internet of Things</a></li><li><a href="http://locationtech.org/">LocationTech</a></li><li><a href="http://lts.eclipse.org/">Long-Term Support</a></li><li><a href="http://polarsys.org/">PolarSys</a></li><li><a href="http://science.eclipse.org/">Science</a></li><li><a href="http://openmdm.org/">OpenMDM</a></li></ul>                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="navbar-header">
+                  <button data-target="#navbar-collapse-1" data-toggle="collapse" class="navbar-toggle" type="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                      <a href="https://www.eclipse.org/" class="visible-xs navbar-brand"><img class="logo-eclipse-default" src="eclipse-800x188.png" alt="Eclipsepedia" width="174"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="defaut-breadcrumbs hidden-print noprint hidden-print clearfix" id="breadcrumb">
+      <div>
+        <ol class="breadcrumb">
+        <li><a href="https://www.eclipse.org/">Home</a></li>
+        <li><a href="http://wiki.eclipse.org/Main_Page">Eclipse Wiki</a></li>
+        <li class="active">BirtPOJO Viewer WebLogic Deployment</li></ol>
+      </div>
+    </section>
+  </div>
+  <div class="toolbar-menu breadcrumbs-offset noprint hidden-print margin-bottom-0 clearfix">
+        <div class="col-md-24">
+                <ol class="breadcrumb" role="navigation">
+                  <li id="pt-login">
+            <a href="http://wiki.eclipse.org/index.php?title=Special:UserLogin&amp;returnto=BirtPOJO+Viewer+WebLogic+Deployment">
+              <i class="fa fa-sign-in fa-fw orange"></i> Log in            </a>
+          </li>
+              
+        </ol></div>
+</div>
+  <main role="main" class="background-grey">
+    <div class="container-full padding-top-25">
+
+    
+    
+    <!-- content -->
+    <section id="content" class="mw-body container-full clearfix 0">
+      <div id="mw-js-message" style="display: none;"></div>
+
+      
+      <!-- bodyContent -->
+      <div id="bodyContent">
+
+        
+                <!-- jumpto -->
+        <div id="jump-to-nav" class="mw-jump">
+          Jump to: <a href="#mw-head">navigation</a>,
+          <a href="#p-search">search</a>
+        </div>
+        <!-- /jumpto -->
+        
+          <!-- leftcol -->
+          <aside class="col-md-4 noprint hidden-print" id="leftcol">
+                      <form class="input-group" role="form" id="form-eclipse-search" action="http://wiki.eclipse.org/index.php">
+              <input autocomplete="off" id="searchInput" class="search-query form-control" accesskey="f" title="Special:Search" placeholder="Search" name="search" value="" type="search">
+
+              <span class="input-group-btn">
+                <button value="search" id="mw-searchButton" type="submit" class="btn btn-default" title="Search the pages for this text" name="fulltext">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+            </form>
+                      <select class="form-control margin-top-10 margin-bottom-10 visible-xs visible-sm" onchange="this.options[this.selectedIndex].value &amp;&amp; (window.location = this.options[this.selectedIndex].value);"><option class="fw-700 ">---Navigation---</option><option value="/Main_Page">Main Page</option><option value="/Eclipsepedia:Community_portal">Community portal</option><option value="/Eclipsepedia:Current_events">Current events</option><option value="/Special:RecentChanges">Recent changes</option><option value="/Special:Random">Random page</option><option value="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents">Help</option></select><ul class="ul-left-nav fa-ul hidden-print leftnav hidden-xs hidden-sm"><li class="separator"><span class="separator">Navigation</span></li>                <li class=""><i class="fa fa-angle-double-right orange fa-fw"></i> <a href="http://wiki.eclipse.org/Main_Page" id="n-mainpage" title="Visit the main page [alt-shift-z]" accesskey="z">Main Page</a></li>                <li class=""><i class="fa fa-angle-double-right orange fa-fw"></i> <a href="http://wiki.eclipse.org/Eclipsepedia:Community_portal" id="n-portal" title="About the project, what you can do, where to find things">Community portal</a></li>                <li class=""><i class="fa fa-angle-double-right orange fa-fw"></i> <a href="http://wiki.eclipse.org/Eclipsepedia:Current_events" id="n-currentevents" title="Find background information on current events">Current events</a></li>                <li class=""><i class="fa fa-angle-double-right orange fa-fw"></i> <a href="http://wiki.eclipse.org/Special:RecentChanges" id="n-recentchanges" title="A list of recent changes in the wiki [alt-shift-r]" accesskey="r">Recent changes</a></li>                <li class=""><i class="fa fa-angle-double-right orange fa-fw"></i> <a href="http://wiki.eclipse.org/Special:Random" id="n-randompage" title="Load a random page [alt-shift-x]" accesskey="x">Random page</a></li>                <li class=""><i class="fa fa-angle-double-right orange fa-fw"></i> <a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" id="n-help" title="The place to find out">Help</a></li></ul>            <select class="form-control margin-top-10 margin-bottom-10 visible-xs visible-sm" onchange="this.options[this.selectedIndex].value &amp;&amp; (window.location = this.options[this.selectedIndex].value);"><option class="fw-700 ">---Toolbox---</option><option value="/index.php?title=BirtPOJO_Viewer_WebLogic_Deployment&amp;action=info">Page information</option><option value="/index.php?title=BirtPOJO_Viewer_WebLogic_Deployment&amp;oldid=271639">Permanent link</option><option value="/index.php?title=BirtPOJO_Viewer_WebLogic_Deployment&amp;printable=yes">Printable version</option><option value="/Special:SpecialPages">Special pages</option><option value="/Special:RecentChangesLinked/BirtPOJO_Viewer_WebLogic_Deployment">Related changes</option><option value="/Special:WhatLinksHere/BirtPOJO_Viewer_WebLogic_Deployment">What links here</option></select><ul class="ul-left-nav fa-ul hidden-print leftnav hidden-xs hidden-sm"><li class="separator"><span class="separator">Toolbox</span></li><li><i class="fa fa-angle-double-right orange fa-fw"></i> <a href="http://wiki.eclipse.org/index.php?title=BirtPOJO_Viewer_WebLogic_Deployment&amp;action=info" id="t-info">Page information</a></li><li><i class="fa fa-angle-double-right orange fa-fw"></i> <a href="http://wiki.eclipse.org/index.php?title=BirtPOJO_Viewer_WebLogic_Deployment&amp;oldid=271639" id="t-permalink" title="Permanent link to this revision of the page">Permanent link</a></li><li><i class="fa fa-angle-double-right orange fa-fw"></i> <a href="http://wiki.eclipse.org/index.php?title=BirtPOJO_Viewer_WebLogic_Deployment&amp;printable=yes" id="t-print" rel="alternate" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li><li><i class="fa fa-angle-double-right orange fa-fw"></i> <a href="http://wiki.eclipse.org/Special:SpecialPages" id="t-specialpages" title="A list of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li><li><i class="fa fa-angle-double-right orange fa-fw"></i> <a href="http://wiki.eclipse.org/Special:RecentChangesLinked/BirtPOJO_Viewer_WebLogic_Deployment" id="t-recentchangeslinked" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li><li><i class="fa fa-angle-double-right orange fa-fw"></i> <a href="http://wiki.eclipse.org/Special:WhatLinksHere/BirtPOJO_Viewer_WebLogic_Deployment" id="t-whatlinkshere" title="A list of all wiki pages that link here [alt-shift-j]" accesskey="j">What links here</a></li></ul>                                  </aside>
+          <!-- /leftcol -->
+
+          <!-- mainContent -->
+          <div id="mainContent" class="col-md-20">
+                      <ul class="nav nav-tabs noprint hidden-print" role="tablist">
+                       <li id="ca-nstab-main" class="active"><a href="http://wiki.eclipse.org/BirtPOJO_Viewer_WebLogic_Deployment" title="View the content page [alt-shift-c]" accesskey="c" tabindex="-1">Page</a></li>
+                        <li id="ca-talk" class="new"><a href="http://wiki.eclipse.org/index.php?title=Talk:BirtPOJO_Viewer_WebLogic_Deployment&amp;action=edit&amp;redlink=1" title="Discussion about the content page [alt-shift-t]" accesskey="t" tabindex="-1">Discussion</a></li>
+                        <li id="ca-viewsource"><a href="http://wiki.eclipse.org/index.php?title=BirtPOJO_Viewer_WebLogic_Deployment&amp;action=edit" title="This page is protected.
+You can view its source [alt-shift-e]" accesskey="e" tabindex="-1">View source</a></li>
+                        <li id="ca-history" class="collapsible"><a href="http://wiki.eclipse.org/index.php?title=BirtPOJO_Viewer_WebLogic_Deployment&amp;action=history" title="Past revisions of this page [alt-shift-h]" accesskey="h" tabindex="-1">History</a></li>
+                      </ul>            <div class="tab-content background-white">
+              <div id="tab-pane-main-page-content" class="tab-pane active">
+
+                
+                <h1 id="firstHeading" class="firstHeading page-header">
+                  <span dir="auto">BirtPOJO Viewer WebLogic Deployment</span>
+                </h1>
+                <div id="main-page-content">
+                                    
+                  
+                  <div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="en"><p><span style="color: blue; font-size: smaller;">&lt;&nbsp;To: <a href="http://wiki.eclipse.org/BIRT_Project" title="BIRT Project">BIRT Project</a></span><br>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2><span class="toctoggle">&nbsp;[<a href="#" class="internal" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#BIRT_POJO_Viewer_WebLogic_Deployment"><span class="tocnumber">1</span> <span class="toctext">BIRT POJO Viewer WebLogic Deployment</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="BIRT_POJO_Viewer_WebLogic_Deployment">BIRT POJO Viewer WebLogic Deployment</span></h2>
+<p>Install and Deploy Steps
+</p><p>1. Download the BIRT Runtime and extract the contents.<br>
+2. Copy commons-logging-api.jar into WebViewerExample/WEB-INF/lib<br>
+3. WAR WebViewerExample directory and rename to birt.war<br>
+4. Start WebLogic Server.<br>
+5. Open WebLocic console (eg <a rel="nofollow" class="external free" href="http://host:7001/console">http://host:7001/console</a>).<br>
+6. Deploy BIRT through console.<br>
+a) Click Deployments menu in Domain Structure.<br>
+b) Click Lock &amp; Edit button in Change Center.<br>
+c) Click Install button in right pane.<br>
+<a href="http://wiki.eclipse.org/File:BIRTPOJOViewerWebLogic.jpg" class="image"><img alt="BIRTPOJOViewerWebLogic.jpg" src="birtpojoviewerweblogic.jpg" height="463" width="553"></a><br>
+d) Click “upload your files” link to upload birt.war.<br>
+e) Click on birt.war in application list, click Next.<br>
+f) Click on “Install this deployment as an application”, click Next and then click Finish.<br>
+g) Click Activate Change button in Change Center.<br>
+h) Return to the Deployments page, select birt.war and press Start-&gt;Servicing all requests.<br>
+i) Open browser to birt application (eg <a rel="nofollow" class="external free" href="http://host:7001/birt/index.jsp">http://host:7001/birt/index.jsp</a>).<br>
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.060 seconds
+Real time usage: 0.092 seconds
+Preprocessor visited node count: 9/1000000
+Preprocessor generated node count: 34/1000000
+Post‐expand include size: 85/2097152 bytes
+Template argument size: 12/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key my_wiki:pcache:idhash:32016-0!*!0!*!en!2!* and timestamp 20150306025240 and revision id 271639
+ -->
+</div>
+                                      <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                     <!-- /catlinks -->
+                                  </div>
+              </div>
+            </div>
+          </div>
+        <!-- /maincontent -->
+
+                <!-- printfooter -->
+        <div class="printfooter">
+        Retrieved from "<a href="http://wiki.eclipse.org/index.php?title=BirtPOJO_Viewer_WebLogic_Deployment&amp;oldid=271639">http://wiki.eclipse.org/index.php?title=BirtPOJO_Viewer_WebLogic_Deployment&amp;oldid=271639</a>"        </div>
+        <!-- /printfooter -->
+        
+        
+        <!-- debughtml -->
+                <!-- /debughtml -->
+
+      </div>
+      <!-- /bodyContent -->
+    </section>
+    <!-- /content -->
+
+    <!-- footer -->
+    
+      </div>    <section id="footer-contribution-info" style="border-top: 1px solid rgb(204, 204, 204);" class="footer-offset background-white margin-top-25"><div class="container text-center padding-top-10 padding-bottom-10"><p id="footercredit">This page was last modified 14:36, 7 October 2011 by <a href="http://wiki.eclipse.org/index.php?title=User:Jweathersby.actuate.com&amp;action=edit&amp;redlink=1" class="new" title="User:Jweathersby.actuate.com (page does not exist)">Jason Weathersby</a>.</p><p id="footerviews">This page has been accessed 5,638 times.</p></div></section>    </main> <!-- /#main-content-container-row -->
+        <p id="back-to-top" class="noprint hidden-print">
+      <a class="visible-xs" href="#top">Back to the top</a>
+    </p>
+        <footer role="contentinfo" class="noprint hidden-print">
+      <div class="container">
+        <div class="row">
+          <section id="footer-eclipse-foundation" class="col-xs-offset-1 col-xs-11 col-sm-7 col-md-6 col-md-offset-0">
+            <h2 class="section-title">Eclipse Foundation</h2>
+            <ul class="nav">
+              <li><a href="https://eclipse.org/org/">About us</a></li>
+              <li><a href="https://eclipse.org/org/foundation/contact.php">Contact Us</a></li>
+              <li><a href="https://eclipse.org/donate">Donate</a></li>
+              <li><a href="https://eclipse.org/org/documents/">Governance</a></li>
+              <li><a href="https://eclipse.org/artwork/">Logo and Artwork</a></li>
+              <li><a href="https://eclipse.org/org/foundation/directors.php">Board of Directors</a></li>
+            </ul>
+          </section>
+          <section id="footer-legal" class="col-xs-offset-1 col-xs-11 col-sm-7 col-md-6 col-md-offset-0">
+            <h2 class="section-title">Legal</h2>
+            <ul class="nav">
+              <li><a href="https://eclipse.org/legal/privacy.php">Privacy Policy</a></li>
+              <li><a href="https://eclipse.org/legal/termsofuse.php">Terms of Use</a></li>
+              <li><a href="https://eclipse.org/legal/copyright.php">Copyright Agent</a></li>
+              <li><a href="https://eclipse.org/org/documents/epl-v10.php">Eclipse Public License </a></li>
+              <li><a href="https://eclipse.org/legal/">Legal Resources </a></li>
+
+            </ul>
+          </section>
+
+          <section id="footer-useful-links" class="col-xs-offset-1 col-xs-11 col-sm-7 col-md-6 col-md-offset-0">
+            <h2 class="section-title">Useful Links</h2>
+            <ul class="nav">
+              <li><a href="https://bugs.eclipse.org/bugs/">Report a Bug</a></li>
+              <li><a href="http://help.eclipse.org/">Documentation</a></li>
+              <li><a href="https://eclipse.org/contribute/">How to Contribute</a></li>
+              <li><a href="https://eclipse.org/mail/">Mailing Lists</a></li>
+              <li><a href="https://eclipse.org/forums/">Forums</a></li>
+              <li><a href="http://marketplace.eclipse.org/">Marketplace</a></li>
+            </ul>
+          </section>
+
+          <section id="footer-other" class="col-xs-offset-1 col-xs-11 col-sm-7 col-md-6 col-md-offset-0">
+
+            <h2 class="section-title">Other</h2>
+            <ul class="nav">
+               <li><a href="https://eclipse.org/ide/">IDE and Tools</a></li>
+              <li><a href="https://eclipse.org/projects">Community of Projects</a></li>
+              <li><a href="https://eclipse.org/org/workinggroups/">Working Groups</a></li>
+            </ul>
+
+            <ul class="list-inline social-media">
+              <li><a href="https://twitter.com/EclipseFdn"><i class="fa fa-twitter-square"></i></a></li>
+              <li><a href="https://plus.google.com/+Eclipse"><i class="fa fa-google-plus-square"></i></a></li>
+              <li><a href="https://www.facebook.com/eclipse.org"><i class="fa fa-facebook-square"></i> </a></li>
+              <li><a href="https://www.youtube.com/user/EclipseFdn"><i class="fa fa-youtube-square"></i></a></li>
+            </ul>
+
+          </section>
+          <div id="copyright" class="col-xs-offset-1 col-sm-14 col-md-24 col-md-offset-0">
+            <div>
+              <span><img src="eclipse-logo-bw-800x188.png" alt="Eclipse.org black and white logo" id="logo-eclipse-white" height="39" width="166"></span>
+              <p id="copyright-text">Copyright © 2014 The Eclipse Foundation. All Rights Reserved.</p>
+            </div>
+          </div>
+        <a style="display: none;" href="#" class="scrollup">Back to the top</a>
+        </div>
+      </div>
+    </footer>
+    
+    
+
+    <!-- Placed at the end of the document so the pages load faster -->
+        <!-- /footer -->
+    
+
+
+  
+
+<div class="suggestions" style="display: none; font-size: 14px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body>
+</html>

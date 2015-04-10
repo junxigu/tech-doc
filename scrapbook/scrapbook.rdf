@@ -182,25 +182,10 @@
                    NS1:title="TCP三次握手/四次挥手详解 - general195 - 51CTO技术博客"
                    NS1:chars="UTF-8"
                    NS1:comment=""
-<<<<<<< HEAD
-                   NS1:icon="resource://scrapbook/data/20120329161714/favicon.ico"
-                   NS1:source="http://zhedahht.blog.163.com/blog/static/25411174200722991933440/" />
-  <RDF:Description RDF:about="urn:scrapbook:item20150131164651"
-                   NS1:id="20150131164651"
-                   NS1:type=""
-                   NS1:title="Promises Implementing"
-                   NS1:chars="UTF-8"
-                   NS1:icon="resource://scrapbook/data/20150131164651/favicon.ico"
-                   NS1:source="https://www.promisejs.org/implementing/"
-                   NS1:comment="" />
-  <RDF:Description RDF:about="urn:scrapbook:item20120331165333"
-                   NS1:id="20120331165333"
-=======
                    NS1:icon="chrome://scrapbook/skin/treeitem.png"
                    NS1:source="http://cache.baidu.com/c?m=9f65cb4a8c8507ed4fece7631043803a4e14d33d2bd7a7452189c65f93135c421620beac275541598cd8776704af4256f7f037773d0422a3de95c81cd2fdc36a38895723016c913014c418dfdc3623d651e74de8df0e96cde74494b9a3a0c82257&amp;p=ce6fde5686cc42a95babc7710e169f7e&amp;newp=80769a46d69d5aff57ee927d5852897d5c5bc4387ebad0157c8a88&amp;user=baidu&amp;fm=sc&amp;query=tcp%CB%C4%B4%CE%CE%D5%CA%D6&amp;qid=83fa9c621bec67c4&amp;p1=1" />
   <RDF:Description RDF:about="urn:scrapbook:item20120518160048"
                    NS1:id="20120518160048"
->>>>>>> 1d2b9b62e89a42977077518207e27234379a35f2
                    NS1:type=""
                    NS1:title="[精华] 网络socket编程指南 - ChinaUnix.net"
                    NS1:chars="UTF-8"
@@ -884,22 +869,11 @@
                    NS1:title="3"
                    NS1:chars="UTF-8"
                    NS1:comment=""
-<<<<<<< HEAD
-                   NS1:icon="resource://scrapbook/data/20110828230956/favicon-rr.ico"
-                   NS1:source="http://blog.renren.com/share/225775070/7648951474" />
-  <RDF:Seq RDF:about="urn:scrapbook:item20150131115835">
-    <RDF:li RDF:resource="urn:scrapbook:item20141206212918"/>
-    <RDF:li RDF:resource="urn:scrapbook:item20141207113235"/>
-    <RDF:li RDF:resource="urn:scrapbook:item20141216181422"/>
-    <RDF:li RDF:resource="urn:scrapbook:item20150127111217"/>
-    <RDF:li RDF:resource="urn:scrapbook:item20150131164651"/>
-=======
                    NS1:icon="resource://scrapbook/data/20120328200522/favicon.ico"
                    NS1:source="http://zhedahht.blog.163.com/blog/static/254111742007219147591/" />
   <RDF:Seq RDF:about="urn:scrapbook:item20150131152930">
     <RDF:li RDF:resource="urn:scrapbook:item20120331173153"/>
     <RDF:li RDF:resource="urn:scrapbook:item20120331173212"/>
->>>>>>> 1d2b9b62e89a42977077518207e27234379a35f2
   </RDF:Seq>
   <RDF:Description RDF:about="urn:scrapbook:item20150131152930"
                    NS1:id="20150131152930"
