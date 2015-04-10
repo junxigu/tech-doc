@@ -33,6 +33,8 @@
     <RDF:li RDF:resource="urn:scrapbook:item20150127111217"/>
     <RDF:li RDF:resource="urn:scrapbook:item20150410104948"/>
     <RDF:li RDF:resource="urn:scrapbook:item20150410104954"/>
+    <RDF:li RDF:resource="urn:scrapbook:item20150410164230"/>
+    <RDF:li RDF:resource="urn:scrapbook:item20150410174224"/>
   </RDF:Seq>
   <RDF:Description RDF:about="urn:scrapbook:item20150131115835"
                    NS1:id="20150131115835"
@@ -643,6 +645,14 @@
                    NS1:comment=""
                    NS1:icon="resource://scrapbook/data/20120331164810/favicon.ico"
                    NS1:source="http://zhedahht.blog.163.com/blog/static/25411174201131184017844/" />
+  <RDF:Description RDF:about="urn:scrapbook:item20150410164230"
+                   NS1:id="20150410164230"
+                   NS1:type=""
+                   NS1:title="gruntjs/grunt-contrib-jasmine · GitHub"
+                   NS1:chars="UTF-8"
+                   NS1:comment=""
+                   NS1:source="https://github.com/gruntjs/grunt-contrib-jasmine"
+                   NS1:icon="resource://scrapbook/data/20150410164230/favicon_001.ico" />
   <RDF:Description RDF:about="urn:scrapbook:item20141207113235"
                    NS1:id="20141207113235"
                    NS1:type=""
@@ -743,6 +753,14 @@
                    NS1:comment=""
                    NS1:icon="resource://scrapbook/data/20120328232058/favicon.ico"
                    NS1:source="http://zhedahht.blog.163.com/blog/static/25411174200725319627/" />
+  <RDF:Description RDF:about="urn:scrapbook:item20150410174224"
+                   NS1:id="20150410174224"
+                   NS1:type=""
+                   NS1:title="Mocha - the fun, simple, flexible JavaScript test framework"
+                   NS1:chars="UTF-8"
+                   NS1:comment=""
+                   NS1:source="http://mochajs.org/"
+                   NS1:icon="resource://scrapbook/data/20150410174224/favicon_001.ico" />
   <RDF:Description RDF:about="urn:scrapbook:item20120331173212"
                    NS1:id="20120331173212"
                    NS1:type=""

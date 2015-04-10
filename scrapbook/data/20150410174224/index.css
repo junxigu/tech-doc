@@ -1,0 +1,55 @@
+/* ::::: http://mochajs.org/normalize.min.css ::::: */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
+audio:not([controls]) { display: none; height: 0px; }
+html { font-family: sans-serif; }
+body { margin: 0px; }
+a { background: none repeat scroll 0% 0% transparent; }
+a:focus { outline: thin dotted; }
+a:active, a:hover { outline: 0px none; }
+h1 { font-size: 2em; margin: 0.67em 0px; }
+b, strong { font-weight: 700; }
+code, kbd, pre, samp { font-family: monospace,serif; font-size: 1em; }
+pre { white-space: pre-wrap; }
+img { border: 0px none; }
+svg:not(:root) { overflow: hidden; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0px none; padding: 0px; }
+/* ::::: http://mochajs.org/style.css ::::: */
+
+html { font: 14px/1.6 "Helvetica Neue",Helvetica,Arial,sans-serif; }
+body { color: rgb(44, 44, 44); border-top: 2px solid rgb(221, 221, 221); }
+#content { padding: 140px 110px 60px; }
+h1 { position: relative; font-style: normal; font-weight: 100; text-transform: lowercase; background-color: rgb(138, 99, 67); color: white; display: inline-block; padding: 48px 30px; font-size: 2em; opacity: 0; border-radius: 100px; transition: opacity 1s ease 0s, background-color 200ms ease 0s; }
+h1:hover { background-color: rgb(160, 122, 92); }
+h1 a { color: inherit; font-weight: inherit; }
+h1 a:hover { text-decoration: none; }
+.onload h1 { opacity: 1; }
+h2 { margin-top: 80px; font-weight: 100; letter-spacing: 1px; border-bottom: 1px solid rgb(238, 238, 238); }
+#tag { opacity: 0; color: rgb(194, 157, 127); font-weight: 100; font-size: 30px; margin-top: -110px; margin-left: 140px; margin-bottom: 100px; letter-spacing: 2px; transition: opacity 1s ease 0s, margin-top 200ms ease 0s, margin-bottom 200ms ease 0s, margin-left 1s ease 0s; }
+#tag em { font-style: normal; }
+.onload #tag { opacity: 1; margin-left: 170px; }
+#tag + p { font-size: 22px; font-weight: 100; letter-spacing: 1px; }
+a { color: rgb(138, 99, 67); font-weight: bold; text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul { margin-top: 20px; padding: 0px 15px; width: 100%; -moz-column-count: 2; box-sizing: content-box; }
+ul li { margin-top: 5px; margin-right: 60px; list-style: none outside none; border-bottom: 1px solid rgb(238, 238, 238); padding: 5px 0px; font-size: 12px; }
+ul:after { content: "."; height: 0px; display: block; visibility: hidden; clear: both; }
+code { font: 12px monaco,monospace; }
+pre { margin: 30px; padding: 30px; border-width: 1px; border-style: solid; border-color: rgb(238, 238, 238) rgb(238, 238, 238) rgb(221, 221, 221); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-radius: 2px; box-shadow: 0px 0px 10px rgb(238, 238, 238) inset; overflow-x: auto; }
+img { margin: 30px; padding: 1px; border-radius: 3px; box-shadow: 0px 3px 10px rgb(222, 222, 222), 0px 1px 5px rgb(136, 136, 136); max-width: 100%; }
+.badge { margin-right: 8px; display: inline-block; }
+.badge > img { margin: 0px; padding: 0px; border-radius: 0px; box-shadow: none; display: block; }
+footer { background-color: rgb(238, 238, 238); width: 100%; padding: 50px 0px; text-align: right; border-top: 1px solid rgb(221, 221, 221); }
+footer span { display: block; margin-right: 30px; color: rgb(136, 136, 136); font-size: 12px; }
+code .comment { color: rgb(153, 153, 153); }
+code .init { color: rgb(47, 111, 173); }
+code .string { color: rgb(88, 144, 173); }
+code .keyword { color: rgb(138, 99, 67); }
+code .number { color: rgb(47, 111, 173); }
+@media all and (max-width: 850px) {
+	ul li { width: 100%; }
+}
+@media all and (max-width: 600px) {
+	#tag { margin-top: 0px; margin-left: 0px; margin-bottom: 0px; }
+	.onload #tag { margin-left: 0px; }
+}

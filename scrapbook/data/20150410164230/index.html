@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    
+    
+    <title>gruntjs/grunt-contrib-jasmine · GitHub</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://github.com/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://github.com/apple-touch-icon-144.png">
+    <meta property="fb:app_id" content="1401488693436528">
+
+      <meta content="@github" name="twitter:site"><meta content="summary" name="twitter:card"><meta content="gruntjs/grunt-contrib-jasmine" name="twitter:title"><meta content="grunt-contrib-jasmine - Run jasmine specs headlessly through PhantomJS." name="twitter:description"><meta content="https://avatars0.githubusercontent.com/u/1630826?v=3&amp;s=400" name="twitter:image:src">
+      <meta content="GitHub" property="og:site_name"><meta content="object" property="og:type"><meta content="https://avatars0.githubusercontent.com/u/1630826?v=3&amp;s=400" property="og:image"><meta content="gruntjs/grunt-contrib-jasmine" property="og:title"><meta content="https://github.com/gruntjs/grunt-contrib-jasmine" property="og:url"><meta content="grunt-contrib-jasmine - Run jasmine specs headlessly through PhantomJS." property="og:description">
+      <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+    <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+    <link rel="assets" href="https://assets-cdn.github.com/">
+    
+    <meta name="pjax-timeout" content="1000">
+    
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_source" data-pjax-transient="">
+      <meta name="google-analytics" content="UA-3769691-2">
+
+    <meta content="collector.githubapp.com" name="octolytics-host"><meta content="collector-cdn.github.com" name="octolytics-script-host"><meta content="github" name="octolytics-app-id"><meta content="3CF76FC9:765B:6E542F:55278C61" name="octolytics-dimension-request_id">
+    
+    <meta content="Rails, view, files#disambiguate" name="analytics-event">
+    <meta class="js-ga-set" name="dimension1" content="Logged Out">
+    <meta class="js-ga-set" name="dimension2" content="Header v3">
+    <meta name="is-dotcom" content="true">
+    <meta name="hostname" content="github.com">
+    <meta name="user-login" content="">
+
+    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+
+    <meta content="authenticity_token" name="csrf-param">
+<meta content="GrrEmduzDI5RMITRFW0QsLL4tcQHckbnqbI6clu6oBq6/+v/e5kgQWsD2thuq1V8y0e35z4CW5hJicGeOOQhVQ==" name="csrf-token">
+
+    
+    
+    
+    
+
+
+    <meta http-equiv="x-pjax-version" content="8ef4cce20ae9cf017054cfeff04ce121">
+
+      
+  <meta name="description" content="grunt-contrib-jasmine - Run jasmine specs headlessly through PhantomJS.">
+  <meta name="go-import" content="github.com/gruntjs/grunt-contrib-jasmine git https://github.com/gruntjs/grunt-contrib-jasmine.git">
+
+  <meta content="1630826" name="octolytics-dimension-user_id"><meta content="gruntjs" name="octolytics-dimension-user_login"><meta content="6490427" name="octolytics-dimension-repository_id"><meta content="gruntjs/grunt-contrib-jasmine" name="octolytics-dimension-repository_nwo"><meta content="true" name="octolytics-dimension-repository_public"><meta content="false" name="octolytics-dimension-repository_is_fork"><meta content="6490427" name="octolytics-dimension-repository_network_root_id"><meta content="gruntjs/grunt-contrib-jasmine" name="octolytics-dimension-repository_network_root_nwo">
+  <link href="https://github.com/gruntjs/grunt-contrib-jasmine/commits/master.atom" rel="alternate" title="Recent Commits to grunt-contrib-jasmine:master" type="application/atom+xml">
+
+  
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body class="logged_out  env-production windows vis-public">
+    <a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+    <div class="wrapper">
+      
+      
+      
+
+
+        
+        <div class="header header-logged-out" role="banner">
+  <div class="container clearfix">
+
+    <a class="header-logo-wordmark" href="https://github.com/" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+      <span class="mega-octicon octicon-logo-github"></span>
+    </a>
+
+    <div class="header-actions" role="navigation">
+        <a class="btn btn-primary" href="https://github.com/join" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
+      <a class="btn" href="https://github.com/login?return_to=%2Fgruntjs%2Fgrunt-contrib-jasmine" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+    </div>
+
+    <div class="site-search repo-scope js-site-search" role="search">
+      <form accept-charset="UTF-8" action="https://github.com/gruntjs/grunt-contrib-jasmine/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/gruntjs/grunt-contrib-jasmine/search" method="get"><div style="margin: 0px; padding: 0px; display: inline;"><input name="utf8" value="✓" type="hidden"></div>
+  <input value="" class="js-site-search-field is-clearable" data-hotkey="s" name="q" placeholder="Search" data-global-scope-placeholder="Search GitHub" data-repo-scope-placeholder="Search" tabindex="1" autocapitalize="off" type="text">
+  <div class="scope-badge">This repository</div>
+</form>
+    </div>
+
+      <ul class="header-nav left" role="navigation">
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://github.com/explore" data-ga-click="(Logged out) Header, go to explore, text:explore">Explore</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://github.com/features" data-ga-click="(Logged out) Header, go to features, text:features">Features</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://enterprise.github.com/" data-ga-click="(Logged out) Header, go to enterprise, text:enterprise">Enterprise</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://github.com/blog" data-ga-click="(Logged out) Header, go to blog, text:blog">Blog</a>
+          </li>
+      </ul>
+
+  </div>
+</div>
+
+
+
+      <div id="start-of-content" class="accessibility-aid"></div>
+          <div class="site" itemscope="" itemtype="http://schema.org/WebPage">
+    <div id="js-flash-container">
+      
+    </div>
+    <div class="pagehead repohead instapaper_ignore readability-menu">
+      <div class="container">
+        
+<ul class="pagehead-actions">
+
+  <li>
+      <a href="https://github.com/login?return_to=%2Fgruntjs%2Fgrunt-contrib-jasmine" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to watch a repository" rel="nofollow">
+    <span class="octicon octicon-eye"></span>
+    Watch
+  </a>
+  <a class="social-count" href="https://github.com/gruntjs/grunt-contrib-jasmine/watchers">
+    23
+  </a>
+
+  </li>
+
+  <li>
+      <a href="https://github.com/login?return_to=%2Fgruntjs%2Fgrunt-contrib-jasmine" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to star a repository" rel="nofollow">
+    <span class="octicon octicon-star"></span>
+    Star
+  </a>
+
+    <a class="social-count js-social-count" href="https://github.com/gruntjs/grunt-contrib-jasmine/stargazers">
+      280
+    </a>
+
+  </li>
+
+    <li>
+      <a href="https://github.com/login?return_to=%2Fgruntjs%2Fgrunt-contrib-jasmine" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to fork a repository" rel="nofollow">
+        <span class="octicon octicon-repo-forked"></span>
+        Fork
+      </a>
+      <a href="https://github.com/gruntjs/grunt-contrib-jasmine/network" class="social-count">
+        135
+      </a>
+    </li>
+</ul>
+
+        <h1 itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
+          <span class="mega-octicon octicon-repo"></span>
+          <span class="author"><a href="https://github.com/gruntjs" class="url fn" itemprop="url" rel="author"><span itemprop="title">gruntjs</span></a></span><!--
+       --><span class="path-divider">/</span><!--
+       --><strong><a href="https://github.com/gruntjs/grunt-contrib-jasmine" class="js-current-repository" data-pjax="#js-repo-pjax-container">grunt-contrib-jasmine</a></strong>
+
+          <span class="page-context-loader">
+            <img alt="" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+          </span>
+
+        </h1>
+      </div><!-- /.container -->
+    </div><!-- /.repohead -->
+
+    <div class="container">
+      <div class="repository-with-sidebar repo-container new-discussion-timeline with-full-navigation">
+        <div class="repository-sidebar clearfix">
+            
+<nav class="sunken-menu repo-nav js-repo-nav js-sidenav-container-pjax js-octicon-loaders" role="navigation" data-pjax="#js-repo-pjax-container" data-issue-count-url="/gruntjs/grunt-contrib-jasmine/issues/counts">
+  <ul class="sunken-menu-group">
+    <li class="tooltipped tooltipped-w" aria-label="Code">
+      <a href="https://github.com/gruntjs/grunt-contrib-jasmine" aria-label="Code" class="selected js-selected-navigation-item sunken-menu-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /gruntjs/grunt-contrib-jasmine">
+        <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
+        <img alt="" class="mini-loader" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+</a>    </li>
+
+      <li class="tooltipped tooltipped-w" aria-label="Issues">
+        <a href="https://github.com/gruntjs/grunt-contrib-jasmine/issues" aria-label="Issues" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /gruntjs/grunt-contrib-jasmine/issues">
+          <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
+          <span class="counter">27</span>
+
+          <img alt="" class="mini-loader" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+</a>      </li>
+
+    <li class="tooltipped tooltipped-w" aria-label="Pull requests">
+      <a href="https://github.com/gruntjs/grunt-contrib-jasmine/pulls" aria-label="Pull requests" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g p" data-selected-links="repo_pulls /gruntjs/grunt-contrib-jasmine/pulls">
+          <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull requests</span>
+          <span class="counter">2</span>
+
+          <img alt="" class="mini-loader" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+</a>    </li>
+
+      <li class="tooltipped tooltipped-w" aria-label="Wiki">
+        <a href="https://github.com/gruntjs/grunt-contrib-jasmine/wiki" aria-label="Wiki" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g w" data-selected-links="repo_wiki /gruntjs/grunt-contrib-jasmine/wiki">
+          <span class="octicon octicon-book"></span> <span class="full-word">Wiki</span>
+          <img alt="" class="mini-loader" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+</a>      </li>
+  </ul>
+  <div class="sunken-menu-separator"></div>
+  <ul class="sunken-menu-group">
+
+    <li class="tooltipped tooltipped-w" aria-label="Pulse">
+      <a href="https://github.com/gruntjs/grunt-contrib-jasmine/pulse" aria-label="Pulse" class="js-selected-navigation-item sunken-menu-item" data-selected-links="pulse /gruntjs/grunt-contrib-jasmine/pulse">
+        <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
+        <img alt="" class="mini-loader" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+</a>    </li>
+
+    <li class="tooltipped tooltipped-w" aria-label="Graphs">
+      <a href="https://github.com/gruntjs/grunt-contrib-jasmine/graphs" aria-label="Graphs" class="js-selected-navigation-item sunken-menu-item" data-selected-links="repo_graphs repo_contributors /gruntjs/grunt-contrib-jasmine/graphs">
+        <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
+        <img alt="" class="mini-loader" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+</a>    </li>
+  </ul>
+
+
+</nav>
+
+              <div class="only-with-full-nav">
+                  
+<div class="clone-url open" data-protocol-type="http" data-url="/users/set_protocol?protocol_selector=http&amp;protocol_type=clone">
+  <h3><span class="text-emphasized">HTTPS</span> clone URL</h3>
+  <div class="input-group js-zeroclipboard-container">
+    <input class="input-mini input-monospace js-url-field js-zeroclipboard-target" value="https://github.com/gruntjs/grunt-contrib-jasmine.git" readonly="readonly" type="text">
+    <span class="input-group-button">
+      <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" data-copy-hint="Copy to clipboard" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+  
+<div class="clone-url " data-protocol-type="subversion" data-url="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=clone">
+  <h3><span class="text-emphasized">Subversion</span> checkout URL</h3>
+  <div class="input-group js-zeroclipboard-container">
+    <input class="input-mini input-monospace js-url-field js-zeroclipboard-target" value="https://github.com/gruntjs/grunt-contrib-jasmine" readonly="readonly" type="text">
+    <span class="input-group-button">
+      <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" data-copy-hint="Copy to clipboard" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+
+
+<p class="clone-options">You can clone with
+  <a href="#" class="js-clone-selector" data-protocol="http">HTTPS</a> or <a href="#" class="js-clone-selector" data-protocol="subversion">Subversion</a>.
+  <a href="https://help.github.com/articles/which-remote-url-should-i-use" class="help tooltipped tooltipped-n" aria-label="Get help on which URL is right for you.">
+    <span class="octicon octicon-question"></span>
+  </a>
+</p>
+
+
+  <a href="https://windows.github.com/" class="btn btn-sm sidebar-button" title="Save gruntjs/grunt-contrib-jasmine to your computer and use it in GitHub Desktop." aria-label="Save gruntjs/grunt-contrib-jasmine to your computer and use it in GitHub Desktop.">
+    <span class="octicon octicon-device-desktop"></span>
+    Clone in Desktop
+  </a>
+
+
+                <a href="https://github.com/gruntjs/grunt-contrib-jasmine/archive/master.zip" class="btn btn-sm sidebar-button" aria-label="Download the contents of gruntjs/grunt-contrib-jasmine as a zip file" title="Download the contents of gruntjs/grunt-contrib-jasmine as a zip file" rel="nofollow">
+                  <span class="octicon octicon-cloud-download"></span>
+                  Download ZIP
+                </a>
+              </div>
+        </div><!-- /.repository-sidebar -->
+
+        <div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container="">
+          
+<span id="js-show-full-navigation"></span>
+
+<div class="repository-meta js-details-container ">
+    <div class="repository-description">
+      Run jasmine specs headlessly through PhantomJS.
+    </div>
+
+    <div class="repository-website">
+      <p><a href="http://gruntjs.com/" rel="nofollow">http://gruntjs.com/</a></p>
+    </div>
+
+
+</div>
+
+<div class="overall-summary overall-summary-bottomless">
+
+  <div class="stats-switcher-viewport js-stats-switcher-viewport">
+    <div class="stats-switcher-wrapper">
+    <ul class="numbers-summary">
+      <li class="commits">
+        <a data-pjax="" href="https://github.com/gruntjs/grunt-contrib-jasmine/commits/master">
+            <span class="octicon octicon-history"></span>
+            <span class="num text-emphasized">
+              220
+            </span>
+            commits
+        </a>
+      </li>
+      <li>
+        <a data-pjax="" href="https://github.com/gruntjs/grunt-contrib-jasmine/branches">
+          <span class="octicon octicon-git-branch"></span>
+          <span class="num text-emphasized">
+            2
+          </span>
+          branches
+        </a>
+      </li>
+
+      <li>
+        <a data-pjax="" href="https://github.com/gruntjs/grunt-contrib-jasmine/releases">
+          <span class="octicon octicon-tag"></span>
+          <span class="num text-emphasized">
+            22
+          </span>
+          releases
+        </a>
+      </li>
+
+      <li>
+        
+  <a href="https://github.com/gruntjs/grunt-contrib-jasmine/graphs/contributors">
+    <span class="octicon octicon-organization"></span>
+    <span class="num text-emphasized">
+      42
+    </span>
+    contributors
+  </a>
+      </li>
+    </ul>
+
+      <div class="repository-lang-stats">
+        <ol class="repository-lang-stats-numbers">
+          <li>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/search?l=javascript">
+                <span class="color-block language-color" style="background-color: rgb(241, 224, 90);"></span>
+                <span class="lang">JavaScript</span>
+                <span class="percent">97.4%</span>
+              </a>
+          </li>
+          <li>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/search?l=html">
+                <span class="color-block language-color" style="background-color: rgb(228, 75, 35);"></span>
+                <span class="lang">HTML</span>
+                <span class="percent">2.6%</span>
+              </a>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  <div class="repository-lang-stats-graph js-toggle-lang-stats" title="Click for language details">
+    <span class="language-color" aria-label="JavaScript 97.4%" style="width: 97.4%; background-color: rgb(241, 224, 90);" itemprop="keywords">JavaScript</span>
+    <span class="language-color" aria-label="HTML 2.6%" style="width: 2.6%; background-color: rgb(228, 75, 35);" itemprop="keywords">HTML</span>
+  </div>
+
+
+
+<div class="file-navigation in-mid-page">
+  <a href="https://github.com/gruntjs/grunt-contrib-jasmine/find/master" class="js-show-file-finder btn btn-sm empty-icon tooltipped tooltipped-s right" data-pjax="" data-hotkey="t" aria-label="Quickly jump between files">
+    <span class="octicon octicon-list-unordered"></span>
+  </a>
+    <a href="https://github.com/gruntjs/grunt-contrib-jasmine/compare" aria-label="Compare, review, create a pull request" class="btn btn-sm btn-primary tooltipped tooltipped-se left compare-button" data-pjax="" data-ga-click="Repository, go to compare view, location:repo overview; icon:git-compare">
+      <span class="octicon octicon-git-compare"></span>
+    </a>
+
+  
+<div class="select-menu js-menu-container js-select-menu left">
+  <span class="btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w" data-master-branch="master" data-ref="master" title="master" role="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+    <span class="octicon octicon-git-branch"></span>
+    <i>branch:</i>
+    <span class="js-select-button css-truncate-target">master</span>
+  </span>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax="" aria-hidden="true">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <span class="select-menu-title">Switch branches/tags</span>
+        <span class="octicon octicon-x js-menu-close" role="button" aria-label="Close"></span>
+      </div>
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input value="" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags" type="text">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab">Tags</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/0.5.x-hotfixes" data-name="0.5.x-hotfixes" data-skip-pjax="true" rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="0.5.x-hotfixes">
+                0.5.x-hotfixes
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open selected" href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/master" data-name="master" data-skip-pjax="true" rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="master">
+                master
+              </span>
+            </a>
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/v0.8.2" data-name="v0.8.2" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.8.2">v0.8.2</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/v0.8.1" data-name="v0.8.1" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.8.1">v0.8.1</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/v0.8.0" data-name="v0.8.0" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.8.0">v0.8.0</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/v0.7.0" data-name="v0.7.0" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.7.0">v0.7.0</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/v0.6.5" data-name="v0.6.5" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.6.5">v0.6.5</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/v0.6.4" data-name="v0.6.4" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.6.4">v0.6.4</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/v0.6.3" data-name="v0.6.3" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.6.3">v0.6.3</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/v0.6.2" data-name="v0.6.2" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.6.2">v0.6.2</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/v0.6.1" data-name="v0.6.1" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.6.1">v0.6.1</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/v0.6.0" data-name="v0.6.0" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.6.0">v0.6.0</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/v0.5.3" data-name="v0.5.3" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.5.3">v0.5.3</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/v0.5.2" data-name="v0.5.2" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.5.2">v0.5.2</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/v0.5.1" data-name="v0.5.1" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.5.1">v0.5.1</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/v0.5.0" data-name="v0.5.0" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.5.0">v0.5.0</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/v0.4.2" data-name="v0.4.2" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.4.2">v0.4.2</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/v0.4.1" data-name="v0.4.1" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.4.1">v0.4.1</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/v0.4.0" data-name="v0.4.0" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.4.0">v0.4.0</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/v0.3.3" data-name="v0.3.3" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.3.3">v0.3.3</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/v0.3.2" data-name="v0.3.2" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.3.2">v0.3.2</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/v0.3.1rc7" data-name="v0.3.1rc7" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.3.1rc7">v0.3.1rc7</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/v0.3.0rc7" data-name="v0.3.0rc7" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.3.0rc7">v0.3.0rc7</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/v0.2.0" data-name="v0.2.0" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.2.0">v0.2.0</a>
+            </div>
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="breadcrumb"><span class="repo-root js-repo-root"><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://github.com/gruntjs/grunt-contrib-jasmine" class="" data-branch="master" data-direction="back" data-pjax="true" itemscope="url"><span itemprop="title">grunt-contrib-jasmine</span></a></span></span><span class="separator">/</span>
+    <a class="btn-link disabled tooltipped tooltipped-e" href="#" aria-label="You must be signed in to make or propose changes">
+      <span class="octicon octicon-plus"></span>
+    </a>
+</div>
+</div>
+
+
+
+  
+  <div class="commit commit-tease js-details-container">
+    <p class="commit-title ">
+        <a href="https://github.com/gruntjs/grunt-contrib-jasmine/commit/0e7a8ef16ad45b00d07ff48a10fc2f9f38c2a6be" class="message" data-pjax="true" title="Update appveyor.yml.
+
+Use variables for cache items.">Update appveyor.yml.</a>
+        <span class="hidden-text-expander inline"><a href="#" class="js-details-target">…</a></span>
+    </p>
+      <div class="commit-desc"><pre>Use variables for cache items.</pre></div>
+    <div class="commit-meta">
+      <button aria-label="Copy SHA" class="js-zeroclipboard zeroclipboard-link" data-clipboard-text="0e7a8ef16ad45b00d07ff48a10fc2f9f38c2a6be" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+      <a href="https://github.com/gruntjs/grunt-contrib-jasmine/commit/0e7a8ef16ad45b00d07ff48a10fc2f9f38c2a6be" class="sha-block" data-pjax="">latest commit <span class="sha">0e7a8ef16a</span></a>
+
+      <div class="authorship">
+        <img alt="@XhmikosR" class="avatar" data-user="349621" src="349621" height="20" width="20">
+        <span class="author-name"><a href="https://github.com/XhmikosR" rel="contributor">XhmikosR</a></span>
+        authored <time title="2015年3月13日 GMT+8下午11:15" class="updated" datetime="2015-03-13T15:15:28Z" is="relative-time">28 days ago</time>
+
+      </div>
+    </div>
+  </div>
+
+  
+<div class="file-wrap">
+
+  <table class="files" data-pjax="">
+
+
+    <tbody>
+      <tr class="warning include-fragment-error">
+        <td class="icon"><span class="octicon octicon-alert"></span></td>
+        <td class="content" colspan="3">Failed to load latest commit information.</td>
+      </tr>
+
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-directory"></span>
+            <img alt="" class="spinner" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/master/docs" class="js-directory-link" id="e3e2a9bfd88566b05001b02a3f51d286-f2b1c42365bd77b9f2bede7661400355e34cfe0a" title="docs">docs</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/commit/dfc76896a0037cb0d79623bd6517f16e3b575b47" class="message" data-pjax="true" title="0.8.0">0.8.0</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time title="2014年9月18日 GMT+8上午10:12" datetime="2014-09-18T02:12:42Z" is="time-ago">7 months ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-directory"></span>
+            <img alt="" class="spinner" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/master/tasks" class="js-directory-link" id="2cb1ad4f3eb0ea704c74a73689ad1654-6ee100618316f95ee279f1cad4b883d78d83f4fa" title="tasks">tasks</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/commit/220c0e18cadaa2814c8df9893e65ad67d204115a" class="message" data-pjax="true" title="Update JSHint config.">Update JSHint config.</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time title="2015年2月27日 GMT+8下午4:11" datetime="2015-02-27T08:11:19Z" is="time-ago">a month ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-directory"></span>
+            <img alt="" class="spinner" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/master/test" class="js-directory-link" id="098f6bcd4621d373cade4e832627b4f6-a41ffcf74dd0d0e23e7b12dc50b4ca509def238f" title="test">test</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/commit/b98974e77799cb7705a3381afc7d34a1e0337ef1" class="message" data-pjax="true" title="Fix call to addMatchers in the spec helper">Fix call to addMatchers in the spec helper</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time title="2015年1月9日 GMT+8上午1:42" datetime="2015-01-08T17:42:14Z" is="time-ago">3 months ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-directory"></span>
+            <img alt="" class="spinner" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/gruntjs/grunt-contrib-jasmine/tree/master/vendor" class="js-directory-link" id="7c3613dba5171cb6027c67835dd3b9d4-8c10ec88bf6c7b537c1516057351f9930aae44b3" title="vendor">vendor</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/commit/a5a3763e3f38feb873fff690472580a24de51852" class="message" data-pjax="true" title="Jasmine 2.0.1 support">Jasmine 2.0.1 support</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time title="2014年7月24日 GMT+8上午5:32" datetime="2014-07-23T21:32:40Z" is="time-ago">9 months ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/gruntjs/grunt-contrib-jasmine/blob/master/.editorconfig" class="js-directory-link" id="1e70daafb475c0ce3fef7d2728279182-0f099897b15f2fb0408f9b3640a6f0a19dfc348f" title=".editorconfig">.editorconfig</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/commit/d44d81448b6bd865a0c028bc9218c59b951528d2" class="message" data-pjax="true" title="Fixed race condition with requirejs template">Fixed race condition with requirejs template</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time title="2012年11月8日 GMT+8上午2:56" datetime="2012-11-07T18:56:19Z" is="time-ago">2 years ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/gruntjs/grunt-contrib-jasmine/blob/master/.gitattributes" class="js-directory-link" id="fc723d30b02a4cca7a534518111c1a66-176a458f94e0ea5272ce67c36bf30b6be9caf623" title=".gitattributes">.gitattributes</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/commit/9a71d179ea80dce7a4b2c0a3638c163e8d075cf7" class="message" data-pjax="true" title="initial commit">initial commit</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time title="2012年11月2日 GMT+8下午1:03" datetime="2012-11-02T05:03:09Z" is="time-ago">3 years ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/gruntjs/grunt-contrib-jasmine/blob/master/.gitignore" class="js-directory-link" id="a084b794bc0759e7a6b77810e01874f2-936d85167f3e78596d3634d909e5797adaf7ae93" title=".gitignore">.gitignore</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/commit/0b49cf050723a088ca7b0cab04fddf667e0c7ca9" class="message" data-pjax="true" title="Fix AppVeyor.">Fix AppVeyor.</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time title="2015年2月27日 GMT+8下午4:09" datetime="2015-02-27T08:09:16Z" is="time-ago">a month ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/gruntjs/grunt-contrib-jasmine/blob/master/.jshintrc" class="js-directory-link" id="4d5aa81bf4f18104bb6ea53a8b5d1f43-1f63955a4532ae639a0795fb1b9cb27a0b9110eb" title=".jshintrc">.jshintrc</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/commit/220c0e18cadaa2814c8df9893e65ad67d204115a" class="message" data-pjax="true" title="Update JSHint config.">Update JSHint config.</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time title="2015年2月27日 GMT+8下午4:11" datetime="2015-02-27T08:11:19Z" is="time-ago">a month ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/gruntjs/grunt-contrib-jasmine/blob/master/.travis.yml" class="js-directory-link" id="354f30a63fb0907d4ad57269548329e3-dedfc07f240bb03f9e07d8a5ed89983db52781ff" title=".travis.yml">.travis.yml</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/commit/2bcb22bb387a008b0607287f4e36c2758867a24d" class="message" data-pjax="true" title="minor tweaks">minor tweaks</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time title="2015年2月8日 GMT+8下午9:02" datetime="2015-02-08T13:02:58Z" is="time-ago">2 months ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/gruntjs/grunt-contrib-jasmine/blob/master/AUTHORS" class="js-directory-link" id="3d350169560e75d0cf9fc8e3574a3639-544240df50770cbc6f254690ffa85e5de68bdf5d" title="AUTHORS">AUTHORS</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/commit/9a71d179ea80dce7a4b2c0a3638c163e8d075cf7" class="message" data-pjax="true" title="initial commit">initial commit</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time title="2012年11月2日 GMT+8下午1:03" datetime="2012-11-02T05:03:09Z" is="time-ago">3 years ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/gruntjs/grunt-contrib-jasmine/blob/master/CHANGELOG" class="js-directory-link" id="d3bb3391c79904494c60ee2ac2f33070-95a0db370d684982e2f63229f0059fe3581b657f" title="CHANGELOG">CHANGELOG</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/commit/d21731ee8d5e7ef32102b72bcc6823214708cfe2" class="message" data-pjax="true" title="v0.8.2">v0.8.2</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time title="2015年1月9日 GMT+8上午5:19" datetime="2015-01-08T21:19:06Z" is="time-ago">3 months ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/gruntjs/grunt-contrib-jasmine/blob/master/CONTRIBUTING.md" class="js-directory-link" id="6a3371457528722a734f3c51d9238c13-5d08cc3879a0bcb62e516656f4b929150e4ec64c" title="CONTRIBUTING.md">CONTRIBUTING.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/commit/54f2212485f302c92b7a3f9be7489b790d04c0d0" class="message" data-pjax="true" title="updated deps">updated deps</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time title="2012年12月14日 GMT+8上午1:08" datetime="2012-12-13T17:08:18Z" is="time-ago">2 years ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/gruntjs/grunt-contrib-jasmine/blob/master/Gruntfile.js" class="js-directory-link" id="35b4a816e0441e6a375cd925af50752c-9e0b9f2dc40153d5d0334f487757bccf1dab2d87" title="Gruntfile.js">Gruntfile.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/commit/8bfe30f0615c2b2d5f334a513d367316172ec476" class="message" data-pjax="true" title="use a less common port for tests">use a less common port for tests</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time title="2015年1月9日 GMT+8上午5:16" datetime="2015-01-08T21:16:44Z" is="time-ago">3 months ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/gruntjs/grunt-contrib-jasmine/blob/master/LICENSE-MIT" class="js-directory-link" id="7f0bdbc0a0545831259b66259ac6b604-f01cf517a9605152b4452e2043947a2c21ff6e11" title="LICENSE-MIT">LICENSE-MIT</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/commit/13f5a998fb2cc6d6f1f6c9e76c9611cdfd29df34" class="message" data-pjax="true" title="Update copyright to 2014">Update copyright to 2014</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time title="2014年3月1日 GMT+8上午8:54" datetime="2014-03-01T00:54:50Z" is="time-ago">a year ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/gruntjs/grunt-contrib-jasmine/blob/master/README.md" class="js-directory-link" id="04c6e90faac2675aa89e2176d2eec7d8-a9b3b77bd62aed51fcdb2e1b983d9840f871bc71" title="README.md">README.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/commit/0b49cf050723a088ca7b0cab04fddf667e0c7ca9" class="message" data-pjax="true" title="Fix AppVeyor.">Fix AppVeyor.</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time title="2015年2月27日 GMT+8下午4:09" datetime="2015-02-27T08:09:16Z" is="time-ago">a month ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/gruntjs/grunt-contrib-jasmine/blob/master/appveyor.yml" class="js-directory-link" id="180360612c6b8c4ed830919bbb4dd459-26c3c6da858400522ba0c2b4c212069795fdb8f6" title="appveyor.yml">appveyor.yml</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/commit/0e7a8ef16ad45b00d07ff48a10fc2f9f38c2a6be" class="message" data-pjax="true" title="Update appveyor.yml.
+
+Use variables for cache items.">Update appveyor.yml.</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time title="2015年3月13日 GMT+8下午11:15" datetime="2015-03-13T15:15:28Z" is="time-ago">28 days ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" src="octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" height="16" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/gruntjs/grunt-contrib-jasmine/blob/master/package.json" class="js-directory-link" id="b9cfc7f2cdf78a7f4b91a753d10865a2-2cc44c401560a5309e93b199935af9ef94be4b6b" title="package.json">package.json</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/gruntjs/grunt-contrib-jasmine/commit/0b49cf050723a088ca7b0cab04fddf667e0c7ca9" class="message" data-pjax="true" title="Fix AppVeyor.">Fix AppVeyor.</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time title="2015年2月27日 GMT+8下午4:09" datetime="2015-02-27T08:09:16Z" is="time-ago">a month ago</time></span>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+  <div id="readme" class="boxed-group flush clearfix announce instapaper_body md">
+    <h3>
+      <span class="octicon octicon-book"></span>
+      README.md
+    </h3>
+
+    <article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1>
+<a id="user-content-grunt-contrib-jasmine-v082--" class="anchor" href="#grunt-contrib-jasmine-v082--" aria-hidden="true"><span class="octicon octicon-link"></span></a>grunt-contrib-jasmine v0.8.2 <a href="https://travis-ci.org/gruntjs/grunt-contrib-jasmine"><img src="68747470733a2f2f7472617669732d63692e6f72672f6772756e746a732f6772756e742d636f6e747269622d6a61736d696e652e7376673f6272616e63683d6d6173746572" alt="Build Status: Linux" data-canonical-src="https://travis-ci.org/gruntjs/grunt-contrib-jasmine.svg?branch=master" style="max-width: 100%;"></a> <a href="https://ci.appveyor.com/project/gruntjs/grunt-contrib-jasmine/branch/master"><img src="68747470733a2f2f63692e6170707665796f722e636f6d2f6170692f70726f6a656374732f7374617475732f3539383539353862793572686e6833312f6272616e63682f6d61737465723f7376673d74727565" alt="Build Status: Windows" data-canonical-src="https://ci.appveyor.com/api/projects/status/5985958by5rhnh31/branch/master?svg=true" style="max-width: 100%;"></a>
+</h1>
+
+<blockquote>
+<p>Run jasmine specs headlessly through PhantomJS.</p>
+</blockquote>
+
+<h2>
+<a id="user-content-getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<p>This plugin requires Grunt <code>&gt;=0.4.0</code></p>
+
+<p>If you haven't used <a href="http://gruntjs.com/">Grunt</a> before, be sure to check out the <a href="http://gruntjs.com/getting-started">Getting Started</a> guide, as it explains how to create a <a href="http://gruntjs.com/sample-gruntfile">Gruntfile</a> as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:</p>
+
+<div class="highlight highlight-shell"><pre>npm install grunt-contrib-jasmine --save-dev</pre></div>
+
+<p>Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:</p>
+
+<div class="highlight highlight-js"><pre>grunt.loadNpmTasks(<span class="pl-s"><span class="pl-pds">'</span>grunt-contrib-jasmine<span class="pl-pds">'</span></span>);</pre></div>
+
+<h2>
+<a id="user-content-jasmine-task" class="anchor" href="#jasmine-task" aria-hidden="true"><span class="octicon octicon-link"></span></a>Jasmine task</h2>
+
+<p><em>Run this task with the <code>grunt jasmine</code> command.</em></p>
+
+<p>Automatically builds and maintains your spec runner and runs your tests headlessly through PhantomJS.</p>
+
+<h4>
+<a id="user-content-run-specs-locally-or-on-a-remote-server" class="anchor" href="#run-specs-locally-or-on-a-remote-server" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run specs locally or on a remote server</h4>
+
+<p>Run your tests on your local filesystem or via a server task like <a href="https://github.com/gruntjs/grunt-contrib-connect">grunt-contrib-connect</a>.</p>
+
+<h4>
+<a id="user-content-customize-your-specrunner-with-templates" class="anchor" href="#customize-your-specrunner-with-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Customize your SpecRunner with templates</h4>
+
+<p>Use your own SpecRunner templates to customize how <code>grunt-contrib-jasmine</code> builds the SpecRunner. See the
+<a href="https://github.com/gruntjs/grunt-contrib-jasmine/wiki/Jasmine-Templates">wiki</a> for details and third party templates for examples.</p>
+
+<h5>
+<a id="user-content-amd-support" class="anchor" href="#amd-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>AMD Support</h5>
+
+<p>Supports AMD tests via the <a href="https://github.com/jsoverson/grunt-template-jasmine-requirejs">grunt-template-jasmine-requirejs</a> module</p>
+
+<h5>
+<a id="user-content-third-party-templates" class="anchor" href="#third-party-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Third party templates</h5>
+
+<ul class="task-list">
+<li><a href="https://github.com/jsoverson/grunt-template-jasmine-requirejs">RequireJS</a></li>
+<li><a href="https://github.com/maenu/grunt-template-jasmine-istanbul">Code coverage output with Istanbul</a></li>
+<li><a href="https://github.com/jaredstehler/grunt-template-jasmine-steal">StealJS</a></li>
+</ul>
+
+<h3>
+<a id="user-content-options" class="anchor" href="#options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Options</h3>
+
+<h4>
+<a id="user-content-src" class="anchor" href="#src" aria-hidden="true"><span class="octicon octicon-link"></span></a>src</h4>
+
+<p>Type: <code>String|Array</code></p>
+
+<p>Your source files. These are the files that you are testing. If you are using RequireJS your source files will be loaded as dependencies into your spec modules and will not need to be placed here.</p>
+
+<h4>
+<a id="user-content-optionsspecs" class="anchor" href="#optionsspecs" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.specs</h4>
+
+<p>Type: <code>String|Array</code></p>
+
+<p>Your Jasmine specs.</p>
+
+<h4>
+<a id="user-content-optionsvendor" class="anchor" href="#optionsvendor" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.vendor</h4>
+
+<p>Type: <code>String|Array</code></p>
+
+<p>Third party libraries like jQuery &amp; generally anything loaded before source, specs, and helpers.</p>
+
+<h4>
+<a id="user-content-optionshelpers" class="anchor" href="#optionshelpers" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.helpers</h4>
+
+<p>Type: <code>String|Array</code></p>
+
+<p>Non-source, non-spec helper files. In the default runner these are loaded after <code>vendor</code> files</p>
+
+<h4>
+<a id="user-content-optionsstyles" class="anchor" href="#optionsstyles" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.styles</h4>
+
+<p>Type: <code>String|Array</code></p>
+
+<p>CSS files that get loaded after the jasmine.css</p>
+
+<h4>
+<a id="user-content-optionsversion" class="anchor" href="#optionsversion" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.version</h4>
+
+<p>Type: <code>String</code><br>
+Default: '2.0.1'</p>
+
+<p>This is the jasmine-version which will be used. currently available versions are:</p>
+
+<ul class="task-list">
+<li>2.0.1</li>
+<li>2.0.0</li>
+</ul>
+
+<p><em>Due to changes in Jasmine, pre-2.0 versions have been dropped and tracking will resume at 2.0.0</em></p>
+
+<h4>
+<a id="user-content-optionsoutfile" class="anchor" href="#optionsoutfile" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.outfile</h4>
+
+<p>Type: <code>String</code><br>
+Default: <code>_SpecRunner.html</code></p>
+
+<p>The auto-generated specfile that phantomjs will use to run your tests.
+Automatically deleted upon normal runs. Use the <code>:build</code> flag to generate a SpecRunner manually e.g.
+<code>grunt jasmine:myTask:build</code></p>
+
+<h4>
+<a id="user-content-optionskeeprunner" class="anchor" href="#optionskeeprunner" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.keepRunner</h4>
+
+<p>Type: <code>Boolean</code><br>
+Default: <code>false</code>  </p>
+
+<p>Prevents the auto-generated specfile used to run your tests from being automatically deleted.</p>
+
+<h4>
+<a id="user-content-optionsjunitpath" class="anchor" href="#optionsjunitpath" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.junit.path</h4>
+
+<p>Type: <code>String</code><br>
+Default: undefined</p>
+
+<p>Path to output JUnit xml</p>
+
+<h4>
+<a id="user-content-optionsjunitconsolidate" class="anchor" href="#optionsjunitconsolidate" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.junit.consolidate</h4>
+
+<p>Type: <code>Boolean</code><br>
+Default: <code>false</code></p>
+
+<p>Consolidate the JUnit XML so that there is one file per top level suite.</p>
+
+<h4>
+<a id="user-content-optionsjunittemplate" class="anchor" href="#optionsjunittemplate" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.junit.template</h4>
+
+<p>Type: <code>String</code><br>
+Default: undefined</p>
+
+<p>Specify a custom JUnit template instead of using the default <code>junitTemplate</code>.</p>
+
+<h4>
+<a id="user-content-optionshost" class="anchor" href="#optionshost" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.host</h4>
+
+<p>Type: <code>String</code><br>
+Default: ''</p>
+
+<p>The host you want PhantomJS to connect against to run your tests.</p>
+
+<p>e.g. if using an ad hoc server from within grunt</p>
+
+<div class="highlight highlight-js"><pre>host <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>http://127.0.0.1:8000/<span class="pl-pds">'</span></span></pre></div>
+
+<p>Without a <code>host</code>, your specs will be run from the local filesystem.</p>
+
+<h4>
+<a id="user-content-optionstemplate" class="anchor" href="#optionstemplate" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.template</h4>
+
+<p>Type: <code>String</code> <code>Object</code><br>
+Default: undefined</p>
+
+<p>Custom template used to generate your Spec Runner. Parsed as underscore templates and provided
+the expanded list of files needed to build a specrunner.</p>
+
+<p>You can specify an object with a <code>process</code> method that will be called as a template function.
+See the <a href="https://github.com/gruntjs/grunt-contrib-jasmine/wiki/Jasmine-Templates">Template API Documentation</a> for more details.</p>
+
+<h4>
+<a id="user-content-optionstemplateoptions" class="anchor" href="#optionstemplateoptions" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.templateOptions</h4>
+
+<p>Type: <code>Object</code><br>
+Default: <code>{}</code></p>
+
+<p>Options that will be passed to your template. Used to pass settings to the template.</p>
+
+<h4>
+<a id="user-content-optionspolyfills" class="anchor" href="#optionspolyfills" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.polyfills</h4>
+
+<p>Type: <code>String|Array</code></p>
+
+<p>Third party polyfill libraries like json2 that are loaded at the very top before anything else. es5-shim is loaded automatically with this library.</p>
+
+<h4>
+<a id="user-content-optionsdisplay" class="anchor" href="#optionsdisplay" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.display</h4>
+
+<p>Type: <code>String</code><br>
+Default: <code>full</code></p>
+
+<ul class="task-list">
+<li>
+<code>full</code> displays the full specs tree</li>
+<li>
+<code>short</code> only displays a success or failure character for each test (useful with large suites)</li>
+<li>
+<code>none</code> displays nothing</li>
+</ul>
+
+<h4>
+<a id="user-content-optionssummary" class="anchor" href="#optionssummary" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.summary</h4>
+
+<p>Type: <code>Boolean</code><br>
+Default: <code>false</code></p>
+
+<p>Display a list of all failed tests and their failure messages</p>
+
+<h3>
+<a id="user-content-flags" class="anchor" href="#flags" aria-hidden="true"><span class="octicon octicon-link"></span></a>Flags</h3>
+
+<p>Name: <code>build</code></p>
+
+<p>Turn on this flag in order to build a SpecRunner html file. This is useful when troubleshooting templates,
+running in a browser, or as part of a watch chain e.g.</p>
+
+<div class="highlight highlight-js"><pre>watch<span class="pl-k">:</span> {
+  pivotal <span class="pl-k">:</span> {
+    files<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>src/**/*.js<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>specs/**/*.js<span class="pl-pds">'</span></span>],
+    tasks<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>jasmine:pivotal:build<span class="pl-pds">'</span></span>
+  }
+}</pre></div>
+
+<h3>
+<a id="user-content-filtering-specs" class="anchor" href="#filtering-specs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Filtering specs</h3>
+
+<p><strong>filename</strong>
+<code>grunt jasmine --filter=foo</code> will run spec files that have <code>foo</code> in their file name.</p>
+
+<p><strong>folder</strong>
+<code>grunt jasmine --filter=/foo</code> will run spec files within folders that have <code>foo*</code> in their name.</p>
+
+<p><strong>wildcard</strong>
+<code>grunt jasmine --filter=/*-bar</code> will run anything that is located in a folder <code>*-bar</code></p>
+
+<p><strong>comma separated filters</strong>
+<code>grunt jasmine --filter=foo,bar</code> will run spec files that have <code>foo</code> or <code>bar</code> in their file name.</p>
+
+<p><strong>flags with space</strong>
+<code>grunt jasmine --filter="foo bar"</code> will run spec files that have <code>foo bar</code> in their file name.
+<code>grunt jasmine --filter="/foo bar"</code> will run spec files within folders that have <code>foo bar*</code> in their name.</p>
+
+<h4>
+<a id="user-content-example-application-usage" class="anchor" href="#example-application-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example application usage</h4>
+
+<ul class="task-list">
+<li><a href="https://github.com/jsoverson/grunt-contrib-jasmine-example">Pivotal Labs' sample application</a></li>
+</ul>
+
+<h4>
+<a id="user-content-basic-use" class="anchor" href="#basic-use" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Use</h4>
+
+<p>Sample configuration to run Pivotal Labs' example Jasmine application.</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-c">// Example configuration</span>
+grunt.initConfig({
+  jasmine<span class="pl-k">:</span> {
+    pivotal<span class="pl-k">:</span> {
+      src<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>src/**/*.js<span class="pl-pds">'</span></span>,
+      options<span class="pl-k">:</span> {
+        specs<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>spec/*Spec.js<span class="pl-pds">'</span></span>,
+        helpers<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>spec/*Helper.js<span class="pl-pds">'</span></span>
+      }
+    }
+  }
+});</pre></div>
+
+<h4>
+<a id="user-content-supplying-a-custom-template" class="anchor" href="#supplying-a-custom-template" aria-hidden="true"><span class="octicon octicon-link"></span></a>Supplying a custom template</h4>
+
+<p>Supplying a custom template to the above example</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-c">// Example configuration</span>
+grunt.initConfig({
+  jasmine<span class="pl-k">:</span> {
+    customTemplate<span class="pl-k">:</span> {
+      src<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>src/**/*.js<span class="pl-pds">'</span></span>,
+      options<span class="pl-k">:</span> {
+        specs<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>spec/*Spec.js<span class="pl-pds">'</span></span>,
+        helpers<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>spec/*Helper.js<span class="pl-pds">'</span></span>,
+        template<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>custom.tmpl<span class="pl-pds">'</span></span>
+      }
+    }
+  }
+});</pre></div>
+
+<h4>
+<a id="user-content-supplying-template-modules-and-vendors" class="anchor" href="#supplying-template-modules-and-vendors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Supplying template modules and vendors</h4>
+
+<p>A complex version for the above example</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-c">// Example configuration</span>
+grunt.initConfig({
+  jasmine<span class="pl-k">:</span> {
+    customTemplate<span class="pl-k">:</span> {
+      src<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>src/**/*.js<span class="pl-pds">'</span></span>,
+      options<span class="pl-k">:</span> {
+        specs<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>spec/*Spec.js<span class="pl-pds">'</span></span>,
+        helpers<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>spec/*Helper.js<span class="pl-pds">'</span></span>,
+        <span class="pl-en">template</span>: <span class="pl-en">require</span>('<span class="pl-smi">exports</span>-process.js')
+        vendor<span class="pl-k">:</span> [
+          <span class="pl-s"><span class="pl-pds">"</span>vendor/*.js<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js<span class="pl-pds">"</span></span>
+        ]
+      }
+    }
+  }
+});</pre></div>
+
+<h4>
+<a id="user-content-sample-requirejsnpm-template-usage" class="anchor" href="#sample-requirejsnpm-template-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sample RequireJS/NPM Template usage</h4>
+
+<div class="highlight highlight-js"><pre><span class="pl-c">// Example configuration</span>
+grunt.initConfig({
+  jasmine<span class="pl-k">:</span> {
+    yourTask<span class="pl-k">:</span> {
+      src<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>src/**/*.js<span class="pl-pds">'</span></span>,
+      options<span class="pl-k">:</span> {
+        specs<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>spec/*Spec.js<span class="pl-pds">'</span></span>,
+        <span class="pl-en">template</span>: <span class="pl-en">require</span>('<span class="pl-smi">grunt</span>-template-jasmine-requirejs')
+      }
+    }
+  }
+});</pre></div>
+
+<p>NPM Templates are just node modules, so you can write and treat them as such.</p>
+
+<p>Please see the <a href="https://github.com/jsoverson/grunt-template-jasmine-requirejs">grunt-template-jasmine-requirejs</a> documentation
+for more information on the RequireJS template.</p>
+
+<h2>
+<a id="user-content-release-history" class="anchor" href="#release-history" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release History</h2>
+
+<ul class="task-list">
+<li>2015-01-08   v0.8.2   Fixes to test summary reporting.</li>
+<li>2014-10-20   v0.8.1   Now removes listeners when using the build flag. Adds handler for fail.load.</li>
+<li>2014-07-26   v0.8.0   Plugin now uses Jasmine 2.0.4 from npm. Updates other dependencies. Added "options.polyfills".</li>
+<li>2014-07-26   v0.7.0   Merged 153 to add stack trace to summary. Updated for Jasmine 2.0.1 Merged 133 for minimal output Merged 139 changing file exclusion logic</li>
+<li>2014-05-31   v0.6.5   Option to allow specifying a junitTemplate.</li>
+<li>2014-04-28   v0.6.4   Indent level fix. Moved scripts inside the body tag.</li>
+<li>2014-01-29   v0.6.0   Jasmine 2.0.0 support Improved logging support Various merges/bugfixes</li>
+<li>2013-08-02   v0.5.2   Fixed breakage with iframes /44 Added filter flag / 70 Fixed junit failure output /77</li>
+<li>2013-06-18   v0.5.1   Merged /69 grunt async not called when tests fail OR keepRunner is true</li>
+<li>2013-06-15   v0.5.0   updated rimraf made teardown async, added Function.prototype.bind polyfill breaking (templates) changed input options for getRelativeFileList breaking (usage) failing task on phantom error (SyntaxError, TypeError, et al)</li>
+<li>2013-04-03   v0.4.2   bumped grunt-lib-phantomjs to 0.3.0/1.9 (closes merged addressed</li>
+<li>2013-03-08   v0.4.0   bumped grunt-lib-phantomjs to 0.2.0/1.8 allowed spec/vendor/helper list to return non-matching files (e.g. for remote, http) merged merged</li>
+<li>2013-02-24   v0.3.3   Added better console output (via Gabor Kiss @Neverl)</li>
+<li>2013-02-17   v0.3.2   Ensure Gruntfile.js is included on npm.</li>
+<li>2013-02-15   v0.3.1   First official release for Grunt 0.4.0.</li>
+<li>2013-01-22   v0.3.1rc7   Exposed phantom and sendMessage to templates</li>
+<li>2013-01-22   v0.3.0rc7   Updated dependencies for grunt v0.4.0rc6/rc7</li>
+<li>2013-01-08   v0.3.0rc5   Updating to work with grunt v0.4.0rc5. Switching to this.filesSrc api. Added JUnit xml output (via Kelvin Luck @vitch) Passing console.log from browser to verbose grunt logging Support for templates as separate node modules Removed internal requirejs template (see grunt-template-jasmine-requirejs)</li>
+<li>2012-12-03   v0.2.0   Generalized requirejs template config Added loader plugin Tests for templates Updated jasmine to 1.3.0</li>
+<li>2012-11-24   v0.1.2   Updated for new grunt/grunt-contrib apis</li>
+<li>2012-11-07   v0.1.1   Fixed race condition in requirejs template</li>
+<li>2012-11-07   v0.1.0   Ported grunt-jasmine-runner and grunt-jasmine-task to grunt-contrib</li>
+</ul>
+
+<hr>
+
+<p>Task submitted by <a href="http://jarrodoverson.com/">Jarrod Overson</a></p>
+
+<p><em>This file was generated on Fri Feb 27 2015 10:07:34.</em></p>
+</article>
+  </div>
+
+
+        </div>
+
+      </div><!-- /.repo-container -->
+      <div class="modal-backdrop"></div>
+    </div><!-- /.container -->
+  </div><!-- /.site -->
+
+
+    </div><!-- /.wrapper -->
+
+      <div class="container">
+  <div class="site-footer" role="contentinfo">
+    <ul class="site-footer-links right">
+        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+      <li><a href="https://developer.github.com/" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li><a href="https://training.github.com/" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li><a href="https://shop.github.com/" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+
+    </ul>
+
+    <a href="https://github.com/" aria-label="Homepage">
+      <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+</a>
+    <ul class="site-footer-links">
+      <li>© 2015 <span title="0.05014s from github-fe123-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+
+    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container js-suggester-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="fullscreen-contents js-fullscreen-contents" placeholder=""></textarea>
+      <div class="suggester-container">
+        <div class="suggester fullscreen-suggester js-suggester js-navigation-container"></div>
+      </div>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a href="#" class="exit-fullscreen js-exit-fullscreen tooltipped tooltipped-w" aria-label="Exit Zen Mode">
+      <span class="mega-octicon octicon-screen-normal"></span>
+    </a>
+    <a href="#" class="theme-switcher js-theme-switcher tooltipped tooltipped-w" aria-label="Switch themes">
+      <span class="octicon octicon-color-mode"></span>
+    </a>
+  </div>
+</div>
+
+
+
+    
+    
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="octicon octicon-alert"></span>
+      <a href="#" class="octicon octicon-x flash-close js-ajax-error-dismiss" aria-label="Dismiss error"></a>
+      Something went wrong with that request. Please try again.
+    </div>
+
+
+      
+      
+      
+      
+
+  
+
+
+<div style="position: absolute; left: 0px; top: -9999px; width: 1px; height: 1px; z-index: 999999999;" class="global-zeroclipboard-container" id="global-zeroclipboard-html-bridge"><object id="global-zeroclipboard-flash-bridge" name="global-zeroclipboard-flash-bridge" type="application/x-shockwave-flash" data="zeroclipboard.v2.1.6.swf" height="100%" width="100%"><param name="allowScriptAccess" value="always"><param name="allowNetworking" value="all"><param name="menu" value="false"><param name="wmode" value="transparent"><param name="flashvars" value="trustedOrigins=github.com%2C%2F%2Fgithub.com%2Chttps%3A%2F%2Fgithub.com&amp;swfObjectId=global-zeroclipboard-flash-bridge"></object></div></body>
+</html>
