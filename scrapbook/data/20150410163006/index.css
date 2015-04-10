@@ -1,0 +1,196 @@
+body { position: relative; }
+body, form { margin: 0px ! important; padding: 0px ! important; }
+#bd_snap { font: 14px arial; color: rgb(0, 0, 0); background: none repeat scroll 0% 0% rgb(255, 255, 255); text-align: left; padding: 7px 0px 0px 20px; }
+#bd_snap_txt { clear: both; padding: 10px 0px; }
+#bd_snap_note { font-size: 12px; color: rgb(102, 102, 102); padding-bottom: 10px; }
+#bd_snap a { font: 14px arial; color: rgb(0, 0, 204); text-decoration: underline; }
+#bd_snap_head { width: 860px; height: 44px; }
+#bd_snap_logo { width: 162px; height: 38px; display: block; background: url('logo-snap.gif') no-repeat scroll 0% 0% transparent; margin-right: 15px; float: left; }
+#bd_snap_search { width: 680px; position: absolute; left: 197px; top: 17px; }
+#bd_snap_kw { width: 519px; height: 22px; padding: 4px 7px; margin-right: 5px; font: 16px arial; background: url('i-1.0.0.png') no-repeat scroll -304px 0px transparent; border-width: 1px; border-style: solid; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-color: rgb(154, 154, 154) rgb(205, 205, 205) rgb(205, 205, 205) rgb(154, 154, 154); vertical-align: top; }
+#bd_snap_su { width: 95px; height: 32px; font-size: 14px; color: rgb(0, 0, 0); padding: 0px; border: 0px none; }
+input.bd_snap_btn { background: url('i-1.0.0.png') repeat scroll 0% 0% rgb(221, 221, 221); cursor: pointer; }
+#bd_snap_btn_wr { width: 97px; height: 34px; display: inline-block; background: url('i-1.0.0.png') no-repeat scroll -202px 0px transparent; }
+#bd_snap_ln { height: 1px; border-top: 1px solid rgb(172, 168, 153); background: none repeat scroll 0% 0% rgb(236, 233, 216); overflow: hidden; }
+#bd_snap_txt span a { text-decoration: none; }
+/* ::::: http://www.oschina.net/css/style2013.css?t=1408580655000 ::::: */
+
+:focus { outline: 0px none; }
+* { padding: 0px; margin: 0px; }
+a { color: rgb(68, 102, 187); outline: 0px none; }
+a:hover { color: rgb(0, 0, 170); }
+ul, ol { list-style-type: none; }
+img { border: 0px none; }
+textarea { resize: none; }
+body { background: none repeat scroll 0% 0% rgb(249, 249, 249); text-align: center; font-size: 10pt; }
+.clear { clear: both; font-size: 1px; line-height: 0; }
+.SmallPortrait { opacity: 0.9; }
+a:hover .SmallPortrait { opacity: 1; }
+#OSC_Screen { width: 960px; margin: 0px auto 50px; text-align: left; background: none repeat scroll 0% 0% rgb(255, 255, 255); }
+#OSC_Banner { background: none repeat scroll 0% 0% rgb(64, 170, 83); border-right: 2px solid rgb(206, 231, 211); border-width: 0px 2px 2px; border-style: none solid solid; border-color: -moz-use-text-color rgb(206, 231, 211) rgb(206, 231, 211); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; height: 36px; padding: 2px 5px 0px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; }
+.t_job { position: relative; }
+#OSC_Footer { margin-top: 20px; padding-bottom: 50px; height: 38px; line-height: 38px; border-top: 2px solid rgb(204, 204, 204); color: rgb(115, 117, 115); text-align: center; }
+#OSC_Content {  }
+a.rndbutton { background: none repeat scroll 0% 0% rgb(92, 194, 111); color: rgb(255, 255, 255); text-decoration: none; height: 30px; float: left; margin: 0px; border: 0px solid rgb(0, 0, 0); font-weight: bold; cursor: pointer; }
+a.rndbutton:hover { background-position: left -30px; background-color: rgb(64, 171, 84); }
+a.rndbutton span { color: rgb(255, 255, 255); float: left; margin: 0px 0px 0px 12px; padding: 0px 12px 0px 0px; height: 30px; line-height: 30px; }
+input.rndbutton { background: none repeat scroll 0% 0% rgb(92, 194, 111); color: rgb(255, 255, 255); height: 30px; border: 0px solid rgb(0, 0, 0); cursor: pointer; }
+input.rndbutton:hover { background-color: rgb(64, 171, 84); }
+.Question .Body { float: left; width: 726px; overflow: hidden; }
+.Question .Vote { position: absolute; float: left; width: 43px; margin-top: 14px; text-align: center; }
+.Question #Vote .store { margin-top: 15px; }
+.Question #Vote .store a { text-decoration: none; color: rgb(170, 170, 170); font-size: 12px; background-color: rgb(255, 255, 255); height: 25px; }
+.Question #Vote .Tool-Store-Off { background: url('icons2.png') no-repeat scroll 9px -550px transparent; padding-top: 25px; }
+.Question .Vote * { display: block; }
+.Question .Vote .vote-up-off, .vote-down-off, .vote-up-on, .vote-down-on { height: 14px; margin: 0px auto; }
+.Question .Vote .vote-up-off { background: url('icons2.png') no-repeat scroll 9px -350px transparent; }
+.Question .Vote .vote-down-off { background: url('icons2.png') no-repeat scroll 9px -450px transparent; }
+.Question .Vote .vote-up-off:hover { background: url('icons2.png') no-repeat scroll 9px -400px transparent; }
+.Question .Vote .vote-down-off:hover { background: url('icons2.png') no-repeat scroll 9px -500px transparent; }
+.Question .Vote .q_vote_num, .Question .Vote .a_vote_num { color: rgb(21, 162, 49); font-size: 14pt; }
+.Question .main { float: right; width: 726px; }
+.Question .Title { padding-bottom: 10px; border-bottom: 1px solid rgb(227, 227, 227); margin: 0px; }
+.Question .Title .QTitle { width: 630px; padding-left: 8px; }
+.Question .Title .jump_answer { background: url('icons2_001.png') no-repeat scroll 5px -940px transparent; float: right; margin-right: 10px; height: 30px; width: 30px; cursor: pointer; text-align: center; text-decoration: none; }
+.Question .Title .QTitle h1 { font-size: 16pt; }
+.Question .Title .QTitle h1 a { color: rgb(0, 0, 0); text-decoration: none; outline: 0px none; }
+.Question .Body .Content { float: right; width: 676px; overflow: hidden; margin: 10px 0px 0px; }
+.Question .Body .Content .detail { line-height: 22px; font-size: 10.5pt; }
+.Question .detail h1, .Question .detail h2, .Question .detail h3 { margin: 20px 0px 10px; }
+.Question .detail a { text-decoration: none; }
+.Question .detail p { margin: 0px 0px 10px; }
+.Question .Body .Content .tags_toolbars { float: left; }
+.Question .Body .Content .Tags { margin: 15px 0px; }
+.Question .Body .Content .Tags strong {  }
+.Question .Body .Content .SameQuestions { color: rgb(102, 102, 102); line-height: 15px; }
+.Question .Body .Content .SameQuestions a { text-decoration: none; }
+.Question .Body .Content .Asker { font-size: 9pt; color: rgb(170, 170, 170); margin-top: 10px; float: right; }
+.Question .Body .Content .Asker .info { margin-top: 10px; }
+.Question .Body .Content .Asker .info .ainfo { display: block; float: right; width: 52px; }
+.Question .Body .Content .Asker .info .ainfo img { width: 45px; height: 45px; }
+.Question .Body .Content .Asker a { text-decoration: none; }
+.Question .Body .Content .Asker a.Asker-Name { text-decoration: none; font-size: 10pt; line-height: 14px; }
+.Question .Body .Content .Asker .info .pinfo { display: block; float: left; width: 150px; text-align: right; margin-right: 10px; }
+.Question .Body .Content .Asker .info .pinfo span { white-space: nowrap; overflow: hidden; line-height: 15px; }
+.Question .Body .Content .Asker .info .pinfo span.pub_time { display: inline-block; margin-top: 4px; }
+.Question .Body .Content .Asker .info .pinfo span a { color: rgb(170, 170, 170); }
+.Question .Body .Content .SameQuestions .q_toolbar ul li { float: left; }
+.Question .Body .Content .SameQuestions #Share a { float: right; }
+.Question .Body .Content .SameQuestions #Share a.Ask_Share_Sina { background: url('ask-icon.gif') no-repeat scroll 0px -40px transparent; display: inline-block; width: 20px; height: 16px; margin-left: 3px; }
+.Question .Body .Content .SameQuestions #Share a.Ask_Share_Tencent { background: url('ask-icon.gif') no-repeat scroll 0px -70px transparent; display: inline-block; width: 20px; height: 16px; margin-left: 3px; }
+.QuestionReplies { margin: 40px 0px 0px; }
+.QuestionReplies h2 { font-size: 11pt; border-bottom: 1px solid rgb(204, 204, 204); padding: 0px; display: block; height: 30px; line-height: 30px; }
+.QuestionReplies h2 em { font-style: normal; color: rgb(170, 0, 0); }
+.QuestionReplies h2 a { text-decoration: none; }
+.QuestionReplies h2 .sort { float: right; margin-right: 10px; font-weight: normal; font-size: 10pt; color: rgb(102, 102, 102); }
+.QuestionReplies h2 .sort a.current { border-width: 1px 1px 0px; border-style: solid solid none; border-color: rgb(204, 204, 204) rgb(204, 204, 204) -moz-use-text-color; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; padding: 0px 10px; display: inline-block; color: rgb(229, 87, 77); background-color: rgb(255, 255, 255); }
+.QuestionReplies h2 a.last_reply { font-size: 9pt; color: rgb(170, 170, 170); }
+.QuestionReplies h2 a.last_reply:hover { color: rgb(102, 102, 102); }
+.QuestionReplies .Answer { margin: 5px 0px 12px; padding-top: 10px; border: 2px solid transparent; }
+.QuestionReplies .Answer .body { float: left; width: 545px; margin-left: 5px; }
+.QuestionReplies .Answer .user a { display: inline-block; width: 100%; text-decoration: none; color: rgb(170, 170, 170); }
+.QuestionReplies .Answer .user a:hover { color: rgb(229, 87, 77); }
+.QuestionReplies .Answer .user { float: right; width: 150px; font-size: 9pt; color: rgb(170, 170, 170); margin-right: 10px; }
+.QuestionReplies img { margin-bottom: 0px; }
+.QuestionReplies .Answer .user img { width: 32px; height: 32px; }
+.QuestionReplies .Answer .user span { display: inline-block; }
+.QuestionReplies .Answer .user .user_img { float: right; width: 32px; }
+.QuestionReplies .Answer .user .user_info { float: left; width: 108px; text-align: right; margin-right: 10px; }
+.QuestionReplies .Answer .body .detail { padding-bottom: 10px; font-size: 10.5pt; min-height: 22px; margin-left: 45px; }
+.QuestionReplies .Answer .replies { margin: 10px 0px 10px 50px; }
+.QuestionReplies .Answer .replies a { text-decoration: none; }
+.QuestionReplies .Answer .replies ul { margin: 10px 5px 20px; font-size: 8pt; clear: both; }
+.QuestionReplies .Answer .replies ul li { margin-bottom: 5px; color: rgb(68, 68, 68); font-size: 10.5pt; }
+.QuestionReplies .Answer .replies ul li a.p { float: left; }
+.QuestionReplies .Answer .replies ul li .b { float: left; width: 535px; margin-left: 5px; }
+.QuestionReplies .Answer .replies ul li .t { position: relative; color: rgb(153, 153, 153); font-size: 8pt; margin: 3px 0px 0px 3px; white-space: nowrap; display: inline-block; }
+.QuestionReplies .Answer .replies ul li .opts { position: absolute; font-size: 8pt; display: inline-block; width: 60px; top: 1px; float: right; visibility: hidden; }
+.QuestionReplies .Answer .replies ul li .t .opts a { color: rgb(68, 102, 187); }
+.QuestionReplies .Answer .replies .PagerLinks { font-size: 8pt; color: rgb(153, 153, 153); margin: 0px 0px 0px 5px; padding-bottom: 8px; }
+.QuestionReplies .Answer .votes { font-size: 9pt; color: rgb(170, 170, 170); margin: -10px 0px 5px 50px; }
+.QuestionReplies .Answer .votes:hover { color: rgb(153, 153, 153); cursor: pointer; }
+.QuestionReplies .Answer .votes .a_toolbar { display: block; width: 100%; }
+.QuestionReplies .Answer .votes .a_toolbar a { color: rgb(170, 170, 170); }
+.QuestionReplies .Answer .votes a { text-decoration: none; padding: 0px 4px 0px 0px; }
+.QuestionReplies .Answer .votes a:hover { color: rgb(229, 87, 77); }
+.QuestionReplies .hr { display: block; height: 1px; margin-top: -8px; border-bottom: 1px solid rgb(221, 221, 221); }
+.QuestionReplies .unvisible { border-bottom: 1px solid rgb(255, 255, 255); }
+.QuestionReplies ul.list { margin-top: 7px; }
+.Question .AnswerForm { margin: 20px 0px; }
+.Question .AnswerForm form { float: left; width: 560px; }
+.Question .AnswerForm form textarea {  }
+.Question .AnswerForm form input { margin-top: 10px; padding: 2px; font-weight: bold; }
+.Question .QuestionRelations { float: right; width: 250px; text-align: left; overflow: hidden; }
+.Question .QuestionRelations #QuestionWizard { font-size: 14pt; text-align: center; padding: 10px 0px; border: 1px solid rgb(221, 221, 221); margin: 0px 0px 10px; background: none repeat scroll 0% 0% rgb(255, 255, 255); height: 80px; }
+.Question .QuestionRelations #QuestionWizard a { margin: 15px 0px 0px 80px; font-size: 10.5pt; }
+.Question .QuestionRelations .Qlist { margin: 10px 0px 20px; }
+.Question .QuestionRelations .Qlist strong { font-size: 16px; color: rgb(64, 170, 83); font-weight: normal; }
+.Question .QuestionRelations .Qlist strong a.more { float: right; font-weight: normal; font-size: 8pt; margin-top: 3px; }
+.Question .QuestionRelations .Qlist ul { margin: 10px 0px 0px; line-height: 20px; }
+.Question .QuestionRelations .Qlist ul li { margin-bottom: 10px; }
+.Question .QuestionRelations .Qlist ul li a { background: url('a3.gif') no-repeat scroll left 5px transparent; padding-left: 12px; text-decoration: none; }
+.Question .QuestionRelations .Qlist ul li .date { display: block; color: rgb(153, 153, 153); font-size: 8pt; margin-left: 12px; }
+/* ::::: http://www.oschina.net/css/channel.css?t=1427230527000 ::::: */
+
+* { margin: 0px; padding: 0px; }
+html {  }
+body, table, input, textarea, select, button { font-family: "Microsoft YaHei",Verdana,sans-serif,"SimSun"; }
+a { color: rgb(62, 98, 166); outline: 0px none; }
+a:hover { color: rgb(204, 0, 0); }
+ul, ol { list-style-type: none; }
+img { border: 0px none; }
+body { background: none repeat scroll 0% 0% rgb(255, 255, 255); text-align: center; font-size: 10pt; }
+.clear { clear: both; font-size: 1px; line-height: 0; }
+.wp998 { width: 998px; margin: 0px auto; }
+#OSC_Screen { width: 998px; margin: 0px auto 50px; text-align: left; }
+#OSC_NavTop { font-size: 10pt; height: 30px; line-height: 30px; background-color: rgb(21, 162, 48); min-width: 998px; }
+#OSC_NavTop a { text-decoration: none; color: rgb(255, 255, 255); }
+#OSC_NavTop .cs_content a { color: rgb(0, 136, 0); }
+#OSC_NavTop a:hover { color: rgb(238, 238, 238); }
+#OSC_NavTop #OSC_Channels { float: left; }
+#OSC_NavTop #OSC_Channels ul { line-height: 18px; }
+#OSC_NavTop #OSC_Channels ul li.item { float: left; margin: 0px 16px 0px 0px; line-height: 30px; }
+#OSC_NavTop #OSC_Channels ul li a.hl { font-weight: bold; }
+#OSC_NavTop #OSC_Userbar { float: right; color: rgb(221, 221, 221); }
+#OSC_Banner { margin: 0px 0px 20px; padding: 15px 0px; background-color: rgb(245, 245, 245); border-bottom: 1px solid rgb(238, 238, 238); min-width: 998px; height: auto; }
+#OSC_Banner .Logo { float: left; text-indent: -9999px; width: 160px; height: 48px; border-right: 2px solid rgb(238, 238, 238); padding-right: 4px; background: url('logo_s2.png') no-repeat scroll -2px 0px transparent; }
+#OSC_Banner h1 { font-size: 20pt; font-weight: normal; color: rgb(64, 170, 83); float: left; line-height: 40px; height: 40px; margin: 3px 0px 0px 12px; }
+#OSC_Banner h1 a { text-decoration: none; color: rgb(64, 170, 83); }
+#OSC_Banner dl { float: left; margin: 8px 0px 0px 20px; color: rgb(102, 102, 102); }
+#OSC_Banner dl dt { line-height: 16px; text-align: left; }
+#OSC_Banner dl a { text-decoration: none; }
+#OSC_Banner .search { float: right; margin: 8px 0px 0px; overflow: hidden; }
+#OSC_Banner .search .TXT { float: left; font-size: 10.5pt; width: 228px; height: 30px; border: 1px solid rgb(64, 170, 83); padding: 0px 10px; border-radius: 0px; }
+#OSC_Banner .search .BTN { float: left; font-size: 10.5pt; background: none repeat scroll 0% 0% rgb(64, 170, 83); border: 0px none; color: rgb(255, 255, 255); height: 32px; padding: 0px 10px; cursor: pointer; }
+#OSC_Banner .search .BTN:hover { background-color: rgb(53, 162, 102); }
+#OSC_Footer { margin-top: 20px; padding-bottom: 50px; height: 38px; line-height: 38px; border-top: 2px solid rgb(204, 204, 204); color: rgb(115, 117, 115); text-align: center; }
+.control_select { position: relative; background: url('down3.gif') no-repeat scroll right 14px transparent; padding-right: 8px; cursor: pointer; height: 30px; display: inline-block; z-index: 1001; }
+.control_select a { position: relative; }
+.control_select ul.cs_content { display: none; text-align: left; position: absolute; left: 0px; top: 25px; width: 110px; z-index: 9999; background: none repeat scroll 0% 0% white; border: 1px solid rgb(21, 162, 48); padding: 5px 0px 2px 5px; font-size: 9pt; list-style-type: none; }
+.control_select ul.cs_content li { border: 0px none; height: 16px; line-height: 16px; margin-bottom: 8px; }
+#OSC_NavTop .control_select ul.cs_content li a:hover { font-weight: bold; background: none repeat scroll 0% 0% rgb(255, 255, 255); color: rgb(170, 0, 0); }
+.control_select ul.cs_mobile { width: 130px; }
+.control_select ul.cs_mobile .android_ { background: url('android.gif') no-repeat scroll left center / 12px 16px transparent; padding-left: 20px; }
+.control_select ul.cs_mobile .ios_ { background: url('iphone.gif') no-repeat scroll left center / 12px 16px transparent; padding-left: 20px; }
+.control_select ul.cs_mobile .wp7_ { background: url('wp7.gif') no-repeat scroll left center / 12px 16px transparent; padding-left: 20px; }
+a.rndbutton { background: none repeat scroll 0% 0% rgb(92, 194, 111); color: rgb(255, 255, 255); text-decoration: none; height: 30px; float: left; margin: 0px; border: 0px solid rgb(0, 0, 0); font-weight: bold; cursor: pointer; }
+a.rndbutton:hover { background-position: left -30px; background-color: rgb(64, 171, 84); }
+a.rndbutton span { color: rgb(255, 255, 255); float: left; margin: 0px 0px 0px 12px; padding: 0px 12px 0px 0px; height: 30px; line-height: 28px; }
+input.rndbutton { background: none repeat scroll 0% 0% rgb(92, 194, 111); color: rgb(255, 255, 255); height: 30px; border: 0px solid rgb(0, 0, 0); cursor: pointer; }
+input.rndbutton:hover { background-color: rgb(64, 171, 84); }
+/* ::::: http://www.oschina.net/js/2011/fancybox/jquery.fancybox-1.3.4.css?t=1420773622000 ::::: */
+
+/* ::::: http://www.oschina.net/js/poshytip/tip-yellowsimple/tip-yellowsimple.css?t=1420773622000 ::::: */
+
+/* ::::: http://www.oschina.net/js/syntax_highlighter/SyntaxHighlighter.css ::::: */
+
+/* ::::: http://www.oschina.net/js/sh309/styles/shCore.css?t=1420773622000 ::::: */
+
+/* ::::: http://www.oschina.net/js/sh309/styles/shThemeDefault.css?t=1420773622000 ::::: */
+
+.oscapp { text-align: left; width: 220px; }
+.oscapp span { float: left; width: 140px; }
+.oscapp a { float: left; text-indent: -9999em; width: 16px; margin-left: 8px; }
+.oscapp a.android { background: url('android_001.gif') no-repeat scroll left center transparent; }
+.oscapp a.iphone { background: url('iphone_001.gif') no-repeat scroll left center transparent; }
+.oscapp a.wp7 { background: url('wp7_001.gif') no-repeat scroll left center transparent; }
